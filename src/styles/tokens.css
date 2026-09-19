@@ -1,0 +1,53 @@
+/*
+ * 山海万象录 · 设计变量(视觉规范第九节)
+ * 幽玄古籍 × 青绿山水 × 当代数字博物馆
+ * 色彩比例:墨/宣纸约 70%,岩青铜绿约 20%,旧金约 8%,朱砂 ≤2%
+ */
+:root {
+  /* 墨与纸 */
+  --ink-night: #0d1311; /* 墨夜,深色场景底色 */
+  --ink-deep: #17231f; /* 深墨,分层背景 */
+  --paper: #e8e0cd; /* 宣纸,浅色场景底色 */
+  --paper-bright: #f3eee2; /* 月白,浅色卡片/高亮 */
+
+  /* 青绿 */
+  --rock-cyan: #31545a; /* 岩青 */
+  --verdigris: #587367; /* 铜绿 */
+
+  /* 点缀 */
+  --cinnabar: #a74738; /* 朱砂,仅印章/选中/关键操作 */
+  --old-gold: #b18b56; /* 旧金 */
+
+  /* 文字 */
+  --text-on-dark: #d9d6c9; /* 浅色正文 */
+  --text-on-light: #26302b; /* 深色正文 */
+  --text-muted: #8f968d; /* 弱化文字 */
+
+  /* 字体族:一种宋体 + 一种黑体,书法体仅限首页主标题/印章 */
+  --font-serif: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun',
+    serif;
+  --font-sans: 'Noto Sans SC', 'Source Han Sans SC', 'Microsoft YaHei',
+    'PingFang SC', sans-serif;
+
+  /* 字号与行高:正文 ≥16px,行高 1.75—1.9 */
+  --font-size-body: 16px;
+  --line-height-body: 1.85;
+
+  /* 版面 */
+  --content-max-width: 1320px;
+  --space-page-x-desktop: 72px;
+  --space-page-x-tablet: 40px;
+  --space-page-x-mobile: 20px;
+  --space-section-desktop: 128px;
+  --space-section-mobile: 84px;
+
+  /* 形状:圆角 0—8px */
+  --radius-card: 4px;
+
+  /* 动效时间(第十节) */
+  --duration-hover: 200ms;
+  --duration-reveal: 720ms;
+  --duration-transition: 540ms;
+  --duration-map-draw: 1200ms;
+  --ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+}

@@ -1,0 +1,136 @@
+/**
+ * 内容数据核心类型(规范第八节)。
+ * recordStatus 为资料核验状态:verified 才能进入首页推荐、每日一卷、
+ * 随机探索与猜谜题库;variant=存在异文;unverified=待考证。
+ */
+
+export type RecordStatus = 'verified' | 'variant' | 'unverified'
+
+export type EntityType =
+  | 'beast' // 异兽
+  | 'bird' // 鸟类
+  | 'aquatic' // 水族
+  | 'deity' // 神祇
+  | 'figure' // 人物
+  | 'nation' // 国族
+  | 'plant' // 植物
+  | 'mineral' // 矿物
+  | 'artifact' // 器物
+  | 'terrain' // 山川水系
+
+export type TraitKind =
+  | 'appearance' // 形貌
+  | 'sound' // 声音
+  | 'behavior' // 习性
+  | 'diet' // 食性
+
+/** 一条原文引用及其核验信息;同一实体多处出现时分别立条,不得拼接。 */
+export interface Citation {
+  /** 原文(按所据底本录入,不得凭记忆补写) */
+  originalText: string
+  /** 篇章名称,如「南山经」 */
+  chapter: string
+  /** 卷次或段落位置 */
+  section?: string
+  /** 所据版本,如「郭璞注·郝懿行笺疏系统通行本(详见 CONTENT_SOURCES.md)」 */
+  sourceEdition: string
+  /** 页码或公开可核对的定位信息 */
+  pageOrLocation?: string
+  /** 公开链接(仅限公版、稳定来源) */
+  publicUrl?: string
+  /** 异文说明(存在异文时必填) */
+  variantText?: string
+  /** 核验备注:如何核对、何处存疑 */
+  verificationNote: string
+  /** 核验时间 ISO 日期 */
+  verifiedAt?: string
+}
+
+/** 一项可回看原文的特征。 */
+export interface Trait {
+  kind: TraitKind
+  /** 特征描述(基于原文,不确定处用限定词) */
+  text: string
+  /** 指回对应 citation 的下标 */
+  citationIndex: number
+}
+
+/** 原文明示的能力/征兆/用途记述,严格与原文绑定。 */
+export interface SourceNote {
+  text: string
+  citationIndex: number
+}
+
+export interface Entity {
+  id: string
+  slug: string
+  canonicalName: string
+  pinyin: string
+  aliases: string[]
+  type: EntityType
+  /** 基于原文提炼的一句话摘要 */
+  summary: string
+  chapterIds: string[]
+  locationIds: string[]
+  citations: Citation[]
+  appearanceTraits: Trait[]
+  behaviorTraits: Trait[]
+  soundTraits: Trait[]
+  dietTraits: Trait[]
+  /** 原文明示的能力 */
+  abilities: SourceNote[]
+  /** 出现时伴随的征兆 */
+  omens: SourceNote[]
+  /** 本站释义(现代汉语,标注不确定处) */
+  modernExplanation: string
+  /** 异文与争议读法 */
+  disputedReadings: string[]
+  relatedEntityIds: string[]
+  /** 本站阅读索引标签(非《山海经》原有分类) */
+  tags: string[]
+  recordStatus: RecordStatus
+  /** 插画说明;均为艺术演绎或原创 SVG */
+  illustration?: { kind: 'svg' | 'none'; alt: string; note?: string }
+  updatedAt: string
+}
+
+/** 概念地图坐标(古籍内部叙事关系,非现实经纬度)。 */
+export interface MapPosition {
+  x: number
+  y: number
+  region: string
+}
+
+export interface Location {
+  id: string
+  canonicalName: string
+  aliases: string[]
+  type: 'mountain' | 'river' | 'sea' | 'plain' | 'nation' | 'wasteland'
+  chapterId: string
+  /** 原文中的出场顺序 */
+  sourceOrder: number
+  previousLocationId?: string
+  nextLocationId?: string
+  /** 原文记载的方位,如「曰……之山」前的行向描述 */
+  sourceDirection?: string
+  /** 原文记载的距离(保留原文表述) */
+  sourceDistance?: string
+  relatedEntityIds: string[]
+  citations: Citation[]
+  mapPosition: MapPosition
+  /** 现代地理假说(须注明争议,不与概念坐标混用) */
+  modernHypotheses: string[]
+  recordStatus: RecordStatus
+}
+
+export interface ChapterMeta {
+  id: string
+  slug: string
+  name: string
+  /** 通行本顺序 1—18 */
+  order: number
+  /** 所属部分:山经 / 海经 / 大荒经 / 海内经 */
+  group: '山经' | '海经' | '大荒经' | '海内经'
+  /** 本站进度:该篇是否已录入原文 */
+  contentStatus: 'pending' | 'partial' | 'entered'
+}
