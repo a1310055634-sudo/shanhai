@@ -1,0 +1,154 @@
+.filters {
+  border: 1px solid rgba(143, 150, 141, 0.22);
+  border-radius: var(--radius-card);
+  background: rgba(23, 35, 31, 0.45);
+  padding: 20px 24px;
+  margin-bottom: 32px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: var(--old-gold);
+  font-family: var(--font-serif);
+}
+
+.input,
+.select {
+  min-height: 44px;
+  padding: 0 14px;
+  background: rgba(13, 19, 17, 0.7);
+  border: 1px solid rgba(143, 150, 141, 0.35);
+  border-radius: 2px;
+  color: var(--text-on-dark);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  min-width: 0;
+}
+
+.input {
+  width: 260px;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus-visible,
+.select:focus-visible {
+  border-color: var(--old-gold);
+  outline: none;
+}
+
+.select {
+  appearance: none;
+  padding-right: 32px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--old-gold) 50%),
+    linear-gradient(135deg, var(--old-gold) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 20px,
+    calc(100% - 12px) 20px;
+  background-size:
+    6px 6px,
+    6px 6px;
+  background-repeat: no-repeat;
+}
+
+.select option {
+  background: var(--ink-deep);
+  color: var(--text-on-dark);
+}
+
+.viewToggle {
+  display: flex;
+  gap: 0;
+}
+
+.viewBtn {
+  min-height: 44px;
+  padding: 0 18px;
+  background: none;
+  border: 1px solid rgba(143, 150, 141, 0.35);
+  color: var(--text-muted);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+}
+
+.viewBtn:first-child {
+  border-radius: 2px 0 0 2px;
+}
+
+.viewBtn:last-child {
+  border-radius: 0 2px 2px 0;
+  border-left: none;
+}
+
+.viewOn {
+  color: var(--paper-bright);
+  border-color: var(--cinnabar);
+  background: rgba(167, 71, 56, 0.18);
+}
+
+.resultRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+}
+
+.count {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.clear {
+  background: none;
+  border: none;
+  color: var(--cinnabar);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  padding: 8px 4px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.clear:hover {
+  color: var(--paper-bright);
+}
+
+@media (max-width: 640px) {
+  .filters {
+    padding: 16px;
+  }
+
+  .row {
+    gap: 12px;
+  }
+
+  .input,
+  .select {
+    width: 100%;
+  }
+
+  .field {
+    width: 100%;
+  }
+}

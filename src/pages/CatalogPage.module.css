@@ -10,6 +10,121 @@
   gap: 28px;
 }
 
+/* 紧凑列表视图 */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(143, 150, 141, 0.16);
+}
+
+.listRow {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 14px 6px;
+  border-bottom: 1px solid rgba(143, 150, 141, 0.16);
+}
+
+.listName {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  letter-spacing: 0.14em;
+  color: var(--paper);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.listName:hover {
+  color: var(--paper-bright);
+}
+
+.listPinyin {
+  margin-left: 10px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+
+.listMeta {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-muted);
+  min-width: 0;
+}
+
+.listStatus {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--old-gold);
+  border: 1px solid rgba(177, 139, 86, 0.5);
+  padding: 3px 10px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+/* 无结果状态 */
+.empty {
+  border: 1px solid rgba(143, 150, 141, 0.22);
+  border-radius: var(--radius-card);
+  background: rgba(23, 35, 31, 0.4);
+  padding: 64px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.emptySeal {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(143, 150, 141, 0.5);
+  color: var(--text-muted);
+  font-family: var(--font-serif);
+  font-size: 20px;
+  border-radius: 2px;
+}
+
+.emptyTitle {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  letter-spacing: 0.16em;
+  color: var(--paper);
+}
+
+.emptyDesc {
+  font-size: 14px;
+  color: var(--text-muted);
+  max-width: 30em;
+  line-height: 1.85;
+}
+
+.emptyAction {
+  margin-top: 10px;
+  min-height: 44px;
+  padding: 0 24px;
+  background: none;
+  border: 1px solid var(--old-gold);
+  color: var(--old-gold);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    background-color var(--duration-hover) var(--ease-soft);
+}
+
+.emptyAction:hover {
+  color: var(--ink-night);
+  background: var(--old-gold);
+}
+
 .progressNote {
   margin-top: 44px;
   font-size: 13px;
@@ -38,5 +153,10 @@
   .grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .listRow {
+    flex-wrap: wrap;
+    gap: 8px 14px;
   }
 }
