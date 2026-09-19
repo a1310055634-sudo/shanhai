@@ -3,9 +3,11 @@ import { XINGXING } from './xingxing'
 import { LUSHU } from './lushu'
 import { FENGHUANG } from './fenghuang'
 import { JIUWEIHU } from './jiuweihu'
+import { DIJIANG } from './dijiang'
+import { JINGWEI } from './jingwei'
 
 /** 全部条目。只有 recordStatus === 'verified' 的条目可进入推荐/探索/题库。 */
-export const ENTITIES: Entity[] = [XINGXING, LUSHU, FENGHUANG, JIUWEIHU]
+export const ENTITIES: Entity[] = [XINGXING, LUSHU, FENGHUANG, JIUWEIHU, DIJIANG, JINGWEI]
 
 export function getEntity(slug: string): Entity | undefined {
   return ENTITIES.find((e) => e.slug === slug)

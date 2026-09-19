@@ -111,6 +111,58 @@ export const LOCATIONS: Location[] = [
     modernHypotheses: [],
     recordStatus: 'verified',
   },
+  {
+    id: 'loc-tianshan',
+    canonicalName: '天山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-xishan',
+    sourceOrder: undefined,
+    sourceDirection: '又西',
+    sourceDistance: '三百五十里',
+    relatedEntityIds: ['ent-dijiang'],
+    citations: [
+      {
+        originalText: '又西三百五十里，曰天山，多金玉，有青雄黄。英水出焉，而西南流注于汤谷。',
+        chapter: '西山经',
+        section: '天山',
+        sourceEdition: '通行本(郭璞注—郝懿行笺疏系统),据 ctext.org 公开电子文本逐字核对',
+        publicUrl: 'https://ctext.org/shan-hai-jing/xi-shan-jing/zhs',
+        verificationNote:
+          '2026-09-20 经 ctext 公开文本逐字核对。其前一山为騩山(「又西一百九十里,曰騩山」);所在子经与整链次序待山川轮核定,故 sourceOrder 暂缺。',
+        verifiedAt: '2026-09-20',
+      },
+    ],
+    mapPosition: { x: 62, y: 22, region: '西山经' },
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    id: 'loc-fajiu',
+    canonicalName: '发鸠之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-beishan',
+    sourceOrder: undefined,
+    sourceDirection: '又北',
+    sourceDistance: '二百里',
+    relatedEntityIds: ['ent-jingwei'],
+    citations: [
+      {
+        originalText: '又北二百里，曰发鸠之山，其上多柘木。',
+        chapter: '北山经',
+        section: '发鸠之山',
+        sourceEdition: '通行本(郭璞注—郝懿行笺疏系统),据 ctext.org 公开电子文本逐字核对',
+        publicUrl: 'https://ctext.org/shan-hai-jing/bei-shan-jing/zhs',
+        verificationNote:
+          '2026-09-20 经 ctext 公开文本逐字核对。《北山经》之首为单狐之山(同日核对);发鸠之山所在子经与次序待山川轮核定,故 sourceOrder 暂缺。',
+        verifiedAt: '2026-09-20',
+      },
+    ],
+    mapPosition: { x: 24, y: 12, region: '北山经' },
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
 ]
 
 export function getLocation(id: string): Location | undefined {

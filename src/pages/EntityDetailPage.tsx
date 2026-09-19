@@ -4,8 +4,14 @@ import CitationBlock from '../components/CitationBlock'
 import EmptyState from '../components/EmptyState'
 import { ENTITIES, ENTITY_TYPE_LABELS, RECORD_STATUS_LABELS, getEntity } from '../data/entities'
 import { getLocation } from '../data/locations'
+import { CHAPTERS } from '../data/chapters'
 import type { Entity, Trait } from '../data/types'
 import styles from './EntityDetailPage.module.css'
+
+/** 篇章 id → 篇名(统一从已核验数据解析,不得硬编码)。 */
+function chapterName(id: string): string {
+  return CHAPTERS.find((c) => c.id === id)?.name ?? id
+}
 
 /** 形貌档案分区(规范第六节第 4 条);kind → 展示名。 */
 const TRAIT_SECTIONS: Array<{ kinds: Trait['kind'][]; label: string }> = [
@@ -58,11 +64,7 @@ export default function EntityDetailPage() {
           )}
           <p className={styles.summary}>{entity.summary}</p>
           <p className={styles.chapterLine}>
-            出自《山海经·
-            {entity.chapterIds
-              .map((id) => (id === 'ch-nanshan' ? '南山经' : id))
-              .join('、')}
-            》
+            出自《山海经·{entity.chapterIds.map(chapterName).join('、')}》
           </p>
         </div>
         <div className={styles.heroArt}>
@@ -237,8 +239,8 @@ export default function EntityDetailPage() {
               <div key={loc.id} className={styles.locationCard}>
                 <p className={styles.locationName}>{loc.canonicalName}</p>
                 <p className={styles.locationMeta}>
-                  《{loc.chapterId === 'ch-nanshan' ? '南山经' : loc.chapterId}》·
-                  原文顺序第 {loc.sourceOrder} 山
+                  《{chapterName(loc.chapterId)}》·
+                  原文顺序第 {loc.sourceOrder ?? '?'} 山
                   {loc.sourceDirection && ` · ${loc.sourceDirection}`}
                   {loc.sourceDistance && ` ${loc.sourceDistance}`}
                 </p>
