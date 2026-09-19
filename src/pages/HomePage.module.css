@@ -1,26 +1,13 @@
-.statusNote {
-  border-top: 1px solid rgba(143, 150, 141, 0.16);
-}
-
-.statusNote p {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 34px var(--space-page-x-desktop) 44px;
-  text-align: center;
-  font-size: 14px;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
-  line-height: 1.9;
+.flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-section-desktop);
+  padding: var(--space-section-desktop) 0;
 }
 
 @media (max-width: 900px) {
-  .statusNote p {
-    padding: 28px var(--space-page-x-tablet) 36px;
-  }
-}
-
-@media (max-width: 640px) {
-  .statusNote p {
-    padding: 24px var(--space-page-x-mobile) 32px;
+  .flow {
+    gap: var(--space-section-mobile);
+    padding: var(--space-section-mobile) 0;
   }
 }

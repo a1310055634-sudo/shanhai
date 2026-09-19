@@ -1,19 +1,24 @@
 import Hero from '../components/Hero'
+import TodayBeast from '../components/home/TodayBeast'
+import ExplorePaths from '../components/home/ExplorePaths'
+import ChapterIndex from '../components/home/ChapterIndex'
+import SourcePromise from '../components/home/SourcePromise'
 import styles from './HomePage.module.css'
 
 /**
- * 卷首首页:首屏「山海开卷」+ 编纂进度注记。
- * 今日异兽、探索路径、山川长卷、热门条目等章节随内容核验进度逐轮加入。
+ * 卷首首页:山海开卷 → 今日异兽 → 三条探索路径 → 十八篇入口 → 来源承诺。
+ * 「山川长卷预览」待 /atlas 概念地图就绪后接入(阶段 3)。
  */
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <section className={styles.statusNote} aria-label="编纂进度">
-        <p>
-          《山海万象录》正在逐卷编纂:卷首已成,图鉴、山川、古卷与谱系将于后续卷次依次开放,凡未经核验的资料一律标注存疑。
-        </p>
-      </section>
+      <div className={styles.flow}>
+        <TodayBeast />
+        <ExplorePaths />
+        <ChapterIndex />
+        <SourcePromise />
+      </div>
     </>
   )
 }
