@@ -33,3 +33,11 @@ tokens.css 定义宋体/黑体回退栈(Noto Serif SC → Songti SC → SimSun;N
 ## D-008 服务进程管理:按端口精准 kill(2026-09-20)
 
 实测教训:用 `taskkill //IM node.exe` 停 preview 会全量误杀。今后一律 `netstat -ano | grep <端口>` 找 PID 后 `taskkill //F //PID <pid>`。
+
+## D-009 路由提前:react-router 7 在阶段 1 引入(2026-09-20)
+
+原计划阶段 2 引入路由,但阶段 1 的导航若没有真实去向就是一堆死链(违反「导航无死链」验收项)。故 T1-01 一并完成 8 条顶层路由 + 占位页 + 404 页。带 `:slug` 的详情路由仍留在阶段 2 与数据一同落地。
+
+## D-010 浏览器实测为阶段 1 起的固定验收项(2026-09-20)
+
+IAB 浏览器实测两轮已各抓出一个纯代码检查发现不了的问题(390px 导航竖排折行、6px min-content 溢出)。此后凡改动视觉/布局的轮次,必须:1440/768/390 三档截图 + scrollWidth 溢出断言。IAB 无法回读历史 console,以「React 挂载 + evaluate 执行 + 资源全 200」佐证。

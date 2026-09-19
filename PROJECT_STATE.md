@@ -22,26 +22,30 @@ npm run preview    # 预览产物
 
 ## 当前阶段
 
-阶段 0(项目盘点)已完成,下一轮进入阶段 1(视觉基线)。
+阶段 1(视觉基线)进行中:T1-01 全站外壳 + 路由骨架已完成,下一轮 T1-02 首页首屏「山海开卷」。
 
 ## 已完成内容
 
 - Vite + React + TS 脚手架,`npm run build` 通过(tsc --noEmit + vite build)
 - 设计变量 `src/styles/tokens.css`(规范第九节全部色板/字体/间距/动效时长)
 - 基础排版 `src/styles/base.css`(含 prefers-reduced-motion 与焦点样式)
-- 占位卷首页 `src/pages/HomePage.tsx`
+- react-router 7.18.4:8 条顶层路由 + 404 页,SPA 回退验证
+- 全站外壳:Layout(跳转正文)/ Navigation(六项主导航+朱砂选中态)/ Footer(来源承诺摘要)/ EmptyState
+- 占位页体系:7 个区块占位 + 404,均有真实说明文字
 - 数据类型定义 `src/data/types.ts`(Entity / Citation / Location / ChapterMeta,按规范第八节)
 - 五个状态文件 + README
 
 ## 已知问题
 
 - 无 lint 配置(计划阶段 5 补 ESLint);无测试框架(阶段 6 评估)
-- 首页为占位页,视觉基线在阶段 1 实现
+- 首页为占位页,T1-02 实现首屏
+- 导航工具区(搜索/字体/动效开关)未实现(T2-01)
+- IAB 无法回读历史 console,浏览器验证以渲染结果+资源加载佐证(D-010)
 - 运维教训:停止 preview 等本地服务必须按端口查 PID 精准 kill,禁止 `taskkill //IM node.exe` 全量杀(会误伤其他进程)
 
 ## 最后成功验证时间
 
-2026-09-20 01:52(北京时间)——`npm run build` 通过;`vite preview` 下首页与 CSS 资源均 HTTP 200,标题渲染正确。
+2026-09-20 02:36(北京时间)——build 通过;9 条路由 HTTP 200;浏览器 1440/768/390 三档实测通过,无横向溢出、无坏图(修复 390px 导航折行与 6px min-content 溢出后复检确认)。
 
 ## 项目状态
 

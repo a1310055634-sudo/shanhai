@@ -6,7 +6,7 @@ import styles from './HomePage.module.css'
  */
 export default function HomePage() {
   return (
-    <main className={styles.page} id="main">
+    <div className={styles.page}>
       <header className={styles.masthead}>
         <p className={styles.volumeMark}>卷首 · 试刊</p>
         <h1 className={styles.title}>山海万象录</h1>
@@ -20,6 +20,6 @@ export default function HomePage() {
           当前为架构搭建阶段:图鉴、山川、古卷与谱系将随后续轮次逐层展开。
         </p>
       </section>
-    </main>
+    </div>
   )
 }

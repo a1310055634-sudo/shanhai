@@ -1,0 +1,19 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 120px var(--space-page-x-desktop) 0;
+}
+
+.mark {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  color: var(--old-gold);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 72px var(--space-page-x-mobile) 0;
+  }
+}

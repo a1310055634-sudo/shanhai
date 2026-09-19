@@ -1,0 +1,131 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(13, 19, 17, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(177, 139, 86, 0.28);
+}
+
+.inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-page-x-desktop);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.brandSeal {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--cinnabar);
+  color: var(--cinnabar);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  border-radius: 2px;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.brandName {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  letter-spacing: 0.18em;
+  color: var(--paper);
+}
+
+.brandSub {
+  font-size: 10px;
+  letter-spacing: 0.42em;
+  color: var(--text-muted);
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  display: block;
+  padding: 20px 14px;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  color: var(--text-on-dark);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    border-color var(--duration-hover) var(--ease-soft);
+}
+
+.navLink:hover {
+  color: var(--paper-bright);
+}
+
+.navLink.active {
+  color: var(--paper-bright);
+  border-bottom-color: var(--cinnabar);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 0 var(--space-page-x-tablet);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  /* 横向滚动收在 nav 容器内,防止 min-content 撑宽页面 */
+  .nav {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+  }
+
+  .navList {
+    width: max-content;
+    min-width: 100%;
+    gap: 0;
+  }
+
+  .navLink {
+    padding: 14px 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    padding: 0 var(--space-page-x-mobile);
+  }
+
+  .brandSub {
+    display: none;
+  }
+
+  .navLink {
+    padding: 12px 10px;
+    font-size: 15px;
+  }
+}

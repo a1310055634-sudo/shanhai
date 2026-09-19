@@ -1,0 +1,44 @@
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 88px var(--space-page-x-desktop) 0;
+}
+
+.pageHead {
+  margin-bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.volumeMark {
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  color: var(--old-gold);
+}
+
+.title {
+  font-size: clamp(30px, 4.4vw, 44px);
+  letter-spacing: 0.14em;
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.pinyin {
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 64px var(--space-page-x-tablet) 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 48px var(--space-page-x-mobile) 0;
+  }
+}

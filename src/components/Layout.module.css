@@ -1,0 +1,26 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.skipLink {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 100;
+  padding: 10px 18px;
+  background: var(--paper);
+  color: var(--text-on-light);
+  font-size: 15px;
+  border-radius: var(--radius-card);
+  transition: top var(--duration-hover) var(--ease-soft);
+}
+
+.skipLink:focus-visible {
+  top: 12px;
+}
