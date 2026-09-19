@@ -129,8 +129,8 @@ export interface ChapterMeta {
   name: string
   /** 通行本顺序 1—18 */
   order: number
-  /** 所属部分:山经 / 海经 / 大荒经 / 海内经 */
-  group: '山经' | '海经' | '大荒经' | '海内经'
+  /** 所属部分:山经 / 海外经 / 海内经 / 大荒经 / 海内经(终篇独立成篇) */
+  group: '山经' | '海外经' | '海内经' | '大荒经' | '海内经(终篇)'
   /** 本站进度:该篇是否已录入原文 */
   contentStatus: 'pending' | 'partial' | 'entered'
 }

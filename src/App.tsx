@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import PlaceholderPage from './pages/PlaceholderPage'
+import ChaptersPage from './pages/ChaptersPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
@@ -31,17 +32,7 @@ export default function App() {
             />
           }
         />
-        <Route
-          path="chapters"
-          element={
-            <PlaceholderPage
-              volumeMark="卷 · 古卷"
-              title="古籍篇章"
-              pinyin="GU JI PIAN ZHANG"
-              description="通行本《山海经》十八篇的目录与原文阅读。篇目次序以采用的底本为准,原文逐字录入并标注出处,开放前须经核验。"
-            />
-          }
-        />
+        <Route path="chapters" element={<ChaptersPage />} />
         <Route
           path="relations"
           element={
