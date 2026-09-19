@@ -1,0 +1,277 @@
+import { Link, useParams } from 'react-router-dom'
+import SectionHeading from '../components/SectionHeading'
+import CitationBlock from '../components/CitationBlock'
+import EmptyState from '../components/EmptyState'
+import { ENTITIES, ENTITY_TYPE_LABELS, RECORD_STATUS_LABELS, getEntity } from '../data/entities'
+import { getLocation } from '../data/locations'
+import type { Entity, Trait } from '../data/types'
+import styles from './EntityDetailPage.module.css'
+
+/** 形貌档案分区(规范第六节第 4 条);kind → 展示名。 */
+const TRAIT_SECTIONS: Array<{ kinds: Trait['kind'][]; label: string }> = [
+  { kinds: ['appearance'], label: '整体形态与部位' },
+  { kinds: ['behavior'], label: '行动方式' },
+  { kinds: ['sound'], label: '声音' },
+  { kinds: ['diet'], label: '食性' },
+]
+
+export default function EntityDetailPage() {
+  const { slug } = useParams()
+  const entity = slug ? getEntity(slug) : undefined
+
+  if (!entity) {
+    return (
+      <div className={styles.page}>
+        <EmptyState
+          title="此条尚未收录"
+          description="图鉴中没有找到对应的条目。它可能尚未录入,或名称有误。"
+          action={{ to: '/catalog', label: '返回图鉴' }}
+        />
+      </div>
+    )
+  }
+
+  const index = ENTITIES.findIndex((e) => e.id === entity.id)
+  const prev = index > 0 ? ENTITIES[index - 1] : undefined
+  const next = index >= 0 && index < ENTITIES.length - 1 ? ENTITIES[index + 1] : undefined
+  const locations = entity.locationIds
+    .map((id) => getLocation(id))
+    .filter((l): l is NonNullable<typeof l> => Boolean(l))
+
+  return (
+    <div className={styles.page}>
+      {/* 条目首屏:图像欣赏 + 文本信息 */}
+      <header className={styles.hero}>
+        <div className={styles.heroInfo}>
+          <p className={styles.kicker}>
+            <span className={styles.seal} aria-hidden="true">
+              {entity.canonicalName.slice(0, 1)}
+            </span>
+            <span>
+              {ENTITY_TYPE_LABELS[entity.type]} · {RECORD_STATUS_LABELS[entity.recordStatus]}
+            </span>
+          </p>
+          <h1 className={styles.name}>{entity.canonicalName}</h1>
+          <p className={styles.pinyin}>{entity.pinyin}</p>
+          {entity.aliases.length > 0 && (
+            <p className={styles.aliases}>异名:{entity.aliases.join('、')}</p>
+          )}
+          <p className={styles.summary}>{entity.summary}</p>
+          <p className={styles.chapterLine}>
+            出自《山海经·
+            {entity.chapterIds
+              .map((id) => (id === 'ch-nanshan' ? '南山经' : id))
+              .join('、')}
+            》
+          </p>
+        </div>
+        <div className={styles.heroArt}>
+          <div className={styles.artPanel} aria-hidden="true">
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+              <rect width="400" height="300" fill="#121b17" />
+              <path
+                d="M-10 240 C80 214 150 226 220 206 C290 188 350 208 410 194"
+                fill="none"
+                stroke="#587367"
+                strokeWidth="1.2"
+                opacity="0.45"
+              />
+              <path
+                d="M-10 262 C90 242 170 254 260 234 C320 222 370 234 410 226"
+                fill="none"
+                stroke="#31545A"
+                strokeWidth="1.2"
+                opacity="0.55"
+              />
+              <circle cx="320" cy="70" r="36" fill="none" stroke="#B18B56" strokeWidth="0.9" opacity="0.5" />
+            </svg>
+            <span className={styles.artSeal}>{entity.canonicalName.slice(0, 1)}</span>
+            <span className={styles.artNote}>据原文描述艺术演绎</span>
+          </div>
+        </div>
+      </header>
+
+      {/* 原文证据 */}
+      <section className={styles.section} aria-labelledby="sec-citations">
+        <SectionHeading index="考" title="原文证据" subtitle="YUAN WEN ZHENG JU" />
+        <div className={styles.citationList} id="sec-citations">
+          {entity.citations.map((c, i) => (
+            <CitationBlock key={i} citation={c} anchor={`cite-${i}`} />
+          ))}
+        </div>
+      </section>
+
+      {/* 本站释义 */}
+      <section className={styles.section} aria-labelledby="sec-explain">
+        <SectionHeading
+          index="释"
+          title="本站释义"
+          subtitle="BEN ZHAN SHI YI"
+          note="以下为本站以现代汉语撰写的理解,不代表学术定论;不确定处均用限定词标出。"
+        />
+        <div id="sec-explain">
+          <p className={styles.explain}>{entity.modernExplanation}</p>
+          {entity.disputedReadings.length > 0 && (
+            <div className={styles.disputed}>
+              <p className={styles.disputedTitle}>异文与存疑</p>
+              <ul>
+                {entity.disputedReadings.map((d, i) => (
+                  <li key={i}>{d}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* 形貌档案 */}
+      <section className={styles.section} aria-labelledby="sec-traits">
+        <SectionHeading
+          index="形"
+          title="形貌档案"
+          subtitle="XING MAO DANG AN"
+          note="仅收录原文可确认的信息,每项可回看对应原文;原文没有记载的,如实标注「原文未载」。"
+        />
+        <div className={styles.traitTable} id="sec-traits">
+          {TRAIT_SECTIONS.map(({ kinds, label }) => {
+            const traits: Trait[] = entity[`${kinds[0]}Traits` as keyof Entity] as Trait[]
+            return (
+              <div key={label} className={styles.traitRow}>
+                <p className={styles.traitKind}>{label}</p>
+                {traits.length > 0 ? (
+                  <ul className={styles.traitList}>
+                    {traits.map((t, i) => (
+                      <li key={i}>
+                        <span>{t.text}</span>
+                        <a className={styles.backLink} href={`#cite-${t.citationIndex}`}>
+                          回看原文
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className={styles.notRecorded}>原文未载</p>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* 能力与征兆 */}
+      <section className={styles.section} aria-labelledby="sec-abilities">
+        <SectionHeading
+          index="效"
+          title="能力与征兆"
+          subtitle="NENG LI YU ZHENG ZHAO"
+          note="只呈现原文记述;不含任何后世文艺或网络设定。"
+        />
+        <div className={styles.twoCol} id="sec-abilities">
+          <div className={styles.col}>
+            <p className={styles.colTitle}>能力与记述</p>
+            {entity.abilities.length > 0 ? (
+              <ul className={styles.noteList}>
+                {entity.abilities.map((a, i) => (
+                  <li key={i}>
+                    <span>{a.text}</span>
+                    <a className={styles.backLink} href={`#cite-${a.citationIndex}`}>
+                      回看原文
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className={styles.notRecorded}>原文未载</p>
+            )}
+          </div>
+          <div className={styles.col}>
+            <p className={styles.colTitle}>出现之征</p>
+            {entity.omens.length > 0 ? (
+              <ul className={styles.noteList}>
+                {entity.omens.map((o, i) => (
+                  <li key={i}>
+                    <span>{o.text}</span>
+                    <a className={styles.backLink} href={`#cite-${o.citationIndex}`}>
+                      回看原文
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className={styles.notRecorded}>原文未载</p>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* 地域关系 */}
+      <section className={styles.section} aria-labelledby="sec-location">
+        <SectionHeading
+          index="地"
+          title="地域关系"
+          subtitle="DI YU GUAN XI"
+          note="以下为古籍内部的叙事关系;概念地图坐标与本站呈现用,非现实地理定位。"
+        />
+        <div className={styles.locationList} id="sec-location">
+          {locations.map((loc) => {
+            const others = ENTITIES.filter(
+              (e) => e.id !== entity.id && e.locationIds.includes(loc.id),
+            )
+            return (
+              <div key={loc.id} className={styles.locationCard}>
+                <p className={styles.locationName}>{loc.canonicalName}</p>
+                <p className={styles.locationMeta}>
+                  《{loc.chapterId === 'ch-nanshan' ? '南山经' : loc.chapterId}》·
+                  原文顺序第 {loc.sourceOrder} 山
+                  {loc.sourceDirection && ` · ${loc.sourceDirection}`}
+                  {loc.sourceDistance && ` ${loc.sourceDistance}`}
+                </p>
+                <p className={styles.locationNote}>
+                  概念地图:南山经区域(坐标仅为本站呈现用)
+                </p>
+                {loc.citations[0] && (
+                  <blockquote className={styles.locationCite}>
+                    {loc.citations[0].originalText}
+                  </blockquote>
+                )}
+                <p className={styles.locationOthers}>
+                  {others.length > 0
+                    ? `同地其他条目:${others.map((o) => o.canonicalName).join('、')}`
+                    : '暂无同地其他条目'}
+                </p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* 相关探索 */}
+      <nav className={styles.related} aria-label="相关探索">
+        <div className={styles.relatedRow}>
+          {prev ? (
+            <Link className={styles.relatedLink} to={`/catalog/${prev.slug}`}>
+              ← 上一篇 · {prev.canonicalName}
+            </Link>
+          ) : (
+            <span />
+          )}
+          {next ? (
+            <Link className={styles.relatedLink} to={`/catalog/${next.slug}`}>
+              下一篇 · {next.canonicalName} →
+            </Link>
+          ) : (
+            <span />
+          )}
+        </div>
+        <div className={styles.relatedRow}>
+          <Link className={styles.relatedLink} to="/catalog">
+            返回图鉴
+          </Link>
+          <Link className={styles.relatedLink} to="/explore">
+            随机探索
+          </Link>
+        </div>
+      </nav>
+    </div>
+  )
+}

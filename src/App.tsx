@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import PlaceholderPage from './pages/PlaceholderPage'
 import ChaptersPage from './pages/ChaptersPage'
 import CatalogPage from './pages/CatalogPage'
+import EntityDetailPage from './pages/EntityDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="catalog" element={<CatalogPage />} />
+        <Route path="catalog/:slug" element={<EntityDetailPage />} />
         <Route
           path="atlas"
           element={

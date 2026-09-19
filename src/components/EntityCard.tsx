@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useFavorites } from '../hooks/useFavorites'
 import type { Entity } from '../data/types'
 import { CHAPTERS } from '../data/chapters'
@@ -7,8 +8,6 @@ import styles from './EntityCard.module.css'
 interface EntityCardProps {
   entity: Entity
   locationName?: string
-  /** 详情页开放前禁用链接,只作展示 */
-  detailEnabled?: boolean
 }
 
 /**
@@ -18,7 +17,6 @@ interface EntityCardProps {
 export default function EntityCard({
   entity,
   locationName,
-  detailEnabled = false,
 }: EntityCardProps) {
   const { toggle, isFavorite } = useFavorites()
   const favorited = isFavorite(entity.id)
@@ -76,13 +74,13 @@ export default function EntityCard({
 
       <div className={styles.body}>
         <div className={styles.titleRow}>
-          {detailEnabled ? (
-            <a className={styles.titleLink} href={`/catalog/${entity.slug}`}>
-              {title}
-            </a>
-          ) : (
-            <div className={styles.titlePlain}>{title}</div>
-          )}
+          <Link
+            className={styles.titleLink}
+            to={`/catalog/${entity.slug}`}
+            aria-label={`${entity.canonicalName},查看条目详情`}
+          >
+            {title}
+          </Link>
           <button
             type="button"
             className={favorited ? `${styles.fav} ${styles.favOn}` : styles.fav}
