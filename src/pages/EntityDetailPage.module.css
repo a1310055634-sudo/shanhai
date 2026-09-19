@@ -259,6 +259,41 @@
   line-height: 1.9;
 }
 
+/* 后世流变:与原始记载明显分隔 */
+.receptionFrame {
+  border: 1px dashed rgba(143, 150, 141, 0.45);
+  border-radius: var(--radius-card);
+  padding: 26px 28px 24px;
+  background: rgba(19, 28, 24, 0.6);
+}
+
+.receptionTag {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.receptionItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.receptionEra {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: var(--old-gold);
+}
+
+.receptionText {
+  font-size: 15px;
+  color: var(--text-on-dark);
+  line-height: 1.95;
+  max-width: 44em;
+}
+
 /* 地域关系 */
 .locationList {
   display: grid;

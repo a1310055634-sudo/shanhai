@@ -61,6 +61,12 @@ export interface SourceNote {
   citationIndex: number
 }
 
+/** 后世流变条目(与原始记载严格分隔,均为本站编辑说明)。 */
+export interface LaterReception {
+  era: string
+  text: string
+}
+
 export interface Entity {
   id: string
   slug: string
@@ -91,6 +97,8 @@ export interface Entity {
   recordStatus: RecordStatus
   /** 插画说明;均为艺术演绎或原创 SVG */
   illustration?: { kind: 'svg' | 'none'; alt: string; note?: string }
+  /** 后世流变(本站编辑说明;无可靠把握时不填) */
+  laterReception?: LaterReception[]
   updatedAt: string
 }
 
@@ -107,8 +115,8 @@ export interface Location {
   aliases: string[]
   type: 'mountain' | 'river' | 'sea' | 'plain' | 'nation' | 'wasteland'
   chapterId: string
-  /** 原文中的出场顺序 */
-  sourceOrder: number
+  /** 原文中的出场顺序(所在子经内的次序;未能核验整链时暂缺) */
+  sourceOrder?: number
   previousLocationId?: string
   nextLocationId?: string
   /** 原文记载的方位,如「曰……之山」前的行向描述 */

@@ -204,6 +204,22 @@ export default function EntityDetailPage() {
         </div>
       </section>
 
+      {/* 后世流变:与原始记载明显分隔(规范第六节第 8 条) */}
+      {entity.laterReception && entity.laterReception.length > 0 && (
+        <section className={styles.section} aria-labelledby="sec-reception">
+          <div className={styles.receptionFrame} id="sec-reception">
+            <p className={styles.receptionTag}>本站编辑说明 · 与上方《山海经》原始记载相区分</p>
+            <SectionHeading index="流" title="后世流变" subtitle="HOU SHI LIU BIAN" />
+            {entity.laterReception.map((r, i) => (
+              <div key={i} className={styles.receptionItem}>
+                <p className={styles.receptionEra}>{r.era}</p>
+                <p className={styles.receptionText}>{r.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* 地域关系 */}
       <section className={styles.section} aria-labelledby="sec-location">
         <SectionHeading
