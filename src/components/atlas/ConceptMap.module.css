@@ -1,0 +1,46 @@
+.mapWrap {
+  border: 1px solid rgba(88, 115, 103, 0.4);
+  border-radius: var(--radius-card);
+  background:
+    radial-gradient(1200px 500px at 50% 40%, rgba(23, 35, 31, 0.6), rgba(13, 19, 17, 0.9));
+  overflow: hidden;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nodeDot {
+  transition: r var(--duration-hover) var(--ease-soft);
+}
+
+.node:hover .nodeDot {
+  r: 8;
+}
+
+.node:hover .nodeLabel {
+  fill: var(--paper-bright);
+}
+
+.node a {
+  cursor: pointer;
+  outline: none;
+}
+
+.node a:focus-visible circle {
+  stroke: var(--old-gold);
+  stroke-width: 2;
+}
+
+.disclaimer {
+  margin: 0;
+  padding: 12px 18px;
+  border-top: 1px solid rgba(88, 115, 103, 0.3);
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  line-height: 1.8;
+  background: rgba(13, 19, 17, 0.5);
+}

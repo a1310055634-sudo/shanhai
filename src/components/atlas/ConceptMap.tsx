@@ -1,0 +1,178 @@
+import { LOCATIONS } from '../../data/locations'
+import { ENTITIES } from '../../data/entities'
+import styles from './ConceptMap.module.css'
+
+/**
+ * 古籍内部叙事概念地图(规范第七节):
+ * 分区 + 山川节点 + 已核验的相邻链条;坐标为本站概念坐标,非现实经纬度。
+ * 只绘制已逐字核验的相邻关系(泰器—槐江—昆仑),不虚构连线。
+ */
+export const VERIFIED_LINKS: Array<{
+  from: string
+  to: string
+  label: string
+}> = [
+  { from: 'loc-taiqi', to: 'loc-huaijiang', label: '又西三百二十里' },
+  { from: 'loc-huaijiang', to: 'loc-kunlun', label: '西南四百里' },
+]
+
+const REGION_LABELS: Array<{ region: string; x: number; y: number }> = [
+  { region: '北山经', x: 150, y: 52 },
+  { region: '海外北经', x: 420, y: 40 },
+  { region: '西山经', x: 555, y: 96 },
+  { region: '大荒东经', x: 845, y: 210 },
+  { region: '南山经', x: 235, y: 585 },
+]
+
+const REGION_FILLS: Record<string, string> = {
+  南山经: 'rgba(88, 115, 103, 0.14)',
+  西山经: 'rgba(88, 115, 103, 0.11)',
+  北山经: 'rgba(88, 115, 103, 0.09)',
+  海外北经: 'rgba(88, 115, 103, 0.08)',
+  大荒东经: 'rgba(88, 115, 103, 0.12)',
+}
+
+export default function ConceptMap() {
+  const pos = (id: string) => {
+    const loc = LOCATIONS.find((l) => l.id === id)!
+    return { x: loc.mapPosition.x * 10, y: loc.mapPosition.y * 6.2, loc }
+  }
+
+  return (
+    <div className={styles.mapWrap}>
+      <svg
+        viewBox="0 0 1000 620"
+        preserveAspectRatio="xMidYMid meet"
+        className={styles.map}
+        role="img"
+        aria-label="山海经古籍内部叙事概念地图:十二座已核验山川节点的分区示意"
+      >
+        {/* 等高线底纹(装饰) */}
+        <g fill="none" stroke="#31545A" strokeWidth="1">
+          <path d="M-20 140 C160 96 340 150 520 112 C700 76 860 128 1020 96" opacity="0.16" />
+          <path d="M-20 210 C180 170 360 216 540 184 C720 152 880 200 1020 172" opacity="0.13" />
+          <path d="M-20 330 C200 292 380 338 560 306 C740 274 900 320 1020 292" opacity="0.1" />
+          <path d="M-20 470 C220 430 400 478 580 448 C760 418 920 462 1020 436" opacity="0.08" />
+          <path d="M-20 560 C240 522 420 566 600 538 C780 510 940 552 1020 528" opacity="0.06" />
+        </g>
+        {/* 雾层(装饰) */}
+        <ellipse cx="500" cy="330" rx="470" ry="130" fill="#D9D6C9" opacity="0.025" />
+        <ellipse cx="260" cy="520" rx="220" ry="80" fill="#D9D6C9" opacity="0.03" />
+
+        {/* 分区 */}
+        {(
+          [
+            { region: '南山经', x: 30, y: 360, w: 700, h: 240 },
+            { region: '西山经', x: 520, y: 100, w: 190, h: 130 },
+            { region: '北山经', x: 60, y: 40, w: 190, h: 90 },
+            { region: '海外北经', x: 330, y: 26, w: 180, h: 80 },
+            { region: '大荒东经', x: 760, y: 20, w: 210, h: 400 },
+          ] as const
+        ).map((z) => (
+          <g key={z.region}>
+            <rect
+              x={z.x}
+              y={z.y}
+              width={z.w}
+              height={z.h}
+              rx="8"
+              fill={REGION_FILLS[z.region]}
+              stroke="#587367"
+              strokeOpacity="0.25"
+              strokeDasharray="4 5"
+            />
+          </g>
+        ))}
+        {REGION_LABELS.map((r) => (
+          <text
+            key={r.region}
+            x={r.x}
+            y={r.y}
+            textAnchor="middle"
+            fill="#B18B56"
+            fontSize="15"
+            letterSpacing="4"
+            fontFamily="var(--font-serif)"
+          >
+            {r.region}
+          </text>
+        ))}
+
+        {/* 已核验相邻链条 */}
+        {VERIFIED_LINKS.map((link) => {
+          const a = pos(link.from)
+          const b = pos(link.to)
+          return (
+            <g key={`${link.from}-${link.to}`}>
+              <line
+                x1={a.x}
+                y1={a.y}
+                x2={b.x}
+                y2={b.y}
+                stroke="#B18B56"
+                strokeWidth="1.2"
+                strokeDasharray="5 4"
+                opacity="0.7"
+              />
+              <text
+                x={(a.x + b.x) / 2 + 6}
+                y={(a.y + b.y) / 2 - 5}
+                fill="#B18B56"
+                fontSize="11"
+                opacity="0.85"
+              >
+                {link.label}
+              </text>
+            </g>
+          )
+        })}
+
+        {/* 山川节点 → 关联条目详情 */}
+        {LOCATIONS.map((loc) => {
+          const p = { x: loc.mapPosition.x * 10, y: loc.mapPosition.y * 6.2 }
+          const entity = ENTITIES.find((e) => loc.relatedEntityIds.includes(e.id))
+          const href = entity ? `/catalog/${entity.slug}` : undefined
+          return (
+            <g key={loc.id} className={styles.node}>
+              {href ? (
+                <a href={href}>
+                  <title>{`${loc.canonicalName}——查看关联条目`}</title>
+                  <circle cx={p.x} cy={p.y} r="13" fill="transparent" stroke="none" />
+                  <circle
+                    cx={p.x}
+                    cy={p.y}
+                    r="6"
+                    fill="#587367"
+                    stroke="#F3EEE2"
+                    strokeWidth="1"
+                    className={styles.nodeDot}
+                  />
+                  <text
+                    x={p.x}
+                    y={p.y + 22}
+                    textAnchor="middle"
+                    fill="#D9D6C9"
+                    fontSize="13"
+                    className={styles.nodeLabel}
+                  >
+                    {loc.canonicalName}
+                  </text>
+                </a>
+              ) : (
+                <>
+                  <circle cx={p.x} cy={p.y} r="6" fill="#587367" />
+                  <text x={p.x} y={p.y + 22} textAnchor="middle" fill="#D9D6C9" fontSize="13">
+                    {loc.canonicalName}
+                  </text>
+                </>
+              )}
+            </g>
+          )
+        })}
+      </svg>
+      <p className={styles.disclaimer}>
+        《山海经》地理与现实地理的对应关系存在诸多争议。本图用于呈现古籍内部的叙事关系,并非现代地理定位。
+      </p>
+    </div>
+  )
+}

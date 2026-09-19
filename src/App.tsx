@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import PlaceholderPage from './pages/PlaceholderPage'
 import ChaptersPage from './pages/ChaptersPage'
+import AtlasPage from './pages/AtlasPage'
 import CatalogPage from './pages/CatalogPage'
 import EntityDetailPage from './pages/EntityDetailPage'
 import NotFoundPage from './pages/NotFoundPage'
@@ -14,17 +15,7 @@ export default function App() {
         <Route index element={<HomePage />} />
         <Route path="catalog" element={<CatalogPage />} />
         <Route path="catalog/:slug" element={<EntityDetailPage />} />
-        <Route
-          path="atlas"
-          element={
-            <PlaceholderPage
-              volumeMark="卷 · 山川"
-              title="山川地域"
-              pinyin="SHAN CHUAN DI YU"
-              description="依《山海经》五山经与海经区域绘制的古籍内部叙事地图。山川与现实地理的对应存在诸多争议,本卷将只呈现古籍内部的方位与次序。"
-            />
-          }
-        />
+        <Route path="atlas" element={<AtlasPage />} />
         <Route path="chapters" element={<ChaptersPage />} />
         <Route
           path="relations"
