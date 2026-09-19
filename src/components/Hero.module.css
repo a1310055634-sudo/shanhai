@@ -1,0 +1,297 @@
+.hero {
+  position: relative;
+  min-height: max(92vh, 640px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    #0d1311 0%,
+    #0f1714 38%,
+    #14211c 66%,
+    #1a2a24 84%,
+    #22352c 100%
+  );
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+}
+
+.layer {
+  position: absolute;
+  inset: -26px; /* 大于最大视差位移,防止边缘露底 */
+  will-change: transform;
+}
+
+/* 景深位移:--depth 为深度系数(px),translate 只消费 --px/--py */
+.lStars {
+  --depth: 6;
+}
+
+.lFar {
+  --depth: 10;
+}
+
+.lClouds {
+  --depth: 13;
+}
+
+.lWater {
+  --depth: 15;
+}
+
+.lMid {
+  --depth: 18;
+}
+
+.layer {
+  transform: translate3d(
+    calc(var(--px, 0) * var(--depth, 0) * 1px),
+    calc(var(--py, 0) * var(--depth, 0) * 0.55px),
+    0
+  );
+}
+
+.beastBox {
+  position: absolute;
+  right: 7%;
+  bottom: 8.5%;
+  width: min(43vw, 540px);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 120px var(--space-page-x-desktop) 140px;
+  animation: rise-in var(--duration-reveal) var(--ease-soft) both;
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.seal {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--cinnabar);
+  color: var(--cinnabar);
+  font-family: var(--font-serif);
+  font-size: 21px;
+  border-radius: 2px;
+  background: rgba(13, 19, 17, 0.55);
+}
+
+.kickerText {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  letter-spacing: 0.34em;
+  color: var(--old-gold);
+}
+
+.title {
+  font-size: clamp(42px, 6.2vw, 82px);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.28;
+  color: var(--paper);
+  max-width: 12em;
+  text-shadow: 0 2px 24px rgba(13, 19, 17, 0.65);
+}
+
+.subtitle {
+  margin-top: 26px;
+  font-size: clamp(16px, 1.6vw, 19px);
+  letter-spacing: 0.14em;
+  color: var(--text-on-dark);
+  max-width: 30em;
+}
+
+.actions {
+  margin-top: 46px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 38px;
+  background: var(--cinnabar);
+  color: var(--paper-bright);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  letter-spacing: 0.32em;
+  text-indent: 0.32em; /* 视觉居中补偿字距 */
+  text-decoration: none;
+  border-radius: 2px;
+  transition:
+    background-color var(--duration-hover) var(--ease-soft),
+    transform var(--duration-hover) var(--ease-soft);
+}
+
+.primary:hover {
+  background: #b85545;
+}
+
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 34px;
+  border: 1px solid var(--old-gold);
+  color: var(--old-gold);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  text-decoration: none;
+  border-radius: 2px;
+  background: rgba(13, 19, 17, 0.35);
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    background-color var(--duration-hover) var(--ease-soft);
+}
+
+.ghost:hover {
+  color: var(--ink-night);
+  background: var(--old-gold);
+}
+
+.caption {
+  position: absolute;
+  z-index: 2;
+  right: var(--space-page-x-desktop);
+  bottom: 22px;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--text-muted);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 云海漂移:极慢、仅 transform */
+.lClouds .drift-slow {
+  animation: drift 84s ease-in-out infinite alternate;
+}
+
+.lClouds .drift-slower {
+  animation: drift 118s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(-16px);
+  }
+  to {
+    transform: translateX(16px);
+  }
+}
+
+/* 星辰微闪:仅 opacity */
+.twinkle {
+  animation: twinkle 7s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lClouds .drift-slow,
+  .lClouds .drift-slower,
+  .twinkle,
+  .content {
+    animation: none;
+  }
+
+  .layer {
+    transform: none;
+  }
+}
+
+@media (max-width: 900px) {
+  /* 窄屏:降低视差幅度,减少层(隐藏云海) */
+  .lStars {
+    --depth: 3;
+  }
+
+  .lFar {
+    --depth: 5;
+  }
+
+  .lWater {
+    --depth: 7;
+  }
+
+  .lMid {
+    --depth: 9;
+  }
+
+  .lClouds {
+    display: none;
+  }
+
+  .content {
+    padding: 96px var(--space-page-x-tablet) 130px;
+  }
+
+  .beastBox {
+    width: min(56vw, 460px);
+    right: 4%;
+  }
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 72px var(--space-page-x-mobile) 120px;
+  }
+
+  .beastBox {
+    width: 72vw;
+    right: 2%;
+    bottom: 7%;
+    opacity: 0.9;
+  }
+
+  .actions {
+    gap: 12px;
+  }
+
+  .primary,
+  .ghost {
+    flex: 1 1 100%;
+  }
+
+  .caption {
+    right: var(--space-page-x-mobile);
+    letter-spacing: 0.2em;
+  }
+}

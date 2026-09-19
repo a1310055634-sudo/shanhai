@@ -1,25 +1,19 @@
+import Hero from '../components/Hero'
 import styles from './HomePage.module.css'
 
 /**
- * 阶段 0 占位卷首:仅确认容器、字体与配色链路可用。
- * 正式首页(山海开卷首屏、今日异兽、三条探索路径等)在阶段 1/2 实现。
+ * 卷首首页:首屏「山海开卷」+ 编纂进度注记。
+ * 今日异兽、探索路径、山川长卷、热门条目等章节随内容核验进度逐轮加入。
  */
 export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <header className={styles.masthead}>
-        <p className={styles.volumeMark}>卷首 · 试刊</p>
-        <h1 className={styles.title}>山海万象录</h1>
-        <p className={styles.subtitle}>SHAN HAI ARCHIVE</p>
-      </header>
-      <section className={styles.note}>
+    <>
+      <Hero />
+      <section className={styles.statusNote} aria-label="编纂进度">
         <p>
-          本站是一部可以阅读、检索和探索的《山海经》数字异闻志,正在逐卷编纂之中。
-        </p>
-        <p className={styles.muted}>
-          当前为架构搭建阶段:图鉴、山川、古卷与谱系将随后续轮次逐层展开。
+          《山海万象录》正在逐卷编纂:卷首已成,图鉴、山川、古卷与谱系将于后续卷次依次开放,凡未经核验的资料一律标注存疑。
         </p>
       </section>
-    </div>
+    </>
   )
 }
