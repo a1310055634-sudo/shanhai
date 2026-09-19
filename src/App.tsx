@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import PlaceholderPage from './pages/PlaceholderPage'
 import ChaptersPage from './pages/ChaptersPage'
+import CatalogPage from './pages/CatalogPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
@@ -10,17 +11,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route
-          path="catalog"
-          element={
-            <PlaceholderPage
-              volumeMark="卷 · 异兽"
-              title="万物图鉴"
-              pinyin="WAN WU TU JIAN"
-              description="异兽、鸟类、水族、神祇、国族、草木、矿物与器物的总目。每个条目须经原文逐字核验后开放,首批条目正在整理中。"
-            />
-          }
-        />
+        <Route path="catalog" element={<CatalogPage />} />
         <Route
           path="atlas"
           element={

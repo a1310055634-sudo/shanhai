@@ -22,30 +22,29 @@ npm run preview    # 预览产物
 
 ## 当前阶段
 
-阶段 2(核心浏览路径)进行中:十八篇目录已核验落地(T2-02),下一轮 T2-03 首批核验条目 + 图鉴列表页。
+阶段 2(核心浏览路径)进行中:首批 2 条核验条目 + 图鉴页已落地(T2-03),下一轮 T2-05 条目详情页 + T2-06 第二批条目。
 
 ## 已完成内容
 
-- Vite + React + TS 脚手架,`npm run build` 通过(tsc --noEmit + vite build)
-- 设计变量 `src/styles/tokens.css`、基础排版 `src/styles/base.css`
-- react-router 7.18.4:8 条顶层路由 + 404,SPA 回退验证
-- 全站外壳:Layout / Navigation / Footer / EmptyState
+- Vite + React + TS 脚手架、设计变量、基础排版、react-router 8 路由 + 404
+- 全站外壳:Layout / Navigation / Footer / EmptyState / SectionHeading
 - 首屏「山海开卷」:五层景深 + 指针视差 + 动效降级 + 九尾异兽剪影
-- **十八篇目录**:篇目次序经 ctext 公开文本核对定稿;chapters.ts 数据(18 篇 + 分组 + 拼音);/chapters 真实目录页(未录入篇目如实标注「待录入」)
-- 通用组件:SectionHeading(章节标题体系)
-- 数据类型:`src/data/types.ts`(Entity / Citation / Location / ChapterMeta)
+- 十八篇目录(/chapters,篇目次序经 ctext 核对)
+- **首批核验条目(/catalog)**:狌狌、鹿蜀(原文四段逐字核对)+ 招摇之山、杻阳之山两条 Location;EntityCard(4:5 线描插画区/原文特征引用/状态徽标/收藏);localStorage 收藏可用
+- 数据类型:Entity / Citation / Location / ChapterMeta
 - 五个状态文件 + README
 
 ## 已知问题
 
-- 无 lint(阶段 5)/ 无测试(阶段 6);原文内容尚未录入(全部「待录入」)
-- IAB 截图竞态:goto/reload 后首拍可能为未完成帧——以 DOM 断言为准,重拍复验(D-011)
-- IAB 无法回读历史 console,以渲染 + 资源加载佐证(D-010)
-- 运维:杀本地服务必须按端口 PID,禁止全量 kill node.exe(D-008)
+- 无 lint(阶段 5)/ 无测试(阶段 6);条目 2/12,原文正文未录入篇章阅读
+- 条目插画为统一线描占位;详情页未开放(卡片暂无链接,不算死链)
+- IAB 点击:getByRole 偶发 3s 超时,先 scrollIntoView + evaluate .click() 兜底(第 5 轮实测)
+- IAB 截图竞态与 console 回读限制(D-010/D-011)
+- 运维:按端口 PID 杀服务(D-008);构建走 D: 真实路径(D-003)
 
 ## 最后成功验证时间
 
-2026-09-20 03:26(北京时间)——build 通过;/chapters DOM 断言(5 组/18 篇/无溢出)通过;1440 与 390 截图复验正常。
+2026-09-20 04:03(北京时间)——build 通过;/catalog DOM 断言(2 卡/徽标/收藏按钮/无溢出)通过;收藏交互与 localStorage 验证通过;1440 与 390 截图正常。
 
 ## 项目状态
 
