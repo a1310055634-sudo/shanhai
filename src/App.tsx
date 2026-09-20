@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import PlaceholderPage from './pages/PlaceholderPage'
 import ChaptersPage from './pages/ChaptersPage'
+import ChapterPage from './pages/ChapterPage'
 import AtlasPage from './pages/AtlasPage'
 import CatalogPage from './pages/CatalogPage'
 import EntityDetailPage from './pages/EntityDetailPage'
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="catalog/:slug" element={<EntityDetailPage />} />
         <Route path="atlas" element={<AtlasPage />} />
         <Route path="chapters" element={<ChaptersPage />} />
+        <Route path="chapters/:slug" element={<ChapterPage />} />
         <Route
           path="relations"
           element={

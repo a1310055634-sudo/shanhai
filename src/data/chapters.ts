@@ -7,7 +7,7 @@ import type { ChapterMeta } from './types'
  * 详见 CONTENT_SOURCES.md。
  */
 export const CHAPTERS: ChapterMeta[] = [
-  { id: 'ch-nanshan', slug: 'nanshan-jing', name: '南山经', order: 1, group: '山经', contentStatus: 'pending' },
+  { id: 'ch-nanshan', slug: 'nanshan-jing', name: '南山经', order: 1, group: '山经', contentStatus: 'partial' },
   { id: 'ch-xishan', slug: 'xishan-jing', name: '西山经', order: 2, group: '山经', contentStatus: 'pending' },
   { id: 'ch-beishan', slug: 'beishan-jing', name: '北山经', order: 3, group: '山经', contentStatus: 'pending' },
   { id: 'ch-dongshan', slug: 'dongshan-jing', name: '东山经', order: 4, group: '山经', contentStatus: 'pending' },

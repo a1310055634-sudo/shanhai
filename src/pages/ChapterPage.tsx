@@ -1,0 +1,176 @@
+import { useMemo, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { CHAPTERS, CHAPTER_PINYIN } from '../data/chapters'
+import { CHAPTER_TEXTS, GLOSSARY, type ChapterSegment } from '../data/chapterTexts'
+import { ENTITIES } from '../data/entities'
+import EmptyState from '../components/EmptyState'
+import styles from './ChapterPage.module.css'
+
+/** 生僻字注音:按词典把字包成 ruby。 */
+function annotate(text: string, on: boolean) {
+  if (!on) return text
+  const chars = Object.keys(GLOSSARY)
+  const re = new RegExp(`[${chars.join('')}]`, 'g')
+  const parts = text.split(re)
+  const matched = text.match(re) ?? []
+  return parts.flatMap((part, i) => {
+    const ruby = matched[i]
+      ? (
+          <ruby key={`r${i}`}>
+            {matched[i]}
+            <rt>{GLOSSARY[matched[i]].pinyin}</rt>
+          </ruby>
+        )
+      : null
+    return [part, ruby].filter(Boolean)
+  })
+}
+
+/** 篇章阅读器(规范第七节):分段、进度、注音开关、复制带出处、上下篇。 */
+export default function ChapterPage() {
+  const { slug } = useParams()
+  const chapter = CHAPTERS.find((c) => c.slug === slug)
+  const [annotateOn, setAnnotateOn] = useState(true)
+  const [copied, setCopied] = useState<string | null>(null)
+
+  const chapterText = useMemo(
+    () => (slug ? CHAPTER_TEXTS[slug] : undefined),
+    [slug],
+  )
+
+  if (!chapter || !chapterText) {
+    return (
+      <div className={styles.page}>
+        <EmptyState
+          title="此卷尚未开放"
+          description="该篇原文尚未录入,开放前须经逐字核验。请先阅读已开放的篇章。"
+          action={{ to: '/chapters', label: '返回篇章目录' }}
+        />
+      </div>
+    )
+  }
+
+  const order = CHAPTERS.indexOf(chapter)
+  const prev = order > 0 ? CHAPTERS[order - 1] : undefined
+  const next = order < CHAPTERS.length - 1 ? CHAPTERS[order + 1] : undefined
+  const linkedEntities = ENTITIES.filter((e) => e.chapterIds.includes(chapter.id))
+  const total = chapterText.enteredCount + chapterText.gapCount
+  const progress = Math.round((chapterText.enteredCount / total) * 100)
+
+  const copySegment = async (seg: ChapterSegment, index: number) => {
+    const payload = `${seg.text}\n——《山海经·${chapter.name}》· ${seg.section} · 山海万象录`
+    try {
+      await navigator.clipboard.writeText(payload)
+      setCopied(String(index))
+      window.setTimeout(() => setCopied(null), 2000)
+    } catch {
+      setCopied(null)
+    }
+  }
+
+  const jumpToEntity = (id: string) =>
+    `/catalog/${ENTITIES.find((e) => e.id === id)?.slug ?? ''}`
+
+  return (
+    <div className={styles.page}>
+      <header className={styles.head}>
+        <p className={styles.kicker}>
+          卷{CHAPTER_PINYIN[chapter.name] ? ` · ${chapter.name}` : ''}
+        </p>
+        <h1 className={styles.title}>{chapter.name}</h1>
+        <p className={styles.pinyin}>{CHAPTER_PINYIN[chapter.name]}</p>
+
+        <div className={styles.progressRow}>
+          <div
+            className={styles.progressTrack}
+            role="progressbar"
+            aria-valuenow={progress}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label="录入进度"
+          >
+            <div className={styles.progressFill} style={{ width: `${progress}%` }} />
+          </div>
+          <p className={styles.progressNote}>
+            已录入 {chapterText.enteredCount} 段 · 待录入 {chapterText.gapCount} 处 ·
+            相关条目 {linkedEntities.length} 条
+          </p>
+        </div>
+
+        <div className={styles.toolbar}>
+          <button
+            type="button"
+            className={annotateOn ? `${styles.toggle} ${styles.toggleOn}` : styles.toggle}
+            aria-pressed={annotateOn}
+            onClick={() => setAnnotateOn((v) => !v)}
+          >
+            生僻字注音{annotateOn ? '开' : '关'}
+          </button>
+          <p className={styles.toolbarNote}>
+            注音读音供参考,训释以各条目页为准;待录入处如实标注,不补写。
+          </p>
+        </div>
+      </header>
+
+      <div className={styles.reader}>
+        {chapterText.segments.map((seg, i) =>
+          seg.kind === 'text' ? (
+            <div key={i} className={styles.segment}>
+              <p className={styles.sectionTag}>{seg.section}</p>
+              <p className={styles.text}>{annotate(seg.text ?? '', annotateOn)}</p>
+              <div className={styles.segFoot}>
+                {seg.relatedEntityIds?.map((id) => {
+                  const e = ENTITIES.find((x) => x.id === id)
+                  return e ? (
+                    <Link key={id} className={styles.segLink} to={jumpToEntity(id)}>
+                      {e.canonicalName}
+                    </Link>
+                  ) : null
+                })}
+                <button
+                  type="button"
+                  className={styles.copy}
+                  onClick={() => copySegment(seg, i)}
+                >
+                  {copied === String(i) ? '已复制(含出处)' : '复制原文(含出处)'}
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div key={i} className={styles.gap}>
+              <span className={styles.gapMark}>{seg.section} · {seg.note}</span>
+            </div>
+          ),
+        )}
+      </div>
+
+      <nav className={styles.chapterNav} aria-label="篇章切换">
+        {prev ? (
+          prev.contentStatus === 'pending' ? (
+            <span className={styles.navDisabled}>上一篇 · {prev.name}(待录入)</span>
+          ) : (
+            <Link className={styles.navLink} to={`/chapters/${prev.slug}`}>
+              ← 上一篇 · {prev.name}
+            </Link>
+          )
+        ) : (
+          <span />
+        )}
+        <Link className={styles.navLink} to="/chapters">
+          返回篇章目录
+        </Link>
+        {next ? (
+          next.contentStatus === 'pending' ? (
+            <span className={styles.navDisabled}>下一篇 · {next.name}(待录入)</span>
+          ) : (
+            <Link className={styles.navLink} to={`/chapters/${next.slug}`}>
+              下一篇 · {next.name} →
+            </Link>
+          )
+        ) : (
+          <span />
+        )}
+      </nav>
+    </div>
+  )
+}

@@ -1,0 +1,99 @@
+/**
+ * 篇章原文分段数据。
+ * 红线:kind='text' 的段落全部为 2026-09-20 经 ctext.org 公开文本逐字核对过的
+ * 原文(与对应条目/地点的 citation 一致);其余位置一律以 kind='gap' 如实标注
+ * 「待录入」,不以常识补写。详情见 CONTENT_SOURCES.md。
+ */
+
+export interface ChapterSegment {
+  kind: 'text' | 'gap'
+  /** kind='text' 时的原文(逐字核对) */
+  text?: string
+  /** 分段说明(如「待录入」的范围) */
+  note?: string
+  /** 所属子经/小节 */
+  section: string
+  relatedEntityIds?: string[]
+  relatedLocationIds?: string[]
+}
+
+export interface ChapterText {
+  /** 已录入段数 */
+  enteredCount: number
+  /** 待录入段数(gap 计一处) */
+  gapCount: number
+  segments: ChapterSegment[]
+}
+
+/** 南山经(含南次一经/二经/三经)——起步录入。 */
+const NANSHAN: ChapterText = {
+  enteredCount: 8,
+  gapCount: 5,
+  segments: [
+    {
+      kind: 'text',
+      section: '南次一经',
+      text: '南山经之首曰䧿山。其首曰招摇之山，临于西海之上，多桂，多金玉。',
+      relatedLocationIds: ['loc-zhaoyao'],
+    },
+    { kind: 'gap', section: '南次一经', note: '堂庭之山、猨翼之山诸段待录入' },
+    {
+      kind: 'text',
+      section: '南次一经',
+      text: '又东三百七十里，曰杻阳之山，其阳多赤金，其阴多白金。',
+      relatedLocationIds: ['loc-chuyang'],
+    },
+    {
+      kind: 'text',
+      section: '南次一经',
+      text: '有兽焉，其状如马而白首，其文如虎而赤尾，其音如谣，其名曰鹿蜀，佩之宜子孙。',
+      relatedEntityIds: ['ent-lushu'],
+      relatedLocationIds: ['loc-chuyang'],
+    },
+    { kind: 'gap', section: '南次一经', note: '柢山、亶爰之山、基山诸段待录入' },
+    {
+      kind: 'text',
+      section: '南次一经',
+      text: '又东三百里，曰青丘之山，其阳多玉，其阴多青䨼。',
+      relatedLocationIds: ['loc-qingqiu'],
+    },
+    {
+      kind: 'text',
+      section: '南次一经',
+      text: '有兽焉，其状如狐而九尾，其音如婴儿，能食人，食者不蛊。',
+      relatedEntityIds: ['ent-jiuweihu'],
+      relatedLocationIds: ['loc-qingqiu'],
+    },
+    { kind: 'gap', section: '南次一经', note: '箕尾之山段及篇末统计待录入' },
+    { kind: 'gap', section: '南次二经', note: '柜山以下诸段待录入' },
+    { kind: 'gap', section: '南次三经', note: '天虞之山、祷过之山段待录入' },
+    {
+      kind: 'text',
+      section: '南次三经',
+      text: '又东五百里，曰丹穴之山，其上多金玉。丹水出焉，而南流注于渤海。',
+      relatedLocationIds: ['loc-danxue'],
+    },
+    {
+      kind: 'text',
+      section: '南次三经',
+      text: '有鸟焉，其状如鸡，五采而文，名曰凤皇，首文曰德，翼文曰义，背文曰礼，膺文曰仁，腹文曰信。是鸟也，饮食自然，自歌自舞，见则天下安宁。',
+      relatedEntityIds: ['ent-fenghuang'],
+      relatedLocationIds: ['loc-danxue'],
+    },
+    { kind: 'gap', section: '南次三经', note: '发爽之山以下诸段待录入' },
+  ],
+}
+
+export const CHAPTER_TEXTS: Record<string, ChapterText> = {
+  'nanshan-jing': NANSHAN,
+}
+
+/** 生僻字注音(读音供参考,训释见条目页;非核验内容)。 */
+export const GLOSSARY: Record<string, { pinyin: string; hint?: string }> = {
+  䧿: { pinyin: 'què', hint: '同「鹊」' },
+  狌: { pinyin: 'xīng', hint: '狌狌' },
+  禺: { pinyin: 'yú', hint: '旧注以为猿猴类,确切所指待考' },
+  䨼: { pinyin: 'hù', hint: '青色矿物颜料,训释待考' },
+  詨: { pinyin: 'xiào', hint: '自呼其名(旧注)' },
+  橛: { pinyin: 'jué', hint: '鼓槌,训释取通行解' },
+}

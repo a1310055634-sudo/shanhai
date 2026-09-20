@@ -67,11 +67,24 @@
   min-width: 0;
 }
 
+.nameLink {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  text-decoration: none;
+  flex: 1;
+  min-width: 0;
+}
+
 .name {
   font-family: var(--font-serif);
   font-size: 20px;
   letter-spacing: 0.16em;
   color: var(--paper);
+}
+
+a.nameLink:hover .name {
+  color: var(--paper-bright);
 }
 
 .pinyin {
@@ -85,6 +98,16 @@
   letter-spacing: 0.2em;
   color: var(--text-muted);
   border: 1px solid rgba(143, 150, 141, 0.35);
+  padding: 5px 12px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.statusReadable {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--old-gold);
+  border: 1px solid rgba(177, 139, 86, 0.55);
   padding: 5px 12px;
   border-radius: 2px;
   white-space: nowrap;
