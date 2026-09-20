@@ -5,6 +5,8 @@ import JingweiArt from './registry/jingwei'
 import DijiangArt from './registry/dijiang'
 import LuwuArt from './registry/luwu'
 import YingzhaoArt from './registry/yingzhao'
+import ZhuyinArt from './registry/zhuyin'
+import YinglongArt from './registry/yinglong'
 import styles from './BeastArtwork.module.css'
 
 /**
@@ -27,7 +29,8 @@ type ArtComponent = ComponentType
  * V02: jiuweihu / fenghuang(已完成);
  * V03: jingwei / dijiang(已完成);
  * V04: luwu / yingzhao(已完成);
- * V05: zhuyin / yinglong;V06: kui / wenyaoyu;V07: xingxing / lushu。
+ * V05: zhuyin / yinglong(已完成);
+ * V06: kui / wenyaoyu;V07: xingxing / lushu。
  */
 const ART_REGISTRY: Record<string, ArtComponent> = {
   jiuweihu: JiuweihuArt,
@@ -36,6 +39,8 @@ const ART_REGISTRY: Record<string, ArtComponent> = {
   dijiang: DijiangArt,
   luwu: LuwuArt,
   yingzhao: YingzhaoArt,
+  zhuyin: ZhuyinArt,
+  yinglong: YinglongArt,
 }
 
 /** 按slug 稳定取一组色调,使过渡底座彼此有别(确定性,非随机)。 */
