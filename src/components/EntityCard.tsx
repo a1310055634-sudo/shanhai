@@ -3,6 +3,7 @@ import { useFavorites } from '../hooks/useFavorites'
 import type { Entity } from '../data/types'
 import { CHAPTERS } from '../data/chapters'
 import { ENTITY_TYPE_LABELS, RECORD_STATUS_LABELS } from '../data/entities'
+import BeastArtwork from './art/BeastArtwork'
 import styles from './EntityCard.module.css'
 
 interface EntityCardProps {
@@ -41,34 +42,7 @@ export default function EntityCard({
   return (
     <article className={styles.card}>
       <div className={styles.art} aria-hidden="true">
-        <svg viewBox="0 0 200 250" preserveAspectRatio="xMidYMid slice">
-          <rect width="200" height="250" fill="#131c18" />
-          {/* 统一线描:山影 + 游线(装饰) */}
-          <path
-            d="M-10 210 C40 190 70 200 100 186 C140 168 165 186 210 172"
-            fill="none"
-            stroke="#587367"
-            strokeWidth="1"
-            opacity="0.4"
-          />
-          <path
-            d="M-10 226 C50 210 90 218 130 206 C160 198 185 206 210 198"
-            fill="none"
-            stroke="#31545A"
-            strokeWidth="1"
-            opacity="0.5"
-          />
-          <circle
-            cx="156"
-            cy="58"
-            r="20"
-            fill="none"
-            stroke="#B18B56"
-            strokeWidth="0.8"
-            opacity="0.45"
-          />
-        </svg>
-        <span className={styles.artSeal}>{entity.canonicalName.slice(0, 1)}</span>
+        <BeastArtwork slug={entity.slug} name={entity.canonicalName} variant="card" />
         <span className={styles.artNote}>艺术演绎</span>
       </div>
 

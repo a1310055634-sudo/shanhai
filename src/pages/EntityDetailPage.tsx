@@ -7,6 +7,7 @@ import { ENTITIES, ENTITY_TYPE_LABELS, RECORD_STATUS_LABELS, getVerifiedEntities
 import { getLocation } from '../data/locations'
 import { CHAPTERS } from '../data/chapters'
 import { useReadingHistory } from '../hooks/useReadingHistory'
+import BeastArtwork from '../components/art/BeastArtwork'
 import type { Entity, Trait } from '../data/types'
 import styles from './EntityDetailPage.module.css'
 
@@ -92,25 +93,7 @@ export default function EntityDetailPage() {
         </div>
         <div className={styles.heroArt}>
           <div className={styles.artPanel} aria-hidden="true">
-            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-              <rect width="400" height="300" fill="#121b17" />
-              <path
-                d="M-10 240 C80 214 150 226 220 206 C290 188 350 208 410 194"
-                fill="none"
-                stroke="#587367"
-                strokeWidth="1.2"
-                opacity="0.45"
-              />
-              <path
-                d="M-10 262 C90 242 170 254 260 234 C320 222 370 234 410 226"
-                fill="none"
-                stroke="#31545A"
-                strokeWidth="1.2"
-                opacity="0.55"
-              />
-              <circle cx="320" cy="70" r="36" fill="none" stroke="#B18B56" strokeWidth="0.9" opacity="0.5" />
-            </svg>
-            <span className={styles.artSeal}>{entity.canonicalName.slice(0, 1)}</span>
+            <BeastArtwork slug={entity.slug} name={entity.canonicalName} variant="detail" />
             <span className={styles.artNote}>据原文描述艺术演绎</span>
           </div>
         </div>
