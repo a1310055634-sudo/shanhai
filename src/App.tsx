@@ -7,6 +7,7 @@ import ChapterPage from './pages/ChapterPage'
 import AtlasPage from './pages/AtlasPage'
 import CatalogPage from './pages/CatalogPage'
 import EntityDetailPage from './pages/EntityDetailPage'
+import FavoritesPage from './pages/FavoritesPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
@@ -41,17 +42,7 @@ export default function App() {
             />
           }
         />
-        <Route
-          path="favorites"
-          element={
-            <PlaceholderPage
-              volumeMark="卷 · 收藏"
-              title="我的收藏"
-              pinyin="WO DE SHOU CANG"
-              description="收藏与最近阅读记录保存在本机浏览器中,无需账号。条目详情开放后即可开始收藏。"
-            />
-          }
-        />
+        <Route path="favorites" element={<FavoritesPage />} />
         <Route
           path="about"
           element={

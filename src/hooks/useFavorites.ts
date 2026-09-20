@@ -25,7 +25,9 @@ export function useFavorites() {
     setIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]))
   }, [])
 
+  const clear = useCallback(() => setIds([]), [])
+
   const isFavorite = useCallback((id: string) => ids.includes(id), [ids])
 
-  return { ids, toggle, isFavorite }
+  return { ids, toggle, clear, isFavorite }
 }

@@ -1,10 +1,12 @@
 import { Link, useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 import SectionHeading from '../components/SectionHeading'
 import CitationBlock from '../components/CitationBlock'
 import EmptyState from '../components/EmptyState'
 import { ENTITIES, ENTITY_TYPE_LABELS, RECORD_STATUS_LABELS, getEntity } from '../data/entities'
 import { getLocation } from '../data/locations'
 import { CHAPTERS } from '../data/chapters'
+import { useReadingHistory } from '../hooks/useReadingHistory'
 import type { Entity, Trait } from '../data/types'
 import styles from './EntityDetailPage.module.css'
 
@@ -24,6 +26,11 @@ const TRAIT_SECTIONS: Array<{ kinds: Trait['kind'][]; label: string }> = [
 export default function EntityDetailPage() {
   const { slug } = useParams()
   const entity = slug ? getEntity(slug) : undefined
+  const { record } = useReadingHistory()
+
+  useEffect(() => {
+    if (entity) record(entity.slug)
+  }, [entity, record])
 
   if (!entity) {
     return (

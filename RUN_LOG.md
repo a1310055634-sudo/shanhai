@@ -4,6 +4,32 @@
 
 ---
 
+## 2026-09-20 23:43 — 23:56 · 第 15 轮 · T2-07 收藏页与最近阅读
+
+**运行时说明**:本轮触发距上轮约 15 小时(白天机器离线,触发按规则跳过不补跑);剩余开发窗口约 7.3 小时。
+
+**本轮任务**:T2-07 收藏页与最近阅读,/favorites 替换占位。
+
+**修改内容**:
+- `src/hooks/useReadingHistory`:最近阅读(localStorage 'shanhai:reading',详情页访问记录,去重前移,上限 20 条,静默降级)
+- `src/hooks/useFavorites`:补 clear 方法(清空收藏)
+- `src/pages/EntityDetailPage`:访问详情页时写入阅读记录(useEffect)
+- `src/pages/FavoritesPage` 替换占位:我的收藏(EntityCard 网格 + 清空收藏)+ 最近阅读(列表:名称/类型/时间 + 清空记录)+ 两种空态(藏/读印章)
+- App 路由:/favorites
+
+**验证命令与结果**:
+- `npm run build`:**通过**(修复 useFavorites 缺 clear 的类型错误)
+- 浏览器实测(端到端):访问狌狌/夔详情 → localStorage reading=["kui","xingxing"] ✓;收藏狌狌 → fav=["ent-xingxing"] ✓;/favorites 显示收藏卡 1 张 + 最近阅读 2 行(夔/狌狌,带时间)✓;无溢出
+- lint:未配置;测试:未配置
+
+**遗留问题**:
+- 图鉴排序中的「最近阅读/收藏」排序待接入(阶段 5)
+- 本地存储说明已在页面注明「清除浏览器数据会一并清除」
+
+**下一轮建议**:阶段 4-A 探索页(/explore 替换占位:随机翻卷 + 每日一卷 + 山海行旅入口,均从 12 条 verified 抽取),或 T2-10 南山经继续录入。
+
+---
+
 ## 2026-09-20 08:13 — 08:27 · 第 14 轮 · T2-09 篇章阅读器
 
 **本轮任务**:T2-09 /chapters/:slug 阅读器 + 南山经起步录入。
