@@ -31,8 +31,8 @@ export default function Footer() {
         <div className={styles.linkCol}>
           <p className={styles.colTitle}>编纂进度</p>
           <p className={styles.progressNote}>
-            本站由自动化编纂流水线逐轮构建,当前处于视觉基线阶段。
-            各卷内容经核验后逐批开放,未经核验的资料一律标注存疑。
+            本站由自动化编纂流水线逐轮构建,当前十二卷条目已全部经逐字核验开放,
+            山川舆图与古卷阅读同步展开;未经核验的资料一律标注存疑。
           </p>
         </div>
       </div>

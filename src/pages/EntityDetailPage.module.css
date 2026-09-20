@@ -351,7 +351,51 @@
   padding-top: 26px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 18px;
+}
+
+.relatedGroups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.relatedGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.relatedLabel {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  color: var(--old-gold);
+}
+
+.relatedLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chipLink {
+  padding: 7px 14px;
+  border: 1px solid rgba(88, 115, 103, 0.55);
+  border-radius: 2px;
+  color: var(--text-on-dark);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    border-color var(--duration-hover) var(--ease-soft);
+}
+
+.chipLink:hover {
+  color: var(--paper-bright);
+  border-color: var(--old-gold);
 }
 
 .relatedRow {
@@ -371,6 +415,21 @@
 }
 
 .relatedLink:hover {
+  color: var(--paper-bright);
+}
+
+.randomBtn {
+  background: none;
+  border: none;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  letter-spacing: 0.16em;
+  color: var(--old-gold);
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.randomBtn:hover {
   color: var(--paper-bright);
 }
 
@@ -401,6 +460,11 @@
   .traitRow {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .relatedGroups {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 

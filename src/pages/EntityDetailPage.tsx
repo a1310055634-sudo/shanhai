@@ -1,9 +1,9 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import SectionHeading from '../components/SectionHeading'
 import CitationBlock from '../components/CitationBlock'
 import EmptyState from '../components/EmptyState'
-import { ENTITIES, ENTITY_TYPE_LABELS, RECORD_STATUS_LABELS, getEntity } from '../data/entities'
+import { ENTITIES, ENTITY_TYPE_LABELS, RECORD_STATUS_LABELS, getVerifiedEntities, getEntity } from '../data/entities'
 import { getLocation } from '../data/locations'
 import { CHAPTERS } from '../data/chapters'
 import { useReadingHistory } from '../hooks/useReadingHistory'
@@ -25,6 +25,7 @@ const TRAIT_SECTIONS: Array<{ kinds: Trait['kind'][]; label: string }> = [
 
 export default function EntityDetailPage() {
   const { slug } = useParams()
+  const navigate = useNavigate()
   const entity = slug ? getEntity(slug) : undefined
   const { record } = useReadingHistory()
 
@@ -50,6 +51,21 @@ export default function EntityDetailPage() {
   const locations = entity.locationIds
     .map((id) => getLocation(id))
     .filter((l): l is NonNullable<typeof l> => Boolean(l))
+
+  // 关联漫游(规范第六节第 9 条):只推荐有真实交集的条目
+  const sameChapter = ENTITIES.filter(
+    (e) => e.id !== entity.id && e.chapterIds.some((c) => entity.chapterIds.includes(c)),
+  )
+  const sameLocation = ENTITIES.filter(
+    (e) => e.id !== entity.id && e.locationIds.some((l) => entity.locationIds.includes(l)),
+  )
+  const similarTags = ENTITIES.filter(
+    (e) => e.id !== entity.id && e.tags.some((t) => entity.tags.includes(t)),
+  )
+  const rollRandom = () => {
+    const pool = getVerifiedEntities()
+    navigate(`/catalog/${pool[Math.floor(Math.random() * pool.length)].slug}`)
+  }
 
   return (
     <div className={styles.page}>
@@ -270,8 +286,46 @@ export default function EntityDetailPage() {
         </div>
       </section>
 
-      {/* 相关探索 */}
+      {/* 相关探索:关联漫游 */}
       <nav className={styles.related} aria-label="相关探索">
+        <div className={styles.relatedGroups}>
+          {sameChapter.length > 0 && (
+            <div className={styles.relatedGroup}>
+              <p className={styles.relatedLabel}>同篇章</p>
+              <div className={styles.relatedLinks}>
+                {sameChapter.map((e) => (
+                  <Link key={e.id} className={styles.chipLink} to={`/catalog/${e.slug}`}>
+                    {e.canonicalName}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+          {sameLocation.length > 0 && (
+            <div className={styles.relatedGroup}>
+              <p className={styles.relatedLabel}>同地域</p>
+              <div className={styles.relatedLinks}>
+                {sameLocation.map((e) => (
+                  <Link key={e.id} className={styles.chipLink} to={`/catalog/${e.slug}`}>
+                    {e.canonicalName}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+          {similarTags.length > 0 && (
+            <div className={styles.relatedGroup}>
+              <p className={styles.relatedLabel}>相似特征</p>
+              <div className={styles.relatedLinks}>
+                {similarTags.map((e) => (
+                  <Link key={e.id} className={styles.chipLink} to={`/catalog/${e.slug}`}>
+                    {e.canonicalName}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
         <div className={styles.relatedRow}>
           {prev ? (
             <Link className={styles.relatedLink} to={`/catalog/${prev.slug}`}>
@@ -292,9 +346,9 @@ export default function EntityDetailPage() {
           <Link className={styles.relatedLink} to="/catalog">
             返回图鉴
           </Link>
-          <Link className={styles.relatedLink} to="/explore">
-            随机探索
-          </Link>
+          <button type="button" className={styles.randomBtn} onClick={rollRandom}>
+            随机翻一卷
+          </button>
         </div>
       </nav>
     </div>
