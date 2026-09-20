@@ -1,6 +1,8 @@
 import type { ComponentType } from 'react'
 import JiuweihuArt from './registry/jiuweihu'
 import FenghuangArt from './registry/fenghuang'
+import JingweiArt from './registry/jingwei'
+import DijiangArt from './registry/dijiang'
 import styles from './BeastArtwork.module.css'
 
 /**
@@ -21,12 +23,15 @@ type ArtComponent = ComponentType
 /**
  * 正式插画注册表:REGISTRY[slug] = 插画组件。
  * V02: jiuweihu / fenghuang(已完成);
- * V03: jingwei / dijiang;V04: luwu / yingzhao;
+ * V03: jingwei / dijiang(已完成);
+ * V04: luwu / yingzhao;
  * V05: zhuyin / yinglong;V06: kui / wenyaoyu;V07: xingxing / lushu。
  */
 const ART_REGISTRY: Record<string, ArtComponent> = {
   jiuweihu: JiuweihuArt,
   fenghuang: FenghuangArt,
+  jingwei: JingweiArt,
+  dijiang: DijiangArt,
 }
 
 /** 按slug 稳定取一组色调,使过渡底座彼此有别(确定性,非随机)。 */
