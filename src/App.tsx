@@ -8,6 +8,7 @@ import AtlasPage from './pages/AtlasPage'
 import CatalogPage from './pages/CatalogPage'
 import EntityDetailPage from './pages/EntityDetailPage'
 import FavoritesPage from './pages/FavoritesPage'
+import ExplorePage from './pages/ExplorePage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
@@ -31,17 +32,7 @@ export default function App() {
             />
           }
         />
-        <Route
-          path="explore"
-          element={
-            <PlaceholderPage
-              volumeMark="卷 · 探索"
-              title="探索"
-              pinyin="TAN SUO"
-              description="随机翻卷、每日一卷、山海行旅与线索识兽等探索玩法,将在首批核验条目开放后一同上线。"
-            />
-          }
-        />
+        <Route path="explore" element={<ExplorePage />} />
         <Route path="favorites" element={<FavoritesPage />} />
         <Route
           path="about"
