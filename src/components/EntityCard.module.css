@@ -13,12 +13,26 @@
 }
 
 .card:hover {
-  border-color: rgba(177, 139, 86, 0.5);
+  border-color: rgba(177, 139, 86, 0.6);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(13, 19, 17, 0.22);
+  box-shadow: 0 12px 28px rgba(13, 19, 17, 0.25);
 }
 
-/* 4:5 插画区 */
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+.cardLink:focus-visible {
+  outline: 2px solid var(--old-gold);
+  outline-offset: -2px;
+}
+
+/* 4:5 插画区(约占卡片 65%) */
 .art {
   position: relative;
   aspect-ratio: 4 / 5;
@@ -31,7 +45,7 @@
 }
 
 .card:hover .art > svg {
-  transform: scale(1.035);
+  transform: scale(1.03);
 }
 
 .art::after {
@@ -53,6 +67,38 @@
   background: rgba(13, 19, 17, 0.6);
   padding: 3px 8px;
   border-radius: 2px;
+}
+
+/* 悬停「阅此卷」提示;触屏设备隐藏(卡片整体可点) */
+.artCue {
+  position: absolute;
+  z-index: 1;
+  right: 14px;
+  bottom: 12px;
+  font-family: var(--font-serif);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: var(--paper-bright);
+  background: rgba(13, 19, 17, 0.72);
+  border: 1px solid rgba(177, 139, 86, 0.55);
+  padding: 4px 10px;
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity var(--duration-hover) var(--ease-soft),
+    transform var(--duration-hover) var(--ease-soft);
+}
+
+.card:hover .artCue {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (hover: none) {
+  .artCue {
+    display: none;
+  }
 }
 
 .body {
@@ -78,19 +124,10 @@
   letter-spacing: 0.18em;
 }
 
-.titleRow {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.titleLink,
-.titlePlain {
+.nameRow {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  text-decoration: none;
   min-width: 0;
 }
 
@@ -99,9 +136,10 @@
   font-size: 24px;
   letter-spacing: 0.14em;
   color: var(--paper);
+  transition: color var(--duration-hover) var(--ease-soft);
 }
 
-.titleLink:hover .name {
+.card:hover .name {
   color: var(--paper-bright);
 }
 
@@ -113,17 +151,19 @@
 }
 
 .fav {
-  flex: none;
-  min-width: 40px;
-  height: 40px;
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
   display: grid;
   place-items: center;
-  background: none;
-  border: 1px solid rgba(143, 150, 141, 0.4);
+  background: rgba(13, 19, 17, 0.72);
+  border: 1px solid rgba(143, 150, 141, 0.45);
   color: var(--text-muted);
   font-family: var(--font-serif);
-  font-size: 16px;
-  letter-spacing: 0.08em;
+  font-size: 15px;
   border-radius: 2px;
   transition:
     color var(--duration-hover) var(--ease-soft),
@@ -142,11 +182,6 @@
   border-color: var(--cinnabar);
 }
 
-.aliases {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
 .meta {
   display: flex;
   align-items: center;
@@ -161,18 +196,13 @@
   color: var(--text-muted);
 }
 
-.summary {
-  font-size: 14px;
-  color: var(--text-on-dark);
-  line-height: 1.8;
-}
-
 .trait {
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.75;
   border-left: 2px solid rgba(88, 115, 103, 0.6);
   padding-left: 10px;
+  margin-top: auto;
 }
 
 .traitLabel {

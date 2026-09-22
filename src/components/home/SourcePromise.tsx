@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import SectionHeading from '../SectionHeading'
 import { ENTITIES } from '../../data/entities'
 import styles from './SourcePromise.module.css'
 
@@ -28,31 +27,36 @@ const PROMISES = [
   },
 ]
 
-/** 来源承诺(规范第四节第 7 条)。 */
+/** 来源承诺(规范第四节第 7 条):浅宣纸阅读区,与墨色沉浸区形成节奏。 */
 export default function SourcePromise() {
   return (
     <section className={styles.section} aria-label="来源承诺">
-      <SectionHeading
-        index="诺"
-        title="来源承诺"
-        subtitle="LAI YUAN CHENG NUO"
-        note="本站是一部数字异闻志,不是游戏图鉴。以下承诺适用于全站内容。"
-      />
-      <div className={styles.list}>
-        {PROMISES.map((p) => (
-          <div key={p.title} className={styles.item}>
-            <p className={styles.itemTitle}>{p.title}</p>
-            <p className={styles.itemBody}>{p.body}</p>
-          </div>
-        ))}
+      <div className={styles.inner}>
+        <header className={styles.head}>
+          <p className={styles.headIndex}>诺</p>
+          <h2 className={styles.headTitle}>来源承诺</h2>
+          <p className={styles.headSub}>LAI YUAN CHENG NUO</p>
+          <p className={styles.headNote}>
+            本站是一部数字异闻志,不是游戏图鉴。以下承诺适用于全站内容。
+          </p>
+          <div className={styles.headRule} aria-hidden="true" />
+        </header>
+        <div className={styles.list}>
+          {PROMISES.map((p) => (
+            <div key={p.title} className={styles.item}>
+              <p className={styles.itemTitle}>{p.title}</p>
+              <p className={styles.itemBody}>{p.body}</p>
+            </div>
+          ))}
+        </div>
+        <p className={styles.about}>
+          完整的底本信息与核验清单见
+          <Link className={styles.aboutLink} to="/about">
+            资料来源与制作说明
+          </Link>
+          。
+        </p>
       </div>
-      <p className={styles.about}>
-        完整的底本信息与核验清单见
-        <Link className={styles.aboutLink} to="/about">
-          资料来源与制作说明
-        </Link>
-        。
-      </p>
     </section>
   )
 }

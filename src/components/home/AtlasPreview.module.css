@@ -1,4 +1,15 @@
 .section {
+  /* 全幅出血:地图不受版心约束,形成长卷高潮 */
+  width: 100%;
+}
+
+.head {
+  max-width: var(--content-max-width);
+  margin: 0 auto var(--fs-h2);
+  padding: 0 var(--space-page-x-desktop);
+}
+
+.foot {
   max-width: var(--content-max-width);
   margin: 0 auto;
   padding: 0 var(--space-page-x-desktop);
@@ -23,13 +34,15 @@
 }
 
 @media (max-width: 900px) {
-  .section {
+  .head,
+  .foot {
     padding: 0 var(--space-page-x-tablet);
   }
 }
 
 @media (max-width: 640px) {
-  .section {
+  .head,
+  .foot {
     padding: 0 var(--space-page-x-mobile);
   }
 }

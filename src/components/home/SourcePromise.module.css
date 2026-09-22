@@ -1,7 +1,59 @@
+/* 浅宣纸阅读区:与墨色沉浸区交替(V08) */
 .section {
+  width: 100%;
+  background: var(--paper);
+}
+
+.inner {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 var(--space-page-x-desktop);
+  padding: 72px var(--space-page-x-desktop) 64px;
+}
+
+/* 宣纸底专属标题(与 SectionHeading 同构,但用深色文字) */
+.head {
+  margin-bottom: 40px;
+}
+
+.headIndex {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  color: var(--cinnabar);
+  border: 1px solid rgba(167, 71, 56, 0.55);
+  padding: 6px 9px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.headTitle {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h2);
+  letter-spacing: 0.14em;
+  color: var(--text-on-light);
+  font-weight: 600;
+}
+
+.headSub {
+  margin-top: 4px;
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  color: #6a7168;
+}
+
+.headNote {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #4c554e;
+  max-width: 44em;
+  line-height: 1.85;
+}
+
+.headRule {
+  margin-top: 20px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(167, 71, 56, 0.5), rgba(167, 71, 56, 0.06));
 }
 
 .list {
@@ -11,7 +63,7 @@
 }
 
 .item {
-  border-top: 1px solid rgba(143, 150, 141, 0.16);
+  border-top: 1px solid rgba(38, 48, 43, 0.18);
   padding: 18px 0 20px;
 }
 
@@ -19,44 +71,44 @@
   font-family: var(--font-serif);
   font-size: 16px;
   letter-spacing: 0.22em;
-  color: var(--paper);
+  color: var(--text-on-light);
   margin-bottom: 8px;
 }
 
 .itemTitle::before {
   content: '※';
   margin-right: 10px;
-  color: var(--old-gold);
+  color: var(--cinnabar);
   font-size: 13px;
 }
 
 .itemBody {
   font-size: 14px;
-  color: var(--text-muted);
+  color: #4c554e;
   line-height: 1.9;
 }
 
 .about {
   margin-top: 18px;
   font-size: 14px;
-  color: var(--text-muted);
+  color: #4c554e;
 }
 
 .aboutLink {
   margin-left: 8px;
-  color: var(--old-gold);
+  color: var(--cinnabar);
   text-decoration: none;
-  border-bottom: 1px solid rgba(177, 139, 86, 0.45);
+  border-bottom: 1px solid rgba(167, 71, 56, 0.45);
   padding-bottom: 1px;
 }
 
 .aboutLink:hover {
-  color: var(--paper-bright);
+  color: var(--text-on-light);
 }
 
 @media (max-width: 900px) {
-  .section {
-    padding: 0 var(--space-page-x-tablet);
+  .inner {
+    padding: 56px var(--space-page-x-tablet) 52px;
   }
 
   .list {
@@ -65,7 +117,7 @@
 }
 
 @media (max-width: 640px) {
-  .section {
-    padding: 0 var(--space-page-x-mobile);
+  .inner {
+    padding: 44px var(--space-page-x-mobile) 40px;
   }
 }
