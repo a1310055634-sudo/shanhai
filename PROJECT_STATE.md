@@ -49,4 +49,4 @@ npm run preview    # 预览产物
 
 ## 项目状态
 
-IN_PROGRESS
+COMPLETE(视觉精修冲刺 V01—V14 全部完成,FINAL_REVIEW: PASS;详见 FINAL_REPORT.md)
