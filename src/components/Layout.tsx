@@ -30,4 +30,5 @@ export const NAV_ITEMS = [
   { to: '/chapters', label: '古卷' },
   { to: '/relations', label: '谱系' },
   { to: '/explore', label: '探索' },
+  { to: '/favorites', label: '收藏' },
 ]

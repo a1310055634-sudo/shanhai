@@ -51,7 +51,11 @@ export default function CatalogFilters({
   resultCount,
 }: CatalogFiltersProps) {
   return (
-    <div className={styles.filters}>
+    <div className={styles.filters} role="search" aria-label="图鉴检索与筛选">
+      <div className={styles.filtersHead}>
+        <p className={styles.filtersTitle}>检索图鉴</p>
+        <p className={styles.filtersHint}>可搜索名称、异名、拼音、标签与原文词语</p>
+      </div>
       <div className={styles.row}>
         <div className={styles.field}>
           <label className={styles.label} htmlFor="catalog-q">
@@ -147,11 +151,11 @@ export default function CatalogFilters({
         </div>
 
         <div className={styles.field}>
-          <span className={styles.label} aria-hidden="true">
+          <span className={styles.label}>
             结果
           </span>
           <div className={styles.resultRow}>
-            <span className={styles.count}>{resultCount} 条</span>
+            <span className={styles.count} aria-live="polite">{resultCount} 条</span>
             {hasActiveFilters(query) && (
               <button type="button" className={styles.clear} onClick={onClear}>
                 清除筛选

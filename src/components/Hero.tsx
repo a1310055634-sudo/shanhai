@@ -60,6 +60,10 @@ export default function Hero() {
       </div>
 
       <p className={styles.caption}>据古籍意象艺术演绎</p>
+      <a className={styles.scrollCue} href="#home-exhibit">
+        <span className={styles.scrollMark} aria-hidden="true">↓</span>
+        <span>向下开卷</span>
+      </a>
     </section>
   )
 }

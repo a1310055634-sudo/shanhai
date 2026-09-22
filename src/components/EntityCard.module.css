@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid rgba(143, 150, 141, 0.22);
@@ -7,11 +8,14 @@
   overflow: hidden;
   transition:
     border-color var(--duration-hover) var(--ease-soft),
-    transform var(--duration-hover) var(--ease-soft);
+    transform var(--duration-hover) var(--ease-soft),
+    box-shadow var(--duration-hover) var(--ease-soft);
 }
 
 .card:hover {
   border-color: rgba(177, 139, 86, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(13, 19, 17, 0.22);
 }
 
 /* 4:5 插画区 */
@@ -19,6 +23,7 @@
   position: relative;
   aspect-ratio: 4 / 5;
   overflow: hidden;
+  background: var(--ink-night);
 }
 
 .art > svg {
@@ -26,27 +31,51 @@
 }
 
 .card:hover .art > svg {
-  transform: scale(1.025);
+  transform: scale(1.035);
+}
+
+.art::after {
+  content: '';
+  position: absolute;
+  inset: 48% 0 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(13, 19, 17, 0.4));
 }
 
 .artNote {
   position: absolute;
+  z-index: 1;
   left: 14px;
   bottom: 12px;
   font-size: 11px;
   letter-spacing: 0.24em;
-  color: var(--text-muted);
+  color: var(--paper);
   background: rgba(13, 19, 17, 0.6);
   padding: 3px 8px;
   border-radius: 2px;
 }
 
 .body {
-  padding: 18px 18px 16px;
+  padding: 16px 18px 18px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   flex: 1;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 22px;
+}
+
+.type {
+  color: var(--verdigris);
+  font-family: var(--font-serif);
+  font-size: 12px;
+  letter-spacing: 0.18em;
 }
 
 .titleRow {
@@ -67,7 +96,7 @@
 
 .name {
   font-family: var(--font-serif);
-  font-size: 22px;
+  font-size: 24px;
   letter-spacing: 0.14em;
   color: var(--paper);
 }
@@ -85,7 +114,7 @@
 
 .fav {
   flex: none;
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   display: grid;
   place-items: center;
@@ -94,6 +123,7 @@
   color: var(--text-muted);
   font-family: var(--font-serif);
   font-size: 16px;
+  letter-spacing: 0.08em;
   border-radius: 2px;
   transition:
     color var(--duration-hover) var(--ease-soft),
@@ -150,11 +180,6 @@
   color: var(--verdigris);
   font-family: var(--font-serif);
   letter-spacing: 0.2em;
-}
-
-.footerRow {
-  margin-top: auto;
-  padding-top: 4px;
 }
 
 .status {

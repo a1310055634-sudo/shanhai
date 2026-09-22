@@ -8,10 +8,14 @@ interface SectionHeadingProps {
   subtitle?: string
   /** 一行说明(编辑说明性质) */
   note?: string
+  /** 页面顶层标题使用 h1,详情页内部区块保持默认 h2。 */
+  level?: 1 | 2
 }
 
 /** 通用章节标题:编号 + 宋体标题 + 小字副题 + 细线。 */
-export default function SectionHeading({ index, title, subtitle, note }: SectionHeadingProps) {
+export default function SectionHeading({ index, title, subtitle, note, level = 2 }: SectionHeadingProps) {
+  const Heading = level === 1 ? 'h1' : 'h2'
+
   return (
     <header className={styles.head}>
       <div className={styles.row}>
@@ -21,7 +25,7 @@ export default function SectionHeading({ index, title, subtitle, note }: Section
           </span>
         )}
         <div className={styles.titles}>
-          <h2 className={styles.title}>{title}</h2>
+          <Heading className={styles.title}>{title}</Heading>
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         </div>
       </div>

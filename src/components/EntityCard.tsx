@@ -12,7 +12,7 @@ interface EntityCardProps {
 }
 
 /**
- * 图鉴条目卡:4:5 插画区(统一线描占位,艺术演绎)+ 名称拼音 +
+ * 图鉴条目卡:4:5 插画区(原创线描艺术演绎)+ 名称拼音 +
  * 类型/篇章/地域 + 摘要 + 一项原文特征 + 资料状态 + 收藏。
  */
 export default function EntityCard({
@@ -43,10 +43,16 @@ export default function EntityCard({
     <article className={styles.card}>
       <div className={styles.art} aria-hidden="true">
         <BeastArtwork slug={entity.slug} name={entity.canonicalName} variant="card" />
-        <span className={styles.artNote}>艺术演绎</span>
+        <span className={styles.artNote}>据原文演绎</span>
       </div>
 
       <div className={styles.body}>
+        <div className={styles.identity}>
+          <span className={styles.type}>{ENTITY_TYPE_LABELS[entity.type]}</span>
+          <span className={`${styles.status} ${styles[entity.recordStatus]}`}>
+            {RECORD_STATUS_LABELS[entity.recordStatus]}
+          </span>
+        </div>
         <div className={styles.titleRow}>
           <Link
             className={styles.titleLink}
@@ -60,9 +66,10 @@ export default function EntityCard({
             className={favorited ? `${styles.fav} ${styles.favOn}` : styles.fav}
             aria-pressed={favorited}
             aria-label={favorited ? `取消收藏${entity.canonicalName}` : `收藏${entity.canonicalName}`}
+            title={favorited ? `取消收藏${entity.canonicalName}` : `收藏${entity.canonicalName}`}
             onClick={() => toggle(entity.id)}
           >
-            藏
+            {favorited ? '已藏' : '藏'}
           </button>
         </div>
 
@@ -71,7 +78,6 @@ export default function EntityCard({
         )}
 
         <p className={styles.meta}>
-          <span>{ENTITY_TYPE_LABELS[entity.type]}</span>
           {chapterNames && (
             <>
               <span className={styles.metaDivider} aria-hidden="true">
@@ -94,16 +100,10 @@ export default function EntityCard({
 
         {firstTrait && (
           <p className={styles.trait}>
-            <span className={styles.traitLabel}>原文</span>
+            <span className={styles.traitLabel}>原文线索</span>
             {firstTrait.text}
           </p>
         )}
-
-        <p className={styles.footerRow}>
-          <span className={`${styles.status} ${styles[entity.recordStatus]}`}>
-            {RECORD_STATUS_LABELS[entity.recordStatus]}
-          </span>
-        </p>
       </div>
     </article>
   )

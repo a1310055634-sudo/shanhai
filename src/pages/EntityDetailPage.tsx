@@ -251,7 +251,7 @@ export default function EntityDetailPage() {
                   {loc.sourceDistance && ` ${loc.sourceDistance}`}
                 </p>
                 <p className={styles.locationNote}>
-                  概念地图:南山经区域(坐标仅为本站呈现用)
+                  概念地图:{loc.mapPosition.region}(坐标仅为本站呈现用)
                 </p>
                 {loc.citations[0] && (
                   <blockquote className={styles.locationCite}>

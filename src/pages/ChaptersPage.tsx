@@ -16,6 +16,7 @@ export default function ChaptersPage() {
         title="古籍篇章"
         subtitle="SHAN HAI JING · 十八篇"
         note="以下为通行本十八篇目录,篇目、次序以采用的底本为准,已经公开文本核对。各篇原文逐卷录入中,可阅读的篇章名称可直接点入。"
+        level={1}
       />
 
       {CHAPTER_GROUPS.map((group) => {

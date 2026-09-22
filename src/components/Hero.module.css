@@ -181,6 +181,53 @@
   color: var(--text-muted);
 }
 
+.scrollCue {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  transform: translateX(-50%);
+  color: var(--text-muted);
+  font-family: var(--font-serif);
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-decoration: none;
+  transition: color var(--duration-hover) var(--ease-soft);
+}
+
+.scrollCue:hover {
+  color: var(--paper-bright);
+}
+
+.scrollMark {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(177, 139, 86, 0.55);
+  border-radius: 50%;
+  color: var(--old-gold);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1;
+  animation: cue-breathe 2.8s ease-in-out infinite;
+}
+
+@keyframes cue-breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(4px);
+    opacity: 1;
+  }
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -293,5 +340,10 @@
   .caption {
     right: var(--space-page-x-mobile);
     letter-spacing: 0.2em;
+  }
+
+  .scrollCue {
+    left: var(--space-page-x-mobile);
+    transform: none;
   }
 }

@@ -19,6 +19,7 @@ export default function FavoritesPage() {
     entry,
     entity: ENTITIES.find((e) => e.slug === entry.slug),
   }))
+  const visibleHistory = historyEntities.filter((h) => h.entity)
 
   return (
     <div className={styles.page}>
@@ -27,6 +28,7 @@ export default function FavoritesPage() {
         title="收藏与最近阅读"
         subtitle="SHOU CANG YU YUE DU"
         note="收藏与阅读记录只保存在本机浏览器中,无需账号;清除浏览器数据会一并清除。"
+        level={1}
       />
 
       {/* 收藏 */}
@@ -71,11 +73,9 @@ export default function FavoritesPage() {
             </button>
           )}
         </div>
-        {historyEntities.length > 0 ? (
+        {visibleHistory.length > 0 ? (
           <ul className={styles.history}>
-            {historyEntities
-              .filter((h) => h.entity)
-              .map(({ entry, entity }) => (
+            {visibleHistory.map(({ entry, entity }) => (
                 <li key={entry.slug} className={styles.historyRow}>
                   <Link className={styles.historyName} to={`/catalog/${entity!.slug}`}>
                     {entity!.canonicalName}
@@ -94,7 +94,7 @@ export default function FavoritesPage() {
                     })}
                   </span>
                 </li>
-              ))}
+            ))}
           </ul>
         ) : (
           <div className={styles.empty}>

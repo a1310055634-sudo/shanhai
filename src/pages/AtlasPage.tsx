@@ -41,6 +41,7 @@ export default function AtlasPage() {
         title="山川地域"
         subtitle="SHAN CHUAN DI YU"
         note="以下为古籍内部叙事关系图:分区依篇章,节点为已逐字核验的山川,连线仅绘有原文依据的相邻关系。概念坐标为本站呈现用,与现实经纬度无关。"
+        level={1}
       />
 
       <ConceptMap />

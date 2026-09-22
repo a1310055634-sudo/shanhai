@@ -7,6 +7,10 @@ import LuwuArt from './registry/luwu'
 import YingzhaoArt from './registry/yingzhao'
 import ZhuyinArt from './registry/zhuyin'
 import YinglongArt from './registry/yinglong'
+import KuiArt from './registry/kui'
+import WenyaoyuArt from './registry/wenyaoyu'
+import XingxingArt from './registry/xingxing'
+import LushuArt from './registry/lushu'
 import styles from './BeastArtwork.module.css'
 
 /**
@@ -19,7 +23,7 @@ import styles from './BeastArtwork.module.css'
  * - 画面内不出现文字(作品名由页面标题承担)。
  *
  * 扩展点:V02 起为每条目在 ART_REGISTRY 注册正式插画组件(带独立轮廓/姿态/点色);
- * 未注册的 slug 暂时显示统一水墨底座过渡层——它不是最终插画,V02—V07 将全部替换。
+ * 未注册的 slug 显示统一水墨底座过渡层,方便新条目在正式插画完成前保持版式稳定。
  */
 
 type ArtComponent = ComponentType
@@ -30,7 +34,7 @@ type ArtComponent = ComponentType
  * V03: jingwei / dijiang(已完成);
  * V04: luwu / yingzhao(已完成);
  * V05: zhuyin / yinglong(已完成);
- * V06: kui / wenyaoyu;V07: xingxing / lushu。
+ * V06: kui / wenyaoyu(已完成);V07: xingxing / lushu(已完成)。
  */
 const ART_REGISTRY: Record<string, ArtComponent> = {
   jiuweihu: JiuweihuArt,
@@ -41,6 +45,10 @@ const ART_REGISTRY: Record<string, ArtComponent> = {
   yingzhao: YingzhaoArt,
   zhuyin: ZhuyinArt,
   yinglong: YinglongArt,
+  kui: KuiArt,
+  wenyaoyu: WenyaoyuArt,
+  xingxing: XingxingArt,
+  lushu: LushuArt,
 }
 
 /** 按slug 稳定取一组色调,使过渡底座彼此有别(确定性,非随机)。 */
@@ -68,7 +76,7 @@ export default function BeastArtwork({
   const Registered = ART_REGISTRY[slug]
   if (Registered) return <Registered />
 
-  // —— 统一水墨底座(过渡层,V02—V07 逐条替换)——
+  // —— 统一水墨底座(未注册条目的过渡层)——
   const tone = toneFor(slug)
   const shift = variant === 'detail' ? 0 : 26
   return (

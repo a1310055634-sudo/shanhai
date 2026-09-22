@@ -2,12 +2,119 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-section-desktop);
-  padding: var(--space-section-desktop) 0;
+  padding: 0 0 var(--space-section-desktop);
+  background:
+    linear-gradient(180deg, rgba(23, 35, 31, 0.52) 0%, rgba(13, 19, 17, 0) 18%),
+    var(--ink-night);
+}
+
+.intro {
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 78px var(--space-page-x-desktop) 54px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+  gap: 72px;
+  align-items: end;
+  border-bottom: 1px solid rgba(177, 139, 86, 0.3);
+}
+
+.introCopy {
+  max-width: 720px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: var(--old-gold);
+  font-family: var(--font-serif);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.28em;
+}
+
+.introTitle {
+  color: var(--paper);
+  font-size: var(--fs-h2);
+  letter-spacing: 0.12em;
+}
+
+.introText {
+  max-width: 42em;
+  margin-top: 18px;
+  color: var(--text-muted);
+  font-size: var(--fs-body);
+  line-height: 1.95;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 0;
+}
+
+.stat {
+  min-width: 0;
+  padding-left: 18px;
+  border-left: 1px solid rgba(88, 115, 103, 0.6);
+}
+
+.statValue {
+  margin: 0;
+  color: var(--paper-bright);
+  font-family: var(--font-serif);
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.statLabel {
+  margin-top: 9px;
+  color: var(--text-muted);
+  font-size: var(--fs-caption);
+  line-height: 1.5;
 }
 
 @media (max-width: 900px) {
   .flow {
     gap: var(--space-section-mobile);
-    padding: var(--space-section-mobile) 0;
+    padding: 0 0 var(--space-section-mobile);
+  }
+
+  .intro {
+    padding: 58px var(--space-page-x-tablet) 42px;
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .stats {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 640px) {
+  .intro {
+    padding: 48px var(--space-page-x-mobile) 34px;
+    gap: 28px;
+  }
+
+  .introTitle {
+    font-size: 26px;
+    line-height: 1.5;
+  }
+
+  .stats {
+    gap: 10px;
+  }
+
+  .stat {
+    padding-left: 10px;
+  }
+
+  .statValue {
+    font-size: 24px;
+  }
+
+  .statLabel {
+    font-size: 12px;
   }
 }

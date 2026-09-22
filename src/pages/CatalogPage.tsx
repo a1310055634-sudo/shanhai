@@ -49,6 +49,7 @@ export default function CatalogPage() {
         title="异兽与万物图鉴"
         subtitle="SHAN HAI CATALOG"
         note="本图鉴为阅读索引,条目含异兽、鸟族、水族、神祇、国族、草木、矿物、器物与山川水系。分类方式为本站所拟,并非《山海经》原有分类。每条均附原文出处,录入前经公开文本逐字核对。"
+        level={1}
       />
 
       <CatalogFilters
@@ -122,7 +123,7 @@ export default function CatalogPage() {
 
       <p className={styles.progressNote}>
         已收录 {ENTITIES.length} 条,其中逐字核验 {verifiedCount} 条;首批目标十二条,条目随核验进度逐卷录入。
-        「最近阅读」「收藏」排序将随对应功能开放。
+        「最近阅读」与「收藏」可在对应页面查看,记录仅保存在本机浏览器中。
       </p>
     </div>
   )

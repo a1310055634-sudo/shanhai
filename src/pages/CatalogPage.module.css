@@ -24,6 +24,11 @@
   gap: 20px;
   padding: 14px 6px;
   border-bottom: 1px solid rgba(143, 150, 141, 0.16);
+  transition: background-color var(--duration-hover) var(--ease-soft);
+}
+
+.listRow:hover {
+  background: rgba(88, 115, 103, 0.08);
 }
 
 .listName {

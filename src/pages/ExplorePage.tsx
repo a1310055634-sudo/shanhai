@@ -49,6 +49,7 @@ export default function ExplorePage() {
         title="探索"
         subtitle="TAN SUO"
         note="三种玩法均只使用已逐字核验的条目;线索识兽与关联漫游将随条目扩充开放。"
+        level={1}
       />
 
       <div className={styles.grid}>
@@ -57,7 +58,7 @@ export default function ExplorePage() {
           <p className={styles.cardIndex}>其一</p>
           <h2 className={styles.cardTitle}>随机翻卷</h2>
           <p className={styles.cardDesc}>
-            从十二条已核验条目中随机抽出一卷,展开即是缘分。
+            从 {verified.length} 条已核验条目中随机抽出一卷,展开即是缘分。
           </p>
           <button type="button" className={styles.action} onClick={randomRoll}>
             抽一卷
