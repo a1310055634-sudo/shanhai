@@ -71,6 +71,7 @@
 .name a {
   color: var(--paper);
   text-decoration: none;
+  padding: 6px 0;
 }
 
 .name a:hover,
