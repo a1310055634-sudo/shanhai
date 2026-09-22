@@ -99,6 +99,18 @@ export default function EntityDetailPage() {
         </div>
       </header>
 
+      {/* 轻量页内目录(V10) */}
+      <nav className={styles.toc} aria-label="页内目录">
+        <a className={styles.tocItem} href="#sec-citations">原文证据</a>
+        <a className={styles.tocItem} href="#sec-explain">本站释义</a>
+        <a className={styles.tocItem} href="#sec-traits">形貌档案</a>
+        <a className={styles.tocItem} href="#sec-abilities">能力与征兆</a>
+        <a className={styles.tocItem} href="#sec-location">地域关系</a>
+        {entity.laterReception && entity.laterReception.length > 0 && (
+          <a className={styles.tocItem} href="#sec-reception">后世流变</a>
+        )}
+      </nav>
+
       {/* 原文证据 */}
       <section className={styles.section} aria-labelledby="sec-citations">
         <SectionHeading index="考" title="原文证据" subtitle="YUAN WEN ZHENG JU" />
@@ -278,6 +290,9 @@ export default function EntityDetailPage() {
               <div className={styles.relatedLinks}>
                 {sameChapter.map((e) => (
                   <Link key={e.id} className={styles.chipLink} to={`/catalog/${e.slug}`}>
+                    <span className={styles.chipThumb} aria-hidden="true">
+                      <BeastArtwork slug={e.slug} name={e.canonicalName} variant="card" />
+                    </span>
                     {e.canonicalName}
                   </Link>
                 ))}
@@ -290,6 +305,9 @@ export default function EntityDetailPage() {
               <div className={styles.relatedLinks}>
                 {sameLocation.map((e) => (
                   <Link key={e.id} className={styles.chipLink} to={`/catalog/${e.slug}`}>
+                    <span className={styles.chipThumb} aria-hidden="true">
+                      <BeastArtwork slug={e.slug} name={e.canonicalName} variant="card" />
+                    </span>
                     {e.canonicalName}
                   </Link>
                 ))}
@@ -302,6 +320,9 @@ export default function EntityDetailPage() {
               <div className={styles.relatedLinks}>
                 {similarTags.map((e) => (
                   <Link key={e.id} className={styles.chipLink} to={`/catalog/${e.slug}`}>
+                    <span className={styles.chipThumb} aria-hidden="true">
+                      <BeastArtwork slug={e.slug} name={e.canonicalName} variant="card" />
+                    </span>
                     {e.canonicalName}
                   </Link>
                 ))}

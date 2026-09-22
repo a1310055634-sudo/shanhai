@@ -3,13 +3,13 @@ import styles from './CitationBlock.module.css'
 
 interface CitationBlockProps {
   citation: Citation
-  /** 锚点 id,供形貌档案「回看原文」跳转 */
+  /** 锚点 id,供形貌档案「回看原文」跳转;回看跳转时高亮 */
   anchor?: string
 }
 
 /**
- * 原文证据块(规范第六节第 2 条):原文 + 篇章 + 版本 + 位置 +
- * 公开核对链接 + 异文说明 + 核验状态。每段独立呈现,不拼接。
+ * 原文证据块(V10 精修):浅宣纸底 + 宋体原文 + 细朱砂左标 + 显著出处;
+ * 每段独立呈现,不拼接。
  */
 export default function CitationBlock({ citation, anchor }: CitationBlockProps) {
   return (

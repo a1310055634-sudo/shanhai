@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { LOCATIONS } from '../../data/locations'
 import { ENTITIES } from '../../data/entities'
 import styles from './ConceptMap.module.css'
@@ -32,7 +34,8 @@ const REGION_FILLS: Record<string, string> = {
   大荒东经: 'rgba(88, 115, 103, 0.12)',
 }
 
-export default function ConceptMap() {
+export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select' }) {
+  const [selectedId, setSelectedId] = useState<string | null>(null)
   const pos = (id: string) => {
     const loc = LOCATIONS.find((l) => l.id === id)!
     return { x: loc.mapPosition.x * 10, y: loc.mapPosition.y * 6.2, loc }
@@ -127,49 +130,102 @@ export default function ConceptMap() {
           )
         })}
 
-        {/* 山川节点 → 关联条目详情 */}
+        {/* 山川节点:link 模式直达关联条目;select 模式点选展示信息面板 */}
         {LOCATIONS.map((loc) => {
           const p = { x: loc.mapPosition.x * 10, y: loc.mapPosition.y * 6.2 }
           const entity = ENTITIES.find((e) => loc.relatedEntityIds.includes(e.id))
-          const href = entity ? `/catalog/${entity.slug}` : undefined
+          const isSelected = mode === 'select' && selectedId === loc.id
+          const nodeBody = (
+            <>
+              <circle cx={p.x} cy={p.y} r="13" fill="transparent" stroke="none" />
+              <circle
+                cx={p.x}
+                cy={p.y}
+                r={isSelected ? 8 : 6}
+                fill={isSelected ? '#B18B56' : '#587367'}
+                stroke={isSelected ? '#A74738' : '#F3EEE2'}
+                strokeWidth={isSelected ? 2 : 1}
+                className={styles.nodeDot}
+              />
+              <text
+                x={p.x}
+                y={p.y + 22}
+                textAnchor="middle"
+                fill={isSelected ? '#F3EEE2' : '#D9D6C9'}
+                fontSize="13"
+                className={styles.nodeLabel}
+              >
+                {loc.canonicalName}
+              </text>
+            </>
+          )
           return (
             <g key={loc.id} className={styles.node}>
-              {href ? (
-                <a href={href}>
-                  <title>{`${loc.canonicalName}——查看关联条目`}</title>
-                  <circle cx={p.x} cy={p.y} r="13" fill="transparent" stroke="none" />
-                  <circle
-                    cx={p.x}
-                    cy={p.y}
-                    r="6"
-                    fill="#587367"
-                    stroke="#F3EEE2"
-                    strokeWidth="1"
-                    className={styles.nodeDot}
-                  />
-                  <text
-                    x={p.x}
-                    y={p.y + 22}
-                    textAnchor="middle"
-                    fill="#D9D6C9"
-                    fontSize="13"
-                    className={styles.nodeLabel}
-                  >
-                    {loc.canonicalName}
-                  </text>
-                </a>
+              <title>{loc.canonicalName}</title>
+              {mode === 'link' && entity ? (
+                <a href={`/catalog/${entity.slug}`}>{nodeBody}</a>
               ) : (
-                <>
-                  <circle cx={p.x} cy={p.y} r="6" fill="#587367" />
-                  <text x={p.x} y={p.y + 22} textAnchor="middle" fill="#D9D6C9" fontSize="13">
-                    {loc.canonicalName}
-                  </text>
-                </>
+                <g
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`查看${loc.canonicalName}`}
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => setSelectedId(isSelected ? null : loc.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setSelectedId(isSelected ? null : loc.id)
+                    }
+                  }}
+                >
+                  {nodeBody}
+                </g>
               )}
             </g>
           )
         })}
       </svg>
+      {mode === 'select' && selectedId && (
+        (() => {
+          const loc = LOCATIONS.find((l) => l.id === selectedId)
+          if (!loc) return null
+          const entity = ENTITIES.find((e) => loc.relatedEntityIds.includes(e.id))
+          return (
+            <aside className={styles.panel} aria-label="选中地点信息">
+              <p className={styles.panelName}>{loc.canonicalName}</p>
+              <p className={styles.panelMeta}>
+                {loc.sourceDirection && `${loc.sourceDirection} `}
+                {loc.sourceDistance}
+                {loc.citations[0]?.chapter && ` · ${loc.citations[0].chapter}`}
+              </p>
+              {loc.citations[0] && (
+                <blockquote className={styles.panelCite}>
+                  {loc.citations[0].originalText}
+                </blockquote>
+              )}
+              {entity && (
+                <Link className={styles.panelLink} to={`/catalog/${entity.slug}`}>
+                  查看关联条目:{entity.canonicalName} →
+                </Link>
+              )}
+            </aside>
+          )
+        })()
+      )}
+      {mode === 'select' && (
+        <div className={styles.legend}>
+          <span className={styles.legendItem}>
+            <span className={styles.legendDot} /> 已核验地点
+          </span>
+          <span className={styles.legendItem}>
+            <span className={styles.legendLine} aria-hidden="true" /> 已核验路线(附原文里距)
+          </span>
+          <span className={styles.legendItem}>
+            <span className={styles.legendDash} aria-hidden="true" /> 待补资料(未录入山段)
+          </span>
+          <span className={styles.legendItem}>点击节点查看详情</span>
+        </div>
+      )}
       <p className={styles.disclaimer}>
         《山海经》地理与现实地理的对应关系存在诸多争议。本图用于呈现古籍内部的叙事关系,并非现代地理定位。
       </p>

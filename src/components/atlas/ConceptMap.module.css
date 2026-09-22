@@ -44,3 +44,91 @@
   line-height: 1.8;
   background: rgba(13, 19, 17, 0.5);
 }
+
+/* 图例(V11) */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  align-items: center;
+  padding: 10px 18px;
+  border-top: 1px solid rgba(88, 115, 103, 0.3);
+  background: rgba(13, 19, 17, 0.5);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legendDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #587367;
+  border: 1px solid #F3EEE2;
+  display: inline-block;
+}
+
+.legendLine {
+  width: 26px;
+  height: 0;
+  border-top: 1.4px solid #B18B56;
+  display: inline-block;
+}
+
+.legendDash {
+  width: 26px;
+  height: 0;
+  border-top: 1.4px dashed rgba(88, 115, 103, 0.8);
+  display: inline-block;
+}
+
+/* 选中地点面板(V11) */
+.panel {
+  padding: 16px 18px;
+  border-top: 1px solid rgba(177, 139, 86, 0.45);
+  background: rgba(23, 35, 31, 0.75);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.panelName {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  color: var(--paper);
+}
+
+.panelMeta {
+  font-size: 12.5px;
+  color: var(--old-gold);
+}
+
+.panelCite {
+  margin: 2px 0;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-on-dark);
+  border-left: 2px solid rgba(88, 115, 103, 0.6);
+  padding-left: 12px;
+}
+
+.panelLink {
+  align-self: flex-start;
+  font-size: 13px;
+  color: var(--old-gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(177, 139, 86, 0.45);
+  padding: 3px 0;
+}
+
+.panelLink:hover {
+  color: var(--paper-bright);
+}

@@ -44,7 +44,7 @@ export default function AtlasPage() {
         level={1}
       />
 
-      <ConceptMap />
+      <ConceptMap mode="select" />
 
       {regions.map(({ region, locations }) => (
         <section key={region} className={styles.region} aria-label={region}>

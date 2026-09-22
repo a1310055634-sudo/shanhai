@@ -106,3 +106,58 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* 选中地点面板(V11) */
+.selectedPanel {
+  margin-top: 24px;
+  border: 1px solid rgba(177, 139, 86, 0.5);
+  border-radius: var(--radius-card);
+  background: rgba(23, 35, 31, 0.6);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panelName {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  letter-spacing: 0.16em;
+  color: var(--paper);
+}
+
+.panelMeta {
+  font-size: 13px;
+  color: var(--old-gold);
+  letter-spacing: 0.06em;
+}
+
+.panelCite {
+  margin: 2px 0;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  line-height: 1.95;
+  color: var(--text-on-dark);
+  border-left: 2px solid rgba(88, 115, 103, 0.6);
+  padding-left: 12px;
+}
+
+.panelLink {
+  align-self: flex-start;
+  font-size: 13.5px;
+  color: var(--old-gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(177, 139, 86, 0.45);
+  padding: 4px 0;
+}
+
+.panelLink:hover {
+  color: var(--paper-bright);
+}
+
+@media (max-width: 640px) {
+  /* 手机端:规范倾向列表,隐藏复杂地图 */
+  .page > div > div:has(> svg[role="img"]) {
+    display: none;
+  }
+}
