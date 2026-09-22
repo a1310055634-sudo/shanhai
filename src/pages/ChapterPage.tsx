@@ -32,6 +32,7 @@ export default function ChapterPage() {
   const chapter = CHAPTERS.find((c) => c.slug === slug)
   const [annotateOn, setAnnotateOn] = useState(true)
   const [copied, setCopied] = useState<string | null>(null)
+  const [copyFailed, setCopyFailed] = useState<string | null>(null)
 
   const chapterText = useMemo(
     () => (slug ? CHAPTER_TEXTS[slug] : undefined),
@@ -58,14 +59,42 @@ export default function ChapterPage() {
   const progress = Math.round((chapterText.enteredCount / total) * 100)
 
   const copySegment = async (seg: ChapterSegment, index: number) => {
-    const payload = `${seg.text}\n——《山海经·${chapter.name}》· ${seg.section} · 山海万象录`
+    const payload = `${seg.text}
+——《山海经·${chapter.name}》· ${seg.section} · 山海万象录`
+    const key = String(index)
+    const legacy = () => {
+      try {
+        const ta = document.createElement('textarea')
+        ta.value = payload
+        ta.style.position = 'fixed'
+        ta.style.opacity = '0'
+        document.body.appendChild(ta)
+        ta.select()
+        const ok = document.execCommand('copy')
+        document.body.removeChild(ta)
+        return ok
+      } catch {
+        return false
+      }
+    }
+    let ok = false
     try {
       await navigator.clipboard.writeText(payload)
-      setCopied(String(index))
-      window.setTimeout(() => setCopied(null), 2000)
+      ok = true
     } catch {
+      ok = legacy()
+    }
+    if (ok) {
+      setCopied(key)
+      setCopyFailed(null)
+    } else {
+      setCopyFailed(key)
       setCopied(null)
     }
+    window.setTimeout(() => {
+      setCopied(null)
+      setCopyFailed(null)
+    }, 2400)
   }
 
   const jumpToEntity = (id: string) =>
@@ -129,10 +158,20 @@ export default function ChapterPage() {
                 })}
                 <button
                   type="button"
-                  className={styles.copy}
+                  className={
+                    copied === String(i)
+                      ? `${styles.copy} ${styles.copyOk}`
+                      : copyFailed === String(i)
+                        ? `${styles.copy} ${styles.copyFail}`
+                        : styles.copy
+                  }
                   onClick={() => copySegment(seg, i)}
                 >
-                  {copied === String(i) ? '已复制(含出处)' : '复制原文(含出处)'}
+                  {copied === String(i)
+                    ? '✓ 已复制(含出处)'
+                    : copyFailed === String(i)
+                      ? '复制失败,请手动选择复制'
+                      : '复制原文(含出处)'}
                 </button>
               </div>
             </div>

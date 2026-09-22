@@ -229,3 +229,11 @@
     margin-left: 0;
   }
 }
+
+.copyOk {
+  color: var(--verdigris);
+}
+
+.copyFail {
+  color: var(--cinnabar);
+}
