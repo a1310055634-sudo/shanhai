@@ -6,11 +6,14 @@
 
 import { LOCATIONS as LOCS } from './locations'
 import { ENTITIES } from './entities'
+import { CHAPTER_TEXTS as SEGMENTS } from './chapterTexts'
 
 export interface JourneyStation {
   locationId: string
   /** 站点核验状态:verified=山名/顺序/引文已核验 */
   status: 'verified' | 'pending'
+  /** 对应篇章段落锚点(原文证据回看) */
+  segmentId?: string
   /** pending 时的说明(哪些山段待录入) */
   note?: string
 }
@@ -29,7 +32,11 @@ export const NANCI_YI_ROUTE: JourneyRoute = {
   name: '南次一经行旅',
   chapterId: 'ch-nanshan',
   stations: [
-    { locationId: 'loc-zhaoyao', status: 'verified' },
+    {
+      locationId: 'loc-zhaoyao',
+      status: 'verified',
+      segmentId: 'seg-ns1-zhaoyao-kai',
+    },
     // 堂庭之山、猨翼之山待 J04 核验后建站
     { locationId: 'loc-chuyang', status: 'verified' },
     // 柢山、亶爰之山、基山待 J05/J06 核验后建站
@@ -44,6 +51,7 @@ export interface JourneyIssue {
     | 'invalid-location'
     | 'invalid-entity'
     | 'verified-without-citation'
+    | 'invalid-segment'
     | 'order-conflict'
   message: string
 }
@@ -90,6 +98,16 @@ export function validateJourneyRoute(route: JourneyRoute): JourneyIssue[] {
       issues.push({
         kind: 'order-conflict',
         message: `${loc.canonicalName}(第 ${order} 山)未按原文顺序排列(前一站为第 ${prev.sourceOrder} 山)`,
+      })
+    }
+
+    if (
+      station.segmentId &&
+      !SEGMENTS['nanshan-jing'].segments.some((x) => x.id === station.segmentId)
+    ) {
+      issues.push({
+        kind: 'invalid-segment',
+        message: `${loc.canonicalName} 的 segmentId 引用了不存在的段落:${station.segmentId}`,
       })
     }
 
