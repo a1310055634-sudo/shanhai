@@ -46,6 +46,13 @@ export default function AtlasPage() {
 
       <ConceptMap mode="select" />
 
+      <p className={styles.journeyLinkRow}>
+        南次一经行旅:
+        <Link className={styles.journeyLink} to="/journeys/nanci-yi">
+          沿原文次序逐站行走 →
+        </Link>
+      </p>
+
       {regions.map(({ region, locations }) => (
         <section key={region} className={styles.region} aria-label={region}>
           <h2 className={styles.regionName}>{region}</h2>

@@ -7,6 +7,7 @@ import AtlasPage from './pages/AtlasPage'
 import CatalogPage from './pages/CatalogPage'
 import EntityDetailPage from './pages/EntityDetailPage'
 import FavoritesPage from './pages/FavoritesPage'
+import JourneyPage from './pages/JourneyPage'
 import ExplorePage from './pages/ExplorePage'
 import RelationsPage from './pages/RelationsPage'
 import AboutPage from './pages/AboutPage'
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="chapters/:slug" element={<ChapterPage />} />
         <Route path="relations" element={<RelationsPage />} />
         <Route path="explore" element={<ExplorePage />} />
+        <Route path="journeys/nanci-yi" element={<JourneyPage />} />
         <Route path="favorites" element={<FavoritesPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} />

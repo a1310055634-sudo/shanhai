@@ -95,7 +95,12 @@ export default function ExplorePage() {
           </p>
         </div>
 
-        <p className={styles.routeName}>路线一 · 南次一经</p>
+        <div className={styles.journeyHead}>
+          <p className={styles.routeName}>路线一 · 南次一经</p>
+          <Link className={styles.journeyEnter} to="/journeys/nanci-yi">
+            进入行旅 →
+          </Link>
+        </div>
         <ol className={styles.stations}>
           {JOURNEY.map((station, i) => {
             const { loc, entity } = stationOf(station.locationId)

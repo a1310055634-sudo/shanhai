@@ -230,3 +230,23 @@
   color: var(--ink-night);
   background: var(--old-gold);
 }
+
+.journeyEnter {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: var(--old-gold);
+  text-decoration: none;
+  border: 1px solid rgba(177, 139, 86, 0.45);
+  padding: 6px 14px;
+  border-radius: 2px;
+  white-space: nowrap;
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    background-color var(--duration-hover) var(--ease-soft);
+}
+
+.journeyEnter:hover {
+  color: var(--ink-night);
+  background: var(--old-gold);
+}

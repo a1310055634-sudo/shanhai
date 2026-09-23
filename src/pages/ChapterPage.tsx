@@ -146,6 +146,9 @@ export default function ChapterPage() {
           </button>
           <p className={styles.toolbarNote}>
             注音读音供参考,训释以各条目页为准;待录入处如实标注,不补写。
+            <Link className={styles.toolbarLink} to="/journeys/nanci-yi">
+              进入南次一经行旅 →
+            </Link>
           </p>
         </div>
       </header>
