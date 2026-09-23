@@ -391,3 +391,28 @@
 .explainLink:hover {
   color: var(--paper-bright);
 }
+
+/* 继续上次行旅(J14) */
+.resume {
+  margin-top: 16px;
+}
+
+.resumeLink {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  color: var(--old-gold);
+  text-decoration: none;
+  border: 1px solid rgba(177, 139, 86, 0.55);
+  padding: 10px 18px;
+  border-radius: 2px;
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    background-color var(--duration-hover) var(--ease-soft);
+}
+
+.resumeLink:hover {
+  color: var(--ink-night);
+  background: var(--old-gold);
+}
