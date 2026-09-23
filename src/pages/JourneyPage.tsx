@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { NANCI_YI_ROUTE, NANCI_YI_PENDING, type JourneyStation } from '../data/journey'
 import { CHAPTER_TEXTS } from '../data/chapterTexts'
@@ -72,6 +73,16 @@ function buildScrollSlots(): Array<ScrollSlot> {
   return slots
 }
 
+const PROGRESS_KEY = 'shanhai:journey-progress'
+
+function readProgress(): string | null {
+  try {
+    return localStorage.getItem(PROGRESS_KEY)
+  } catch {
+    return null
+  }
+}
+
 export default function JourneyPage() {
   const stations = NANCI_YI_ROUTE.stations.map(stationView).filter(
     (s): s is StationView => s !== null,
@@ -82,7 +93,15 @@ export default function JourneyPage() {
   const requested = params.get('station')
   const invalidRequested = requested !== null && !validIds.has(requested)
 
-  const currentId = requested && validIds.has(requested) ? requested : stations[0]?.locId
+  // J14:无 station 参数时恢复上次到达站点(localStorage 不可用则静默降级)
+  const savedProgress = requested === null ? readProgress() : null
+  const savedValid =
+    savedProgress !== null && validIds.has(savedProgress) ? savedProgress : null
+
+  const currentId =
+    requested && validIds.has(requested)
+      ? requested
+      : savedValid ?? stations[0]?.locId
   const currentIndex = stations.findIndex((s) => s.locId === currentId)
   const current = currentIndex >= 0 ? stations[currentIndex] : undefined
   const currentStationSegment = current?.station.segmentId
@@ -92,6 +111,16 @@ export default function JourneyPage() {
     ? ENTITIES.find((e) => e.slug === current.entitySlug)
     : undefined
   const currentEntityExplanation = currentEntity?.modernExplanation.slice(0, 90)
+
+  // J14:到达站点时记录进度(localStorage 不可用时静默降级)
+  useEffect(() => {
+    if (!currentId) return
+    try {
+      localStorage.setItem(PROGRESS_KEY, currentId)
+    } catch {
+      // 隐私模式等场景:静默降级
+    }
+  }, [currentId])
 
   return (
     <div className={styles.page}>
@@ -132,6 +161,14 @@ export default function JourneyPage() {
           )}
         </div>
       </section>
+
+      {savedValid && savedValid !== currentId && (
+        <p className={styles.resume}>
+          <Link className={styles.resumeLink} to={`/journeys/nanci-yi?station=${savedValid}`}>
+            继续上次行旅 →
+          </Link>
+        </p>
+      )}
 
       {invalidRequested && requested && (
         <p className={styles.invalid} role="status">
