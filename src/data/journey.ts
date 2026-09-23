@@ -12,9 +12,9 @@ export interface JourneyStation {
   locationId: string
   /** 站点核验状态:verified=山名/顺序/引文已核验 */
   status: 'verified' | 'pending'
-  /** 对应篇章段落锚点(原文证据回看) */
+  /** 对应篇章段落锚点(J09:站点→原文往返) */
   segmentId?: string
-  /** pending 时的说明(哪些山段待录入) */
+  /** 站点说明(进度/缺口提示) */
   note?: string
 }
 
@@ -36,11 +36,20 @@ export const NANCI_YI_ROUTE: JourneyRoute = {
       locationId: 'loc-zhaoyao',
       status: 'verified',
       segmentId: 'seg-ns1-zhaoyao-kai',
+      note: '南次一经首山',
     },
-    // 堂庭之山、猨翼之山待 J04 核验后建站
-    { locationId: 'loc-chuyang', status: 'verified' },
-    // 柢山、亶爰之山、基山待 J05/J06 核验后建站
-    { locationId: 'loc-qingqiu', status: 'verified' },
+    {
+      locationId: 'loc-chuyang',
+      status: 'verified',
+      segmentId: 'seg-ns1-chuyang-shan',
+      note: '第四山(堂庭、猨翼之间诸段待录入)',
+    },
+    {
+      locationId: 'loc-qingqiu',
+      status: 'verified',
+      segmentId: 'seg-ns1-qingqiu-shan',
+      note: '第八山(基山之后)',
+    },
     // 箕尾之山待 J07 核验后建站
   ],
 }

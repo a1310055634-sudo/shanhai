@@ -3,14 +3,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import { getVerifiedEntities } from '../data/entities'
 import { LOCATIONS } from '../data/locations'
+import { NANCI_YI_ROUTE } from '../data/journey'
 import styles from './ExplorePage.module.css'
 
-/** 山海行旅路线:只列已逐字核验的山川站;未核缺口如实标注。 */
-const JOURNEY = [
-  { locId: 'loc-zhaoyao', note: '南次一经首山' },
-  { locId: 'loc-chuyang', note: '第四山(堂庭、猨翼之间诸段待录入)' },
-  { locId: 'loc-qingqiu', note: '第八山(基山之后)' },
-]
+/** 山海行旅路线:由结构化路线数据生成(J09),只列已逐字核验的山川站。 */
+const JOURNEY = NANCI_YI_ROUTE.stations
 
 const JOURNEY_2 = [{ locId: 'loc-danxue', note: '南次三经第三山' }]
 
@@ -100,18 +97,27 @@ export default function ExplorePage() {
 
         <p className={styles.routeName}>路线一 · 南次一经</p>
         <ol className={styles.stations}>
-          {JOURNEY.map(({ locId, note }, i) => {
-            const { loc, entity } = stationOf(locId)
+          {JOURNEY.map((station, i) => {
+            const { loc, entity } = stationOf(station.locationId)
             return (
-              <li key={locId} className={styles.station}>
+              <li key={station.locationId} className={styles.station}>
                 <span className={styles.stationNo}>{i + 1}</span>
                 <div className={styles.stationBody}>
                   <p className={styles.stationLoc}>{loc.canonicalName}</p>
-                  <p className={styles.stationNote}>{note}</p>
+                  <p className={styles.stationNote}>{station.note}</p>
                 </div>
                 {entity && (
                   <Link className={styles.stationLink} to={`/catalog/${entity.slug}`}>
                     {entity.canonicalName} →
+                  </Link>
+                )}
+                {station.segmentId && (
+                  <Link
+                    className={styles.stationText}
+                    to={`/chapters/nanshan-jing#${station.segmentId}`}
+                    aria-label={`查看${loc.canonicalName}对应原文`}
+                  >
+                    原文
                   </Link>
                 )}
               </li>

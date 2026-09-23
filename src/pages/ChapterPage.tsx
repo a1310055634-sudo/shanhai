@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { CHAPTERS, CHAPTER_PINYIN } from '../data/chapters'
+import { LOCATIONS } from '../data/locations'
 import { CHAPTER_TEXTS, GLOSSARY, segmentCounts, type ChapterSegment } from '../data/chapterTexts'
 import { NANCI_YI_ROUTE, validateJourneyRoute } from '../data/journey'
 import { ENTITIES } from '../data/entities'
@@ -152,7 +153,7 @@ export default function ChapterPage() {
       <div className={styles.reader}>
         {chapterText.segments.map((seg, i) =>
           seg.kind === 'text' ? (
-            <div key={i} className={styles.segment}>
+            <div key={i} className={styles.segment} id={seg.id} data-seg-id={seg.id}>
               <p className={styles.sectionTag}>{seg.section}</p>
               <p className={styles.text}>{annotate(seg.text ?? '', annotateOn)}</p>
               <div className={styles.segFoot}>
@@ -160,7 +161,15 @@ export default function ChapterPage() {
                   const e = ENTITIES.find((x) => x.id === id)
                   return e ? (
                     <Link key={id} className={styles.segLink} to={jumpToEntity(id)}>
-                      {e.canonicalName}
+                      异兽·{e.canonicalName}
+                    </Link>
+                  ) : null
+                })}
+                {seg.relatedLocationIds?.map((id) => {
+                  const loc = LOCATIONS.find((l) => l.id === id)
+                  return loc ? (
+                    <Link key={`l-${id}`} className={styles.segLink} to="/atlas">
+                      地·{loc.canonicalName}
                     </Link>
                   ) : null
                 })}
