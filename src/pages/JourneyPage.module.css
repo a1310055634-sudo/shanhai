@@ -217,3 +217,115 @@
     gap: 8px 12px;
   }
 }
+
+/* 路线长卷(J11):横向可滚动的站点总览条 */
+.scrollWrap {
+  margin-top: 28px;
+  border: 1px solid rgba(88, 115, 103, 0.4);
+  border-radius: var(--radius-card);
+  background:
+    radial-gradient(1000px 400px at 50% 40%, rgba(23, 35, 31, 0.6), rgba(13, 19, 17, 0.9));
+  overflow: hidden;
+}
+
+.scroll {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  overflow-x: auto;
+  padding: 20px 16px;
+}
+
+.scrollSlot {
+  flex: none;
+  width: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border: 1px solid rgba(177, 139, 86, 0.45);
+  border-radius: var(--radius-card);
+  background: rgba(23, 35, 31, 0.7);
+  text-decoration: none;
+  transition:
+    border-color var(--duration-hover) var(--ease-soft),
+    transform var(--duration-hover) var(--ease-soft);
+}
+
+.scrollSlot:hover {
+  border-color: var(--old-gold);
+  transform: translateY(-2px);
+}
+
+.scrollSlotOn {
+  border-color: var(--cinnabar);
+  background: rgba(23, 35, 31, 0.95);
+}
+
+.scrollDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--verdigris);
+  border: 1px solid var(--paper);
+}
+
+.scrollSlotOn .scrollDot {
+  background: var(--cinnabar);
+}
+
+.scrollName {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: var(--paper);
+  text-align: center;
+}
+
+.scrollApproach {
+  font-size: 10.5px;
+  color: var(--old-gold);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.scrollGap {
+  flex: none;
+  width: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 6px;
+  border: 1px dashed rgba(143, 150, 141, 0.4);
+  border-radius: var(--radius-card);
+  text-align: center;
+}
+
+.scrollGapName {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.scrollGapNote {
+  font-size: 10.5px;
+  color: rgba(143, 150, 141, 0.7);
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 640px) {
+  .scroll {
+    padding: 14px 10px;
+  }
+
+  .scrollSlot {
+    width: 108px;
+  }
+
+  .scrollGap {
+    width: 80px;
+  }
+}

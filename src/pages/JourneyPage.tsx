@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { NANCI_YI_ROUTE, type JourneyStation } from '../data/journey'
+import { NANCI_YI_ROUTE, NANCI_YI_PENDING, type JourneyStation } from '../data/journey'
 import { LOCATIONS } from '../data/locations'
 import { ENTITIES } from '../data/entities'
 import styles from './JourneyPage.module.css'
@@ -30,6 +30,47 @@ function stationView(station: JourneyStation): StationView | null {
  * 当前站同步到 URL(?station=);刷新/分享/返回均保持;非法参数安全回起点并提示。
  * 站点数据全部来自已逐字核验的 NANCI_YI_ROUTE,缺口如实显示。
  */
+interface ScrollSlot {
+  kind: 'station' | 'gap'
+  locId?: string
+  name: string
+  approach?: string
+}
+
+/** 长卷槽位:已核验站与未核验山段按原文次序合并排列。 */
+function buildScrollSlots(): Array<ScrollSlot> {
+  const slots: Array<ScrollSlot> = []
+  const pending = [...NANCI_YI_PENDING]
+
+  NANCI_YI_ROUTE.stations.forEach((station) => {
+    const loc = LOCATIONS.find((l) => l.id === station.locationId)
+    if (!loc) return
+    // 插入本站之前的未核验山段
+    while (
+      pending.length > 0 &&
+      loc.sourceOrder !== undefined &&
+      pending[0].order < loc.sourceOrder
+    ) {
+      const p = pending.shift()!
+      slots.push({ kind: 'gap', name: p.name })
+    }
+    slots.push({
+      kind: 'station',
+      locId: loc.id,
+      name: loc.canonicalName,
+      approach: loc.sourceDirection
+        ? `${loc.sourceDirection ?? ''}${loc.sourceDistance ?? ''}`.trim() || undefined
+        : undefined,
+    })
+  })
+  // 末段之前剩余的未核验山
+  while (pending.length > 0) {
+    const p = pending.shift()!
+    slots.push({ kind: 'gap', name: p.name })
+  }
+  return slots
+}
+
 export default function JourneyPage() {
   const stations = NANCI_YI_ROUTE.stations.map(stationView).filter(
     (s): s is StationView => s !== null,
@@ -53,6 +94,36 @@ export default function JourneyPage() {
           循原文次序自招摇之山而行;已核验的站点可停留细读,未录山段如实标注缺口。
         </p>
       </header>
+
+      {/* 路线长卷(J11):按原文次序的站点总览条 */}
+      <section className={styles.scrollWrap} aria-label="路线长卷">
+        <div className={styles.scroll}>
+          {buildScrollSlots().map((slot, i) =>
+            slot.kind === 'station' ? (
+              <Link
+                key={`s${i}`}
+                to={`/journeys/nanci-yi?station=${slot.locId}`}
+                className={
+                  currentId === slot.locId
+                    ? `${styles.scrollSlot} ${styles.scrollSlotOn}`
+                    : styles.scrollSlot
+                }
+              >
+                <span className={styles.scrollDot} aria-hidden="true" />
+                <span className={styles.scrollName}>{slot.name}</span>
+                {slot.approach && (
+                  <span className={styles.scrollApproach}>{slot.approach}</span>
+                )}
+              </Link>
+            ) : (
+              <div key={`p${i}`} className={styles.scrollGap}>
+                <span className={styles.scrollGapName}>{slot.name}</span>
+                <span className={styles.scrollGapNote}>待核验</span>
+              </div>
+            ),
+          )}
+        </div>
+      </section>
 
       {invalidRequested && requested && (
         <p className={styles.invalid} role="status">

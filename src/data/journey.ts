@@ -132,3 +132,19 @@ export function validateJourneyRoute(route: JourneyRoute): JourneyIssue[] {
 
   return issues
 }
+
+/** 南次一经已知山序中的未核验山段(名称见于既有盘点记录,山句待逐字核验)。 */
+export interface PendingMountain {
+  name: string
+  order: number
+  note?: string
+}
+
+export const NANCI_YI_PENDING: PendingMountain[] = [
+  { name: '堂庭之山', order: 2 },
+  { name: '猨翼之山', order: 3, note: '用字异文已录(猨)' },
+  { name: '柢山', order: 5, note: '或作「祗山」,用字待核验' },
+  { name: '亶爰之山', order: 6 },
+  { name: '基山', order: 7 },
+  { name: '箕尾之山', order: 9 },
+]
