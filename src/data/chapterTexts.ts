@@ -2,85 +2,132 @@
  * 篇章原文分段数据。
  * 红线:kind='text' 的段落全部为 2026-09-20 经 ctext.org 公开文本逐字核对过的
  * 原文(与对应条目/地点的 citation 一致);其余位置一律以 kind='gap' 如实标注
- * 「待录入」,不以常识补写。详情见 CONTENT_SOURCES.md。
+ * 「待录入」,不以常识补写。详见 CONTENT_SOURCES.md。
+ *
+ * J02:每段增加稳定 id(用作锚点与引用,不依赖数组下标);
+ * 计数改由 segmentCounts() 从数组派生,不再手填。
  */
 
+/** 子经归属(南次一经/南次二经/南次三经)。 */
+export type SubClassic = '南次一经' | '南次二经' | '南次三经'
+
 export interface ChapterSegment {
+  /** 稳定 id(J02 建立),用作锚点与引用,不得依赖数组下标 */
+  id: string
   kind: 'text' | 'gap'
   /** kind='text' 时的原文(逐字核对) */
   text?: string
   /** 分段说明(如「待录入」的范围) */
   note?: string
-  /** 所属子经/小节 */
-  section: string
+  /** 所属子经 */
+  section: SubClassic
   relatedEntityIds?: string[]
   relatedLocationIds?: string[]
 }
 
 export interface ChapterText {
-  /** 已录入段数 */
-  enteredCount: number
-  /** 待录入段数(gap 计一处) */
-  gapCount: number
   segments: ChapterSegment[]
+}
+
+/** 派生计数(J02):由 segments 实时计算,避免手填与数组不符。 */
+export function segmentCounts(ct: ChapterText): { entered: number; gaps: number } {
+  return {
+    entered: ct.segments.filter((x) => x.kind === 'text').length,
+    gaps: ct.segments.filter((x) => x.kind === 'gap').length,
+  }
 }
 
 /** 南山经(含南次一经/二经/三经)——起步录入。 */
 const NANSHAN: ChapterText = {
-  enteredCount: 8,
-  gapCount: 5,
   segments: [
     {
+      id: 'seg-ns1-zhaoyao-kai',
       kind: 'text',
       section: '南次一经',
       text: '南山经之首曰䧿山。其首曰招摇之山，临于西海之上，多桂，多金玉。',
       relatedLocationIds: ['loc-zhaoyao'],
     },
-    { kind: 'gap', section: '南次一经', note: '堂庭之山、猨翼之山诸段待录入' },
     {
+      id: 'seg-ns1-gap-tangting-yuanyi',
+      kind: 'gap',
+      section: '南次一经',
+      note: '堂庭之山、猨翼之山诸段待录入',
+    },
+    {
+      id: 'seg-ns1-chuyang-shan',
       kind: 'text',
       section: '南次一经',
       text: '又东三百七十里，曰杻阳之山，其阳多赤金，其阴多白金。',
       relatedLocationIds: ['loc-chuyang'],
     },
     {
+      id: 'seg-ns1-lushu',
       kind: 'text',
       section: '南次一经',
       text: '有兽焉，其状如马而白首，其文如虎而赤尾，其音如谣，其名曰鹿蜀，佩之宜子孙。',
       relatedEntityIds: ['ent-lushu'],
       relatedLocationIds: ['loc-chuyang'],
     },
-    { kind: 'gap', section: '南次一经', note: '柢山、亶爰之山、基山诸段待录入' },
     {
+      id: 'seg-ns1-gap-di-yuan-ji',
+      kind: 'gap',
+      section: '南次一经',
+      note: '柢山、亶爰之山、基山诸段待录入',
+    },
+    {
+      id: 'seg-ns1-qingqiu-shan',
       kind: 'text',
       section: '南次一经',
       text: '又东三百里，曰青丘之山，其阳多玉，其阴多青䨼。',
       relatedLocationIds: ['loc-qingqiu'],
     },
     {
+      id: 'seg-ns1-jiuweihu',
       kind: 'text',
       section: '南次一经',
       text: '有兽焉，其状如狐而九尾，其音如婴儿，能食人，食者不蛊。',
       relatedEntityIds: ['ent-jiuweihu'],
       relatedLocationIds: ['loc-qingqiu'],
     },
-    { kind: 'gap', section: '南次一经', note: '箕尾之山段及篇末统计待录入' },
-    { kind: 'gap', section: '南次二经', note: '柜山以下诸段待录入' },
-    { kind: 'gap', section: '南次三经', note: '天虞之山、祷过之山段待录入' },
     {
+      id: 'seg-ns1-gap-jiwei-tongji',
+      kind: 'gap',
+      section: '南次一经',
+      note: '箕尾之山段及篇末统计待录入',
+    },
+    {
+      id: 'seg-ns2-gap-quanshan',
+      kind: 'gap',
+      section: '南次二经',
+      note: '柜山以下诸段待录入',
+    },
+    {
+      id: 'seg-ns3-gap-tianyu-daoguo',
+      kind: 'gap',
+      section: '南次三经',
+      note: '天虞之山、祷过之山段待录入',
+    },
+    {
+      id: 'seg-ns3-danxue-shan',
       kind: 'text',
       section: '南次三经',
       text: '又东五百里，曰丹穴之山，其上多金玉。丹水出焉，而南流注于渤海。',
       relatedLocationIds: ['loc-danxue'],
     },
     {
+      id: 'seg-ns3-fenghuang',
       kind: 'text',
       section: '南次三经',
       text: '有鸟焉，其状如鸡，五采而文，名曰凤皇，首文曰德，翼文曰义，背文曰礼，膺文曰仁，腹文曰信。是鸟也，饮食自然，自歌自舞，见则天下安宁。',
       relatedEntityIds: ['ent-fenghuang'],
       relatedLocationIds: ['loc-danxue'],
     },
-    { kind: 'gap', section: '南次三经', note: '发爽之山以下诸段待录入' },
+    {
+      id: 'seg-ns3-gap-fashuang-end',
+      kind: 'gap',
+      section: '南次三经',
+      note: '发爽之山以下诸段待录入',
+    },
   ],
 }
 

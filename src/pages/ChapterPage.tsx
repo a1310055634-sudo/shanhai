@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { CHAPTERS, CHAPTER_PINYIN } from '../data/chapters'
-import { CHAPTER_TEXTS, GLOSSARY, type ChapterSegment } from '../data/chapterTexts'
+import { CHAPTER_TEXTS, GLOSSARY, segmentCounts, type ChapterSegment } from '../data/chapterTexts'
+import { NANCI_YI_ROUTE, validateJourneyRoute } from '../data/journey'
 import { ENTITIES } from '../data/entities'
 import EmptyState from '../components/EmptyState'
 import styles from './ChapterPage.module.css'
@@ -39,6 +40,12 @@ export default function ChapterPage() {
     [slug],
   )
 
+  // 调试钩子(J08 审校复用):window.__journeyCheck() 返回路线完整性问题清单
+  useEffect(() => {
+    (window as unknown as Record<string, unknown>).__journeyCheck = () =>
+      validateJourneyRoute(NANCI_YI_ROUTE)
+  }, [])
+
   if (!chapter || !chapterText) {
     return (
       <div className={styles.page}>
@@ -55,8 +62,9 @@ export default function ChapterPage() {
   const prev = order > 0 ? CHAPTERS[order - 1] : undefined
   const next = order < CHAPTERS.length - 1 ? CHAPTERS[order + 1] : undefined
   const linkedEntities = ENTITIES.filter((e) => e.chapterIds.includes(chapter.id))
-  const total = chapterText.enteredCount + chapterText.gapCount
-  const progress = Math.round((chapterText.enteredCount / total) * 100)
+  const { entered, gaps } = segmentCounts(chapterText)
+  const total = entered + gaps
+  const progress = Math.round((entered / total) * 100)
 
   const copySegment = async (seg: ChapterSegment, index: number) => {
     const payload = `${seg.text}
@@ -121,7 +129,7 @@ export default function ChapterPage() {
             <div className={styles.progressFill} style={{ width: `${progress}%` }} />
           </div>
           <p className={styles.progressNote}>
-            已录入 {chapterText.enteredCount} 段 · 待录入 {chapterText.gapCount} 处 ·
+            已录入 {entered} 段 · 待录入 {gaps} 处 ·
             相关条目 {linkedEntities.length} 条
           </p>
         </div>

@@ -115,6 +115,8 @@ export interface Location {
   aliases: string[]
   type: 'mountain' | 'river' | 'sea' | 'plain' | 'nation' | 'wasteland'
   chapterId: string
+  /** 所属子经(如「南次一经」);仅在与行旅核验时填,未核定处留空 */
+  subClassic?: string
   /** 原文中的出场顺序(所在子经内的次序;未能核验整链时暂缺) */
   sourceOrder?: number
   previousLocationId?: string

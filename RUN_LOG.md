@@ -34,6 +34,33 @@
 
 ---
 
+---
+
+## 2026-09-24 01:00 — 01:12 · 行旅冲刺 J02 · 稳定 ID 与关系校验
+
+**本轮任务**:J02 稳定 ID、子经归属、路线数据结构与完整性校验。
+
+**本轮修改的文件与页面**:
+- `src/data/chapterTexts.ts`:13 段全部建立稳定 id(seg-ns1-*/seg-ns2-*/seg-ns3-*);ChapterText 计数字段废弃改派生;新增 segmentCounts()
+- `src/data/types.ts`:Location 增加 subClassic?(子经归属)
+- `src/data/locations.ts`:招摇/杻阳/青丘 标「南次一经」、丹穴 标「南次三经」(已核验的才填;西山经等未核定处留空)
+- 新建 `src/data/journey.ts`:NANCI_YI_ROUTE(3 站 verified + 缺口注释)+ validateJourneyRoute()(查重复站点/无效地点/无效实体/已核验无引文/顺序冲突)
+- `src/pages/ChapterPage.tsx`:计数切换为 segmentCounts 派生;挂 window.__journeyCheck 调试钩子(生产可见但无害,J08 审校复用)
+
+**实际浏览器检查**:
+- 篇章页:派生计数「已录入 7 段 · 待录入 6 处」✓(南次一经 reader 内 7 text + 6 gap)
+- window.__journeyCheck() → **0 问题**(当前 3 站均有引文、顺序正确)
+- catalog 12 卡无回归;无溢出
+
+**构建结果**:通过
+
+**发现的异文或缺口**:无新增(堂庭/猨翼留待 J04)
+
+**下一轮依赖**:J03 起点复核需底本链接(已验证可访问)。
+
+**状态**:done
+
+---
 ## 2026-09-24 00:45 — 00:58 · 行旅冲刺 J01 · 盘点与基线
 
 > 自本轮起进入「南次一经·山海行旅冲刺」(JOURNEY_SPRINT.md,J01—J16),与开发期轮次及视觉冲刺 V01—V14 编号独立。触发任务已由用户更新提示词并重新启用。
