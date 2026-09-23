@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useLocation } from 'react-router-dom'
 import { CHAPTERS, CHAPTER_PINYIN } from '../data/chapters'
 import { LOCATIONS } from '../data/locations'
 import { CHAPTER_TEXTS, GLOSSARY, segmentCounts, type ChapterSegment } from '../data/chapterTexts'
@@ -31,6 +31,7 @@ function annotate(text: string, on: boolean) {
 /** 篇章阅读器(规范第七节):分段、进度、注音开关、复制带出处、上下篇。 */
 export default function ChapterPage() {
   const { slug } = useParams()
+  const location = useLocation()
   const chapter = CHAPTERS.find((c) => c.slug === slug)
   const [annotateOn, setAnnotateOn] = useState(true)
   const [copied, setCopied] = useState<string | null>(null)
@@ -46,6 +47,21 @@ export default function ChapterPage() {
     (window as unknown as Record<string, unknown>).__journeyCheck = () =>
       validateJourneyRoute(NANCI_YI_ROUTE)
   }, [])
+
+  // J16:行旅「打开对应段落」等站内锚点进入时,SPA 哈希变更不触发浏览器原生滚动,
+  // pushState 也不登记 :target——故自行定位并以状态类明示到达段落。
+  const [anchorSeg, setAnchorSeg] = useState<string | null>(null)
+  useEffect(() => {
+    if (!location.hash) {
+      setAnchorSeg(null)
+      return
+    }
+    const id = decodeURIComponent(location.hash.slice(1))
+    const el = document.getElementById(id)
+    if (!el) return
+    el.scrollIntoView({ block: 'start' })
+    setAnchorSeg(id)
+  }, [location.hash, chapter, chapterText])
 
   if (!chapter || !chapterText) {
     return (
@@ -156,7 +172,12 @@ export default function ChapterPage() {
       <div className={styles.reader}>
         {chapterText.segments.map((seg, i) =>
           seg.kind === 'text' ? (
-            <div key={i} className={styles.segment} id={seg.id} data-seg-id={seg.id}>
+            <div
+              key={i}
+              className={seg.id === anchorSeg ? `${styles.segment} ${styles.segmentOn}` : styles.segment}
+              id={seg.id}
+              data-seg-id={seg.id}
+            >
               <p className={styles.sectionTag}>{seg.section}</p>
               <p className={styles.text}>{annotate(seg.text ?? '', annotateOn)}</p>
               <div className={styles.segFoot}>

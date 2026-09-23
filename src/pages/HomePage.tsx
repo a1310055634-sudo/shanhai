@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import TodayBeast from '../components/home/TodayBeast'
 import ExplorePaths from '../components/home/ExplorePaths'
@@ -30,6 +31,12 @@ export default function HomePage() {
             <p className={styles.introText}>
               这里不是把神怪做成数值卡牌,而是沿着篇章、山川和原文证据慢慢展开一部数字异闻志。
               每一处留白,都代表尚未核定的部分。
+            </p>
+            <p className={styles.introJourney}>
+              已开通:南次一经·山海行旅。
+              <Link className={styles.introJourneyLink} to="/journeys/nanci-yi">
+                沿原文次序逐站行走 →
+              </Link>
             </p>
           </div>
           <dl className={styles.stats}>

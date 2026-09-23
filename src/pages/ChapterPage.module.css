@@ -124,6 +124,16 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  scroll-margin-top: 96px; /* J16:让过固定页头,锚点段整体可见 */
+}
+
+/* J16:自行旅/条目锚点到达时段落以朱砂描边明示,与 CitationBlock 同一视觉语言。
+   :target 覆盖整页直链加载;segmentOn 覆盖 SPA 站内跳转(pushState 不登记 :target)。 */
+.segment:target,
+.segmentOn {
+  box-shadow: 0 0 0 2px var(--cinnabar), 0 8px 24px rgba(167, 71, 56, 0.18);
+  padding: 14px;
+  margin: -14px;
 }
 
 .sectionTag {

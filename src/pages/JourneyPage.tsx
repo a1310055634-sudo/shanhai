@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { NANCI_YI_ROUTE, NANCI_YI_PENDING, type JourneyStation } from '../data/journey'
 import { CHAPTER_TEXTS } from '../data/chapterTexts'
 import { LOCATIONS } from '../data/locations'
@@ -84,12 +84,15 @@ function readProgress(): string | null {
 }
 
 export default function JourneyPage() {
+  // J16 修复:订阅路由上下文而非 window.location——站内同路由 param 导航时
+  // pushState 与渲染提交的时序可能使 window.location 滞后,导致面板停留旧站。
+  const location = useLocation()
   const stations = NANCI_YI_ROUTE.stations.map(stationView).filter(
     (s): s is StationView => s !== null,
   )
   const validIds = new Set(stations.map((s) => s.locId))
 
-  const params = new URLSearchParams(window.location.search)
+  const params = new URLSearchParams(location.search)
   const requested = params.get('station')
   const invalidRequested = requested !== null && !validIds.has(requested)
 
@@ -162,10 +165,13 @@ export default function JourneyPage() {
         </div>
       </section>
 
-      {savedValid && savedValid !== currentId && (
-        <p className={styles.resume}>
-          <Link className={styles.resumeLink} to={`/journeys/nanci-yi?station=${savedValid}`}>
-            继续上次行旅 →
+      {/* J16 修正:原条件(savedValid !== currentId)恒假——带参时 savedProgress 为 null,
+          无参时 currentId 即存档站,横幅永不可达。改为无参接续时明示站点并给从起点出发的入口。 */}
+      {requested === null && savedValid !== null && current && (
+        <p className={styles.resume} role="status">
+          已接续上次行旅,当前在{current.name}。
+          <Link className={styles.resumeLink} to={`/journeys/nanci-yi?station=${stations[0]?.locId}`}>
+            从起点重新出发 →
           </Link>
         </p>
       )}
