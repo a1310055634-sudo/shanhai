@@ -148,3 +148,14 @@ export const NANCI_YI_PENDING: PendingMountain[] = [
   { name: '基山', order: 7 },
   { name: '箕尾之山', order: 9 },
 ]
+
+/** 按实体反查所在行旅站点(J13 双向导航用)。 */
+export function findStationByEntity(
+  entityId: string,
+): { route: JourneyRoute; station: JourneyStation } | undefined {
+  const route = NANCI_YI_ROUTE
+  const station = route.stations.find((x) => x.locationId && (
+    LOCS.find((l) => l.id === x.locationId)?.relatedEntityIds.includes(entityId)
+  ))
+  return station ? { route, station } : undefined
+}

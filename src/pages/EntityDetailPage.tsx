@@ -7,6 +7,8 @@ import { ENTITIES, ENTITY_TYPE_LABELS, RECORD_STATUS_LABELS, getVerifiedEntities
 import { getLocation } from '../data/locations'
 import { CHAPTERS } from '../data/chapters'
 import { useReadingHistory } from '../hooks/useReadingHistory'
+import { findStationByEntity } from '../data/journey'
+import { LOCATIONS as ALL_LOCATIONS } from '../data/locations'
 import BeastArtwork from '../components/art/BeastArtwork'
 import type { Entity, Trait } from '../data/types'
 import styles from './EntityDetailPage.module.css'
@@ -52,6 +54,7 @@ export default function EntityDetailPage() {
   const locations = entity.locationIds
     .map((id) => getLocation(id))
     .filter((l): l is NonNullable<typeof l> => Boolean(l))
+  const journeyStop = findStationByEntity(entity.id)
 
   // 关联漫游(规范第六节第 9 条):只推荐有真实交集的条目
   const sameChapter = ENTITIES.filter(
@@ -350,6 +353,15 @@ export default function EntityDetailPage() {
           <Link className={styles.relatedLink} to="/catalog">
             返回图鉴
           </Link>
+          {journeyStop && (
+            <Link
+              className={styles.relatedLink}
+              to={`/journeys/nanci-yi?station=${journeyStop.station.locationId}`}
+            >
+              山海行旅 · 返回
+              {ALL_LOCATIONS.find((l) => l.id === journeyStop.station.locationId)?.canonicalName} →
+            </Link>
+          )}
           <button type="button" className={styles.randomBtn} onClick={rollRandom}>
             随机翻一卷
           </button>
