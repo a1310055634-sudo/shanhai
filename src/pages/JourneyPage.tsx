@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { NANCI_YI_ROUTE, NANCI_YI_PENDING, type JourneyStation } from '../data/journey'
+import { CHAPTER_TEXTS } from '../data/chapterTexts'
 import { LOCATIONS } from '../data/locations'
 import { ENTITIES } from '../data/entities'
 import styles from './JourneyPage.module.css'
@@ -84,6 +85,13 @@ export default function JourneyPage() {
   const currentId = requested && validIds.has(requested) ? requested : stations[0]?.locId
   const currentIndex = stations.findIndex((s) => s.locId === currentId)
   const current = currentIndex >= 0 ? stations[currentIndex] : undefined
+  const currentStationSegment = current?.station.segmentId
+    ? CHAPTER_TEXTS['nanshan-jing']?.segments.find((x) => x.id === current.station.segmentId)
+    : undefined
+  const currentEntity = current?.entitySlug
+    ? ENTITIES.find((e) => e.slug === current.entitySlug)
+    : undefined
+  const currentEntityExplanation = currentEntity?.modernExplanation.slice(0, 90)
 
   return (
     <div className={styles.page}>
@@ -161,6 +169,24 @@ export default function JourneyPage() {
         <section className={styles.current} aria-label="当前站点">
           <p className={styles.currentKicker}>当前站点 · 第 {currentIndex + 1} 站</p>
           <h2 className={styles.currentName}>{current.name}</h2>
+          {currentStationSegment && (
+            <blockquote className={styles.currentCite}>
+              <span className={styles.citeTag}>原文</span>
+              {currentStationSegment.text}
+              <span className={styles.citeFrom}>
+                ——《南山经》· {currentStationSegment.section}(节选)
+              </span>
+            </blockquote>
+          )}
+          {current.entitySlug && currentEntityExplanation && (
+            <div className={styles.currentExplain}>
+              <p className={styles.explainTag}>本站释义(节选)</p>
+              <p className={styles.explainText}>{currentEntityExplanation}</p>
+              <Link className={styles.explainLink} to={`/catalog/${current.entitySlug}`}>
+                阅读完整条目 →
+              </Link>
+            </div>
+          )}
           {current.entitySlug ? (
             <p className={styles.currentBeast}>
               出现异兽:

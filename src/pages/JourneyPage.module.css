@@ -329,3 +329,65 @@
     width: 80px;
   }
 }
+
+/* 单站展签(V12):原文节选与本站释义 */
+.currentCite {
+  margin: 4px 0;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 2;
+  color: var(--paper-bright);
+  border-left: 3px solid var(--cinnabar);
+  padding: 10px 0 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.citeTag {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--cinnabar);
+  font-family: var(--font-sans);
+}
+
+.citeFrom {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  letter-spacing: 0.08em;
+}
+
+.currentExplain {
+  border-top: 1px dashed rgba(143, 150, 141, 0.35);
+  padding-top: 12px;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.explainTag {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--verdigris);
+}
+
+.explainText {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.85;
+}
+
+.explainLink {
+  align-self: flex-start;
+  font-size: 12.5px;
+  color: var(--old-gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(177, 139, 86, 0.45);
+  padding-bottom: 1px;
+}
+
+.explainLink:hover {
+  color: var(--paper-bright);
+}
