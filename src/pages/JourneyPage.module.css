@@ -197,7 +197,9 @@
 }
 
 /* 路线长卷(J11):横向可滚动的站点总览条 */
+/* E04:长卷容器承载山水底层,内容层抬到其上 */
 .scrollWrap {
+  position: relative;
   margin-top: 28px;
   border: 1px solid rgba(88, 115, 103, 0.4);
   border-radius: var(--radius-card);
@@ -206,16 +208,30 @@
   overflow: hidden;
 }
 
+.scrollNote {
+  position: relative;
+  margin: 0;
+  padding: 0 16px 12px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.scroll > * {
+  position: relative;
+  z-index: 1;
+}
+
 .scroll {
   display: flex;
   align-items: stretch;
-  gap: 8px;
+  gap: 6px;
   overflow-x: auto;
   padding: 20px 16px;
 }
 
 .scrollSlot {
-  flex: 1 0 118px;
+  flex: 1 0 112px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -233,6 +249,17 @@
 .scrollSlot:hover {
   border-color: var(--old-gold);
   transform: translateY(-2px);
+}
+
+.scrollLink {
+  flex: none;
+  align-self: center;
+  width: 8px;
+  border-top: 2px dashed rgba(143, 150, 141, 0.45);
+}
+
+.scrollLinkSolid {
+  border-top: 2px solid var(--old-gold);
 }
 
 .scrollSlotOn {
@@ -277,6 +304,7 @@
   padding: 12px 6px;
   border: 1px dashed rgba(143, 150, 141, 0.4);
   border-radius: var(--radius-card);
+  background: rgba(13, 19, 17, 0.78); /* E04:实底护住文字对比度 */
   text-align: center;
 }
 
@@ -295,11 +323,11 @@
 @media (max-width: 640px) {
   .scroll {
     padding: 14px 10px;
-    gap: 6px;
+    gap: 5px;
   }
 
   .scrollSlot {
-    flex-basis: 108px;
+    flex-basis: 104px;
   }
 
   .scrollGap {

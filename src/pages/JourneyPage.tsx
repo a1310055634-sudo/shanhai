@@ -1,9 +1,11 @@
 import { useEffect } from 'react'
+import type { ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { NANCI_YI_ROUTE, NANCI_YI_PENDING, type JourneyStation } from '../data/journey'
 import { CHAPTER_TEXTS } from '../data/chapterTexts'
 import { LOCATIONS } from '../data/locations'
 import { ENTITIES } from '../data/entities'
+import JourneyScenery from '../components/journey/JourneyScenery'
 import styles from './JourneyPage.module.css'
 
 interface StationView {
@@ -135,34 +137,63 @@ export default function JourneyPage() {
         </p>
       </header>
 
-      {/* 路线长卷(J11):按原文次序的站点总览条 */}
-      <section className={styles.scrollWrap} aria-label="路线长卷">
+      {/* E04 路线长卷:九位置山海场景;相邻边只在两端均已核验时画为实线 */}
+      <section
+        className={styles.scrollWrap}
+        aria-label="路线长卷:南次一经九个顺序位置,古籍叙事顺序示意"
+      >
+        <JourneyScenery />
         <div className={styles.scroll}>
-          {buildScrollSlots().map((slot, i) =>
-            slot.kind === 'station' ? (
-              <Link
-                key={`s${i}`}
-                to={`/journeys/nanci-yi?station=${slot.locId}`}
-                className={
-                  currentId === slot.locId
-                    ? `${styles.scrollSlot} ${styles.scrollSlotOn}`
-                    : styles.scrollSlot
-                }
-              >
-                <span className={styles.scrollDot} aria-hidden="true" />
-                <span className={styles.scrollName}>{slot.name}</span>
-                {slot.approach && (
-                  <span className={styles.scrollApproach}>{slot.approach}</span>
-                )}
-              </Link>
-            ) : (
-              <div key={`p${i}`} className={styles.scrollGap}>
-                <span className={styles.scrollGapName}>{slot.name}</span>
-                <span className={styles.scrollGapNote}>待核验</span>
-              </div>
-            ),
-          )}
+          {(() => {
+            const slots = buildScrollSlots()
+            const out: ReactNode[] = []
+            slots.forEach((slot, i) => {
+              if (i > 0) {
+                const prev = slots[i - 1]
+                // 相邻边只有两端都是已核验站时才是「原文已证实的直接相邻」;隔缺口一律虚线
+                const verifiedEdge = prev.kind === 'station' && slot.kind === 'station'
+                out.push(
+                  <span
+                    key={`l${i}`}
+                    className={verifiedEdge ? `${styles.scrollLink} ${styles.scrollLinkSolid}` : styles.scrollLink}
+                    aria-hidden="true"
+                  />,
+                )
+              }
+              if (slot.kind === 'station') {
+                out.push(
+                  <Link
+                    key={`s${i}`}
+                    to={`/journeys/nanci-yi?station=${slot.locId}`}
+                    aria-current={currentId === slot.locId ? 'true' : undefined}
+                    className={
+                      currentId === slot.locId
+                        ? `${styles.scrollSlot} ${styles.scrollSlotOn}`
+                        : styles.scrollSlot
+                    }
+                  >
+                    <span className={styles.scrollDot} aria-hidden="true" />
+                    <span className={styles.scrollName}>{slot.name}</span>
+                    {slot.approach && (
+                      <span className={styles.scrollApproach}>{slot.approach}</span>
+                    )}
+                  </Link>,
+                )
+              } else {
+                out.push(
+                  <div key={`p${i}`} className={styles.scrollGap}>
+                    <span className={styles.scrollGapName}>{slot.name}</span>
+                    <span className={styles.scrollGapNote}>待核验</span>
+                  </div>,
+                )
+              }
+            })
+            return out
+          })()}
         </div>
+        <p className={styles.scrollNote}>
+          古籍叙事顺序示意,非现实地理位置 · 已核验站可点入,待核验山段不可进入 · 行进方向循原文「又东」次序
+        </p>
       </section>
 
       {/* J16 修正:原条件(savedValid !== currentId)恒假——带参时 savedProgress 为 null,
