@@ -18,6 +18,20 @@
   --cinnabar: #a74738; /* 朱砂,仅印章/选中/关键操作 */
   --old-gold: #b18b56; /* 旧金 */
 
+  /* E02 双表面系统:墨夜承载场景/路线/插画;宣纸(月白)承载长段原文与解释。
+     两表面各自成对的文字/边框变量,禁止跨表面混用。 */
+  --surface-night: var(--ink-night); /* 墨夜表面 */
+  --surface-paper: var(--paper-bright); /* 宣纸表面 */
+  --paper-ink: var(--text-on-light); /* 宣纸面正文,对月白 11.8:1 */
+  --paper-muted: #4c554e; /* 宣纸面弱化文字/出处,对月白 6.7:1 */
+  --paper-border: rgba(38, 48, 43, 0.15); /* 宣纸面内部分隔线 */
+  --verdigris-text: #86a492; /* 深底铜绿文字色,对墨夜 6.9:1(--verdigris 3.6:1 仅用于图形) */
+
+  /* 深底边框强弱(旧金系):强=可交互边界,常=卡片边界,弱=内部分隔 */
+  --border-strong: rgba(177, 139, 86, 0.55);
+  --border-normal: rgba(177, 139, 86, 0.38);
+  --border-weak: rgba(177, 139, 86, 0.22);
+
   /* 文字 */
   --text-on-dark: #d9d6c9; /* 浅色正文 */
   --text-on-light: #26302b; /* 深色正文 */

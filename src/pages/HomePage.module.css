@@ -144,7 +144,7 @@
 
 .journeyEntryTag {
   flex-shrink: 0;
-  color: var(--verdigris);
+  color: var(--verdigris-text);
   font-size: 12px;
   letter-spacing: 0.32em;
   white-space: nowrap;

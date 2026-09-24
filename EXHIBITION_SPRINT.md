@@ -9,7 +9,7 @@
 | 轮次 | 内容 | 状态 | 有效触发 | 完成时间(真实) | 提交号 |
 | --- | --- | --- | --- | --- | --- |
 | E01 | 基线、问题清单与首页行旅入口 | done | 第 1 次 | 2026-09-25 02:05 | c99f3dd |
-| E02 | 墨夜与宣纸的设计系统 | todo | — | — | — |
+| E02 | 墨夜与宣纸的设计系统 | done | 第 2 次 | 2026-09-25 02:35 | ee124fa |
 | E03 | 行旅页空间重构 | todo | — | — | — |
 | E04 | 九位置山海长卷 | todo | — | — | — |
 | E05 | 行旅状态和路线交互 | todo | — | — | — |
@@ -58,4 +58,33 @@
 
 ### 提交
 
-- c99f3dd(本轮仅含 HomePage.tsx / HomePage.module.css / EXHIBITION_SPRINT.md / RUN_LOG.md / EXHIBITION_BASELINES/)
+- c99f3dd → amended f0c5745(本轮仅含 HomePage.tsx / HomePage.module.css / EXHIBITION_SPRINT.md / RUN_LOG.md / EXHIBITION_BASELINES/)
+
+## E02 记录(2026-09-25)
+
+### 双表面令牌(tokens.css 新增)
+
+- `--surface-night`(=墨夜)/ `--surface-paper`(=月白 #f3eee2)两种阅读表面;宣纸面配 `--paper-ink`(11.8:1)、`--paper-muted` #4c554e(6.7:1)、`--paper-border`。
+- `--verdigris-text` #86a492:铜绿文字专用高对比变体,对墨夜 6.9:1、对深墨子面 5.97:1;原 `--verdigris` 3.6:1 降级为仅图形用。
+- 边框强弱三档:`--border-strong/normal/weak`(旧金系 0.55/0.38/0.22)。
+
+### 实例应用(先共享规则,再各页取一实例)
+
+- **行旅页**:当前站展签原文块 currentCite 由深底文字改为宣纸嵌片(surface-paper + paper-ink + 朱砂左线),出处行换 paper-muted——原文与「本站释义」(深底)表面分离,直接回应 E01 问题清单第 5 项。
+- **首页**:今日异兽引文 blockquote 同样宣纸化,墨夜上形成明暗节奏。
+- **图鉴页**:核对标题/正文/拼音/篇章caption层级——拼音行本用 text-muted(6.2:1)达标;卡片 .type(12px 类型标注)与 .traitLabel 原用 verdigris 3.6:1 不达标,已换 verdigris-text(5.97:1)。CitationBlock 硬编码色全部令牌化(视觉不变,底色断言 rgb(243,238,226) ✓)。
+- verdigris 文字用点共 9 处(EntityCard 2/Relations 1/Chapter 3/EntityDetail 1/Journey 1/Home 1)全部替换;图形用途(fill/stroke/border/background)未动。
+
+### 对比度实测(WCAG)
+
+- 达标:text-muted/墨夜 6.18、old-gold/墨夜 5.99、text-on-dark/墨夜 12.89、text-on-light/月白 11.78、cinnabar/月白 5.04、新 verdigris-text 6.92。
+- 不达标已处置:verdigris 文字 3.63 → verdigris-text 6.92(仅存图形用途)。
+
+### 验证
+
+- npm run build 通过。1440:首页宣纸引文卡/行旅原文嵌片截图(E02-home-quote-paper.png、E02-journey-cite-paper.png);图鉴 1440/768/390、首页 390、行旅 390 溢出检查全部 OK。
+- 点击路径:首页→入口→行旅→异兽链→狌狌详情,详情引文底色=月白令牌值。
+
+### 遗留
+
+- 无阻断。朱砂/月白 5.04 达标但偏高,如后续需要更醒目的纸面印章色可引入 cinnabar-ink #8f3a2d(6.45),本轮不加。

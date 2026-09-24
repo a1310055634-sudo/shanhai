@@ -68,9 +68,12 @@
   font-size: 17px;
   line-height: 2;
   letter-spacing: 0.04em;
-  color: var(--paper-bright);
-  border-left: 3px solid var(--verdigris);
-  padding-left: 16px;
+  color: var(--paper-ink);
+  background: var(--surface-paper);
+  border: 1px solid var(--border-normal);
+  border-left: 3px solid var(--cinnabar);
+  border-radius: var(--radius-card);
+  padding: 14px 18px 12px 16px;
 }
 
 .quoteSource {

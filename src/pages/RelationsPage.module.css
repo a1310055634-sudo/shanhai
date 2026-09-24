@@ -107,7 +107,7 @@
 }
 
 .facts dt {
-  color: var(--verdigris);
+  color: var(--verdigris-text);
   font-family: var(--font-serif);
 }
 

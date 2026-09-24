@@ -921,3 +921,10 @@
 - 验证:npm run build 通过;1440 点击入口→行旅页实测;768/390 零横向溢出;390 点击入口实测;入口次序 DOM 断言(entryY900 < introY1200)。
 - 截图:E01-home-1440-entry / E01-home-1440-after / E01-home-390-after-entry。
 - 遗留:无阻断;E02(墨夜/宣纸双表面)待下轮。
+
+## 2026-09-25 02:35 · 展览精修冲刺 E02(第 2/15 次有效触发)
+
+- 双表面令牌落地:--surface-night/--surface-paper + 纸墨文字对(--paper-ink 11.8:1 / --paper-muted 6.7:1 / --paper-border)+ 边框强弱三档;新增 --verdigris-text #86a492(6.9:1),原 verdigris(3.6:1)保留仅作图形色。
+- 实例:行旅 currentCite 与首页今日异兽引文宣纸化(原文与释义表面分离);CitationBlock 硬编码令牌化;9 处深底铜绿文字全部换 verdigris-text(.type/.traitLabel 等 12px 信息小字对比度 3.6→5.97)。
+- 验证:npm run build 通过;图鉴 1440/768/390、首页/行旅 390 零横向溢出;点击路径 首页→入口→行旅→狌狌详情;详情引文底色断言=月白令牌值。截图 E02-home-quote-paper / E02-journey-cite-paper。
+- 遗留:无阻断。

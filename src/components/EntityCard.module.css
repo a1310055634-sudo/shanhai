@@ -118,7 +118,7 @@
 }
 
 .type {
-  color: var(--verdigris);
+  color: var(--verdigris-text);
   font-family: var(--font-serif);
   font-size: 12px;
   letter-spacing: 0.18em;
@@ -207,7 +207,7 @@
 
 .traitLabel {
   margin-right: 8px;
-  color: var(--verdigris);
+  color: var(--verdigris-text);
   font-family: var(--font-serif);
   letter-spacing: 0.2em;
 }

@@ -4,7 +4,7 @@
   border-left: 3px solid var(--cinnabar);
   border-radius: var(--radius-card);
   /* 浅宣纸底(V10):与深墨页底形成阅读节奏 */
-  background: var(--paper-bright);
+  background: var(--surface-paper);
   padding: 22px 24px 18px;
   scroll-margin-top: 96px;
   transition: box-shadow var(--duration-hover) var(--ease-soft);
@@ -27,7 +27,7 @@
 .meta {
   margin-top: 16px;
   padding-top: 14px;
-  border-top: 1px solid rgba(38, 48, 43, 0.15);
+  border-top: 1px solid var(--paper-border);
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -36,7 +36,7 @@
 .line {
   margin: 0;
   font-size: 13px;
-  color: #4c554e;
+  color: var(--paper-muted);
   line-height: 1.8;
 }
 
@@ -61,7 +61,7 @@
 .variant {
   margin: 4px 0 0;
   font-size: 13px;
-  color: #4c554e;
+  color: var(--paper-muted);
   line-height: 1.8;
 }
 
@@ -70,7 +70,7 @@
   margin-right: 10px;
   font-size: 12px;
   letter-spacing: 0.16em;
-  color: #4c554e;
+  color: var(--paper-muted);
   border: 1px solid rgba(38, 48, 43, 0.35);
   padding: 2px 8px;
   border-radius: 2px;
@@ -79,7 +79,7 @@
 .verify {
   margin: 4px 0 0;
   font-size: 12.5px;
-  color: #4c554e;
+  color: var(--paper-muted);
   line-height: 1.8;
 }
 

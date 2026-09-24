@@ -193,7 +193,7 @@
   align-self: flex-start;
   font-size: 12px;
   letter-spacing: 0.18em;
-  color: var(--verdigris);
+  color: var(--verdigris-text);
   text-decoration: none;
   border-bottom: 1px solid rgba(88, 115, 103, 0.5);
   padding: 8px 0;
