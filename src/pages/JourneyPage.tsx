@@ -12,9 +12,14 @@ interface StationView {
   station: JourneyStation
   locId: string
   name: string
+  order?: number
   entitySlug?: string
   entityName?: string
 }
+
+/** E05:原文山次用汉字数字,与「已核验行旅第几站」明确区分 */
+const CN_NUM = ['一', '二', '三', '四', '五', '六', '七', '八', '九']
+const cnNum = (n?: number) => (n && n >= 1 && n <= 9 ? CN_NUM[n - 1] : '')
 
 function stationView(station: JourneyStation): StationView | null {
   const loc = LOCATIONS.find((l) => l.id === station.locationId)
@@ -24,6 +29,7 @@ function stationView(station: JourneyStation): StationView | null {
     station,
     locId: loc.id,
     name: loc.canonicalName,
+    order: loc.sourceOrder,
     entitySlug: entity?.slug,
     entityName: entity?.canonicalName,
   }
@@ -38,6 +44,7 @@ interface ScrollSlot {
   kind: 'station' | 'gap'
   locId?: string
   name: string
+  order?: number
   approach?: string
 }
 
@@ -56,12 +63,13 @@ function buildScrollSlots(): Array<ScrollSlot> {
       pending[0].order < loc.sourceOrder
     ) {
       const p = pending.shift()!
-      slots.push({ kind: 'gap', name: p.name })
+      slots.push({ kind: 'gap', name: p.name, order: p.order })
     }
     slots.push({
       kind: 'station',
       locId: loc.id,
       name: loc.canonicalName,
+      order: loc.sourceOrder,
       approach: loc.sourceDirection
         ? `${loc.sourceDirection ?? ''}${loc.sourceDistance ?? ''}`.trim() || undefined
         : undefined,
@@ -70,7 +78,7 @@ function buildScrollSlots(): Array<ScrollSlot> {
   // 末段之前剩余的未核验山
   while (pending.length > 0) {
     const p = pending.shift()!
-    slots.push({ kind: 'gap', name: p.name })
+    slots.push({ kind: 'gap', name: p.name, order: p.order })
   }
   return slots
 }
@@ -172,6 +180,9 @@ export default function JourneyPage() {
                         : styles.scrollSlot
                     }
                   >
+                    <span className={styles.scrollOrder} aria-hidden="true">
+                      {cnNum(slot.order)}
+                    </span>
                     <span className={styles.scrollDot} aria-hidden="true" />
                     <span className={styles.scrollName}>{slot.name}</span>
                     {slot.approach && (
@@ -182,6 +193,9 @@ export default function JourneyPage() {
               } else {
                 out.push(
                   <div key={`p${i}`} className={styles.scrollGap}>
+                    <span className={styles.scrollOrder} aria-hidden="true">
+                      {cnNum(slot.order)}
+                    </span>
                     <span className={styles.scrollGapName}>{slot.name}</span>
                     <span className={styles.scrollGapNote}>待核验</span>
                   </div>,
@@ -216,7 +230,9 @@ export default function JourneyPage() {
       {/* E03:展签紧随路线场景,正文保持较窄阅读列 */}
       {current && (
         <section className={styles.current} aria-label="当前站点">
-          <p className={styles.currentKicker}>当前站点 · 第 {currentIndex + 1} 站</p>
+          <p className={styles.currentKicker}>
+            当前站点 · 南次一经第{cnNum(current.order)}山 · 已核验行旅第 {currentIndex + 1} / {stations.length} 站
+          </p>
           <h2 className={styles.currentName}>{current.name}</h2>
           {currentStationSegment && (
             <blockquote className={styles.currentCite}>

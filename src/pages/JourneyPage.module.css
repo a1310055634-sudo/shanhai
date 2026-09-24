@@ -262,9 +262,32 @@
   border-top: 2px solid var(--old-gold);
 }
 
+/* E05:深底上焦点环更亮,键盘行进可见 */
+.scrollSlot:focus-visible,
+.indexLink:focus-visible,
+.navLink:focus-visible {
+  outline: 2px solid var(--paper-bright);
+  outline-offset: 2px;
+}
+
 .scrollSlotOn {
   border-color: var(--cinnabar);
   background: rgba(23, 35, 31, 0.95);
+}
+
+.scrollOrder {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  color: var(--verdigris-text);
+  line-height: 1;
+}
+
+.scrollSlotOn .scrollOrder {
+  color: var(--old-gold);
+}
+
+.scrollGap .scrollOrder {
+  color: var(--text-muted);
 }
 
 .scrollDot {
@@ -275,7 +298,22 @@
   border: 1px solid var(--paper);
 }
 
-.scrollSlotOn .scrollDot {
+.scrollSlotOn .scrollOrder {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  color: var(--verdigris-text);
+  line-height: 1;
+}
+
+.scrollSlotOn .scrollOrder {
+  color: var(--old-gold);
+}
+
+.scrollGap .scrollOrder {
+  color: var(--text-muted);
+}
+
+.scrollDot {
   background: var(--cinnabar);
 }
 
