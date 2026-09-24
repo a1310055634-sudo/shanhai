@@ -182,32 +182,7 @@ export default function JourneyPage() {
         </p>
       )}
 
-      <ol className={styles.stations}>
-        {stations.map((s, i) => {
-          const active = s.locId === currentId
-          return (
-            <li key={s.locId} className={active ? `${styles.station} ${styles.active}` : styles.station}>
-              <Link
-                className={styles.stationMain}
-                to={`/journeys/nanci-yi?station=${s.locId}`}
-                aria-current={active ? 'true' : undefined}
-              >
-                <span className={styles.no} aria-hidden="true">
-                  {i + 1}
-                </span>
-                <span className={styles.name}>{s.name}</span>
-                <span className={styles.note}>{s.station.note}</span>
-              </Link>
-              {s.entitySlug && (
-                <Link className={styles.beastLink} to={`/catalog/${s.entitySlug}`}>
-                  异兽·{s.entityName}
-                </Link>
-              )}
-            </li>
-          )
-        })}
-      </ol>
-
+      {/* E03:展签紧随路线场景,正文保持较窄阅读列 */}
       {current && (
         <section className={styles.current} aria-label="当前站点">
           <p className={styles.currentKicker}>当前站点 · 第 {currentIndex + 1} 站</p>
@@ -266,6 +241,27 @@ export default function JourneyPage() {
           </p>
         </section>
       )}
+
+      {/* E03:三站列表降级为紧凑辅助索引——主路线在上方长卷,异兽入口在展签内 */}
+      <nav className={styles.stationIndex} aria-label="已核验站索引">
+        <span className={styles.stationIndexLabel}>已核验站</span>
+        <ol className={styles.stationIndexList}>
+          {stations.map((s, i) => {
+            const active = s.locId === currentId
+            return (
+              <li key={s.locId}>
+                <Link
+                  className={active ? `${styles.indexLink} ${styles.indexLinkOn}` : styles.indexLink}
+                  to={`/journeys/nanci-yi?station=${s.locId}`}
+                  aria-current={active ? 'true' : undefined}
+                >
+                  {i + 1} · {s.name}
+                </Link>
+              </li>
+            )
+          })}
+        </ol>
+      </nav>
     </div>
   )
 }
