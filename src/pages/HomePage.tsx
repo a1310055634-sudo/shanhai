@@ -32,12 +32,6 @@ export default function HomePage() {
               这里不是把神怪做成数值卡牌,而是沿着篇章、山川和原文证据慢慢展开一部数字异闻志。
               每一处留白,都代表尚未核定的部分。
             </p>
-            <p className={styles.introJourney}>
-              已开通:南次一经·山海行旅。
-              <Link className={styles.introJourneyLink} to="/journeys/nanci-yi">
-                沿原文次序逐站行走 →
-              </Link>
-            </p>
           </div>
           <dl className={styles.stats}>
             {EXHIBIT_STATS.map((stat) => (
@@ -48,6 +42,19 @@ export default function HomePage() {
             ))}
           </dl>
         </section>
+        {/* E01:行旅主探索入口——独立横幅,整块可点;朱砂留给当前态,此处以旧金为引 */}
+        <Link className={styles.journeyEntry} to="/journeys/nanci-yi" aria-label="进入南次一经山海行旅">
+          <span className={styles.journeyEntryTag}>行旅 · 已开通</span>
+          <span className={styles.journeyEntryMain}>
+            <span className={styles.journeyEntryTitle}>南次一经·山海行旅</span>
+            <span className={styles.journeyEntryText}>
+              沿原文次序自招摇之山行至青丘之山;方向里距均按底本核验,未录山段如实标注。
+            </span>
+          </span>
+          <span className={styles.journeyEntryCta} aria-hidden="true">
+            进入行旅 →
+          </span>
+        </Link>
         <TodayBeast />
         <ExplorePaths />
         <AtlasPreview />

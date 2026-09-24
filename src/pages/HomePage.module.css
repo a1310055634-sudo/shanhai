@@ -38,24 +38,6 @@
   letter-spacing: 0.12em;
 }
 
-.introJourney {
-  margin-top: 12px;
-  font-size: 13.5px;
-  color: var(--text-muted);
-}
-
-.introJourneyLink {
-  margin-left: 8px;
-  color: var(--old-gold);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(177, 139, 86, 0.45);
-  padding-bottom: 1px;
-}
-
-.introJourneyLink:hover {
-  color: var(--paper-bright);
-}
-
 .introText {
   max-width: 42em;
   margin-top: 18px;
@@ -137,20 +119,109 @@
   }
 }
 
-.introJourney {
-  margin-top: 12px;
-  font-size: 13.5px;
-  color: var(--text-muted);
-}
-
-.introJourneyLink {
-  margin-left: 8px;
-  color: var(--old-gold);
+/* E01:行旅主探索入口——独立横幅,整块可点;朱砂留给当前态,此处以旧金为引 */
+.journeyEntry {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: -26px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 26px;
+  border: 1px solid rgba(177, 139, 86, 0.38);
+  border-left: 3px solid var(--old-gold);
+  background: linear-gradient(90deg, rgba(46, 62, 58, 0.55), rgba(28, 38, 38, 0.2));
   text-decoration: none;
-  border-bottom: 1px solid rgba(177, 139, 86, 0.45);
-  padding-bottom: 1px;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
 
-.introJourneyLink:hover {
+.journeyEntry:hover {
+  border-color: rgba(206, 176, 120, 0.65);
+  background: linear-gradient(90deg, rgba(54, 72, 66, 0.65), rgba(34, 46, 44, 0.3));
+  transform: translateY(-1px);
+}
+
+.journeyEntryTag {
+  flex-shrink: 0;
+  color: var(--verdigris);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  white-space: nowrap;
+}
+
+.journeyEntryMain {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.journeyEntryTitle {
   color: var(--paper-bright);
+  font-family: var(--font-serif);
+  font-size: 20px;
+  letter-spacing: 0.06em;
+}
+
+.journeyEntryText {
+  color: var(--text-muted);
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+.journeyEntryCta {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 10px 18px;
+  border: 1px solid rgba(177, 139, 86, 0.55);
+  color: var(--old-gold);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.journeyEntry:hover .journeyEntryCta {
+  color: var(--paper-bright);
+  border-color: rgba(206, 176, 120, 0.8);
+}
+
+@media (max-width: 900px) {
+  .journeyEntry {
+    margin: -18px auto 0;
+    padding: 16px 18px;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* E01:手机上入口紧随开卷首屏之后,一屏内可见;DOM 顺序不变 */
+  .journeyEntry {
+    order: -1;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 15px 16px;
+    row-gap: 12px;
+  }
+
+  .journeyEntryTag {
+    order: -1;
+    width: 100%;
+  }
+
+  .journeyEntryTitle {
+    font-size: 18px;
+  }
+
+  .journeyEntryText {
+    font-size: 13px;
+  }
+
+  .journeyEntryCta {
+    flex-basis: 100%;
+    margin-left: 0;
+    padding: 12px 18px;
+    text-align: center;
+  }
 }
