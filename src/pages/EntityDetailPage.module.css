@@ -108,6 +108,13 @@
   margin-top: 96px;
 }
 
+/* E12:目录锚点挂在区块内的无类元素上,定位让过固定页头 */
+section [id^='sec-'],
+[id^='sec-'] {
+  scroll-margin-top: 96px;
+  display: block;
+}
+
 .citationList {
   display: flex;
   flex-direction: column;
