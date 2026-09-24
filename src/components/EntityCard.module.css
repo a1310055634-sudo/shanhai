@@ -212,22 +212,32 @@
   letter-spacing: 0.2em;
 }
 
+/* E11:核验状态降为纯文字小标,不再以描边框与名称争夺视线 */
 .status {
   display: inline-block;
-  font-size: 12px;
+  font-size: 11.5px;
   letter-spacing: 0.2em;
-  padding: 4px 10px;
-  border-radius: 2px;
-  border: 1px solid rgba(177, 139, 86, 0.55);
+  padding: 0;
   color: var(--old-gold);
 }
 
-.status.variant {
-  border-color: rgba(143, 150, 141, 0.5);
+.status::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--old-gold);
+  margin-right: 6px;
+  vertical-align: 2px;
+}
+
+.status.variant,
+.status.unverified {
   color: var(--text-muted);
 }
 
-.status.unverified {
-  border-color: rgba(143, 150, 141, 0.35);
-  color: var(--text-muted);
+.status.variant::before,
+.status.unverified::before {
+  background: var(--text-muted);
 }
