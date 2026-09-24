@@ -23,7 +23,7 @@ const REGION_LABELS: Array<{ region: string; x: number; y: number }> = [
   { region: '海外北经', x: 420, y: 40 },
   { region: '西山经', x: 555, y: 96 },
   { region: '大荒东经', x: 845, y: 210 },
-  { region: '南山经', x: 235, y: 585 },
+  { region: '南山经', x: 235, y: 588 },
 ]
 
 const REGION_FILLS: Record<string, string> = {
@@ -80,12 +80,25 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
               height={z.h}
               rx="8"
               fill={REGION_FILLS[z.region]}
-              stroke="#587367"
-              strokeOpacity="0.25"
-              strokeDasharray="4 5"
+              stroke={z.region === '南山经' ? '#B18B56' : '#587367'}
+              strokeOpacity={z.region === '南山经' ? 0.55 : 0.25}
+              strokeWidth={z.region === '南山经' ? 1.4 : 1}
+              strokeDasharray={z.region === '南山经' ? undefined : '4 5'}
             />
           </g>
         ))}
+        {/* E13:南次一经主线标识 + 图内行旅入口 */}
+        <g className={styles.journeyBadge}>
+          <rect x="44" y="376" rx="3" width="150" height="22" fill="rgba(19,28,24,0.85)" stroke="#B18B56" strokeOpacity="0.6" />
+          <text x="119" y="391" textAnchor="middle" fill="#F3EEE2" fontSize="12" letterSpacing="2" fontFamily="var(--font-serif)">
+            南次一经 · 行旅已开通
+          </text>
+        </g>
+        <a href="/journeys/nanci-yi" className={styles.mapJourneyLink}>
+          <text x="638" y="391" textAnchor="end" fill="#B18B56" fontSize="12.5" letterSpacing="1.5" fontFamily="var(--font-serif)">
+            进入山海行旅 →
+          </text>
+        </a>
         {REGION_LABELS.map((r) => (
           <text
             key={r.region}
@@ -118,8 +131,9 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
                 opacity="0.7"
               />
               <text
-                x={(a.x + b.x) / 2 + 6}
-                y={(a.y + b.y) / 2 - 5}
+                x={(a.x + b.x) / 2}
+                y={(a.y + b.y) / 2 + 18}
+                textAnchor="middle"
                 fill="#B18B56"
                 fontSize="11"
                 opacity="0.85"

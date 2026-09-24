@@ -132,3 +132,23 @@
 .panelLink:hover {
   color: var(--paper-bright);
 }
+
+/* E13:图内行旅入口 */
+.mapJourneyLink text {
+  transition: fill var(--duration-hover) var(--ease-soft);
+}
+
+.mapJourneyLink:hover text {
+  fill: var(--paper-bright);
+}
+
+@media (max-width: 700px) {
+  /* 390:等比缩放会使 13px 节点标签不可辨,改为横向滚动保字号 */
+  .mapWrap {
+    overflow-x: auto;
+  }
+
+  .map {
+    min-width: 760px;
+  }
+}
