@@ -87,6 +87,7 @@
 }
 
 /* 当前站点 */
+/* E06 展签六区:桌面主文 + 侧栏(插画/异兽/古卷/前后行旅) */
 .current {
   margin-top: 36px;
   max-width: 880px;
@@ -94,9 +95,99 @@
   border-radius: var(--radius-card);
   background: rgba(23, 35, 31, 0.55);
   padding: 26px 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 252px;
+  gap: 14px 30px;
+  align-items: start;
+}
+
+.signMain {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 0;
+}
+
+.signRail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 24px;
+  border-left: 1px solid var(--border-weak);
+}
+
+.signArtZone {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.signArt {
+  display: block;
+  border: 1px solid var(--border-normal);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: border-color var(--duration-hover) var(--ease-soft);
+}
+
+.signArt:hover {
+  border-color: var(--old-gold);
+}
+
+.signArt :global(svg),
+.signArt svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.signArtNote {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.signRailLabel {
+  margin-top: 6px;
+  font-size: 11.5px;
+  letter-spacing: 0.28em;
+  color: var(--verdigris-text);
+}
+
+.signBeastLink,
+.signChapterLink {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: var(--old-gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-normal);
+  padding-bottom: 2px;
+  align-self: flex-start;
+}
+
+.signBeastLink:hover,
+.signChapterLink:hover {
+  color: var(--paper-bright);
+  border-color: var(--old-gold);
+}
+
+@media (max-width: 900px) {
+  .current {
+    grid-template-columns: 1fr;
+  }
+
+  .signRail {
+    padding-left: 0;
+    padding-top: 14px;
+    border-left: none;
+    border-top: 1px solid var(--border-weak);
+  }
+
+  .signArt {
+    max-width: 240px;
+  }
 }
 
 .currentKicker {
@@ -179,11 +270,7 @@
   }
 }
 
-@media (max-width: 900px) {
-  .current {
-    max-width: none;
-  }
-}
+
 
 @media (max-width: 640px) {
   .page {

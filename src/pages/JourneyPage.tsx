@@ -6,6 +6,7 @@ import { CHAPTER_TEXTS } from '../data/chapterTexts'
 import { LOCATIONS } from '../data/locations'
 import { ENTITIES } from '../data/entities'
 import JourneyScenery from '../components/journey/JourneyScenery'
+import BeastArtwork from '../components/art/BeastArtwork'
 import styles from './JourneyPage.module.css'
 
 interface StationView {
@@ -15,6 +16,18 @@ interface StationView {
   order?: number
   entitySlug?: string
   entityName?: string
+}
+
+/** E06:释义按完整句抽取:逐句累加,至 60 字以上或超限即止 */
+function explainLead(text: string, limit = 110): string {
+  const sentences = text.split(/(?<=[。!?;；])/).filter(Boolean)
+  let out = ''
+  for (const sen of sentences) {
+    if (out && out.length + sen.length > limit) break
+    out += sen
+    if (out.length >= 60) break
+  }
+  return out || text.slice(0, limit)
 }
 
 /** E05:原文山次用汉字数字,与「已核验行旅第几站」明确区分 */
@@ -123,7 +136,10 @@ export default function JourneyPage() {
   const currentEntity = current?.entitySlug
     ? ENTITIES.find((e) => e.slug === current.entitySlug)
     : undefined
-  const currentEntityExplanation = currentEntity?.modernExplanation.slice(0, 90)
+  // E06:释义节选按完整句抽取(至少一句,约 60—110 字),不再生硬截断,不新增史实
+  const currentEntityExplanation = currentEntity
+    ? explainLead(currentEntity.modernExplanation)
+    : undefined
 
   // J14:到达站点时记录进度(localStorage 不可用时静默降级)
   useEffect(() => {
@@ -227,65 +243,78 @@ export default function JourneyPage() {
         </p>
       )}
 
-      {/* E03:展签紧随路线场景,正文保持较窄阅读列 */}
+      {/* E06 展签六区:序号山名/原文证据(含来源)/本站释义 | 局部插画/关联异兽/进入古卷/前后行旅 */}
       {current && (
         <section className={styles.current} aria-label="当前站点">
-          <p className={styles.currentKicker}>
-            当前站点 · 南次一经第{cnNum(current.order)}山 · 已核验行旅第 {currentIndex + 1} / {stations.length} 站
-          </p>
-          <h2 className={styles.currentName}>{current.name}</h2>
-          {currentStationSegment && (
-            <blockquote className={styles.currentCite}>
-              <span className={styles.citeTag}>原文</span>
-              {currentStationSegment.text}
-              <span className={styles.citeFrom}>
-                ——《南山经》· {currentStationSegment.section}(节选)
-              </span>
-            </blockquote>
-          )}
-          {current.entitySlug && currentEntityExplanation && (
-            <div className={styles.currentExplain}>
-              <p className={styles.explainTag}>本站释义(节选)</p>
-              <p className={styles.explainText}>{currentEntityExplanation}</p>
-              <Link className={styles.explainLink} to={`/catalog/${current.entitySlug}`}>
-                阅读完整条目 →
-              </Link>
-            </div>
-          )}
-          {current.entitySlug ? (
-            <p className={styles.currentBeast}>
-              出现异兽:
-              <Link className={styles.currentLink} to={`/catalog/${current.entitySlug}`}>
-                {current.entityName}
-              </Link>
+          <div className={styles.signMain}>
+            <p className={styles.currentKicker}>
+              当前站点 · 南次一经第{cnNum(current.order)}山 · 已核验行旅第 {currentIndex + 1} / {stations.length} 站
             </p>
-          ) : (
-            <p className={styles.currentMuted}>本站暂无已核验异兽条目。</p>
-          )}
-          <div className={styles.currentNav}>
-            {currentIndex > 0 && (
-              <Link
-                className={styles.navLink}
-                to={`/journeys/nanci-yi?station=${stations[currentIndex - 1].locId}`}
-              >
-                ← 上一站 · {stations[currentIndex - 1].name}
-              </Link>
+            <h2 className={styles.currentName}>{current.name}</h2>
+            {currentStationSegment && (
+              <blockquote className={styles.currentCite}>
+                <span className={styles.citeTag}>原文</span>
+                {currentStationSegment.text}
+                <span className={styles.citeFrom}>
+                  ——《南山经》· {currentStationSegment.section}(节选)
+                </span>
+              </blockquote>
             )}
-            {currentIndex < stations.length - 1 && (
-              <Link
-                className={styles.navLink}
-                to={`/journeys/nanci-yi?station=${stations[currentIndex + 1].locId}`}
-              >
-                下一站 · {stations[currentIndex + 1].name} →
-              </Link>
+            {currentEntityExplanation ? (
+              <div className={styles.currentExplain}>
+                <p className={styles.explainTag}>本站释义(节选)</p>
+                <p className={styles.explainText}>{currentEntityExplanation}</p>
+              </div>
+            ) : (
+              <p className={styles.currentMuted}>本站释义待与原文同批核验后呈现。</p>
             )}
           </div>
-          <p className={styles.readHint}>
-            原文阅读:
-            <Link className={styles.readLink} to={`/chapters/nanshan-jing#${current.station.segmentId ?? ''}`}>
-              打开《南山经》对应段落
+          <aside className={styles.signRail} aria-label="关联异兽与延伸行旅">
+            {current.entitySlug ? (
+              <div className={styles.signArtZone}>
+                <Link
+                  className={styles.signArt}
+                  to={`/catalog/${current.entitySlug}`}
+                  aria-label={`查看异兽「${current.entityName}」完整条目`}
+                >
+                  <BeastArtwork slug={current.entitySlug} name={current.entityName ?? ''} variant="card" />
+                </Link>
+                <span className={styles.signArtNote}>据原文描述艺术演绎</span>
+                <p className={styles.signRailLabel}>关联异兽</p>
+                <Link className={styles.signBeastLink} to={`/catalog/${current.entitySlug}`}>
+                  {current.entityName} →
+                </Link>
+              </div>
+            ) : (
+              <p className={styles.currentMuted}>本站暂无已核验异兽条目。</p>
+            )}
+            <p className={styles.signRailLabel}>进入古卷</p>
+            <Link
+              className={styles.signChapterLink}
+              to={`/chapters/nanshan-jing#${current.station.segmentId ?? ''}`}
+            >
+              《南山经》对应段落 →
             </Link>
-          </p>
+            <p className={styles.signRailLabel}>前后行旅</p>
+            <div className={styles.currentNav}>
+              {currentIndex > 0 && (
+                <Link
+                  className={styles.navLink}
+                  to={`/journeys/nanci-yi?station=${stations[currentIndex - 1].locId}`}
+                >
+                  ← 上一站 · {stations[currentIndex - 1].name}
+                </Link>
+              )}
+              {currentIndex < stations.length - 1 && (
+                <Link
+                  className={styles.navLink}
+                  to={`/journeys/nanci-yi?station=${stations[currentIndex + 1].locId}`}
+                >
+                  下一站 · {stations[currentIndex + 1].name} →
+                </Link>
+              )}
+            </div>
+          </aside>
         </section>
       )}
 
