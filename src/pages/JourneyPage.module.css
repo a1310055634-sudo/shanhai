@@ -445,18 +445,93 @@
   letter-spacing: 0.1em;
 }
 
+/* E07:≤900px 长卷转纵向九位置时间线,顺序阅读,无需横滚 */
+@media (max-width: 900px) {
+  .scroll {
+    flex-direction: column;
+    gap: 0;
+    padding: 18px 14px;
+    position: relative;
+    overflow-x: visible;
+  }
+
+  /* 时间线脊线 */
+  .scroll::before {
+    content: '';
+    position: absolute;
+    left: 27px;
+    top: 26px;
+    bottom: 26px;
+    width: 2px;
+    background: rgba(88, 115, 103, 0.45);
+  }
+
+  .scrollLink {
+    display: none;
+  }
+
+  .scrollSlot,
+  .scrollGap {
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: auto;
+    margin: 0 0 10px 30px;
+    padding: 12px 14px;
+  }
+
+  /* 已核验节点触控目标:整卡 ≥44px */
+  .scrollSlot {
+    min-height: 48px;
+  }
+
+  .scrollSlot .scrollOrder {
+    min-width: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .scrollName {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .scrollApproach {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  /* 待核验位置:更轻、更简,不伪装成按钮(无 hover 位移,已是 div) */
+  .scrollGap {
+    min-height: 40px;
+    border-style: dashed;
+  }
+
+  .scrollGap .scrollOrder {
+    min-width: 20px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .scrollGapName {
+    text-align: left;
+  }
+}
+
 @media (max-width: 640px) {
   .scroll {
-    padding: 14px 10px;
-    gap: 5px;
+    padding: 16px 10px;
   }
 
-  .scrollSlot {
-    flex-basis: 104px;
+  .scroll::before {
+    left: 21px;
   }
 
+  .scrollSlot,
   .scrollGap {
-    flex-basis: 80px;
+    margin-left: 22px;
+    padding: 12px 12px;
   }
 }
 
