@@ -54,7 +54,7 @@ export default function AboutPage() {
             <li><strong>原文证据</strong>只展示对应引用,不拼接不同段落。</li>
             <li><strong>本站释义</strong>是现代汉语编辑文字,不代表学术定论。</li>
             <li><strong>分类与地图</strong>是本站阅读索引,不是《山海经》原有分类或现实地图。</li>
-            <li><strong>插画</strong>是依据原文描述的原创 SVG 艺术演绎,不是古籍图像复原。</li>
+            <li><strong>插画</strong>:十二条目主体为清《古今图书集成》木刻版画(公有领域,维基共享资源),逐幅标注出处;其余为依据原文描述的原创 SVG 艺术演绎。</li>
           </ul>
         </section>
 
@@ -62,7 +62,7 @@ export default function AboutPage() {
           <p className={styles.panelIndex}>四</p>
           <h2 id="copyright" className={styles.panelTitle}>插画与字体</h2>
           <p>
-            站内插画全部为项目原创 SVG,不使用来源不明的网络图片,也不热链外部图片。每幅画面均以「据原文描述艺术演绎」标注。
+            十二条目主体插画为清《古今图书集成》(1726 年成书)木刻版画,属公有领域,取自维基共享资源并逐幅标注出处;无版画可依处为项目原创 SVG 演绎。不热链外部图片。
           </p>
           <p className={styles.muted}>
             当前使用系统字体栈。若后续引入 Web 字体,只考虑 SIL OFL 授权字体并自托管子集。

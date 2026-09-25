@@ -1,4 +1,5 @@
 import type { ComponentType } from 'react'
+import { classicArtFor } from '../../data/classicArt'
 import JiuweihuArt from './registry/jiuweihu'
 import FenghuangArt from './registry/fenghuang'
 import JingweiArt from './registry/jingwei'
@@ -73,6 +74,23 @@ export default function BeastArtwork({
   name: string
   variant?: 'card' | 'detail'
 }) {
+  // 2026-09-25 应用户要求:十二条目优先采用古籍版画原图(清《古今图书集成》,公有领域),
+  // 裱于宣纸底;无版画的条目回退到原创 SVG 演绎。
+  const classic = classicArtFor(slug)
+  if (classic) {
+    return (
+      <span className={styles.classicPaper}>
+        <img
+          src={classic.src}
+          alt={`${name}——${classic.source}`}
+          className={styles.classicImg}
+          draggable={false}
+          loading="lazy"
+        />
+      </span>
+    )
+  }
+
   const Registered = ART_REGISTRY[slug]
   if (Registered) return <Registered />
 

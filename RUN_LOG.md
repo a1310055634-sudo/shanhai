@@ -1011,3 +1011,11 @@
 - 溢出矩阵 8 页 × 3 视口 = 32/32 全绿;320px 补查 3/3 无溢出。npm run build 通过。
 - EXHIBITION_REPORT.md 交付:判定 **COMPLETE**(15 轮真实完成,构建与浏览器路径齐备);未解决问题与下一步建议已如实列明(6 山待底本源、鹿蜀比例微调、键盘焦点环境限制等)。
 - 后续触发将只读状态静默退出;建议用户暂停定时任务。
+
+## 2026-09-25 09:50 · 用户指令:插画以古籍原图替换(展览冲刺后的追加轮)
+
+- 用户看站后明确要求:介绍要用原图,不要卡通式自绘;古籍原版画即可。
+- 检索维基共享资源,锁定清《古今图书集成》(1726 成书)禽虫典/神异典木刻版画系列——12 条目全覆盖、画风统一、Public domain。
+- 下载 12 幅 potrace 矢量 SVG(66KB—1.2MB)至 src/assets/classic/;BeastArtwork 优先渲染版画(宣纸装裱 contain + mix-blend multiply),原创 SVG 保留为兜底;卡片/详情/行旅展签注记自动切换为逐幅出处;SourcePromise/Footer/AboutPage 三处诚实声明同步改写(不再声称全部原创)。
+- 验证:npm run build 通过;九尾狐详情版画渲染 + 注记出处断言;图鉴 12 幅全部加载、零溢出;截图 classic-jiuweihu.png。
+- 来源:Wikimedia Commons「Imperial Encyclopaedia - Animal Kingdom/Spirits and the Supernatural」系列,逐幅记录于 classicArt.ts。

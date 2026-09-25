@@ -11,7 +11,7 @@ export default function Footer() {
           <p className={styles.brandSub}>SHAN HAI ARCHIVE</p>
           <p className={styles.promise}>
             原文逐字对照所据底本录入;释义为本站以现代汉语撰写,与古籍原文明确分离;
-            全部插画为据原文描述的艺术演绎。
+            插画:清《古今图书集成》版画(公有领域)与原创 SVG 演绎,逐幅标注。
           </p>
         </div>
         <nav className={styles.linkCol} aria-label="页脚导航">

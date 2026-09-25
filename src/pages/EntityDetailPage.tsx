@@ -10,6 +10,7 @@ import { useReadingHistory } from '../hooks/useReadingHistory'
 import { findStationByEntity } from '../data/journey'
 import { LOCATIONS as ALL_LOCATIONS } from '../data/locations'
 import BeastArtwork from '../components/art/BeastArtwork'
+import { classicArtFor } from '../data/classicArt'
 import type { Entity, Trait } from '../data/types'
 import styles from './EntityDetailPage.module.css'
 
@@ -97,7 +98,7 @@ export default function EntityDetailPage() {
         <div className={styles.heroArt}>
           <div className={styles.artPanel} aria-hidden="true">
             <BeastArtwork slug={entity.slug} name={entity.canonicalName} variant="detail" />
-            <span className={styles.artNote}>据原文描述艺术演绎</span>
+            <span className={styles.artNote}>{classicArtFor(entity.slug)?.source ?? '据原文描述艺术演绎'}</span>
           </div>
         </div>
       </header>

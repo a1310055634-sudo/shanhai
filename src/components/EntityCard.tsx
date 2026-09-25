@@ -4,6 +4,7 @@ import type { Entity } from '../data/types'
 import { CHAPTERS } from '../data/chapters'
 import { ENTITY_TYPE_LABELS, RECORD_STATUS_LABELS } from '../data/entities'
 import BeastArtwork from './art/BeastArtwork'
+import { classicArtFor } from '../data/classicArt'
 import styles from './EntityCard.module.css'
 
 interface EntityCardProps {
@@ -41,7 +42,7 @@ export default function EntityCard({
       >
         <div className={styles.art} aria-hidden="true">
           <BeastArtwork slug={entity.slug} name={entity.canonicalName} variant="card" />
-          <span className={styles.artNote}>据原文演绎</span>
+          <span className={styles.artNote}>{classicArtFor(entity.slug)?.note ?? '据原文演绎'}</span>
           <span className={styles.artCue} aria-hidden="true">
             阅此卷 →
           </span>

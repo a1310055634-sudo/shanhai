@@ -7,6 +7,7 @@ import { LOCATIONS } from '../data/locations'
 import { ENTITIES } from '../data/entities'
 import JourneyScenery from '../components/journey/JourneyScenery'
 import BeastArtwork from '../components/art/BeastArtwork'
+import { classicArtFor } from '../data/classicArt'
 import styles from './JourneyPage.module.css'
 
 interface StationView {
@@ -279,7 +280,9 @@ export default function JourneyPage() {
                 >
                   <BeastArtwork slug={current.entitySlug} name={current.entityName ?? ''} variant="card" />
                 </Link>
-                <span className={styles.signArtNote}>据原文描述艺术演绎</span>
+                <span className={styles.signArtNote}>
+                  {classicArtFor(current.entitySlug)?.source ?? '据原文描述艺术演绎'}
+                </span>
                 <p className={styles.signRailLabel}>关联异兽</p>
                 <Link className={styles.signBeastLink} to={`/catalog/${current.entitySlug}`}>
                   {current.entityName} →
