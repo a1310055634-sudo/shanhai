@@ -111,10 +111,12 @@
   color: var(--paper-bright);
 }
 
-/* 阅读区 */
+/* E14 阅读室:宣纸面板与墨夜工具栏形成明暗节奏(双表面系统) */
 .reader {
-  border-top: 1px solid rgba(177, 139, 86, 0.3);
-  padding-top: 34px;
+  background: var(--surface-paper);
+  border: 1px solid var(--border-normal);
+  border-radius: var(--radius-card);
+  padding: 30px 36px 34px;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -139,21 +141,22 @@
 .sectionTag {
   font-size: 12px;
   letter-spacing: 0.3em;
-  color: var(--verdigris-text);
+  color: var(--paper-muted);
 }
 
 .text {
   font-family: var(--font-serif);
   font-size: 19px;
-  line-height: 2.1;
+  line-height: 1.95;
   letter-spacing: 0.05em;
-  color: var(--paper-bright);
+  color: var(--paper-ink);
+  max-width: 38em;
 }
 
 .text ruby rt {
   font-family: var(--font-sans);
   font-size: 11px;
-  color: var(--old-gold);
+  color: var(--paper-muted);
   letter-spacing: 0;
 }
 
@@ -166,21 +169,21 @@
 
 .segLink {
   font-size: 13px;
-  color: var(--old-gold);
+  color: var(--cinnabar); /* 宣纸面上链接以朱砂为主(CitationBlock 同语言) */
   text-decoration: none;
-  border-bottom: 1px solid rgba(177, 139, 86, 0.45);
+  border-bottom: 1px solid rgba(167, 71, 56, 0.4);
   padding: 12px 4px;
 }
 
 .segLink:hover {
-  color: var(--paper-bright);
+  color: #8f3a2d;
 }
 
 .copy {
   margin-left: auto;
   background: none;
   border: none;
-  color: var(--verdigris-text);
+  color: var(--paper-muted);
   font-size: 12.5px;
   letter-spacing: 0.12em;
   cursor: pointer;
@@ -188,7 +191,7 @@
 }
 
 .copy:hover {
-  color: var(--paper-bright);
+  color: var(--paper-ink);
 }
 
 .gap {
@@ -198,8 +201,8 @@
 .gapMark {
   font-size: 13px;
   letter-spacing: 0.14em;
-  color: var(--text-muted);
-  border-left: 2px solid rgba(143, 150, 141, 0.35);
+  color: var(--paper-muted);
+  border-left: 2px dashed rgba(76, 85, 78, 0.5);
   padding-left: 12px;
 }
 
@@ -240,6 +243,10 @@
 }
 
 @media (max-width: 640px) {
+  .reader {
+    padding: 20px 18px 24px;
+  }
+
   .page {
     padding: 48px var(--space-page-x-mobile) 0;
   }
