@@ -189,14 +189,25 @@ export default function ChapterPage() {
                     </Link>
                   ) : null
                 })}
-                {seg.relatedLocationIds?.map((id) => {
-                  const loc = LOCATIONS.find((l) => l.id === id)
-                  return loc ? (
-                    <Link key={`l-${id}`} className={styles.segLink} to="/atlas">
-                      地·{loc.canonicalName}
+                {(() => {
+                  // P08:篇末总述等关联山川较多的段落,合并为单链,避免重复链接拥挤
+                  const locs = (seg.relatedLocationIds ?? [])
+                    .map((id) => LOCATIONS.find((l) => l.id === id))
+                    .filter((l): l is (typeof LOCATIONS)[number] => Boolean(l))
+                  if (locs.length === 0) return null
+                  if (locs.length <= 3) {
+                    return locs.map((loc) => (
+                      <Link key={`l-${loc.id}`} className={styles.segLink} to="/atlas">
+                        地·{loc.canonicalName}
+                      </Link>
+                    ))
+                  }
+                  return (
+                    <Link className={styles.segLink} to="/atlas">
+                      地·{locs[0].subClassic}山系{locs.length}座山川(详见山川图) →
                     </Link>
-                  ) : null
-                })}
+                  )
+                })()}
                 <button
                   type="button"
                   className={
