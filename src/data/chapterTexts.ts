@@ -77,10 +77,24 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-chuyang'],
     },
     {
-      id: 'seg-ns1-gap-di-yuan-ji',
+      id: 'seg-ns1-gap-di',
       kind: 'gap',
       section: '南次一经',
-      note: '柢山、亶爰之山、基山诸段待录入',
+      note: '柢山段待录入(名称「柢/祗」两源互异;里距两源一致东三百里;两源均无「曰」字——见 EDITION_AUDIT 差1/差2)',
+    },
+    {
+      id: 'seg-ns1-danyuan',
+      kind: 'text',
+      section: '南次一经',
+      text: '又东四百里，曰亶爰之山，多水，无草木，不可以上。有兽焉，其状如狸而有髦，其名曰类，自为牝牡，食者不妬。',
+      relatedLocationIds: ['loc-danyuan'],
+    },
+    {
+      id: 'seg-ns1-jishan',
+      kind: 'text',
+      section: '南次一经',
+      text: '又东三百里，曰基山，其阳多玉，其阴多怪木。有兽焉，其状如羊，九尾四耳，其目在背，其名曰猼訑，佩之不畏。有鸟焉，其状如鸡而三首六目，六足三翼，其名曰𪁺𩿧，食之无卧。',
+      relatedLocationIds: ['loc-jishan'],
     },
     {
       id: 'seg-ns1-qingqiu-shan',

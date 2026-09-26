@@ -57,6 +57,18 @@ export const NANCI_YI_ROUTE: JourneyRoute = {
       note: '第四山',
     },
     {
+      locationId: 'loc-danyuan',
+      status: 'verified',
+      segmentId: 'seg-ns1-danyuan',
+      note: '第六山(2026-09-27 双源核验建站)',
+    },
+    {
+      locationId: 'loc-jishan',
+      status: 'verified',
+      segmentId: 'seg-ns1-jishan',
+      note: '第七山(2026-09-27 双源核验建站)',
+    },
+    {
       locationId: 'loc-qingqiu',
       status: 'verified',
       segmentId: 'seg-ns1-qingqiu-shan',
@@ -154,8 +166,6 @@ export interface PendingMountain {
 
 export const NANCI_YI_PENDING: PendingMountain[] = [
   { name: '柢山', order: 5, note: '柢/祗两源互异(A ctext作祗/B维基文库作柢);里距两源一致东三百里;两源均无「曰」字' },
-  { name: '亶爰之山', order: 6 },
-  { name: '基山', order: 7 },
   { name: '箕尾之山', order: 9 },
 ]
 
