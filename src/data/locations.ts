@@ -26,7 +26,7 @@ export const LOCATIONS: Location[] = [
         sourceEdition: '通行本(郭璞注—郝懿行笺疏系统),据 ctext.org 公开电子文本逐字核对',
         publicUrl: 'https://ctext.org/shan-hai-jing/nan-shan-jing/zhs',
         variantText: '「䧿」与「鹊」为异体字关系,山名写法存在异文;本站以底本用字「䧿」为准并注明。',
-        verificationNote: '2026-09-20 经 ctext 公开文本逐字核对(开篇句)。',
+        verificationNote: '2026-09-20 经 ctext 公开文本逐字核对(开篇句)。2026-09-27 复核:与底本A(ctext zhs)逐字一致,并与底本B(中文维基文库郭璞注本)对照相符。',
         verifiedAt: '2026-09-20',
       },
     ],
@@ -53,7 +53,7 @@ export const LOCATIONS: Location[] = [
         sourceEdition: '通行本(郭璞注—郝懿行笺疏系统),据 ctext.org 公开电子文本逐字核对',
         publicUrl: 'https://ctext.org/shan-hai-jing/nan-shan-jing/zhs',
         verificationNote:
-          '2026-09-20 经 ctext 公开文本逐字核对;其前一山为猨翼之山(「又东三百八十里,曰猨翼之山」),地点链条待山川轮补全。',
+          '2026-09-20 经 ctext 公开文本逐字核对;其前一山为猨翼之山(「又东三百八十里,曰猨翼之山」),地点链条待山川轮补全。 2026-09-27 复核:与底本A(ctext zhs,存档 EDITION_EVIDENCE/ctext-nanci1-20260927.txt)逐字一致,并与底本B(中文维基文库郭璞注本)对照相符。',
         verifiedAt: '2026-09-20',
       },
     ],
@@ -80,7 +80,9 @@ export const LOCATIONS: Location[] = [
         sourceEdition: '通行本(郭璞注—郝懿行笺疏系统),据 ctext.org 公开电子文本逐字核对',
         publicUrl: 'https://ctext.org/shan-hai-jing/nan-shan-jing/zhs',
         verificationNote:
-          '2026-09-20 经 ctext 公开文本逐字核对。「青䨼」之「䨼」为生僻字,本站保留底本原字,释义后续补充。山序按南次一经:招摇、堂庭、猨翼、杻阳、祗山、亶爰、基山之后即青丘。',
+          '2026-09-20 经 ctext 公开文本逐字核对。「青䨼」之「䨼」为生僻字,本站保留底本原字,释义后续补充。山序按南次一经:招摇、堂庭、猨翼、杻阳、祗山、亶爰、基山之后即青丘。2026-09-27 复核:与底本A(ctext zhs)逐字一致,并与底本B(中文维基文库郭璞注本)对照相符。',
+        variantText:
+          '「青䨼」:底本B(中文维基文库郭璞注本,2026-09-27)作「青雘」,并附郭璞注「雘,黝屬,音瓠」。两具名电子本用字互异,本站从底本A原字「䨼」(EDITION_AUDIT.md 差3)。',
         verifiedAt: '2026-09-20',
       },
     ],

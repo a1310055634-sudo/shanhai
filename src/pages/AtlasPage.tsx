@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import ConceptMap from '../components/atlas/ConceptMap'
+import CitationBlock from '../components/CitationBlock'
 import { LOCATIONS } from '../data/locations'
 import { ENTITIES } from '../data/entities'
 import { CHAPTERS } from '../data/chapters'
@@ -73,9 +74,7 @@ export default function AtlasPage() {
                     {loc.sourceDistance && ` ${loc.sourceDistance}`}
                   </p>
                   {loc.citations[0] && (
-                    <blockquote className={styles.cardCite}>
-                      {loc.citations[0].originalText}
-                    </blockquote>
+                    <CitationBlock citation={loc.citations[0]} />
                   )}
                   {entity && (
                     <p className={styles.cardEntity}>

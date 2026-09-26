@@ -24,7 +24,7 @@ export const JIUWEIHU: Entity = {
       sourceEdition: '通行本(郭璞注—郝懿行笺疏系统),据 ctext.org 公开电子文本逐字核对',
       publicUrl: 'https://ctext.org/shan-hai-jing/nan-shan-jing/zhs',
       verificationNote:
-        '2026-09-20 经 ctext 公开文本逐字核对。青丘之山句「又东三百里,曰青丘之山,其阳多玉,其阴多青䨼。」同日核对;按同篇山序,青丘之山为南次一经第八山(招摇、堂庭、猨翼、杻阳、祗山、亶爰、基山之后)。',
+        '2026-09-20 经 ctext 公开文本逐字核对。青丘之山句「又东三百里,曰青丘之山,其阳多玉,其阴多青䨼。」同日核对;按同篇山序,青丘之山为南次一经第八山(招摇、堂庭、猨翼、杻阳、祗山、亶爰、基山之后)。 2026-09-27 复核:与底本A(ctext zhs,存档 EDITION_EVIDENCE/ctext-nanci1-20260927.txt)逐字一致,并与底本B(中文维基文库郭璞注本)对照相符。 另:B本郭璞注「即九尾狐」可证条目对应;B本「食者不蠱」页面自带异文「一作纂」,录备考。',
       verifiedAt: '2026-09-20',
     },
   ],

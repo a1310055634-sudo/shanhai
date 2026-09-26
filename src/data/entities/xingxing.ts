@@ -23,7 +23,7 @@ export const XINGXING: Entity = {
       sourceEdition: '通行本(郭璞注—郝懿行笺疏系统),据 ctext.org 公开电子文本逐字核对',
       publicUrl: 'https://ctext.org/shan-hai-jing/nan-shan-jing/zhs',
       verificationNote:
-        '2026-09-20 经 ctext 公开文本逐字核对。「禺」为何种动物,旧注有猿猴类之说,本站不作定论。',
+        '2026-09-20 经 ctext 公开文本逐字核对。「禺」为何种动物,旧注有猿猴类之说,本站不作定论。 2026-09-27 复核:与底本A(ctext zhs,存档 EDITION_EVIDENCE/ctext-nanci1-20260927.txt)逐字一致,并与底本B(中文维基文库郭璞注本)对照相符。',
       verifiedAt: '2026-09-20',
     },
   ],
