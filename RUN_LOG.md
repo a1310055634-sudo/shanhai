@@ -1087,3 +1087,10 @@
 - 手填计数清除:ConceptMap aria 与 AtlasPreview 注记改派生 LOCATIONS.length;AtlasPage 补四新山拼音。数据勘正:LOCATIONS 实为 17 座(此前记录误作 12,E01 盘点漏计 1),全部 verified,现由数据派生不再漂移。
 - 验证:npm run build 通过;首页节点/注记断言;四新山拼音断言;三档零溢出。
 - 遗留:无。
+
+## 2026-09-27 12:45 · 可信定稿冲刺 P11(第 11/14 次有效触发)
+
+- ART_PROVENANCE.md 建立:前六幅(狌狌/鹿蜀/凤皇/九尾狐/帝江/精卫)逐幅来源档案全字段;Commons API 核对六幅均 Public domain、Credit Gujin Tushu Jicheng/Chen Menglei、File 页描述明确为矢量化件(非原扫描,档案如实区分)。
+- 九尾狐画面题字「九尾狐圖」截图核对通过;各幅「原扫描链接」如实标未查证。
+- 验证:npm run build 通过(文档轮,页面零改动)。
+- 遗留:原扫描链接未查证(标于档案);帝江像素级题字复核留 P13。
