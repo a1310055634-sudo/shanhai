@@ -10,6 +10,10 @@ import styles from './AtlasPage.module.css'
 /** 山名读音(供参考,以旧注通读为准;非核验内容)。 */
 const PINYIN: Record<string, string> = {
   招摇之山: 'zhāo yáo zhī shān',
+  堂庭之山: 'táng tíng zhī shān',
+  猨翼之山: 'yuán yì zhī shān',
+  亶爰之山: 'dǎn yuán zhī shān',
+  基山: 'jī shān',
   杻阳之山: 'chǔ yáng zhī shān',
   青丘之山: 'qīng qiū zhī shān',
   丹穴之山: 'dān xué zhī shān',

@@ -48,7 +48,7 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
         preserveAspectRatio="xMidYMid meet"
         className={styles.map}
         role="img"
-        aria-label="山海经古籍内部叙事概念地图:十二座已核验山川节点的分区示意"
+        aria-label={`山海经古籍内部叙事概念地图:${LOCATIONS.length}座已核验山川节点的分区示意`}
       >
         {/* 等高线底纹(装饰) */}
         <g fill="none" stroke="#31545A" strokeWidth="1">

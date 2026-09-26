@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../SectionHeading'
 import ConceptMap from '../atlas/ConceptMap'
+import { LOCATIONS } from '../../data/locations'
 import styles from './AtlasPreview.module.css'
 
 /** 首页「山川长卷预览」(规范第四节第 4 条):全幅出血地图 + 必备争议说明。 */
@@ -12,7 +13,7 @@ export default function AtlasPreview() {
           index="舆"
           title="山川长卷预览"
           subtitle="SHAN CHUAN CHANG JUAN"
-          note="已核验的十二座山川,依古籍内部叙事分区排布;点击节点可前往关联条目。"
+          note={`已核验的${LOCATIONS.length}座山川,依古籍内部叙事分区排布;点击节点可前往关联条目。`}
         />
       </div>
       <ConceptMap />
