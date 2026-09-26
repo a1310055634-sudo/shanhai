@@ -1041,3 +1041,9 @@
 - 青丘 citation 新增 variantText,B 异文「青雘」上屏:AtlasPage 地域卡升级 CitationBlock,青丘卡实测显示「存在异文」徽章+郭璞注+ctext 核对链接。
 - 验证:npm run build 通过;?station= 三站深链回归全绿;atlas 三档零溢出;青丘卡 DOM 断言全过(截图管线故障未成图,D-011)。
 - 遗留:截图管线;无其他。
+
+## 2026-09-27 09:15 · 可信定稿冲刺 P04(第 4/14 次有效触发)
+
+- 堂庭/猨翼双源核验达 verified 门槛,正式建站:locations+chapterTexts(合并 gap 拆两段)+journey 路线插入,PENDING 移除两山;杻阳过时注记更新。
+- 验证:npm run build 通过;?station= 两新站深链直达;展签双编号「第二山/第 2/5 站」正确;进入古卷落 seg-ns1-tangting 高亮;长卷 9 位置=5 站+4 缺口;validateJourneyRoute 零问题;三档零溢出。
+- 遗留:无。

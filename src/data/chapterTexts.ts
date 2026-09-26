@@ -48,10 +48,18 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-zhaoyao'],
     },
     {
-      id: 'seg-ns1-gap-tangting-yuanyi',
-      kind: 'gap',
+      id: 'seg-ns1-tangting',
+      kind: 'text',
       section: '南次一经',
-      note: '堂庭之山、猨翼之山诸段待录入',
+      text: '又东三百里，曰堂庭之山，多棪木，多白猿，多水玉，多黄金。',
+      relatedLocationIds: ['loc-tangting'],
+    },
+    {
+      id: 'seg-ns1-yuanyi',
+      kind: 'text',
+      section: '南次一经',
+      text: '又东三百八十里，曰猨翼之山，其中多怪兽，水多怪鱼，多白玉，多腹虫，多怪蛇，多怪木，不可以上。',
+      relatedLocationIds: ['loc-yuanyi'],
     },
     {
       id: 'seg-ns1-chuyang-shan',
