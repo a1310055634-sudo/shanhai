@@ -1,8 +1,32 @@
+import { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { NAV_ITEMS } from './Layout'
 import styles from './Navigation.module.css'
 
 export default function Navigation() {
+  // P01:窄屏导航横向滚动——隐藏原生滚动条,以两侧渐隐提示可滑动(滑到头则该侧渐隐消失)
+  const listRef = useRef<HTMLUListElement>(null)
+  const [fade, setFade] = useState({ left: false, right: false })
+
+  const updateFade = () => {
+    const el = listRef.current
+    if (!el) return
+    const max = el.scrollWidth - el.clientWidth
+    setFade({ left: el.scrollLeft > 2, right: el.scrollLeft < max - 2 })
+  }
+
+  useEffect(() => {
+    updateFade()
+    const el = listRef.current
+    if (!el) return
+    el.addEventListener('scroll', updateFade, { passive: true })
+    window.addEventListener('resize', updateFade)
+    return () => {
+      el.removeEventListener('scroll', updateFade)
+      window.removeEventListener('resize', updateFade)
+    }
+  }, [])
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -15,8 +39,11 @@ export default function Navigation() {
             <span className={styles.brandSub}>SHAN HAI ARCHIVE</span>
           </span>
         </NavLink>
-        <nav className={styles.nav} aria-label="主导航">
-          <ul className={styles.navList}>
+        <nav
+          className={`${styles.nav} ${fade.left ? styles.fadeLeft : ''} ${fade.right ? styles.fadeRight : ''}`.trim()}
+          aria-label="主导航"
+        >
+          <ul ref={listRef} className={styles.navList}>
             {NAV_ITEMS.map((item) => (
               <li key={item.to}>
                 <NavLink

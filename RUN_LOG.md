@@ -1019,3 +1019,9 @@
 - 下载 12 幅 potrace 矢量 SVG(66KB—1.2MB)至 src/assets/classic/;BeastArtwork 优先渲染版画(宣纸装裱 contain + mix-blend multiply),原创 SVG 保留为兜底;卡片/详情/行旅展签注记自动切换为逐幅出处;SourcePromise/Footer/AboutPage 三处诚实声明同步改写(不再声称全部原创)。
 - 验证:npm run build 通过;九尾狐详情版画渲染 + 注记出处断言;图鉴 12 幅全部加载、零溢出;截图 classic-jiuweihu.png。
 - 来源:Wikimedia Commons「Imperial Encyclopaedia - Animal Kingdom/Spirits and the Supernatural」系列,逐幅记录于 classicArt.ts。
+
+## 2026-09-27 02:55 · 可信定稿冲刺 P01(第 1/14 次有效触发)
+
+- 手机导航:隐藏原生滚动条(保留滚动),外层容器承载两侧渐隐提示(随滚动位置切换),首末项留出渐隐区;七项导航 390 触摸/键盘全部可达。
+- 验证:npm run build 通过;390 滚动条计算值 none、canScroll、渐隐状态切换、7 项 focus 在视口、1440/768/390×3 页九组溢出检查全绿。基线截图存 2/5(catalog-1440 与三张 390 因 IAB 管线卡死未成,DOM 断言覆盖,下轮补拍)。
+- 遗留:3 张基线截图待补;本轮未动古籍数据。

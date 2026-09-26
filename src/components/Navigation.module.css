@@ -97,21 +97,64 @@
     gap: 0;
   }
 
-  /* 横向滚动收在 nav 容器内,防止 min-content 撑宽页面 */
+  /* 横向滚动收进列表,防止 min-content 撑宽页面。
+     P01:隐藏原生滚动条;.nav 作为外层容器承载两侧渐隐提示
+     (是否可滑由 Navigation.tsx 按滚动状态切换 fadeLeft/fadeRight)。 */
   .nav {
     width: 100%;
     min-width: 0;
-    overflow-x: auto;
+    position: relative;
+  }
+
+  .nav::before,
+  .nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 34px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--duration-hover) var(--ease-soft);
+  }
+
+  .nav.fadeLeft::before {
+    left: 0;
+    opacity: 1;
+    background: linear-gradient(90deg, var(--ink-night), transparent);
+  }
+
+  .nav.fadeRight::after {
+    right: 0;
+    opacity: 1;
+    background: linear-gradient(270deg, var(--ink-night), transparent);
   }
 
   .navList {
-    width: max-content;
+    width: auto;
     min-width: 100%;
+    max-width: 100%;
     gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .navList::-webkit-scrollbar {
+    display: none;
   }
 
   .navLink {
     padding: 14px 14px;
+  }
+
+  /* 首末项与视口缘留空隙,渐隐不压文字 */
+  .navList li:first-child .navLink {
+    padding-left: 22px;
+  }
+
+  .navList li:last-child .navLink {
+    padding-right: 30px;
   }
 }
 
