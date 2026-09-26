@@ -201,6 +201,33 @@ export const LOCATIONS: Location[] = [
     recordStatus: 'verified',
   },
   {
+    id: 'loc-jiwei',
+    canonicalName: '箕尾之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次一经',
+    sourceOrder: 9,
+    sourceDirection: '又东',
+    sourceDistance: '三百五十里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东三百五十里，曰箕尾之山，其尾踆于东海，多沙石。汸水出焉，而南流注于淯，其中多白玉。',
+        chapter: '南山经',
+        section: '南次一经第九山(末山)',
+        sourceEdition: '通行本(郭璞注—郝懿行笺疏系统),据 ctext.org 公开电子文本逐字核对',
+        publicUrl: 'https://ctext.org/shan-hai-jing/nan-shan-jing/zhs',
+        verificationNote:
+          '2026-09-27 建站核验:底本A(ctext zhs,存档 EDITION_EVIDENCE/ctext-nanci1-20260927.txt)与底本B(中文维基文库郭璞注本)逐字对照一致。篇末紧接「凡䧿山之首…凡十山,二千九百五十里」总述(另段独立收录,计数存疑见 EDITION_AUDIT 差6/差7)。',
+        verifiedAt: '2026-09-27',
+      },
+    ],
+    mapPosition: { x: 58, y: 76, region: '南山经' },
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
     id: 'loc-danxue',
     canonicalName: '丹穴之山',
     aliases: [],

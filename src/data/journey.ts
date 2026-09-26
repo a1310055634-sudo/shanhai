@@ -74,7 +74,12 @@ export const NANCI_YI_ROUTE: JourneyRoute = {
       segmentId: 'seg-ns1-qingqiu-shan',
       note: '第八山(基山之后)',
     },
-    // 箕尾之山待 J07 核验后建站
+    {
+      locationId: 'loc-jiwei',
+      status: 'verified',
+      segmentId: 'seg-ns1-jiwei',
+      note: '第九山(末山,2026-09-27 双源核验建站;篇末「凡十山」计数存疑见古卷说明)',
+    },
   ],
 }
 
@@ -166,7 +171,6 @@ export interface PendingMountain {
 
 export const NANCI_YI_PENDING: PendingMountain[] = [
   { name: '柢山', order: 5, note: '柢/祗两源互异(A ctext作祗/B维基文库作柢);里距两源一致东三百里;两源均无「曰」字' },
-  { name: '箕尾之山', order: 9 },
 ]
 
 /** 按实体反查所在行旅站点(J13 双向导航用)。 */
