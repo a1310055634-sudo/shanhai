@@ -91,6 +91,8 @@ export interface JourneyIssue {
     | 'verified-without-citation'
     | 'invalid-segment'
     | 'order-conflict'
+    | 'station-vs-pending-conflict'
+    | 'pending-order-conflict'
   message: string
 }
 
@@ -157,6 +159,28 @@ export function validateJourneyRoute(route: JourneyRoute): JourneyIssue[] {
         })
       }
     })
+  })
+
+  // P09:已核站点不得与待核山段重复(按原文山序比对,双向)
+  NANCI_YI_PENDING.forEach((p) => {
+    const clash = route.stations.find((st) => {
+      const l = LOCS.find((x) => x.id === st.locationId)
+      return l?.sourceOrder === p.order
+    })
+    if (clash) {
+      const cl = LOCS.find((l) => l.id === clash.locationId)
+      issues.push({
+        kind: 'station-vs-pending-conflict',
+        message: `${p.name}(第 ${p.order} 山)同时出现在待核清单与已核路线(路线中的 ${cl?.canonicalName ?? clash.locationId})`,
+      })
+    }
+    const dupPending = NANCI_YI_PENDING.filter((x) => x.order === p.order)
+    if (dupPending.length > 1) {
+      issues.push({
+        kind: 'pending-order-conflict',
+        message: `待核清单中山序 ${p.order} 重复出现 ${dupPending.length} 次`,
+      })
+    }
   })
 
   return issues
