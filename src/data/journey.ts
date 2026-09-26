@@ -153,7 +153,7 @@ export interface PendingMountain {
 }
 
 export const NANCI_YI_PENDING: PendingMountain[] = [
-  { name: '柢山', order: 5, note: '或作「祗山」,用字待核验' },
+  { name: '柢山', order: 5, note: '柢/祗两源互异(A ctext作祗/B维基文库作柢);里距两源一致东三百里;两源均无「曰」字' },
   { name: '亶爰之山', order: 6 },
   { name: '基山', order: 7 },
   { name: '箕尾之山', order: 9 },

@@ -1047,3 +1047,10 @@
 - 堂庭/猨翼双源核验达 verified 门槛,正式建站:locations+chapterTexts(合并 gap 拆两段)+journey 路线插入,PENDING 移除两山;杻阳过时注记更新。
 - 验证:npm run build 通过;?station= 两新站深链直达;展签双编号「第二山/第 2/5 站」正确;进入古卷落 seg-ns1-tangting 高亮;长卷 9 位置=5 站+4 缺口;validateJourneyRoute 零问题;三档零溢出。
 - 遗留:无。
+
+## 2026-09-27 09:45 · 可信定稿冲刺 P05(第 5/14 次有效触发)
+
+- 柢山校勘:柢/祗与「又」字两源互异(标 variant 并显)、「曰」两源皆无(不补)、「里距三百里」两源一致(排除三百五十);鱼类段落正文边界明确(注文不入正文)。站点保持待核不建站。
+- 站内统一:journey.ts 柢山注记完整异文化,locations.ts 青丘注记互证补注,JourneyPage 待核卡展示 pending 注记(柢山卡上屏异文说明)。
+- 验证:npm run build 通过;柢山卡 DOM 断言;亶爰卡简洁态;validateJourneyRoute 零问题;三档零溢出。
+- 遗留:柢/祗影印追证留后续。

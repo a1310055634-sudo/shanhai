@@ -59,6 +59,7 @@ interface ScrollSlot {
   locId?: string
   name: string
   order?: number
+  note?: string
   approach?: string
 }
 
@@ -77,7 +78,7 @@ function buildScrollSlots(): Array<ScrollSlot> {
       pending[0].order < loc.sourceOrder
     ) {
       const p = pending.shift()!
-      slots.push({ kind: 'gap', name: p.name, order: p.order })
+      slots.push({ kind: 'gap', name: p.name, order: p.order, note: p.note })
     }
     slots.push({
       kind: 'station',
@@ -214,7 +215,9 @@ export default function JourneyPage() {
                       {cnNum(slot.order)}
                     </span>
                     <span className={styles.scrollGapName}>{slot.name}</span>
-                    <span className={styles.scrollGapNote}>待核验</span>
+                    <span className={styles.scrollGapNote}>
+                      {slot.note ?? '待核验'}
+                    </span>
                   </div>,
                 )
               }
