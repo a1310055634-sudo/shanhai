@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { ComponentType } from 'react'
 import { classicArtFor } from '../../data/classicArt'
 import JiuweihuArt from './registry/jiuweihu'
@@ -76,8 +77,10 @@ export default function BeastArtwork({
 }) {
   // 2026-09-25 应用户要求:十二条目优先采用古籍版画原图(清《古今图书集成》,公有领域),
   // 裱于宣纸底;无版画的条目回退到原创 SVG 演绎。
+  // P13:版画加载失败时自动回退到原创 SVG,不让读者看到空面板或破图。
+  const [classicFailed, setClassicFailed] = useState(false)
   const classic = classicArtFor(slug)
-  if (classic) {
+  if (classic && !classicFailed) {
     return (
       <span className={styles.classicPaper}>
         <img
@@ -86,6 +89,7 @@ export default function BeastArtwork({
           className={styles.classicImg}
           draggable={false}
           loading="lazy"
+          onError={() => setClassicFailed(true)}
         />
       </span>
     )
