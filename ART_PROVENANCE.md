@@ -94,4 +94,83 @@
 - **矢量关系**:六幅均为维基共享资源上的 potrace 自动矢量化件(File 页元数据「Created by potrace 1.13」),本站**未再做任何编辑**;它们是版画的矢量重建,不是古籍扫描原件。
 - **授权来源**:各 File 页均标注 Public domain(《古今图书集成》1726 年成书,底本作者年代久远);Credit: Gujin Tushu Jicheng;Artist: Chen Menglei。
 - **站内标注**:卡片级标注「《古今图书集成》版画」;详情页级标注完整出处「清《古今图书集成·禽虫典/神异典》版画(公有领域)」。
-- 后六幅(luwu/yingzhao/wenyaoyu/zhuyin/yinglong/kui)见 P12 补录。
+- 
+### 7. 陆吾(luwu)
+
+- 站内展示名:陆吾
+- 版画原题:陸吾神圖
+- 典/卷:《古今图书集成·神异典》
+- Commons File 页:https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Spirits_and_the_Supernatural_-_pic16_-_%E9%99%B8%E5%90%BE%E7%A5%9E%E5%9C%96.svg
+- 原扫描链接:未查证
+- 本站采用:SVG(potrace 自动矢量化件)
+- 权利标记:Public domain(File 页);站内卡片标注「《古今图书集成》版画」
+- 本地字节:1,197,838
+- 核对日期:2026-09-27
+- 状态:verified(File 页元数据与 P11 同系列同授权;画面题字匹配以文件题名比对,像素级复核留 P13)
+
+### 8. 英招(yingzhao)
+
+- 站内展示名:英招
+- 版画原题:英招神圖
+- 典/卷:《古今图书集成·神异典》
+- Commons File 页:https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Spirits_and_the_Supernatural_-_pic14_-_%E8%8B%B1%E6%8B%9B%E7%A5%9E%E5%9C%96.svg
+- 原扫描链接:未查证
+- 本站采用:SVG(potrace 自动矢量化件)
+- 权利标记:Public domain(File 页);站内卡片标注「《古今图书集成》版画」
+- 本地字节:668,307
+- 核对日期:2026-09-27
+- 状态:verified(File 页元数据与 P11 同系列同授权;画面题字匹配以文件题名比对,像素级复核留 P13)
+
+### 9. 文鳐鱼(wenyaoyu)
+
+- 站内展示名:文鳐鱼
+- 版画原题:文鰩魚圖
+- 典/卷:《古今图书集成·禽虫典》
+- Commons File 页:https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Animal_Kingdom_-_pic390_-_%E6%96%87%E9%B0%A9%E9%AD%9A%E5%9C%96.svg
+- 原扫描链接:未查证
+- 本站采用:SVG(potrace 自动矢量化件)
+- 权利标记:Public domain(File 页);站内卡片标注「《古今图书集成》版画」
+- 本地字节:816,912
+- 核对日期:2026-09-27
+- 状态:verified(File 页元数据与 P11 同系列同授权;画面题字匹配以文件题名比对,像素级复核留 P13)
+
+### 10. 烛阴(zhuyin)
+
+- 站内展示名:烛阴
+- 版画原题:燭陰神圖
+- 典/卷:《古今图书集成·神异典》
+- Commons File 页:https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Spirits_and_the_Supernatural_-_pic45_-_%E7%87%AD%E9%99%B0%E7%A5%9E%E5%9C%96.svg
+- 原扫描链接:未查证
+- 本站采用:SVG(potrace 自动矢量化件)
+- 权利标记:Public domain(File 页);站内卡片标注「《古今图书集成》版画」
+- 本地字节:884,867
+- 核对日期:2026-09-27
+- 状态:verified(File 页元数据与 P11 同系列同授权;画面题字匹配以文件题名比对,像素级复核留 P13)
+
+### 11. 应龙(yinglong)
+
+- 站内展示名:应龙
+- 版画原题:應龍圖
+- 典/卷:《古今图书集成·禽虫典》
+- Commons File 页:https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Animal_Kingdom_-_pic342_-_%E6%87%89%E9%BE%8D%E5%9C%96.svg
+- 原扫描链接:未查证
+- 本站采用:SVG(potrace 自动矢量化件)
+- 权利标记:Public domain(File 页);站内卡片标注「《古今图书集成》版画」
+- 本地字节:889,001
+- 核对日期:2026-09-27
+- 状态:verified(File 页元数据与 P11 同系列同授权;画面题字匹配以文件题名比对,像素级复核留 P13)
+
+### 12. 夔(kui)
+
+- 站内展示名:夔
+- 版画原题:夔圖
+- 典/卷:《古今图书集成·禽虫典》
+- Commons File 页:https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Animal_Kingdom_-_pic317_-_%E5%A4%94%E5%9C%96.svg
+- 原扫描链接:未查证
+- 本站采用:SVG(potrace 自动矢量化件)
+- 权利标记:Public domain(File 页);站内卡片标注「《古今图书集成》版画」
+- 本地字节:66,342
+- 核对日期:2026-09-27
+- 状态:verified(File 页元数据与 P11 同系列同授权;画面题字匹配以文件题名比对,像素级复核留 P13)
+
+后六幅已按 P11 同标准建档;统一说明见前节。

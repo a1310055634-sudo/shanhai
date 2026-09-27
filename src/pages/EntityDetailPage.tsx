@@ -98,7 +98,22 @@ export default function EntityDetailPage() {
         <div className={styles.heroArt}>
           <div className={styles.artPanel} aria-hidden="true">
             <BeastArtwork slug={entity.slug} name={entity.canonicalName} variant="detail" />
-            <span className={styles.artNote}>{classicArtFor(entity.slug)?.source ?? '据原文描述艺术演绎'}</span>
+            {(() => {
+              const ca = classicArtFor(entity.slug)
+              return ca?.sourceUrl ? (
+                <a
+                  className={styles.artNote}
+                  href={ca.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="查看版画来源(维基共享资源文件页,新窗打开)"
+                >
+                  {ca.source} · Commons 文件页 ↗
+                </a>
+              ) : (
+                <span className={styles.artNote}>据原文描述艺术演绎</span>
+              )
+            })()}
           </div>
         </div>
       </header>

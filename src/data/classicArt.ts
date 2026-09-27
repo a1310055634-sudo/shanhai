@@ -23,21 +23,97 @@ export interface ClassicArt {
   note: string
   /** 完整出处(详情页用) */
   source: string
+  /** Commons File 页面(详情页可点击出处) */
+  sourceUrl: string
+  /** 数字处理说明(矢量化方式) */
+  provenance: string
 }
 
 const CLASSIC_ART: Record<string, ClassicArt> = {
-  xingxing: { src: xingxing, note: '《古今图书集成》版画', source: '清《古今图书集成·禽虫典》版画(公有领域)' },
-  lushu: { src: lushu, note: '《古今图书集成》版画', source: '清《古今图书集成·禽虫典》版画(公有领域)' },
-  fenghuang: { src: fenghuang, note: '《古今图书集成》版画', source: '清《古今图书集成·禽虫典》版画(公有领域)' },
-  jiuweihu: { src: jiuweihu, note: '《古今图书集成》版画', source: '清《古今图书集成·禽虫典》版画(公有领域)' },
-  dijiang: { src: dijiang, note: '《古今图书集成》版画', source: '清《古今图书集成·神异典》版画(公有领域)' },
-  jingwei: { src: jingwei, note: '《古今图书集成》版画', source: '清《古今图书集成·禽虫典》版画(公有领域)' },
-  luwu: { src: luwu, note: '《古今图书集成》版画', source: '清《古今图书集成·神异典》版画(公有领域)' },
-  yingzhao: { src: yingzhao, note: '《古今图书集成》版画', source: '清《古今图书集成·神异典》版画(公有领域)' },
-  wenyaoyu: { src: wenyaoyu, note: '《古今图书集成》版画', source: '清《古今图书集成·禽虫典》版画(公有领域)' },
-  zhuyin: { src: zhuyin, note: '《古今图书集成》版画', source: '清《古今图书集成·神异典》版画(公有领域)' },
-  yinglong: { src: yinglong, note: '《古今图书集成》版画', source: '清《古今图书集成·禽虫典》版画(公有领域)' },
-  kui: { src: kui, note: '《古今图书集成》版画', source: '清《古今图书集成·禽虫典》版画(公有领域)' },
+  xingxing: {
+    src: xingxing,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·禽虫典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Animal_Kingdom_-_pic207_-_%E7%8C%A9%E7%8C%A9%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
+  lushu: {
+    src: lushu,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·禽虫典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Animal_Kingdom_-_pic234_-_%E9%B9%BF%E8%9C%80%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
+  fenghuang: {
+    src: fenghuang,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·禽虫典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Animal_Kingdom_-_pic001_-_%E9%B3%B3%E5%87%B0%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
+  jiuweihu: {
+    src: jiuweihu,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·禽虫典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Animal_Kingdom_-_pic176_-_%E4%B9%9D%E5%B0%BE%E7%8B%90%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
+  dijiang: {
+    src: dijiang,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·神异典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Spirits_and_the_Supernatural_-_pic19_-_%E5%B8%9D%E6%B1%9F%E7%A5%9E%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
+  jingwei: {
+    src: jingwei,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·禽虫典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Animal_Kingdom_-_pic130_-_%E7%B2%BE%E8%A1%9B%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
+  luwu: {
+    src: luwu,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·神异典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Spirits_and_the_Supernatural_-_pic16_-_%E9%99%B8%E5%90%BE%E7%A5%9E%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
+  yingzhao: {
+    src: yingzhao,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·神异典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Spirits_and_the_Supernatural_-_pic14_-_%E8%8B%B1%E6%8B%9B%E7%A5%9E%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
+  wenyaoyu: {
+    src: wenyaoyu,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·禽虫典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Animal_Kingdom_-_pic390_-_%E6%96%87%E9%B0%A9%E9%AD%9A%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
+  zhuyin: {
+    src: zhuyin,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·神异典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Spirits_and_the_Supernatural_-_pic45_-_%E7%87%AD%E9%99%B0%E7%A5%9E%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
+  yinglong: {
+    src: yinglong,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·禽虫典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Animal_Kingdom_-_pic342_-_%E6%87%89%E9%BE%8D%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
+  kui: {
+    src: kui,
+    note: '《古今图书集成》版画',
+    source: '清《古今图书集成·禽虫典》版画(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:Imperial_Encyclopaedia_-_Animal_Kingdom_-_pic317_-_%E5%A4%94%E5%9C%96.svg',
+    provenance: 'potrace 自动矢量化(原件为维基共享资源《古今图书集成》扫描插图)',
+  },
 }
 
 /** 有古籍版画则返回清单,否则 undefined(调用方回退到原创 SVG 演绎)。 */
