@@ -5,7 +5,7 @@
   "effectiveRuns": 2,
   "maxRuns": 19,
   "finished": false,
-  "currentRound": "R03",
+  "currentRound": "R06",
   "rounds": {
     "R01": {
       "status": "done",
@@ -26,8 +26,9 @@
       "title": "页面结构重组"
     },
     "R05": {
-      "status": "todo",
-      "title": "开卷首屏"
+      "status": "done",
+      "title": "开卷首屏",
+      "note": "场景满铺+宣纸承载面+双按钮;新用户390全宽验证"
     },
     "R06": {
       "status": "todo",
@@ -90,7 +91,8 @@
     "R01": "2d93e20",
     "R02": "26f380e",
     "R03": "e32d0b0",
-    "R04": "b7bf74f"
+    "R04": "b7bf74f",
+    "R05": "3069d9d"
   },
   "baseline": {
     "head": "a0afa9a",

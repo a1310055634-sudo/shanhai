@@ -92,8 +92,11 @@ export default function JourneyPage() {
       {requested === null && savedValid !== null && current && (
         <p className={styles.resume} role="status">
           已接续上次行旅,当前在{current.name}。
+          <Link className={styles.resumeLink} to={`/journeys/nanci-yi?station=${current.locId}`}>
+            继续行旅 →
+          </Link>
           <Link className={styles.resumeLink} to={`/journeys/nanci-yi?station=${stations[0]?.locId}`}>
-            从起点重新出发 →
+            从招摇重新出发 →
           </Link>
         </p>
       )}
