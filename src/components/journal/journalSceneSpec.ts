@@ -26,7 +26,7 @@ export const SCENE_SPECS: Record<number, SceneSpec> = {
   6: { warmth: 0.55, farOpacity: 0.9, midOpacity: 0.9, nearOpacity: 1, profile: 'stubborn', mistDensity: 0.7 },
   7: { warmth: 0.7, farOpacity: 1, midOpacity: 1, nearOpacity: 1, profile: 'jagged', mistDensity: 0.5 },
   8: { warmth: 0.85, farOpacity: 1, midOpacity: 1, nearOpacity: 1, profile: 'rolling', mistDensity: 0.5, exhibitCenter: true },
-  9: { warmth: 0.6, farOpacity: 0.9, midOpacity: 0.9, nearOpacity: 0.95, profile: 'stubborn', mistDensity: 0.6 },
+  9: { warmth: 0.6, farOpacity: 0.9, midOpacity: 0.9, nearOpacity: 0.8, profile: 'stubborn', mistDensity: 0.6 },
 }
 
 export function sceneSpecFor(order: number | undefined): SceneSpec {

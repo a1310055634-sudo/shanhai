@@ -123,5 +123,38 @@ export default function JournalMotifs({ slug }: { slug: string }) {
       </svg>
     )
   }
+  if (slug === 'loc-jiwei') {
+    return (
+      <svg
+        className={styles.motifs}
+        viewBox="0 0 1280 140"
+        preserveAspectRatio="xMidYMax meet"
+        aria-hidden="true"
+        focusable="false"
+      >
+        {/* 其尾踆于东海:山脚入海,海面向右远方敞开(与招摇西海呼应) */}
+        <g stroke="#587367" fill="none" opacity="0.22">
+          <path d="M640 122 Q700 116 760 122 Q820 128 880 122" strokeWidth="0.9" />
+          <path d="M820 128 Q900 121 980 128 Q1060 135 1140 128" strokeWidth="0.8" />
+          <path d="M1000 134 Q1090 128 1180 134 Q1240 138 1280 134" strokeWidth="0.7" />
+        </g>
+        {/* 汸水南流注于淯:一道流线自山中出海 */}
+        <path
+          d="M300 96 C340 104 370 112 420 118 C470 124 520 126 580 126"
+          stroke="#587367"
+          strokeWidth="1"
+          fill="none"
+          opacity="0.2"
+        />
+        {/* 多沙石:滩上疏点 */}
+        <circle cx="480" cy="126" r="1.6" fill="#8f968d" opacity="0.35" />
+        <circle cx="540" cy="130" r="1.2" fill="#8f968d" opacity="0.3" />
+        {/* 其中多白玉:沿流白玉光点 */}
+        <circle cx="380" cy="112" r="2" fill="#f3eee2" opacity="0.5" />
+        <circle cx="440" cy="120" r="1.6" fill="#f3eee2" opacity="0.42" />
+        <circle cx="620" cy="126" r="2.2" fill="#f3eee2" opacity="0.5" />
+      </svg>
+    )
+  }
   return null
 }

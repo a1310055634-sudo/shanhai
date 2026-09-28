@@ -1,10 +1,69 @@
-/* R04 合卷模块(基础版):收束区块,箕尾场景下部呈现 */
+/* R04 合卷模块,R14 升级终幕:收束区块,箕尾场景下部呈现 */
 .closing {
   margin-top: 30px;
   border: 1px solid rgba(177, 139, 86, 0.38);
   border-radius: var(--radius-card);
   background: rgba(23, 35, 31, 0.55);
   padding: 24px 28px;
+}
+
+/* R14 东海呼应语:与开卷西海遥应的策展短句 */
+.closingEcho {
+  margin-top: 10px;
+  font-size: 13.5px;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: var(--verdigris-text);
+}
+
+/* R14 回看路线:九位置安静回环,已核站可点回跳 */
+.closingRecap {
+  margin-top: 16px;
+}
+
+.recapLabel {
+  display: block;
+  font-size: 11.5px;
+  letter-spacing: 0.28em;
+  color: var(--verdigris-text);
+  margin-bottom: 8px;
+}
+
+.recapList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recapStop {
+  display: inline-block;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  color: var(--old-gold);
+  text-decoration: none;
+  border: 1px solid rgba(177, 139, 86, 0.4);
+  border-radius: 999px;
+  padding: 5px 12px;
+  min-height: 27px;
+  line-height: 1.4;
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    border-color var(--duration-hover) var(--ease-soft);
+}
+
+.recapStop:hover {
+  color: var(--paper-bright);
+  border-color: var(--old-gold);
+}
+
+.recapGap {
+  color: var(--text-muted);
+  border-style: dashed;
+  border-color: rgba(143, 150, 141, 0.4);
+  cursor: default;
 }
 
 .closingKicker {
@@ -55,4 +114,25 @@
 
 .closingLink:hover {
   color: var(--paper-bright);
+}
+
+/* R14 主操作:从招摇再出发(朱砂只用于主操作) */
+.closingPrimary {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: var(--text-on-dark);
+  text-decoration: none;
+  border: 1px solid rgba(167, 71, 56, 0.65);
+  background: rgba(167, 71, 56, 0.16);
+  border-radius: 2px;
+  padding: 9px 16px;
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    border-color var(--duration-hover) var(--ease-soft);
+}
+
+.closingPrimary:hover {
+  color: var(--paper-bright);
+  border-color: var(--cinnabar);
 }
