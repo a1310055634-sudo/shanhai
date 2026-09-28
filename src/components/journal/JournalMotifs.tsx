@@ -36,5 +36,32 @@ export default function JournalMotifs({ slug }: { slug: string }) {
       </svg>
     )
   }
+  if (slug === 'loc-chuyang') {
+    return (
+      <svg
+        className={styles.motifs}
+        viewBox="0 0 1280 140"
+        preserveAspectRatio="xMidYMax meet"
+        aria-hidden="true"
+        focusable="false"
+      >
+        {/* 赤金/白金对照:两组竖向双色棱形 */}
+        <g opacity="0.2">
+          <path d="M240 100 L254 114 L240 128 L226 114 Z" fill="#b18b56" />
+          <path d="M280 106 L294 120 L280 134 L266 120 Z" fill="#f3eee2" opacity="0.5" />
+          <path d="M320 100 L334 114 L320 128 L306 114 Z" fill="#b18b56" />
+          <path d="M360 106 L374 120 L360 134 L346 120 Z" fill="#f3eee2" opacity="0.4" />
+        </g>
+        {/* 白金/赤金色温对照条 */}
+        <rect x="420" y="108" width="80" height="3" rx="1.5" fill="#b18b56" opacity="0.3" />
+        <rect x="520" y="108" width="80" height="3" rx="1.5" fill="#f3eee2" opacity="0.25" />
+        {/* 虎纹弧线(呼应「其文如虎」) */}
+        <g stroke="#b18b56" fill="none" opacity="0.22">
+          <path d="M680 112 C700 108 720 108 740 112" strokeWidth="1" />
+          <path d="M700 120 C720 116 740 116 760 120" strokeWidth="0.8" />
+        </g>
+      </svg>
+    )
+  }
   return null
 }
