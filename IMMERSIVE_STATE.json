@@ -2,10 +2,10 @@
   "sprint": "immersive-nanci-yi",
   "theme": "一卷九境:南次一经",
   "createdAt": "2026-09-29T02:09:48+08:00",
-  "effectiveRuns": 1,
+  "effectiveRuns": 2,
   "maxRuns": 19,
   "finished": false,
-  "currentRound": "R02",
+  "currentRound": "R03",
   "rounds": {
     "R01": {
       "status": "done",
@@ -13,8 +13,9 @@
       "note": "发现1440路线条溢出50px回归(P05柢山注记致),遗留R03/R06"
     },
     "R02": {
-      "status": "todo",
-      "title": "总设计与完整分镜"
+      "status": "done",
+      "title": "总设计与完整分镜",
+      "note": "IMMERSIVE_DESIGN.md:总纲/四状态线框/九境五栏分镜/字号层级/转换规则/组件规范"
     },
     "R03": {
       "status": "todo",
@@ -86,7 +87,8 @@
     }
   },
   "commits": {
-    "R01": "2d93e20"
+    "R01": "2d93e20",
+    "R02": "26f380e"
   },
   "baseline": {
     "head": "a0afa9a",
