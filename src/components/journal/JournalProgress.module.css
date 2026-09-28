@@ -84,6 +84,15 @@
   color: var(--text-muted);
 }
 
+.railDualChar {
+  font-family: var(--font-serif);
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  line-height: 1.4;
+  text-align: center;
+}
+
 .railPend {
   font-size: 10.5px;
   color: rgba(143, 150, 141, 0.7);
