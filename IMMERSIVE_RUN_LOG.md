@@ -102,3 +102,16 @@
 - 提交:见 git(R08)。
 - 状态:done。
 - 遗留:无。
+
+━━━━━━━━━━
+
+## 第 9 次有效执行 · R09 堂庭与猨翼 · 2026-09-29 04:35
+
+- 开始 HEAD:2401726;干净。
+- 预期:场景profile参数化,堂庭/猨翼构图和情绪明显不同。
+- 实际:SceneSpec加profile(rolling/jagged/stubborn)与mistDensity;SceneLayers按profile切三套山脊路径;九境分别赋profile确保两两构图差异。
+- 验证:build ✓;堂庭4paths/猨翼4paths(路径集合不同)/三档零溢出/猨翼深链✓。
+- 截图:管线故障(D-011),DOM断言覆盖。
+- 提交:见 git(R09)。
+- 状态:done。
+- 遗留:截图管线故障延续。
