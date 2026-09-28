@@ -1,0 +1,97 @@
+{
+  "sprint": "immersive-nanci-yi",
+  "theme": "一卷九境:南次一经",
+  "createdAt": "2026-09-29T02:09:48+08:00",
+  "effectiveRuns": 1,
+  "maxRuns": 19,
+  "finished": false,
+  "currentRound": "R02",
+  "rounds": {
+    "R01": {
+      "status": "done",
+      "title": "施工前基线与风险表",
+      "note": "发现1440路线条溢出50px回归(P05柢山注记致),遗留R03/R06"
+    },
+    "R02": {
+      "status": "todo",
+      "title": "总设计与完整分镜"
+    },
+    "R03": {
+      "status": "todo",
+      "title": "可信的展览视图模型"
+    },
+    "R04": {
+      "status": "todo",
+      "title": "页面结构重组"
+    },
+    "R05": {
+      "status": "todo",
+      "title": "开卷首屏"
+    },
+    "R06": {
+      "status": "todo",
+      "title": "路线导航与状态"
+    },
+    "R07": {
+      "status": "todo",
+      "title": "场景底层系统"
+    },
+    "R08": {
+      "status": "todo",
+      "title": "招摇定制场景"
+    },
+    "R09": {
+      "status": "todo",
+      "title": "堂庭与猨翼"
+    },
+    "R10": {
+      "status": "todo",
+      "title": "杻阳定制高潮"
+    },
+    "R11": {
+      "status": "todo",
+      "title": "柢/祗异文留白"
+    },
+    "R12": {
+      "status": "todo",
+      "title": "亶爰与基山"
+    },
+    "R13": {
+      "status": "todo",
+      "title": "青丘主高潮"
+    },
+    "R14": {
+      "status": "todo",
+      "title": "箕尾与合卷"
+    },
+    "R15": {
+      "status": "todo",
+      "title": "证据层和完整阅读路径"
+    },
+    "R16": {
+      "status": "todo",
+      "title": "跨页面整合"
+    },
+    "R17": {
+      "status": "todo",
+      "title": "手机和平板独立精修"
+    },
+    "R18": {
+      "status": "todo",
+      "title": "性能动效无障碍总修"
+    },
+    "R19": {
+      "status": "todo",
+      "title": "独立总验收和交付"
+    }
+  },
+  "commits": {
+    "R01": "2d93e20"
+  },
+  "baseline": {
+    "head": "a0afa9a",
+    "buildJsGzip": 140.73,
+    "buildCssGzip": 13.59,
+    "buildOk": true
+  }
+}
