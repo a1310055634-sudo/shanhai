@@ -604,6 +604,17 @@
 }
 
 /* 继续上次行旅(J14) */
+/* R07:场景底层带——进度轨和场景之间的山水过渡 */
+.sceneBand {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+  margin-top: -2px;
+  border: 1px solid rgba(88, 115, 103, 0.2);
+  border-top: none;
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+}
+
 .resume {
   margin-top: 16px;
 }

@@ -7,6 +7,8 @@ import JournalProgress from '../components/journal/JournalProgress'
 import JournalOpening from '../components/journal/JournalOpening'
 import JournalScene from '../components/journal/JournalScene'
 import JournalClosing from '../components/journal/JournalClosing'
+import SceneLayers from '../components/journal/SceneLayers'
+import { sceneSpecFor } from '../components/journal/journalSceneSpec'
 import {
   explainLead,
   readProgress,
@@ -58,6 +60,9 @@ export default function JourneyPage() {
     : undefined
 
   const PROGRESS_KEY = 'shanhai:journey-progress'
+  const sceneSpec = current?.order !== undefined
+    ? sceneSpecFor(current.order)
+    : { warmth: 0, farOpacity: 1, midOpacity: 1, nearOpacity: 1 }
 
   // J14:到达站点时记录进度(localStorage 不可用时静默降级)
   useEffect(() => {
@@ -86,6 +91,13 @@ export default function JourneyPage() {
 
       {/* R04:路线长卷迁入 JournalProgress 模块 */}
       <JournalProgress currentId={currentId} />
+
+      {/* R07:场景底层带——远山/雾/前景山影,按当前站山序参数化 */}
+      {current?.order !== undefined && (
+        <div className={styles.sceneBand} aria-hidden="true">
+          <SceneLayers {...sceneSpec} />
+        </div>
+      )}
 
       {/* J16 修正:原条件(savedValid !== currentId)恒假——带参时 savedProgress 为 null,
           无参时 currentId 即存档站,横幅永不可达。改为无参接续时明示站点并给从起点出发的入口。 */}
