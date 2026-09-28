@@ -4,6 +4,7 @@ import { classicArtFor } from '../../data/classicArt'
 import { ENTITIES } from '../../data/entities'
 import { cnNum, stationVariantLead } from './journalView'
 import type { StationView } from './journalView'
+import JournalEvidence from './JournalEvidence'
 import pageStyles from '../../pages/JourneyPage.module.css'
 import styles from './JournalScene.module.css'
 
@@ -88,6 +89,8 @@ export default function JournalScene({
             本站释义待与原文同批核验后呈现。
           </p>
         )}
+        {/* R15:统一证据入口——出处底本/核验状态/版本异文收进抽屉,不塞满主场景 */}
+        <JournalEvidence locId={current.locId} segmentId={segmentId} />
       </div>
       <aside className={pageStyles.signRail} aria-label="关联异兽与延伸行旅">
         {current.entitySlug ? (

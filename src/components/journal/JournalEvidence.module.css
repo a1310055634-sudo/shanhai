@@ -1,0 +1,172 @@
+/* R15 证据层:统一「看原文与出处」入口与抽屉(墨夜面,小屏底部 sheet) */
+
+.evidenceBtn {
+  align-self: flex-start;
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  letter-spacing: 0.14em;
+  color: var(--old-gold);
+  background: transparent;
+  border: 1px solid rgba(177, 139, 86, 0.5);
+  border-radius: 2px;
+  padding: 9px 16px;
+  min-height: 40px;
+  cursor: pointer;
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    border-color var(--duration-hover) var(--ease-soft);
+}
+
+.evidenceBtn:hover {
+  color: var(--paper-bright);
+  border-color: var(--old-gold);
+}
+
+.evidenceBtn:focus-visible {
+  outline: 2px solid var(--old-gold);
+  outline-offset: 2px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 10, 8, 0.62);
+  z-index: 90;
+}
+
+.drawer {
+  position: fixed;
+  z-index: 91;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  max-height: min(78vh, 640px);
+  overflow-y: auto;
+  background: #16221d;
+  border: 1px solid rgba(177, 139, 86, 0.5);
+  border-radius: var(--radius-card);
+  padding: 20px 22px 22px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  animation: drawerIn 0.32s var(--ease-soft) both;
+}
+
+@keyframes drawerIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drawer:focus-visible {
+  outline: 2px solid var(--old-gold);
+  outline-offset: 2px;
+}
+
+.drawerHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.drawerTitle {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: var(--paper);
+}
+
+.closeBtn {
+  flex: 0 0 auto;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid rgba(143, 150, 141, 0.4);
+  border-radius: 2px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  color: var(--paper-bright);
+  border-color: var(--old-gold);
+}
+
+.closeBtn:focus-visible {
+  outline: 2px solid var(--old-gold);
+  outline-offset: 2px;
+}
+
+.evSection {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(88, 115, 103, 0.25);
+}
+
+.evLabel {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: var(--verdigris-text);
+  margin-bottom: 6px;
+}
+
+.evOriginal {
+  font-family: var(--font-serif);
+  font-size: 15.5px;
+  line-height: 2;
+  color: var(--text-on-dark);
+}
+
+.evMeta {
+  margin-top: 4px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.evBody {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--text-on-dark);
+}
+
+.evNote {
+  font-size: 12.5px;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.evLink {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--old-gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(177, 139, 86, 0.5);
+  padding-bottom: 2px;
+}
+
+.evLink:hover {
+  color: var(--paper-bright);
+}
+
+.evLink:focus-visible,
+.evidenceBtn:focus-visible {
+  outline: 2px solid var(--old-gold);
+  outline-offset: 2px;
+}
+
+@media (min-width: 901px) {
+  .drawer {
+    left: auto;
+    width: min(520px, 44vw);
+  }
+}
