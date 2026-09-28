@@ -155,3 +155,11 @@
 - 溢出矩阵 8 页×3 视口 = 24/24 全绿;12 幅版画 Commons 出处链接 12/12;低动态规则 ✓;键盘焦点规则在表(真实键盘行为环境限制未复核);控制台错误未直接读取(渲染完整性替代,如实说明)。
 - PUBLICATION_REPORT.md 交付:判定 **NEEDS_ATTENTION**(内容 ✓/图像来源 ✓/环境验证残留项:基线截图 3 张未成、原扫描链接未查证、真实键盘未复核、控制台未直读)。
 - 遗留:见报告第八节。
+
+### R03 记录(2026-09-29 03:05)
+
+- journalModel.ts 建立(src/components/journal/):buildJournalPositions(deps) 纯函数派生九位置——JournalStationView(kind=station:locationId/名/山序/站序/segmentId/方向里距/citation/entitySlug/plate)与 JournalVariantGapView(kind=variant-gap:displayName/variants双源并示/distanceNote/explain)**类型分立**;issues 七类(duplicate-mountain-order/station-vs-pending-conflict/invalid-segment/station-missing-citation/order-not-contiguous 等)。
+- journey.ts PendingMountain 扩结构化 variants/distanceNote 字段(柢山:底本A ctext 祗山/底本B 维基文库 柢山;两源一致东三百里)——异文不再是自由文本。
+- ChapterPage 挂 __journalModel(deps?) / __journalDeps 调试钩子。
+- 验证:npm run build 通过;正向断言 9 位置(8 站+1 缺口)0 问题、柢山 variants 双源并示;**负向检验**(注入重复山序站+无效 location+假柢山站)→ 3 类 issue 全部被识别 ✓。
+- 遗留:无。R04 起按 IMMERSIVE_DESIGN 组件规范拆页面。

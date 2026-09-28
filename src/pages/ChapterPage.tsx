@@ -4,6 +4,7 @@ import { CHAPTERS, CHAPTER_PINYIN } from '../data/chapters'
 import { LOCATIONS } from '../data/locations'
 import { CHAPTER_TEXTS, GLOSSARY, segmentCounts, type ChapterSegment } from '../data/chapterTexts'
 import { NANCI_YI_ROUTE, validateJourneyRoute } from '../data/journey'
+import { buildJournalPositions, journalDeps, type JournalDeps } from '../components/journal/journalModel'
 import { ENTITIES } from '../data/entities'
 import EmptyState from '../components/EmptyState'
 import styles from './ChapterPage.module.css'
@@ -46,6 +47,13 @@ export default function ChapterPage() {
   useEffect(() => {
     (window as unknown as Record<string, unknown>).__journeyCheck = () =>
       validateJourneyRoute(NANCI_YI_ROUTE)
+  }, [])
+
+  // R03 调试钩子:window.__journalModel(deps?) 返回展览视图模型(可传变形依赖做负向检验)
+  useEffect(() => {
+    (window as unknown as Record<string, unknown>).__journalModel = (deps?: JournalDeps) =>
+      buildJournalPositions(deps ?? journalDeps())
+    ;(window as unknown as Record<string, unknown>).__journalDeps = journalDeps()
   }, [])
 
   // J16:行旅「打开对应段落」等站内锚点进入时,SPA 哈希变更不触发浏览器原生滚动,

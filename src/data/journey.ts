@@ -191,10 +191,23 @@ export interface PendingMountain {
   name: string
   order: number
   note?: string
+  /** P09 起结构化异文:双源用字并示,不裁决 */
+  variants?: Array<{ label: string; name: string }>
+  /** 两源一致的里距说明 */
+  distanceNote?: string
 }
 
 export const NANCI_YI_PENDING: PendingMountain[] = [
-  { name: '柢山', order: 5, note: '柢/祗两源互异(A ctext作祗/B维基文库作柢);里距两源一致东三百里;两源均无「曰」字' },
+  {
+    name: '柢山',
+    order: 5,
+    note: '柢/祗两源互异(A ctext作祗/B维基文库作柢);里距两源一致东三百里;两源均无「曰」字',
+    variants: [
+      { label: '底本A ctext', name: '祗山' },
+      { label: '底本B 维基文库', name: '柢山' },
+    ],
+    distanceNote: '两源一致:东三百里(A 无「又」/B 有「又」);两源均无「曰」字',
+  },
 ]
 
 /** 按实体反查所在行旅站点(J13 双向导航用)。 */

@@ -40,3 +40,15 @@
 - 提交:见 git(R02 设计文档)。
 - 状态:done。
 - 遗留:无。下次:R03 展览视图模型。
+━━━━━━━━━━
+
+## 第 3 次有效执行 · R03 展览视图模型 · 2026-09-29 03:05
+
+- 开始 HEAD:75cc723;git status 干净。
+- 预期:journalModel 纯函数派生九位置,类型分立,校验可识别四类错误。
+- 实际改动:新建 src/components/journal/journalModel.ts;journey.ts PendingMountain 扩结构化 variants/distanceNote(柢山);ChapterPage 挂 __journalModel/__journalDeps 钩子。
+- 验证:npm run build 通过;正向 9 位置(8 站+1 缺口)0 issues、柢山 variants=[A祗/B柢] 断言;负向注入(重复山序/无效 location/待核误建站)→ duplicate-mountain-order+station-vs-pending-conflict+invalid-segment 全部识别。
+- 浏览器:1440 渲染正常,模型未上屏(纯数据层)。
+- 提交:见 git(R03)。
+- 状态:done。
+- 遗留:无。下次:R04 页面结构重组。
