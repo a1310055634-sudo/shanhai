@@ -1,0 +1,58 @@
+/* R04 合卷模块(基础版):收束区块,箕尾场景下部呈现 */
+.closing {
+  margin-top: 30px;
+  border: 1px solid rgba(177, 139, 86, 0.38);
+  border-radius: var(--radius-card);
+  background: rgba(23, 35, 31, 0.55);
+  padding: 24px 28px;
+}
+
+.closingKicker {
+  font-size: 12px;
+  letter-spacing: 0.34em;
+  color: var(--old-gold);
+  margin-bottom: 8px;
+}
+
+.closingTitle {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  color: var(--paper);
+}
+
+.closingQuote {
+  margin: 16px 0 0;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 2;
+  color: var(--text-on-dark);
+  border-left: 3px solid var(--cinnabar);
+  padding-left: 14px;
+}
+
+.closingNote {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--text-muted);
+}
+
+.closingActions {
+  margin-top: 16px;
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.closingLink {
+  font-size: 14px;
+  color: var(--old-gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(177, 139, 86, 0.45);
+  padding-bottom: 2px;
+}
+
+.closingLink:hover {
+  color: var(--paper-bright);
+}

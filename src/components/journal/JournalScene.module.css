@@ -1,0 +1,13 @@
+import pageStyles from '../../pages/JourneyPage.module.css'
+import styles from './JournalScene.module.css'
+
+/**
+ * R04 场景模块局部样式:侧栏标签/链接复用行旅页既有类名,
+ * 仅补场景模块自身的少量新类(避免样式漂移)。
+ */
+.sceneRailLabel {
+  margin-top: 6px;
+  font-size: 11.5px;
+  letter-spacing: 0.28em;
+  color: var(--verdigris-text);
+}

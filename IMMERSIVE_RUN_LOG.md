@@ -52,3 +52,16 @@
 - 提交:见 git(R03)。
 - 状态:done。
 - 遗留:无。下次:R04 页面结构重组。
+
+━━━━━━━━━━
+
+## 第 4 次有效执行 · R04 页面结构重组 · 2026-09-29 03:20(接续上次中断会话)
+
+- 开始 HEAD:302d1f1(R03);git status 含本触发早前的部分改动。
+- 预期:JourneyPage 拆 journal/ 模块群,保留旧路由/深链/进度。
+- 实际:journalView.ts + JournalProgress/JournalOpening/JournalScene/JournalClosing 四组件;JourneyPage 瘦身为编排层;顺带修 R01 风险1(路线条 1440 溢出 50px:flex 不可收缩改可收缩)。
+- 过程事故(如实):首次重组用整页重写误伤组件,git checkout 恢复自身版本后改渐进编辑;JournalScene 曾漏「进入古卷」链,复查补回并实测落段。
+- 验证:npm run build 通过;八站深链/进度续读/箕尾合卷/开卷按钮链/古卷锚点全通;三档零溢出。
+- 提交:见 git(R04)。
+- 状态:done。
+- 遗留:截图管线仍故障;R05 精修开卷视觉。

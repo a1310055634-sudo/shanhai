@@ -1,0 +1,90 @@
+/* R04 开卷模块基础版(R05 精修视觉):沿用行旅页类名体系,暂寄居于行旅样式表 */
+.opening {
+  border: 1px solid rgba(177, 139, 86, 0.38);
+  border-radius: var(--radius-card);
+  background:
+    radial-gradient(900px 380px at 50% 0%, rgba(23, 35, 31, 0.6), rgba(13, 19, 17, 0.9));
+  padding: 46px 36px 34px;
+  text-align: center;
+}
+
+.openingKicker {
+  font-size: var(--fs-caption);
+  letter-spacing: 0.34em;
+  color: var(--old-gold);
+  margin-bottom: 14px;
+}
+
+.openingTitle {
+  font-size: clamp(40px, 5.4vw, 64px);
+  letter-spacing: 0.22em;
+  color: var(--paper);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.openingSub {
+  margin-top: 10px;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  color: var(--text-on-dark);
+}
+
+.openingText {
+  margin: 22px auto 0;
+  max-width: 34em;
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.openingActions {
+  margin-top: 26px;
+}
+
+.startBtn {
+  display: inline-block;
+  padding: 13px 30px;
+  background: var(--cinnabar);
+  color: var(--paper-bright);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: filter var(--duration-hover) var(--ease-soft);
+}
+
+.startBtn:hover {
+  filter: brightness(1.12);
+}
+
+.openingStats {
+  margin-top: 18px;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: var(--verdigris-text);
+}
+
+.openingDisclaimer {
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .opening {
+    padding: 30px 20px 26px;
+  }
+
+  .openingTitle {
+    font-size: 34px;
+  }
+
+  .startBtn {
+    display: block;
+    width: 100%;
+  }
+}

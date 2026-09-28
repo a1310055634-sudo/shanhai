@@ -318,7 +318,8 @@
 }
 
 .scrollSlot {
-  flex: 1 0 112px;
+  flex: 1 1 104px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -420,7 +421,9 @@
 }
 
 .scrollGap {
-  flex: 1 0 96px;
+  flex: 1 1 88px;
+  min-width: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
