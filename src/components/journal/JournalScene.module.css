@@ -1,13 +1,170 @@
-import pageStyles from '../../pages/JourneyPage.module.css'
-import styles from './JournalScene.module.css'
-
 /**
  * R04 场景模块局部样式:侧栏标签/链接复用行旅页既有类名,
  * 仅补场景模块自身的少量新类(避免样式漂移)。
+ * R13 新增:异文分层行、中心展台(展品显现)与边界注。
+ * (R13 勘误:清除此文件顶部曾被误写入的两行 TS import——CSS 中非法,
+ *  此前构建工具静默丢弃未报错,故历轮构建仍通过。)
  */
 .sceneRailLabel {
   margin-top: 6px;
   font-size: 11.5px;
   letter-spacing: 0.28em;
   color: var(--verdigris-text);
+}
+
+/* ── R13 异文分层行:与原文引文分层,注明全句见古卷对照 ── */
+.variantLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 8px;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  color: var(--verdigris-text);
+  border-left: 2px solid rgba(88, 115, 103, 0.45);
+  padding-left: 10px;
+}
+
+.variantTag {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: var(--verdigris-text);
+  border: 1px solid rgba(134, 164, 146, 0.4);
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+
+.variantLink {
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  color: var(--old-gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(177, 139, 86, 0.5);
+  padding-bottom: 1px;
+  align-self: center;
+}
+
+.variantLink:hover {
+  color: var(--paper-bright);
+  border-color: var(--old-gold);
+}
+
+/* ── R13 中心展台:满幅行,宣纸装裱由 BeastArtwork 承担,外层只给旧金细框 ── */
+.featuredExhibit {
+  grid-column: 1 / -1;
+  margin: 6px 0 2px;
+  padding: 22px 24px 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(243, 238, 226, 0.06),
+    rgba(243, 238, 226, 0.02)
+  );
+  border: 1px solid rgba(177, 139, 86, 0.4);
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  animation: featuredIn 0.7s var(--ease-soft) both;
+}
+
+@keyframes featuredIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.featuredTag {
+  align-self: flex-start;
+  font-size: 11.5px;
+  letter-spacing: 0.3em;
+  color: var(--text-on-dark);
+  background: rgba(167, 71, 56, 0.18);
+  border: 1px solid rgba(167, 71, 56, 0.6);
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.featuredArt {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid rgba(177, 139, 86, 0.5);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: border-color var(--duration-hover) var(--ease-soft);
+}
+
+.featuredArt:hover {
+  border-color: var(--old-gold);
+}
+
+.featuredArt img,
+.featuredArt svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.featuredCaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  column-gap: 14px;
+  row-gap: 4px;
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.featuredTitle {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  color: var(--old-gold);
+}
+
+.featuredSource {
+  font-size: 12.5px;
+  color: var(--verdigris-text);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(134, 164, 146, 0.45);
+  padding-bottom: 1px;
+}
+
+.featuredSource:hover {
+  color: var(--paper-bright);
+}
+
+/* 边界注:原始记载与后世流变分层的明示,独立成行 */
+.boundaryNote {
+  flex-basis: 100%;
+  max-width: 600px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--verdigris-text);
+  border-top: 1px dashed rgba(134, 164, 146, 0.35);
+  padding-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .featuredExhibit {
+    padding: 18px 14px 14px;
+  }
+
+  .featuredTag {
+    align-self: center;
+  }
+
+  .featuredArt {
+    max-width: 280px;
+  }
 }

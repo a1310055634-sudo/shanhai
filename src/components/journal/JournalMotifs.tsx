@@ -103,5 +103,25 @@ export default function JournalMotifs({ slug }: { slug: string }) {
       </svg>
     )
   }
+  if (slug === 'loc-qingqiu') {
+    return (
+      <svg
+        className={styles.motifs}
+        viewBox="0 0 1280 140"
+        preserveAspectRatio="xMidYMax meet"
+        aria-hidden="true"
+        focusable="false"
+      >
+        {/* 其阳多玉:暖玉光点(左,向阳) */}
+        <circle cx="180" cy="106" r="2.5" fill="#b18b56" opacity="0.55" />
+        <circle cx="230" cy="118" r="1.8" fill="#f3eee2" opacity="0.4" />
+        {/* 其阴多青䨼:矿彩青晕(右,向阴;主视觉是九尾狐版画展台,此处只作山色) */}
+        <ellipse cx="980" cy="122" rx="260" ry="14" fill="#3f6b63" opacity="0.14" />
+        <ellipse cx="1120" cy="116" rx="150" ry="9" fill="#587367" opacity="0.12" />
+        {/* 一道青霭过渡 */}
+        <path d="M420 116 C560 108 700 108 840 116" stroke="#587367" strokeWidth="0.8" fill="none" opacity="0.2" />
+      </svg>
+    )
+  }
   return null
 }

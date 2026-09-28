@@ -63,7 +63,7 @@ export default function JourneyPage() {
   const PROGRESS_KEY = 'shanhai:journey-progress'
   const sceneSpec = current?.order !== undefined
     ? sceneSpecFor(current.order)
-    : { warmth: 0, farOpacity: 1, midOpacity: 1, nearOpacity: 1 }
+    : { warmth: 0, farOpacity: 1, midOpacity: 1, nearOpacity: 1, profile: 'rolling' as const, mistDensity: 0.5 }
 
   // J14:到达站点时记录进度(localStorage 不可用时静默降级)
   useEffect(() => {
@@ -121,7 +121,7 @@ export default function JourneyPage() {
         </p>
       )}
 
-      {/* R04:场景模块(展签六区) */}
+      {/* R04:场景模块(展签六区);R13 featured 由场景参数表派生(仅青丘 exhibitCenter) */}
       {current && (
         <JournalScene
           current={current}
@@ -131,6 +131,7 @@ export default function JourneyPage() {
           segmentText={currentStationSegment?.text}
           segmentSection={currentStationSegment?.section}
           explanation={currentEntityExplanation}
+          featured={sceneSpec.exhibitCenter === true}
           prevName={currentIndex > 0 ? stations[currentIndex - 1].name : undefined}
           prevHref={currentIndex > 0 ? `/journeys/nanci-yi?station=${stations[currentIndex - 1].locId}` : undefined}
           nextName={currentIndex < stations.length - 1 ? stations[currentIndex + 1].name : undefined}

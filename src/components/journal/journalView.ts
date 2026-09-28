@@ -42,6 +42,16 @@ export function explainLead(text: string, limit = 110): string {
 export const CN_NUM = ['一', '二', '三', '四', '五', '六', '七', '八', '九']
 export const cnNum = (n?: number) => (n && n >= 1 && n <= 9 ? CN_NUM[n - 1] : '')
 
+/** R13:站点引文里的异文简行——取 variantText 首句,数据派生,不手写;
+ * 全句仍以古卷对照页为准,此处仅令异文在场景内可见。 */
+export function stationVariantLead(locId: string): string | undefined {
+  const loc = LOCATIONS.find((l) => l.id === locId)
+  const vt = loc?.citations.find((c) => c.variantText)?.variantText
+  if (!vt) return undefined
+  const head = vt.split('。')[0]
+  return head ? `${head}。` : undefined
+}
+
 export interface ScrollSlot {
   kind: 'station' | 'gap'
   locId?: string
