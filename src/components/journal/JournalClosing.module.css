@@ -136,3 +136,13 @@
   color: var(--paper-bright);
   border-color: var(--cinnabar);
 }
+
+/* R17:手机触控目标 ≥44px(回看胶囊与合卷出口) */
+@media (max-width: 900px) {
+  .recapStop,
+  .closingLink {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}

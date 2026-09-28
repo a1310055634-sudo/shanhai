@@ -106,3 +106,14 @@
     padding: 16px var(--space-page-x-mobile);
   }
 }
+
+/* R17:手机触控目标 >=44px */
+@media (max-width: 768px) {
+  .linkCol a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+  }
+}

@@ -188,6 +188,16 @@
   .signArt {
     max-width: 240px;
   }
+
+  /* R17:手机触控目标 ≥44px(建议值) */
+  .indexLink,
+  .navLink,
+  .signChapterLink,
+  .signBeastLink {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 .currentKicker {

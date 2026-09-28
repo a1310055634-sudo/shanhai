@@ -7,7 +7,7 @@
   /* 浅宣纸底(V10):与深墨页底形成阅读节奏 */
   background: var(--surface-paper);
   padding: 22px 24px 18px;
-  scroll-margin-top: 96px;
+  scroll-margin-top: 124px;
   transition: box-shadow var(--duration-hover) var(--ease-soft);
 }
 

@@ -100,15 +100,27 @@
 }
 
 @media (max-width: 640px) {
+  /* R17:手机端九位置从横向挤压(单格仅 29px 宽)改为 3×3 回环网格,触控单元 ≥48px */
   .rail {
-    padding: 10px 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 10px;
+    overflow-x: visible;
   }
 
   .railStop {
-    padding: 6px 2px;
+    min-height: 48px;
+    justify-content: center;
+    padding: 8px 4px;
+  }
+
+  /* li 与 a 同用 railStop 类:网格里让链接撑满单元格 */
+  .rail li > a {
+    width: 100%;
   }
 
   .railName {
-    font-size: 11px;
+    font-size: 11.5px;
   }
 }

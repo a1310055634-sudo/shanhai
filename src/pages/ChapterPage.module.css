@@ -126,7 +126,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  scroll-margin-top: 96px; /* J16:让过固定页头,锚点段整体可见 */
+  scroll-margin-top: 124px; /* J16:让过固定页头,锚点段整体可见 */
 }
 
 /* J16:自行旅/条目锚点到达时段落以朱砂描边明示,与 CitationBlock 同一视觉语言。
