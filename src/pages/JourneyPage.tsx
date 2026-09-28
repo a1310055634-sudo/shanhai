@@ -8,6 +8,7 @@ import JournalOpening from '../components/journal/JournalOpening'
 import JournalScene from '../components/journal/JournalScene'
 import JournalClosing from '../components/journal/JournalClosing'
 import SceneLayers from '../components/journal/SceneLayers'
+import JournalMotifs from '../components/journal/JournalMotifs'
 import { sceneSpecFor } from '../components/journal/journalSceneSpec'
 import {
   explainLead,
@@ -96,6 +97,7 @@ export default function JourneyPage() {
       {current?.order !== undefined && (
         <div className={styles.sceneBand} aria-hidden="true">
           <SceneLayers {...sceneSpec} />
+          <JournalMotifs slug={current.locId} />
         </div>
       )}
 
