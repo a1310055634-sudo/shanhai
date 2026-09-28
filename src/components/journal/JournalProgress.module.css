@@ -1,0 +1,105 @@
+/* R06 路线进度轨:地铁线式九位置导航 */
+.railWrap {
+  border: 1px solid rgba(88, 115, 103, 0.4);
+  border-radius: var(--radius-card);
+  background:
+    radial-gradient(1200px 500px at 50% 40%, rgba(23, 35, 31, 0.6), rgba(13, 19, 17, 0.9));
+  overflow: hidden;
+}
+
+.rail {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 14px 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+.railStop {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 4px;
+  border: 1px solid rgba(88, 115, 103, 0.3);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  transition: border-color var(--duration-hover) var(--ease-soft), background var(--duration-hover) var(--ease-soft);
+}
+
+.railStop:hover {
+  border-color: var(--old-gold);
+}
+
+.railStopCurrent {
+  border-color: var(--cinnabar);
+  background: rgba(23, 35, 31, 0.9);
+}
+
+.railStopGap {
+  border-style: dashed;
+  border-color: rgba(143, 150, 141, 0.3);
+  background: transparent;
+  justify-content: center;
+}
+
+.railNum {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  color: var(--verdigris-text);
+  line-height: 1;
+}
+
+.railStopCurrent .railNum {
+  color: var(--cinnabar);
+}
+
+.railStopGap .railNum {
+  color: var(--text-muted);
+}
+
+.railName {
+  font-family: var(--font-serif);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  color: var(--text-on-dark);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.railStopCurrent .railName {
+  color: var(--paper-bright);
+}
+
+.railStopGap .railName {
+  color: var(--text-muted);
+}
+
+.railPend {
+  font-size: 10.5px;
+  color: rgba(143, 150, 141, 0.7);
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 640px) {
+  .rail {
+    padding: 10px 8px;
+  }
+
+  .railStop {
+    padding: 6px 2px;
+  }
+
+  .railName {
+    font-size: 11px;
+  }
+}
