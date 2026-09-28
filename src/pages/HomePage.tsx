@@ -48,7 +48,7 @@ export default function HomePage() {
           <span className={styles.journeyEntryMain}>
             <span className={styles.journeyEntryTitle}>南次一经·山海行旅</span>
             <span className={styles.journeyEntryText}>
-              沿原文次序自招摇之山行至青丘之山;方向里距均按底本核验,未录山段如实标注。
+              沿原文次序自招摇之山行至箕尾之山:九位置、八座已核验站、一处柢/祗待核;方向里距均按底本核验。
             </span>
           </span>
           <span className={styles.journeyEntryCta} aria-hidden="true">
