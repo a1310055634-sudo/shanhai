@@ -2,12 +2,13 @@
   "planId": "shanhai-gallery-20",
   "title": "古朴精修冲刺 G01—G20",
   "totalRounds": 20,
-  "validExecutions": 1,
+  "validExecutions": 2,
   "maxValidExecutions": 20,
-  "currentRound": "G02",
+  "currentRound": "G03",
   "rounds": {
     "G01": "done",
-    "G02": "todo", "G03": "todo", "G04": "todo", "G05": "todo",
+    "G02": "done",
+    "G03": "todo", "G04": "todo", "G05": "todo",
     "G06": "todo", "G07": "todo", "G08": "todo", "G09": "todo", "G10": "todo",
     "G11": "todo", "G12": "todo", "G13": "todo", "G14": "todo", "G15": "todo",
     "G16": "todo", "G17": "todo", "G18": "todo", "G19": "todo", "G20": "todo"
