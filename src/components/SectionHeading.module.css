@@ -47,12 +47,6 @@
   line-height: 1.85;
 }
 
-.rule {
+.ruleWrap {
   margin-top: 22px;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    rgba(177, 139, 86, 0.55),
-    rgba(177, 139, 86, 0.08)
-  );
 }

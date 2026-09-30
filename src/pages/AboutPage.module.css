@@ -150,3 +150,9 @@
     padding: 22px 20px;
   }
 }
+
+/* G07 凡例页收束线:居中短线 */
+.pageEnd {
+  max-width: 300px;
+  margin: 52px auto 0;
+}

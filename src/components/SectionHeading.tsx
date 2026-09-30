@@ -1,3 +1,4 @@
+import Rule from './common/Rule'
 import styles from './SectionHeading.module.css'
 
 interface SectionHeadingProps {
@@ -30,7 +31,8 @@ export default function SectionHeading({ index, title, subtitle, note, level = 2
         </div>
       </div>
       {note && <p className={styles.note}>{note}</p>}
-      <div className={styles.rule} aria-hidden="true" />
+      {/* G07 金线收头:回纹端头对称线,替换原单侧渐变线 */}
+      <Rule kind="meander" className={styles.ruleWrap} />
     </header>
   )
 }

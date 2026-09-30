@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { CHAPTER_TEXTS } from '../../data/chapterTexts'
 import { buildCurrentJournalPositions } from './journalModel'
 import pageStyles from '../../pages/JourneyPage.module.css'
+import Rule from '../common/Rule'
 import styles from './JournalClosing.module.css'
 
 /**
@@ -74,6 +75,9 @@ export default function JournalClosing() {
           版本与来源说明 →
         </Link>
       </div>
+
+      {/* G07 合卷收束线(接入点 7) */}
+      <Rule kind="cloud" className={styles.closingEnd} />
     </section>
   )
 }

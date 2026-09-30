@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import { ENTITIES } from '../data/entities'
 import { CHAPTERS } from '../data/chapters'
+import Rule from '../components/common/Rule'
 import styles from './AboutPage.module.css'
 
 const verifiedCount = ENTITIES.filter((entity) => entity.recordStatus === 'verified').length
@@ -86,6 +87,9 @@ export default function AboutPage() {
       <p className={styles.sourceNote}>
         详细核验清单见项目内 CONTENT_SOURCES.md;页面中每条原文证据也附有公开对照链接与核验备注。
       </p>
+
+      {/* G07 凡例页收束线(接入点 8):方胜端头 */}
+      <Rule kind="fangsheng" className={styles.pageEnd} />
     </div>
   )
 }

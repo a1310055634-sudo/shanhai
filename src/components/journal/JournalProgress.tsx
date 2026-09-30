@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { buildCurrentJournalPositions } from './journalModel'
+import { RuleOrnamentIcon } from '../common/Rule'
 import styles from './JournalProgress.module.css'
 
 /**
@@ -11,6 +12,9 @@ export default function JournalProgress({ currentId }: { currentId?: string }) {
 
   return (
     <nav className={styles.railWrap} aria-label="南次一经九位置路线导航">
+      {/* G07 轨道端点角饰(接入点 5-6):纯装饰 */}
+      <RuleOrnamentIcon kind="cloud" className={styles.railEndL} />
+      <RuleOrnamentIcon kind="cloud" className={styles.railEndR} />
       <ol className={styles.rail}>
         {positions.map((pos) => {
           if (pos.kind === 'station') {

@@ -114,7 +114,7 @@
 
 **不做什么**:整条线换成花纹线、纹样放大成主视觉、超过 8 处、动画纹样。
 
-**原创声明**:三个纹样为本项目原创 SVG(参照传统云纹/回纹/方胜的公共形制自绘 path),无外部素材来源,公有领域形制不受版权约束;记录于本节即视为出处存档。
+**原创声明(G07 施工定稿)**:三个纹样(云纹=底横线+双拱如意云勾、回纹=雷纹方螺旋一笔、方胜=两菱相扣)均为本项目参照传统公共形制**自绘的 SVG path**(viewBox 16×16,stroke currentColor 1.4),无外部素材来源;形制属公有领域,本实现不受版权约束。组件 `components/common/Rule.tsx`(整条 `<Rule kind>` / 单端 `<RuleOrnamentIcon kind>` 双 API),样式 `Rule.module.css`。**G07 实际落点与计划一致**(8 处):SectionHeading 分隔线两端(回纹,全站页头)、Footer 顶线两端(云纹,替换原 border-top)、JournalProgress 轨道左上/右上角饰(云纹 10px)、JournalClosing 合卷收束线(云纹,居中 260px)、AboutPage 凡例页收束线(方胜,居中 300px)。
 
 ### 3.3 鱼尾分隔(G14,条件通过)
 

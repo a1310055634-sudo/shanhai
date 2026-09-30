@@ -1,7 +1,12 @@
 .footer {
-  border-top: 1px solid rgba(177, 139, 86, 0.28);
+  /* G07:顶线改由 Rule 组件提供(云纹端头) */
   background: var(--ink-deep);
   margin-top: var(--space-section-desktop);
+}
+
+.topRule {
+  grid-column: 1 / -1; /* 横跨 inner 全部列 */
+  margin-bottom: 34px;
 }
 
 .inner {

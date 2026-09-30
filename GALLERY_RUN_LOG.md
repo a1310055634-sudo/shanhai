@@ -4,6 +4,46 @@
 
 ---
 
+## G07 · 金线收头
+
+- **有效执行编号**:7 / 20
+- **北京时间**:2026-10-01 约 13:50
+- **开始 HEAD**:`b9111cd`(G06);有一处未提交改动 `GALLERY_BASELINES/1440-journey.png`——G06 轮核对时覆盖拍的行旅站视图(归属:本冲刺自己),本轮一并提交
+- **本轮预期**:Rule.tsx 三纹样,8 落点,对照截图≥3,重量低于文字,原创声明入 DESIGN
+
+### 实际改动
+
+1. 新建 `components/common/Rule.tsx` + `Rule.module.css`:
+   - 三枚原创纹样(16×16,stroke currentColor 1.4):**云纹**(底横线+双拱如意云勾)、**回纹**(雷纹方螺旋一笔)、**方胜**(两菱相扣)
+   - 双 API:整条 `<Rule kind>`(纹样—渐变线—纹样,对称)+ 单端 `<RuleOrnamentIcon kind>`
+   - 线 `flex: 1 1 auto` 可收缩(红线),纹样 13px opacity 0.8
+2. 5 接入点 8 落点:
+   - **SectionHeading**(全站页头):单侧渐变线 → `<Rule kind="meander">` 对称回纹线(旧 .rule CSS 改 .ruleWrap 只留间距)
+   - **Footer**:顶部 border-top 移除 → inner 首位 `<Rule kind="cloud">`;修正一次——首拍发现线只占 grid 第一列,补 `grid-column: 1/-1` 横跨全宽
+   - **JournalProgress**:railWrap 左上/右上角饰(云纹 10px,opacity 0.45,absolute top 5px,与滚动内容 padding 14px 不相交);railWrap 补 position: relative
+   - **JournalClosing**:合卷 actions 后居中收束线(260px)
+   - **AboutPage**:凡例页末尾方胜收束线(300px,与页头回纹呼应)
+3. DESIGN §3.2 原创声明定稿(形制公有领域+自绘 path+落点表核对一致)
+
+### 构建与浏览器核对
+
+- build 绿 ×2(1.25s/1.26s);gzip:CSS 16.10→16.26(+0.16)、JS 147.13→147.57(+0.44),合计 +0.60KB
+- 对照截图 4 张:`1440-about-rule.png`(页头回纹线+凡例卡)、`1440-chapters-rule.png`(页头回纹线近景)、`1440-journey.png`(进度轨角饰,首枚 rect(153,374,10px))、`1440-journey-footer.png`(全宽云纹顶线)
+- 视觉重量:13px 纹样+1px 线明显轻于标题文字(目检)✅
+- 零溢出:390 首页/about/journey 三页 ✅;1440 about/journey ✅
+- 断言:about 页 rule 条 3 + pageEnd 1 + icons 6;journey 页 railEnds 2 + footerRules 1 ✅
+
+### 内容核对
+
+- 零内容改动;纹样纯装饰 aria-hidden
+
+### 状态:**done**
+
+- 验收对照:对照截图 4≥3 ✅;重量低于文字 ✅;原创声明入 DESIGN ✅;≤8 落点 ✅(5 接入点,纹样实例每页≤6)
+- **下轮入口:G08 字韵层级**——--font-title 落地(DESIGN §2.1 落点清单:Navigation 品牌字/Hero title/SectionHeading 主标题/详情页 h1/古卷 h1/篇章名/JournalScene 山名),字距 0.12–0.16em,line-break:strict
+
+---
+
 ## G06 · 题签竖排
 
 - **有效执行编号**:6 / 20

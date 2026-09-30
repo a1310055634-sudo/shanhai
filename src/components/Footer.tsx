@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Rule from './common/Rule'
 import styles from './Footer.module.css'
 
 /** 页脚:站内入口 + 来源承诺摘要(完整「来源承诺」区块随首页章节实现)。 */
@@ -6,6 +7,8 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
+        {/* G07 金线收头:云纹端头线替换原 border-top(接入点 3-4) */}
+        <Rule kind="cloud" className={styles.topRule} />
         <div className={styles.brandCol}>
           <p className={styles.brandName}>山海万象录</p>
           <p className={styles.brandSub}>SHAN HAI ARCHIVE</p>

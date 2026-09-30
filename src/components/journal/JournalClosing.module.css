@@ -146,3 +146,9 @@
     align-items: center;
   }
 }
+
+/* G07 合卷收束线:居中短线,收卷意象 */
+.closingEnd {
+  max-width: 260px;
+  margin: 30px auto 0;
+}
