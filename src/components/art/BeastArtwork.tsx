@@ -13,6 +13,7 @@ import KuiArt from './registry/kui'
 import WenyaoyuArt from './registry/wenyaoyu'
 import XingxingArt from './registry/xingxing'
 import LushuArt from './registry/lushu'
+import PaperTexture from '../common/PaperTexture'
 import styles from './BeastArtwork.module.css'
 
 /**
@@ -83,6 +84,7 @@ export default function BeastArtwork({
   if (classic && !classicFailed) {
     return (
       <span className={styles.classicPaper}>
+        <PaperTexture />
         <img
           src={classic.src}
           alt={`${name}——${classic.source}`}

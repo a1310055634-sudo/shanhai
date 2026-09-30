@@ -21,9 +21,11 @@
 | 落点 | 文件 |
 |---|---|
 | 引文块 | `components/CitationBlock.tsx`(cite 容器内) |
-| 证据抽屉 | `components/journal/JournalEvidence.tsx`(宣纸面板内) |
 | 古卷阅读面 | `pages/ChapterPage.tsx`(宣纸阅读卡内) |
 | 版画装裱底 | `components/art/BeastArtwork.tsx`(装裱底色层内) |
+| 首页今日异兽引文卡 | `components/home/TodayBeast.tsx`(quote 卡内) |
+
+> **G04 修订**:原定第四落点 JournalEvidence 抽屉,实测(G04 开工核对)抽屉通体墨夜面(`--text-on-dark` 文字+#16221d 底),不符本节负面清单「纸纹只上宣纸面」——改为 TodayBeast `.quote`(宣纸底引文卡,与 CitationBlock 同族语言)。抽屉的古朴化(G05 若涉及)走墨夜面语言(细金线),不用纸纹。
 
 **不做什么**:茶渍、折角、破洞、大面积泛黄、纸纹盖过正文(纹层必须在文字层 z-index 之下)、深色墨夜面上用纸纹(只用于宣纸表面)。
 

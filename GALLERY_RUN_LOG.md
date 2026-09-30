@@ -4,6 +4,49 @@
 
 ---
 
+## G04 · 宣纸材质
+
+- **有效执行编号**:4 / 20
+- **北京时间**:2026-10-01 约 11:50
+- **开始 HEAD**:`25a4c7e`(G03),工作树干净;锁不存在,接管
+- **本轮预期**:新建 PaperTexture(DESIGN §1.1 规格),四处落点,gzip 增量 <2KB,质感可见不抢戏,对比度不降级
+
+### 实际改动
+
+1. 新建 `src/components/common/PaperTexture.tsx`:feTurbulence(fractalNoise/baseFrequency 0.9/octaves 2/seed 7)+ feColorMatrix 压为暖棕噪点(α=0.55);`useId` 生成唯一 filter id(同页多实例安全);aria-hidden + focusable=false
+2. 新建 `src/components/common/PaperTexture.module.css`:absolute inset 0 / **z-index -1**(宿主 isolation: isolate 关住)/ opacity 0.05 / multiply / pointer-events none
+3. 四落点接入(TSX 插 `<PaperTexture />` + 容器补 `position: relative; isolation: isolate; overflow: hidden`):
+   - `CitationBlock.tsx` → `.cite`
+   - `ChapterPage.tsx` → `.reader`
+   - `BeastArtwork.tsx` → `.classicPaper`(版画装裱底)
+   - `TodayBeast.tsx` → `.quote`(首页今日异兽引文卡)
+
+### 落点修订(文档先行)
+
+原定落点 JournalEvidence 抽屉,开工核对发现**抽屉通体墨夜面**(`#16221d` 底 + `--text-on-dark` 文字),不符 DESIGN §1.1 负面清单「纸纹只上宣纸面」。按「先改文档再改码」纪律:DESIGN §1.1 落点表已修订为 TodayBeast `.quote`(宣纸底引文卡,与 CitationBlock 同族),并注明抽屉古朴化走墨夜面语言(细金线)。
+
+### 构建与浏览器核对
+
+- build 绿 1.40s;gzip:JS 146.77→**147.00(+0.23)**、CSS 15.68→**15.72(+0.04)**,合计 **+0.27KB ≪ 2KB 上限** ✅
+- DOM 断言(390,古卷阅读面):svg 存在且为首子元素、opacity=0.05、mix-blend=multiply、pointer-events=none、aria-hidden、宿主 isolation=isolate、overflow=hidden —— 全过 ✅;首页 quote 卡:svg 存在、isolate、opacity 0.05 ✅
+- 目检截图 2 张(覆盖基线):390 古卷阅读面(细颗粒可辨、文字清晰、「细看有粗看无」)、390 详情页版画(装裱底纸纹,版画展示无破坏)
+- 零溢出复查:首页 / 古卷 / 详情页 390 全过 ✅
+
+### 对比度不降级论证
+
+纸纹为 z-index -1 的装饰层,文字之上无叠加;multiply 最坏情形对宣纸底各通道压暗 ≤4/255(0.05×α0.55),paper-ink 对宣纸 10.3:1 → ≥10.0:1,仍远超 4.5 红线;目检文字边缘无噪点干扰。
+
+### 内容核对
+
+- 零内容改动;不动任何文本层
+
+### 状态:**done**
+
+- 验收对照:质感可见不抢戏 ✅(目检);对比度不降级 ✅(论证+目检);gzip 增量 0.27KB<2KB ✅;四落点 ✅(落点表已按实际修订)
+- **下轮入口:G05 界栏版框**——CitationBlock/JournalEvidence/EntityDetailPage 三处双边界栏(DESIGN §3.1);注意 JournalEvidence 为墨夜面,界栏线用其现有金色系而非宣纸边框变量
+
+---
+
 ## G03 · 令牌第一刀
 
 - **有效执行编号**:3 / 20

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SectionHeading from '../SectionHeading'
+import PaperTexture from '../common/PaperTexture'
 import { CHAPTERS } from '../../data/chapters'
 import { getVerifiedEntities } from '../../data/entities'
 import styles from './TodayBeast.module.css'
@@ -55,7 +56,10 @@ export default function TodayBeast() {
               ? `异名:${entity.aliases.join('、')}`
               : '本条底本未见异名记载'}
           </p>
-          <blockquote className={styles.quote}>{entity.citations[0]?.originalText}</blockquote>
+          <blockquote className={styles.quote}>
+            <PaperTexture />
+            {entity.citations[0]?.originalText}
+          </blockquote>
           <p className={styles.quoteSource}>
             ——《山海经·{entity.citations[0]?.chapter}》·
             {entity.citations[0]?.section}

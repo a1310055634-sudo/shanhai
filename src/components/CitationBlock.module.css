@@ -1,4 +1,7 @@
 .cite {
+  position: relative;
+  isolation: isolate; /* 关住 PaperTexture 的 z-index:-1 */
+  overflow: hidden;
   margin: 0;
   max-width: 780px; /* E12:舒适阅读面,长行不过展 */
   border: 1px solid rgba(167, 71, 56, 0.28);

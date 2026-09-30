@@ -6,6 +6,9 @@
 
 /* 古籍版画:宣纸装裱,墨图 contain 居中(原刻本为纸底墨印) */
 .classicPaper {
+  position: relative;
+  isolation: isolate; /* 关住 PaperTexture 的 z-index:-1 */
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;

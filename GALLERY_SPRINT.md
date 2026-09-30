@@ -21,7 +21,7 @@ HEAD 起点:`823ba01`(R19 终验交付,工作树干净)。
 | G01 | 基线与古朴审计(四件套/基线截图/缺口清单) | done | 本提交 | 20 张基线;1440/768 直接实测(见下) |
 | G02 | 古朴总纲 GALLERY_DESIGN.md(四线规范+术语表+字韵三层) | done | 本提交 | 纯文档轮,零代码改动 |
 | G03 | 令牌第一刀(宣纸暖度/旧金哑光/--font-title 楷体栈) | done | 本提交 | 新值全达标(10.3/7.0/5.6:1);CSS gzip +0.05KB |
-| G04 | 宣纸材质 PaperTexture(feTurbulence,四落点) | todo | — | — |
+| G04 | 宣纸材质 PaperTexture(feTurbulence,四落点) | done | 本提交 | gzip +0.27KB;第四落点改 TodayBeast.quote(DESIGN 已修订) |
 | G05 | 界栏版框(CitationBlock/JournalEvidence/EntityDetailPage) | todo | — | — |
 | G06 | 题签竖排(Hero/JournalOpening 书衣式) | todo | — | — |
 | G07 | 金线收头 Rule.tsx(纹样≤8 处) | todo | — | — |

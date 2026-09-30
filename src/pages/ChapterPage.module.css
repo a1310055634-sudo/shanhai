@@ -113,6 +113,9 @@
 
 /* E14 阅读室:宣纸面板与墨夜工具栏形成明暗节奏(双表面系统) */
 .reader {
+  position: relative;
+  isolation: isolate; /* 关住 PaperTexture 的 z-index:-1 */
+  overflow: hidden;
   background: var(--surface-paper);
   border: 1px solid var(--border-normal);
   border-radius: var(--radius-card);

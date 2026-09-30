@@ -7,6 +7,7 @@ import { NANCI_YI_ROUTE, validateJourneyRoute } from '../data/journey'
 import { buildJournalPositions, journalDeps, type JournalDeps } from '../components/journal/journalModel'
 import { ENTITIES } from '../data/entities'
 import EmptyState from '../components/EmptyState'
+import PaperTexture from '../components/common/PaperTexture'
 import styles from './ChapterPage.module.css'
 
 /** 生僻字注音:按词典把字包成 ruby。 */
@@ -178,6 +179,7 @@ export default function ChapterPage() {
       </header>
 
       <div className={styles.reader}>
+        <PaperTexture />
         {chapterText.segments.map((seg, i) =>
           seg.kind === 'text' ? (
             <div

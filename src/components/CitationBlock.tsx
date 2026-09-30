@@ -1,4 +1,5 @@
 import type { Citation } from '../data/types'
+import PaperTexture from './common/PaperTexture'
 import styles from './CitationBlock.module.css'
 
 interface CitationBlockProps {
@@ -14,6 +15,7 @@ interface CitationBlockProps {
 export default function CitationBlock({ citation, anchor }: CitationBlockProps) {
   return (
     <figure className={styles.cite} id={anchor}>
+      <PaperTexture />
       <blockquote className={styles.text}>{citation.originalText}</blockquote>
       <figcaption className={styles.meta}>
         <p className={styles.line}>
