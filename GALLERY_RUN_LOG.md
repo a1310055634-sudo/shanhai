@@ -4,6 +4,43 @@
 
 ---
 
+## G06 · 题签竖排
+
+- **有效执行编号**:6 / 20
+- **北京时间**:2026-10-01 约 13:10
+- **开始 HEAD**:`77fb326`(G05),工作树干净;锁不存在,接管
+- **本轮预期**:Hero 与 JournalOpening 书衣式竖排题签(DESIGN §2.3),双档截图,不遮版画,焦点路径不变
+
+### 实际改动
+
+1. `Hero.tsx` + `Hero.module.css`:新增 `.titleSlip`(「山海万象录」竖排题签)——absolute 左上(left clamp(20px,4vw,56px) / top 104px),writing-mode: vertical-rl + text-orientation: upright,宣纸底+楷体(var(--font-title) 19px)+双细线(border+outline -4px,G05 同族)+朱砂小印(24px「山」);aria-hidden 无 tabindex 无链接;**≤900px display:none**(窄屏 .kicker 已承载同等文字,信息零丢失)
+2. `JournalOpening.tsx` + `JournalOpening.module.css`:新增题签(「南次一经」+印「旅」),**挂右上(right 24 / top 20)**——首版放左上,1440 实测压住面板 kicker 文字开头(overlapsPanel: true),即改右上;≤640px display:none
+
+### 排障与位置修正记录
+
+- 开卷视图触发:老用户(有进度)直接进站视图,JournalOpening 不渲染——需 `localStorage.clear()+reload` 才见开卷(测试路径,非缺陷)
+- 左上→右上:块级盒子检测误报后,以 **Range 级文字真实包围盒**终裁:left 上 kicker(文字左起 ~190)与题签(1216–1256)盒子相交但文字不达;即便如此左上位置在视觉上确压 kicker 首字,改右上后 Range 检测 `textRectOverlaps: []` 零重叠
+
+### 构建与浏览器核对
+
+- build 绿(两轮 1.45s);gzip:CSS 15.77→16.10(+0.33)、JS 147.00→147.13(+0.13),合计 +0.46KB
+- 1440 Hero 题签:vertical-rl/upright ✓、rect(56,177,44×230)、不遮 beastBox(矩形交叉检测 false)、focusables=0 ✓
+- 1440 开卷题签:右上(1216,182)40×167、Range 级零文字重叠 ✓;截图 `1440-journey-opening.png`
+- 390:首页题签 display:none ✓、开卷/行旅页不渲染 ✓;`390-journey.png`
+- 焦点路径不变(纯装饰 aria-hidden);reduced-motion:题签零动画 ✓
+- 截图:`1440-home.png`(覆盖基线,题签入画)
+
+### 内容核对
+
+- 零内容改动;题签文字「山海万象录」「南次一经」均为站名/篇名,非古籍引文
+
+### 状态:**done**
+
+- 验收对照:1440/390 双档截图 ✅;不遮版画/文字 ✅;焦点路径不变 ✅
+- **下轮入口:G07 金线收头**——Rule.tsx 三纹样(云纹/回纹/方胜),8 处落点表(DESIGN §3.2),全站≤8 硬上限
+
+---
+
 ## G05 · 界栏版框
 
 - **有效执行编号**:5 / 20

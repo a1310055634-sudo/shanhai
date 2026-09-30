@@ -61,6 +61,49 @@
   width: min(43vw, 540px);
 }
 
+/* G06 书衣式竖排题签:宣纸底+墨字(楷)+双细线(G05 界栏同族)+朱砂小印;
+   纯装饰(aria-hidden,无焦点);≤900px 隐藏——窄屏 .kicker 已承载同等信息 */
+.titleSlip {
+  position: absolute;
+  z-index: 2;
+  left: clamp(20px, 4vw, 56px);
+  top: 104px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 9px;
+  background: var(--surface-paper);
+  color: var(--text-on-light);
+  border: 1px solid rgba(165, 135, 91, 0.5);
+  outline: 1px solid rgba(165, 135, 91, 0.25);
+  outline-offset: -4px;
+  border-radius: 2px;
+  box-shadow: 0 4px 18px rgba(13, 19, 17, 0.35);
+}
+
+.slipText {
+  font-family: var(--font-title);
+  font-size: 19px;
+  letter-spacing: 0.3em;
+  line-height: 1;
+}
+
+.slipSeal {
+  writing-mode: horizontal-tb;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--cinnabar);
+  color: var(--cinnabar);
+  font-family: var(--font-serif);
+  font-size: 13px;
+  line-height: 1;
+  border-radius: 2px;
+}
+
 .content {
   position: relative;
   z-index: 2;
@@ -286,6 +329,10 @@
 
 @media (max-width: 900px) {
   /* 窄屏:降低视差幅度,减少层(隐藏云海) */
+  .titleSlip {
+    display: none;
+  }
+
   .lStars {
     --depth: 3;
   }

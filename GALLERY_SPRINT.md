@@ -23,7 +23,7 @@ HEAD 起点:`823ba01`(R19 终验交付,工作树干净)。
 | G03 | 令牌第一刀(宣纸暖度/旧金哑光/--font-title 楷体栈) | done | 本提交 | 新值全达标(10.3/7.0/5.6:1);CSS gzip +0.05KB |
 | G04 | 宣纸材质 PaperTexture(feTurbulence,四落点) | done | 本提交 | gzip +0.27KB;第四落点改 TodayBeast.quote(DESIGN 已修订) |
 | G05 | 界栏版框(CitationBlock/JournalEvidence/EntityDetailPage) | done | 本提交 | 双线=border+outline 负 offset;:target 朱砂双线铁证;Esc 合成事件验证无退化 |
-| G06 | 题签竖排(Hero/JournalOpening 书衣式) | todo | — | — |
+| G06 | 题签竖排(Hero/JournalOpening 书衣式) | done | 本提交 | 首页左上/开卷右上(左上压kicker改位);Range 级零文字重叠;390 隐藏降级 |
 | G07 | 金线收头 Rule.tsx(纹样≤8 处) | todo | — | — |
 | G08 | 字韵层级(--font-title 落地/字距/标点) | todo | — | — |
 | G09 | 文案古雅统一(术语表替换,导航词不动) | todo | — | — |

@@ -9,6 +9,50 @@
   align-items: flex-end;
 }
 
+/* G06 书衣式竖排题签:与 Hero 题签同族语言(宣纸底/楷字/双细线/朱砂印);
+   挂右上(左上会压面板 kicker;右上仅渐变空白与月亮装饰,无文字);
+   纯装饰;≤640px 隐藏(窄屏面板全宽,题签会压文字) */
+.titleSlip {
+  position: absolute;
+  z-index: 2;
+  right: 24px;
+  top: 20px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 8px;
+  background: var(--surface-paper);
+  color: var(--text-on-light);
+  border: 1px solid rgba(165, 135, 91, 0.5);
+  outline: 1px solid rgba(165, 135, 91, 0.25);
+  outline-offset: -4px;
+  border-radius: 2px;
+  box-shadow: 0 4px 16px rgba(13, 19, 17, 0.4);
+}
+
+.slipText {
+  font-family: var(--font-title);
+  font-size: 16px;
+  letter-spacing: 0.28em;
+  line-height: 1;
+}
+
+.slipSeal {
+  writing-mode: horizontal-tb;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--cinnabar);
+  color: var(--cinnabar);
+  font-family: var(--font-serif);
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 2px;
+}
+
 .openingScene {
   position: absolute;
   inset: 0;
@@ -113,6 +157,10 @@
 }
 
 @media (max-width: 640px) {
+  .titleSlip {
+    display: none;
+  }
+
   .opening {
     min-height: 420px;
   }

@@ -54,6 +54,12 @@ export default function JournalOpening({
         />
       </svg>
 
+      {/* G06 书衣式竖排题签:纯装饰,kicker 已承载同等信息 */}
+      <div className={styles.titleSlip} aria-hidden="true">
+        <span className={styles.slipText}>南次一经</span>
+        <span className={styles.slipSeal}>旅</span>
+      </div>
+
       {/* 宣纸承载面:标题与操作落在稳定文字区 */}
       <div className={styles.openingPanel}>
         <p className={styles.openingKicker}>行旅 · 南次一经 · 开卷</p>

@@ -40,6 +40,12 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* G06 书衣式竖排题签:纯装饰,kicker 已承载同等信息;无交互不影响焦点路径 */}
+      <div className={styles.titleSlip} aria-hidden="true">
+        <span className={styles.slipText}>山海万象录</span>
+        <span className={styles.slipSeal}>山</span>
+      </div>
+
       <div className={styles.content}>
         <p className={styles.kicker}>
           <span className={styles.seal} aria-hidden="true">
