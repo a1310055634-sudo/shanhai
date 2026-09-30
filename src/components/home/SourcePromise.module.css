@@ -45,7 +45,7 @@
 .headNote {
   margin-top: 12px;
   font-size: 14px;
-  color: #4c554e;
+  color: var(--paper-muted);
   max-width: 44em;
   line-height: 1.85;
 }
@@ -84,14 +84,14 @@
 
 .itemBody {
   font-size: 14px;
-  color: #4c554e;
+  color: var(--paper-muted);
   line-height: 1.9;
 }
 
 .about {
   margin-top: 18px;
   font-size: 14px;
-  color: #4c554e;
+  color: var(--paper-muted);
 }
 
 .aboutLink {

@@ -2,13 +2,15 @@
  * 山海万象录 · 设计变量(视觉规范第九节)
  * 幽玄古籍 × 青绿山水 × 当代数字博物馆
  * 色彩比例:墨/宣纸约 70%,岩青铜绿约 20%,旧金约 8%,朱砂 ≤2%
+ * G03 古朴化第一刀:宣纸暖化(#e8e0cd→#e9dfc9 / #f3eee2→#f4ecdf)、
+ * 旧金哑光化(#b18b56→#a5875b,饱和度 39%→29%)、新增标题楷体层与纸纹预留变量。
  */
 :root {
   /* 墨与纸 */
   --ink-night: #0d1311; /* 墨夜,深色场景底色 */
   --ink-deep: #17231f; /* 深墨,分层背景 */
-  --paper: #e8e0cd; /* 宣纸,浅色场景底色 */
-  --paper-bright: #f3eee2; /* 月白,浅色卡片/高亮 */
+  --paper: #e9dfc9; /* 宣纸(暖),浅色场景底色 */
+  --paper-bright: #f4ecdf; /* 月白(暖),浅色卡片/高亮 */
 
   /* 青绿 */
   --rock-cyan: #31545a; /* 岩青 */
@@ -16,32 +18,39 @@
 
   /* 点缀 */
   --cinnabar: #a74738; /* 朱砂,仅印章/选中/关键操作 */
-  --old-gold: #b18b56; /* 旧金 */
+  --old-gold: #a5875b; /* 旧金(哑光),仅线路/引导;对墨夜 5.6:1 */
 
   /* E02 双表面系统:墨夜承载场景/路线/插画;宣纸(月白)承载长段原文与解释。
      两表面各自成对的文字/边框变量,禁止跨表面混用。 */
   --surface-night: var(--ink-night); /* 墨夜表面 */
   --surface-paper: var(--paper-bright); /* 宣纸表面 */
-  --paper-ink: var(--text-on-light); /* 宣纸面正文,对月白 11.8:1 */
-  --paper-muted: #4c554e; /* 宣纸面弱化文字/出处,对月白 6.7:1 */
+  --paper-ink: var(--text-on-light); /* 宣纸面正文,对宣纸 10.3:1,对月白 11.6:1 */
+  --paper-muted: #524f43; /* 宣纸面弱化文字/出处(暖灰),对月白 7.0:1 */
   --paper-border: rgba(38, 48, 43, 0.15); /* 宣纸面内部分隔线 */
   --verdigris-text: #86a492; /* 深底铜绿文字色,对墨夜 6.9:1(--verdigris 3.6:1 仅用于图形) */
 
   /* 深底边框强弱(旧金系):强=可交互边界,常=卡片边界,弱=内部分隔 */
-  --border-strong: rgba(177, 139, 86, 0.55);
-  --border-normal: rgba(177, 139, 86, 0.38);
-  --border-weak: rgba(177, 139, 86, 0.22);
+  --border-strong: rgba(165, 135, 91, 0.55);
+  --border-normal: rgba(165, 135, 91, 0.38);
+  --border-weak: rgba(165, 135, 91, 0.22);
 
   /* 文字 */
   --text-on-dark: #d9d6c9; /* 浅色正文 */
   --text-on-light: #26302b; /* 深色正文 */
   --text-muted: #8f968d; /* 弱化文字 */
 
-  /* 字体族:一种宋体 + 一种黑体,书法体仅限首页主标题/印章 */
+  /* 字体族:楷体(标题层,G08 落地)+ 宋体(正文)+ 黑体(辅助);
+     标题层仅用于站名/页标题/山名/词条名/篇章名(见 GALLERY_DESIGN.md §2.1) */
+  --font-title: 'Kaiti SC', 'STKaiti', 'KaiTi', '楷体', 'Noto Serif SC',
+    'Source Han Serif SC', 'Songti SC', 'SimSun', serif;
   --font-serif: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun',
     serif;
   --font-sans: 'Noto Sans SC', 'Source Han Sans SC', 'Microsoft YaHei',
     'PingFang SC', sans-serif;
+
+  /* 纸纹预留:G04 以组件层(PaperTexture feTurbulence)落地;
+     本变量留给未来纯 CSS 背景方案,当前恒为 none,不得在组件内引用 */
+  --paper-texture: none;
 
   /* 字号层级(V01 收束):全站唯一阶梯,新增/改造组件一律取用本阶梯,不再各自定义。
      正文下限 16px;装饰性眉标/徽标可用 micro,但不承载必读信息。 */

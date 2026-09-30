@@ -56,7 +56,7 @@ button {
 }
 
 ::selection {
-  background: rgba(177, 139, 86, 0.35);
+  background: rgba(165, 135, 91, 0.35);
 }
 
 @media (prefers-reduced-motion: reduce) {

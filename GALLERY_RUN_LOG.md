@@ -4,6 +4,58 @@
 
 ---
 
+## G03 · 令牌第一刀
+
+- **有效执行编号**:3 / 20
+- **北京时间**:2026-10-01 约 11:20
+- **开始 HEAD**:`ab71d75`(G02),工作树干净;锁不存在(G02 已删),接管
+- **本轮预期**:按 DESIGN §1.2/§1.3/§2.1 调 tokens.css,对比度注释重算,build 绿,七主径核对
+
+### 实际改动
+
+1. `src/styles/tokens.css`:
+   - `--paper: #e8e0cd → #e9dfc9`、`--paper-bright: #f3eee2 → #f4ecdf`(宣纸暖化,幅度每通道 ≤4)
+   - `--paper-muted: #4c554e → #524f43`(随暖度转暖灰+微深)
+   - `--old-gold: #b18b56 → #a5875b`(饱和度 39%→29% 哑光化)
+   - `--border-strong/normal/weak` 三级 rgba 基色同步新金 rgb(165,135,91)
+   - 新增 `--font-title`('Kaiti SC','STKaiti',KaiTi,'楷体'+宋体全栈回退;G08 落地,本轮仅定义)
+   - 新增 `--paper-texture: none`(预留,注释写明 G04 走组件层方案、组件不得引用)
+   - 文件头注释与各变量注释更新
+2. `src/components/home/SourcePromise.module.css`:3 处硬编码 `color: #4c554e` → `var(--paper-muted)`(宣纸卡弱化文字,同语义收编令牌,自动跟随暖化)
+3. `src/styles/base.css`:`::selection` 底色 rgba 基色同步新金
+
+### 对比度重算(回写进 tokens 注释,实算值)
+
+| 组合 | 原 | 新 | 线 |
+|---|---|---|---|
+| paper-ink #26302b / 宣纸 #e9dfc9 | 11.8:1 | **10.3:1** | ≥4.5 ✅ |
+| paper-ink / 月白 #f4ecdf | ~11.6 | **11.6:1** | ✅ |
+| paper-muted #524f43 / 月白 | 6.7:1 | **7.0:1** | ✅(DESIGN 预期带 ≥7 达成) |
+| old-gold #a5875b / 墨夜 | 6.0:1 | **5.6:1** | ✅(眉标/ghost 文字 ≥4.5) |
+
+### 构建与浏览器核对
+
+- build 绿 1.34s;CSS 89.15→89.33KB(gzip 15.63→**15.68**,+0.05KB=两变量);JS 472.43/146.77 零变化
+- 变量生效断言(首页 getComputedStyle):paper=#e9dfc9 / paperBright=#f4ecdf / oldGold=#a5875b / paperMuted=#524f43 / fontTitle=Kaiti 栈 / paperTexture=none —— 全部生效 ✅
+- 七主径走查(390):home+catalog+catalog/xingxing+atlas+chapters+chapters/nanshan-jing+journey,h1 全对、零横向溢出 ✅
+- 目检截图 2 张(已覆盖基线同名文件):390 古卷阅读面(宣纸暖度可辨不脏,拼音/朱砂眉批正常)、1440 长卷(哑金边框收敛无发光,进度轨行为与基线一致)
+
+### 决策记录
+
+- 组件内 60 处 `rgba(177,139,86,x)` 衍生边框色(28 文件)**本轮不批量替换**:色差在低透明度下不可辨,批量替换令 diff 膨胀违背小步提交;G11—G15 逐页顺路收编 var(--border-*),已记看板
+- SVG 场景装饰硬编码(星点/金线/月亮,opacity 0.1–0.6)豁免:装饰色与令牌同名不同用,收编无收益
+
+### 内容核对
+
+- 零内容改动;不触碰任何文本层
+
+### 状态:**done**
+
+- 验收对照:build 绿 ✅;七主径无肉眼回归 ✅(变量断言+目检);对比度注释重算达标 ✅(四组合全 ≥4.5)
+- **下轮入口:G04 宣纸材质**——新建 components/common/PaperTexture.tsx(DESIGN §1.1 规格),四处落点,gzip 增量 <2KB 验收
+
+---
+
 ## G02 · 古朴总纲
 
 - **有效执行编号**:2 / 20

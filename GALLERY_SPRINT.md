@@ -20,7 +20,7 @@ HEAD 起点:`823ba01`(R19 终验交付,工作树干净)。
 |---|---|---|---|---|
 | G01 | 基线与古朴审计(四件套/基线截图/缺口清单) | done | 本提交 | 20 张基线;1440/768 直接实测(见下) |
 | G02 | 古朴总纲 GALLERY_DESIGN.md(四线规范+术语表+字韵三层) | done | 本提交 | 纯文档轮,零代码改动 |
-| G03 | 令牌第一刀(宣纸暖度/旧金哑光/--font-title 楷体栈) | todo | — | — |
+| G03 | 令牌第一刀(宣纸暖度/旧金哑光/--font-title 楷体栈) | done | 本提交 | 新值全达标(10.3/7.0/5.6:1);CSS gzip +0.05KB |
 | G04 | 宣纸材质 PaperTexture(feTurbulence,四落点) | todo | — | — |
 | G05 | 界栏版框(CitationBlock/JournalEvidence/EntityDetailPage) | todo | — | — |
 | G06 | 题签竖排(Hero/JournalOpening 书衣式) | todo | — | — |
@@ -72,6 +72,10 @@ HEAD 起点:`823ba01`(R19 终验交付,工作树干净)。
 ### R19 终验缺口关闭进度
 - ✅ **1440/768 档已直接实测**(本轮,IAB setViewportSize):1440×900 六页 + 768×1024 四页 + 390×844 十页,全部零横向溢出,截图存 GALLERY_BASELINES/
 - ⬜ reduced-motion 真实偏好未实测(IAB 无 emulateMedia)— 留 G19 代码审查+如实记录
+
+### G03 遗留收编项
+- 组件 CSS/TSX 内 60 处 `rgba(177, 139, 86, x)` 旧金衍生边框色(28 文件)未批量替换——低透明度下色差不可辨,G11—G15 逐页轮次顺路收编为 `var(--border-*)` 引用
+- SVG 场景装饰硬编码(JournalMotifs/SceneLayers/JournalOpening,星点/金线/月亮)为低透明度装饰色,与令牌同名不同用,豁免收编
 
 ## 内容疑点清单(G01 产出,G10/G17/G18 处理)
 
