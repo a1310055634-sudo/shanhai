@@ -43,9 +43,12 @@
   max-height: min(78vh, 640px);
   overflow-y: auto;
   background: #16221d;
-  border: 1px solid rgba(177, 139, 86, 0.5);
-  border-radius: var(--radius-card);
-  padding: 20px 22px 22px;
+  /* G05 界栏版框(墨夜面,金色系):外线=border,内线=outline 负 offset(不随内容滚动) */
+  border: 1px solid rgba(165, 135, 91, 0.55);
+  border-radius: 2px;
+  outline: 1px solid rgba(165, 135, 91, 0.25);
+  outline-offset: -6px;
+  padding: 22px 26px 24px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
   animation: drawerIn 0.32s var(--ease-soft) both;
 }

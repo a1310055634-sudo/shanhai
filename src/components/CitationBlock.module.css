@@ -4,19 +4,26 @@
   overflow: hidden;
   margin: 0;
   max-width: 780px; /* E12:舒适阅读面,长行不过展 */
-  border: 1px solid rgba(167, 71, 56, 0.28);
-  border-left: 3px solid var(--cinnabar);
-  border-radius: var(--radius-card);
+  /* G05 界栏版框:四周双线(外线=border,内线=outline 负 offset),去左粗边与圆角 */
+  border: 1px solid rgba(167, 71, 56, 0.32);
+  border-radius: 0;
+  outline: 1px solid rgba(167, 71, 56, 0.16);
+  outline-offset: -5px;
   /* 浅宣纸底(V10):与深墨页底形成阅读节奏 */
   background: var(--surface-paper);
-  padding: 22px 24px 18px;
+  padding: 26px 30px 22px; /* 版心节奏:上 26 左右 30(古版半版行款) */
   scroll-margin-top: 124px;
-  transition: box-shadow var(--duration-hover) var(--ease-soft);
+  transition:
+    box-shadow var(--duration-hover) var(--ease-soft),
+    border-color var(--duration-hover) var(--ease-soft),
+    outline-color var(--duration-hover) var(--ease-soft);
 }
 
-/* 「回看原文」跳转命中时的高亮(目标:hash 匹配) */
+/* 「回看原文」跳转命中时的高亮(目标:hash 匹配):朱砂双线 */
 .cite:target {
-  box-shadow: 0 0 0 2px var(--cinnabar), 0 8px 24px rgba(167, 71, 56, 0.18);
+  border-color: var(--cinnabar);
+  outline-color: var(--cinnabar);
+  box-shadow: 0 8px 24px rgba(167, 71, 56, 0.18);
 }
 
 .text {

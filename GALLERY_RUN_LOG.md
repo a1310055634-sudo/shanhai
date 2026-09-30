@@ -4,6 +4,47 @@
 
 ---
 
+## G05 · 界栏版框
+
+- **有效执行编号**:5 / 20
+- **北京时间**:2026-10-01 约 12:30
+- **开始 HEAD**:`11ef60a`(G04),工作树干净;锁不存在,接管
+- **本轮预期**:三处「圆角卡片+左粗边」→ 四周双边界栏,:target 朱砂双线,锚点不退化
+
+### 落点核实
+
+EntityDetailPage 引文区**直接复用 CitationBlock**(citations.map → `<CitationBlock anchor={cite-i} />`),实际改动两文件覆盖三处视觉落点:详情页引文卡、古卷页引文块(经 CitationBlock 的其他引用)、证据抽屉。古卷阅读面的段卡是 ChapterPage 自有样式(非 CitationBlock),不在本轮范围。
+
+### 实际改动
+
+1. `CitationBlock.module.css` `.cite`:去 `border-left: 3px` 与 4px 圆角 → **外线** border 1px rgba(167,71,56,0.32)+ **内线** outline 1px rgba(167,71,56,0.16) offset -5px;radius 0;版心 padding 22/24 → 26px 30px 22px;`.cite:target` → 外线与内线齐变 var(--cinnabar)(朱砂双线)+ 轻投影;transition 扩为三属性
+2. `JournalEvidence.module.css` `.drawer`:radius 4px → 2px;**外线** border rgba(165,135,91,0.55)(金)+ **内线** outline rgba(165,135,91,0.25) offset -6px;版心 20/22 → 22px 26px。内线选 outline 方案因抽屉是滚动容器(::before 内线会随内容滚走,outline 贴框不滚)
+
+### 技术要点
+
+双线统一用「border(外)+ outline 负 offset(内)」:不占布局、不受 overflow:hidden 裁剪、滚动容器内不随内容滚动、圆角>0 时自动跟随。
+
+### 构建与浏览器核对
+
+- build 绿 1.41s;CSS gzip 15.72→15.77(+0.05KB);JS 零变化
+- 详情页常态零溢出(390)✅
+- **`:target` 朱砂双线铁证**:`querySelector('._cite_:target')` 计算样式 borderTop=**rgb(167,71,56)**、outlineColor=**rgb(167,71,56)**(=--cinnabar);锚点 rectTop=124(scroll-margin-top 生效,页头 109px);CSSOM 规则文本核对无缺失
+- 排障记录:首轮经 getElementById 读值为常态弱色,系完整加载后样式重算时机的读数偏差;以 :target 匹配元素直读计算样式定案
+- 抽屉断言:borderColor rgba(165,135,91,0.55)+outline rgba(165,135,91,0.25)/1px/offset -6px+radius 2px 全过;截图 `390-journey-drawer.png` 双线可见、信息结构未破坏
+- **Esc 关闭**:页面内派发 KeyboardEvent('Escape') → 抽屉关闭 ✅(功能无退化);IAB cua.keypress 真实按键未达 document 层(与 R 冲刺「IAB 注入限制」一致),如实记录为测试环境限制
+- 前后对照:改前=G01 基线 `390-catalog-xingxing.png`(圆角+左粗边),改后=`390-catalog-xingxing-cite0-target.png`(双线+朱砂高亮)
+
+### 内容核对
+
+- 零内容改动
+
+### 状态:**done**
+
+- 验收对照:三处前后对照 ✅(详情页/抽屉目检+同源复用);390 不溢出 ✅;锚点不退化 ✅(rectTop=124+:target 命中+Esc 关闭)
+- **下轮入口:G06 题签竖排**——Hero 与 JournalOpening 书衣式竖排题签(DESIGN §2.3:vertical-rl/双线/朱砂小印/390 降级横排)
+
+---
+
 ## G04 · 宣纸材质
 
 - **有效执行编号**:4 / 20
