@@ -1,0 +1,225 @@
+.page {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 88px var(--space-page-x-desktop) 0;
+}
+
+.section {
+  margin-top: 52px;
+}
+
+/* 六层图示:宣纸面板,界栏双线与引文区块同族(CitationBlock 配方) */
+.layers {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 6px 30px;
+  border: 1px solid rgba(167, 71, 56, 0.32);
+  border-radius: 0;
+  outline: 1px solid rgba(167, 71, 56, 0.16);
+  outline-offset: -5px;
+  background: var(--surface-paper);
+}
+
+.layer {
+  padding: 20px 0;
+}
+
+.layer + .layer {
+  border-top: 1px solid var(--paper-border);
+}
+
+.layerHead {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0;
+}
+
+.layerIndex {
+  color: var(--cinnabar);
+  font-family: var(--font-serif);
+  font-size: 17px;
+}
+
+.layerName {
+  color: var(--text-on-light);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.layerWhat {
+  margin: 10px 0 0;
+  color: var(--text-on-light);
+  font-size: var(--fs-body);
+  line-height: 1.9;
+}
+
+.layerWhere {
+  margin: 8px 0 0;
+  color: var(--paper-muted);
+  font-size: var(--fs-secondary);
+  line-height: 1.85;
+}
+
+.whereLabel {
+  display: inline-block;
+  margin-right: 10px;
+  font-family: var(--font-serif);
+  letter-spacing: 0.2em;
+  color: var(--cinnabar);
+}
+
+/* 底本说明:深底面板家族(同 AboutPage.panel 语言) */
+.editions {
+  margin-top: 24px;
+  padding: 26px 30px;
+  border: 1px solid rgba(143, 150, 141, 0.24);
+  border-radius: 0;
+  background: rgba(23, 35, 31, 0.58);
+}
+
+.editions p {
+  margin: 0;
+  color: var(--text-on-dark);
+  font-size: var(--fs-body);
+  line-height: 1.9;
+}
+
+.editions p + p {
+  margin-top: 14px;
+}
+
+.editions strong {
+  margin-right: 12px;
+  color: var(--paper);
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+.inlineLink {
+  margin: 0 2px;
+  color: var(--old-gold);
+  text-underline-offset: 4px;
+}
+
+.process {
+  margin: 24px 0 0;
+  padding-left: 1.6em;
+  color: var(--text-on-dark);
+  font-size: var(--fs-body);
+  line-height: 1.9;
+}
+
+.process li + li {
+  margin-top: 12px;
+}
+
+/* 纹样台账:定义列表,390 纵排不横溢 */
+.ledger {
+  margin: 24px 0 0;
+  border-top: 1px solid var(--border-weak);
+}
+
+.ledgerRow {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-weak);
+}
+
+.ledgerRow dt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+}
+
+.ledgerRow dt strong {
+  color: var(--paper);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.ledgerCount {
+  color: var(--cinnabar);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+
+.ledgerRow dd {
+  margin: 8px 0 0;
+  color: var(--text-on-dark);
+  font-size: var(--fs-secondary);
+  line-height: 1.85;
+}
+
+.muted {
+  margin: 18px 0 0;
+  color: var(--text-muted) !important;
+  font-size: var(--fs-caption);
+  line-height: 1.85;
+}
+
+.endLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 32px;
+  margin-top: 52px;
+}
+
+.endLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--old-gold);
+  font-size: var(--fs-secondary);
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+.endLink:hover {
+  color: var(--paper-bright);
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 64px var(--space-page-x-tablet) 0;
+  }
+
+  .section {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 48px var(--space-page-x-mobile) 0;
+  }
+
+  .section {
+    margin-top: 32px;
+  }
+
+  .layers {
+    padding: 2px 20px;
+  }
+
+  .layer {
+    padding: 16px 0;
+  }
+
+  .layerName {
+    font-size: 17px;
+  }
+
+  .editions {
+    padding: 22px 20px;
+  }
+
+  .endLinks {
+    margin-top: 32px;
+  }
+}

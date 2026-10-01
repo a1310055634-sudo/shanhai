@@ -11,6 +11,7 @@ import JourneyPage from './pages/JourneyPage'
 import ExplorePage from './pages/ExplorePage'
 import RelationsPage from './pages/RelationsPage'
 import AboutPage from './pages/AboutPage'
+import HowToReadPage from './pages/HowToReadPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
@@ -28,6 +29,8 @@ export default function App() {
         <Route path="journeys/nanci-yi" element={<JourneyPage />} />
         <Route path="favorites" element={<FavoritesPage />} />
         <Route path="about" element={<AboutPage />} />
+        {/* G27 凡例页:入口放 About 页内与页脚,不加主导航 */}
+        <Route path="how-to-read" element={<HowToReadPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

@@ -29,6 +29,10 @@ export default function Footer() {
             <li>
               <Link to="/about">资料来源与制作说明</Link>
             </li>
+            {/* G27 凡例页入口 */}
+            <li>
+              <Link to="/how-to-read">如何读本站(凡例)</Link>
+            </li>
           </ul>
         </nav>
         <div className={styles.linkCol}>

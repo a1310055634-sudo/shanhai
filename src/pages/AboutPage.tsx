@@ -86,6 +86,11 @@ export default function AboutPage() {
 
       <p className={styles.sourceNote}>
         详细核验清单见项目内 CONTENT_SOURCES.md;页面中每条原文证据也附有公开对照链接与核验备注。
+        分层呈现的完整凡例另见
+        <Link className={styles.inlineLink} to="/how-to-read">
+          如何读本站
+        </Link>
+        。
       </p>
 
       {/* G07 凡例页收束线(接入点 8):方胜端头 */}
