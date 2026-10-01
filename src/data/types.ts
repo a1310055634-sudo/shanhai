@@ -24,10 +24,26 @@ export type TraitKind =
   | 'behavior' // 习性
   | 'diet' // 食性
 
+/**
+ * 郭璞注单条(G24):注文从底本逐字照录(维基文库郭璞注本),保持繁体原样,
+ * 不转简、不改字、不补标点;底本疑似形讹字一律照录并在疑点清单记录。
+ */
+export interface GuoPuNote {
+  /** 注文所系正文短语(照录底本正文,便于读者定位);省略表示系于整段 */
+  attach?: string
+  /** 注文原文(逐字照录) */
+  text: string
+}
+
 /** 一条原文引用及其核验信息;同一实体多处出现时分别立条,不得拼接。 */
 export interface Citation {
   /** 原文(按所据底本录入,不得凭记忆补写) */
   originalText: string
+  /**
+   * 郭璞注层(G24,可选):仅在该条 originalText 与郭璞注本正文逐字核对一致后
+   * 方可填写;未核或正文有出入的条目不填、页面不显示注层。
+   */
+  guoPuNotes?: GuoPuNote[]
   /** 篇章名称,如「南山经」 */
   chapter: string
   /** 卷次或段落位置 */

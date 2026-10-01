@@ -1,5 +1,43 @@
 ---
 
+## G24 · 郭璞注层(可展开,注文逐字照录底本)
+
+- **有效执行编号**:二阶 4 / 18
+- **北京时间**:2026-10-02 约 10:47—11:08(定时触发)
+- **开始 HEAD**:`6d77742`(G23),工作树干净,无遗留锁
+- **本轮预期**:CitationBlock 增「郭璞注」可展开层(默认收起),注文逐字对照维基文库郭璞注本,核一条上一条,未核条目不显示;收尾 git diff 证明原文区零改动
+
+### 底本与核验(先核后上)
+
+- 一阶两份存档(ctext 中英对照/维基文库纯文本)**均不含注文**;本轮新拉维基文库《山海經/南山經》郭璞注本原始 wikitext(curl action=raw,`{{*|…}}` 夹注标记,Textquality 75% 四库本)存档 `EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt`(13 299 B)。WebFetch 摘录仅作定位,逐字依据一律以 raw wikitext 为准
+- 上线 6 条引文共 **11 条注文**(招摇段 2/杻阳段 2/青丘段 2/丹穴段 1/开篇 2/青丘山句 2),全部从存档逐字复制,**保持繁体原样不转简**(繁简一对多转换会破坏逐字性);每条 verificationNote 追加「2026-10-02 郭璞注层上线」核验记录(存档路径+照录声明+疑点)
+- 正文一致性比对:6 条 originalText 与郭注本正文繁简对应一致;九尾狐条「能食人,食者不蛊」与底本B「能食人;食者不蠱」仅标点小异(字全同),如实注记不改
+- **疑点照录清单**(底本原样,不裁决):①青丘注「**敢**其肉」疑为「啖」之形讹(已上线照录);②招摇段「禺字音遇**,**」句末逗号为底本残留(已上线照录);③「作牛字圖,亦**做**牛形」作/做混用(已上线照录);④「**璨**曰:韭音九」「璨曰:榖亦名構」疑为「璞曰」形讹(**未采**这两条注,存档疑点供后续轮);⑤杻阳段「虺,尾**銃**」疑为「銳」(未采);⑥凤凰注「**鷰**頷」为「燕」异体(已上线照录)
+
+### 实际改动(7 文件 + 1 存档 + 2 截图)
+
+1. `src/data/types.ts`:新增 `GuoPuNote` 接口(attach?/text,头注声明逐字照录纪律)+ `Citation.guoPuNotes?`(仅逐字核验一致后可填,未核不填)
+2. `src/data/entities/{xingxing,lushu,jiuweihu,fenghuang}.ts` + `src/data/locations.ts`(loc-zhaoyao/loc-qingqiu):6 条引文加 guoPuNotes + verificationNote 追加
+3. `src/components/CitationBlock.tsx`:blockquote 后增 `<details>` 注层——summary=「郭璞注」楷体签+条数提示+静态箭头(CSS rotate 切换,无 transition),列表项=attach 楷体小签+注文宋体,地脚=照录声明+维基文库对照链接
+4. `CitationBlock.module.css`:+91 行;summary min-height 44px 触控、宣纸内衬墨青界栏、无动画(reduced-motion 合规)
+5. 柢山**:未动**(locations 无柢山条目,「柢/祗」异文留白红线;G23 长卷雾占位不涉本轮)
+
+### 构建与浏览器核对(IAB,断言用完整类名 `_guopu_1c21n_111`)
+
+- build 绿 1.43s;gzip:JS 149.51(**+1.57** vs G23 147.94)、CSS 16.83(+0.27)——增量=6 条注文繁体文本+组件与样式,如实记录(本轮无 <1KB 约束)
+- **断言全绿**:①默认收起(open 属性 absent)×6 页;②点击展开,11 条注文逐字片段命中(含「禺似獼猴…禺字音遇,」「即九尾狐」「敢其肉」「漢時鳳鳥數出…雌曰凰,雄曰鳳」「在蜀,伏山山南之西頭」「雘,黝屬,音瓠」等);③summary 高 56px≥44、tagName=SUMMARY、`focus()`+activeElement 断言可达(IAB 键盘注入不落焦点已知限制,程序 focus 替代+留人工复核);④对照链接 href 正确且不在 aria-hidden 内(G22 教训复用);⑤luwu(未核条目)details=0=未核不显示;⑥atlas 页招摇/青丘两卡注层各自独立;⑦390 展开态 scrollWidth 375≤390 零横溢;⑧1440 桌面档展开零横溢(1425),引文块限宽 539px
+- 截图 2 张入 `GALLERY_BASELINES/`:g24-xingxing-closed-390 / g24-xingxing-open-390(展开态目检:楷体签/attach 小签/繁体注文/出处行层次分明)
+
+### 内容核对(硬红线)
+
+- `git diff -- src/data`:**originalText 赋值行变更 = 0**;删除行 6 条全部为 verificationNote 旧值(替换追加);新增行 84 条全部为 guoPuNotes 块/类型注释/verificationNote 新值。原文区零改动证明成立
+- 注层出处固定标「中文维基文库《山海經·南山經》郭璞注本(四庫全書底本)」+链接;六层分隔:注层位于原文块内、出处元信息前,与本站释义(页面其他区域)无混排
+
+### 状态:**done**
+
+- 验收对照:git diff 原文区零改动 ✅、抽 3 条注文逐字比对记录 ✅(11 条全录,狌狌注 2=存档 L12/青丘注=存档 L26/凤凰注=存档 L76)、aria 可达 ✅(原生 details/summary+focus 断言)
+- **下轮入口:G25 意象复核+二经预研**——九站「原文依据→画面元素」对照表入 GALLERY_DESIGN.md;建南次二经核验工作稿(柜山/长右/尧光等 3—5 山,底本可复用本轮 wikisource raw 存档 L34—L68 南次二经段),标注「未核不上线」;工作稿不入正式数据
+
 ---
 
 ## G23 · 长卷回访(warmth 压饱和/jagged 参数化/768 第5格修复)

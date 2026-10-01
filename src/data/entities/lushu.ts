@@ -20,10 +20,20 @@ export const LUSHU: Entity = {
         '有兽焉，其状如马而白首，其文如虎而赤尾，其音如谣，其名曰鹿蜀，佩之宜子孙。',
       chapter: '南山经',
       section: '杻阳之山',
+      guoPuNotes: [
+        {
+          attach: '其音如謠',
+          text: '如人歌聲',
+        },
+        {
+          attach: '佩',
+          text: '佩，謂帶其皮尾',
+        },
+      ],
       sourceEdition: '通行本(郭璞注—郝懿行笺疏系统),据 ctext.org 公开电子文本逐字核对',
       publicUrl: 'https://ctext.org/shan-hai-jing/nan-shan-jing/zhs',
       verificationNote:
-        '2026-09-20 经 ctext 公开文本逐字核对;所在之山句「又东三百七十里,曰杻阳之山」同日核对。 2026-09-27 复核:与底本A(ctext zhs,存档 EDITION_EVIDENCE/ctext-nanci1-20260927.txt)逐字一致,并与底本B(中文维基文库郭璞注本)对照相符。',
+        '2026-09-20 经 ctext 公开文本逐字核对;所在之山句「又东三百七十里,曰杻阳之山」同日核对。 2026-09-27 复核:与底本A(ctext zhs,存档 EDITION_EVIDENCE/ctext-nanci1-20260927.txt)逐字一致,并与底本B(中文维基文库郭璞注本)对照相符。 2026-10-02 郭璞注层上线:注文 2 条逐字照录底本B原始 wikitext(存档 EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt),保持繁体未转简;「佩」注系于原文字「佩」与「之宜子孙」之间,attach 照录单字「佩」。',
       verifiedAt: '2026-09-20',
     },
   ],

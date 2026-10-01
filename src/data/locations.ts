@@ -23,10 +23,20 @@ export const LOCATIONS: Location[] = [
         originalText: '南山经之首曰䧿山。其首曰招摇之山，临于西海之上，多桂，多金玉。',
         chapter: '南山经',
         section: '开篇',
+        guoPuNotes: [
+          {
+            attach: '臨於西海之上',
+            text: '在蜀，伏山山南之西頭，濱西海也。',
+          },
+          {
+            attach: '多桂',
+            text: '桂葉似枇杷，長二尺餘，廣數寸，味辛白花，叢生山峯。冬夏常青，間無雜木。《呂氏春秋》曰：「招搖之桂」',
+          },
+        ],
         sourceEdition: '通行本(郭璞注—郝懿行笺疏系统),据 ctext.org 公开电子文本逐字核对',
         publicUrl: 'https://ctext.org/shan-hai-jing/nan-shan-jing/zhs',
         variantText: '「䧿」与「鹊」为异体字关系,山名写法存在异文;本站以底本用字「䧿」为准并注明。',
-        verificationNote: '2026-09-20 经 ctext 公开文本逐字核对(开篇句)。2026-09-27 复核:与底本A(ctext zhs)逐字一致,并与底本B(中文维基文库郭璞注本)对照相符。',
+        verificationNote: '2026-09-20 经 ctext 公开文本逐字核对(开篇句)。2026-09-27 复核:与底本A(ctext zhs)逐字一致,并与底本B(中文维基文库郭璞注本)对照相符。 2026-10-02 郭璞注层上线:注文 2 条逐字照录底本B原始 wikitext(存档 EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt),保持繁体未转简;郭注「在蜀,伏山山南之西頭」为晋人地理比附,照录不代表本站采信。',
         verifiedAt: '2026-09-20',
       },
     ],
@@ -187,10 +197,20 @@ export const LOCATIONS: Location[] = [
         originalText: '又东三百里，曰青丘之山，其阳多玉，其阴多青䨼。',
         chapter: '南山经',
         section: '南次一经第八山',
+        guoPuNotes: [
+          {
+            attach: '青丘',
+            text: '亦有青丘國在海外水經云。即《上林賦》云：「秋田於青丘」',
+          },
+          {
+            attach: '其陰多青雘',
+            text: '雘，黝屬，音瓠',
+          },
+        ],
         sourceEdition: '通行本(郭璞注—郝懿行笺疏系统),据 ctext.org 公开电子文本逐字核对',
         publicUrl: 'https://ctext.org/shan-hai-jing/nan-shan-jing/zhs',
         verificationNote:
-          '2026-09-20 经 ctext 公开文本逐字核对。「青䨼」之「䨼」为生僻字,本站保留底本原字,释义后续补充。山序按南次一经:招摇、堂庭、猨翼、杻阳、祗山(底本A用字;底本B维基文库作「柢山」,见 EDITION_AUDIT 差1)、亶爰、基山之后即青丘。2026-09-27 复核:与底本A(ctext zhs)逐字一致,并与底本B(中文维基文库郭璞注本)对照相符。',
+          '2026-09-20 经 ctext 公开文本逐字核对。「青䨼」之「䨼」为生僻字,本站保留底本原字,释义后续补充。山序按南次一经:招摇、堂庭、猨翼、杻阳、祗山(底本A用字;底本B维基文库作「柢山」,见 EDITION_AUDIT 差1)、亶爰、基山之后即青丘。2026-09-27 复核:与底本A(ctext zhs)逐字一致,并与底本B(中文维基文库郭璞注本)对照相符。 2026-10-02 郭璞注层上线:注文 2 条逐字照录底本B原始 wikitext(存档 EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt),保持繁体未转简;注 attach「其陰多青雘」照录底本B用字「雘」,与本站正文从底本A「䨼」的取舍(见 variantText)分属两层,不改注。',
         variantText:
           '「青䨼」:底本B(中文维基文库郭璞注本,2026-09-27)作「青雘」,并附郭璞注「雘,黝屬,音瓠」。两具名电子本用字互异,本站从底本A原字「䨼」(EDITION_AUDIT.md 差3)。',
         verifiedAt: '2026-09-20',
