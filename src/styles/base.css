@@ -59,6 +59,14 @@ button {
   background: rgba(165, 135, 91, 0.35);
 }
 
+/* G31 主题切换零动画:切换瞬间挂 html.theme-switching 压平全部过渡,
+   两帧后由 useTheme 移除;只禁 transition,不引入任何新动画。 */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

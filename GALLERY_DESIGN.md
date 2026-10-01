@@ -203,3 +203,40 @@ EntityDetailPage 版画区改「绫边装裱」:
 2. 纹样/落点数量上限是硬约束:界栏三处、纸纹四处、收头八处、鱼尾一处,超限先回本文档修订;
 3. 每轮浏览器核对:390 必测;涉桌面档改动的(界栏/题签/收头/装裱)用 setViewportSize 实测 1440;
 4. 零空话:本档与 RUN_LOG 禁用「高级感」「氛围拉满」「质感大幅提升」类不可复核表述,只写做了什么、落在哪、怎么验的。
+
+---
+
+## 七、双主题线(G31 起步,G32 走查收口)
+
+### 7.1 架构与真源
+
+- 真源是 `<html data-theme>`:`:root` 即「灯下」墨夜主题(默认,无属性);`html[data-theme='qing']` 覆盖为「晴窗」宣纸系。全部色彩类令牌双值;字体/字号/版面/动效等结构令牌两主题共享(tokens.css 头注同口径)。
+- 初始化:index.html 内联脚本在 React 挂载前定主题——localStorage(`shanhai-theme`,`'qing'|'deng'`)优先,否则跟随 `prefers-color-scheme`(浅色系统→晴窗,深色/无偏好→灯下默认);存储不可用保持默认。防闪烁,无 FOUC。
+- 切换:`src/hooks/useTheme.ts`(useSyncExternalStore+MutationObserver 订阅 data-theme);切换瞬间挂 `html.theme-switching`(base.css 压平全部 transition)双 rAF 后移除,setTimeout 100ms 兜底幂等移除(后台标签 rAF 暂停时仍能复位)——**切换零动画,不引入任何新动画**,base.css prefers-reduced-motion 压平规则不受影响。
+- 入口:页脚 colophon 行右侧「◐ 晴窗 / ◑ 灯下」按钮(示将切往的主题),min-height 44px。
+
+### 7.2 关键决策:--paper / --paper-bright 的晴窗重定义
+
+- 事实:两令牌全站 93 处作 `color:`(深底强调亮字语义)、仅 2 处作 `background:`(skipLink/SourcePromise,G31 已改用 `--surface-paper`)。
+- 因此晴窗下二者**重定义为墨字双档**(--paper #3a3527 / --paper-bright #262117),93 处组件代码零改动自动适配;导航/页脚 brandName、navLink hover/active 同步受益。
+- 铁律:**表面令牌(--surface-night/--surface-paper)一律写死色值,禁止引用 --paper/--paper-bright**,防级联污染(tokens.css 晴窗块注释同口径)。
+
+### 7.3 晴窗色板(G32 实测前为估算值)
+
+| 令牌 | 灯下 | 晴窗 | 晴窗依据 |
+|---|---|---|---|
+| --ink-night 页面底 | #0d1311 | #e9deca | 暖宣纸,非纯白 |
+| --ink-deep 分层 | #17231f | #ddd0b4 | 略深宣纸(页脚) |
+| --paper / --paper-bright | #e9dfc9 / #f4ecdf | #3a3527 / #262117 | 墨字双档(7.6:1 / 9.9:1) |
+| --text-on-dark | #d9d6c9 | #33382c | 正文墨字(9.0:1) |
+| --text-muted | #8f968d | #625c49 | 弱化字(4.99:1) |
+| --old-gold | #a5875b | #66512e | 赭金(5.7:1;原值浅底仅 2.3:1 不可作文字) |
+| --cinnabar | #a74738 | #99412f | 朱砂略深(5.0:1) |
+| --rock-cyan / --verdigris | #31545a / #587367 | #2c4d53 / #52695d | 图形色浅底加深 |
+| --verdigris-text | #86a492 | #4f6656 | 宣纸底铜绿文字(5.0:1) |
+| --paper-muted / --paper-border | #524f43 / rgba(38,48,43,.15) | #5a5340 / rgba(74,62,38,.24) | 浅底边线略强 |
+| --nav-veil(新) | rgba(13,19,17,.92) | rgba(221,208,180,.92) | 导航纱面,G31 最小收编(原 Navigation 硬编码) |
+
+### 7.4 G32 入口(遗留)
+
+- 全 12+ 路由双主题走查;对比度**实测**全表(正文≥4.5:1);硬编码色收编清单(已知 Navigation 边框 rgba(177,139,86,.28) 等约 16 处深色硬编码);首页晴窗下英雄区文字叠深色画布对比度复查(visual-judge G31 提示);SVG 场景/舆图画布内配色策略(当前按「册页插图」保持深色)。

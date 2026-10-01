@@ -1,3 +1,52 @@
+## G31 · 晴窗主题(一):令牌双值/页脚切换钮/prefers-color-scheme+localStorage/切换零动画
+
+- **有效执行编号**:二阶 11 / 18
+- **北京时间**:2026-10-02 约 07:0X—07:5X(定时触发)
+- **开始 HEAD**:3e7558e(G30),工作树干净;.round-lock 不存在,新建,轮末删除
+- **本轮预期**:tokens.css 双主题层(默认=灯下墨夜;html[data-theme='qing'] 覆盖晴窗宣纸系),全令牌双值,宣纸色温不做纯白;页脚手动切换钮+prefers-color-scheme 默认+localStorage 持久化;切换不加动画。验收=令牌双值表齐全、build 绿、首页/图鉴/古卷三页双主题抽验
+
+### 方案与关键决策
+
+- **双主题层**::root 即灯下(默认,无属性),html[data-theme='qing'] 晴窗覆盖块;色彩类令牌全双值,字体/字号/版面/动效结构令牌两主题共享。晴窗页面底 #e9deca 暖宣纸(非纯白),分层带 #ddd0b4,卡片 #f7f1e3
+- **核心架构决策——--paper/--paper-bright 晴窗重定义**:程序化盘点发现两令牌全站 **93 处作 color:(深底强调亮字语义)、仅 2 处作 background:**。故晴窗下将二者重定义为墨字双档(--paper #3a3527 对晴窗底 7.6:1 / --paper-bright #262117 9.9:1),93 处组件代码**零改动**自动适配(导航/页脚 brandName、navLink hover/active、各页 h1 全部命中);唯一级联风险点 --surface-paper 晴窗块写死 #f7f1e3 不引变量(tokens.css 注明铁律:表面令牌禁止引用这两个变量)
+- **2 处背景用法收编**:Layout skipLink、home/SourcePromise .section 的 background: var(--paper) → var(--surface-paper)(语义本就是宣纸面);改后全站 paper 系背景残余 0(程序化 grep 验证)
+- **新令牌 --nav-veil**(导航纱面双值):灯下 rgba(13,19,17,.92)=Navigation 原硬编码值,晴窗 rgba(221,208,180,.92) 宣纸半透——G31 最小收编 1 处,其余约 16 处硬编码深色如实留 G32 收编清单
+- **机制三件**:index.html 内联防闪烁脚本(React 挂载前:localStorage 'shanhai-theme' 优先→否则 prefers-color-scheme light→qing/深色或无偏好→灯下默认;存储不可用保持默认);src/hooks/useTheme.ts(useSyncExternalStore+MutationObserver 订阅 data-theme 真源,setMode 挂 html.theme-switching 压平过渡+写 localStorage);base.css 追加 theme-switching 压平规则(只禁 transition 不引新动画,reduced-motion 规则不动)
+- **切换钮**:页脚 colophon 行改 flex 左文右钮,「◐ 晴窗/◑ 灯下」示将切往的主题,aria-label=切换至X主题,min-height 44px(触控红线),hover 走既有 duration-hover 令牌
+
+### 修真实问题(1 处)
+
+- 双 rAF 移除压平类在**后台标签会被 rAF 暂停**(IAB 实测 150ms 后 theme-switching 仍在):useTheme 加 setTimeout 100ms 兜底幂等移除(IAB 后台 setTimeout 节流至 1s,实测 1.4s 后类已移除)
+
+### 断言(IAB,程序化 DOM 断言)
+
+- 初始一致性:IAB 模拟 dark(prefersLight=false)→attr=null 灯下默认、body rgb(13,19,17)、导航纱 rgba(13,19,17,.92) ✓
+- 晴窗八要素:setAttribute 后 body #e9deca/正文墨字 #33382c/页脚 #ddd0b4/页脚站名 #3a3527(--paper 重定义生效)/导航宣纸纱/令牌 --paper-bright #262117、--surface-paper #f7f1e3(写死生效)、--old-gold #66512e ✓,移除后复原 ✓
+- 交互链:MouseEvent 派发点击切换钮→attr=qing+localStorage=qing+按钮文案/aria 翻转「◑ 灯下」✓;reload→内联脚本从 localStorage 恢复 qing(防闪烁+持久化链路)✓;再切回→stored=deng+类已移除(兜底生效)✓
+- 压平规则在产物 CSS(document.styleSheets 遍历命中 theme-switching)✓
+- **三页双主题抽验(/、/atlas、/chapters)**:每页灯下/晴窗双态断言 body 底/正文色/h1 色(h1 晴窗自动翻墨字 rgb(58,53,39))/导航纱/scrollWidth 横溢=0,六态全绿 ✓
+- IAB 已知限制如实记档:evaluate 内 matchMedia 恒 false(无法模拟 light 系统),prefers-color-scheme 的 light 分支=dark 分支实测(默认路径)+等价 setAttribute 渲染全套已验+内联脚本代码走查;setViewportSize 不可用,本轮视口 1280×720 实测(390 档留 G32 全走查)
+
+### 视觉验收(visual-judge 两轮)
+
+- 首轮 6 张(三页×双主题)全 pass;judge 指出截图均在页顶、页脚切换钮 Unverified→补拍页底 2 张(古卷页双主题)复核 2/2 pass:双主题页脚分层正确、金线可见、按钮 44px 细边框完整、与版权行无碰撞、语义正确
+- judge 遗留提示:首页晴窗下英雄区墨字叠深色画布对比度降低但可辨——记入 DESIGN 7.4 G32 入口
+
+### 构建
+
+- build 绿(tsc --noEmit && vite build);gzip:JS 161.55(G30 161.15,+0.40 useTheme)/CSS 18.20(G30 17.89,+0.31 晴窗块+切换钮)
+- 截图 8 张入 GALLERY_BASELINES/:g31-{home,atlas,chapters}-{deng,qing}.png + g31-footer-{deng,qing}.png
+
+### 遗留与下轮入口
+
+- **G32 入口**:晴窗主题(二)——全 12+ 路由双主题走查、对比度实测全表(正文≥4.5:1,本轮晴窗值为 WCAG 估算见 DESIGN 7.3 表)、硬编码色收编清单(Navigation 边框 rgba(177,139,86,.28) 等约 16 处)、双主题截图≥10 张、390 档补测
+- G32 已挂账项:首页英雄区晴窗对比度复查(visual-judge 提示)、SVG 场景/舆图画布内配色策略(当前按「册页插图」保持深色)、DetailPage 等未抽验页
+- 设计文档:GALLERY_DESIGN.md 新增「七、双主题线」(架构/--paper 重定义决策/晴窗色板表/G32 入口)
+
+### 状态:**done**
+
+---
+
 ## G30 · 二经录入(三):浮玉之山/成山+二经篇末里距对照(B1×B2 双源升正式,二经三轮收束 6/17)
 
 - **有效执行编号**:二阶 10 / 18

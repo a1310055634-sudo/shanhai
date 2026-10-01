@@ -1,7 +1,7 @@
 /* 浅宣纸阅读区:与墨色沉浸区交替(V08) */
 .section {
   width: 100%;
-  background: var(--paper);
+  background: var(--surface-paper); /* G31:宣纸面令牌(原 --paper) */
 }
 
 .inner {

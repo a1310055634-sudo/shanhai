@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import Rule from './common/Rule'
+import { useTheme } from '../hooks/useTheme'
 import styles from './Footer.module.css'
 
 /** 页脚:站内入口 + 来源承诺摘要(完整「来源承诺」区块随首页章节实现)。 */
 export default function Footer() {
+  const { mode, toggle } = useTheme()
+  const nextLabel = mode === 'qing' ? '灯下' : '晴窗'
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -44,7 +47,20 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.colophon}>
-        <p>据古籍意象艺术演绎 · 内容核验状态以各条目标注为准</p>
+        {/* G31 主题切换:按钮示将切往的主题;切换零动画(useTheme 压平过渡) */}
+        <div className={styles.colophonInner}>
+          <p className={styles.colophonText}>
+            据古籍意象艺术演绎 · 内容核验状态以各条目标注为准
+          </p>
+          <button
+            type="button"
+            className={styles.themeToggle}
+            onClick={toggle}
+            aria-label={`切换至${nextLabel}主题`}
+          >
+            {mode === 'qing' ? '◑ 灯下' : '◐ 晴窗'}
+          </button>
+        </div>
       </div>
     </footer>
   )

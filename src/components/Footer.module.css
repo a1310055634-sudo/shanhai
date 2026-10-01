@@ -79,13 +79,42 @@
   border-top: 1px solid rgba(143, 150, 141, 0.18);
 }
 
-.colophon p {
+/* G31:版权行 + 主题切换钮左右分列 */
+.colophonInner {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 18px var(--space-page-x-desktop);
+  padding: 10px var(--space-page-x-desktop);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+
+.colophonText {
+  padding: 8px 0;
   font-size: 12px;
   letter-spacing: 0.12em;
   color: var(--text-muted);
+}
+
+.themeToggle {
+  min-height: 44px; /* 触控目标红线 */
+  padding: 0 18px;
+  background: transparent;
+  border: 1px solid var(--border-normal);
+  border-radius: var(--radius-card);
+  color: var(--text-muted);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.2em;
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    border-color var(--duration-hover) var(--ease-soft);
+}
+
+.themeToggle:hover {
+  color: var(--old-gold);
+  border-color: var(--border-strong);
 }
 
 @media (max-width: 900px) {
@@ -107,8 +136,8 @@
     gap: 28px;
   }
 
-  .colophon p {
-    padding: 16px var(--space-page-x-mobile);
+  .colophonInner {
+    padding: 8px var(--space-page-x-mobile);
   }
 }
 

@@ -8,6 +8,28 @@
       content="山海万象录 SHAN HAI ARCHIVE —— 一部可以阅读、检索和探索的《山海经》数字异闻志。"
     />
     <title>山海万象录 · SHAN HAI ARCHIVE</title>
+    <script>
+      /* G31 主题防闪烁:挂载前定主题——localStorage 优先,否则跟随
+         prefers-color-scheme(浅色系统→晴窗,深色/无偏好→灯下墨夜默认);
+         存储不可用或值非法时保持默认,不设属性。 */
+      ;(function () {
+        try {
+          var saved = localStorage.getItem('shanhai-theme')
+          var mode =
+            saved === 'qing' || saved === 'deng'
+              ? saved
+              : window.matchMedia &&
+                  window.matchMedia('(prefers-color-scheme: light)').matches
+                ? 'qing'
+                : 'deng'
+          if (mode === 'qing') {
+            document.documentElement.setAttribute('data-theme', 'qing')
+          }
+        } catch (e) {
+          /* localStorage 不可用,保持灯下默认 */
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
