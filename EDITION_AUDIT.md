@@ -3,6 +3,7 @@
 > 建立:2026-09-27(P02)。本表是全部新增古籍文字的唯一准入门户。
 > 状态仅允许:verified / provisional / blocked / variant(定义见冲刺提示词三;四栏=来源A/来源B/当前采用/未决原因)。
 > 关联:CONTENT_SOURCES.md「版本政策」节;项目数据 locations.ts / journey.ts / chapterTexts.ts。
+> 关联工作稿:南次二经 DRAFT(G25 建,2026-10-02,含柜山/長右/堯光 B 侧录文与疑点清单)——`EDITION_EVIDENCE/DRAFT-nanci2-workfile-20261002.md`,**未核不上线,不入正式数据**。
 
 ## 一、底本政策(P02 定稿)
 
