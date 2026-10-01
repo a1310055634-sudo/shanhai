@@ -13,11 +13,11 @@ import PaperTexture from '../components/common/PaperTexture'
 import { RuleFishTail } from '../components/common/Rule'
 import styles from './ChapterPage.module.css'
 
-/** 生僻字注音:按词典把字包成 ruby。 */
+/** 生僻字注音:按词典把字包成 ruby。u 标志必要:词典含增补平面字(𨴯),无 u 会劈成孤立代理项。 */
 function annotate(text: string, on: boolean) {
   if (!on) return text
   const chars = Object.keys(GLOSSARY)
-  const re = new RegExp(`[${chars.join('')}]`, 'g')
+  const re = new RegExp(`[${chars.join('')}]`, 'gu')
   const parts = text.split(re)
   const matched = text.match(re) ?? []
   return parts.flatMap((part, i) => {
@@ -257,8 +257,13 @@ export default function ChapterPage() {
         })}
       </div>
 
-      {/* G26:里距对照(原文照录+本站校核并置,歧义照录不裁决),挂南山经篇末 */}
-      {slug === 'nanshan-jing' && <DistanceTable />}
+      {/* G26:里距对照(原文照录+本站校核并置,歧义照录不裁决),挂南山经篇末;G30 增二经表 */}
+      {slug === 'nanshan-jing' && (
+        <>
+          <DistanceTable />
+          <DistanceTable classic="ns2" />
+        </>
+      )}
 
       <nav className={styles.chapterNav} aria-label="篇章切换">
         {prev ? (

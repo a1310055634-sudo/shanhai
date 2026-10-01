@@ -659,6 +659,108 @@ export const LOCATIONS: Location[] = [
     modernHypotheses: [],
     recordStatus: 'unverified',
   },
+  {
+    // G30:南次二经第七山(第五/六山瞿父、句餘未录,链路直连如实见 gap 注)。
+    // 兽「彘」另立词条(ent-zhi)。核验路径同 loc-guishan:底本A(ctext)2026-10-02
+    // 复测仍反爬不可达,经底本B1(存档 L07)×B2(存档第46行)两源净化正文逐字一致后录入。
+    id: 'loc-fuyu',
+    canonicalName: '浮玉之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 7,
+    previousLocationId: 'loc-yushan',
+    nextLocationId: 'loc-chengshan',
+    sourceDirection: '又东',
+    sourceDistance: '五百里',
+    relatedEntityIds: ['ent-zhi'],
+    citations: [
+      {
+        originalText:
+          '又东五百里，曰浮玉之山，北望具区，东望诸毗。有兽焉，其状如虎而牛尾，其音如吠犬，其名曰彘，是食人。苕水出于其阴，北流注于具区。其中多鮆鱼。',
+        chapter: '南山经',
+        section: '南次二经第七山',
+        guoPuNotes: [
+          {
+            attach: '北望具区',
+            text: '具區，今吳縣西南太湖也。《尚書》謂之震澤',
+          },
+          {
+            attach: '东望诸毗',
+            text: '水名',
+          },
+          {
+            attach: '其中多鮆鱼',
+            text: '鮆魚，狹薄而長頭。大者尺餘，太湖中今饒之。一名刀魚，音祚啓反',
+          },
+        ],
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-02 复测反爬不可达,恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        verificationNote:
+          '2026-10-02 建站核验(G30):底本B1(维基文库页面,存档 EDITION_EVIDENCE/wikisource-nanshan1-b1-20261002.txt 第L07行)与底本B2(四库本郭璞注,存档 wikisource-nanshan1-guopu-20261002.txt 第46行)净化正文逐字一致(断言脚本实测);上屏为简体逐字转换(仅繁简对应,无异文性改字;对照表见 EDITION_AUDIT.md 三之补7),注文保持繁体未转简。兽「彘」句另立引文,见 ent-zhi。底本A(ctext zhs)当日复测不可达(反爬拦截页),A×B 回核挂账(DRAFT-nanci2 疑点清单)。',
+        verifiedAt: '2026-10-02',
+      },
+    ],
+    mapPosition: { x: 49, y: 86, region: '南山经' }, // G30:避让一经对角线尾部(青丘 x≈442px),自 54 左移
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G30:南次二经第八山。水名「虖勺」两处底本自带异文(勺一作多/一作流注于西,
+    // 两源同记)照录 variantText(疑点10/11);「𨴯」「雘」等生僻字 GLOSSARY 注音。
+    id: 'loc-chengshan',
+    canonicalName: '成山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 8,
+    previousLocationId: 'loc-fuyu',
+    sourceDirection: '又东',
+    sourceDistance: '五百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText:
+          '又东五百里，曰成山，四方而三坛，其上多金玉，其下多青雘。𨴯水出焉，而南流注于虖勺，其中多黄金。',
+        chapter: '南山经',
+        section: '南次二经第八山',
+        guoPuNotes: [
+          {
+            attach: '四方而三坛',
+            text: '形如人築，壇相累也。成亦重耳',
+          },
+          {
+            attach: '𨴯水出焉',
+            text: '音涿',
+          },
+          {
+            attach: '虖勺',
+            text: '虖，音呼。',
+          },
+          {
+            attach: '其中多黄金',
+            text: '今永昌郡，水出金如糠在沙中。尸子曰：清水出黃金、玉英',
+          },
+        ],
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-02 复测反爬不可达,恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText:
+          '两处底本自带异文,两源同记,照录不裁决:①水名「虖勺」之「勺」——底本B1页面注记「勺一作多」,底本B2四库本以{{另|勺|多}}模板同记此异文,两源正文均作「勺」,本站从「勺」并标注;②「南流注于」下——两源均夹注「一作流注于西」,另一版本于水名前多一「西」字。均待底本A回核(DRAFT-nanci2 疑点10/11)。',
+        verificationNote:
+          '2026-10-02 建站核验(G30):底本B1(维基文库页面,存档 EDITION_EVIDENCE/wikisource-nanshan1-b1-20261002.txt 第L08行,剥〈〉夹注与「一作「多」」页面注记)与底本B2(四库本郭璞注,存档 wikisource-nanshan1-guopu-20261002.txt 第48行,剥{{*|}}夹注、{{另|}}模板取正字)净化正文逐字一致(断言脚本实测);上屏为简体逐字转换(对照表见 EDITION_AUDIT.md 三之补7),注文保持繁体未转简。底本A(ctext zhs)当日复测不可达(反爬拦截页),A×B 回核挂账。',
+        verifiedAt: '2026-10-02',
+      },
+    ],
+    mapPosition: { x: 53.5, y: 84.5, region: '南山经' }, // G30:避让青丘/箕尾与浮玉,上移一行(锯齿节奏让位于零重叠)
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
 ]
 
 export function getLocation(id: string): Location | undefined {

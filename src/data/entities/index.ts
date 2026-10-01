@@ -13,6 +13,7 @@ import { YINGLONG } from './yinglong'
 import { KUI } from './kui'
 import { CHANGYOU } from './changyou'
 import { HUAHUAI } from './huahuai'
+import { ZHI } from './zhi'
 
 /** 全部条目。只有 recordStatus === 'verified' 的条目可进入推荐/探索/题库。 */
 export const ENTITIES: Entity[] = [
@@ -30,6 +31,7 @@ export const ENTITIES: Entity[] = [
   KUI,
   CHANGYOU,
   HUAHUAI,
+  ZHI,
 ]
 
 export function getEntity(slug: string): Entity | undefined {

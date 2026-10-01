@@ -191,10 +191,70 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-yushan'],
     },
     {
-      id: 'seg-ns2-gap-qufu-end',
+      id: 'seg-ns2-gap-qufu-juyu',
       kind: 'gap',
       section: '南次二经',
-      note: '瞿父之山以下十三山待录入(G30 按原文次序续录,核不动不上线;羽山郭注「計此道里不相應,似非也」系郭璞自注,照录注层)',
+      note: '瞿父之山、句餘之山待录入(第五/六山;已录山链路自羽山直连浮玉之山,跳过未录山系如实呈现;核不动不上线)',
+    },
+    {
+      // G30:浮玉之山山段(2026-10-02 经底本B1×B2两源逐字一致录入,底本A回核挂账,
+      // recordStatus 同步 unverified;详见 EDITION_AUDIT.md 三之补7)。兽「彘」句
+      // 与水句依长右/堯光先例拆段。
+      id: 'seg-ns2-fuyu-shan',
+      kind: 'text',
+      section: '南次二经',
+      text: '又东五百里，曰浮玉之山，北望具区，东望诸毗。',
+      relatedLocationIds: ['loc-fuyu'],
+    },
+    {
+      id: 'seg-ns2-zhi',
+      kind: 'text',
+      section: '南次二经',
+      text: '有兽焉，其状如虎而牛尾，其音如吠犬，其名曰彘，是食人。',
+      relatedEntityIds: ['ent-zhi'],
+      relatedLocationIds: ['loc-fuyu'],
+    },
+    {
+      id: 'seg-ns2-fuyu-shui',
+      kind: 'text',
+      section: '南次二经',
+      text: '苕水出于其阴，北流注于具区。其中多鮆鱼。',
+      relatedLocationIds: ['loc-fuyu'],
+    },
+    {
+      id: 'seg-ns2-chengshan',
+      kind: 'text',
+      section: '南次二经',
+      text: '又东五百里，曰成山，四方而三坛，其上多金玉，其下多青雘。𨴯水出焉，而南流注于虖勺，其中多黄金。',
+      relatedLocationIds: ['loc-chengshan'],
+    },
+    {
+      id: 'seg-ns2-gap-kuaiji-end',
+      kind: 'gap',
+      section: '南次二经',
+      note: '会稽之山以下九山待录入(二经录入三轮 G28—G30 止,其余山留工作稿如实待续,不凑数;核不动不上线)',
+    },
+    {
+      // G30:二经篇末总述(底本B1工作稿存档×B2第68行两源一致;祠礼句照录,
+      // 郭注「稻穬也」不上屏——segment 层无注层机制,与一经篇末同款,如实记档)。
+      id: 'seg-ns2-tongji',
+      kind: 'text',
+      section: '南次二经',
+      text: '凡南次二经之首，自柜山至于漆吴之山，凡十七山，七千二百里。其神状皆龙身而鸟首。其祠：毛用一璧瘗，糈用稌。',
+      relatedLocationIds: [
+        'loc-guishan',
+        'loc-changyou',
+        'loc-yaoguang',
+        'loc-yushan',
+        'loc-fuyu',
+        'loc-chengshan',
+      ],
+    },
+    {
+      id: 'seg-ns2-tongji-note',
+      kind: 'gap',
+      section: '南次二经',
+      note: '篇末「凡十七山,七千二百里」:本站已录六山(自柜山至成山),瞿父、句餘与会稽以下九山未核不上线;逐段相加与篇末合计之对照见篇末里距对照存疑区,歧义照录不裁决',
     },
     {
       id: 'seg-ns3-gap-tianyu-daoguo',
@@ -246,4 +306,9 @@ export const GLOSSARY: Record<string, { pinyin: string; hint?: string }> = {
   斲: { pinyin: 'zhuó', hint: '同「斫」,砍削;郭璞注「如人斫木聲」' },
   繇: { pinyin: 'yáo', hint: '此处通「徭」(徭役),郭璞注「謂作役也」' },
   蝮: { pinyin: 'fù', hint: '毒蛇名;郭璞注「蚖也」' },
+  鮆: { pinyin: 'jì', hint: '鱼名,即刀鱼;郭璞注「音祚啓反」' },
+  虖: { pinyin: 'hū', hint: '水名用字(虖勺),郭璞注「音呼」' },
+  𨴯: { pinyin: 'zhuō', hint: '水名用字(𨴯水),郭璞注「音涿」' },
+  雘: { pinyin: 'huò', hint: '青雘,矿物颜料;与青丘之山「䨼」相类,底本二经用「雘」照录;底本无音注,音从通行定音' },
+  瘗: { pinyin: 'yì', hint: '埋祭品;底本作「瘞」转简照录;底本无音注,音从通行定音' },
 }
