@@ -13,9 +13,13 @@ export const VERIFIED_LINKS: Array<{
   from: string
   to: string
   label: string
+  /** 里距注相对线段中点的纵向偏移;默认 +18(线下方),拥挤处可移至线上方 */
+  labelDy?: number
+  /** 里距注相对线段中点的横向偏移(G13 西山经三角区避让节点标签) */
+  labelDx?: number
 }> = [
   { from: 'loc-taiqi', to: 'loc-huaijiang', label: '又西三百二十里' },
-  { from: 'loc-huaijiang', to: 'loc-kunlun', label: '西南四百里' },
+  { from: 'loc-huaijiang', to: 'loc-kunlun', label: '西南四百里', labelDx: 14, labelDy: -11 },
 ]
 
 const REGION_LABELS: Array<{ region: string; x: number; y: number }> = [
@@ -27,11 +31,11 @@ const REGION_LABELS: Array<{ region: string; x: number; y: number }> = [
 ]
 
 const REGION_FILLS: Record<string, string> = {
-  南山经: 'rgba(88, 115, 103, 0.14)',
-  西山经: 'rgba(88, 115, 103, 0.11)',
-  北山经: 'rgba(88, 115, 103, 0.09)',
-  海外北经: 'rgba(88, 115, 103, 0.08)',
-  大荒东经: 'rgba(88, 115, 103, 0.12)',
+  南山经: 'rgba(38, 48, 43, 0.05)',
+  西山经: 'rgba(38, 48, 43, 0.04)',
+  北山经: 'rgba(38, 48, 43, 0.035)',
+  海外北经: 'rgba(38, 48, 43, 0.03)',
+  大荒东经: 'rgba(38, 48, 43, 0.045)',
 }
 
 export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select' }) {
@@ -50,17 +54,17 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
         role="img"
         aria-label={`山海经古籍内部叙事概念地图:${LOCATIONS.length}座已核验山川节点的分区示意`}
       >
-        {/* 等高线底纹(装饰) */}
-        <g fill="none" stroke="#31545A" strokeWidth="1">
-          <path d="M-20 140 C160 96 340 150 520 112 C700 76 860 128 1020 96" opacity="0.16" />
-          <path d="M-20 210 C180 170 360 216 540 184 C720 152 880 200 1020 172" opacity="0.13" />
-          <path d="M-20 330 C200 292 380 338 560 306 C740 274 900 320 1020 292" opacity="0.1" />
-          <path d="M-20 470 C220 430 400 478 580 448 C760 418 920 462 1020 436" opacity="0.08" />
-          <path d="M-20 560 C240 522 420 566 600 538 C780 510 940 552 1020 528" opacity="0.06" />
+        {/* 等高线底纹(G13 宣纸化:青绿→墨线) */}
+        <g fill="none" stroke="var(--paper-ink)" strokeWidth="1">
+          <path d="M-20 140 C160 96 340 150 520 112 C700 76 860 128 1020 96" opacity="0.12" />
+          <path d="M-20 210 C180 170 360 216 540 184 C720 152 880 200 1020 172" opacity="0.1" />
+          <path d="M-20 330 C200 292 380 338 560 306 C740 274 900 320 1020 292" opacity="0.08" />
+          <path d="M-20 470 C220 430 400 478 580 448 C760 418 920 462 1020 436" opacity="0.06" />
+          <path d="M-20 560 C240 522 420 566 600 538 C780 510 940 552 1020 528" opacity="0.05" />
         </g>
-        {/* 雾层(装饰) */}
-        <ellipse cx="500" cy="330" rx="470" ry="130" fill="#D9D6C9" opacity="0.025" />
-        <ellipse cx="260" cy="520" rx="220" ry="80" fill="#D9D6C9" opacity="0.03" />
+        {/* 雾层(装饰,宣纸上以淡墨代月白) */}
+        <ellipse cx="500" cy="330" rx="470" ry="130" fill="rgba(38, 48, 43, 0.03)" />
+        <ellipse cx="260" cy="520" rx="220" ry="80" fill="rgba(38, 48, 43, 0.035)" />
 
         {/* 分区 */}
         {(
@@ -80,22 +84,22 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
               height={z.h}
               rx="8"
               fill={REGION_FILLS[z.region]}
-              stroke={z.region === '南山经' ? '#B18B56' : '#587367'}
-              strokeOpacity={z.region === '南山经' ? 0.55 : 0.25}
+              stroke={z.region === '南山经' ? 'var(--old-gold)' : 'rgba(38, 48, 43, 0.3)'}
+              strokeOpacity={z.region === '南山经' ? 0.55 : 1}
               strokeWidth={z.region === '南山经' ? 1.4 : 1}
               strokeDasharray={z.region === '南山经' ? undefined : '4 5'}
             />
           </g>
         ))}
-        {/* E13:南次一经主线标识 + 图内行旅入口 */}
+        {/* E13:南次一经主线标识 + 图内行旅入口(G13 宣纸签化) */}
         <g className={styles.journeyBadge}>
-          <rect x="44" y="376" rx="3" width="150" height="22" fill="rgba(19,28,24,0.85)" stroke="#B18B56" strokeOpacity="0.6" />
-          <text x="119" y="391" textAnchor="middle" fill="#F3EEE2" fontSize="12" letterSpacing="2" fontFamily="var(--font-serif)">
+          <rect x="44" y="376" rx="0" width="150" height="22" fill="var(--surface-paper)" stroke="var(--border-normal)" />
+          <text x="119" y="391" textAnchor="middle" fill="var(--paper-ink)" fontSize="12" letterSpacing="2" fontFamily="var(--font-serif)">
             南次一经 · 行旅已开通
           </text>
         </g>
         <a href="/journeys/nanci-yi" className={styles.mapJourneyLink}>
-          <text x="638" y="391" textAnchor="end" fill="#B18B56" fontSize="12.5" letterSpacing="1.5" fontFamily="var(--font-serif)">
+          <text x="638" y="391" textAnchor="end" fill="var(--paper-ink)" fontSize="12.5" letterSpacing="1.5" fontFamily="var(--font-serif)">
             进入山海行旅 →
           </text>
         </a>
@@ -105,7 +109,7 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
             x={r.x}
             y={r.y}
             textAnchor="middle"
-            fill="#B18B56"
+            fill="var(--old-gold)"
             fontSize="15"
             letterSpacing="4"
             fontFamily="var(--font-serif)"
@@ -114,10 +118,12 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
           </text>
         ))}
 
-        {/* 已核验相邻链条 */}
+        {/* 已核验相邻链条(旧金线+墨字里距注,宣纸晕防压线) */}
         {VERIFIED_LINKS.map((link) => {
           const a = pos(link.from)
           const b = pos(link.to)
+          const labelDy = link.labelDy ?? 18
+          const labelDx = link.labelDx ?? 0
           return (
             <g key={`${link.from}-${link.to}`}>
               <line
@@ -125,18 +131,20 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
                 y1={a.y}
                 x2={b.x}
                 y2={b.y}
-                stroke="#B18B56"
-                strokeWidth="1.2"
+                stroke="var(--old-gold)"
+                strokeWidth="1.4"
                 strokeDasharray="5 4"
-                opacity="0.7"
+                opacity="0.8"
               />
               <text
-                x={(a.x + b.x) / 2}
-                y={(a.y + b.y) / 2 + 18}
+                x={(a.x + b.x) / 2 + labelDx}
+                y={(a.y + b.y) / 2 + labelDy}
                 textAnchor="middle"
-                fill="#B18B56"
+                fill="var(--paper-muted)"
                 fontSize="11"
-                opacity="0.85"
+                stroke="var(--surface-paper)"
+                strokeWidth="3"
+                paintOrder="stroke"
               >
                 {link.label}
               </text>
@@ -151,13 +159,14 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
           const isSelected = mode === 'select' && selectedId === loc.id
           const nodeBody = (
             <>
-              <circle cx={p.x} cy={p.y} r="13" fill="transparent" stroke="none" />
+              {/* 透明命中区:r32 使 390(×0.76≈48px)与 768(×0.69≈44px)档触控达标 */}
+              <circle cx={p.x} cy={p.y} r="32" fill="transparent" stroke="none" />
               <circle
                 cx={p.x}
                 cy={p.y}
                 r={isSelected ? 8 : 6}
-                fill={isSelected ? '#B18B56' : '#587367'}
-                stroke={isSelected ? '#A74738' : '#F3EEE2'}
+                fill="var(--cinnabar)"
+                stroke={isSelected ? 'var(--old-gold)' : 'var(--surface-paper)'}
                 strokeWidth={isSelected ? 2 : 1}
                 className={styles.nodeDot}
               />
@@ -165,12 +174,22 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
                 x={p.x}
                 y={p.y + 22}
                 textAnchor="middle"
-                fill={isSelected ? '#F3EEE2' : '#D9D6C9'}
+                fill="var(--paper-ink)"
                 fontSize="13"
                 className={styles.nodeLabel}
               >
                 {loc.canonicalName}
               </text>
+              {isSelected && (
+                <line
+                  x1={p.x - 16}
+                  y1={p.y + 30}
+                  x2={p.x + 16}
+                  y2={p.y + 30}
+                  stroke="var(--old-gold)"
+                  strokeWidth="1.5"
+                />
+              )}
             </>
           )
           return (

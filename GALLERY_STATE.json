@@ -2,15 +2,15 @@
   "planId": "shanhai-gallery-20",
   "title": "古朴精修冲刺 G01—G20",
   "totalRounds": 20,
-  "validExecutions": 12,
+  "validExecutions": 13,
   "maxValidExecutions": 20,
-  "currentRound": "G13",
+  "currentRound": "G14",
   "rounds": {
     "G01": "done", "G02": "done", "G03": "done", "G04": "done", "G05": "done",
     "G06": "done", "G07": "done", "G08": "done", "G09": "done", "G10": "done",
-    "G11": "done", "G12": "done",
-    "G13": "todo", "G14": "todo", "G15": "todo", "G16": "todo", "G17": "todo",
-    "G18": "todo", "G19": "todo", "G20": "todo"
+    "G11": "done", "G12": "done", "G13": "done",
+    "G14": "todo", "G15": "todo", "G16": "todo", "G17": "todo", "G18": "todo",
+    "G19": "todo", "G20": "todo"
   },
   "baseline": {
     "head": "823ba01",
@@ -19,7 +19,7 @@
     "css": { "raw": "89.15 kB", "gzip": "15.63 kB" },
     "html": { "raw": "594 B", "gzip": "441 B" }
   },
-  "lastRunAt": "2026-10-02T00:35:00+08:00",
+  "lastRunAt": "2026-10-02T01:15:00+08:00",
   "status": "running",
-  "note": "G12 起修复 rounds 重复键(原文件 G06—G12 出现两次,JSON.parse 取后者);G13 入口含 G01 缺口 #1(1440 档山川图标签叠压)"
+  "note": "G13 起修复 rounds 重复键(原文件 G06—G12 出现两次,JSON.parse 取后者);G14 入口=古卷页(段距/版心/鱼尾/锚点全测)"
 }
