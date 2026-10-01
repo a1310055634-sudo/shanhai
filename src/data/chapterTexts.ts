@@ -2,9 +2,9 @@
  * 篇章原文分段数据。
  * 红线:kind='text' 的段落全部为经 EDITION_AUDIT 全流程逐字核对过的原文,来源
  * 逐段可溯——南次一经/南次三经各段 2026-09-20 起经 ctext.org 公开文本逐字核对;
- * 南次二经柜山/长右三段(G28)2026-10-02 经中文维基文库两源(B1 页面×B2 四库本
- * 郭璞注)逐字一致录入,底本A(ctext)反爬不可达、回核挂账。其余位置一律以
- * kind='gap' 如实标注「待录入」,不以常识补写。详见 CONTENT_SOURCES.md。
+ * 南次二经柜山/长右三段(G28)、尧光/猾褢/羽山三段(G29)2026-10-02 经中文维基文库
+ * 两源(B1 页面×B2 四库本郭璞注)逐字一致录入,底本A(ctext)反爬不可达、回核挂账。
+ * 其余位置一律以 kind='gap' 如实标注「待录入」,不以常识补写。详见 CONTENT_SOURCES.md。
  *
  * J02:每段增加稳定 id(用作锚点与引用,不依赖数组下标);
  * 计数改由 segmentCounts() 从数组派生,不再手填。
@@ -167,10 +167,34 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-changyou'],
     },
     {
-      id: 'seg-ns2-gap-yaoguang-end',
+      // G29:尧光之山山段(2026-10-02 经底本B1×B2两源逐字一致录入,底本A回核挂账,
+      // recordStatus 同步 unverified;详见 EDITION_AUDIT.md 三之补6)。
+      id: 'seg-ns2-yaoguang-shan',
+      kind: 'text',
+      section: '南次二经',
+      text: '又东三百四十里，曰尧光之山，其阳多玉，其阴多金。',
+      relatedLocationIds: ['loc-yaoguang'],
+    },
+    {
+      id: 'seg-ns2-huahuai',
+      kind: 'text',
+      section: '南次二经',
+      text: '有兽焉，其状如人而彘鬛，穴居而冬蛰，其名曰猾褢，其音如斲木，见则县有大繇。',
+      relatedEntityIds: ['ent-huahuai'],
+      relatedLocationIds: ['loc-yaoguang'],
+    },
+    {
+      id: 'seg-ns2-yushan',
+      kind: 'text',
+      section: '南次二经',
+      text: '又东三百五十里，曰羽山，其下多水，其上多雨，无草木，多蝮虫。',
+      relatedLocationIds: ['loc-yushan'],
+    },
+    {
+      id: 'seg-ns2-gap-qufu-end',
       kind: 'gap',
       section: '南次二经',
-      note: '尧光之山以下诸段待录入(G29—G30 按 EDITION_AUDIT 全流程逐轮录入,核不动不上线)',
+      note: '瞿父之山以下十三山待录入(G30 按原文次序续录,核不动不上线;羽山郭注「計此道里不相應,似非也」系郭璞自注,照录注层)',
     },
     {
       id: 'seg-ns3-gap-tianyu-daoguo',
@@ -217,4 +241,9 @@ export const GLOSSARY: Record<string, { pinyin: string; hint?: string }> = {
   柜: { pinyin: 'jǔ', hint: '山名用字,郭璞注「音矩」,此处不读「guì」' },
   鴸: { pinyin: 'zhū', hint: '鸟名用字,郭璞注「音株」;字无通行简化形,照录底本' },
   痹: { pinyin: 'bì', hint: '底本作「痺」,义为痹症;郭璞注「未詳」' },
+  鬛: { pinyin: 'liè', hint: '同「鬣」,兽颈部长毛;底本作「鬛」照录,不作异体改字' },
+  褢: { pinyin: 'huái', hint: '兽名用字(猾褢),郭璞注「滑懷兩音」;「褢」为「懷」古字,照录底本' },
+  斲: { pinyin: 'zhuó', hint: '同「斫」,砍削;郭璞注「如人斫木聲」' },
+  繇: { pinyin: 'yáo', hint: '此处通「徭」(徭役),郭璞注「謂作役也」' },
+  蝮: { pinyin: 'fù', hint: '毒蛇名;郭璞注「蚖也」' },
 }

@@ -3,9 +3,10 @@ import type { Location } from './types'
 /**
  * 山川地域数据(首批:南山经前段两座已核验之山)。
  * 原文核验来源逐条见各 citation:南次一经等 2026-09-20 起经 ctext.org 公开文本
- * 逐字核对;南次二经柜山/长右之山(G28)因底本A(ctext)反爬不可达,2026-10-02 经
- * 中文维基文库两源(B1 页面×B2 四库本郭璞注)逐字对照一致后录入,A 侧回核挂账
- * (recordStatus 暂为 unverified)。详见 CONTENT_SOURCES.md 与 EDITION_AUDIT.md。
+ * 逐字核对;南次二经柜山/长右之山(G28)、尧光之山/羽山(G29)因底本A(ctext)反爬
+ * 不可达,2026-10-02 经中文维基文库两源(B1 页面×B2 四库本郭璞注)逐字对照一致后
+ * 录入,A 侧回核挂账(recordStatus 暂为 unverified)。详见 CONTENT_SOURCES.md 与
+ * EDITION_AUDIT.md。
  * mapPosition 为概念地图坐标(古籍叙事关系),与现实经纬度无关。
  * 地点链条(前后山)将随山川轮补全,暂缺字段不标「原文未载」。
  */
@@ -556,6 +557,7 @@ export const LOCATIONS: Location[] = [
     subClassic: '南次二经',
     sourceOrder: 2,
     previousLocationId: 'loc-guishan',
+    nextLocationId: 'loc-yaoguang',
     sourceDirection: '东南',
     sourceDistance: '四百五十里',
     relatedEntityIds: ['ent-changyou'],
@@ -576,6 +578,84 @@ export const LOCATIONS: Location[] = [
       },
     ],
     mapPosition: { x: 24, y: 87.5, region: '南山经' },
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G29:南次二经第三山。兽「猾褢」另立词条(ent-huahuai)。核验路径同 loc-guishan:
+    // 底本A(ctext)2026-10-02 复测仍反爬不可达,经底本B1(维基文库页面存档 L03)×
+    // B2(四库本郭璞注,存档第38行)两源净化正文逐字一致后录入。
+    id: 'loc-yaoguang',
+    canonicalName: '尧光之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 3,
+    previousLocationId: 'loc-changyou',
+    nextLocationId: 'loc-yushan',
+    sourceDirection: '又东',
+    sourceDistance: '三百四十里',
+    relatedEntityIds: ['ent-huahuai'],
+    citations: [
+      {
+        originalText: '又东三百四十里，曰尧光之山，其阳多玉，其阴多金。',
+        chapter: '南山经',
+        section: '南次二经第三山',
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-02 复测反爬不可达,恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        verificationNote:
+          '2026-10-02 建站核验(G29):底本B1(维基文库页面,存档 EDITION_EVIDENCE/wikisource-nanshan1-b1-20261002.txt 第L03行)与底本B2(四库本郭璞注,存档 wikisource-nanshan1-guopu-20261002.txt 第38行)净化正文逐字一致(61字符/汉字51);上屏为简体逐字转换(仅繁简对应,无异文性改字;对照表见 EDITION_AUDIT.md 三之补6)。兽「猾褢」句另立引文,见 ent-huahuai。底本A(ctext zhs)当日复测不可达(反爬拦截页),A×B 回核挂账(DRAFT-nanci2 疑点清单)。',
+        verifiedAt: '2026-10-02',
+      },
+    ],
+    mapPosition: { x: 34, y: 86, region: '南山经' },
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G29:南次二经第四山。郭注含郭璞自注里距疑点「計此道里不相應,似非也」,
+    // 照录上屏(注层),非本站校勘意见;「柷」疑「祝」形讹照录未改(疑点9)。
+    id: 'loc-yushan',
+    canonicalName: '羽山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 4,
+    previousLocationId: 'loc-yaoguang',
+    sourceDirection: '又东',
+    sourceDistance: '三百五十里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东三百五十里，曰羽山，其下多水，其上多雨，无草木，多蝮虫。',
+        chapter: '南山经',
+        section: '南次二经第四山',
+        guoPuNotes: [
+          {
+            attach: '羽山',
+            text: '今東海柷其縣西南，有羽山，即鯀所殛處。計此道里不相應，似非也',
+          },
+          {
+            attach: '多蝮虫',
+            text: '蚖也。',
+          },
+        ],
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-02 复测反爬不可达,恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText:
+          '郭注「今東海柷其縣西南」之「柷」:底本B1/B2均作「柷」,疑为「祝」形讹(汉代东海郡有祝其县,郭注所指当即祝其县)。注文照录未校改;郭注「計此道里不相應,似非也」系郭璞自注此山道里与实地方位不合,为注文内容本身,照录上屏,非本站校勘意见(DRAFT-nanci2 疑点9)。',
+        verificationNote:
+          '2026-10-02 建站核验(G29):底本B1(维基文库页面,存档 EDITION_EVIDENCE/wikisource-nanshan1-b1-20261002.txt 第L04行)与底本B2(四库本郭璞注,存档 wikisource-nanshan1-guopu-20261002.txt 第40行)净化正文逐字一致(30字符/汉字24);上屏为简体逐字转换(对照表见 EDITION_AUDIT.md 三之补6),注文保持繁体未转简。底本A(ctext zhs)当日复测不可达(反爬拦截页),A×B 回核挂账。',
+        verifiedAt: '2026-10-02',
+      },
+    ],
+    mapPosition: { x: 44, y: 87.5, region: '南山经' },
     modernHypotheses: [],
     recordStatus: 'unverified',
   },
