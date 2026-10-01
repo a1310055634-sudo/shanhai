@@ -100,6 +100,18 @@
   letter-spacing: 0.1em;
 }
 
+/* G23 修一阶 G01 缺口 #2:中档(641—960)九格均分时第 5 格「祗山/柢山」六字折行——
+   缺口位 li 给 1.7 倍弹性+收字距,站名两字格不受挤(实测 768 档缺口格 72→114px,单行) */
+@media (min-width: 641px) and (max-width: 960px) {
+  .railStopGapLi {
+    flex: 1.7 1 0;
+  }
+
+  .railDualChar {
+    letter-spacing: 0.06em;
+  }
+}
+
 @media (max-width: 640px) {
   /* R17:手机端九位置从横向挤压(单格仅 29px 宽)改为 3×3 回环网格,触控单元 ≥48px */
   .rail {

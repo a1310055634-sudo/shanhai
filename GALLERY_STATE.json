@@ -3,31 +3,63 @@
   "phase": 2,
   "title": "古朴精修·二阶冲刺 G21—G38",
   "totalRounds": 18,
-  "validExecutions": 2,
+  "validExecutions": 3,
   "maxValidExecutions": 18,
-  "currentRound": "G23",
+  "currentRound": "G24",
   "rounds": {
-    "G21": "done", "G22": "done", "G23": "todo", "G24": "todo", "G25": "todo",
-    "G26": "todo", "G27": "todo", "G28": "todo", "G29": "todo", "G30": "todo",
-    "G31": "todo", "G32": "todo", "G33": "todo", "G34": "todo", "G35": "todo",
-    "G36": "todo", "G37": "todo", "G38": "todo"
+    "G21": "done",
+    "G22": "done",
+    "G23": "done",
+    "G24": "todo",
+    "G25": "todo",
+    "G26": "todo",
+    "G27": "todo",
+    "G28": "todo",
+    "G29": "todo",
+    "G30": "todo",
+    "G31": "todo",
+    "G32": "todo",
+    "G33": "todo",
+    "G34": "todo",
+    "G35": "todo",
+    "G36": "todo",
+    "G37": "todo",
+    "G38": "todo"
   },
   "retired": "一阶 G14—G20 已并入二阶 G21—G23/G25/G36/G37/G38,原编号退役;一阶收官提交 89171dc(G13),13/20 轮完成",
   "baseline": {
     "head": "89171dc",
     "phase": 2,
     "recordedAt": "2026-10-02",
-    "js": { "raw": "475.10 kB", "gzip": "147.62 kB" },
-    "css": { "raw": "92.75 kB", "gzip": "16.35 kB" },
-    "html": { "raw": "594 B", "gzip": "442 B" }
+    "js": {
+      "raw": "475.10 kB",
+      "gzip": "147.62 kB"
+    },
+    "css": {
+      "raw": "92.75 kB",
+      "gzip": "16.35 kB"
+    },
+    "html": {
+      "raw": "594 B",
+      "gzip": "442 B"
+    }
   },
   "phase1Baseline": {
     "head": "823ba01",
     "recordedAt": "2026-10-01",
-    "js": { "raw": "472.43 kB", "gzip": "146.77 kB" },
-    "css": { "raw": "89.15 kB", "gzip": "15.63 kB" },
-    "html": { "raw": "594 B", "gzip": "441 B" }
+    "js": {
+      "raw": "472.43 kB",
+      "gzip": "146.77 kB"
+    },
+    "css": {
+      "raw": "89.15 kB",
+      "gzip": "15.63 kB"
+    },
+    "html": {
+      "raw": "594 B",
+      "gzip": "441 B"
+    }
   },
-  "lastRunAt": "2026-10-02T02:20+08:00",
+  "lastRunAt": "2026-10-02T10:50+08:00",
   "status": "running"
 }

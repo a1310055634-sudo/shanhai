@@ -10,23 +10,30 @@ export interface SceneSpec {
   nearOpacity: number
   /** 山脊轮廓:rolling=平缓曲线 / jagged=险峻尖峰 / stubborn=低平宽远 */
   profile: 'rolling' | 'jagged' | 'stubborn'
+  /** jagged 专用:峰谷高差系数(1=基准 66px,>1 更险)与峰密度系数(1=基准 20 峰位) */
+  jaggedAmp?: number
+  jaggedSteps?: number
   /** 雾密度 0—1 */
   mistDensity: number
   /** 展品显现:版画从侧栏小卡升为满幅中心展台(仅主高潮站) */
   exhibitCenter?: boolean
 }
 
-/** 按山序索引(1—9),柢山(5)为留白位(降透明度模拟雾)。 */
+/**
+ * 按山序索引(1—9),柢山(5)为留白位(降透明度模拟雾)。
+ * G23 压饱和:warmth 曲线整体 ×0.7(峰值 0.85→0.595),次序与冷调锚点(招摇 0)不变;
+ * 猨翼(3)峰形调更险(amp×1.3/steps×1.2)且雾再降(0.3→0.2),柢山雾感占位保持。
+ */
 export const SCENE_SPECS: Record<number, SceneSpec> = {
   1: { warmth: 0.0, farOpacity: 1, midOpacity: 1, nearOpacity: 1, profile: 'rolling', mistDensity: 0.4 },
-  2: { warmth: 0.15, farOpacity: 0.95, midOpacity: 0.95, nearOpacity: 1, profile: 'rolling', mistDensity: 0.8 },
-  3: { warmth: 0.3, farOpacity: 0.9, midOpacity: 0.9, nearOpacity: 1, profile: 'jagged', mistDensity: 0.3 },
-  4: { warmth: 0.5, farOpacity: 1, midOpacity: 1, nearOpacity: 1, profile: 'stubborn', mistDensity: 0.5 },
-  5: { warmth: 0.4, farOpacity: 0.5, midOpacity: 0.5, nearOpacity: 0.6, profile: 'rolling', mistDensity: 0.9 },
-  6: { warmth: 0.55, farOpacity: 0.9, midOpacity: 0.9, nearOpacity: 1, profile: 'stubborn', mistDensity: 0.7 },
-  7: { warmth: 0.7, farOpacity: 1, midOpacity: 1, nearOpacity: 1, profile: 'jagged', mistDensity: 0.5 },
-  8: { warmth: 0.85, farOpacity: 1, midOpacity: 1, nearOpacity: 1, profile: 'rolling', mistDensity: 0.5, exhibitCenter: true },
-  9: { warmth: 0.6, farOpacity: 0.9, midOpacity: 0.9, nearOpacity: 0.8, profile: 'stubborn', mistDensity: 0.6 },
+  2: { warmth: 0.105, farOpacity: 0.95, midOpacity: 0.95, nearOpacity: 1, profile: 'rolling', mistDensity: 0.8 },
+  3: { warmth: 0.21, farOpacity: 0.9, midOpacity: 0.9, nearOpacity: 1, profile: 'jagged', jaggedAmp: 1.3, jaggedSteps: 1.2, mistDensity: 0.2 },
+  4: { warmth: 0.35, farOpacity: 1, midOpacity: 1, nearOpacity: 1, profile: 'stubborn', mistDensity: 0.5 },
+  5: { warmth: 0.28, farOpacity: 0.5, midOpacity: 0.5, nearOpacity: 0.6, profile: 'rolling', mistDensity: 0.9 },
+  6: { warmth: 0.385, farOpacity: 0.9, midOpacity: 0.9, nearOpacity: 1, profile: 'stubborn', mistDensity: 0.7 },
+  7: { warmth: 0.49, farOpacity: 1, midOpacity: 1, nearOpacity: 1, profile: 'jagged', mistDensity: 0.5 },
+  8: { warmth: 0.595, farOpacity: 1, midOpacity: 1, nearOpacity: 1, profile: 'rolling', mistDensity: 0.5, exhibitCenter: true },
+  9: { warmth: 0.42, farOpacity: 0.9, midOpacity: 0.9, nearOpacity: 0.8, profile: 'stubborn', mistDensity: 0.6 },
 }
 
 export function sceneSpecFor(order: number | undefined): SceneSpec {

@@ -36,7 +36,10 @@ export default function JournalProgress({ currentId }: { currentId?: string }) {
           }
           const variants = 'variants' in pos ? pos.variants : []
           return (
-            <li key={`gap-${pos.mountainOrder}`} className={styles.railStop}>
+            <li
+              key={`gap-${pos.mountainOrder}`}
+              className={`${styles.railStop} ${styles.railStopGapLi}`}
+            >
               <span
                 className={`${styles.railStop} ${styles.railStopGap}`}
                 aria-label={`${pos.displayName}(第${pos.mountainOrder}山),用字两源互异,待核验,不可进入`}

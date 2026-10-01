@@ -1,9 +1,9 @@
 import styles from './SceneLayers.module.css'
 
 /**
- * R07+R09 场景底层:三层山水 SVG(远山/中景/前景)+ 雾带。
- * R09 新增 profile 参数——按山序切换三种山脊轮廓,让每站场景有构图差异。
- * 纯装饰 aria-hidden;不动任何内容文字。
+ * R07+R09 场景底层:三层山水 SVG(远山/中景/前景山影)+ 雾带。
+ * R09 profile 参数按山序切换山脊轮廓;G23 jagged 参数化(amp 高差/steps 峰密度),
+ * 确定性散列保证同参数路径恒定。纯装饰 aria-hidden;不动任何内容文字。
  */
 export interface SceneLayersProps {
   warmth: number
@@ -11,7 +11,30 @@ export interface SceneLayersProps {
   midOpacity?: number
   nearOpacity?: number
   profile?: 'rolling' | 'jagged' | 'stubborn'
+  /** jagged 高差/密度系数(1=基准;猨翼 1.3/1.2 更险) */
+  jaggedAmp?: number
+  jaggedSteps?: number
   mistDensity?: number
+}
+
+/** jagged 险峰轮廓生成:amp=峰谷高差系数(基准 66/44/42px),steps=峰位密度系数(基准 20/15/15)。 */
+function jaggedSet(amp: number, steps: number) {
+  const ridge = (base: number, a: number, n: number, seed: number) => {
+    const pts: Array<[number, number]> = [[0, base]]
+    for (let i = 1; i < n; i++) {
+      const r = Math.abs(Math.sin((i + seed) * 12.9898) * 43758.5453) % 1
+      pts.push([Math.round((1440 * i) / n), Math.round(i % 2 ? base - a * (0.55 + 0.45 * r) : base + a * 0.06 * r)])
+    }
+    pts.push([1440, base])
+    return pts
+  }
+  const toPath = (pts: Array<[number, number]>) =>
+    pts.map(([x, y], i) => `${i ? 'L' : 'M'}${x} ${y}`).join(' ') + ' L1440 360 L0 360 Z'
+  const far = ridge(176, 66 * amp, Math.round(20 * steps), 1)
+  const mid = ridge(230, 44 * amp, Math.round(15 * steps), 2)
+  const near = ridge(344, 42 * amp, Math.round(15 * steps), 3)
+  const gold = [3, 9, 13].map((i) => `M${near[i][0]} ${near[i][1]} L${near[i + 1][0]} ${near[i + 1][1]}`).join(' ')
+  return { far: toPath(far), mid: toPath(mid), near: toPath(near), gold }
 }
 
 const PROFILES = {
@@ -20,12 +43,6 @@ const PROFILES = {
     mid: 'M0 230 C120 208 240 226 360 214 C480 202 600 218 720 208 C840 198 960 214 1080 206 C1200 198 1320 212 1440 204 L1440 360 L0 360 Z',
     near: 'M0 360 L100 322 C180 314 260 330 340 322 C420 314 500 330 580 322 C660 314 740 330 820 322 C900 314 980 330 1060 322 C1140 314 1220 330 1300 322 C1380 314 1440 322 1440 322 L1440 360 L0 360 Z',
     gold: 'M100 322 C180 314 260 330 340 322 M580 322 C660 314 740 330 820 322',
-  },
-  jagged: {
-    far: 'M0 190 L80 130 L160 178 L240 110 L320 168 L400 120 L480 172 L560 128 L640 178 L720 132 L800 170 L880 126 L960 174 L1040 134 L1120 172 L1200 132 L1280 170 L1360 138 L1440 162 L1440 360 L0 360 Z',
-    mid: 'M0 240 L100 200 L180 232 L280 186 L380 226 L480 192 L580 230 L680 194 L780 228 L880 200 L980 232 L1080 204 L1180 232 L1280 200 L1380 228 L1440 208 L1440 360 L0 360 Z',
-    near: 'M0 360 L90 316 L160 346 L260 302 L360 340 L460 306 L560 344 L660 310 L760 346 L860 316 L960 350 L1060 320 L1160 350 L1260 322 L1360 348 L1440 326 L1440 360 L0 360 Z',
-    gold: 'M260 302 L360 340 M660 310 L760 346 M1060 320 L1160 350',
   },
   stubborn: {
     far: 'M0 200 L200 178 L400 194 L600 172 L800 190 L1000 174 L1200 190 L1440 176 L1440 360 L0 360 Z',
@@ -41,12 +58,14 @@ export default function SceneLayers({
   midOpacity = 1,
   nearOpacity = 1,
   profile = 'stubborn',
+  jaggedAmp = 1,
+  jaggedSteps = 1,
   mistDensity = 0.5,
 }: SceneLayersProps) {
   const lerp = (a: number, b: number) => Math.round(a + (b - a) * warmth)
   const farColor = `rgb(${lerp(49, 88)}, ${lerp(84, 115)}, ${lerp(90, 103)})`
   const midColor = `rgb(${lerp(88, 49)}, ${lerp(115, 84)}, ${lerp(103, 90)})`
-  const prof = PROFILES[profile]
+  const prof = profile === 'jagged' ? jaggedSet(jaggedAmp, jaggedSteps) : PROFILES[profile]
 
   return (
     <svg
