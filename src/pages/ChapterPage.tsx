@@ -6,6 +6,7 @@ import { CHAPTER_TEXTS, GLOSSARY, segmentCounts, type ChapterSegment } from '../
 import { NANCI_YI_ROUTE, validateJourneyRoute } from '../data/journey'
 import { buildJournalPositions, journalDeps, type JournalDeps } from '../components/journal/journalModel'
 import { ENTITIES } from '../data/entities'
+import DistanceTable from '../components/DistanceTable'
 import { Fragment } from 'react'
 import EmptyState from '../components/EmptyState'
 import PaperTexture from '../components/common/PaperTexture'
@@ -255,6 +256,9 @@ export default function ChapterPage() {
         )
         })}
       </div>
+
+      {/* G26:里距对照(原文照录+本站校核并置,歧义照录不裁决),挂南山经篇末 */}
+      {slug === 'nanshan-jing' && <DistanceTable />}
 
       <nav className={styles.chapterNav} aria-label="篇章切换">
         {prev ? (

@@ -1,0 +1,218 @@
+/* G26 里距对照:宣纸界栏语言,行卡式(390 纵排不横溢),无动画。 */
+
+.block {
+  margin: 56px auto 0;
+  max-width: 720px;
+  border: 1px solid var(--border-normal);
+  background: var(--surface-paper);
+  color: var(--paper-ink);
+  padding: 28px clamp(16px, 4vw, 36px) 24px;
+}
+
+.head {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: var(--fs-h3);
+  letter-spacing: 0.24em;
+  font-weight: 600;
+}
+
+.note {
+  margin-top: 8px;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--paper-muted);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--paper-border);
+}
+
+.row {
+  padding: 14px 0 12px;
+  border-bottom: 1px solid var(--paper-border);
+}
+
+.rowPending {
+  border-bottom-style: dashed;
+}
+
+.rowHead {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.order {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--paper-muted);
+}
+
+.name {
+  font-family: var(--font-title);
+  font-size: 16.5px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.station {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--paper-muted);
+}
+
+.stationPending {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--cinnabar);
+}
+
+.quotes {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quote {
+  font-size: 14.5px;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+
+.quoteAlt {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.quoteSrc {
+  font-size: 11.5px;
+  color: var(--paper-muted);
+  border: 1px solid var(--paper-border);
+  padding: 1px 8px;
+}
+
+.noQuote {
+  color: var(--paper-muted);
+}
+
+.rowFoot {
+  margin-top: 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.li {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--paper-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.rowNote {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--paper-muted);
+}
+
+.summary {
+  margin: 22px 0 0;
+  border-top: 1px solid var(--border-normal);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sumRow {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+}
+
+.sumTerm {
+  flex: 0 0 auto;
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  color: var(--old-gold);
+  min-width: 5.5em;
+}
+
+.sumQuote {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+
+.sumCalc {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.8;
+  font-variant-numeric: tabular-nums;
+}
+
+.calcTag {
+  margin-left: 10px;
+  font-size: 11.5px;
+  color: var(--paper-muted);
+  border: 1px solid var(--paper-border);
+  padding: 1px 8px;
+  white-space: nowrap;
+}
+
+.doubt {
+  margin: 0;
+  min-width: 0;
+}
+
+.doubtList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.doubtList li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--paper-muted);
+}
+
+.doubtList li::before {
+  content: '○';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--old-gold);
+}
+
+/* 390 档:术语与内容纵排,避免挤压 */
+@media (max-width: 480px) {
+  .sumRow {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .station,
+  .stationPending {
+    margin-left: 0;
+    flex-basis: 100%;
+  }
+}
