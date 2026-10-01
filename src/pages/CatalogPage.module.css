@@ -63,16 +63,18 @@
   font-size: 12px;
   letter-spacing: 0.16em;
   color: var(--old-gold);
-  border: 1px solid rgba(177, 139, 86, 0.5);
+  border: 1px solid var(--border-normal);
   padding: 3px 10px;
   border-radius: 2px;
   white-space: nowrap;
 }
 
-/* 无结果状态 */
+/* 无结果状态(G12 界栏同族:外线+内线,圆角归零) */
 .empty {
-  border: 1px solid rgba(143, 150, 141, 0.22);
-  border-radius: var(--radius-card);
+  border: 1px solid var(--border-weak);
+  border-radius: 0;
+  outline: 1px solid var(--border-weak);
+  outline-offset: -5px;
   background: rgba(23, 35, 31, 0.4);
   padding: 64px 24px;
   display: flex;
@@ -82,13 +84,14 @@
   text-align: center;
 }
 
+/* 「无」字印改朱砂边,合全站朱砂小印语言 */
 .emptySeal {
   width: 44px;
   height: 44px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(143, 150, 141, 0.5);
-  color: var(--text-muted);
+  border: 1px solid rgba(167, 71, 56, 0.6);
+  color: var(--paper);
   font-family: var(--font-serif);
   font-size: 20px;
   border-radius: 2px;
@@ -135,7 +138,7 @@
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.9;
-  border-top: 1px solid rgba(177, 139, 86, 0.25);
+  border-top: 1px solid var(--border-weak);
   padding-top: 22px;
 }
 

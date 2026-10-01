@@ -67,7 +67,7 @@ export default function CatalogPage() {
           <p className={styles.emptyTitle}>未检得相应条目</p>
           <p className={styles.emptyDesc}>
             {hasActiveFilters(query)
-              ? '当前搜索与筛选没有匹配的条目。它可能尚未录入,或换个字词再试。'
+              ? '当前检索与筛选没有匹配的条目。它可能尚未录入,或换个字词再试。'
               : '图鉴暂无条目。'}
           </p>
           {hasActiveFilters(query) && (

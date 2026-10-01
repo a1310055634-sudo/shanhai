@@ -4,6 +4,41 @@
 
 ---
 
+## G12 · 图鉴探索精修
+
+- **有效执行编号**:12 / 20
+- **北京时间**:2026-10-02 约 00:15—00:35(定时触发)
+- **开始 HEAD**:`d08dafc`(G11),工作树干净;`.round-lock` 不存在,新建接管
+- **本轮预期**:EntityCard 装裱与 BeastArtwork 同族、筛选焦点态统一、空态文案落地、hover 时长走令牌;顺路消账 G01 缺口 #3(筛选区 768 档折三行)
+
+### 实际改动(4 文件,纯样式层 + 1 词文案)
+
+1. `EntityCard.module.css`:圆角归零+双线界栏(border `var(--border-normal)` + outline `var(--border-weak)`/-5px,G11 同族);hover 去现代投影、上浮 -3px→-2px 对齐 ExplorePaths;artNote/artCue 深底圆角 chip → **宣纸小签**(`--surface-paper` 底+`--paper-ink` 墨字+`--paper-border` 边,方角,与版画装裱底同族);fav 边框灰绿硬编码→token;trait 左粗边 2px→1px 减重
+2. `CatalogFilters.module.css`:筛选区圆角归零+双线;**焦点态统一**——input/select 去 box-shadow 发光环,与 viewBtn/clear 全部统一为 `outline: 2px solid var(--old-gold)`/offset 2px;clear 按钮 36px→**44px 触控**(inline-flex+min-height);viewBtn 补 hover 态(令牌时长);input `width: clamp(170px, 22vw, 260px)` + ≤900px gap 收紧;focus-within 硬编码收编 token
+3. `CatalogPage.module.css`:空态容器圆角归零+双线;「无」印灰绿边→**朱砂印**(合全站朱砂小印语言);listStatus/progressNote 旧金硬编码→token
+4. `CatalogPage.tsx`:空态「当前**搜索**与筛选」→「当前**检索**与筛选」(G09 术语表漏网一处,本轮落地;其余空态文案已合规)
+
+### 构建与浏览器核对(IAB)
+
+- build 绿 1.35s;gzip:CSS 16.30→**16.37(+0.07)**、JS 147.54→**147.55(+0.01**,同字数文案,hash 变)
+- 断言(1280 与 390 双档):card radius=0 + outline 1px/-5px + 边框 token 色 ✅;artNote bg rgb(244,236,223)/墨字 rgb(38,48,43)/方角 ✅;筛选区 radius=0 ✅;fav 44×44;input/select/viewBtn 均 44px;390 scrollWidth 375 无溢出 ✅
+- **:focus-visible 实测限制**:IAB 键盘注入不落焦点(Tab 40 次 activeElement 仍 BODY),computed 断言不可得,改 CSSOM 断言:两条统一规则(`._input_/:focus-visible, ._select_` 带 border-color+outline、`._viewBtn_._clear_` outline,均 2px solid var(--old-gold),无 box-shadow)✅;桌面人工复核留用户(与 G08 同类限制,如实记录)
+- **筛选全组合 8 组**(URL 导航):无筛选 12/篇章=南山经 4/类型=异兽 4/状态=已核验 12/列表视图 12/检索=九尾 2(九尾狐+陆吾,后者系「虎身而九尾」原文词语命中,检索语义正确)/篇章+类型 3/无结果 0——计数文案与实际渲染逐组一致 ✅
+- 空态:标题「未检得相应条目」+ desc 含「当前检索与筛选」✅;「清除筛选」44px ✅
+- 768 档:6 字段排 2 行(offsetTop 464×4 + 550×2),**折三行缺口关闭**;scrollWidth 753 无溢出 ✅
+- 截图 3 张入 `GALLERY_BASELINES/`:`g12-catalog-grid-768.png`(筛选两行+装裱卡)、`g12-catalog-empty-390.png`(朱砂「无」印+双线空态)、`g12-catalog-grid-1440.png`;目检无回归(全页截图一次超时,改视口截图逐张重拍,即 G01 已知的 IAB 坑)
+
+### 内容核对
+
+- 零古籍内容改动;仅策展措辞层一词(搜索→检索),不涉原文/释义层;无新增疑点
+
+### 状态:**done**
+
+- 验收对照:装裱同族 ✅(radius0/双线/宣纸签断言);筛选焦点态 ✅(CSSOM 论证+IAB 限制如实记录);空态文案落地 ✅;hover 时长走令牌 ✅(本轮新增过渡全部 var(--duration-hover));筛选全组合 ✅(8/8);390 触控 ≥44px ✅(fav/input/select/viewBtn/clear 全量);空态截图 ✅
+- **下轮入口:G13 山川图古化**——ConceptMap 宣纸底+墨线水系+朱砂节点,含 G01 缺口 #1(1440 档昆仑之丘/槐江之山标签叠压)
+
+---
+
 ## G11 · 首页收口
 
 - **有效执行编号**:11 / 20

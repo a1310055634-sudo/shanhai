@@ -1,13 +1,16 @@
+/* G12 界栏同族(G11 语言):外线+内线,圆角归零 */
 .filters {
-  border: 1px solid rgba(143, 150, 141, 0.22);
-  border-radius: var(--radius-card);
+  border: 1px solid var(--border-weak);
+  border-radius: 0;
+  outline: 1px solid var(--border-weak);
+  outline-offset: -5px;
   background: rgba(23, 35, 31, 0.45);
   padding: 20px 24px;
   margin-bottom: 32px;
 }
 
 .filters:focus-within {
-  border-color: rgba(177, 139, 86, 0.42);
+  border-color: var(--border-normal);
 }
 
 .filtersHead {
@@ -68,18 +71,20 @@
 }
 
 .input {
-  width: 260px;
+  /* G01 缺口:768 档随视口收缩,筛选区不再折三行 */
+  width: clamp(170px, 22vw, 260px);
 }
 
 .input::placeholder {
   color: var(--text-muted);
 }
 
+/* G12 焦点态统一:全部控件同一键盘焦点语言(旧金 outline),去发光环 */
 .input:focus-visible,
 .select:focus-visible {
   border-color: var(--old-gold);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(177, 139, 86, 0.16);
+  outline: 2px solid var(--old-gold);
+  outline-offset: 2px;
 }
 
 .select {
@@ -116,6 +121,14 @@
   font-size: 14px;
   letter-spacing: 0.14em;
   cursor: pointer;
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    border-color var(--duration-hover) var(--ease-soft);
+}
+
+.viewBtn:hover {
+  color: var(--paper);
+  border-color: var(--border-strong);
 }
 
 .viewBtn:focus-visible,
@@ -160,13 +173,25 @@
   font-size: 14px;
   letter-spacing: 0.1em;
   cursor: pointer;
-  padding: 8px 4px;
+  /* 触控目标 ≥44px(G12 验收项) */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 4px;
   text-decoration: underline;
   text-underline-offset: 4px;
+  transition: color var(--duration-hover) var(--ease-soft);
 }
 
 .clear:hover {
   color: var(--paper-bright);
+}
+
+/* G01 缺口:≤900 档收紧间距,字段两行内排布 */
+@media (max-width: 900px) {
+  .row {
+    gap: 14px 18px;
+  }
 }
 
 @media (max-width: 640px) {

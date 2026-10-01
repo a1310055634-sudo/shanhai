@@ -1,21 +1,22 @@
+/* G12 界栏同族(G11 语言):外线+内线,圆角归零,去投影 */
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(143, 150, 141, 0.22);
-  border-radius: var(--radius-card);
+  border: 1px solid var(--border-normal);
+  border-radius: 0;
+  outline: 1px solid var(--border-weak);
+  outline-offset: -5px;
   background: var(--ink-deep);
   overflow: hidden;
   transition:
     border-color var(--duration-hover) var(--ease-soft),
-    transform var(--duration-hover) var(--ease-soft),
-    box-shadow var(--duration-hover) var(--ease-soft);
+    transform var(--duration-hover) var(--ease-soft);
 }
 
 .card:hover {
-  border-color: rgba(177, 139, 86, 0.6);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(13, 19, 17, 0.25);
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
 }
 
 .cardLink {
@@ -63,10 +64,12 @@
   bottom: 12px;
   font-size: 11px;
   letter-spacing: 0.24em;
-  color: var(--paper);
-  background: rgba(13, 19, 17, 0.6);
+  /* G12 宣纸小签(墨字),与版画装裱底同族 */
+  color: var(--paper-ink);
+  background: var(--surface-paper);
+  border: 1px solid var(--paper-border);
   padding: 3px 8px;
-  border-radius: 2px;
+  border-radius: 0;
 }
 
 /* 悬停「阅此卷」提示;触屏设备隐藏(卡片整体可点) */
@@ -78,11 +81,12 @@
   font-family: var(--font-serif);
   font-size: 12px;
   letter-spacing: 0.22em;
-  color: var(--paper-bright);
-  background: rgba(13, 19, 17, 0.72);
-  border: 1px solid rgba(177, 139, 86, 0.55);
+  /* 与 artNote 同一宣纸签语言 */
+  color: var(--paper-ink);
+  background: var(--surface-paper);
+  border: 1px solid var(--paper-border);
   padding: 4px 10px;
-  border-radius: 2px;
+  border-radius: 0;
   opacity: 0;
   transform: translateY(4px);
   transition:
@@ -160,7 +164,7 @@
   display: grid;
   place-items: center;
   background: rgba(13, 19, 17, 0.72);
-  border: 1px solid rgba(143, 150, 141, 0.45);
+  border: 1px solid var(--border-normal);
   color: var(--text-muted);
   font-family: var(--font-serif);
   font-size: 15px;
@@ -200,7 +204,7 @@
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.75;
-  border-left: 2px solid rgba(88, 115, 103, 0.6);
+  border-left: 1px solid rgba(88, 115, 103, 0.45);
   padding-left: 10px;
   margin-top: auto;
 }
