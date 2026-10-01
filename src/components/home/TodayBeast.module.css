@@ -8,8 +8,11 @@
   display: grid;
   grid-template-columns: 7fr 5fr;
   gap: 48px;
-  border: 1px solid rgba(143, 150, 141, 0.22);
-  border-radius: var(--radius-card);
+  /* G11 界栏同族:外线+内线,圆角归零 */
+  border: 1px solid rgba(165, 135, 91, 0.32);
+  border-radius: 0;
+  outline: 1px solid rgba(165, 135, 91, 0.16);
+  outline-offset: -5px;
   background: rgba(23, 35, 31, 0.5);
   padding: 44px 48px;
 }
@@ -72,11 +75,13 @@
   line-height: 2;
   letter-spacing: 0.04em;
   color: var(--paper-ink);
+  /* G11 对齐 CitationBlock 界栏:双线,去左粗边与圆角 */
   background: var(--surface-paper);
-  border: 1px solid var(--border-normal);
-  border-left: 3px solid var(--cinnabar);
-  border-radius: var(--radius-card);
-  padding: 14px 18px 12px 16px;
+  border: 1px solid rgba(167, 71, 56, 0.32);
+  border-radius: 0;
+  outline: 1px solid rgba(167, 71, 56, 0.16);
+  outline-offset: -4px;
+  padding: 16px 20px 14px 18px;
 }
 
 .quoteSource {

@@ -4,13 +4,14 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  /* G11 渐变压饱和:降绿艳,向沉稳墨调收敛(DESIGN §4.3) */
   background: linear-gradient(
     180deg,
     #0d1311 0%,
-    #0f1714 38%,
-    #14211c 66%,
-    #1a2a24 84%,
-    #22352c 100%
+    #0e1613 38%,
+    #12201a 66%,
+    #172620 84%,
+    #1f2c26 100%
   );
 }
 

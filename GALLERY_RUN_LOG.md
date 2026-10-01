@@ -4,6 +4,44 @@
 
 ---
 
+## G11 · 首页收口
+
+- **有效执行编号**:11 / 20
+- **北京时间**:2026-10-01 约 17:00(定时触发)
+- **开始 HEAD**:`d627cee`(G10),工作树干净;锁接管
+- **本轮预期**:Hero 渐变压饱和、入口卡片界栏同族、眉标与间距核对、三档截图、链路回归
+
+### 实际改动(5 处 CSS,4 文件)
+
+1. `Hero.module.css`:渐变五档压饱和(0f1714→0e1613、14211c→12201a、1a2a24→172620、**22352c→1f2c26**),降绿艳向沉稳墨调
+2. `ExplorePaths.module.css` `.path`:radius 4px→0,灰边框→旧金双线(border 0.32+outline 0.16/-5px,G05 同族);hover 色同步哑金
+3. `TodayBeast.module.css` 大卡:同上双线界栏改造
+4. `TodayBeast.module.css` `.quote` 引文小卡:**去左粗边 3px 朱砂+圆角归零**,改朱砂双线(对齐 CitationBlock 界栏),padding 微调版心
+5. `HomePage.module.css` `.journeyEntry`:**去左粗边 3px 旧金**,改对称双线,90°渐变底收敛(46,62,58→40,54,50)
+
+### 核对不改动(记录理由)
+
+- **眉标统一**:首页 `.eyebrow`(旧金/衬线/13px/0.28em)与 Hero `.kicker`(旧金/衬线/15px/0.34em)已同族(旧金+衬线+宽字距);字距差异属装饰性眉标带(DESIGN 字距带 0.12–0.16 仅约束标题层),不动
+- **区间距**:`.flow` gap 走令牌 `--space-section-desktop`(128px),符合版式令牌,不动
+
+### 构建与浏览器核对
+
+- build 绿 1.58s;gzip:CSS 16.29→16.30(+0.01)、JS 147.54(-0.00)
+- 1440 断言:hero 新色 rgb(31,44,38) 存在+旧色 rgb(34,53,44) 移除 ✅;path/journeyEntry radius=0+outline 1px/-5px ✅;零溢出 ✅
+- 三档截图:`1440-home.png` / `768-home.png`(768×1024 存档) / `390-home.png`(目检:390 渐变沉稳、剪影清晰、题签正常)
+- **链路回归**:首页 journeyEntry(href=/journeys/nanci-yi)→ 点击后 URL 含 /journeys/nanci-yi ✅ → 行旅页古卷链接(/chapters/nanshan-jing#seg-ns1-zhaoyao-kai)→ URL 命中+古卷页 h1=「南山经」 ✅
+
+### 内容核对
+
+- 零内容改动
+
+### 状态:**done**
+
+- 验收对照:三档截图 ✅、链路不退化 ✅、渐变压饱和 ✅、入口卡界栏同族 ✅
+- **下轮入口:G12 图鉴探索**——EntityCard 装裱与 BeastArtwork 同族、筛选焦点态、hover 时长走令牌(DESIGN §4.3)
+
+---
+
 ## G10 · 释义展签抽查(内容核对轮)
 
 - **有效执行编号**:10 / 20
