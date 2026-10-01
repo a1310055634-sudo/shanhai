@@ -54,12 +54,12 @@ export default function CatalogFilters({
     <div className={styles.filters} role="search" aria-label="图鉴检索与筛选">
       <div className={styles.filtersHead}>
         <p className={styles.filtersTitle}>检索图鉴</p>
-        <p className={styles.filtersHint}>可搜索名称、异名、拼音、标签与原文词语</p>
+        <p className={styles.filtersHint}>可检索名称、异名、拼音、标签与原文词语</p>
       </div>
       <div className={styles.row}>
         <div className={styles.field}>
           <label className={styles.label} htmlFor="catalog-q">
-            搜索
+            检索
           </label>
           <input
             id="catalog-q"

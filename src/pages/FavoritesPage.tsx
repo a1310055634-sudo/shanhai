@@ -52,12 +52,12 @@ export default function FavoritesPage() {
             <p className={styles.emptySeal} aria-hidden="true">
               藏
             </p>
-            <p className={styles.emptyTitle}>尚未收藏任何条目</p>
+            <p className={styles.emptyTitle}>此卷尚未珍藏</p>
             <p className={styles.emptyDesc}>
               在图鉴或条目详情中点按「藏」字,即可将条目收于本卷。
             </p>
             <Link className={styles.emptyAction} to="/catalog">
-              去图鉴看看
+              去图鉴寻访
             </Link>
           </div>
         )}
