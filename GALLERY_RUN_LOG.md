@@ -41,6 +41,38 @@
 - 验收对照:锚点逐条 13/13 ✅、390 无横溢 ✅、存疑注不混正文 ✅(校注签分层)、鱼尾入台账 ✅
 - **下轮入口:G22 详情页装裱**——版画绫边(6px 绫带+内衬 1px+诗塘 16px)、出处浮层改地脚(修一阶缺口 #4)、流变三级层级
 
+---
+
+## G22 · 详情页装裱(绫边/地脚/流变三级)
+
+- **有效执行编号**:二阶 2 / 18
+- **北京时间**:2026-10-02 约 02:00—02:20(定时触发;**时区勘误**:上轮日志「约 18:00」实为 UTC 墙钟误标,真实为北京 10-02 凌晨 02:00 许;本轮起按北京时间=UTC+8 记录)
+- **开始 HEAD**:`338e42d`(G21),工作树干净,无遗留锁(上轮轮末已删)
+- **本轮预期**:版画绫边(6px 绫带+1px 界栏线+16px 诗塘)、出处浮层改地脚(修一阶 G01 缺口 #4)、流变区三级层级、引文区界栏同族核对
+
+### 实际改动(3 文件 + 基线截图 11 张)
+
+1. `EntityDetailPage.tsx`:首屏版画改 `figure` 语义——面板+`figcaption` 地脚出处(修 G01 缺口 #4:原灰底浮条贴图边文字挤压;**顺带修复 a11y 缺口:原出处链接位于 `aria-hidden` 面板内,对读屏不可达**);后世流变区改三级层级——删帧首 tag(「与原始记载相区分」声明逐字保留于 era 字段,随出处行继续展示),era 由「伪标题」改为地脚出处行(标题=SectionHeading/正文=text/出处=era),数据零改动
+2. `EntityDetailPage.module.css`:artPanel 绫边化(6px 岩青绫带 `rgba(49,84,90,.6)` + 内衬 1px 旧金界栏线 `outline var(--border-strong) @ -7px` + 方角);artNote 地脚样式(面板下方右对齐,去浮层底);receptionSource/Label 新增(地脚分隔线+「出处」旧金签,与 CitationBlock .meta 同构),receptionTag/receptionEra 样式删除;disputed 收编 G21「校注」小签(宣纸内衬 .55+双细线 outline -4px+方角,文字色转 paper-muted);locationCite 去左粗边收编宣纸引文小签(宣纸内衬 .5+墨字+双细线 -3px)
+3. `BeastArtwork.module.css`:classicPaper 诗塘 `padding: 8%`→`16px` 固定值(详情/卡片两档一致,卡片档原 8%≈15—18px 视觉等值)
+
+### 构建与浏览器核对
+
+- build 绿;gzip:CSS 16.52(+0.07 vs 本轮起始实测 16.45)、JS 147.79(持平)、HTML 442B(注:G21 日志记 CSS 16.42,本轮同 HEAD 起始实测 16.45,以构建输出为准)
+- **DOM 断言 21/21 @390 + 21/21 @1440 全绿**(断言 JSON 存 D:/zcode/tmp-shanhai-g22/):绫边 6px/色值/-7px/方角、诗塘 16×4、figcaption 在面板外且 top=427>panel.bottom=415、static 无底、不在 aria-hidden 子树、流变正文在上出处在下+1px 分隔线+分层声明保留、disputed/locationCite 小签族、CitationBlock 界栏不动(朱砂 .32 @ -5px)、onError 回退实测(坏 src→约 100ms 回退注册 SVG)、390 零横溢+题字不裁(h1 right=370)+toc 6 锚点 id 齐
+- 截图:改版前 5 张(before-390×4 词条 jiuweihu/fenghuang/jingwei/xingxing+before-1440-jiuweihu)、改版后 6 张(after-390×4+after-1440-jiuweihu+after-1440-reception),存 GALLERY_BASELINES/
+- 排障:①MSYS 多路径参数只转换末位致 cdp.mjs eval 槽位错读(改显式 D:/ 路径+修正脚本参数映射);②git-bash `date` 本地时区即 UTC,TZ=Asia/Shanghai 无 tzdata 静默回退——北京时间须 UTC+8 手算
+
+### 内容核对
+
+- `git diff --stat -- src/data/` = **空**(原文区零改动);流变 era/text 文字逐字未动,仅渲染位置调整
+- 引文区界栏同族核对结论:CitationBlock 原文证据(G05 界栏)未动 ✅;详情页次级引文两处(locationCite/disputed)原为现代卡片语言(左粗边/灰卡圆角),本轮收编小签族;「凡十山二千九百五十里」疑点不在本页,未涉
+
+### 状态:**done**
+
+- 验收对照:抽 4 词条前后对照 ✅、onError 回退实测 ✅、390 不裁题字 ✅
+- **下轮入口:G23 长卷回访**——journalSceneSpec warmth 压饱和、SceneLayers jagged 峰形参数化(猨翼 order 3 更险+mistDensity 0.3→0.2)、柢山雾感保持、行旅页 768 档进度轨第 5 格折三行修复(一阶 G01 缺口 #2)
+
 ---# 古朴精修冲刺 · 逐轮运行日志
 
 > 只记真实发生的事。每轮追加:轮次与时间、开始 HEAD 与 git status、预期与实际改动、内容核对结果、build 结果、浏览器核对与截图、提交号、状态词、遗留与下轮入口。

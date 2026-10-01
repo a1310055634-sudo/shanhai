@@ -96,25 +96,29 @@ export default function EntityDetailPage() {
           </p>
         </div>
         <div className={styles.heroArt}>
-          <div className={styles.artPanel} aria-hidden="true">
-            <BeastArtwork slug={entity.slug} name={entity.canonicalName} variant="detail" />
-            {(() => {
-              const ca = classicArtFor(entity.slug)
-              return ca?.sourceUrl ? (
-                <a
-                  className={styles.artNote}
-                  href={ca.sourceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="查看版画来源(维基共享资源文件页,新窗打开)"
-                >
-                  {ca.source} · Commons 文件页 ↗
-                </a>
-              ) : (
-                <span className={styles.artNote}>据原文描述艺术演绎</span>
-              )
-            })()}
-          </div>
+          <figure className={styles.artMount}>
+            <div className={styles.artPanel} aria-hidden="true">
+              <BeastArtwork slug={entity.slug} name={entity.canonicalName} variant="detail" />
+            </div>
+            {/* G22 出处改地脚:不再是浮在画面上的灰底条(修 G01 缺口#4 文字挤压) */}
+            <figcaption className={styles.artNote}>
+              {(() => {
+                const ca = classicArtFor(entity.slug)
+                return ca?.sourceUrl ? (
+                  <a
+                    href={ca.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="查看版画来源(维基共享资源文件页,新窗打开)"
+                  >
+                    {ca.source} · Commons 文件页 ↗
+                  </a>
+                ) : (
+                  '据原文描述艺术演绎'
+                )
+              })()}
+            </figcaption>
+          </figure>
         </div>
       </header>
 
@@ -247,12 +251,15 @@ export default function EntityDetailPage() {
       {entity.laterReception && entity.laterReception.length > 0 && (
         <section className={styles.section} aria-labelledby="sec-reception">
           <div className={styles.receptionFrame} id="sec-reception">
-            <p className={styles.receptionTag}>本站编辑说明 · 与上方《山海经》原始记载相区分</p>
+            {/* G22 三级层级:标题(后世流变)/正文(条目)/出处(层级注记,置于地脚) */}
             <SectionHeading index="流" title="后世流变" subtitle="HOU SHI LIU BIAN" />
             {entity.laterReception.map((r, i) => (
               <div key={i} className={styles.receptionItem}>
-                <p className={styles.receptionEra}>{r.era}</p>
                 <p className={styles.receptionText}>{r.text}</p>
+                <p className={styles.receptionSource}>
+                  <span className={styles.receptionSourceLabel}>出处</span>
+                  {r.era}
+                </p>
               </div>
             ))}
           </div>

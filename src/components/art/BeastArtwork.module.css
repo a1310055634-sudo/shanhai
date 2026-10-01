@@ -15,7 +15,7 @@
   width: 100%;
   height: 100%;
   background: var(--surface-paper);
-  padding: 8%;
+  padding: 16px; /* G22 诗塘:画心四周 16px 宣纸留白(固定值,详情/卡片两档一致) */
   box-sizing: border-box;
 }
 
