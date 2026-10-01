@@ -1,3 +1,46 @@
+## G28 · 二经录入(一):柜山/长右之山(B1×B2 双源升正式,A 侧缺位如实记档)
+
+- **有效执行编号**:二阶 8 / 18
+- **北京时间**:2026-10-02 约 04:26—04:56(定时触发)
+- **开始 HEAD**:`82abb79`(G27),工作树干净;.round-lock 不存在,新建,轮末删除
+- **本轮预期**:柜山/长右 1—2 山+至多 1 词条,EDITION_AUDIT 全流程核验,联动图鉴/山川图(G13 式零重叠断言);验收=来源 100%、重叠断言零相交、diff 证明原文区外改动
+
+### 来源决策(与 P02 政策的差异,如实记档)
+
+- 底本A(ctext zhs)开工复测:仍返回 2781 字节反爬拦截页(HTTP 200),**未绕过**;按 G25 预案,柜山/長右以 **B1(中文维基文库《山海經/南山經》页面,自带郭注夹注与异文标注)×B2(维基文库四库本郭璞注,存档第 34/36/38 行)**两源净化正文逐字一致升正式录入
+- recordStatus 诚实降档:loc-guishan/loc-changyou/ent-changyou 均 **unverified(待考证)**,A 恢复后按 P02 补 A×B 回核再议升级;不入推荐/探索池(首页「条目已核验」实测仍 12)
+- 上屏=简体逐字转换(柜山段 16 字/長右段 9 字繁简有差,逐字对照表入 AUDIT 三之补5;无异文性改字);篇名《》为 B 页面所加,体例从底本A(一经无书名号)去《》录正文
+- 郭璞注层:柜山 6 条/長右 2 条逐字照录(繁体未转简,attach 系于正文短语);「細丹砂如」注文文意未足疑有脱文→**不上屏**(DRAFT 新增疑点7);尸子引文「貢折者有珠」之「貢」疑「員」形讹→照录未改(疑点8)
+
+### 实际改动
+
+- `src/data/locations.ts`:+2(loc-guishan/loc-changyou;柜山段引文带「放一作效」variantText、長右段「无又字」variantText,guoPuNotes 8 条照录);头注来源口径更新;AtlasPage.tsx PINYIN 表 +2(柜山 jǔ shān——郭注「音矩」防误读 guì/长右之山)
+- `src/data/chapterTexts.ts`:seg-ns2-gap-quanshan 拆为 3 text 段(seg-ns2-guishan/-changyou-shan/-changyou)+1 gap(尧光以下如实待录入);头注红线描述同步双源口径;GLOSSARY +3(柜jǔ/鴸zhū/痹bì,上屏后古卷页 ruby 注音 4 处含既有禺yú)
+- `src/data/entities/changyou.ts` 新建+index.ts 注册 2 行(至多 1 词条口径:貍力/鴸不立条,如实不凑);插画未注册→水墨底座回退层(组件既有设计)
+- `EDITION_AUDIT.md`:三之补5(P28 双栏证据行+简繁转换表+同形保留字+注层取舍说明)+头部工作稿指针更新;`DRAFT-nanci2`:五节 G28 升级记录+疑点7/8 增补(历史部分未改写)
+
+### 内容核对(硬红线)
+
+- **原文区零改动程序化证明**:HEAD 的 chapterTexts 13 段 text 与 locations 17 条 originalText 在工作区逐字全在(脚本核验,缺失=0);entities 既有 12 词条文件零改动(仅 index +2 行+新文件)
+- 新增原文 3 段+注文 8 条句句可溯:每条 citation 记 B1 页面 URL+B2 存档行号+当日 A 侧不可达实测;核不动处如实留白(堯光之山以下 gap、貍力/鴸不立条、「名自號也」疑脱字照录不补)
+
+### 构建与浏览器核对(IAB,390 档主验+1440 复验)
+
+- build 绿 1.41s;gzip:JS 156.93(G27 154.48,+2.45 新功能轮)/CSS 17.89(不变)
+- DOM 断言 **40+ 项全绿**:山川图 28 个 SVG 文本两两零重叠@390+1440(G13 式,新节点 (14,86)/(24,87.5) 二经行避开「南山经」区名与一经对角线)、19 节点 role=button+tabindex 可聚焦、柜山/长右之山 select 面板引文逐字符+长右面板关联条目链 href=/catalog/changyou、古卷三段剥 ruby rt 后逐字符相等+4 处注音、词条页徽章「待考证」+郭注层默认收起/展开后 2 条繁体注文逐字、390 零横溢(三页)、首页已核验=12/探索页 12 条口径不变
+- 如实记录:SVG g 的 Playwright locator click 超时(既有已知限制),联动断言按 MouseEvent 派发完成;键盘真实注入不落焦点仍为 IAB 限制,以 focus()+tabindex=0 断言代替
+- 视觉验收(visual-judge)三张截图:atlas **pass**/catalog-changyou **pass**/古卷首拍新段在折叠线下未入镜→**补拍滚动截图 pass**;顺带观察 atlas 390 右缘「亶爰之山」标签被视口裁切=宽画布横滚既有情况非本轮引入,记疑点归 G37/G38
+- 截图 4 张入 GALLERY_BASELINES/:g28-atlas-390.png、g28-catalog-changyou-390.png、g28-chapters-nanci2-390.png、g28-chapters-nanci2-scrolled-390.png
+
+### 遗留与下轮入口
+
+- 顺带发现既有缺口(本轮未动,如实记录):AtlasPage PINYIN 表缺「箕尾之山」条目(G35 音表轮可顺带);atlas 390 右缘亶爰裁切(既有)
+- **G29 入口**:堯光之山等 1—2 山同流程(DRAFT-nanci2 已存 B1/B2 录文可直用);若 A 侧恢复可达,先补柜山/長右 A×B 回核再升级 recordStatus
+
+### 状态:**done**
+
+---
+
 ## G27 · 凡例页(如何读本站:六层图示/底本/流程/纹样台账)
 
 - **有效执行编号**:二阶 7 / 18

@@ -1,8 +1,10 @@
 /**
  * 篇章原文分段数据。
- * 红线:kind='text' 的段落全部为 2026-09-20 经 ctext.org 公开文本逐字核对过的
- * 原文(与对应条目/地点的 citation 一致);其余位置一律以 kind='gap' 如实标注
- * 「待录入」,不以常识补写。详见 CONTENT_SOURCES.md。
+ * 红线:kind='text' 的段落全部为经 EDITION_AUDIT 全流程逐字核对过的原文,来源
+ * 逐段可溯——南次一经/南次三经各段 2026-09-20 起经 ctext.org 公开文本逐字核对;
+ * 南次二经柜山/长右三段(G28)2026-10-02 经中文维基文库两源(B1 页面×B2 四库本
+ * 郭璞注)逐字一致录入,底本A(ctext)反爬不可达、回核挂账。其余位置一律以
+ * kind='gap' 如实标注「待录入」,不以常识补写。详见 CONTENT_SOURCES.md。
  *
  * J02:每段增加稳定 id(用作锚点与引用,不依赖数组下标);
  * 计数改由 segmentCounts() 从数组派生,不再手填。
@@ -141,10 +143,34 @@ const NANSHAN: ChapterText = {
       note: '篇末计数存疑:篇末原文作「凡十山,二千九百五十里」(底本A/B一致),但两本逐段实列均为九山(招摇、堂庭、猨翼、杻阳、柢[祗]、亶爰、基、青丘、箕尾);本站按逐段里距相加校核得二千七百里,与篇末相差二百五十里。第十山所指、脱简抑或计数口径之别,文献未明,本站不作推断——山名清单与篇末计数照录原文,读者知其存疑即可。(出处:底本A ctext zhs、底本B 中文维基文库郭璞注本,2026-09-27;详见 EDITION_AUDIT.md 差6/差7)',
     },
     {
-      id: 'seg-ns2-gap-quanshan',
+      // G28:柜山段(2026-10-02 经底本B1×B2两源逐字一致录入,底本A回核挂账,
+      // 相关地点 recordStatus 同步为 unverified;详见 EDITION_AUDIT.md 三之补5)。
+      id: 'seg-ns2-guishan',
+      kind: 'text',
+      section: '南次二经',
+      text: '南次二经之首，曰柜山，西临流黄，北望诸毗，东望长右。英水出焉，西南流注于赤水，其中多白玉，多丹粟。有兽焉，其状如豚，有距，其音如狗吠，其名曰狸力，见则其县多土功。有鸟焉，其状如鸱而人手。其音如痹，其名曰鴸，名自号也，见则其县多放士。',
+      relatedLocationIds: ['loc-guishan'],
+    },
+    {
+      id: 'seg-ns2-changyou-shan',
+      kind: 'text',
+      section: '南次二经',
+      text: '东南四百五十里曰长右之山，无草木，多水。',
+      relatedLocationIds: ['loc-changyou'],
+    },
+    {
+      id: 'seg-ns2-changyou',
+      kind: 'text',
+      section: '南次二经',
+      text: '有兽焉，其状如禺而四耳，其名长右，其音如吟，见则郡县大水。',
+      relatedEntityIds: ['ent-changyou'],
+      relatedLocationIds: ['loc-changyou'],
+    },
+    {
+      id: 'seg-ns2-gap-yaoguang-end',
       kind: 'gap',
       section: '南次二经',
-      note: '柜山以下诸段待录入',
+      note: '尧光之山以下诸段待录入(G29—G30 按 EDITION_AUDIT 全流程逐轮录入,核不动不上线)',
     },
     {
       id: 'seg-ns3-gap-tianyu-daoguo',
@@ -188,4 +214,7 @@ export const GLOSSARY: Record<string, { pinyin: string; hint?: string }> = {
   䨼: { pinyin: 'hù', hint: '青色矿物颜料,训释待考' },
   詨: { pinyin: 'xiào', hint: '自呼其名(旧注)' },
   橛: { pinyin: 'jué', hint: '鼓槌,训释取通行解' },
+  柜: { pinyin: 'jǔ', hint: '山名用字,郭璞注「音矩」,此处不读「guì」' },
+  鴸: { pinyin: 'zhū', hint: '鸟名用字,郭璞注「音株」;字无通行简化形,照录底本' },
+  痹: { pinyin: 'bì', hint: '底本作「痺」,义为痹症;郭璞注「未詳」' },
 }

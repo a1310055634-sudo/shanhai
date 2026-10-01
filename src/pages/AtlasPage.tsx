@@ -25,6 +25,8 @@ const PINYIN: Record<string, string> = {
   锺山: 'zhōng shān',
   凶犁土丘: 'xiōng lí tǔ qiū',
   流波山: 'liú bō shān',
+  柜山: 'jǔ shān',
+  长右之山: 'cháng yòu zhī shān',
 }
 
 const REGION_ORDER = ['南山经', '西山经', '北山经', '海外北经', '大荒东经']

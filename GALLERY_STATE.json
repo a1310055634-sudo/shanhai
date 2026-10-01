@@ -3,9 +3,9 @@
   "phase": 2,
   "title": "古朴精修·二阶冲刺 G21—G38",
   "totalRounds": 18,
-  "validExecutions": 7,
+  "validExecutions": 8,
   "maxValidExecutions": 18,
-  "currentRound": "G28",
+  "currentRound": "G29",
   "rounds": {
     "G21": "done",
     "G22": "done",
@@ -14,7 +14,7 @@
     "G25": "done",
     "G26": "done",
     "G27": "done",
-    "G28": "todo",
+    "G28": "done",
     "G29": "todo",
     "G30": "todo",
     "G31": "todo",
@@ -60,6 +60,6 @@
       "gzip": "441 B"
     }
   },
-  "lastRunAt": "2026-10-02T03:52+08:00",
+  "lastRunAt": "2026-10-02T04:56+08:00",
   "status": "running"
 }

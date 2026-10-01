@@ -2,7 +2,10 @@ import type { Location } from './types'
 
 /**
  * 山川地域数据(首批:南山经前段两座已核验之山)。
- * 原文均于 2026-09-20 经 ctext.org 公开文本逐字核对;详见 CONTENT_SOURCES.md。
+ * 原文核验来源逐条见各 citation:南次一经等 2026-09-20 起经 ctext.org 公开文本
+ * 逐字核对;南次二经柜山/长右之山(G28)因底本A(ctext)反爬不可达,2026-10-02 经
+ * 中文维基文库两源(B1 页面×B2 四库本郭璞注)逐字对照一致后录入,A 侧回核挂账
+ * (recordStatus 暂为 unverified)。详见 CONTENT_SOURCES.md 与 EDITION_AUDIT.md。
  * mapPosition 为概念地图坐标(古籍叙事关系),与现实经纬度无关。
  * 地点链条(前后山)将随山川轮补全,暂缺字段不标「原文未载」。
  */
@@ -480,6 +483,101 @@ export const LOCATIONS: Location[] = [
     mapPosition: { x: 92, y: 50, region: '大荒东经' },
     modernHypotheses: [],
     recordStatus: 'verified',
+  },
+  {
+    // G28:南次二经第一山。底本A(ctext)2026-10-02 反爬不可达,经底本B1(中文维基文库
+    // 页面)×B2(四库本郭璞注)两源逐字一致后录入;用字简体转换表与疑点挂账见
+    // EDITION_AUDIT.md 三之补5、EDITION_EVIDENCE/DRAFT-nanci2-workfile-20261002.md。
+    id: 'loc-guishan',
+    canonicalName: '柜山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 1,
+    sourceDirection: undefined,
+    sourceDistance: undefined,
+    nextLocationId: 'loc-changyou',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText:
+          '南次二经之首，曰柜山，西临流黄，北望诸毗，东望长右。英水出焉，西南流注于赤水，其中多白玉，多丹粟。有兽焉，其状如豚，有距，其音如狗吠，其名曰狸力，见则其县多土功。有鸟焉，其状如鸱而人手。其音如痹，其名曰鴸，名自号也，见则其县多放士。',
+        chapter: '南山经',
+        section: '南次二经第一山',
+        guoPuNotes: [
+          {
+            attach: '柜山',
+            text: '音矩',
+          },
+          {
+            attach: '西临流黄，北望诸毗，东望长右',
+            text: '皆山名',
+          },
+          {
+            attach: '多白玉',
+            text: '尸子曰：水方折者有玉，貢折者有珠',
+          },
+          {
+            attach: '其状如鸱而人手',
+            text: '其腳如人手，鴟音處脂反',
+          },
+          {
+            attach: '其音如痹',
+            text: '未詳',
+          },
+          {
+            attach: '其名曰鴸',
+            text: '音株',
+          },
+        ],
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-02 反爬不可达,恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText:
+          '「放士」之「放」:底本B1页面自带异文标注「放一作效」,底本B2四库本郭璞注同记此异文(放/效),两源正文均作「放」。本站从B1正文用字「放」并标注;底本A待回核。',
+        verificationNote:
+          '2026-10-02 建站核验(G28):底本B1(中文维基文库《山海經/南山經》,自带郭注夹注)与底本B2(维基文库四库本郭璞注,存档 EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt 第34行)净化正文逐字一致。上屏为简体逐字转换(仅繁简对应,无异文性改字;逐字对照表见 EDITION_AUDIT.md 三之补5);篇名《》书名号为底本B页面所加,体例从底本A(一经正文无书名号)去《》录正文。底本A(ctext zhs)当日实测不可达(反爬拦截页),A×B 回核挂账(DRAFT-nanci2 疑点清单)。郭璞注「尸子曰:水方折者有玉,貢折者有珠」之「貢」疑为「員」形讹,注文照录未改;注「細丹砂如」文意未足疑有脱文,不上屏,存档可查。',
+        verifiedAt: '2026-10-02',
+      },
+    ],
+    mapPosition: { x: 14, y: 86, region: '南山经' },
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G28:南次二经第二山,兽「长右」因山得名(郭注)。核验与挂账同 loc-guishan。
+    id: 'loc-changyou',
+    canonicalName: '长右之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 2,
+    previousLocationId: 'loc-guishan',
+    sourceDirection: '东南',
+    sourceDistance: '四百五十里',
+    relatedEntityIds: ['ent-changyou'],
+    citations: [
+      {
+        originalText: '东南四百五十里曰长右之山，无草木，多水。',
+        chapter: '南山经',
+        section: '南次二经第二山',
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-02 反爬不可达,恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText:
+          '「东南四百五十里」无「又」字:底本B1/B2均作「東南四百五十里曰長右之山」,与南次一经「又东……」体例不同,两源一致,照录不补;有无「又」待底本A回核(DRAFT-nanci2 疑点3)。',
+        verificationNote:
+          '2026-10-02 建站核验(G28):底本B1与底本B2(存档 EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt 第36行)净化正文逐字一致;上屏简体逐字转换(对照表见 EDITION_AUDIT.md 三之补5)。底本A(ctext zhs)当日实测不可达(反爬拦截页),A×B 回核挂账。兽「长右」段另立引文,见 ent-changyou。',
+        verifiedAt: '2026-10-02',
+      },
+    ],
+    mapPosition: { x: 24, y: 87.5, region: '南山经' },
+    modernHypotheses: [],
+    recordStatus: 'unverified',
   },
 ]
 
