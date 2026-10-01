@@ -26,6 +26,8 @@
 }
 
 .title {
+  /* G08 字韵层:页标题楷体 */
+  font-family: var(--font-title);
   font-size: clamp(24px, 3vw, 32px);
   letter-spacing: 0.14em;
   color: var(--paper);

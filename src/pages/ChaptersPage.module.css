@@ -77,7 +77,8 @@
 }
 
 .name {
-  font-family: var(--font-serif);
+  /* G08 字韵层:篇章名楷体 */
+  font-family: var(--font-title);
   font-size: 20px;
   letter-spacing: 0.16em;
   color: var(--paper);

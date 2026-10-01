@@ -41,6 +41,8 @@
 }
 
 .name {
+  /* G08 字韵层:词条名楷体 */
+  font-family: var(--font-title);
   font-size: clamp(46px, 6vw, 72px);
   letter-spacing: 0.16em;
   color: var(--paper);

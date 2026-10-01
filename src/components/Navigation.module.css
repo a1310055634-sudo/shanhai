@@ -44,9 +44,10 @@
 }
 
 .brandName {
-  font-family: var(--font-serif);
+  /* G08 字韵层:站名走楷体标题层 */
+  font-family: var(--font-title);
   font-size: 19px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   color: var(--paper);
 }
 

@@ -25,7 +25,7 @@ HEAD 起点:`823ba01`(R19 终验交付,工作树干净)。
 | G05 | 界栏版框(CitationBlock/JournalEvidence/EntityDetailPage) | done | 本提交 | 双线=border+outline 负 offset;:target 朱砂双线铁证;Esc 合成事件验证无退化 |
 | G06 | 题签竖排(Hero/JournalOpening 书衣式) | done | 本提交 | 首页左上/开卷右上(左上压kicker改位);Range 级零文字重叠;390 隐藏降级 |
 | G07 | 金线收头 Rule.tsx(纹样≤8 处) | done | 本提交 | 三纹样(云/回/方胜)原创;5 接入点 8 落点;Footer grid 跨列修正;对照图 4 张 |
-| G08 | 字韵层级(--font-title 落地/字距/标点) | todo | — | — |
+| G08 | 字韵层级(--font-title 落地/字距/标点) | done | 本提交 | 七落点断言生效;line-break:strict 两处;IAB 环境楷体渲染不可辨(canvas 测宽全等),两态截图存档,人工桌面复核待用户 |
 | G09 | 文案古雅统一(术语表替换,导航词不动) | todo | — | — |
 | G10 | 释义展签抽查(原文 diff=0 硬断言) | todo | — | — |
 | G11 | 首页收口 | todo | — | — |

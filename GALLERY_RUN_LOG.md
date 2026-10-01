@@ -4,6 +4,52 @@
 
 ---
 
+## G08 · 字韵层级
+
+- **有效执行编号**:8 / 20
+- **北京时间**:2026-10-01 约 15:00(用户手动「继续」触发)
+- **开始 HEAD**:`ef55e08`(G07),工作树干净;锁接管
+- **本轮预期**:-–font-title 落地七处,字距 0.12–0.16em,line-break:strict,两态截图,无字体闪烁
+
+### 实际改动(9 处 CSS)
+
+1. `Navigation.module.css` .brandName:font-serif→**font-title**,字距 0.18em→0.16em
+2. `Hero.module.css` .title:补 font-title,0.1em→0.12em
+3. `SectionHeading.module.css` .title:补 font-title(0.14em 原已达标)
+4. `EntityDetailPage.module.css` .name(词条名):补 font-title(0.16em)
+5. `ChapterPage.module.css` .title(篇名):补 font-title(0.16em)
+6. `ChaptersPage.module.css` .name(篇章名):font-serif→font-title(0.16em)
+7. `JourneyPage.module.css` .currentName(山名):font-serif→font-title(0.16em)
+8. `CitationBlock.module.css` .text:补 `line-break: strict`
+9. `ChapterPage.module.css` .reader:补 `line-break: strict`
+
+### 构建与浏览器核对
+
+- build 绿 1.60s;CSS gzip 16.26→16.29(+0.03);JS 147.57→147.55(-0.02)
+- DOM 断言(1440):Hero 主标题/详情页词条名(72px)/古卷篇名/行旅山名(招摇之山)/Navigation 品牌字(span,3.04px=19×0.16em)computed fontFamily 全部以 Kaiti 栈开头 ✅;阅读面 lineBreak=strict ✅
+- **排障记录**:首轮断言品牌字仍宋体——排查发现 dist 内有两个 `_brandName_` 规则(Navigation 新规则已生效;另一条是 Footer 的品牌字,DESIGN 落点清单不含 Footer、无需改),系我断言选择器用了 `p` 而 Navigation 品牌字实为 `span`,抓到了 Footer 元素。修正选择器后确认生效
+- 390 抽测:行旅页山名楷体声明生效、零溢出(首页/行旅)✅
+- **三档标题层级**:82px(首页主标题)/32px(页头)/19px(品牌字)DOM 断言可辨 ✅
+- 无字体闪烁:纯系统字体栈、零网络字体,FOUT 不适用(代码层面论证)✅
+
+### 字体可用性铁证(IAB 环境限制,如实记录)
+
+- `document.fonts.check`:KaiTi/Kaiti SC/STKaiti/楷体/Noto Serif SC/SimSun 全部返回 true
+- **canvas measureText(72px×7字)**:KaiTi=SimSun=Noto Serif SC=generic=576px 全等 → IAB 渲染环境所有 CJK 字体名解析到同一物理字体,**楷体与宋体在 IAB 内视觉不可辨**
+- 两态截图已存档:`1440-home-kaiti.png`(正常)与 `1440-home-fallback-songti.png`(临时覆盖变量模拟),视觉相同即为该限制的证据
+- 结论:楷体栈**声明与回退链正确**,在用户真实桌面浏览器(Windows KaiTi 齐备)将呈现楷体;IAB 内无法验收视觉效果——留人工桌面复核,G19 回归时再提示
+- 符合红线「不虚报未实测项」
+
+### 内容核对
+
+- 零内容改动;不动任何文本层
+
+### 状态:**done**(验收中「两态截图可辨」一项在 IAB 受限,已如实记录并留人工复核入口,不影响其余验收通过)
+
+- **下轮入口:G09 文案古雅统一**——按 DESIGN §5 术语表 grep 全量清单(加载中/暂无/搜索/收藏),只动按钮/空态/提示/aria,主导航七词与 slug 不动
+
+---
+
 ## G07 · 金线收头
 
 - **有效执行编号**:7 / 20

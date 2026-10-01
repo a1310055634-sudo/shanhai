@@ -142,9 +142,11 @@
 }
 
 .title {
+  /* G08 字韵层:首页主标题楷体 */
+  font-family: var(--font-title);
   font-size: clamp(42px, 6.2vw, 82px);
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   line-height: 1.28;
   color: var(--paper);
   max-width: 12em;

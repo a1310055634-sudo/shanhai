@@ -28,6 +28,7 @@
 
 .text {
   margin: 0;
+  line-break: strict; /* G08:避头尾,古式标点断行 */
   font-family: var(--font-serif);
   font-size: 18px;
   line-height: 2;
