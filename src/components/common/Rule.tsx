@@ -45,6 +45,31 @@ export function RuleOrnamentIcon({
   )
 }
 
+/**
+ * 版心鱼尾分隔符(G21,原创声明):古雕版书口鱼尾形的抽象记号——
+ * 上缘平直、下端收尖的一个折面,参照公共形制自绘 path,无外部素材。
+ * 全站预算 1 处:古卷阅读面正文段之间(GALLERY_DESIGN.md §3.3)。
+ * 视觉重量刻意极低(12×7,宣纸弱分隔色),仅作行款节奏,不承载信息。
+ */
+export function RuleFishTail({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className ?? styles.fishTail}
+      viewBox="0 0 16 9"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M1 1.5 H15 L8 7.5 Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 interface RuleProps {
   kind?: RuleOrnament
   className?: string

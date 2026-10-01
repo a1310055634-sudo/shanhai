@@ -6,8 +6,10 @@ import { CHAPTER_TEXTS, GLOSSARY, segmentCounts, type ChapterSegment } from '../
 import { NANCI_YI_ROUTE, validateJourneyRoute } from '../data/journey'
 import { buildJournalPositions, journalDeps, type JournalDeps } from '../components/journal/journalModel'
 import { ENTITIES } from '../data/entities'
+import { Fragment } from 'react'
 import EmptyState from '../components/EmptyState'
 import PaperTexture from '../components/common/PaperTexture'
+import { RuleFishTail } from '../components/common/Rule'
 import styles from './ChapterPage.module.css'
 
 /** 生僻字注音:按词典把字包成 ruby。 */
@@ -180,13 +182,25 @@ export default function ChapterPage() {
 
       <div className={styles.reader}>
         <PaperTexture />
-        {chapterText.segments.map((seg, i) =>
-          seg.kind === 'text' ? (
-            <div
-              key={i}
-              className={seg.id === anchorSeg ? `${styles.segment} ${styles.segmentOn}` : styles.segment}
-              id={seg.id}
-              data-seg-id={seg.id}
+        {chapterText.segments.map((seg, i) => {
+          if (seg.kind !== 'text') {
+            return (
+              <div key={i} id={seg.id} data-seg-id={seg.id} className={styles.gap}>
+                <span className={styles.gapMark}>{seg.section} · {seg.note}</span>
+              </div>
+            )
+          }
+          const prev = i > 0 ? chapterText.segments[i - 1] : undefined
+          return (
+            <Fragment key={i}>
+              {/* G21 版心鱼尾:仅正文段与正文段之间 1 处纹样,行款节奏 */}
+              {prev?.kind === 'text' && (
+                <RuleFishTail className={styles.fishTail} />
+              )}
+              <div
+                className={seg.id === anchorSeg ? `${styles.segment} ${styles.segmentOn}` : styles.segment}
+                id={seg.id}
+                data-seg-id={seg.id}
             >
               <p className={styles.sectionTag}>{seg.section}</p>
               <p className={styles.text}>{annotate(seg.text ?? '', annotateOn)}</p>
@@ -237,12 +251,9 @@ export default function ChapterPage() {
                 </button>
               </div>
             </div>
-          ) : (
-            <div key={i} className={styles.gap}>
-              <span className={styles.gapMark}>{seg.section} · {seg.note}</span>
-            </div>
-          ),
-        )}
+          </Fragment>
+        )
+        })}
       </div>
 
       <nav className={styles.chapterNav} aria-label="篇章切换">

@@ -1,4 +1,47 @@
-# 古朴精修冲刺 · 逐轮运行日志
+---
+
+## G21 · 古卷页经折细节(二阶首轮,含状态接管)
+
+- **有效执行编号**:二阶 1 / 18
+- **北京时间**:2026-10-02 约 18:00(二阶任务首次触发)
+- **开始 HEAD**:`89171dc`(一阶 G13 收官),git status 有一枚过期 .round-lock(接管刷新)
+- **本轮预期**:首轮特责(STATE 二阶接管+看板追加+二阶基线)+ G21 四子项
+
+### 状态接管(首轮特责)
+
+- STATE 重写:planId `shanhai-gallery-2`、phase 2、18 轮、currentRound G21;retired 字段注明一阶 G14—G20 并入退役;二阶基线 gzip(JS 147.62/CSS 16.35/HTML 442B,HEAD 89171dc)入档,一阶基线保留为 phase1Baseline
+- 看板末尾追加「二阶看板(G21—G38)」表
+
+### G21 实际改动(4 文件)
+
+1. `Rule.tsx`+`Rule.module.css`:新增 `RuleFishTail`(版心鱼尾,12×7,上平下尖折面,path 自绘,原创声明入 DESIGN §3.3 台账)
+2. `ChapterPage.tsx`:段间插鱼尾(text 段之间才插,gap/段首不插);**gap 段补 `id`+`data-seg-id`**(一阶遗留:gap 段无 id 致 hash 锚点不可达)
+3. `ChapterPage.module.css`:.gap 升级「校注」小签(宣纸内衬 55%+双细线 outline -4px,与正文层级拉开);.gap 补 `scroll-margin-top:124px`;.fishTail 尺寸(width/height 必须自带——传 className 覆盖组件默认类,SVG 无尺寸会取 300×150,首拍即现巨大三角形,已修)
+4. `ChaptersPage.module.css`:「可阅读」徽标加朱砂方点 5×5(::before,flex+gap),文字不改
+
+### 段距与版心宽复核结论(不改,记录)
+
+- .reader padding 30/36/34、段 gap 26px:与 G05 界栏版心(26/30)同族且行款舒适;DESIGN §4.2 界栏内段距 1.75em≈28px,26px 在容差内——**维持不动**
+
+### 构建与浏览器核对
+
+- build 绿 ×4(迭代修复);gzip 终值:CSS 16.42(+0.07 vs 二阶基线)、JS 147.80(+0.18)、HTML 442B
+- **13/13 hash 锚点逐条实测全绿**(scrollIntoView 后 top 全部=124,含 gap-di 与 tongji-note 两个 gap 段;发现并修复两处:gap 无 id、gap 无 scroll-margin)
+- 鱼尾断言:count=10(11 text 段间),尺寸 12×7 ✅;校注块断言:bg rgba(233,223,201,0.55)/outline -4px/radius 0 ✅
+- 目录徽标断言:statusReadable display:flex+::before 5×5 rgb(167,71,56)+文字「可阅读」未改 ✅
+- 390 档:零横向溢出 ✅,截图 `390-chapter-nanshan.png`(覆盖基线);1440 `1440-chapter-g21.png`
+- 排障记录:①鱼尾首拍 642×361(className 覆盖默认类致 SVG 无尺寸,补尺寸修复);②gap 锚点首轮 exists:false 为 hash 直链时序读数假象(复测+DOM 直查证 id 存在,与 G05 :target 读数偏差同类)
+
+### 内容核对
+
+- 存疑注文字照录不改(「凡十山二千九百五十里」疑点层级拉开但不裁决);零原文改动;`git diff src/data/` = 空
+
+### 状态:**done**
+
+- 验收对照:锚点逐条 13/13 ✅、390 无横溢 ✅、存疑注不混正文 ✅(校注签分层)、鱼尾入台账 ✅
+- **下轮入口:G22 详情页装裱**——版画绫边(6px 绫带+内衬 1px+诗塘 16px)、出处浮层改地脚(修一阶缺口 #4)、流变三级层级
+
+---# 古朴精修冲刺 · 逐轮运行日志
 
 > 只记真实发生的事。每轮追加:轮次与时间、开始 HEAD 与 git status、预期与实际改动、内容核对结果、build 结果、浏览器核对与截图、提交号、状态词、遗留与下轮入口。
 

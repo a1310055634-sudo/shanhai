@@ -22,3 +22,10 @@
   flex: 0 0 auto;
   opacity: 0.8;
 }
+
+/* G21 版心鱼尾:仅古卷阅读面正文段之间 1 处,极低视觉重量 */
+.fishTail {
+  width: 12px;
+  height: 7px;
+  color: var(--paper-border);
+}

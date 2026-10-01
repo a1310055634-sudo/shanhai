@@ -1,25 +1,33 @@
 {
-  "planId": "shanhai-gallery-20",
-  "title": "古朴精修冲刺 G01—G20",
-  "totalRounds": 20,
-  "validExecutions": 13,
-  "maxValidExecutions": 20,
-  "currentRound": "G14",
+  "planId": "shanhai-gallery-2",
+  "phase": 2,
+  "title": "古朴精修·二阶冲刺 G21—G38",
+  "totalRounds": 18,
+  "validExecutions": 1,
+  "maxValidExecutions": 18,
+  "currentRound": "G22",
   "rounds": {
-    "G01": "done", "G02": "done", "G03": "done", "G04": "done", "G05": "done",
-    "G06": "done", "G07": "done", "G08": "done", "G09": "done", "G10": "done",
-    "G11": "done", "G12": "done", "G13": "done",
-    "G14": "todo", "G15": "todo", "G16": "todo", "G17": "todo", "G18": "todo",
-    "G19": "todo", "G20": "todo"
+    "G21": "done", "G22": "todo", "G23": "todo", "G24": "todo", "G25": "todo",
+    "G26": "todo", "G27": "todo", "G28": "todo", "G29": "todo", "G30": "todo",
+    "G31": "todo", "G32": "todo", "G33": "todo", "G34": "todo", "G35": "todo",
+    "G36": "todo", "G37": "todo", "G38": "todo"
   },
+  "retired": "一阶 G14—G20 已并入二阶 G21—G23/G25/G36/G37/G38,原编号退役;一阶收官提交 89171dc(G13),13/20 轮完成",
   "baseline": {
+    "head": "89171dc",
+    "phase": 2,
+    "recordedAt": "2026-10-02",
+    "js": { "raw": "475.10 kB", "gzip": "147.62 kB" },
+    "css": { "raw": "92.75 kB", "gzip": "16.35 kB" },
+    "html": { "raw": "594 B", "gzip": "442 B" }
+  },
+  "phase1Baseline": {
     "head": "823ba01",
     "recordedAt": "2026-10-01",
     "js": { "raw": "472.43 kB", "gzip": "146.77 kB" },
     "css": { "raw": "89.15 kB", "gzip": "15.63 kB" },
     "html": { "raw": "594 B", "gzip": "441 B" }
   },
-  "lastRunAt": "2026-10-02T01:15:00+08:00",
-  "status": "running",
-  "note": "G13 起修复 rounds 重复键(原文件 G06—G12 出现两次,JSON.parse 取后者);G14 入口=古卷页(段距/版心/鱼尾/锚点全测)"
+  "lastRunAt": "2026-10-02T18:30+08:00",
+  "status": "running"
 }

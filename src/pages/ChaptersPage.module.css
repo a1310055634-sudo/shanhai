@@ -108,10 +108,22 @@ a.nameLink:hover .name {
   font-size: 12px;
   letter-spacing: 0.2em;
   color: var(--old-gold);
-  border: 1px solid rgba(177, 139, 86, 0.55);
-  padding: 5px 12px;
+  border: 1px solid rgba(165, 135, 91, 0.5);
+  padding: 5px 12px 5px 10px;
   border-radius: 2px;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* G21 目录徽标古雅化:「已开卷」朱砂方点;文字(可阅读/待录入)不改 */
+.statusReadable::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--cinnabar);
+  flex: 0 0 auto;
 }
 
 .sourceNote {

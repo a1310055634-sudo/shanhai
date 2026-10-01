@@ -116,9 +116,9 @@
 
 **原创声明(G07 施工定稿)**:三个纹样(云纹=底横线+双拱如意云勾、回纹=雷纹方螺旋一笔、方胜=两菱相扣)均为本项目参照传统公共形制**自绘的 SVG path**(viewBox 16×16,stroke currentColor 1.4),无外部素材来源;形制属公有领域,本实现不受版权约束。组件 `components/common/Rule.tsx`(整条 `<Rule kind>` / 单端 `<RuleOrnamentIcon kind>` 双 API),样式 `Rule.module.css`。**G07 实际落点与计划一致**(8 处):SectionHeading 分隔线两端(回纹,全站页头)、Footer 顶线两端(云纹,替换原 border-top)、JournalProgress 轨道左上/右上角饰(云纹 10px)、JournalClosing 合卷收束线(云纹,居中 260px)、AboutPage 凡例页收束线(方胜,居中 300px)。
 
-### 3.3 鱼尾分隔(G14,条件通过)
+### 3.3 鱼尾分隔(G21 定稿)
 
-古卷页(ChapterPage)段落之间加版心鱼尾形小分隔(`」`形 SVG,8×6px,--paper-border 色)。条件:G14 施工时先在 390 档验证不干扰段落锚点跳转,若锚点定位受影响则弃用并记录。**仅此一处**,不算入 3.2 的 8 处上限(它是分隔符不是收头,但同样遵守「视觉重量低于文字」)。
+古卷页(ChapterPage)正文段与正文段之间插版心鱼尾形小分隔——**已落地**:`Rule.tsx` 导出 `RuleFishTail`(12×7px,上缘平直下端收尖的折面抽象,path 自绘),色 `--paper-border`,仅古卷阅读面 1 处预算(gap 存疑段与段首不插)。**原创声明**:参照古雕版书口鱼尾公共形制自绘 path,无外部素材。存疑注同步升级「校注」小签(宣纸内衬 55% 透明+双细线),与正文层级拉开、不混排。
 
 ---
 
