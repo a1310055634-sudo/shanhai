@@ -1,0 +1,52 @@
+[
+  {
+    "name": "底画就位(lazy+mask+opacity 0.3)",
+    "ok": true,
+    "detail": "{\"loading\":\"lazy\",\"opacity\":\"0.3\",\"mask\":\"radial-gradient(78% 95%, r\",\"rect\":\"1134x119\"}"
+  },
+  {
+    "name": "九位停靠齐全",
+    "ok": true,
+    "detail": "stops=9"
+  },
+  {
+    "name": "sceneBand 场景带完好(雾感机制未动)",
+    "ok": true,
+    "detail": "svg=2"
+  },
+  {
+    "name": "懒加载不退化(全页无 eager 图)",
+    "ok": true,
+    "detail": "imgs=2 eager=0"
+  },
+  {
+    "name": "1440 零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "768 站名字块全部单行(≤20px,第 5 格不回退)",
+    "ok": true,
+    "detail": "heights=[17.5,17.5,17.5,17.5,null,17.5,17.5,17.5,17.5] max=17.5"
+  },
+  {
+    "name": "768 零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "390 触控抽测 ≥44px",
+    "ok": true,
+    "detail": "controls=22 min=44 small=[]"
+  },
+  {
+    "name": "390 零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "控制台零异常",
+    "ok": true,
+    "detail": ""
+  }
+]

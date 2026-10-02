@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { buildCurrentJournalPositions } from './journalModel'
 import { RuleOrnamentIcon } from '../common/Rule'
+import shitaoLandscape from '../../assets/paintings/shitao-landscape.jpg'
 import styles from './JournalProgress.module.css'
 
 /**
@@ -12,6 +13,17 @@ export default function JournalProgress({ currentId }: { currentId?: string }) {
 
   return (
     <nav className={styles.railWrap} aria-label="南次一经九位置路线导航">
+      {/* G46 行旅画卷化:石涛山水扇页作长卷底画(羽化淡墨,轨道浮其上=古今对撞;
+          SceneLayers 柢山雾感与站色参数不动);lazy:长卷非 LCP 主元素 */}
+      <div className={styles.paintBg} aria-hidden="true">
+        <img
+          src={shitaoLandscape}
+          alt=""
+          width={1600}
+          height={774}
+          loading="lazy"
+        />
+      </div>
       {/* G07 轨道端点角饰(接入点 5-6):纯装饰 */}
       <RuleOrnamentIcon kind="cloud" className={styles.railEndL} />
       <RuleOrnamentIcon kind="cloud" className={styles.railEndR} />

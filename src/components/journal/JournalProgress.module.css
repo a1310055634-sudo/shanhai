@@ -9,6 +9,8 @@
 }
 
 .rail {
+  /* G46:轨道浮于底画之上(定位元素按 DOM 序盖过绝对定位底画) */
+  position: relative;
   display: flex;
   align-items: stretch;
   gap: 0;
@@ -155,4 +157,31 @@
 
 .railEndR {
   right: 7px;
+}
+
+/* G46 行旅画卷化:石涛山水扇页底画,radial 羽化+0.3 淡墨化保轨道文字对比度;
+   移动端 object-position 裁切保山水主体(附录 A 降档口径);装饰层 alt 空+aria-hidden */
+.paintBg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.paintBg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  opacity: 0.3;
+  -webkit-mask-image: radial-gradient(ellipse 78% 95% at 50% 50%, #000 42%, transparent 94%);
+  mask-image: radial-gradient(ellipse 78% 95% at 50% 50%, #000 42%, transparent 94%);
+}
+
+@media (max-width: 640px) {
+  .paintBg img {
+    object-position: 62% 45%;
+  }
 }
