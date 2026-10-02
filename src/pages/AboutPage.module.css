@@ -165,3 +165,38 @@
     min-height: 44px;
   }
 }
+
+/* G41 古画卷样张:PaintingMount 首个落位(五幅公版水墨真迹,详见 ART_PROVENANCE 古画卷章) */
+.mountsSection {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mountsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 18px;
+  align-items: flex-start;
+}
+
+/* 槽位均可收缩(收缩系数 1);宽幅画吃横空间,窄长立轴限宽防过高 */
+.slotWide {
+  flex: 2 1 340px;
+  min-width: 0;
+  max-width: 460px;
+}
+
+.slotTall {
+  flex: 1 1 190px;
+  min-width: 0;
+  max-width: 260px;
+}
+
+@media (max-width: 768px) {
+  .slotWide,
+  .slotTall {
+    max-width: 100%;
+  }
+}

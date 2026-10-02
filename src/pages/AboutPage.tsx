@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
+import PaintingMount from '../components/PaintingMount'
 import { ENTITIES } from '../data/entities'
 import { CHAPTERS } from '../data/chapters'
 import Rule from '../components/common/Rule'
+import zhengxieOrchids from '../assets/paintings/zhengxie-orchids-bamboo.jpg'
+import xuweiGrapes from '../assets/paintings/xuwei-grapes.jpg'
+import shitaoLandscape from '../assets/paintings/shitao-landscape.jpg'
+import badaLotus from '../assets/paintings/bada-lotus-ducks.jpg'
+import jinnongPlum from '../assets/paintings/jinnong-plum-blossoms.jpg'
 import styles from './AboutPage.module.css'
 
 const verifiedCount = ENTITIES.filter((entity) => entity.recordStatus === 'verified').length
@@ -70,6 +76,68 @@ export default function AboutPage() {
           </p>
         </section>
       </div>
+
+      {/* G41 古画卷样张:PaintingMount 组件首个落位。五幅均公有领域水墨真迹,
+          档案见 ART_PROVENANCE.md 古画卷章;款识为真实题名,不臆造题跋。 */}
+      <section className={`${styles.panel} ${styles.mountsSection}`} aria-labelledby="scroll-paintings">
+        <p className={styles.panelIndex}>五</p>
+        <h2 id="scroll-paintings" className={styles.panelTitle}>古画卷样张</h2>
+        <p className={styles.muted}>
+          「画卷气象」三阶所用装裱样张:五幅均为明清水墨真迹的公有领域馆藏摄影,逐幅登记来源档案;款识为真实题名与收藏来源,画上不压任何文字。
+        </p>
+        <div className={styles.mountsGrid}>
+          <div className={styles.slotWide}>
+            <PaintingMount
+              src={zhengxieOrchids}
+              alt="兰竹图"
+              width={1600}
+              height={812}
+              caption="〔清〕郑燮 兰竹图"
+              credit="大都会艺术博物馆 Open Access"
+            />
+          </div>
+          <div className={styles.slotTall}>
+            <PaintingMount
+              src={xuweiGrapes}
+              alt="墨葡萄图"
+              width={510}
+              height={1341}
+              caption="〔明〕徐渭 墨葡萄图"
+              credit="维基共享资源 公有领域"
+            />
+          </div>
+          <div className={styles.slotWide}>
+            <PaintingMount
+              src={shitaoLandscape}
+              alt="山水"
+              width={1600}
+              height={774}
+              caption="〔清〕石涛 山水图·扇页"
+              credit="大都会艺术博物馆 Open Access"
+            />
+          </div>
+          <div className={styles.slotTall}>
+            <PaintingMount
+              src={badaLotus}
+              alt="莲塘戏禽图"
+              width={872}
+              height={1600}
+              caption="〔清〕八大山人 莲塘戏禽图"
+              credit="维基共享资源 公有领域"
+            />
+          </div>
+          <div className={styles.slotWide}>
+            <PaintingMount
+              src={jinnongPlum}
+              alt="梅花图"
+              width={1600}
+              height={1348}
+              caption="〔清〕金农 梅花图"
+              credit="大都会艺术博物馆 Open Access"
+            />
+          </div>
+        </div>
+      </section>
 
       <section className={styles.status} aria-labelledby="current-status">
         <div>

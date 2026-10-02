@@ -1,0 +1,76 @@
+/* G41 PaintingMount 画卷装裱:绫边复用 G22 artPanel 语言(6px 绫带+1px 界栏线+方角),
+   诗塘 16px 宣纸留白;款识楷体小字置画下,画上禁压正文(任务书翻译规则 5)。 */
+
+.mount {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.silk {
+  position: relative;
+  /* 绫带色带与界栏线:与 EntityDetailPage artPanel 同族。
+     表面底色必须用 --surface-paper(灯下=#f4ecdf 亮月白/晴窗=#f7f1e3 宣纸阅读面,
+     两主题皆亮纸=挂轴与平铺均成立)。禁引 --paper/--paper-bright:
+     G31 晴窗块将二者重定义为墨字双档(#3a3527/#262117),引之作背景会出深色卡
+     (G41 实测踩坑,晴窗块头亦有明文警告)。 */
+  border: 6px solid rgba(49, 84, 90, 0.6);
+  outline: 1px solid var(--border-strong);
+  outline-offset: -7px;
+  border-radius: 0;
+  background: var(--surface-paper);
+  padding: 16px;
+  /* 灯下挂轴模式:墨夜中的实物投影(墨色 alpha,禁金色发光) */
+  box-shadow: 0 2px 14px color-mix(in srgb, var(--ink-night) 45%, transparent);
+}
+
+/* 晴窗平铺模式:去投影,画平贴纸面 */
+html[data-theme='qing'] .silk {
+  box-shadow: none;
+}
+
+.soup {
+  position: relative;
+}
+
+.painting {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 「画上浮卡」槽位:覆盖诗塘内缘,默认不拦截指针;子件恢复交互 */
+.floatSlot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  pointer-events: none;
+}
+
+.floatSlot > * {
+  pointer-events: auto;
+}
+
+.caption {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 12px;
+  font-family: var(--font-title);
+}
+
+.captionTitle {
+  font-size: var(--fs-caption);
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.captionCredit {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}

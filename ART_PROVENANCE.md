@@ -210,7 +210,7 @@
 ## G3. 山水(石涛)
 
 - 站内文件:src/assets/paintings/shitao-landscape.jpg
-- 画面:青绿间水墨山水(横幅,远山气象)
+- 画面:水墨山水扇面(MET 官方题「山水圖 扇頁」;G41 目检更正:形制为扇页,非横幅挂轴,装裱适配时注意画心形状)
 - 作者:石涛(1642—1707,清)
 - 来源:Metropolitan Museum of Art(Open Access),Commons File 页:https://commons.wikimedia.org/wiki/File:Shitao_(Zhu_Ruoji)_-_Landscape_-_1989.363.153_-_Metropolitan_Museum_of_Art.jpg
 - 许可:Public domain(MET Open Access;Commons extmetadata 实测)
