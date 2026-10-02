@@ -3,12 +3,12 @@
   "phase": 3,
   "title": "画卷气象·三阶冲刺 G39—G58",
   "totalRounds": 20,
-  "validExecutions": 1,
+  "validExecutions": 2,
   "maxValidExecutions": 20,
-  "currentRound": "G39",
+  "currentRound": "G40",
   "rounds": {
     "G39": "done",
-    "G40": "todo",
+    "G40": "done",
     "G41": "todo",
     "G42": "todo",
     "G43": "todo",
@@ -99,8 +99,17 @@
     "finalShots": "GALLERY_FINAL2/(17 张 + final-assertions.json)"
   },
   "dependenciesChangedSinceBaseline": false,
+  "lastRunAt": "2026-10-03 01:4X+08:00",
+  "status": "in_progress",
+  "phase3Progress": {
+    "paintingsReady": 5,
+    "paintingsTotalBytes": 1065665,
+    "note": "G40 首批 5 幅入库未接线;接线自 G41 起"
+  },
   "shutdown": "三阶冲刺 20 轮有效执行封顶(G58 完成):此后一切触发只读退出——不构建、不提交、不改文件;并提醒用户停用本定时任务。",
-  "openItems": [],
+  "openItems": [
+    "G4(八大莲塘)压缩后未单独目检,G41 接入时随页补验"
+  ],
   "phase2OpenItems": [
     "底本 A(ctext)回核挂账:南次二经 6 山按 B1×B2 先上线,recordStatus=unverified",
     "南次二经余 11 山留 DRAFT 工作稿,扩录须用户新立任务(不在三阶)",
