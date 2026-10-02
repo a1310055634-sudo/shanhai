@@ -174,3 +174,82 @@
 - 状态:verified(File 页元数据与 P11 同系列同授权;画面题字匹配以文件题名比对,像素级复核留 P13)
 
 后六幅已按 P11 同标准建档;统一说明见前节。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# 古画卷章(三阶 G40 起,水墨真迹公版摄影)
+
+> 建立:2026-10-03(画卷气象·三阶 G40)。
+> 与前章「版画」章的区别:前章是《古今图书集成》木刻插图的 potrace 矢量化件(SVG);本章是**明清水墨真迹的公版摄影**(JPEG),用于三阶「画卷气象」的装裱/背景形态(任务书 GALLERY_PROMPT3.md 翻译规则第 1 条:禁 AI 生成图、禁现代摄影、禁无许可图)。
+> 收录底线:作者卒年 <1900;Commons File 页或馆方 Open Access 页标注 Public domain/CC0。
+> 许可核验方式:Commons API imageinfo extmetadata(LicenseShortName)逐幅读取,2026-10-03 实测均为「Public domain」。
+> 压缩口径:ffmpeg 长边 ≤1600px、JPEG q3—q5、单图 ≤350KB;总量预算 ≤2.5MB。
+
+## G1. 兰竹图(郑燮)
+
+- 站内文件:src/assets/paintings/zhengxie-orchids-bamboo.jpg
+- 画面:墨兰三丛+行草题跋+朱印(纸本浅色底,横幅)
+- 作者:郑燮(1693—1765,清)
+- 来源:Metropolitan Museum of Art(Open Access),Commons File 页:https://commons.wikimedia.org/wiki/File:Zheng_Xie_-_Orchids_and_Bamboo_-_1981.285.7_-_Metropolitan_Museum_of_Art.jpg
+- 许可:Public domain(MET Open Access;Commons extmetadata 实测)
+- 原图:4000×2028,1,603,468 B → 压缩后 1600×812,182,802 B(q3)
+- 核对日期:2026-10-03
+- 状态:verified(API 元数据+压缩后目检:墨兰/题跋/朱印清晰无伪影)
+
+## G2. 墨葡萄图(徐渭)
+
+- 站内文件:src/assets/paintings/xuwei-grapes.jpg
+- 画面:水墨葡萄(立轴,窄长)
+- 作者:徐渭(1521—1593,明)
+- 来源:Commons File 页:https://commons.wikimedia.org/wiki/File:Xu_Wei_Grapes.jpg
+- 许可:Public domain(Commons extmetadata 实测)
+- 原图:509×1341,197,681 B → 未放大,压缩后 510×1341,189,492 B(q3;原图本就小于预算,仅重编码)
+- 核对日期:2026-10-03
+- 状态:verified(API 元数据;窄长立轴,目检通过)
+
+## G3. 山水(石涛)
+
+- 站内文件:src/assets/paintings/shitao-landscape.jpg
+- 画面:青绿间水墨山水(横幅,远山气象)
+- 作者:石涛(1642—1707,清)
+- 来源:Metropolitan Museum of Art(Open Access),Commons File 页:https://commons.wikimedia.org/wiki/File:Shitao_(Zhu_Ruoji)_-_Landscape_-_1989.363.153_-_Metropolitan_Museum_of_Art.jpg
+- 许可:Public domain(MET Open Access;Commons extmetadata 实测)
+- 原图:3940×1905,1,726,624 B → 压缩后 1600×774,206,986 B(q3)
+- 核对日期:2026-10-03
+- 状态:verified(API 元数据+目检通过)
+
+## G4. 莲塘戏禽图(八大山人)
+
+- 站内文件:src/assets/paintings/bada-lotus-ducks.jpg
+- 画面:墨荷莲塘水禽(立轴)
+- 作者:朱耷/八大山人(1626—1705,清)
+- 来源:Commons File 页:https://commons.wikimedia.org/wiki/File:Bada_Shanren_-_Lotus_and_Ducks_-_Google_Art_Project.jpg(Google Art Project 拍摄件)
+- 许可:Public domain(Commons extmetadata 实测)
+- 原图:1473×2700,1,079,433 B → 压缩后 872×1600,155,796 B(q3)
+- 核对日期:2026-10-03
+- 状态:verified(API 元数据;压缩后未单独目检,ffprobe 解码通过,G41 接入时随页目检)
+
+## G5. 梅花图(金农)
+
+- 站内文件:src/assets/paintings/jinnong-plum-blossoms.jpg
+- 画面:墨梅(横幅,「乾隆丁丑九月展重陽日畫」款)
+- 作者:金农(1687—1763,清)
+- 来源:Metropolitan Museum of Art(Open Access),Commons File 页:https://commons.wikimedia.org/wiki/File:Jin_Nong_-_Plum_Blossoms_-_1986.495a%E2%80%93l_-_Metropolitan_Museum_of_Art.jpg
+- 许可:Public domain(MET Open Access;Commons extmetadata 实测)
+- 原图:1882×1585,1,002,058 B → 压缩后 1600×1348,330,589 B(q5;q3 时 491,978 B 超单图预算,升 q5 后达标,目检无可见伪影)
+- 核对日期:2026-10-03
+- 状态:verified(API 元数据+目检通过)
+
+### 古画卷体积表(G40 记)
+
+| 幅 | 文件 | 尺寸 | 字节 | 占预算 |
+|---|---|---|---|---|
+| G1 | zhengxie-orchids-bamboo.jpg | 1600×812 | 182,802 | 7.3% |
+| G2 | xuwei-grapes.jpg | 510×1341 | 189,492 | 7.6% |
+| G3 | shitao-landscape.jpg | 1600×774 | 206,986 | 8.3% |
+| G4 | bada-lotus-ducks.jpg | 872×1600 | 155,796 | 6.2% |
+| G5 | jinnong-plum-blossoms.jpg | 1600×1348 | 330,589 | 13.2% |
+| 合计 | 5 幅 | — | 1,065,665(1.02 MB) | ≤2.5MB 预算的 41% |
+
+- 站内用途:均未接线(G41 PaintingMount 起);款识文字(题名/作者/朝代)如上,真实可核。
+- 遗留:G4(八大)压缩后未单独目检;五幅接入页面时的挂轴/平铺适配与最终画质判定归 G41+。
