@@ -26,12 +26,13 @@
 }
 
 .title {
-  /* G08 字韵层:页标题楷体 */
-  font-family: var(--font-title);
+  /* G52 宋体大题实验(附录 A:区题 30px/w500/0.02em);楷体层保留于题签,
+     Windows SimSun 屏显实测不达标则整块退回 --font-title(决而不裂) */
+  font-family: var(--font-display);
   font-size: clamp(24px, 3vw, 32px);
-  letter-spacing: 0.14em;
+  letter-spacing: 0.02em;
   color: var(--paper);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .subtitle {

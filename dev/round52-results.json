@@ -1,0 +1,57 @@
+[
+  {
+    "name": "[deng] 大题=宋体展示栈",
+    "ok": true,
+    "detail": "\"Songti SC\", STSong, SimSun, Georgia, serif"
+  },
+  {
+    "name": "[deng] 平台命中字体(实测记录)",
+    "ok": true,
+    "detail": "hit=Songti SC size=32px weight=500"
+  },
+  {
+    "name": "[deng] 字距 0.02em 档",
+    "ok": true,
+    "detail": "letter=0.64px @ 32px"
+  },
+  {
+    "name": "[deng] 全站零 @font-face",
+    "ok": true,
+    "detail": "rules=0"
+  },
+  {
+    "name": "[deng] 零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "[qing] 大题=宋体展示栈",
+    "ok": true,
+    "detail": "\"Songti SC\", STSong, SimSun, Georgia, serif"
+  },
+  {
+    "name": "[qing] 平台命中字体(实测记录)",
+    "ok": true,
+    "detail": "hit=Songti SC size=32px weight=500"
+  },
+  {
+    "name": "[qing] 字距 0.02em 档",
+    "ok": true,
+    "detail": "letter=0.64px @ 32px"
+  },
+  {
+    "name": "[qing] 全站零 @font-face",
+    "ok": true,
+    "detail": "rules=0"
+  },
+  {
+    "name": "[qing] 零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "控制台零异常",
+    "ok": true,
+    "detail": ""
+  }
+]

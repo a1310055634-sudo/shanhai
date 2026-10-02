@@ -81,6 +81,9 @@
 
   /* 字体族:楷体(标题层,G08 落地)+ 宋体(正文)+ 黑体(辅助);
      标题层仅用于站名/页标题/山名/词条名/篇章名(见 GALLERY_DESIGN.md §2.1) */
+  /* G52 宋体展示栈(区块大题实验):系统栈禁远程字体;Windows 落 SimSun,
+     屏显质量实测见 G52 日志,不达标则大题退回 --font-title(决而不裂) */
+  --font-display: 'Songti SC', 'STSong', 'SimSun', Georgia, serif;
   --font-title: 'Kaiti SC', 'STKaiti', 'KaiTi', '楷体', 'Noto Serif SC',
     'Source Han Serif SC', 'Songti SC', 'SimSun', serif;
   --font-serif: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun',
