@@ -1,0 +1,46 @@
+/* G43 誊抄机:逐字显形 + 墨点光标。速度/闪烁全走令牌(--duration-char/--duration-caret);
+   光标 keyframe 全站恰 1 枚(命名含 caret-blink,CSSOM 计数验收)。 */
+
+.root {
+  position: relative;
+  display: block;
+  min-width: 0;
+}
+
+/* 隐藏量高副本:同样式占位,仅用于打字前量取最终高度(visibility 不参与绘制但占布局
+   会撑高容器,故绝对定位脱流);aria-hidden 已在组件层标注 */
+.ghost {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  white-space: normal;
+}
+
+.typed {
+  white-space: normal;
+}
+
+/* 墨点光标:圆点非竖条,呼吸式明暗(非 steps 硬切);压平档由 base.css 全局归零 */
+.caret {
+  display: inline-block;
+  width: 0.42em;
+  height: 0.42em;
+  margin-left: 0.14em;
+  border-radius: 50%;
+  background: currentColor;
+  vertical-align: baseline;
+  animation: caret-blink var(--duration-caret) ease-in-out infinite;
+}
+
+@keyframes caret-blink {
+  0%,
+  42% {
+    opacity: 1;
+  }
+  58%,
+  100% {
+    opacity: 0.15;
+  }
+}

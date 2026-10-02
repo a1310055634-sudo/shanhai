@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { usePointerParallax } from '../hooks/usePointerParallax'
 import zhengxieOrchids from '../assets/paintings/zhengxie-orchids-bamboo.jpg'
+import Transcriber from './Transcriber'
 import StarField from './scene/StarField'
 import CloudSea from './scene/CloudSea'
 import { FarRanges, NearRidge } from './scene/MountainRanges'
@@ -69,7 +70,10 @@ export default function Hero() {
           <span className={styles.kickerText}>山海万象录 · 卷之一 · 开卷</span>
         </p>
         <h1 className={styles.title}>山海有灵，万物入卷</h1>
-        <p className={styles.subtitle}>循古卷而行，访群山、诸神、异兽与远方之国。</p>
+        <p className={styles.subtitle}>
+          {/* G43 誊抄机:逐字显形+墨点光标,速度/防跳版/降级见组件头注 */}
+          <Transcriber text="循古卷而行，访群山、诸神、异兽与远方之国。" />
+        </p>
         <div className={styles.actions}>
           <Link className={styles.primary} to="/explore">
             入卷探索

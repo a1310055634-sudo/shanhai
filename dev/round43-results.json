@@ -1,0 +1,77 @@
+[
+  {
+    "name": "打字中途容器宽度零跳变",
+    "ok": true,
+    "detail": "samples=10 widths=[570]"
+  },
+  {
+    "name": "打字中途容器高度零跳变(预锁生效)",
+    "ok": true,
+    "detail": "heights=[35.14]"
+  },
+  {
+    "name": "采样覆盖打字进行态",
+    "ok": true,
+    "detail": "states=typing,done"
+  },
+  {
+    "name": "打字完成态到达",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "全文逐字相等",
+    "ok": true,
+    "detail": "\"循古卷而行，访群山、诸神、异兽与远方之国。\""
+  },
+  {
+    "name": "aria-label=全文",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "完成后光标移除",
+    "ok": true,
+    "detail": "caret=0"
+  },
+  {
+    "name": "光标 keyframe 恰 1 枚(CSSOM)",
+    "ok": true,
+    "detail": "kf=1"
+  },
+  {
+    "name": "组件不可聚焦(无 tabindex)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "零横溢 1440",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "压平直出全文(400ms 内即 done 且逐字相等)",
+    "ok": true,
+    "detail": "state=done len=21"
+  },
+  {
+    "name": "压平不渲染光标",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "压平路径宽高亦恒定",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "零横溢 390",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "控制台零异常",
+    "ok": true,
+    "detail": ""
+  }
+]

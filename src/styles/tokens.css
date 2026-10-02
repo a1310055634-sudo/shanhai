@@ -130,6 +130,10 @@
   --duration-hover: 200ms;
   --duration-drawer: 320ms;
   --duration-reveal: 720ms;
+  /* 誊抄机组(G43):char=逐字显形间隔(hero 级快档,参考站实测 55—130ms 区间取中);
+     caret=墨点光标闪烁周期。引用:Transcriber 组件(新增令牌须同时有引用) */
+  --duration-char: 70ms;
+  --duration-caret: 1100ms;
   /* 氛围组:仅用于首页 Hero 的循环装饰动画(呼吸/云海漂移/星辰微闪) */
   --duration-cue: 2800ms;
   --duration-ambient: 84s;
