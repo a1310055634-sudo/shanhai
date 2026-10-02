@@ -1,3 +1,18 @@
+## G41 · PaintingMount 画卷装裱组件+款识(首落位 About 古画卷样张)
+
+- **有效执行编号**:三阶 3 / 20
+- **北京时间**:2026-10-03 01:5X—02:2X(定时触发)
+- **开始 HEAD**:e8e09e0(G40 日志补),工作树干净;.round-lock 新建,轮末删除
+- **实际改动**:新增 src/components/PaintingMount.tsx+module.css(绫边=6px 岩青 rgba(49,84,90,.6)+outline 1px --border-strong @-7px+方角,复用 G22 artPanel 语言;诗塘 16px;款识 figcaption 置画下 --font-title 楷体栈;floatSlot 画上浮卡槽位 1 1 可收缩 pointer-events none/子件恢复;懒加载+显式宽高);AboutPage 增「五·古画卷样张」区(五幅全接入,款识真实题名+收藏来源);ART_PROVENANCE G3 修正(石涛幅 MET 官方题「山水圖 扇頁」,形制=扇页非横幅——款识红线自查发现)
+- **落位决策**:首落位选 About 凡例页(「四·插画与字体」条款的自然延伸,策展层,非临时 harness);G42 hero/G49 图鉴后续接线
+- **双主题机制坑(如实记,重要)**:初版 silk 用 --paper 作底——实测晴窗下变深色卡(#3a3527)。查 tokens.css 晴窗块:--paper/--paper-bright 在晴窗被重定义为**墨字双档**(93 处文字色用),块头明文警告「表面令牌禁止引用这两个变量」。改 --surface-paper(灯下 #f4ecdf/晴窗 #f7f1e3,两主题皆亮纸)后双主题断言全过。**新表面一律 --surface-paper,此坑入 DESIGN 候选**
+- **断言结果(390/1440)**:figure=5、img width/height 属性齐、loading=lazy、渲染宽高比逐幅≈内在比(254×129→1.969 vs 1.970 等,CLS 预留有效;computed aspectRatio 带 auto 前缀致首版断言解析假红,以渲染比为准)、390/1440 scrollWidth=clientWidth 双主题零横溢、灯下投影生效/晴窗投影 none(平铺)、floatSlot 未传 children 不渲染、款识五条逐字正确
+- **build**:绿(1.41—1.83s 三次)
+- **浏览器与截图**:preview+IAB 实测;shots:about-deng-390.png(灯下挂轴,真图)、about-qing-390.png(IAB 后台标签晴窗亮页=8.5② 灰纱伪影,如实标注)、about-qing-1440.iab-artifact.png(同伪影)→ **改用无头 Chrome --screenshot 直截 about-qing-1440.png(630KB 真图,全新 profile 默认 light=自动晴窗,顺带验证 G31 跟随机制);8.5② 的可行绕行=无头 Chrome,后续截图轮采用**
+- **提交**:主提交 **bec7f81**(5 files)+ 补记提交 bec9XXXX 见 git log(本条)
+- **状态**:done(验收:CLS=0 断言✓(宽高属性+渲染比逐幅相符)、390/1440 无横溢✓、双主题截图各 1✓(灯下 IAB 真图+晴窗无头 Chrome 真图))
+- **遗留与下轮入口**:①徐渭立轴在宽屏槽位下方留白较大(G51 节奏轮调);②晴窗 390 真图缺(8.5②,IAB 限制非产品缺陷,G55 走查轮以无头 Chrome 补);③floatSlot 实渲染断言留首个使用者(G42/G44);下一轮 G42 卷首展卷(hero 定宽贴底+mask 羽化,JS gzip 增量<2KB)
+
 ## G40 · 画卷资产首批(公版水墨真迹 5 幅 + ART_PROVENANCE 古画卷章)
 
 - **有效执行编号**:三阶 2 / 20
