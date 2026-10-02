@@ -160,7 +160,7 @@ HEAD 起点:`823ba01`(R19 终验交付,工作树干净)。
 | G43 | 誊抄机 Transcriber(预锁宽防 CLS) | done | b999b9d | 15/15 验收;min-height 预锁;--duration-char 70ms |
 | G44 | 墨痕显影 InkReveal(降级三路) | done | 031c4b8 | 15/15 验收;双主题面纱令牌;真实鼠标显影+愈合 |
 | G45 | 纸阶系统(--page-alt-1/2/3) | done | a2b9ca9 | 六值双主题;灯下12.16-10.15晴窗10.28-9.40;15/15 |
-| G46 | 行旅画卷化(JourneyPage) | todo | | 768 第 5 格回归复测 |
+| G46 | 行旅画卷化(JourneyPage) | done | 923e4d7 | 石涛扇页底画;768 第5格 17.5px 不回退;10/10 |
 | G47 | 谱系画卷化(RelationsPage) | todo | | G33 断言复跑 |
 | G48 | 古卷画卷化(轻) | todo | | 原文区零改动 diff |
 | G49 | 图鉴画卷化(仅已有版画词条) | todo | | |
