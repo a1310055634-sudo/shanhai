@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { usePointerParallax } from '../hooks/usePointerParallax'
 import zhengxieOrchids from '../assets/paintings/zhengxie-orchids-bamboo.jpg'
 import Transcriber from './Transcriber'
+import InkReveal from './InkReveal'
 import StarField from './scene/StarField'
 import CloudSea from './scene/CloudSea'
 import { FarRanges, NearRidge } from './scene/MountainRanges'
@@ -32,6 +33,7 @@ export default function Hero() {
           height={812}
           loading="eager"
         />
+        <InkReveal />
       </div>
       <div className={styles.scene} aria-hidden="true">
         <div className={`${styles.layer} ${styles.lStars}`}>

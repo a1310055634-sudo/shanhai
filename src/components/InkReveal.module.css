@@ -1,0 +1,25 @@
+/* G44 墨痕显影面纱:覆于 heroPaint 画卷之上,mask 与 .heroPaintImg 同款羽化
+   (两模块各持一份,值必须同步;跨模块组合会引入全局选择器,故就地镜像)。
+   面纱色不走 CSS——canvas 由 JS 读 --ink-reveal-veil 涂纱(双主题令牌)。 */
+
+.veil {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 62% 46% at 50% 50%, #000 52%, transparent 96%);
+  mask-image: radial-gradient(ellipse 62% 46% at 50% 50%, #000 52%, transparent 96%);
+}
+
+/* 触屏与 (hover:none):面纱直接隐藏=画常显(组件层亦不初始化,双保险) */
+@media (hover: none) {
+  .veil {
+    display: none;
+  }
+}
+
+/* prefers-reduced-motion:静态半透面纱,不跑 rAF(组件层不加监听) */
+.staticVeil {
+  opacity: 0.55;
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "name": "hover 档 canvas 初始化",
+    "ok": true,
+    "detail": "{\"canvas\":true,\"hover\":true,\"rect\":{\"x\":792,\"y\":487,\"w\":633.6,\"h\":321.5},\"imgW\":633.6,\"imgH\":321.5,\"mask\":\"radial-gradient(62% 46%, rgb(0\",\"display\":\"block\",\"opacity\":\"1\",\"token\":\"31, 44, 38\"}"
+  },
+  {
+    "name": "面纱尺寸=画卷矩形",
+    "ok": true,
+    "detail": "canvas 633.6x321.5 vs img 633.6x321.5"
+  },
+  {
+    "name": "面纱带同款羽化 mask",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "面纱像素=令牌计算值(灯下)",
+    "ok": true,
+    "detail": "pixel=[31,44,38,255] token=[31,44,38]"
+  },
+  {
+    "name": "拂拭中心显影(alpha→0)",
+    "ok": true,
+    "detail": "pixel=[0,0,0,0]"
+  },
+  {
+    "name": "寿命后面纱愈合(alpha→255)",
+    "ok": true,
+    "detail": "pixel=[31,44,38,255]"
+  },
+  {
+    "name": "显影区无正文压字",
+    "ok": true,
+    "detail": "checked=0 hits=[]"
+  },
+  {
+    "name": "面纱像素=令牌计算值(晴窗宣纸系)",
+    "ok": true,
+    "detail": "pixel=[233,222,202,255] token=[233,222,202]"
+  },
+  {
+    "name": "reduce 面纱静态半透(opacity≈0.55)",
+    "ok": true,
+    "detail": "opacity=0.55"
+  },
+  {
+    "name": "reduce 鼠标不显影(不跑 rAF)",
+    "ok": true,
+    "detail": "[233,222,202,255] vs [233,222,202,255]"
+  },
+  {
+    "name": "hover:none 组件未初始化(matchMedia=false)",
+    "ok": true,
+    "detail": "hover=false display=none"
+  },
+  {
+    "name": "hover:none 面纱从未涂=画常显(alpha=0)",
+    "ok": true,
+    "detail": "pixel=[0,0,0,0]"
+  },
+  {
+    "name": "hover:none 画常显(img 在画)",
+    "ok": true,
+    "detail": "img 633.6x321.5"
+  },
+  {
+    "name": "fail-open:移除面纱层画仍完整可见",
+    "ok": true,
+    "detail": "{\"visibleBefore\":true,\"visibleAfter\":true,\"canvasGone\":true}"
+  },
+  {
+    "name": "控制台零异常",
+    "ok": true,
+    "detail": ""
+  }
+]
