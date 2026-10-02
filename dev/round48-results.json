@@ -1,0 +1,57 @@
+[
+  {
+    "name": "卷尾小景就位",
+    "ok": true,
+    "detail": "{\"has\":true,\"img\":\"0x0\"}"
+  },
+  {
+    "name": "图片 lazy+真实款识",
+    "ok": true,
+    "detail": "alt=墨葡萄图 loading=lazy"
+  },
+  {
+    "name": "小景宽度受控(≤212px)",
+    "ok": true,
+    "detail": "w=166"
+  },
+  {
+    "name": "款识+注记文本",
+    "ok": true,
+    "detail": "〔明〕徐渭 墨葡萄图 / 卷尾墨迹 · 与原文无涉，仅作展卷收束。"
+  },
+  {
+    "name": "纸阶二档带背景",
+    "ok": true,
+    "detail": "rgb(241, 231, 214)"
+  },
+  {
+    "name": "DOM 序:附录在篇章导航之前",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "G26 里距表未受影响(仍在篇末)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1440 零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "390 零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "390 小景可读(宽 ≤218 且 loaded)",
+    "ok": true,
+    "detail": "w=130.7"
+  },
+  {
+    "name": "控制台零异常",
+    "ok": true,
+    "detail": ""
+  }
+]

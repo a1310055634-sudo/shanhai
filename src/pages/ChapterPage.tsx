@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams, useLocation } from 'react-router-dom'
+import PaintingMount from '../components/PaintingMount'
+import xuweiGrapes from '../assets/paintings/xuwei-grapes.jpg'
 import { CHAPTERS, CHAPTER_PINYIN } from '../data/chapters'
 import { LOCATIONS } from '../data/locations'
 import { CHAPTER_TEXTS, GLOSSARY, segmentCounts, type ChapterSegment } from '../data/chapterTexts'
@@ -264,6 +266,22 @@ export default function ChapterPage() {
           <DistanceTable classic="ns2" />
         </>
       )}
+
+      {/* G48 卷尾水墨小景:六层内容之后、篇章导航之前的纯装饰附录——
+          小尺寸装裱立轴+纸阶二档带;款识真实题名,与原文无涉不臆造关联 */}
+      <div className={styles.scrollEnd}>
+        <div className={styles.scrollEndMount}>
+          <PaintingMount
+            src={xuweiGrapes}
+            alt="墨葡萄图"
+            width={510}
+            height={1341}
+            caption="〔明〕徐渭 墨葡萄图"
+            credit="维基共享资源 公有领域"
+          />
+        </div>
+        <p className={styles.scrollEndNote}>卷尾墨迹 · 与原文无涉，仅作展卷收束。</p>
+      </div>
 
       <nav className={styles.chapterNav} aria-label="篇章切换">
         {prev ? (
