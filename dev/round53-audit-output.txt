@@ -1,0 +1,31 @@
+== 扫描 48 个 CSS 文件 ==
+
+== 1/2. 裸值明细(时长为空表示该项已走令牌)==
+  零裸值 ✅
+
+== 3. 时长阶梯使用分布 ==
+   78 次  --duration-hover
+    2 次  --duration-reveal
+    2 次  --duration-flatten
+    1 次  --duration-cue
+    1 次  --duration-ambient
+    1 次  --duration-ambient-slow
+    1 次  --duration-twinkle
+    1 次  --duration-caret
+    1 次  --duration-drawer
+
+== 4. @keyframes 定义/引用对应 ==
+  定义 7 个:caret-blink, cue-breathe, drawerIn, drift, featuredIn, rise-in, twinkle
+  引用未定义:无 ✅
+
+== 5. reduced-motion 压平覆盖面(base.css)==
+  有 animation-duration !important
+  有 animation-iteration-count !important
+  有 transition-duration !important
+  有 通用选择器覆盖 *, *::before, *::after
+
+== 6. 动效令牌是否有死令牌(定义未被任何组件引用)==
+  定义 12 个动效令牌,组件引用 11 个
+  死令牌:--duration-char(定义未被引用)
+
+== 结论:PASS(零裸值;死令牌另行登记,不计失败) ==

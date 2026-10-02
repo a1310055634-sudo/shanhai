@@ -1,0 +1,27 @@
+[
+  {
+    "name": "正常路径 caret=caret-blink×--duration-caret",
+    "ok": true,
+    "detail": "{\"name\":\"_caret-blink_l6rq9_1\",\"dur\":\"1.1s\",\"ease\":\"ease-in-out\"}"
+  },
+  {
+    "name": "reduce 全站动画压平(0.01ms 压平令牌)",
+    "ok": true,
+    "detail": "[\"1e-05s\",\"_cue-breathe_doo7q_1:1e-05s\"]"
+  },
+  {
+    "name": "reduce 运行中动画归零",
+    "ok": true,
+    "detail": "getAnimations=0"
+  },
+  {
+    "name": "reduce 誊抄光标不渲染",
+    "ok": true,
+    "detail": "state=done caret=0"
+  },
+  {
+    "name": "控制台零异常",
+    "ok": true,
+    "detail": ""
+  }
+]

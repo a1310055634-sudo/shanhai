@@ -31,7 +31,8 @@
   border-radius: 50%;
   background: currentColor;
   vertical-align: baseline;
-  animation: caret-blink var(--duration-caret) ease-in-out infinite;
+  /* 呼吸缓动走氛围组令牌 --ease-ambient(=ease-in-out 语义,G53 审计收口) */
+  animation: caret-blink var(--duration-caret) var(--ease-ambient) infinite;
 }
 
 @keyframes caret-blink {
