@@ -3,7 +3,7 @@
 - **有效执行编号**:二阶 13 / 18
 - **北京时间**:2026-10-02 约 08:11—09:0X(定时触发)
 - **开始 HEAD**:87bb77d(G32 日志补提交),工作树干净;.round-lock 不存在,新建,轮末删除
-- **提交**:本提交(新增 src/components/relations/ 2 文件+改 RelationsPage 2 文件+5 截图)
+- **提交**:51cc2ea(13 files:新增 src/components/relations/ 2 文件+改 RelationsPage 2 文件+5 截图+四件套)
 - **本轮预期**:RelationsPage 用 ConceptMap 同款语言做三方关系图,数据派生不手写第三份;键盘遍历/标签零重叠/390 策略明确
 
 ### 实际改动
