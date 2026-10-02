@@ -167,7 +167,7 @@ HEAD 起点:`823ba01`(R19 终验交付,工作树干净)。
 | G50 | 山川图晕染增强(feTurbulence) | done | 9d5c5d5 | inkWash 滤镜台账 1/4;9/9 |
 | G51 | 参考页画卷化(轻,6 页) | done | 0a6533b | 四页纸阶统一;53行纯新增;5/5 |
 | G52 | 宋体标题层实验(系统栈) | done | b3591f5 | 命中 Songti SC 达标不退回;零@font-face |
-| G53 | 微动效令牌收口 | todo | | G37 审计脚本复跑 |
+| G53 | 微动效令牌收口 | done | 0e7b48c | 审计 PASS 留档;--duration-char JS 型登记;5/5 |
 | G54 | 性能与体积对照 | todo | | 位图 ≤2.5MB 预算核查 |
 | G55 | 双主题全站走查(中期截图) | todo | | GALLERY_FINAL3/mid-* |
 | G56 | 全站回归矩阵 | todo | | G38 17 项+画卷新增 |

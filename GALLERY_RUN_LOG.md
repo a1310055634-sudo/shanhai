@@ -1,3 +1,17 @@
+## G53 · 微动效令牌收口(审计复跑 + reduce 压平复验)
+
+- **有效执行编号**:三阶 15 / 20
+- **北京时间**:2026-10-03 13:1X—14:0X(定时触发)
+- **开始 HEAD**:da77aa4(G52 补记),工作树干净;.round-lock 新建,轮末删除
+- **实际改动**:Transcriber.module.css caret-blink 缓动 ease-in-out→var(--ease-ambient)(G43 唯一漏网裸值,语义=呼吸式与氛围组一致);dev/round53-token.mjs 验收脚本+dev/round53-audit-output.txt 审计留档
+- **G37 审计复跑(node dev/round37-audit.mjs,48 文件)**:结论 **PASS 零裸值**;时长阶梯使用分布含三阶新增(--duration-caret 1 次);keyframes 7 枚定义/引用零缺失;压平覆盖面四项全有;**--duration-char 判「死令牌另行登记不计失败」=JS 消费型令牌**(Transcriber.tsx readChar 运行时读取打字间隔,CSS 无引用属设计内,审计口径本身如此判定)
+- **验收(dev/round53-token.mjs,5/5 全过)**:正常路径 caret=caret-blink×1.1s(--duration-caret)/**reduce 全站动画压平(computed 全部=1e-05s 即 0.01ms 压平令牌,getAnimations=0)**/reduce 誊抄光标不渲染直出全文/控制台零异常
+- **脚本坑(如实记)**:reduce computed animationDuration 返回科学计数 "1e-05s",字面匹配 '0.01ms' 假红——时长归一化断言已修
+- **性能**:js 无改动
+- **提交**:主提交 **0e7b48c**(4 files)+ 补记提交(本条)
+- **状态**:done(验收:审计输出留档✓、零裸值✓、CSSOM 断言✓、reduced-motion 复验✓)
+- **遗留与下轮入口**:无新增;下一轮 G54 性能与体积对照(图片 lazy+CLS 断言、位图 ≤2.5MB 预算核查、gzip 三项对照三阶基线)
+
 ## G52 · 宋体标题层实验(--font-display 大题,达标不退回)
 
 - **有效执行编号**:三阶 14 / 20
