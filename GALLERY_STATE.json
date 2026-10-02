@@ -3,9 +3,9 @@
   "phase": 2,
   "title": "古朴精修·二阶冲刺 G21—G38",
   "totalRounds": 18,
-  "validExecutions": 16,
+  "validExecutions": 17,
   "maxValidExecutions": 18,
-  "currentRound": "G37",
+  "currentRound": "G38",
   "rounds": {
     "G21": "done",
     "G22": "done",
@@ -23,7 +23,7 @@
     "G34": "done",
     "G35": "done",
     "G36": "done",
-    "G37": "todo",
+    "G37": "done",
     "G38": "todo"
   },
   "retired": "一阶 G14—G20 已并入二阶 G21—G23/G25/G36/G37/G38,原编号退役;一阶收官提交 89171dc(G13),13/20 轮完成",
@@ -60,31 +60,34 @@
       "gzip": "441 B"
     }
   },
-  "lastRunAt": "2026-10-02 12:0X+08:00",
+  "lastRunAt": "2026-10-02 12:2X+08:00",
   "status": "idle",
-  "g36Notes": {
-    "newType": "LaterClaim / LaterReception.claims[]",
-    "claimsUp": "4 条(九尾狐2/精卫1/夔1)",
-    "archive": "EDITION_EVIDENCE/liubian-guji-20261002.md(三源 oldid 固定版本)",
-    "scripts": [
-      "dev/round36-verify.mjs",
-      "dev/round36-browser.mjs",
-      "dev/round36-archive.mjs"
+  "g37Notes": {
+    "auditScripts": [
+      "dev/round37-audit.mjs",
+      "dev/round37-browser.mjs",
+      "dev/round37-patch.mjs"
     ],
-    "assertions": "G36 23/23 + G35 复跑 30/30(对比度探针合成顺序已修正)",
+    "rawValues": "8 处→0 处",
+    "deadTokensRemoved": [
+      "--duration-map-draw",
+      "--duration-transition"
+    ],
+    "ladder": "hover 200 / drawer 320 / reveal 720 + 氛围 cue 2800·84s·118s·7s + flatten 0.01ms",
+    "reducedMotion": "运行时实测压平后全站仅剩 1e-05s",
+    "touchTargets": "14 路由×390:109 个不足(15 类,最小 14px)→ 0 个,逐路由 min=44px",
+    "reports": [
+      "TOUCH-TARGET-AUDIT-G37.md",
+      "TOUCH-TARGET-AUDIT-G37.json"
+    ],
+    "regression": "G35 30/30 + G36 23/23 复跑全绿",
     "buildGzip": {
-      "js": "176.76 kB",
-      "css": "20.20 kB"
+      "js": "176.78 kB",
+      "css": "20.37 kB"
     },
-    "fixedBugs": [
-      ".receptionFrame 硬编码深纱未随主题翻转→晴窗 2.18:1,改 --veil-mid",
-      "补 44px 触控目标 4 处(CitationBlock.link/.tocItem/.backLink/.artNote a)",
-      "G35 对比度探针 alpha 合成顺序写反(假失败 2.29:1),已修正并复跑 G35"
-    ],
     "openItems": [
-      "其余 12 词条流变层无 claim(未核即无 claim,设计内状态)",
-      "四类未取得来源的常见说法已在存档第五节登记待回填",
-      "1440 指针档页脚链接 29px 是否升 44px 留 G37/G38"
+      "1440 指针档页脚链接 29px 是否升 44px,交 G38 终验记录",
+      "静态扫描覆盖不到 JS 运行时内联样式(已用运行时实测补足,未发现)"
     ]
   }
 }

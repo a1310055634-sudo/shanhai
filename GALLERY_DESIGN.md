@@ -353,3 +353,29 @@ RelationsPage 顶部新增 `LineageMap`(src/components/relations/),替代原页�
 - **页内 `<header>` 干扰导航断言**:词条页插画区自带 `<header>`,用 `document.querySelectorAll('header a')` 会把它算进主导航;导航断言改取**DOM 中第一个 header**(应用顶栏)。
 - **取档必须直连原始字符**:经工具层取回的页面文本可能被归一标点(`“ ”`→`「 」`);凡要入 `EDITION_EVIDENCE/` 的文本一律走 `dev/round36-archive.mjs` 式直连抓取,并在输出中打印该段实际出现的引号字符及码位以便肉眼比对。
 - **CDP 脚本两个坑**(与 8.5 并列):①`localStorage` 在 `about:blank` 上抛 SecurityError,首帧访问须包 `try`;②断言脚本里凡比较尺寸高度,`getBoundingClientRect().height` 可能是 43.99x,须按 `Math.round` 比较或留余量,否则 44px 规则会假失败。
+
+## 十、微交互令牌与触控底线(G37 审计定稿)
+
+### 10.1 动效令牌阶梯(全站零裸值)
+
+| 档 | 令牌 | 值 | 用途 |
+|---|---|---|---|
+| 交互 | `--duration-hover` | 200ms | 全站 hover / 状态色变化(78 处) |
+| 交互 | `--duration-drawer` | 320ms | 行旅证据抽屉滑入 |
+| 交互 | `--duration-reveal` | 720ms | 首屏揭示、长卷站点淡入 |
+| 氛围 | `--duration-cue` | 2800ms | 首页下引指示呼吸 |
+| 氛围 | `--duration-ambient` / `-slow` | 84s / 118s | 云海漂移(往复) |
+| 氛围 | `--duration-twinkle` | 7s | 星辰微闪 |
+| 压平 | `--duration-flatten` | 0.01ms | reduced-motion 与主题切换归零(base.css 专用) |
+
+- 缓动只有两个:`--ease-soft`(交互,`cubic-bezier(.25,.1,.25,1)`)、`--ease-ambient`(氛围往复,`ease-in-out`)。
+- **纪律**:新增动效必须引用上表令牌;新增令牌必须同时有引用。`dev/round37-audit.mjs` 第 6 节持续报告死令牌——G37 已按此清理 `--duration-map-draw`(1200ms)与 `--duration-transition`(540ms)两个零引用令牌。
+- 扫描口径:先剔除 `var(--…)` 再匹配时长与缓动关键字(否则 `var(--ease-soft)` 会被 `ease` 关键字误报);`transition: none` 不计裸值。
+
+### 10.2 触控底线(390 档 ≥44px)
+
+- **口径**:390 触控档**全部交互控件** ≥44px;1440 指针档 ≥24px(WCAG 2.5.8 AA)。段内行内文字链接按 2.5.8 内联例外排除并单独计数。
+- **实现手法**:在组件 CSS 末尾追加 `@media (max-width: 768px)` 块,给选择器 `display:inline-flex; align-items:center; min-height:44px`(桌面档版式不动)。
+- **SVG 内命中区必须按缩放换算**:舆图 `viewBox="0 0 1000 620"`,390 档以 `min-width:760px` 横滚呈现 → 缩放 0.76,故 44 CSS px 命中高度需 **58 用户单位**(首版按 44 单位画,实测仅 33.4px 不达标)。**CSS px 数值不能直接写进 SVG 坐标。**
+- **新增命中区必须做重叠检测**:扩大命中区可能盖住邻近交互节点;G37 的做法是在运行时对「新命中区 × 舆图其余 23 个可交互节点」逐对求相交,零相交才算通过。
+- 全量结果存 `TOUCH-TARGET-AUDIT-G37.md` 与 `TOUCH-TARGET-AUDIT-G37.json`:修复前 109 个控件不足(15 类,最小 14px),修复后 14 路由**全部 ≥44px,不足 0**。

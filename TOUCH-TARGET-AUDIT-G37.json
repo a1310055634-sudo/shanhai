@@ -1,0 +1,161 @@
+{
+  "perRoute": [
+    {
+      "route": "/",
+      "min": 44,
+      "count": 61,
+      "under44": 0
+    },
+    {
+      "route": "/catalog",
+      "min": 44,
+      "count": 48,
+      "under44": 0
+    },
+    {
+      "route": "/catalog/jiuweihu",
+      "min": 44,
+      "count": 45,
+      "under44": 0
+    },
+    {
+      "route": "/atlas",
+      "min": 44,
+      "count": 40,
+      "under44": 0
+    },
+    {
+      "route": "/chapters",
+      "min": 44,
+      "count": 17,
+      "under44": 0
+    },
+    {
+      "route": "/chapters/nanshan-jing",
+      "min": 44,
+      "count": 72,
+      "under44": 0
+    },
+    {
+      "route": "/relations",
+      "min": 44,
+      "count": 87,
+      "under44": 0
+    },
+    {
+      "route": "/explore",
+      "min": 44,
+      "count": 31,
+      "under44": 0
+    },
+    {
+      "route": "/journeys/nanci-yi",
+      "min": 44,
+      "count": 38,
+      "under44": 0
+    },
+    {
+      "route": "/favorites",
+      "min": 44,
+      "count": 19,
+      "under44": 0
+    },
+    {
+      "route": "/about",
+      "min": 44,
+      "count": 18,
+      "under44": 0
+    },
+    {
+      "route": "/how-to-read",
+      "min": 44,
+      "count": 19,
+      "under44": 0
+    },
+    {
+      "route": "/readings",
+      "min": 44,
+      "count": 20,
+      "under44": 0
+    },
+    {
+      "route": "/variants",
+      "min": 44,
+      "count": 40,
+      "under44": 0
+    }
+  ],
+  "inventory": [
+    {
+      "route": "/",
+      "count": 61,
+      "under44": []
+    },
+    {
+      "route": "/catalog",
+      "count": 48,
+      "under44": []
+    },
+    {
+      "route": "/catalog/jiuweihu",
+      "count": 45,
+      "under44": []
+    },
+    {
+      "route": "/atlas",
+      "count": 40,
+      "under44": []
+    },
+    {
+      "route": "/chapters",
+      "count": 17,
+      "under44": []
+    },
+    {
+      "route": "/chapters/nanshan-jing",
+      "count": 72,
+      "under44": []
+    },
+    {
+      "route": "/relations",
+      "count": 87,
+      "under44": []
+    },
+    {
+      "route": "/explore",
+      "count": 31,
+      "under44": []
+    },
+    {
+      "route": "/journeys/nanci-yi",
+      "count": 38,
+      "under44": []
+    },
+    {
+      "route": "/favorites",
+      "count": 19,
+      "under44": []
+    },
+    {
+      "route": "/about",
+      "count": 18,
+      "under44": []
+    },
+    {
+      "route": "/how-to-read",
+      "count": 19,
+      "under44": []
+    },
+    {
+      "route": "/readings",
+      "count": 20,
+      "under44": []
+    },
+    {
+      "route": "/variants",
+      "count": 40,
+      "under44": []
+    }
+  ],
+  "grouped": []
+}

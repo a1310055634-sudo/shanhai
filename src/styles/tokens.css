@@ -120,12 +120,27 @@
   --scrollbar-thumb-hover: var(--border-strong);
   --scrollbar-track: transparent;
 
-  /* 动效时间(第十节) */
+  /* 动效时间(第十节)
+     G37 微交互总审计:裸值全部收编为令牌,阶梯收敛为
+     交互档 hover 200ms / 抽屉 drawer 320ms / 揭示 reveal 720ms,
+     另有「氛围组」(首页呼吸与云海/星辰的极慢循环)与压平档 flatten 单独成值——
+     氛围组时长量级与交互档不同,不并入阶梯,但同样走令牌,全站零裸值。
+     死令牌已清理:--duration-map-draw(1200ms,全站零引用)与 --duration-transition(540ms,全站零引用)
+     本轮删除;审计脚本 dev/round37-audit.mjs 第 6 节会持续报告死令牌,新增令牌须同时有引用。 */
   --duration-hover: 200ms;
+  --duration-drawer: 320ms;
   --duration-reveal: 720ms;
-  --duration-transition: 540ms;
-  --duration-map-draw: 1200ms;
+  /* 氛围组:仅用于首页 Hero 的循环装饰动画(呼吸/云海漂移/星辰微闪) */
+  --duration-cue: 2800ms;
+  --duration-ambient: 84s;
+  --duration-ambient-slow: 118s;
+  --duration-twinkle: 7s;
+  /* 压平档:reduced-motion 与主题切换的归零时长(base.css 专用) */
+  --duration-flatten: 0.01ms;
+
   --ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+  /* 氛围组缓动:往复对称(ease-in-out),与交互档的 ease-soft 区分 */
+  --ease-ambient: ease-in-out;
 }
 
 /*

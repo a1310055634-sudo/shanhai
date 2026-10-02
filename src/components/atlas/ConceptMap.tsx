@@ -99,6 +99,10 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
           </text>
         </g>
         <a href="/journeys/nanci-yi" className={styles.mapJourneyLink}>
+          {/* G37:SVG 文本命中区仅 14px 高。舆图在 390 档以 min-width 760 呈现(viewBox 宽 1000,
+              缩放 0.76),故 44 CSS px 命中高度需 44/0.76 ≈ 58 用户单位;x 取文本实际跨度,
+              避免覆盖邻近节点命中区(重叠检测见 dev/round37-browser.mjs)。 */}
+          <rect x="548" y="366" width="96" height="58" fill="transparent" />
           <text x="638" y="391" textAnchor="end" fill="var(--paper-ink)" fontSize="12.5" letterSpacing="1.5" fontFamily="var(--font-serif)">
             进入山海行旅 →
           </text>

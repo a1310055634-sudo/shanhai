@@ -1,3 +1,50 @@
+## G37 · 微交互总审计(裸值→令牌 / reduced-motion 实测 / 全站触控抽测 109→0)
+
+- **有效执行编号**:二阶 17 / 18
+- **北京时间**:2026-10-02 约 10:3X—12:2X(定时触发)
+- **开始 HEAD**:d6956fe(G36 日志补提交号),工作树干净;.round-lock 不存在,新建,轮末删除
+- **提交**:(见下)
+- **本轮预期**:程序化扫描全站 CSS——transition/animation 裸值→令牌、duration/ease 一致性、reduced-motion 压平全覆盖(不能实测就如实写)、触控目标抽测;验收=扫描零裸值或遗留清单化
+
+### 一、静态扫描(dev/round37-audit.mjs,45 个 CSS 文件)
+
+- **裸值 8 处 → 0 处**:HomePage ×2(`0.25s ease`,G32 挂账项)、Hero ×4(`2.8s`/`84s`/`118s`/`7s` + `ease-in-out`)、JournalEvidence(`0.32s`)、JournalScene(`0.7s`)、base.css ×2(`0.01ms`)。全部收编为令牌。
+- **时长阶梯定稿**:交互档 hover 200ms / drawer 320ms / reveal 720ms;氛围组 cue 2800ms、ambient 84s、ambient-slow 118s、twinkle 7s;压平档 flatten 0.01ms。缓动只两个:`--ease-soft`(交互)、新增 `--ease-ambient = ease-in-out`(氛围往复)。
+- **两处刻意的值收敛**(如实记):HomePage 交互 `0.25s→200ms`;JournalScene `0.7s→720ms`(并入 reveal 档,+20ms 不可辨)。
+- **死令牌清理 2 个**:`--duration-map-draw`(1200ms)、`--duration-transition`(540ms)——已用 `git show HEAD:src/styles/tokens.css` 核实旧版中各自仅出现 1 次(即定义处),全站零引用;删除后扫描器第 6 节(新增)持续报告死令牌。
+- **@keyframes**:定义 6 个(rise-in/cue-breathe/drift/twinkle/drawerIn/featuredIn),引用零悬挂。
+- **扫描口径修正**:首轮把 `var(--ease-soft)` 里的 `ease` 误报为裸值(令牌名含关键字),改为**先剔除 `var(--…)` 再匹配**后归零;`transition: none` 不计裸值。
+- 结论:**PASS(零裸值、零死令牌、零悬挂 keyframes)**。
+
+### 二、运行时实测(dev/round37-browser.mjs,无头 Chrome CDP)
+
+- **令牌实际取值**:首页 67 个过渡元素;动画时长实测 `_rise-in:0.72s`、`_cue-breathe:2.8s`,全部落在令牌档;缓动分组正确(氛围组 = `ease-in-out`,其余 = `cubic-bezier(0.25, 0.1, 0.25, 1)`)。
+- **reduced-motion 真压平**:`Emulation.setEmulatedMedia` 置 reduce 后遍历全页,动效时长**取值集合只剩 `["1e-05s"]`**(即 flatten 档),无任何遗漏项。
+- **触控抽测 14 路由 × 390**:修复前 **9 个路由不足、合计 109 个控件、归并 15 类、最小 14px**;修复后 **14 路由逐档最小值全部 = 44px,不足 0 个**。
+  - 修复手法:10 个组件 CSS 末尾追加 `@media (max-width: 768px)` 块(`display:inline-flex; align-items:center; min-height:44px`),**桌面档版式不动**。逐类清单见 TOUCH-TARGET-AUDIT-G37.md。
+- **新记的坑(重要)**:舆图「进入山海行旅 →」是 SVG 文本链接,命中区随 `viewBox` 缩放(390 档 map 以 min-width 760 呈现,缩放 0.76),**按 44 用户单位画实测只有 33.4px**,须按 `44/0.76≈58` 用户单位换算;定稿命中区含一块 58 单位透明矩形,运行时实测 **44.08px**,并新增**相交检测**确认它与舆图其余 **23 个可交互节点零重叠**(扩大命中区最怕盖住邻居,故必须程序化验)。
+
+### 三、回归
+
+- **G35 套件复跑 30/30、G36 套件复跑 23/23,全绿**——本轮改动了 EntityDetailPage/ChapterPage 等页面的移动档 CSS,回归覆盖到两轮既有断言,无退化。
+- 全程零未捕获异常(CDP Runtime 监听)。
+
+### build 与截图
+
+- build 绿:JS 568.25 kB / **gzip 176.78(+0.02)**;CSS 117.10 kB / **gzip 20.37(+0.17,含 10 个媒体查询块)**。
+- 截图 3 张存 GALLERY_BASELINES/g37-*:首页 390、reduced-motion 压平态首页、断言明细 g37-assertions.json。
+- 产物参考:`TOUCH-TARGET-AUDIT-G37.md`(人读报告)+ `TOUCH-TARGET-AUDIT-G37.json`(逐路由原始清单)。
+
+### 状态词:done(验收条件:程序化扫描零裸值✓ + 死令牌零✓ + reduced-motion 压平运行时实测✓ + 触控目标 14 路由抽测 0 不足✓;扫描器与清单可复跑)
+
+### 遗留与下轮入口
+
+- 1440 指针档仍按 ≥24px(AA)判定,页脚链接 29px 合格;是否统一升 44px 未决,交 G38 终验记录(不擅自扩大改动面)。
+- 静态扫描覆盖不到「JS 运行时写入的内联样式」,本轮以运行时 computed style + 全路由遍历补足,未发现 JS 注入动效;该限制如实记在报告第三节。
+- **下轮 G38 二阶终验**:不新增功能;12+ 路由回归矩阵、八站深链/无效参数/进度恢复/抽屉/锚点回归、性能对比二阶基线(G21 记录值)、控制台清零、GALLERY_FINAL2/ 收官截图≥10 张、GALLERY_REPORT.md 增补二阶卷、更新 DEV_LOG.md;此后一切触发只读退出并提醒用户停用本任务。
+
+---
+
 ## G36 · 流变补强(后世流变逐句注篇名与链接 / 取不到来源就写在页面上留白)
 
 - **有效执行编号**:二阶 16 / 18

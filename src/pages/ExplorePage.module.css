@@ -250,3 +250,18 @@
   color: var(--ink-night);
   background: var(--old-gold);
 }
+
+/* G37 微交互总审计:390 触控档补 44px 命中高度(探索页「进入行旅 →」+ 站点链接 ×4)。桌面档版式不动,仅在 ≤768px 生效。 */
+@media (max-width: 768px) {
+  .journeyEnter {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .stationLink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}

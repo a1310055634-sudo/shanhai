@@ -618,3 +618,18 @@ section [id^='sec-'],
   width: 100%;
   height: 100%;
 }
+
+/* G37 微交互总审计:390 触控档补 44px 命中高度(词条页「← 上一篇」等 4 处 + 「随机翻一卷」)。桌面档版式不动,仅在 ≤768px 生效。 */
+@media (max-width: 768px) {
+  .relatedLink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .randomBtn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}

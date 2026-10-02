@@ -153,3 +153,18 @@
     padding: 20px;
   }
 }
+
+/* G37 微交互总审计:390 触控档补 44px 命中高度(谱系详表 A[H2] ×15 与 A[LI] ×56)。桌面档版式不动,仅在 ≤768px 生效。 */
+@media (max-width: 768px) {
+  .name a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .related a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}

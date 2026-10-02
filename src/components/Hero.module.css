@@ -259,7 +259,8 @@
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1;
-  animation: cue-breathe 2.8s ease-in-out infinite;
+  /* G37:氛围组令牌化(原裸值 2.8s ease-in-out) */
+  animation: cue-breathe var(--duration-cue) var(--ease-ambient) infinite;
 }
 
 @keyframes cue-breathe {
@@ -287,11 +288,11 @@
 
 /* 云海漂移:极慢、仅 transform */
 .lClouds .drift-slow {
-  animation: drift 84s ease-in-out infinite alternate;
+  animation: drift var(--duration-ambient) var(--ease-ambient) infinite alternate;
 }
 
 .lClouds .drift-slower {
-  animation: drift 118s ease-in-out infinite alternate-reverse;
+  animation: drift var(--duration-ambient-slow) var(--ease-ambient) infinite alternate-reverse;
 }
 
 @keyframes drift {
@@ -305,7 +306,7 @@
 
 /* 星辰微闪:仅 opacity */
 .twinkle {
-  animation: twinkle 7s ease-in-out infinite alternate;
+  animation: twinkle var(--duration-twinkle) var(--ease-ambient) infinite alternate;
 }
 
 @keyframes twinkle {
@@ -395,5 +396,14 @@
   .scrollCue {
     left: var(--space-page-x-mobile);
     transform: none;
+  }
+}
+
+/* G37 微交互总审计:390 触控档补 44px 命中高度(首页下引指示(↓向下开卷))。桌面档版式不动,仅在 ≤768px 生效。 */
+@media (max-width: 768px) {
+  .scrollCue {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
 }

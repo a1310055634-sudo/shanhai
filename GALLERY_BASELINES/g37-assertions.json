@@ -1,0 +1,37 @@
+[
+  {
+    "name": "首页存在过渡元素(动效未被误删)",
+    "ok": true,
+    "detail": "过渡元素 67 个"
+  },
+  {
+    "name": "运行时动画时长全部落在令牌档",
+    "ok": true,
+    "detail": "_rise-in_1st69_1:0.72s _cue-breathe_1st69_1:2.8s"
+  },
+  {
+    "name": "运行时缓动:氛围组=ease-in-out(--ease-ambient),其余=--ease-soft",
+    "ok": true,
+    "detail": "(全部符合)"
+  },
+  {
+    "name": "reduced-motion:压平后全站时长仅剩 1e-05s",
+    "ok": true,
+    "detail": "取值集合 [\"1e-05s\"] · 带动画元素 1"
+  },
+  {
+    "name": "全 14 路由 390 档控件 ≥44px",
+    "ok": true,
+    "detail": "最小 44px @ /;合计 0 个不足,已按类归并为 0 类写入 TOUCH-TARGET-AUDIT-G37.json"
+  },
+  {
+    "name": "舆图行旅链接命中区 ≥44px 且不覆盖其他交互节点",
+    "ok": true,
+    "detail": "{\"found\":true,\"hit\":{\"x\":427.892822265625,\"y\":661.152587890625,\"w\":82.54428100585938,\"h\":44.078857421875},\"clash\":[],\"others\":23}"
+  },
+  {
+    "name": "全程无未捕获异常",
+    "ok": true,
+    "detail": "0"
+  }
+]

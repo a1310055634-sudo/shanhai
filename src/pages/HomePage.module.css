@@ -136,7 +136,11 @@
   outline-offset: -5px;
   background: linear-gradient(90deg, rgba(40, 54, 50, 0.5), rgba(24, 33, 33, 0.18));
   text-decoration: none;
-  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  /* G37:原裸值 transition 0.25s ease 收编为令牌(交互档 hover 200ms) */
+  transition:
+    border-color var(--duration-hover) var(--ease-soft),
+    background var(--duration-hover) var(--ease-soft),
+    transform var(--duration-hover) var(--ease-soft);
 }
 
 .journeyEntry:hover {
@@ -182,7 +186,10 @@
   font-size: 15px;
   letter-spacing: 0.12em;
   white-space: nowrap;
-  transition: color 0.25s ease, border-color 0.25s ease;
+  /* G37:原裸值 transition 0.25s ease 收编为令牌(交互档 hover 200ms) */
+  transition:
+    color var(--duration-hover) var(--ease-soft),
+    border-color var(--duration-hover) var(--ease-soft);
 }
 
 .journeyEntry:hover .journeyEntryCta {

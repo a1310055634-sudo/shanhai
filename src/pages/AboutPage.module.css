@@ -156,3 +156,12 @@
   max-width: 300px;
   margin: 52px auto 0;
 }
+
+/* G37 微交互总审计:390 触控档补 44px 命中高度(About 页「查看图鉴/古卷 →」×2)。桌面档版式不动,仅在 ≤768px 生效。 */
+@media (max-width: 768px) {
+  .statusLink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
