@@ -3,7 +3,8 @@
 - **有效执行编号**:二阶 17 / 18
 - **北京时间**:2026-10-02 约 10:3X—12:2X(定时触发)
 - **开始 HEAD**:d6956fe(G36 日志补提交号),工作树干净;.round-lock 不存在,新建,轮末删除
-- **提交**:(见下)
+- **提交**:d12dcbb(24 files:CSS 15 + ConceptMap.tsx + 审计脚本 3 + 报告 2 + 断言明细 1 + 截图 3 + STATE;不含 dist/);提交后 rebuild 使页脚版本戳=d12dcbb,产物内实测命中 HEAD,一致
+- **说明**:首轮提交无 -m 参数(改用消息文件),避免 PowerShell 把弯引号当字符串定界符导致参数被截断(G36 已踩过该坑)
 - **本轮预期**:程序化扫描全站 CSS——transition/animation 裸值→令牌、duration/ease 一致性、reduced-motion 压平全覆盖(不能实测就如实写)、触控目标抽测;验收=扫描零裸值或遗留清单化
 
 ### 一、静态扫描(dev/round37-audit.mjs,45 个 CSS 文件)
