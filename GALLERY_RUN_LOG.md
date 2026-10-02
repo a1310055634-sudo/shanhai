@@ -3,10 +3,10 @@
 - **有效执行编号**:二阶 18 / 18(封顶)
 - **北京时间**:2026-10-02 约 11:0X—12:4X(定时触发)
 - **开始 HEAD**:2b2e9e1(G37 日志补提交号),工作树干净;.round-lock 不存在,新建,轮末删除
-- **提交**:(见下)
-- **本轮预期**:不新增功能;12+ 路由回归矩阵、八站深链/无效参数/进度恢复/抽屉/锚点回归、性能对比二阶基线、控制台清零、GALLERY_FINAL2/ 截图≥10 张、GALLERY_REPORT.md 增补二阶卷、更新 DEV_LOG.md;此后只读退出
+- **提交**:54f138b(21 files:GALLERY_REPORT.md 新建 + DEV_LOG 重写 + 三件套 + dev/round38-final.mjs + GALLERY_FINAL2/ 18 项(17 图 + 断言 json);不含 dist/);提交后 rebuild,产物内实测命中 HEAD,页内页脚实测「校讫记 · 2026-10-02 编成 · 本次第 54f138b」= HEAD,一致
+- **终验复跑**:提交并 rebuild 后**以出货产物为准整套复跑,17/17 全绿**(含此前挂起的第 17 项页脚版本戳)
 
-### 一、回归矩阵(dev/round38-final.mjs,17 项 16 通过;第 17 项见下)
+### 一、回归矩阵(dev/round38-final.mjs,以出货产物复跑 **17/17 全通过**)
 
 | 项 | 结果 |
 |---|---|
@@ -22,7 +22,7 @@
 | 阅读历史 | ✅ `shanhai:reading` 落盘,收藏页恢复显示 |
 | 证据抽屉 | ✅ 可开(300ms 后 dialog 存在,`role=dialog`+`aria-modal`)、有关闭钮、关闭后无残留 |
 | 锚点 | ✅ 抽样 4 段(seg-ns1-zhaoyao-kai/tangting/yuanyi/chuyang-shan)全部 `scroll-margin-top=124px` 且落位 top=124 |
-| 页脚版本戳 | ⏳ 快照时 d12dcbb(G37 特性提交);G38 提交后 rebuild 复核 |
+| 页脚版本戳 | ✅ 快照时 d12dcbb(G37 特性提交)→ 提交 54f138b 后 rebuild,复跑实测页脚 = 54f138b = HEAD |
 
 - **过程中修正的两处自身断言缺陷(如实记)**:①锚点抽样最初跑在行旅页上(`[data-seg-id]` 取到 0 个)导致**空集合假通过**,已改为先回古卷页取段并加「抽样≥3 才判通过」前置断言;②首页横溢探针未排除「祖先 overflow 裁剪」的情形,导致首页报 2 处超界;补上 hidden/clip 祖先判定后 14 路由全绿(scrollWidth 判据不变)。
 
