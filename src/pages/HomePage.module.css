@@ -9,6 +9,9 @@
 }
 
 .intro {
+  /* G45 纸阶一档:展陈导览带 */
+  background: var(--page-alt-1);
+  border-radius: var(--radius-card);
   max-width: var(--content-max-width);
   width: 100%;
   margin: 0 auto;

@@ -19,10 +19,14 @@ export default function ChaptersPage() {
         level={1}
       />
 
-      {CHAPTER_GROUPS.map((group) => {
+      {CHAPTER_GROUPS.map((group, gi) => {
         const chapters = CHAPTERS.filter((c) => c.group === group.key)
         return (
-          <section key={group.key} className={styles.group} aria-label={group.key}>
+          <section
+            key={group.key}
+            className={`${styles.group} ${gi % 3 === 0 ? styles.tier1 : gi % 3 === 1 ? styles.tier2 : styles.tier3}`}
+            aria-label={group.key}
+          >
             <div className={styles.groupHead}>
               <h3 className={styles.groupName}>{group.key}</h3>
               <p className={styles.groupNote}>{group.note}</p>

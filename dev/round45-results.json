@@ -1,0 +1,107 @@
+{
+  "results": [
+    {
+      "name": "[deng] 六值令牌解析",
+      "ok": true,
+      "detail": "[\"#121a16\",\"#17231f\",\"#1c2b24\"]"
+    },
+    {
+      "name": "[deng] 正文对三档 ≥4.5:1",
+      "ok": true,
+      "detail": "body rgb(217, 214, 201) → [12.16,11.12,10.15]"
+    },
+    {
+      "name": "[deng] 首页 intro=一档",
+      "ok": true,
+      "detail": "rgb(18, 26, 22)"
+    },
+    {
+      "name": "[deng] 篇组五节档位 1/2/3/1/2",
+      "ok": true,
+      "detail": "[\"rgb(18, 26, 22)\",\"rgb(23, 35, 31)\",\"rgb(28, 43, 36)\",\"rgb(18, 26, 22)\",\"rgb(23, 35, 31)\"]"
+    },
+    {
+      "name": "[deng] 篇组相邻互异(无断档)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "[deng] 探索三区块 1/2/3",
+      "ok": true,
+      "detail": "{\"homeIntro\":null,\"groups\":null,\"explore\":{\"card1\":\"rgb(18, 26, 22)\",\"card2\":\"rgb(23, 35, 31)\",\"journey\":\"rgb(28, 43, 36)\"}} vs [\"rgb(18, 26, 22)\",\"rgb(23, 35, 31)\",\"rgb(28, 43, 36)\"]"
+    },
+    {
+      "name": "[deng] 14 路由零横溢",
+      "ok": true,
+      "detail": "all ok"
+    },
+    {
+      "name": "[deng] 控制台零异常",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "[qing] 六值令牌解析",
+      "ok": true,
+      "detail": "[\"#f4ecdf\",\"#f1e7d6\",\"#eee2cc\"]"
+    },
+    {
+      "name": "[qing] 正文对三档 ≥4.5:1",
+      "ok": true,
+      "detail": "body rgb(51, 56, 44) → [10.28,9.84,9.4]"
+    },
+    {
+      "name": "[qing] 首页 intro=一档",
+      "ok": true,
+      "detail": "rgb(244, 236, 223)"
+    },
+    {
+      "name": "[qing] 篇组相邻互异(无断档)",
+      "ok": true,
+      "detail": "[\"rgb(244, 236, 223)\",\"rgb(241, 231, 214)\",\"rgb(238, 226, 204)\",\"rgb(244, 236, 223)\",\"rgb(241, 231, 214)\"]"
+    },
+    {
+      "name": "[qing] 探索三区块 1/2/3",
+      "ok": true,
+      "detail": "{\"homeIntro\":null,\"groups\":null,\"explore\":{\"card1\":\"rgb(244, 236, 223)\",\"card2\":\"rgb(241, 231, 214)\",\"journey\":\"rgb(238, 226, 204)\"}} vs [\"rgb(244, 236, 223)\",\"rgb(241, 231, 214)\",\"rgb(238, 226, 204)\"]"
+    },
+    {
+      "name": "[qing] 14 路由零横溢",
+      "ok": true,
+      "detail": "all ok"
+    },
+    {
+      "name": "[qing] 控制台零异常",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "report": {
+    "deng": {
+      "tiers": [
+        "#121a16",
+        "#17231f",
+        "#1c2b24"
+      ],
+      "body": "rgb(217, 214, 201)",
+      "ratios": [
+        12.16,
+        11.12,
+        10.15
+      ]
+    },
+    "qing": {
+      "tiers": [
+        "#f4ecdf",
+        "#f1e7d6",
+        "#eee2cc"
+      ],
+      "body": "rgb(51, 56, 44)",
+      "ratios": [
+        10.28,
+        9.84,
+        9.4
+      ]
+    }
+  }
+}

@@ -265,3 +265,16 @@
     min-height: 44px;
   }
 }
+
+/* G45 纸阶:其一/其二/行旅三区块一带一色,相邻档推进 */
+.tier1 {
+  background: var(--page-alt-1);
+}
+
+.tier2 {
+  background: var(--page-alt-2);
+}
+
+.tier3 {
+  background: var(--page-alt-3);
+}

@@ -51,7 +51,7 @@ export default function ExplorePage() {
 
       <div className={styles.grid}>
         {/* 随机翻卷 */}
-        <section className={styles.card} aria-label="随机翻卷">
+        <section className={`${styles.card} ${styles.tier1}`} aria-label="随机翻卷">
           <p className={styles.cardIndex}>其一</p>
           <h2 className={styles.cardTitle}>随机翻卷</h2>
           <p className={styles.cardDesc}>
@@ -63,7 +63,7 @@ export default function ExplorePage() {
         </section>
 
         {/* 每日一卷 */}
-        <section className={styles.card} aria-label="每日一卷">
+        <section className={`${styles.card} ${styles.tier2}`} aria-label="每日一卷">
           <p className={styles.cardIndex}>其二</p>
           <h2 className={styles.cardTitle}>每日一卷</h2>
           {daily && (
@@ -87,7 +87,7 @@ export default function ExplorePage() {
       </div>
 
       {/* 山海行旅 */}
-      <section className={styles.journey} aria-label="山海行旅">
+      <section className={`${styles.journey} ${styles.tier3}`} aria-label="山海行旅">
         <div className={styles.journeyHead}>
           <h2 className={styles.cardTitle}>山海行旅</h2>
           <p className={styles.journeyNote}>

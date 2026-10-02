@@ -5,7 +5,23 @@
 }
 
 .group {
+  /* G45 纸阶:篇组一带一色,相邻组取相邻档(经折装多页) */
   margin-bottom: 56px;
+  padding: 26px 28px;
+  border: 1px solid var(--paper-border);
+  border-radius: var(--radius-card);
+}
+
+.tier1 {
+  background: var(--page-alt-1);
+}
+
+.tier2 {
+  background: var(--page-alt-2);
+}
+
+.tier3 {
+  background: var(--page-alt-3);
 }
 
 .groupHead {
