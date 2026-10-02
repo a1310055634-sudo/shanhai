@@ -118,6 +118,8 @@
 
 ### 3.3 鱼尾分隔(G21 定稿)
 
+> 三阶新章(2026-10-03 G50 记):inkWash 晕染滤镜(ConceptMap 单处,feTurbulence fractalNoise baseFrequency 0.011/0.017 octaves 3 seed 7 定数+feColorMatrix 墨染 alpha 0.42 rect 置于等高线下;AtlasPage 与首页 AtlasPreview 复用同一 defs)。**三阶纹样预算 ≤4:已用 1(晕染滤镜族 1/3)**。
+
 古卷页(ChapterPage)正文段与正文段之间插版心鱼尾形小分隔——**已落地**:`Rule.tsx` 导出 `RuleFishTail`(12×7px,上缘平直下端收尖的折面抽象,path 自绘),色 `--paper-border`,仅古卷阅读面 1 处预算(gap 存疑段与段首不插)。**原创声明**:参照古雕版书口鱼尾公共形制自绘 path,无外部素材。存疑注同步升级「校注」小签(宣纸内衬 55% 透明+双细线),与正文层级拉开、不混排。
 
 ---

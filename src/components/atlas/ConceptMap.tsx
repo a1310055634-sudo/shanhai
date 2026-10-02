@@ -54,6 +54,18 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
         role="img"
         aria-label={`山海经古籍内部叙事概念地图:${LOCATIONS.length}座已核验山川节点的分区示意`}
       >
+        {/* G50 山川图晕染:feTurbulence 程序化淡墨晕染(原创滤镜 1 处,记 DESIGN 纹样台账;
+            墨云噪点染色置于等高线之下,位图不进图内;seed 定数保证双主题渲染一致) */}
+        <defs>
+          <filter id="inkWash" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.011 0.017" numOctaves="3" seed="7" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0.10  0 0 0 0 0.12  0 0 0 0 0.11  0 0 0 0.42 0"
+            />
+          </filter>
+        </defs>
+        <rect width="1000" height="620" filter="url(#inkWash)" opacity="0.42" aria-hidden="true" />
         {/* 等高线底纹(G13 宣纸化:青绿→墨线) */}
         <g fill="none" stroke="var(--paper-ink)" strokeWidth="1">
           <path d="M-20 140 C160 96 340 150 520 112 C700 76 860 128 1020 96" opacity="0.12" />

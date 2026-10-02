@@ -1,0 +1,47 @@
+[
+  {
+    "name": "inkWash 滤镜+底纹 rect 就位",
+    "ok": true,
+    "detail": "{\"filterId\":\"inkWash\",\"seed\":\"7\",\"washRect\":true,\"contours\":5,\"nodes\":46,\"labels\":32,\"overlapBad\":0,\"ovf\":true}"
+  },
+  {
+    "name": "等高线底纹 4 线完好(G13 不回退)",
+    "ok": true,
+    "detail": "paths=5"
+  },
+  {
+    "name": "山川节点 ≥23",
+    "ok": true,
+    "detail": "nodes=46"
+  },
+  {
+    "name": "标签两两零重叠",
+    "ok": true,
+    "detail": "labels=32 bad=0"
+  },
+  {
+    "name": "1440 零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "首页 AtlasPreview 同步生效",
+    "ok": true,
+    "detail": "{\"f\":\"inkWash\",\"n\":46}"
+  },
+  {
+    "name": "390 档零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "390 零横溢(晕染后)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "控制台零异常",
+    "ok": true,
+    "detail": ""
+  }
+]
