@@ -1,3 +1,16 @@
+## G39 · 三阶接管与立项(STATE 重写 / 三阶基线 / DESIGN 十一章 / 任务书入库)
+
+- **有效执行编号**:三阶 1 / 20
+- **北京时间**:2026-10-03 01:05—01:1X(定时触发,每 25 分钟)
+- **开始 HEAD**:18914aa(G38 日志补),工作树仅 GALLERY_PROMPT3.md 未入库(主会话规划产物,归属明确);.round-lock 不存在,新建,轮末删除
+- **状态接管**:GALLERY_STATE.json 重写 planId shanhai-gallery-3/phase 3/totalRounds 20/rounds G39—G58;二阶 baseline 与 finalMetrics 保留为 phase2Baseline/phase2Final,二阶 openItems 六条移入 phase2OpenItems(G57 呈报用)
+- **三阶基线(build 绿,1.41s)**:js 568.25 kB/gzip 176.78 kB;css 117.10 kB/gzip 20.37 kB;html 1440 B/gzip 865 B;图片 7,800,554 B(12 幅既有版画 SVG,新增位图预算独立 ≤2.5MB)——与二阶 finalMetrics 一致(无漂移)
+- **文档**:GALLERY_SPRINT.md 追加三阶看板 20 轮;GALLERY_DESIGN.md 开「十一、画卷气象线」(八条翻译规则+负面清单增补+轮次映射);任务书 GALLERY_PROMPT3.md 本轮入库
+- **浏览器**:npm run preview 重启,http://localhost:4173 200;本轮纯状态轮无页面改动,无截图
+- **提交**:G39 主提交+日志补提交号(哈希见下方补记)
+- **状态**:done(验收:STATE/看板/DESIGN 三处齐、build 绿、基线四项记录完整——逐项通过)
+- **遗留与下轮入口**:无遗留;下一轮 G40 画卷资产首批(维基共享/Met Open Access 公版古画 4—6 幅,ffmpeg 压缩,ART_PROVENANCE 开「古画卷」章;拉不到合规图降级 SVG 不凑数)
+
 ## G38 · 二阶终验(回归矩阵 / 性能对照 / GALLERY_REPORT 二阶卷 / 只读退出)
 
 - **有效执行编号**:二阶 18 / 18(封顶)
