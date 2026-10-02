@@ -164,7 +164,7 @@ HEAD 起点:`823ba01`(R19 终验交付,工作树干净)。
 | G47 | 谱系画卷化(RelationsPage) | done | c0129e9 | 淡墨渐染;G33 复跑 43/43+51 零重叠 |
 | G48 | 古卷画卷化(轻) | done | 17e1621 | 卷尾墨葡萄小景;diff 43行纯新增;11/11 |
 | G49 | 图鉴画卷化(仅已有版画词条) | done | 2ccdad7 | 留白放大;PaintingMount 不接入=设计内;9/9 |
-| G50 | 山川图晕染增强(feTurbulence) | todo | | 纹样台账预算内 |
+| G50 | 山川图晕染增强(feTurbulence) | done | 9d5c5d5 | inkWash 滤镜台账 1/4;9/9 |
 | G51 | 参考页画卷化(轻,6 页) | todo | | |
 | G52 | 宋体标题层实验(系统栈) | todo | | SimSun 不达标如实退回 |
 | G53 | 微动效令牌收口 | todo | | G37 审计脚本复跑 |
