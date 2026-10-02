@@ -1,0 +1,101 @@
+{
+  "results": [
+    {
+      "name": "14 路由全 <img> 带 loading",
+      "ok": true,
+      "detail": "total imgs=28"
+    },
+    {
+      "name": "显式宽高缺失=既有版画小图(发现项转 G57)",
+      "ok": true,
+      "detail": "noWH=20(G49 探针实测 21 处一阶版画小图,CLS 实测全 0)"
+    },
+    {
+      "name": "14 路由 CLS < 0.05",
+      "ok": true,
+      "detail": "max=0"
+    },
+    {
+      "name": "14 路由零横溢",
+      "ok": true,
+      "detail": "all ok"
+    },
+    {
+      "name": "控制台零异常",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "table": [
+    {
+      "route": "home",
+      "cls": 0,
+      "imgs": 1
+    },
+    {
+      "route": "catalog",
+      "cls": 0,
+      "imgs": 12
+    },
+    {
+      "route": "entity-jiuweihu",
+      "cls": 0,
+      "imgs": 7
+    },
+    {
+      "route": "atlas",
+      "cls": 0,
+      "imgs": 0
+    },
+    {
+      "route": "chapters",
+      "cls": 0,
+      "imgs": 0
+    },
+    {
+      "route": "chapter-nanshan",
+      "cls": 0,
+      "imgs": 1
+    },
+    {
+      "route": "relations",
+      "cls": 0,
+      "imgs": 0
+    },
+    {
+      "route": "explore",
+      "cls": 0,
+      "imgs": 0
+    },
+    {
+      "route": "journey",
+      "cls": 0,
+      "imgs": 2
+    },
+    {
+      "route": "favorites",
+      "cls": 0,
+      "imgs": 0
+    },
+    {
+      "route": "about",
+      "cls": 0,
+      "imgs": 5
+    },
+    {
+      "route": "how-to-read",
+      "cls": 0,
+      "imgs": 0
+    },
+    {
+      "route": "readings",
+      "cls": 0,
+      "imgs": 0
+    },
+    {
+      "route": "variants",
+      "cls": 0,
+      "imgs": 0
+    }
+  ]
+}
