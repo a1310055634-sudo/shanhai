@@ -7,6 +7,10 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  /* G34 细滚动条(标准属性轨,Chrome 121+/Firefox);
+     webkit 伪元素见下方同名块。组件内 scrollbar-width:none(导航/进度轨)就近覆盖,保持隐藏 */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 body {
@@ -50,13 +54,43 @@ button {
   cursor: pointer;
 }
 
+/* G34 焦点环统一走令牌(--focus-ring-*,灯下旧金/晴窗赭金);
+   组件内自定义 :focus-visible 一律引同一令牌族,变体仅三类(贴边环/SVG 描边环/画布亮纸环),
+   清单见 GALLERY_DESIGN.md §G34 与 round34 CSSOM 断言 */
 :focus-visible {
-  outline: 2px solid var(--old-gold);
-  outline-offset: 2px;
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
 }
 
+/* G34 选区朱砂淡染(原旧金淡染改朱砂;文字色随主题亮纸/浓墨) */
 ::selection {
-  background: rgba(165, 135, 91, 0.35);
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+/* G34 细滚动条(webkit 轨):10px 视觉 6px(thumb 上下 border 内缩),
+   颜色复用边框令牌双主题翻转;轨透明不挡宣纸底 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 5px;
+  border: 2px solid var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 /* G31 主题切换零动画:切换瞬间挂 html.theme-switching 压平全部过渡,

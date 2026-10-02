@@ -49,9 +49,16 @@ export default function Footer() {
       <div className={styles.colophon}>
         {/* G31 主题切换:按钮示将切往的主题;切换零动画(useTheme 压平过渡) */}
         <div className={styles.colophonInner}>
-          <p className={styles.colophonText}>
-            据古籍意象艺术演绎 · 内容核验状态以各条目标注为准
-          </p>
+          <div className={styles.colophonMeta}>
+            <p className={styles.colophonText}>
+              据古籍意象艺术演绎 · 内容核验状态以各条目标注为准
+            </p>
+            {/* G34 校讫记:构建版本戳(日期+HEAD 短号,vite define 构建时注入),
+                与 git log 一致性由 round34 断言核验 */}
+            <p className={styles.buildStamp}>
+              校讫记 · {__BUILD_DATE__} 编成 · 本次第 {__BUILD_COMMIT__}
+            </p>
+          </div>
           <button
             type="button"
             className={styles.themeToggle}

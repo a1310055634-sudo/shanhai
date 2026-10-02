@@ -82,9 +82,9 @@
 /* G12 焦点态统一:全部控件同一键盘焦点语言(旧金 outline),去发光环 */
 .input:focus-visible,
 .select:focus-visible {
-  border-color: var(--old-gold);
-  outline: 2px solid var(--old-gold);
-  outline-offset: 2px;
+  border-color: var(--focus-ring-color);
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
 }
 
 .select {
@@ -133,8 +133,8 @@
 
 .viewBtn:focus-visible,
 .clear:focus-visible {
-  outline: 2px solid var(--old-gold);
-  outline-offset: 2px;
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
 }
 
 .viewBtn:first-child {

@@ -1,3 +1,45 @@
+## G34 · 细节层+校讫记(::selection 朱砂淡染/细滚动条/焦点环统一/版本戳)
+
+- **有效执行编号**:二阶 14 / 18
+- **北京时间**:2026-10-02 约 09:01—09:3X(定时触发)
+- **开始 HEAD**:d7c819a(G33 日志补提交),工作树干净;.round-lock 不存在,新建,轮末删除
+- **提交**:本条目「提交」栏待补(功能+四件套先落,日志补号随二段提交,同 G33 惯例)
+- **本轮预期**:::selection 朱砂淡染、细滚动条、全站 :focus-visible 审查统一(CSSOM 断言)、页脚校讫记+构建版本戳(日期+HEAD 短号);验收=断言+截图、版本戳与 git log 一致、reduced-motion 不受影响
+
+### 实际改动
+
+- **令牌族**(tokens.css :root + 晴窗块):--focus-ring-color(=var(--old-gold),自动双主题)/-width/-offset;--selection-bg(灯下 rgba(167,71,56,.38) 朱砂淡染;晴窗仅覆盖此项 rgba(143,60,43,.2) 防浅底浊)+--selection-text(=var(--paper-bright),随主题「灯下亮纸字/晴窗浓墨字」);--scrollbar-thumb/-hover/-track(引边框三档,零新色值)
+- **base.css**:全局 :focus-visible 改引令牌;::selection 由旧金淡染改朱砂(原 G01 单值硬编码收编);新增 html{scrollbar-width:thin;scrollbar-color}(标准轨)+ webkit 轨 10px 视觉 6px(thumb 2px border 内缩,track 透明)
+- **焦点环统一**:CatalogFilters/JournalEvidence/EntityCard/ConceptMap/LineageMap/JourneyPage 6 文件 11 处规则带计数守卫脚本等价替换(2px/old-gold → var(--focus-ring-*);EntityCard 保留 offset -2px 贴边环;ConceptMap/LineageMap stroke 引 --focus-ring-color;JourneyPage 保留 --paper-bright 画布亮纸环并注明 G32 实测依据);替换后全站 grep 零残留;审查确认 3 处 outline:none 均为「默认关+:focus-visible 补回」安全模式;全站清单 12 条规则记 DESIGN 8.3
+- **页脚校讫记+版本戳**:vite.config.ts define 注入 __BUILD_COMMIT__/__BUILD_DATE__(execSync git rev-parse --short HEAD+日期,git 不可用回退 unknown);Footer colophon 加第二行「校讫记 · {date} 编成 · 本次第 {commit}」(fs-micro/tabular-nums,.colophonMeta 左列与主题钮分列);vite-env.d.ts 补类型声明
+
+### 断言与实测记录
+
+- **CSSOM 断言@IAB 1280(灯下)**:遍历 953 条样式规则(含嵌套容器递归;首版遍历把 CSSStyleRule.cssRules 空列表误判容器致规则漏采,修正后采全),12 条 :focus-visible 规则与 DESIGN 8.3 清单逐一吻合、::selection bg/color 全走令牌、scrollbar webkitWidth=10px+thumb 引令牌+html thin;5 条新规则零 transition/animation(reduced-motion 无涉的代码层证明)
+- **令牌解析值双主题**:灯下 --focus-ring-color #a5875b/--selection-bg rgba(167,71,56,.38)/--selection-text #f4ecdf;晴窗 #66512e/rgba(143,60,43,.2)/#262117(零重定义全随引用翻转,与设计一致)
+- **真实键盘路径(IAB 注入不落焦点,改走无头 Chrome CDP Input.dispatchKeyEvent)**:Tab×6 逐站 :focus-visible 命中(fv:true)+outline solid 2px offset 2px;灯下 rgb(165,135,91)/晴窗 rgb(102,81,46)——其中晴窗一例由「全新 profile 默认 prefers-color-scheme:light 自动进晴窗」实证了 G31 跟随机制;localStorage 残留会压过系统偏好(G31 设计优先级),测灯下须清存储+reload
+- **reduced-motion**:CDP emulate reduce 下全站压平仍生效(抽验 transitionDuration 1e-05s);新增 CSS 零动画零过渡
+- **版本戳一致性**:页脚实测「校讫记 · 2026-10-02 编成 · 本次第 d7c819a」=构建时 HEAD,一致;功能提交后 rebuild 戳随新 HEAD,断言见下
+- **内容红线**:git diff src/data/ EDITION_EVIDENCE/ = 零改动(呈现轮)
+- **390**:双主题 scrollWidth 380=clientWidth 380 零横溢
+
+### build 与截图
+
+- build 绿:JS 530.66 kB/gzip 164.58(+0.10 版本戳常量)/CSS 107.07/gzip 19.05(+0.28 滚动条+选区+注释)
+- 截图 8 张存 GALLERY_BASELINES/g34-*(CDP 纯视口+IAB):双主题 1440 焦点环/选区/页脚 + 390 页脚
+- **visual-judge**:首轮 8 张 6 pass+2 fail(两张选区图无高亮——headless CDP 截图不绘制选区高亮,fromSurface:false 输出空白,均如实记 DESIGN 8.5)→改 IAB 真实渲染重拍:灯下朱砂淡染清晰+亮纸字可读,复审 pass;晴窗整页灰纱=IAB 后台标签截图管线伪影(四路复现:reload 直出/动画压平/前台化均不消,无 DOM 覆盖层,页面本体经 CDP 页脚图证明正常),选中段浅红染可辨,按「伪影已定性」口径复审 pass——**8/8 全过**;伪影样本与三条截图管线坑记 DESIGN 8.5
+- 次要观察(不阻塞,visual-judge 提出):晴窗 390 导航右缘约 22px 渐变带(横滚渐隐提示)配色略偏亮,文字可读,归 G37/G38 巡检
+
+### 状态词:done(验收条件:selection 朱砂淡染双主题✓/细滚动条✓/焦点环 CSSOM 断言+CDP 真实键盘✓/页脚校讫记+版本戳与 git log 一致✓/reduced-motion 不受影响✓)
+
+### 遗留与下轮入口
+
+- IAB 晴窗亮页面截图灰纱伪影未解(页面本体无缺陷,自动化取证受限);真实前台人工选区复核留用户(色值已三层证明:CSSOM 规则/令牌解析/灯下真实渲染)
+- 晴窗 390 导航右缘渐隐带偏亮(上)
+- **下轮 G35 难字音表+异文页**:全站生僻字读音汇编(逐字注依据,拿不准留白)+柢/祗异文校勘集中页(汇一阶留白注,不新增裁决);入口放 About 或古卷页内;与看板疑点清单同步
+
+---
+
 ## G33 · 谱系关系图(ConceptMap 同款语言,异兽—山川—篇章三方)
 
 - **有效执行编号**:二阶 13 / 18

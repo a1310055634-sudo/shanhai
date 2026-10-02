@@ -29,8 +29,8 @@
 }
 
 .cardLink:focus-visible {
-  outline: 2px solid var(--old-gold);
-  outline-offset: -2px;
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: -2px; /* 贴边环变体:卡内缩 2px */
 }
 
 /* 4:5 插画区(约占卡片 65%) */

@@ -31,7 +31,7 @@
 
 .node:focus-visible circle,
 .node:focus-visible rect {
-  stroke: var(--old-gold);
+  stroke: var(--focus-ring-color);
   stroke-width: 2;
 }
 

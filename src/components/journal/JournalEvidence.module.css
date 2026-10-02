@@ -23,8 +23,8 @@
 }
 
 .evidenceBtn:focus-visible {
-  outline: 2px solid var(--old-gold);
-  outline-offset: 2px;
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
 }
 
 .overlay {
@@ -65,8 +65,8 @@
 }
 
 .drawer:focus-visible {
-  outline: 2px solid var(--old-gold);
-  outline-offset: 2px;
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
 }
 
 .drawerHead {
@@ -103,8 +103,8 @@
 }
 
 .closeBtn:focus-visible {
-  outline: 2px solid var(--old-gold);
-  outline-offset: 2px;
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
 }
 
 .evSection {
@@ -163,8 +163,8 @@
 
 .evLink:focus-visible,
 .evidenceBtn:focus-visible {
-  outline: 2px solid var(--old-gold);
-  outline-offset: 2px;
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
 }
 
 @media (min-width: 901px) {

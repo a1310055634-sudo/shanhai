@@ -107,6 +107,19 @@
   /* 形状:圆角 0—8px */
   --radius-card: 4px;
 
+  /* G34 细节层:焦点环/选区淡染/滚动条(双主题)。
+     --focus-ring-color 引 --old-gold:灯下旧金、晴窗随其翻赭金,零重定义;
+     --selection-text 引 --paper-bright:随主题翻为「灯下亮纸字/晴窗浓墨字」;
+     滚动条复用边框三档,自动双主题。 */
+  --focus-ring-color: var(--old-gold);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --selection-bg: rgba(167, 71, 56, 0.38); /* 朱砂淡染,灯下深底合成约 #4a2a24 */
+  --selection-text: var(--paper-bright);
+  --scrollbar-thumb: var(--border-normal);
+  --scrollbar-thumb-hover: var(--border-strong);
+  --scrollbar-track: transparent;
+
   /* 动效时间(第十节) */
   --duration-hover: 200ms;
   --duration-reveal: 720ms;
@@ -167,4 +180,9 @@ html[data-theme='qing'] {
   --veil-mid: rgba(250, 244, 232, 0.75);
   --veil-strong: rgba(249, 242, 229, 0.82);
   --veil-solid: rgba(247, 241, 227, 0.98);
+
+  /* G34 细节层:晴窗只需覆盖选区底(浅底上朱砂更淡防浊);
+     焦点环/滚动条在 :root 引 --old-gold 与边框档,自动翻赭金系零重定义;
+     --selection-text 随 --paper-bright 翻浓墨字 #262117。 */
+  --selection-bg: rgba(143, 60, 43, 0.2); /* 合成约 #d6b3a7,墨字对其 ~6.5:1 */
 }

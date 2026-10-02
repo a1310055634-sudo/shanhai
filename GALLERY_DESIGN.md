@@ -270,3 +270,39 @@ RelationsPage 顶部新增 `LineageMap`(src/components/relations/),替代原页�
 - **既有层叠缺陷修复**:1280 桌面档英雄区印框半透明深底叠压左侧竖排书签条(visual-judge 复核发现,两主题同现)→ 印框改透明底线框式。
 - **G37 挂账(本轮顺手发现)**:Hero/HomePage journeyEntryCta 各 1 处 transition 裸值(`0.25s ease`),未动,归 G37 审计。
 - **测量伪影备忘**:IAB 后台标签 rAF 暂停会使 CSS color 过渡冻结在起点值——程序化扫描必须在切主题前注入 `transition:none` 后同帧取样,否则全站文字色呈假值。
+
+## 八、细节层(G34 落地)
+
+### 8.1 新令牌族(G34,双主题)
+
+| 令牌 | 灯下 | 晴窗 | 语义 |
+|---|---|---|---|
+| --focus-ring-color / -width / -offset | var(--old-gold) #a5875b / 2px / 2px | 随 --old-gold 翻赭金 #66512e | 键盘焦点环(:root 引用零重定义,自动双主题) |
+| --selection-bg / -text | rgba(167,71,56,.38)(朱砂淡染,深底合成约 #4a2a24) / var(--paper-bright) | rgba(143,60,43,.2)(浅底更淡防浊,合成约 #d6b3a7,墨字对其 ~6.5:1) / 随 --paper-bright 翻 #262117 | 选区淡染:原 G01 旧金淡染改朱砂(朱砂语义=选中/关键操作,与令牌注记一致);选中字色随主题「灯下亮纸/晴窗浓墨」 |
+| --scrollbar-thumb / -hover / -track | var(--border-normal) / var(--border-strong) / transparent | 自动随边框三档翻赭金系 | 细滚动条配色,零新色值 |
+
+### 8.2 细滚动条
+
+- 标准轨:html { scrollbar-width: thin; scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track) }(Chrome 121+/Firefox)。
+- webkit 轨:10px 视觉 6px(thumb 上下 2px border 内缩,经典细条技巧),track 透明不挡宣纸底;corner 透明。
+- 组件内既有 scrollbar-width:none(导航横滚/古卷进度轨)就近覆盖保持隐藏,与全局不冲突(标准属性优先于 webkit 伪元素)。
+
+### 8.3 焦点环全站清单(CSSOM 断言口径,round34 共 12 条规则)
+
+- **全局兜底** base.css `:focus-visible` = `var(--focus-ring-width) solid var(--focus-ring-color)` + `offset var(--focus-ring-offset)`;全站一切可聚焦元素的默认键盘环。
+- **令牌环**(与全局等价,显式写出防漂移):CatalogFilters .input/.select(另加 border-color 变金)/.viewBtn/.clear、JournalEvidence .evidenceBtn×2/.drawer/.closeBtn/.evLink 共 8 处规则,G34 由硬编码 2px/old-gold 统一改引令牌。
+- **三类记录在案变体**:①贴边环——EntityCard .cardLink outline-offset:-2px(卡内缩,防环出卡裁切);②SVG 描边环——ConceptMap/LineageMap 节点 :focus-visible circle/rect stroke: var(--focus-ring-color)(SVG 形状 outline 不适用);③画布亮纸环——JourneyPage .scrollSlot/.indexLink/.navLink 用 --paper-bright(行旅页深色画布上下文,G32 对比度全表实测通过,两主题:灯下亮纸/晴窗浓墨,不并环)。
+- **安全模式**:EntityCard/ConceptMap/LineageMap 三处 `outline:none` 均为「默认关、:focus-visible 显式补回」写法,键盘环无缺口。
+- **断言实录**:CSSOM 遍历(含嵌套容器递归)得 12 条规则与上表逐一吻合;程序化 focus 不触发 :focus-visible(浏览器启发式,IAB 键盘注入不落焦点的已知限制);改用无头 Chrome CDP Input.dispatchKeyEvent 真实 Tab 派发——灯下 Tab×6 全部 fv:true+outline rgb(165,135,91) 2px offset 2px,晴窗(含全新 profile 按 prefers-color-scheme 自动进晴窗)rgb(102,81,46),reduced-motion=reduce 下全站压平仍生效(transitionDuration 1e-05s)。
+
+### 8.4 页脚校讫记+构建版本戳
+
+- vite.config.ts 构建时 execSync 读取 `git rev-parse --short HEAD`+日期,define 注入 `__BUILD_COMMIT__`/`__BUILD_DATE__`(git 不可用回退 unknown 不阻塞构建);类型声明在 vite-env.d.ts。
+- 页脚 colophon 第二行「校讫记 · {date} 编成 · 本次第 {commit}」:fs-micro 档、tabular-nums、不承载必读信息(装饰性眉标口径);与承诺行组成 .colophonMeta 左列,右侧主题钮 44px 不变。
+- 一致性验收:构建戳出现在 git log 中即一致(功能提交后 rebuild,戳=功能提交短号;日志/STATE 后续提交不回改戳)。
+
+### 8.5 截图管线伪影备忘(G34 新坑,后续截图轮必读)
+
+- 无头 Chrome headless=new `Page.captureScreenshot`(fromSurface 省略/true)**不绘制文本选区高亮**(合成表面层不含 selection);fromSurface:false 在 headless=new 输出空白帧,不可用。选区验证必须走真实有头渲染(IAB)。
+- **IAB 后台标签截图伪影**:晴窗亮页面整页均匀灰暗(深底透出感),灯下深页面不可见;reload 直出/注入动画压平/前台化 set(true) 均不能消除,无 DOM 覆盖层(no overlay)。同页页脚区(CDP 路径)渲染正常,证明页面本体无缺陷。样本存 g34-qing-1440-selection-iab-veil-artifact.png(选中段浅红染在灰纱下仍可辨,visual-judge 复审 pass)。
+- CDP 截图取 `r.result.data`(send 封装返回整信封);localStorage 残留主题按 G31 优先级压过 prefers-color-scheme——换主题测量须清存储+reload,emulation 偏好只对无存储状态生效。

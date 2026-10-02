@@ -92,10 +92,23 @@
 }
 
 .colophonText {
-  padding: 8px 0;
+  padding: 8px 0 0;
   font-size: 12px;
   letter-spacing: 0.12em;
   color: var(--text-muted);
+}
+
+/* G34 校讫记+构建版本戳:与承诺行同族更小一档,微字号不承载必读信息(fs-micro 阶梯) */
+.buildStamp {
+  padding: 2px 0 8px;
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.colophonMeta {
+  min-width: 0;
 }
 
 .themeToggle {
