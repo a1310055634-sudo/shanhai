@@ -14,7 +14,7 @@ import { readFileSync, writeFileSync, mkdirSync, mkdtempSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
 import { tmpdir } from 'node:os'
-import { spawn } from 'node:child_process'
+import { spawn, execSync } from 'node:child_process'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const BASE = 'http://localhost:4173'
@@ -445,6 +445,13 @@ async function main() {
       footerEntries.some((h) => h.includes('readings')) && footerEntries.some((h) => h.includes('variants')),
       JSON.stringify(footerEntries),
     )
+
+    // 页脚校讫记版本戳与 git HEAD 一致(G34 机制,本轮新增页面顺带回归)
+    const head = execSync('git rev-parse --short HEAD', { cwd: root }).toString().trim()
+    const stamp = await cdp.eval(
+      `[...document.querySelectorAll('footer p')].map(p=>p.textContent).find(t=>t.includes('校讫记')) ?? ''`,
+    )
+    check('页脚版本戳 = 构建时 HEAD', stamp.includes(head), `戳「${stamp.trim()}」 · HEAD ${head}`)
 
     // =========================================================== 控制台错误
     const consoleErrors = cdp.events.filter(
