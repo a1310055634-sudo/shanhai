@@ -407,3 +407,42 @@
     min-height: 44px;
   }
 }
+
+/* G42 卷首展卷:公版古画作最深景深层(兰竹图,定宽贴右下,四周 radial 羽化禁直角硬边;
+   定宽锚定参照任务书附录 A 的 1440 设计稿口径,羽化替代参考站的预抠 PNG)。
+   DOM 位于 .scene 之前=场景层绘制其上(异兽剪影行于古画上,古今对撞);文字 z2 不入画心。
+   贴右下为实测修正(G42 首版贴左下:幽灵按钮压画心亮区不可读);
+   eager:首屏画卷属 LCP 邻域,lazy 会推迟绘制(与内容图 lazy 纪律的差异如实记录)。 */
+.heroPaint {
+  position: absolute;
+  right: max(1vw, 12px);
+  bottom: 92px;
+  width: min(44vw, 640px);
+  pointer-events: none;
+}
+
+.heroPaintImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-mask-image: radial-gradient(ellipse 62% 46% at 50% 50%, #000 52%, transparent 96%);
+  mask-image: radial-gradient(ellipse 62% 46% at 50% 50%, #000 52%, transparent 96%);
+}
+
+@media (max-width: 640px) {
+  /* 390 档:画卷变全宽羽化底带,贴底留出 caption/scrollCue 线,视觉主体(中丛墨兰+题跋)居中 */
+  .heroPaint {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 58px;
+    width: max(130%, 480px);
+  }
+
+  /* 窄屏幽灵按钮与画卷上沿注定同带(hero 竖向空间不足),按规则 5 衬纸底:
+     文字浮于画上必须有纸面承载(浮卡语义),不裸压画心 */
+  .ghost {
+    background: var(--surface-paper);
+    color: var(--text-on-light);
+    border-color: var(--border-strong);
+  }
+}
