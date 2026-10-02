@@ -1,3 +1,15 @@
+## G50 · 山川图晕染增强(inkWash feTurbulence)
+
+- **有效执行编号**:三阶 12 / 20
+- **北京时间**:2026-10-03 10:1X—11:0X(定时触发)
+- **开始 HEAD**:779d30d(G49 补记),工作树干净;.round-lock 新建,轮末删除
+- **实际改动**:ConceptMap.tsx 增 <defs> inkWash 滤镜(feTurbulence fractalNoise baseFrequency 0.011/0.017、octaves 3、seed 7 定数+feColorMatrix 墨染 alpha 0.42)+底纹 rect(1000×620,置于 G13 等高线之下);AtlasPage 与首页 AtlasPreview 复用同 defs;**位图不进图内 ✓**;纹样台账 DESIGN 3.3 记 +1(三阶预算 ≤4 已用 1)
+- **验收(dev/round50-atlaswash.mjs,9/9 全过)**:滤镜+rect 就位(seed=7)/等高线底纹完好(paths=5,G13 不回退)/山川圆节点 46(≥23)/32 标签两两零重叠/1440+390 零横溢/**首页 AtlasPreview 同步生效断言**/控制台零异常;前后对照=atlas-before/after-1440.png(晕染后宣纸底现柔墨云渍,节点/等高线/分区框完好)
+- **性能**:vite gzip 179.89 kB(vs G49 179.73,+0.16KB)
+- **提交**:主提交 **9d5c5d5**(4 files)+ 补记提交(本条)
+- **状态**:done(验收:9 站(23 山川节点)图前后对照✓、纹样台账计数 1≤4✓)
+- **遗留与下轮入口**:无新增;下一轮 G51 参考页画卷化(轻)(how-to-read/readings/variants/about/explore/favorites 六页统一交替与留白节奏,零内容改动,diff 内容区零改动)
+
 ## G49 · 图鉴画卷化(引文区留白放大 + 回退复验)
 
 - **有效执行编号**:三阶 11 / 20
