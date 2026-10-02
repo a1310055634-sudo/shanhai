@@ -9,7 +9,7 @@
 - **断言结果(390/1440)**:figure=5、img width/height 属性齐、loading=lazy、渲染宽高比逐幅≈内在比(254×129→1.969 vs 1.970 等,CLS 预留有效;computed aspectRatio 带 auto 前缀致首版断言解析假红,以渲染比为准)、390/1440 scrollWidth=clientWidth 双主题零横溢、灯下投影生效/晴窗投影 none(平铺)、floatSlot 未传 children 不渲染、款识五条逐字正确
 - **build**:绿(1.41—1.83s 三次)
 - **浏览器与截图**:preview+IAB 实测;shots:about-deng-390.png(灯下挂轴,真图)、about-qing-390.png(IAB 后台标签晴窗亮页=8.5② 灰纱伪影,如实标注)、about-qing-1440.iab-artifact.png(同伪影)→ **改用无头 Chrome --screenshot 直截 about-qing-1440.png(630KB 真图,全新 profile 默认 light=自动晴窗,顺带验证 G31 跟随机制);8.5② 的可行绕行=无头 Chrome,后续截图轮采用**
-- **提交**:主提交 **bec7f81**(5 files)+ 补记提交 bec9XXXX 见 git log(本条)
+- **提交**:主提交 **bec7f81**(5 files)+ 补记提交 0e14d3e(本条)
 - **状态**:done(验收:CLS=0 断言✓(宽高属性+渲染比逐幅相符)、390/1440 无横溢✓、双主题截图各 1✓(灯下 IAB 真图+晴窗无头 Chrome 真图))
 - **遗留与下轮入口**:①徐渭立轴在宽屏槽位下方留白较大(G51 节奏轮调);②晴窗 390 真图缺(8.5②,IAB 限制非产品缺陷,G55 走查轮以无头 Chrome 补);③floatSlot 实渲染断言留首个使用者(G42/G44);下一轮 G42 卷首展卷(hero 定宽贴底+mask 羽化,JS gzip 增量<2KB)
 
