@@ -1,0 +1,47 @@
+[
+  {
+    "name": "目录卡间距=36px(留白放大)",
+    "ok": true,
+    "detail": "gap=36px"
+  },
+  {
+    "name": "目录 1440 零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "词条卡非空",
+    "ok": true,
+    "detail": "cards=15"
+  },
+  {
+    "name": "全部词条 artPanel 非空(不留白洞)",
+    "ok": true,
+    "detail": "checked=15 empty=[]"
+  },
+  {
+    "name": "onError 回退:面板仍非空且满幅(不破版)",
+    "ok": true,
+    "detail": "before={\"kids\":1,\"h\":404,\"src\":\"jiuweihu-xoaY_654.svg\"} after={\"kids\":1,\"h\":404,\"src\":null}"
+  },
+  {
+    "name": "引文区呼吸生效(artNote 间距 18)",
+    "ok": true,
+    "detail": "gap=18px"
+  },
+  {
+    "name": "1440 零横溢(详情页)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "目录 390 零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "控制台零异常",
+    "ok": true,
+    "detail": ""
+  }
+]

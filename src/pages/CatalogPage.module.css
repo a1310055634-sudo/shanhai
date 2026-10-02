@@ -7,7 +7,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 28px;
+  /* G49 引文区留白放大:卡片呼吸 +8 */
+  gap: 36px;
 }
 
 /* 紧凑列表视图 */

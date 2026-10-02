@@ -78,11 +78,19 @@
 
 .heroArt {
   min-width: 0;
+  /* G49 引文区留白放大:版画区与文字列的呼吸 */
+  padding-top: 14px;
 }
 
 /* G22 版画装裱:figure 语义(画心面板+地脚出处) */
 .artMount {
   margin: 0;
+}
+
+/* G49 引文区留白放大:画心与地脚出处间距 +6 */
+.artMount > [class*="artNote"],
+.artMount figcaption {
+  margin-top: 18px;
 }
 
 .artPanel {
