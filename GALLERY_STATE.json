@@ -3,7 +3,7 @@
   "phase": 2,
   "title": "古朴精修·二阶冲刺 G21—G38",
   "totalRounds": 18,
-  "validExecutions": 17,
+  "validExecutions": 18,
   "maxValidExecutions": 18,
   "currentRound": "G38",
   "rounds": {
@@ -24,7 +24,7 @@
     "G35": "done",
     "G36": "done",
     "G37": "done",
-    "G38": "todo"
+    "G38": "done"
   },
   "retired": "一阶 G14—G20 已并入二阶 G21—G23/G25/G36/G37/G38,原编号退役;一阶收官提交 89171dc(G13),13/20 轮完成",
   "baseline": {
@@ -60,34 +60,32 @@
       "gzip": "441 B"
     }
   },
-  "lastRunAt": "2026-10-02 12:2X+08:00",
-  "status": "idle",
-  "g37Notes": {
-    "auditScripts": [
-      "dev/round37-audit.mjs",
-      "dev/round37-browser.mjs",
-      "dev/round37-patch.mjs"
-    ],
-    "rawValues": "8 处→0 处",
-    "deadTokensRemoved": [
-      "--duration-map-draw",
-      "--duration-transition"
-    ],
-    "ladder": "hover 200 / drawer 320 / reveal 720 + 氛围 cue 2800·84s·118s·7s + flatten 0.01ms",
-    "reducedMotion": "运行时实测压平后全站仅剩 1e-05s",
-    "touchTargets": "14 路由×390:109 个不足(15 类,最小 14px)→ 0 个,逐路由 min=44px",
-    "reports": [
-      "TOUCH-TARGET-AUDIT-G37.md",
-      "TOUCH-TARGET-AUDIT-G37.json"
-    ],
-    "regression": "G35 30/30 + G36 23/23 复跑全绿",
-    "buildGzip": {
-      "js": "176.78 kB",
-      "css": "20.37 kB"
+  "lastRunAt": "2026-10-02 12:4X+08:00",
+  "status": "completed",
+  "finalReport": "GALLERY_REPORT.md(G38 二阶卷)",
+  "finalShots": "GALLERY_FINAL2/(17 张 + final-assertions.json)",
+  "finalMetrics": {
+    "js": {
+      "raw": "554.93 kB",
+      "gzip": "176.78 kB"
     },
-    "openItems": [
-      "1440 指针档页脚链接 29px 是否升 44px,交 G38 终验记录",
-      "静态扫描覆盖不到 JS 运行时内联样式(已用运行时实测补足,未发现)"
-    ]
-  }
+    "css": {
+      "raw": "114.36 kB",
+      "gzip": "20.37 kB"
+    },
+    "html": {
+      "raw": "1440 B",
+      "gzip": "870 B"
+    }
+  },
+  "dependenciesChangedSinceBaseline": false,
+  "shutdown": "二阶冲刺 18/18 有效执行封顶:此后一切触发只读退出——不构建、不提交、不改文件、不建新任务;并提醒用户停用本定时任务。",
+  "openItems": [
+    "底本 A(ctext)回核挂账:南次二经 6 山按 B1×B2 先上线,recordStatus=unverified",
+    "南次二经余 11 山留 DRAFT 工作稿,扩录须用户新立任务",
+    "ruby 注音层未收 10 字待定夺;疑 12 四例读音分歧留人工复核",
+    "1440 指针档页脚链接 29px(≥24 AA)是否升 44px 未决",
+    "其余 12 词条流变层无 claim(未核即无 claim,设计内状态)",
+    "人工复核:楷体渲染、真实前台键盘 focus-visible、选区渲染色"
+  ]
 }
