@@ -1,3 +1,17 @@
+## G49 · 图鉴画卷化(引文区留白放大 + 回退复验)
+
+- **有效执行编号**:三阶 11 / 20
+- **北京时间**:2026-10-03 09:1X—10:0X(定时触发)
+- **开始 HEAD**:e820161(G48 补记),工作树干净;.round-lock 新建,轮末删除
+- **实际改动**:CatalogPage.module.css .grid gap 28→36(卡片呼吸)+EntityDetailPage.module.css(.heroArt padding-top 14px+.artMount figcaption 间距 18px)——引文区留白放大,零结构改动
+- **设计内决策(如实记)**:**PaintingMount 不接入词条页**——五幅古画卷(兰竹/墨葡萄/山水/莲塘/梅花)与山海词条无可核对应关系,强行配对即臆造新配(违任务书「不臆造新配」);十二词条沿用既有《古今图书集成》版画 artPanel(站内已有资产),error 回退机制(G22/P13)复验
+- **验收(dev/round49-catalog.mjs,9/9 全过)**:目录卡间距 computed=36px/**15 词条逐页通查 artPanel 全非空(12 版画+3 原创 SVG 演绎,无配图词条不留白洞)***onError 回退不破版(坏 data src→setClassicFailed→回退原创 SVG,面板仍满幅 404px)*/引文区呼吸生效(artNote margin-top 18)/1440+390 零横溢/控制台零异常
+- **脚本坑(如实记)**:①卡片选择器两连错([class*=grid]>a 与 a[listName] 均 0——默认 grid 视图用 EntityCard 组件)→按 href^="/catalog/" 收集 15 个;空集循环曾致通查断言空转假通过,已以 cards≥12 前置
+- **build**:绿;gzip 179.73 kB(+0.00)
+- **提交**:主提交 **2ccdad7**(4 files)+ 补记提交(本条)
+- **状态**:done(验收:onError 回退不破版✓、无配图词条不留白洞✓(15/15 通查))
+- **遗留与下轮入口**:无新增;下一轮 G50 山川图晕染增强(AtlasPage feTurbulence 程序化淡墨晕染,计入纹样台账,位图不进图内)
+
 ## G48 · 古卷画卷化(轻)(卷尾水墨小景 + 纸阶收束)
 
 - **有效执行编号**:三阶 10 / 20
