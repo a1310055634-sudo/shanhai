@@ -3,16 +3,16 @@
   "phase": 3,
   "title": "画卷气象·三阶冲刺 G39—G58",
   "totalRounds": 20,
-  "validExecutions": 5,
+  "validExecutions": 6,
   "maxValidExecutions": 20,
-  "currentRound": "G43",
+  "currentRound": "G44",
   "rounds": {
     "G39": "done",
     "G40": "done",
     "G41": "done",
     "G42": "done",
     "G43": "done",
-    "G44": "todo",
+    "G44": "done",
     "G45": "todo",
     "G46": "todo",
     "G47": "todo",
@@ -99,7 +99,7 @@
     "finalShots": "GALLERY_FINAL2/(17 张 + final-assertions.json)"
   },
   "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-03 04:0X+08:00",
+  "lastRunAt": "2026-10-03 05:0X+08:00",
   "status": "in_progress",
   "phase3Progress": {
     "paintingsReady": 5,
@@ -110,9 +110,9 @@
   "shutdown": "三阶冲刺 20 轮有效执行封顶(G58 完成):此后一切触发只读退出——不构建、不提交、不改文件;并提醒用户停用本定时任务。",
   "openItems": [
     "晴窗 390 About 真图缺(IAB 8.5②,G55 无头 Chrome 补)",
-    "floatSlot 实渲染断言留首个使用者(G44 起)",
     "641—900 档 hero 构图未单独截图(G55 补)",
-    "heroPaint alt=\"\" 装饰处理偏差记录在案(G58 终验复核)"
+    "heroPaint alt=\"\" 装饰处理偏差记录在案(G58 终验复核)",
+    "显影动效手感与晴窗「昼间覆纸」视觉留用户/G55 复核"
   ],
   "phase2OpenItems": [
     "底本 A(ctext)回核挂账:南次二经 6 山按 B1×B2 先上线,recordStatus=unverified",

@@ -1,3 +1,18 @@
+## G44 · 墨痕显影 InkReveal(用户点名效果,canvas 面纱+鼠标拂拭显影)
+
+- **有效执行编号**:三阶 6 / 20
+- **北京时间**:2026-10-03 04:1X—05:0X(定时触发)
+- **开始 HEAD**:a1b4148(G43 补记),工作树干净;.round-lock 新建,轮末删除
+- **实际改动**:新增 src/components/InkReveal.tsx+module.css;Hero.tsx heroPaint 内挂载;tokens.css 增 --ink-reveal-veil(灯下 31,44,38=hero 渐变底系/晴窗 233,222,202=宣纸 #e9deca,qing 块同步);dev/round44-inkreveal.mjs 验收脚本(CDP 真实 Input.dispatchMouseEvent)
+- **机制**:参数全照翻译规则第 8 条(STEP 12/R_START 8/R_END 128×随机 0.45/LIFETIME 520ms easeOutCubic/alpha=1-t² 愈合/三重正弦墨渍边 22 边多边形/MAX_STAMPS 160/rAF 按需启停停时补全幅纱/DPR≤2);面纱色 JS 读令牌计算值(每次全幅重涂重读→主题切换即换纱),零硬编码;mask 与 heroPaintImg 同款羽化(两模块镜像,注释注明同步要求)
+- **验收(dev/round44-inkreveal.mjs,15/15 全过)**:面纱尺寸=画卷矩形(633.6×321.5 逐位相等)/羽化 mask 在/像素=令牌计算值(灯下 [31,44,38,255] 与晴窗 [233,222,202,255] 双验)/**真实鼠标拂拭中心 alpha 255→0→(520ms 后)255 显影+愈合金链**/显影区无正文压字(1440 文字矩形零相交)/reduce 静态半透(opacity 0.55)+鼠标不显影/hover:none 组件不初始化+面纱 alpha=0 画常显/fail-open 移除 canvas 画仍完整/控制台零异常
+- **脚本迭代坑(如实记)**:①新 profile 默认 light 自动进晴窗(G34 坑⑤),首版「灯下」断言实为晴窗——先 localStorage deng 再测;②setEmulatedMedia 对 CSS @media(hover:none) 翻转不稳(首次 display=block),补 Emulation.setTouchEmulationEnabled 后 CSS+功能双合;③reduce 字面「静态半透」首版只加类未涂纱(canvas 透明=画常显),二版补静态涂纱一次使 opacity .55 真正作用
+- **性能**:vite gzip 179.29 kB(vs G43 178.32,**+0.97KB < 1.5KB 预算 ✓**)
+- **浏览器**:IAB 目检=羽缘画卷若隐若现(双 mask 同梯度固有,气质成立)、中心夜纱覆盖;显影瞬态 ≤520ms 截图难捕,以 CDP 像素链为实证,动效手感留用户实 feel(G55 走查)
+- **提交**:主提交 **031c4b8**(6 files)+ 补记提交(本条)
+- **状态**:done(验收:降级三路断言✓、双主题面纱色=令牌✓、gzip<1.5KB✓、显影区无正文压字✓)
+- **遗留与下轮入口**:①显影动效手感留用户实测;②晴窗「昼间覆纸」视觉(G55 双主题走查复核);下一轮 G45 纸阶系统(--page-alt-1/2/3 双主题六值,一带一色相邻档,每档对比度 ≥4.5:1,14 路由无断档)
+
 ## G43 · 誊抄机 Transcriber(逐字显形 + 墨点光标,接入卷首引言)
 
 - **有效执行编号**:三阶 5 / 20
