@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LineageMap from '../components/relations/LineageMap'
 import SectionHeading from '../components/SectionHeading'
 import { CHAPTERS } from '../data/chapters'
 import { ENTITIES, ENTITY_TYPE_LABELS, RECORD_STATUS_LABELS } from '../data/entities'
@@ -29,15 +30,19 @@ export default function RelationsPage() {
         index="谱系"
         title="万物谱系"
         subtitle="WAN WU PU XI"
-        note="这里展示条目与篇章、山川之间的交集。关系来自已录入的数据，不把后世传说或网络设定当作古籍关系。"
+        note="三方关系图呈现条目、山川与篇章的归属连接。关系全部来自已录入的数据字段，不把后世传说或网络设定当作古籍关系。"
         level={1}
       />
 
-      <div className={styles.legend} aria-label="关系图例">
-        <span><i className={styles.dotChapter} aria-hidden="true" />同篇章</span>
-        <span><i className={styles.dotLocation} aria-hidden="true" />同地点</span>
-        <span><i className={styles.dotIndex} aria-hidden="true" />本站阅读索引</span>
-      </div>
+      <LineageMap />
+
+      <SectionHeading
+        index="详表"
+        title="条目详表 · 文本视图"
+        subtitle="TIAO MU XIANG BIAO"
+        note="关系图之外，逐条列出每个条目的篇章、地点与相邻条目，作为图的文字对照。"
+        level={2}
+      />
 
       <div className={styles.grid}>
         {ENTITIES.map((entity) => {

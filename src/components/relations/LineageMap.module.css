@@ -1,0 +1,193 @@
+/* G33 谱系三方关系图:与山川图(ConceptMap)同族的宣纸语言 */
+.mapWrap {
+  border: 1px solid var(--border-normal);
+  border-radius: var(--radius-card);
+  background: var(--surface-paper);
+  overflow: hidden;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nodeDot {
+  transition: r var(--duration-hover) var(--ease-soft);
+}
+
+.node {
+  cursor: pointer;
+  outline: none;
+}
+
+.node:hover .nodeDot {
+  r: 8;
+}
+
+.node:hover .nodeLabel {
+  fill: var(--cinnabar);
+}
+
+.node:focus-visible circle,
+.node:focus-visible rect {
+  stroke: var(--old-gold);
+  stroke-width: 2;
+}
+
+/* 选中节点信息面板(宣纸底+墨字,与山川图面板同族) */
+.panel {
+  padding: 16px 18px;
+  border-top: 1px solid var(--border-normal);
+  background: var(--surface-paper);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.panelName {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  color: var(--paper-ink);
+}
+
+.panelAlias {
+  margin-left: 10px;
+  font-size: 12.5px;
+  letter-spacing: 0.12em;
+  color: var(--paper-muted);
+}
+
+.panelMeta {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--paper-muted);
+  letter-spacing: 0.04em;
+}
+
+.panelLink {
+  align-self: flex-start;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  color: var(--paper-ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-normal);
+  padding: 3px 0;
+}
+
+.panelLink:hover {
+  color: var(--cinnabar);
+}
+
+.panelClose {
+  align-self: flex-end;
+  min-height: 44px;
+  padding: 4px 14px;
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  color: var(--paper-muted);
+  background: none;
+  border: 1px solid var(--border-normal);
+  cursor: pointer;
+}
+
+.panelClose:hover {
+  color: var(--paper-ink);
+  border-color: var(--old-gold);
+}
+
+/* 图例(与山川图同族) */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: center;
+  padding: 10px 18px;
+  border-top: 1px solid var(--paper-border);
+  background: var(--surface-paper);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--paper-muted);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legendBeast {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cinnabar);
+  border: 1px solid var(--paper-ink);
+  display: inline-block;
+}
+
+.legendLoc {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--paper-muted);
+  display: inline-block;
+}
+
+.legendSign {
+  font-family: var(--font-serif);
+  font-size: 10.5px;
+  line-height: 1;
+  padding: 2px 5px;
+  color: var(--paper-ink);
+  background: var(--surface-paper);
+  border: 1px solid var(--old-gold);
+  display: inline-block;
+}
+
+.legendSolid {
+  width: 26px;
+  height: 0;
+  border-top: 1.4px solid var(--old-gold);
+  display: inline-block;
+}
+
+.legendDash {
+  width: 26px;
+  height: 0;
+  border-top: 1.4px dashed var(--old-gold);
+  display: inline-block;
+}
+
+.legendBelong {
+  width: 26px;
+  height: 0;
+  border-top: 1.1px dashed var(--old-gold);
+  opacity: 0.55;
+  display: inline-block;
+}
+
+.disclaimer {
+  margin: 0;
+  padding: 12px 18px;
+  border-top: 1px solid var(--paper-border);
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  color: var(--paper-muted);
+  line-height: 1.8;
+  background: var(--surface-paper);
+}
+
+@media (max-width: 700px) {
+  /* 390:三列图等比缩放会使 13px 标签不可辨,与山川图同策略——横向滚动保字号 */
+  .mapWrap {
+    overflow-x: auto;
+  }
+
+  .map {
+    min-width: 760px;
+  }
+}

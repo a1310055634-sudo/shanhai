@@ -4,32 +4,6 @@
   padding: 88px var(--space-page-x-desktop) 0;
 }
 
-.legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 24px;
-  margin: 48px 0 28px;
-  color: var(--text-muted);
-  font-size: var(--fs-secondary);
-}
-
-.legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.legend i {
-  width: 9px;
-  height: 9px;
-  display: inline-block;
-  border-radius: 50%;
-}
-
-.dotChapter { background: var(--old-gold); }
-.dotLocation { background: var(--verdigris); }
-.dotIndex { background: var(--cinnabar); }
-
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -164,19 +138,11 @@
   .page {
     padding: 64px var(--space-page-x-tablet) 0;
   }
-
-  .legend {
-    margin-top: 40px;
-  }
 }
 
 @media (max-width: 640px) {
   .page {
     padding: 48px var(--space-page-x-mobile) 0;
-  }
-
-  .legend {
-    margin: 32px 0 20px;
   }
 
   .grid {
