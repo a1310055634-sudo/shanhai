@@ -185,3 +185,10 @@
     object-position: 62% 45%;
   }
 }
+
+/* G55 走查补修(承 G46):非当前站位原为裸字压底画,补薄纱签=画上交互文字有纸面
+   承载(任务书规则 5);当前站位已有 --veil-solid 不在列 */
+li[class*="railStop"]:not([class*="railStopCurrent"]) {
+  background: var(--veil-mid);
+  border-radius: var(--radius-card);
+}

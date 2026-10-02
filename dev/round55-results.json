@@ -1,0 +1,42 @@
+[
+  {
+    "name": "双主题截图 ≥12 张(实测 28)",
+    "ok": true,
+    "detail": "28 张入 GALLERY_FINAL3/mid-*"
+  },
+  {
+    "name": "home 画卷区无正文压字(核心带)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "journey 轨道压画站名全有纱面承载(无裸字)",
+    "ok": true,
+    "detail": "[\"journey:3猨翼[纱]\",\"journey:4杻阳[纱]\",\"journey:6亶爰[纱]\",\"journey:7基山[纱]\"]"
+  },
+  {
+    "name": "灯下 大题对页底 ≥4.5",
+    "ok": true,
+    "detail": "ratio=16.01"
+  },
+  {
+    "name": "灯下 轨道字对混底(保守口径)≥4.5",
+    "ok": true,
+    "detail": "ratio=12.38(底画 0.3 淡墨未计入=保守)"
+  },
+  {
+    "name": "灯下 卷尾注记对纸阶带 ≥4.5",
+    "ok": true,
+    "detail": "ratio=6.92"
+  },
+  {
+    "name": "全程零横溢",
+    "ok": true,
+    "detail": "28 页全 ok"
+  },
+  {
+    "name": "控制台零异常",
+    "ok": true,
+    "detail": ""
+  }
+]
