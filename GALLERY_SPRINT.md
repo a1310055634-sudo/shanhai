@@ -156,7 +156,7 @@ HEAD 起点:`823ba01`(R19 终验交付,工作树干净)。
 | G39 | 接管与三阶立项 | done | 2ae9e26 | STATE→phase3/基线四项/DESIGN 十一章/任务书入库 |
 | G40 | 画卷资产首批(公版古画 4—6 幅+台账) | done | 2ead595 | 5幅PD核验,总量1.02MB=预算41% |
 | G41 | PaintingMount 装裱组件+款识 | done | bec7f81 | About 样张五幅接线;--surface-paper 坑修正 |
-| G42 | 卷首展卷(hero 定宽贴底+mask 羽化) | todo | | |
+| G42 | 卷首展卷(hero 定宽贴底+mask 羽化) | done | 1140634 | 右下羽化+异兽行画上;390 衬纸按钮;gzip+1.13KB |
 | G43 | 誊抄机 Transcriber(预锁宽防 CLS) | todo | | |
 | G44 | 墨痕显影 InkReveal(降级三路) | todo | | 面纱色走双主题令牌 |
 | G45 | 纸阶系统(--page-alt-1/2/3) | todo | | 对比度每档 ≥4.5:1 |

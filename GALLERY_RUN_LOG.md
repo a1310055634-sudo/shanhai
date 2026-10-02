@@ -1,3 +1,18 @@
+## G42 · 卷首展卷(hero 画卷背景 + 留白重排)
+
+- **有效执行编号**:三阶 4 / 20
+- **北京时间**:2026-10-03 02:3X—03:1X(定时触发)
+- **开始 HEAD**:1870303(G41 补记),工作树干净;.round-lock 新建,轮末删除
+- **实际改动**:Hero.tsx 增最深景深层 .heroPaint(data-hero-paint 锚,G43 誊抄/G44 显影落位预留;〔清〕郑燮 兰竹图,alt="" aria-hidden 装饰处理——题名信息偏差:背景形态非内容图,红线 alt 真实题名针对内容图,如实记录)+Hero.module.css(.heroPaint 定宽 min(44vw,640px) 贴右下 bottom 92px+radial mask 四周羽化;≤640 全宽羽化底带 bottom 58px 让位 caption/scrollCue 线;≤640 幽灵按钮衬 --surface-paper)
+- **构图实测迭代(两次,如实记)**:①首版贴左下→「查看异兽图鉴」幽灵按钮压画心亮区不可读(IAB 截图实锤);②改贴右下→画在 scene 层之下、异兽剪影行于画上(古今对撞成立),ghost rect 与 img rect 不相交断言过;③390 档按钮与画带垂直同带不可避免→按规则 5 衬纸底(浮卡语义,不裸压画心),墨字纸签可读
+- **断言**:heroPaint computed width 633.59px(=min(44vw,640) ✓)、mask radial-gradient 62% 46% 52%→96% ✓、img eager+1600×812 ✓、1440/390 scrollWidth=clientWidth 零横溢 ✓、hero 高 828px(92vh 档,附录 A 592px 为参考口径,hero 场景既有 92vh 保留并记录)
+- **性能**:vite 口径 gzip 177.91 kB vs 三阶基线 176.78 kB=**+1.13 kB < 2KB 预算 ✓**(gzip -c 直测 175,768 B 为 zlib 口径差,以 vite 口径为准)
+- **浏览器与截图(D:\vibe coding\shots-g41\)**:home-deng-1440(IAB 真图,古今对撞成立)、home-deng-390(IAB 真图,衬纸按钮)、home-qing-1440(无头 Chrome 真图;首截文字半透明=rise-in 未完成,加 --virtual-time-budget=6000 解决——无头截图新参数入册)、home-qing-390(无头)。晴窗下 hero 场景面恒墨夜(设计内:场景=挂轴,双主题同挂轴语义)
+- **build**:绿(1.50—1.85s 四次)
+- **提交**:主提交 **1140634**(2 files)+ 补记提交(本条)
+- **状态**:done(验收:双主题截图✓×4、390 不裁字✓(按钮衬纸+画带让位,标题无裁)、JS gzip 增量<2KB✓ +1.13)
+- **遗留与下轮入口**:①641—900 档未单独截图(样式=桌面右下版,几何推算不相交,G55 走查补);②alt="" 偏差记录在案;下一轮 G43 誊抄机 Transcriber(逐字显形+墨点光标,预锁宽防 CLS,reduced-motion 直出,接入卷首引言)
+
 ## G41 · PaintingMount 画卷装裱组件+款识(首落位 About 古画卷样张)
 
 - **有效执行编号**:三阶 3 / 20
