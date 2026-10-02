@@ -1,0 +1,37 @@
+[
+  {
+    "name": "谱系图就位",
+    "ok": true,
+    "detail": "{\"nodeCount\":43,\"labels\":51,\"prefixes\":[\"篇章\",\"篇章\",\"篇章\"],\"bg\":\"gradient-ok\"}"
+  },
+  {
+    "name": "G47 淡墨渐染背景生效",
+    "ok": true,
+    "detail": "gradient-ok"
+  },
+  {
+    "name": "G33 键盘遍历:43 节点全可达",
+    "ok": true,
+    "detail": "unique=43/43 last=条目彘,异兽,待考证"
+  },
+  {
+    "name": "G33 标签零重叠(1440)",
+    "ok": true,
+    "detail": "labels=51 bad=0"
+  },
+  {
+    "name": "G33 标签零重叠(390)",
+    "ok": true,
+    "detail": "labels=51 bad=0"
+  },
+  {
+    "name": "390 零横溢",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "控制台零异常",
+    "ok": true,
+    "detail": ""
+  }
+]

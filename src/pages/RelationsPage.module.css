@@ -1,7 +1,13 @@
 .page {
+  /* G47 谱系画卷化:页面级淡墨渐染氛围(双主题走 --ink-night 令牌,非 SVG 纹样不占台账;
+     纯背景层,不触碰 LineageMap 内部结构/键盘可达/标签布局) */
   max-width: var(--content-max-width);
   margin: 0 auto;
   padding: 88px var(--space-page-x-desktop) 0;
+  background:
+    radial-gradient(820px 420px at 14% 4%, color-mix(in srgb, var(--ink-night) 14%, transparent), transparent 68%),
+    radial-gradient(680px 520px at 92% 30%, color-mix(in srgb, var(--ink-night) 10%, transparent), transparent 70%),
+    radial-gradient(760px 460px at 30% 88%, color-mix(in srgb, var(--ink-night) 12%, transparent), transparent 72%);
 }
 
 .grid {
