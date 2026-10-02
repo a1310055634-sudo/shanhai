@@ -1,0 +1,117 @@
+[
+  {
+    "name": "九尾狐 页 claim 数 = 2",
+    "ok": true,
+    "detail": "2"
+  },
+  {
+    "name": "九尾狐 claim 五要素齐备(句/引文/篇名/链接/存档)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "九尾狐 链接指向维基文库且新窗+noreferrer",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "九尾狐 claim 链接触控 ≥44px",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "九尾狐 1440 零横溢",
+    "ok": true,
+    "detail": "{\"scrollW\":1440,\"clientW\":1440,\"over\":[]}"
+  },
+  {
+    "name": "夔 页 claim 数 = 1",
+    "ok": true,
+    "detail": "1"
+  },
+  {
+    "name": "夔 claim 五要素齐备(句/引文/篇名/链接/存档)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "夔 链接指向维基文库且新窗+noreferrer",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "夔 claim 链接触控 ≥44px",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "夔 1440 零横溢",
+    "ok": true,
+    "detail": "{\"scrollW\":1440,\"clientW\":1440,\"over\":[]}"
+  },
+  {
+    "name": "精卫 页 claim 数 = 1",
+    "ok": true,
+    "detail": "1"
+  },
+  {
+    "name": "精卫 claim 五要素齐备(句/引文/篇名/链接/存档)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "精卫 链接指向维基文库且新窗+noreferrer",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "精卫 claim 链接触控 ≥44px",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "精卫 1440 零横溢",
+    "ok": true,
+    "detail": "{\"scrollW\":1440,\"clientW\":1440,\"over\":[]}"
+  },
+  {
+    "name": "渲染引文逐字回查存档(6 段)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "九尾狐 390 零横溢",
+    "ok": true,
+    "detail": "{\"scrollW\":390,\"clientW\":390,\"over\":[]}"
+  },
+  {
+    "name": "九尾狐 390 触控档控件 ≥44px",
+    "ok": true,
+    "detail": "min=43.75 句内豁免 3 不足者 []"
+  },
+  {
+    "name": "九尾狐 灯下 对比度(印章豁免 2)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "九尾狐 晴窗 对比度(印章豁免 0)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "夔 1440 档控件 ≥24px(WCAG 2.5.8 AA)",
+    "ok": true,
+    "detail": "min=29 不足者 [{\"h\":29,\"t\":\"古籍篇章\",\"c\":\"\"},{\"h\":29,\"t\":\"收藏\",\"c\":\"\"},{\"h\":29,\"t\":\"资料来源与制作说明\",\"c\":\"\"},{\"h\":29,\"t\":\"如何读本站(凡例)\",\"c\":\"\"},{\"h\":29,\"t\":\"难字音表\",\"c\":\"\"},{\"h\":29,\"t\":\"异文校勘\",\"c\":\"\"}]"
+  },
+  {
+    "name": "主导航七词未动",
+    "ok": true,
+    "detail": "[\"山山海万象录SHAN HAI ARCHIVE\",\"卷首\",\"异兽\",\"山川\",\"古卷\",\"谱系\",\"探索\",\"收藏\"]"
+  },
+  {
+    "name": "全程无未捕获异常",
+    "ok": true,
+    "detail": "0"
+  }
+]

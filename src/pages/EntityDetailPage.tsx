@@ -256,6 +256,35 @@ export default function EntityDetailPage() {
             {entity.laterReception.map((r, i) => (
               <div key={i} className={styles.receptionItem}>
                 <p className={styles.receptionText}>{r.text}</p>
+                {/* G36 逐句可溯:每条 claim 附篇名+链接+照录引文+项目存档 */}
+                {r.claims && r.claims.length > 0 && (
+                  <ul className={styles.claimList}>
+                    {r.claims.map((c, j) => (
+                      <li key={j} className={styles.claim} data-claim={c.sourceTitle}>
+                        <p className={styles.claimText}>{c.text}</p>
+                        <p className={styles.claimQuote} data-quote={c.quote}>
+                          「{c.quote}」
+                        </p>
+                        <p className={styles.claimSource}>
+                          <span className={styles.receptionSourceLabel}>所据</span>
+                          {c.sourceTitle}
+                          <a
+                            className={styles.claimLink}
+                            href={c.sourceUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            公开对照 ↗
+                          </a>
+                        </p>
+                        <p className={styles.claimArchive}>
+                          存档 {c.archive}
+                          {c.note ? ` · ${c.note}` : ''}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <p className={styles.receptionSource}>
                   <span className={styles.receptionSourceLabel}>出处</span>
                   {r.era}

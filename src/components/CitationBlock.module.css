@@ -60,7 +60,11 @@
   color: var(--cinnabar);
 }
 
+/* G36:补 44px 触控目标(原为纯行内链接,实测高 20px,低于触控档 44px 与 AA 24px) */
 .link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--cinnabar);
   text-decoration: none;
   border-bottom: 1px solid rgba(167, 71, 56, 0.45);

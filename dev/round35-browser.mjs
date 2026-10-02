@@ -121,6 +121,8 @@ const OVERFLOW_PROBE = `(() => {
   }
   const over = []
   for (const el of document.querySelectorAll('body *')) {
+    // SVG 内部图元不产生页面滚动,按既有口径排除(G36 补)
+    if (el.ownerSVGElement) continue
     const r = el.getBoundingClientRect()
     if (r.width > 0 && (r.right > de.clientWidth + 1 || r.left < -1) && !inScroller(el)) {
       const cls = el.className && typeof el.className === 'string' ? el.className.split(' ')[0] : el.tagName
@@ -143,20 +145,25 @@ const CONTRAST_PROBE = `(() => {
     return { c: [p[0], p[1], p[2]], a: p.length > 3 ? p[3] : 1 }
   }
   const bgOf = (el) => {
-    let acc = null
+    // G36 修正:合成须自最底层向上叠加(v*a + base*(1-a));原写法把半透明层与底层顺序写反,
+    // 会把宣纸内衬误算成深底并产生一批 2.29:1 假失败。本轮修正后复跑。
+    const layers = []
     let node = el
     while (node && node !== document.documentElement.parentNode) {
       const cs = getComputedStyle(node)
       let s = cs.backgroundColor
       if (cs.backgroundImage && cs.backgroundImage !== 'none') s = cs.backgroundImage.match(/rgba?\\([^)]+\\)/)?.[0] ?? s
       const p = parse(s)
-      if (p && p.a > 0) acc = acc ? { c: acc.c.map((v, i) => v * (1 - p.a) + p.c[i] * p.a), a: 1 } : p
-      if (acc && acc.a >= 1) break
+      if (p && p.a > 0) layers.push(p)
+      if (p && p.a >= 1) break
       node = node.parentElement
     }
-    if (!acc) acc = { c: [255, 255, 255], a: 1 }
-    else if (acc.a < 1) acc = { c: acc.c.map((v, i) => v * acc.a + 255 * (1 - acc.a)), a: 1 }
-    return acc.c
+    let base = [255, 255, 255]
+    for (let i = layers.length - 1; i >= 0; i--) {
+      const L = layers[i]
+      base = L.c.map((v, k) => v * L.a + base[k] * (1 - L.a))
+    }
+    return base
   }
   const ratio = (fg, bg) => { const a = lum(fg) + 0.05, b = lum(bg) + 0.05; return a > b ? a / b : b / a }
   const ownText = (el) => [...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim().length > 0)

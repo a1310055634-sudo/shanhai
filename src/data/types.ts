@@ -77,10 +77,32 @@ export interface SourceNote {
   citationIndex: number
 }
 
+/**
+ * 后世流变的一条可溯 claim(G36)。
+ * 「逐句注篇名与链接」:每个 fact 句都绑定一条后世古籍原文引文 + 页名 + 链接 + 项目内存档;
+ * 取不到来源的说法一律不写进 claim,只在 LaterReception.text 内明确标注留白。
+ */
+export interface LaterClaim {
+  /** 本站表述(现代汉语,一句) */
+  text: string
+  /** 篇名(含卷/篇定位),如「《呂氏春秋》卷二十二·察傳」 */
+  sourceTitle: string
+  /** 公开链接(公版、稳定来源) */
+  sourceUrl: string
+  /** 所据原文引文(逐字照录后世典籍,保持繁体原样) */
+  quote: string
+  /** 项目内存档文件(核对以存档为准) */
+  archive: string
+  /** 说明:转录疑点、作者/时代、照录口径 */
+  note?: string
+}
+
 /** 后世流变条目(与原始记载严格分隔,均为本站编辑说明)。 */
 export interface LaterReception {
   era: string
   text: string
+  /** G36 新增:逐句可溯的 fact 句;无来源的说法不列此处 */
+  claims?: LaterClaim[]
 }
 
 export interface Entity {

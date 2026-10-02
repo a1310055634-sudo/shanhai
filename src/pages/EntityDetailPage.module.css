@@ -112,7 +112,11 @@
   color: var(--text-muted);
 }
 
+/* G36:补触控高度(原实测 22px,低于触控档 44px 与 AA 24px) */
 .artNote a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: inherit;
   text-decoration: none;
   border-bottom: 1px solid var(--border-weak);
@@ -219,7 +223,11 @@ section [id^='sec-'],
   gap: 4px;
 }
 
+/* G36:补触控高度(原实测 40px,低于 44px 触控档) */
 .backLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   align-self: flex-start;
   font-size: 12px;
   letter-spacing: 0.18em;
@@ -274,12 +282,14 @@ section [id^='sec-'],
   line-height: 1.9;
 }
 
-/* 后世流变:与原始记载明显分隔(G22 三级层级:标题/正文/出处) */
+/* 后世流变:与原始记载明显分隔(G22 三级层级:标题/正文/出处)
+   G36 修正:原 background 为硬编码深纱 rgba(19,28,24,.6),晴窗主题下文字令牌翻为墨字,
+   深底墨字实测 2.18:1 不可读;改用 G32 的 --veil-mid 双主题纱面(灯下保深、晴窗宣纸浅纱)。 */
 .receptionFrame {
   border: 1px dashed rgba(143, 150, 141, 0.45);
   border-radius: 0; /* G22 古籍方角,与界栏族一致 */
   padding: 26px 28px 24px;
-  background: rgba(19, 28, 24, 0.6);
+  background: var(--veil-mid);
 }
 
 .receptionItem {
@@ -310,6 +320,65 @@ section [id^='sec-'],
   font-family: var(--font-serif);
   letter-spacing: 0.2em;
   color: var(--old-gold);
+}
+
+/* G36 逐句可溯 claim:一句一行,引文与出处同格;方角无装饰,与界栏族同语言 */
+.claimList {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0 0 0 16px;
+  border-left: 1px solid var(--border-weak);
+}
+
+.claim + .claim {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-weak);
+}
+
+.claimText {
+  font-size: 15px;
+  color: var(--text-on-dark);
+  line-height: 1.95;
+  max-width: 44em;
+}
+
+.claimQuote {
+  margin-top: 8px;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: var(--paper);
+  line-height: 1.9;
+  max-width: 44em;
+}
+
+.claimSource {
+  margin-top: 8px;
+  font-size: var(--fs-caption);
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+}
+
+.claimLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-left: 12px;
+  color: var(--old-gold);
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+.claimLink:hover {
+  color: var(--paper-bright);
+}
+
+.claimArchive {
+  font-size: var(--fs-caption);
+  color: var(--text-muted);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
 }
 
 /* 地域关系 */
@@ -513,7 +582,11 @@ section [id^='sec-'],
   background: var(--veil-soft);
 }
 
+/* G36:补触控高度(原实测 39px,低于 44px 触控档) */
 .tocItem {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-family: var(--font-serif);
   font-size: 13.5px;
   letter-spacing: 0.16em;
