@@ -1,3 +1,17 @@
+## G43 · 誊抄机 Transcriber(逐字显形 + 墨点光标,接入卷首引言)
+
+- **有效执行编号**:三阶 5 / 20
+- **北京时间**:2026-10-03 03:2X—04:0X(定时触发)
+- **开始 HEAD**:1c2f8df(G42 补记),工作树干净;.round-lock 新建,轮末删除
+- **实际改动**:新增 src/components/Transcriber.tsx+module.css;Hero 引言(副题「循古卷而行…」)接入;tokens.css 增 --duration-char: 70ms(hero 级快档,参考站 55—130ms 区间取中)/--duration-caret: 1100ms(引用:Transcriber,零死令牌);dev/round43-transcriber.mjs 验收脚本(CDP 复用 round38 样板+round37 setEmulatedMedia reduce 先例)
+- **防跳版实现(与参考站差异,如实记)**:参考站居中单行故预锁宽;本站引言左对齐且窄屏自然折行——改为**隐藏副本量最终高度预锁 min-height**(等效防推移)+容器 display:block(宽度天然恒定);首版 inline-block 会被打字撑宽(宽度恒等断言必假红),已自查修正
+- **验收(dev/round43-transcriber.mjs,15/15 全过)**:打字中途容器宽高零跳变(10 采样恒 570×35.14)/采样覆盖 typing 态/完成态到达/全文逐字相等/aria-label=全文/完成后光标移除/光标 keyframe 恰 1 枚(CSSOM)/组件不可聚焦/1440+390 零横溢/**压平(Emulation.setEmulatedMedia reduce)400ms 内直出全文逐字相等+零光标+宽高恒定**/控制台零异常;IAB 目检:打字进行态「循古卷+墨点圆点光标」截图成立
+- **build**:绿;gzip 178.32 kB(vs G42 177.91,+0.41KB)
+- **脚本自身坑(如实记)**:reduce 静态渲染时 root 无子节点,children[0] 取 typed 抛 Uncaught——补 || root 兜底后 15/15
+- **提交**:主提交 **b999b9d**(6 files)+ 补记提交(本条)
+- **状态**:done(验收:压平 DOM 全文逐字相等✓、keyframe 恰 1✓、宽度零跳变✓、焦点环不受影响✓——全部真实通过)
+- **遗留与下轮入口**:无;下一轮 G44 墨痕显影 InkReveal(hero 画卷上覆双主题令牌色 canvas 面纱,参数照翻译规则第 8 条,降级三路断言,gzip<1.5KB)
+
 ## G42 · 卷首展卷(hero 画卷背景 + 留白重排)
 
 - **有效执行编号**:三阶 4 / 20
