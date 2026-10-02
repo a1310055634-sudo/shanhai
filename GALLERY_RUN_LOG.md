@@ -1,3 +1,16 @@
+## G52 · 宋体标题层实验(--font-display 大题,达标不退回)
+
+- **有效执行编号**:三阶 14 / 20
+- **北京时间**:2026-10-03 12:1X—13:0X(定时触发)
+- **开始 HEAD**:0a6533b(G51 补记),工作树干净;.round-lock 新建,轮末删除
+- **实际改动**:tokens.css 增 --font-display: 'Songti SC','STSong','SimSun',Georgia,serif(系统栈,零远程字体)+SectionHeading.module.css .title(font-family --font-title→--font-display;letter-spacing 0.14em→0.02em;font-weight 600→500,附录 A 区题 30px/w500 口径,clamp 字号不动);楷体层(题签/--font-title 其他用途)不动
+- **实测结论(达标,不退回)**:验收机(Windows)H1 computed family="Songti SC", STSong, SimSun…且 **document.fonts.check 实际命中 Songti SC**(32px/w500),未落 SimSun 兜底;双主题渲染锐利(衬线横细竖清,截图存档 IAB readings 页);字距 0.64px=0.02em×32 ✓。**风险如实记**:其他 Windows 环境若未映射 Songti SC 将落 SimSun,合成 w500 屏显质量未在该环境实测;退回预案已写死在 CSS 注释(--font-display 整块换回 --font-title 即回滚)
+- **验收(dev/round52-serif.mjs,11/11 全过)**:双主题大题 computed=宋体展示栈/平台命中记录/字距 0.02em 档(0.64px@32px)/**全站零 @font-face(CSSOM 计数 0,无远程字体断言)**/零横溢/控制台零异常
+- **性能**:build css 122.97 kB/gzip 21.67 kB;js 无改动
+- **提交**:主提交 **b3591f5**(4 files)+ 补记提交(本条)
+- **状态**:done(验收:双主题截图✓(IAB readings 灯下+晴窗 clip)、无远程字体断言✓、SimSun 实测=命中更优 Songti SC 不退回✓)
+- **遗留与下轮入口**:①其他 Windows 环境落 SimSun 的屏显抽验留用户(G57 呈报清单);下一轮 G53 微动效令牌收口(誊抄/光标/晕染全令牌化复核+G37 审计脚本复跑零裸值+reduced-motion 复验)
+
 ## G51 · 参考页画卷化(轻)(六页纸阶统一,零内容改动)
 
 - **有效执行编号**:三阶 13 / 20
