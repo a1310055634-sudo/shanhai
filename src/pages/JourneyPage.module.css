@@ -93,7 +93,7 @@
   max-width: 880px;
   border: 1px solid rgba(177, 139, 86, 0.45);
   border-radius: var(--radius-card);
-  background: rgba(23, 35, 31, 0.55);
+  background: var(--veil-mid);
   padding: 26px 28px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 252px;
@@ -338,7 +338,7 @@
   padding: 12px 8px;
   border: 1px solid rgba(177, 139, 86, 0.45);
   border-radius: var(--radius-card);
-  background: rgba(23, 35, 31, 0.7);
+  background: var(--veil-strong);
   text-decoration: none;
   transition:
     border-color var(--duration-hover) var(--ease-soft),
@@ -371,7 +371,7 @@
 
 .scrollSlotOn {
   border-color: var(--cinnabar);
-  background: rgba(23, 35, 31, 0.95);
+  background: var(--veil-solid);
 }
 
 .scrollOrder {
@@ -443,7 +443,7 @@
   padding: 12px 6px;
   border: 1px dashed rgba(143, 150, 141, 0.4);
   border-radius: var(--radius-card);
-  background: rgba(13, 19, 17, 0.78); /* E04:实底护住文字对比度 */
+  background: var(--veil-strong); /* E04:实底护住文字对比度 */
   text-align: center;
 }
 

@@ -1,3 +1,58 @@
+## G32 · 晴窗主题(二):全 13 路由双主题走查/对比度实测全表/硬编码色收编 26 处
+
+- **有效执行编号**:二阶 12 / 18
+- **北京时间**:2026-10-02 约 07:5X—09:2X(定时触发)
+- **开始 HEAD**:b394879(G31),工作树干净;.round-lock 不存在,新建,轮末删除
+- **提交**:见 git log(G32 提交)
+- **本轮预期**:全 12+ 路由双主题走查、对比度实测全表(正文≥4.5:1)、硬编码色收编清单、双主题截图≥10 张、390 档补测。验收=零不可读项或如实标缺口
+
+### 方法与测量伪影(重要,记 DESIGN 7.4)
+
+- IAB `setViewportSize` 本轮实测**可用**(390×844,补齐 G31 遗留的 390 档;G31 失败原因未复现)
+- **测量伪影**:页面加载时主题为 qing(残留 localStorage),切回灯下后导航/页脚/链接等带 `transition: color` 的元素计算色冻结在 qing 起点值——后台标签 rAF 暂停冻结过渡。首轮扫描灯下 13 路由全数"失败"(289 采样)全为此伪影。修正协议:每页注入 `transition:none !important` 后在同一 evaluate 内切主题+取样,稳态值才真实。此坑已记 DESIGN 7.4,G37/G38 复测须沿用
+- 对比度算法:逐元素 getComputedStyle 色彩 × 有效背景(祖先链逐层 alpha 合成,渐变底取最不利色标,终底兜底白),WCAG 4.5:1(大字 3.0:1);SVG text 取 fill
+
+### 实测结果与三类根因
+
+- **首轮(真实)晴窗 699 采样失败**:/relations 255/279、/catalog 110、/atlas 104、/explore 58、/ 42、/journeys 36、/about 31;灯下(修伪影后)仅零星
+- 根因①晴窗文字令牌对最深分层带 #ddd0b4 差半档:--text-muted 4.37、--cinnabar 4.41、--verdigris-text 4.09(全站 ruby 注音/印章/铜绿文字命中)
+- 根因②**26 处硬编码深纱 background**(rgba(23,35,31,*)×20 + rgba(13,19,17,*)×6 面板)在晴窗纸底上合成中间灰,叠晴窗墨字=深底深字——正是 G31「约 16 处深色硬编码」挂账的实体化
+- 根因③英雄区/长卷画布上文字用主题翻转令牌,晴窗翻成墨字叠深画布(G31 挂账「首页英雄区晴窗对比度复查」实测坐实)
+
+### 修复(tokens.css + 23 个文件)
+
+- **三令牌加深**:qing --text-muted #625c49→#57503c(5.25)/--cinnabar #99412f→#8f3c2b(4.83)/--verdigris-text #4f6656→#45584b(5.00),均为对全晴窗面实测最不利值
+- **--veil 四档双值**(soft .45/mid .55/strong .7/solid .92 ↔ 晴窗宣纸浅纱 .62/.75/.82/.98):26 处深纱收编,灯下 .4→.45/.5→.55/.58→.55/.6→.7/.78→.7/.9/.95→.92 微调,画布内渐变(EntityCard 渐隐/JournalOpening 渐晕)与阴影不碰
+- **--on-canvas 六档恒亮画布字**(#d9d6c9/#f4ecdf/#8f968d/#a5875b/#86a492/#d18069,两主题同值):Hero 标题/副题/primary/ghost/kickerText/caption/seal、首页行旅入口条四件、JournalProgress 进度轨六处、TodayBeast primary;Hero 的 seal/ghost 芯片底回退画布固定深纱(画布区语义,灯下零变化)
+- **--paper-veil 宣纸内衬**(rgba(233,223,201,.92) 恒值):详情页 .disputed/.locationCite 原 0.55/0.5 透明宣纸在深底上合成中间灰,暗字仅 2.16/3.26(灯下也失败,系 G22 遗留)→提实至 .92,暗字 ≥9:1
+- **金字上纸面**:ConceptMap REGION_LABELS fill --old-gold→--paper-muted(灯下金字对宣纸 2.88,五区域标签);SourcePromise 眉标 #6a7168→--paper-muted(4.29→7.0);ChapterIndex groupName/moreLink 与 AtlasPreview moreLink 实为深底,误改后按实测回退 --old-gold(主题跟随,双主题达标)
+- 迭代四轮扫描收敛:**第四轮晴窗 13/13 路由零失败;灯下残余 28 采样全为豁免集**(站印「山」×13 路由 3.22/404「待」印 3.03/About「当前」3.01/行旅当前站号 2.82——朱砂印章印记,WCAG 标志与装饰豁免,逐项记 DESIGN 7.4)
+- **收编清单**:HARDCODE-SCAN-G32.md(收编前全量:UI 铬类 236 处/31 文件含 tokens.css 合法定义 46 处,画布类 318 处/27 文件)
+
+### 既有缺陷修复(走查发现)
+
+- 1280 桌面档英雄区印框半透明深底叠压左侧竖排书签条(两主题同现,390 不受影响)——visual-judge 首轮 fail 指出,印框改透明底线框式,复核确认叠压消除、纸面无暗缺口
+
+### 浏览器核对与视觉验收
+
+- IAB 390×844:13 路由 × 2 主题 DOM 断言(body 底/正文墨字/对比度采样/scrollWidth=clientWidth 零横溢)四轮全绿;桌面 1280 双主题截图
+- visual-judge 两批:首轮 15 张(390×13 晴窗+首页灯下+1280×2)=13 pass/2 fail(同根因印框叠压)→修复→复核 2/2 pass,**15/15 全过**;验收员备注:行旅轨截图帧位停在站点详情卡(轨部可读性已在 3×3 站表核过)、柢山「待核」态 1.6:1 为虚线待核态刻意弱化(不计缺陷,提升灰度留后)
+- 截图 15 张入 GALLERY_BASELINES/(g32-*.png:晴窗 11 路由+detail-disputed+journey-rail+首页 deng/qing@390+deng/qing@1280)
+
+### 构建
+
+- build 绿(tsc --noEmit && vite build);gzip:JS 161.55(G31 161.55,±0,纯 CSS 轮+ConceptMap 同尺寸 attr 改动)/CSS 18.39(G31 18.20,+0.19 令牌族)
+
+### 挂账与下轮入口
+
+- **G33 入口**:谱系关系图——RelationsPage 用 ConceptMap 同款语言(宣纸底/朱砂点/旧金签/墨字标签)做异兽—山—篇章三方关系图,数据从 entities/locations 派生不手写第三份;键盘遍历/标签零重叠断言/390 策略
+- **G37 挂账+2**:Hero `.primary:hover` 背景 #b85545、journeyEntryCta `transition: 0.25s ease` 裸值(本轮顺手发现未动,归微交互审计)
+- 观察项(不判缺陷):柢山「待核」态 1.6:1 刻意弱化,后续可提升灰度;qing localStorage 残留在测试档案(自然持久化链路的证据,未清理)
+
+### 状态:**done**
+
+---
+
 ## G31 · 晴窗主题(一):令牌双值/页脚切换钮/prefers-color-scheme+localStorage/切换零动画
 
 - **有效执行编号**:二阶 11 / 18

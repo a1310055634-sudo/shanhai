@@ -128,18 +128,18 @@
   display: grid;
   place-items: center;
   border: 1px solid var(--cinnabar);
-  color: var(--cinnabar);
+  color: var(--on-canvas-cinnabar);
   font-family: var(--font-serif);
   font-size: 21px;
   border-radius: 2px;
-  background: rgba(13, 19, 17, 0.55);
+  background: transparent;
 }
 
 .kickerText {
   font-family: var(--font-serif);
   font-size: 15px;
   letter-spacing: 0.34em;
-  color: var(--old-gold);
+  color: var(--on-canvas-gold);
 }
 
 .title {
@@ -149,7 +149,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   line-height: 1.28;
-  color: var(--paper);
+  color: var(--on-canvas-bright);
   max-width: 12em;
   text-shadow: 0 2px 24px rgba(13, 19, 17, 0.65);
 }
@@ -158,7 +158,7 @@
   margin-top: 26px;
   font-size: clamp(16px, 1.6vw, 19px);
   letter-spacing: 0.14em;
-  color: var(--text-on-dark);
+  color: var(--on-canvas);
   max-width: 30em;
 }
 
@@ -176,7 +176,7 @@
   min-height: 50px;
   padding: 0 38px;
   background: var(--cinnabar);
-  color: var(--paper-bright);
+  color: var(--on-canvas-bright);
   font-family: var(--font-serif);
   font-size: 17px;
   letter-spacing: 0.32em;
@@ -199,7 +199,7 @@
   min-height: 50px;
   padding: 0 34px;
   border: 1px solid var(--old-gold);
-  color: var(--old-gold);
+  color: var(--on-canvas-gold);
   font-family: var(--font-serif);
   font-size: 17px;
   letter-spacing: 0.28em;
@@ -224,7 +224,7 @@
   bottom: 22px;
   font-size: 12px;
   letter-spacing: 0.3em;
-  color: var(--text-muted);
+  color: var(--on-canvas-muted);
 }
 
 .scrollCue {
@@ -236,7 +236,7 @@
   align-items: center;
   gap: 9px;
   transform: translateX(-50%);
-  color: var(--text-muted);
+  color: var(--on-canvas-muted);
   font-family: var(--font-serif);
   font-size: 12px;
   letter-spacing: 0.24em;
@@ -245,7 +245,7 @@
 }
 
 .scrollCue:hover {
-  color: var(--paper-bright);
+  color: var(--on-canvas-bright);
 }
 
 .scrollMark {
@@ -255,7 +255,7 @@
   height: 24px;
   border: 1px solid rgba(177, 139, 86, 0.55);
   border-radius: 50%;
-  color: var(--old-gold);
+  color: var(--on-canvas-gold);
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1;

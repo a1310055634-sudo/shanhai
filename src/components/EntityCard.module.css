@@ -163,7 +163,7 @@
   height: 44px;
   display: grid;
   place-items: center;
-  background: rgba(13, 19, 17, 0.72);
+  background: var(--veil-strong);
   border: 1px solid var(--border-normal);
   color: var(--text-muted);
   font-family: var(--font-serif);

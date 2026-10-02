@@ -3,7 +3,7 @@
   margin-top: 30px;
   border: 1px solid rgba(177, 139, 86, 0.38);
   border-radius: var(--radius-card);
-  background: rgba(23, 35, 31, 0.55);
+  background: var(--veil-mid);
   padding: 24px 28px;
 }
 

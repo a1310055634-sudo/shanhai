@@ -13,7 +13,7 @@
   border-radius: 0;
   outline: 1px solid rgba(165, 135, 91, 0.16);
   outline-offset: -5px;
-  background: rgba(23, 35, 31, 0.5);
+  background: var(--veil-mid);
   padding: 44px 48px;
 }
 
@@ -103,7 +103,7 @@
   min-height: 46px;
   padding: 0 28px;
   background: var(--cinnabar);
-  color: var(--paper-bright);
+  color: var(--on-canvas-bright);
   font-family: var(--font-serif);
   font-size: 15px;
   letter-spacing: 0.26em;

@@ -43,7 +43,7 @@
 
 .railStopCurrent {
   border-color: var(--cinnabar);
-  background: rgba(23, 35, 31, 0.9);
+  background: var(--veil-solid);
 }
 
 .railStopGap {
@@ -56,7 +56,7 @@
 .railNum {
   font-family: var(--font-serif);
   font-size: 12px;
-  color: var(--verdigris-text);
+  color: var(--on-canvas-verdigris);
   line-height: 1;
 }
 
@@ -65,14 +65,14 @@
 }
 
 .railStopGap .railNum {
-  color: var(--text-muted);
+  color: var(--on-canvas-muted);
 }
 
 .railName {
   font-family: var(--font-serif);
   font-size: 12.5px;
   letter-spacing: 0.08em;
-  color: var(--text-on-dark);
+  color: var(--on-canvas);
   text-align: center;
   line-height: 1.4;
 }
@@ -82,14 +82,14 @@
 }
 
 .railStopGap .railName {
-  color: var(--text-muted);
+  color: var(--on-canvas-muted);
 }
 
 .railDualChar {
   font-family: var(--font-serif);
   font-size: 12.5px;
   letter-spacing: 0.14em;
-  color: var(--text-muted);
+  color: var(--on-canvas-muted);
   line-height: 1.4;
   text-align: center;
 }

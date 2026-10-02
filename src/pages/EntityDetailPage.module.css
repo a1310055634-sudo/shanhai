@@ -151,7 +151,7 @@ section [id^='sec-'],
 /* G22 异文存疑盒收编「校注」小签(G21 章页同族):宣纸内衬+双细线,方角 */
 .disputed {
   margin-top: 22px;
-  background: rgba(233, 223, 201, 0.55);
+  background: var(--paper-veil);
   border: 1px solid var(--paper-border);
   outline: 1px solid rgba(38, 48, 43, 0.08);
   outline-offset: -4px;
@@ -323,7 +323,7 @@ section [id^='sec-'],
   border: 1px solid rgba(143, 150, 141, 0.22);
   border-radius: var(--radius-card);
   padding: 20px 22px;
-  background: rgba(23, 35, 31, 0.4);
+  background: var(--veil-soft);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -353,7 +353,7 @@ section [id^='sec-'],
   font-size: 15px;
   line-height: 1.95;
   /* G22 引文区界栏同族核对:去左粗边,收编宣纸引文小签(CitationBlock/G21 校注同族) */
-  background: rgba(233, 223, 201, 0.5);
+  background: var(--paper-veil);
   color: var(--paper-ink);
   border: 1px solid var(--paper-border);
   outline: 1px solid rgba(38, 48, 43, 0.08);
@@ -510,7 +510,7 @@ section [id^='sec-'],
   padding: 14px 16px;
   border: 1px solid rgba(143, 150, 141, 0.18);
   border-radius: var(--radius-card);
-  background: rgba(23, 35, 31, 0.4);
+  background: var(--veil-soft);
 }
 
 .tocItem {

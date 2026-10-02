@@ -4,7 +4,7 @@
   border-radius: 0;
   outline: 1px solid var(--border-weak);
   outline-offset: -5px;
-  background: rgba(23, 35, 31, 0.45);
+  background: var(--veil-soft);
   padding: 20px 24px;
   margin-bottom: 32px;
 }
@@ -61,7 +61,7 @@
 .select {
   min-height: 44px;
   padding: 0 14px;
-  background: rgba(13, 19, 17, 0.7);
+  background: var(--veil-strong);
   border: 1px solid rgba(143, 150, 141, 0.35);
   border-radius: 2px;
   color: var(--text-on-dark);

@@ -146,7 +146,7 @@
   flex: 0 0 auto;
   font-size: 12.5px;
   letter-spacing: 0.14em;
-  color: var(--old-gold);
+  color: var(--paper-muted);
   min-width: 5.5em;
 }
 
@@ -200,7 +200,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  color: var(--old-gold);
+  color: var(--paper-muted);
 }
 
 /* 390 档:术语与内容纵排,避免挤压 */

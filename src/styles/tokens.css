@@ -42,6 +42,27 @@
   /* 导航纱面(G31 最小收编,原 Navigation 硬编码值):晴窗值见 data-theme='qing' 块 */
   --nav-veil: rgba(13, 19, 17, 0.92);
 
+  /* G32 双主题纱面:半透明面板底(收编全站 rgba(23,35,31,*)/rgba(13,19,17,*) 深纱 25 处)。
+     晴窗翻为宣纸浅纱,其上墨字对浅纱合成底 ≥10:1(DESIGN 7.3 实测表)。 */
+  --veil-soft: rgba(23, 35, 31, 0.45); /* 轻卡:筛选/空态/轻提示 */
+  --veil-mid: rgba(23, 35, 31, 0.55); /* 主卡/悬停/信息面板 */
+  --veil-strong: rgba(23, 35, 31, 0.7); /* 重护底面板 */
+  --veil-solid: rgba(23, 35, 31, 0.92); /* 近实底(当前站点等) */
+
+  /* G32 画布字:置于深色画布(英雄区夜色/长卷场景/版画)之上的文字。
+     画布两主题皆保持深色(册页插图策略),故画布字两主题恒亮、不随主题翻转。
+     对比度以最深画布 #0d1311 与最亮画布档 #1f2c26 双档实测,弱化档对后者 ≥4.5:1。 */
+  --on-canvas: #d9d6c9; /* 正文档(=灯下 --text-on-dark) */
+  --on-canvas-bright: #f4ecdf; /* 强调档(=灯下 --paper-bright,对朱砂按钮底 ≥4.7:1) */
+  --on-canvas-muted: #8f968d; /* 弱化档(=灯下 --text-muted) */
+  --on-canvas-gold: #a5875b; /* 旧金引导档(=灯下 --old-gold) */
+  --on-canvas-verdigris: #86a492; /* 铜绿档(=灯下 --verdigris-text) */
+  --on-canvas-cinnabar: #d18069; /* 朱砂点缀档,对最深/最亮画布 ≥4.5:1 */
+
+  /* G32 宣纸内衬:dark 页面上的「贴纸」面板(G22 校注盒/引文底),两主题恒亮,
+     其上暗字(--paper-ink/--paper-muted)对合成底 ≥9:1 */
+  --paper-veil: rgba(233, 223, 201, 0.92);
+
   /* 文字 */
   --text-on-dark: #d9d6c9; /* 浅色正文 */
   --text-on-light: #26302b; /* 深色正文 */
@@ -114,8 +135,8 @@ html[data-theme='qing'] {
   --verdigris: #52695d; /* 铜绿(图形) */
 
   /* 点缀 */
-  --cinnabar: #99412f; /* 朱砂,浅底略深(5.0:1) */
-  --old-gold: #66512e; /* 赭金(旧金浅底深化,5.7:1) */
+  --cinnabar: #8f3c2b; /* 朱砂,浅底略深(G32 实测:对最深晴窗面 #ddd0b4 4.83:1) */
+  --old-gold: #66512e; /* 赭金(旧金浅底深化,对 #ddd0b4 4.95:1) */
 
   /* E02 双表面:晴窗下两表面皆宣纸系,层次由明度差承担。
      --paper/--paper-bright 全站 93 处作文字色(深底强调亮字)、仅 2 处作背景
@@ -126,7 +147,7 @@ html[data-theme='qing'] {
   --paper-ink: var(--text-on-light);
   --paper-muted: #5a5340; /* 宣纸面弱化文字(对亮月白 6.4:1) */
   --paper-border: rgba(74, 62, 38, 0.24); /* 浅底边线略强 */
-  --verdigris-text: #4f6656; /* 宣纸底铜绿文字(5.0:1) */
+  --verdigris-text: #45584b; /* 宣纸底铜绿文字(G32 实测:对 #ddd0b4 5.00:1) */
 
   /* 浅底边框三档(赭金系) */
   --border-strong: rgba(102, 81, 46, 0.6);
@@ -136,8 +157,14 @@ html[data-theme='qing'] {
   /* 文字 */
   --text-on-dark: #33382c; /* 墨字(对晴窗纸底 9.0:1) */
   --text-on-light: #2e2a20;
-  --text-muted: #625c49; /* 弱化文字(4.99:1) */
+  --text-muted: #57503c; /* 弱化文字(G32 实测:对 #ddd0b4 5.25:1) */
 
   /* 导航纱面(G31 最小收编):晴窗=宣纸半透 */
   --nav-veil: rgba(221, 208, 180, 0.92);
+
+  /* G32 双主题纱面:晴窗=宣纸浅纱(合成底 #f5eee0—#f2eddf,墨字对其 ≥10:1) */
+  --veil-soft: rgba(252, 247, 237, 0.62);
+  --veil-mid: rgba(250, 244, 232, 0.75);
+  --veil-strong: rgba(249, 242, 229, 0.82);
+  --veil-solid: rgba(247, 241, 227, 0.98);
 }

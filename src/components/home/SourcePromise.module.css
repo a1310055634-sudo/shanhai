@@ -39,7 +39,7 @@
   margin-top: 4px;
   font-size: 12px;
   letter-spacing: 0.32em;
-  color: #6a7168;
+  color: var(--paper-muted);
 }
 
 .headNote {

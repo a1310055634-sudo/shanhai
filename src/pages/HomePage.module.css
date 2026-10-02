@@ -147,7 +147,7 @@
 
 .journeyEntryTag {
   flex-shrink: 0;
-  color: var(--verdigris-text);
+  color: var(--on-canvas-verdigris);
   font-size: 12px;
   letter-spacing: 0.32em;
   white-space: nowrap;
@@ -161,14 +161,14 @@
 }
 
 .journeyEntryTitle {
-  color: var(--paper-bright);
+  color: var(--on-canvas-bright);
   font-family: var(--font-serif);
   font-size: 20px;
   letter-spacing: 0.06em;
 }
 
 .journeyEntryText {
-  color: var(--text-muted);
+  color: var(--on-canvas-muted);
   font-size: 13.5px;
   line-height: 1.7;
 }
@@ -178,7 +178,7 @@
   margin-left: auto;
   padding: 10px 18px;
   border: 1px solid rgba(177, 139, 86, 0.55);
-  color: var(--old-gold);
+  color: var(--on-canvas-gold);
   font-size: 15px;
   letter-spacing: 0.12em;
   white-space: nowrap;
@@ -186,7 +186,7 @@
 }
 
 .journeyEntry:hover .journeyEntryCta {
-  color: var(--paper-bright);
+  color: var(--on-canvas-bright);
   border-color: rgba(206, 176, 120, 0.8);
 }
 

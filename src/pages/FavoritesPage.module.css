@@ -53,7 +53,7 @@
 .empty {
   border: 1px solid rgba(143, 150, 141, 0.22);
   border-radius: var(--radius-card);
-  background: rgba(23, 35, 31, 0.4);
+  background: var(--veil-soft);
   padding: 56px 24px;
   display: flex;
   flex-direction: column;

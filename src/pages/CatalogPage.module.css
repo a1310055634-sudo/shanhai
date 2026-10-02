@@ -75,7 +75,7 @@
   border-radius: 0;
   outline: 1px solid var(--border-weak);
   outline-offset: -5px;
-  background: rgba(23, 35, 31, 0.4);
+  background: var(--veil-soft);
   padding: 64px 24px;
   display: flex;
   flex-direction: column;

@@ -47,7 +47,7 @@
 }
 
 .item:hover {
-  background: rgba(23, 35, 31, 0.5);
+  background: var(--veil-mid);
 }
 
 .order {
