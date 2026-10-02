@@ -195,3 +195,11 @@
     min-height: 44px;
   }
 }
+
+/* G51 参考页画卷化:收藏区纸阶一档 */
+.block {
+  background: var(--page-alt-1);
+  border: 1px solid var(--paper-border);
+  border-radius: var(--radius-card);
+  padding: 26px 28px;
+}

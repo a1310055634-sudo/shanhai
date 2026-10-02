@@ -515,3 +515,15 @@
     margin-top: 32px;
   }
 }
+
+/* G51 参考页画卷化:区块纸阶一带一色(相邻档),留白统一(零内容改动) */
+.section {
+  background: var(--page-alt-1);
+  border: 1px solid var(--paper-border);
+  border-radius: var(--radius-card);
+  padding: 24px 26px;
+}
+
+.section:nth-of-type(even) {
+  background: var(--page-alt-2);
+}

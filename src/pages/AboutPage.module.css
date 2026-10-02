@@ -200,3 +200,20 @@
     max-width: 100%;
   }
 }
+
+/* G51 参考页画卷化:凡例四面板纸阶 1/2/3/1 轮推(覆盖 veil-mid) */
+.grid > .panel:nth-child(4n + 1) {
+  background: var(--page-alt-1);
+}
+
+.grid > .panel:nth-child(4n + 2) {
+  background: var(--page-alt-2);
+}
+
+.grid > .panel:nth-child(4n + 3) {
+  background: var(--page-alt-3);
+}
+
+.grid > .panel:nth-child(4n) {
+  background: var(--page-alt-1);
+}
