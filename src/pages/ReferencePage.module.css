@@ -1,0 +1,517 @@
+/*
+ * G35 参考页样式(难字音表 / 异文校勘页共用)。
+ * 语言与 HowToReadPage 同族:宣纸面板 + 界栏线 + 令牌取色,零新增纹样落点。
+ * 版面:一律 flex 1 1 <basis> 可收缩,390 档纵排,不设固定宽度表,避免横溢。
+ * 动效:无 transition / animation(不引入任何动画,reduced-motion 无涉)。
+ */
+
+.page {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 88px var(--space-page-x-desktop) 0;
+}
+
+.section {
+  margin-top: 52px;
+}
+
+.lead {
+  margin: 24px 0 0;
+  color: var(--text-on-dark);
+  font-size: var(--fs-body);
+  line-height: 1.9;
+}
+
+.lead strong {
+  margin-right: 10px;
+  color: var(--paper);
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+.panel {
+  margin-top: 24px;
+  padding: 26px 30px;
+  border: 1px solid rgba(143, 150, 141, 0.24);
+  border-radius: 0;
+  background: var(--veil-mid);
+}
+
+.panel p {
+  margin: 0;
+  color: var(--text-on-dark);
+  font-size: var(--fs-body);
+  line-height: 1.9;
+}
+
+.panel p + p {
+  margin-top: 14px;
+}
+
+.panel strong {
+  margin-right: 10px;
+  color: var(--paper);
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+.muted {
+  margin: 18px 0 0;
+  color: var(--text-muted) !important;
+  font-size: var(--fs-caption);
+  line-height: 1.85;
+}
+
+.inlineLink {
+  margin: 0 2px;
+  color: var(--old-gold);
+  text-underline-offset: 4px;
+}
+
+/* 条目列表:宣纸面板 + 界栏双线(与引文区块同族配方) */
+.entries {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 4px 28px;
+  border: 1px solid rgba(167, 71, 56, 0.32);
+  border-radius: 0;
+  outline: 1px solid rgba(167, 71, 56, 0.16);
+  outline-offset: -5px;
+  background: var(--surface-paper);
+}
+
+.entry {
+  display: flex;
+  flex: 1 1 240px;
+  flex-wrap: wrap;
+  gap: 6px 26px;
+  padding: 20px 0;
+}
+
+.entry + .entry {
+  border-top: 1px solid var(--paper-border);
+}
+
+/* 字头槽:字 + 本站标注读音;可收缩 */
+.entryHead {
+  flex: 1 1 168px;
+  min-width: 0;
+}
+
+.entryChar {
+  margin: 0;
+  color: var(--text-on-light);
+  font-family: var(--font-title);
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+}
+
+.entrySite {
+  margin: 6px 0 0;
+  color: var(--paper-muted);
+  font-size: var(--fs-secondary);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.entrySiteLabel {
+  margin-right: 8px;
+  color: var(--paper-muted);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.06em;
+}
+
+.entrySiteNone {
+  color: var(--paper-muted);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.04em;
+}
+
+/* 依据槽:正文 + 出现处 + 备考 */
+.entryBody {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.basisLine {
+  margin: 0;
+  color: var(--text-on-light);
+  font-size: var(--fs-body);
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.basisQuote {
+  color: var(--text-on-light);
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+.basisMeta {
+  margin-left: 10px;
+  color: var(--paper-muted);
+  font-size: var(--fs-caption);
+  font-variant-numeric: tabular-nums;
+}
+
+.entryWhere {
+  margin: 8px 0 0;
+  color: var(--paper-muted);
+  font-size: var(--fs-secondary);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.entryNote {
+  margin: 8px 0 0;
+  color: var(--paper-muted);
+  font-size: var(--fs-caption);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+/* 状态小签:宣纸小签族(G12/G22 同族配方)——自带不透明底,故深浅两种页面底上都成立,
+   不出现「宣纸面弱化字用在深底上」的跨表面混用。 */
+.tag {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 1px 8px;
+  border: 1px solid var(--paper-border);
+  border-radius: 0;
+  background: var(--surface-paper);
+  color: var(--paper-ink);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.tagSound {
+  color: var(--cinnabar);
+  border-color: rgba(167, 71, 56, 0.45);
+}
+
+/* 差异项:四栏并录 */
+.cases {
+  margin: 24px 0 0;
+}
+
+.case {
+  padding: 24px 0;
+  border-top: 1px solid var(--border-weak);
+}
+
+.case:last-child {
+  border-bottom: 1px solid var(--border-weak);
+}
+
+.caseHead {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  margin: 0;
+}
+
+.caseNo {
+  display: inline-block;
+  padding: 1px 8px;
+  border: 1px solid rgba(167, 71, 56, 0.45);
+  background: var(--surface-paper);
+  color: var(--cinnabar);
+  font-family: var(--font-serif);
+  font-size: var(--fs-secondary);
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.caseSubject {
+  flex: 1 1 260px;
+  min-width: 0;
+  margin: 0;
+  color: var(--paper);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+}
+
+.caseWhere {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.04em;
+}
+
+.sides {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  margin-top: 14px;
+}
+
+.side {
+  flex: 1 1 260px;
+  min-width: 0;
+  padding: 14px 16px;
+  border-left: 2px solid var(--border-normal);
+  background: var(--veil-soft);
+}
+
+.sideLabel {
+  margin: 0 0 8px;
+  color: var(--old-gold);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.1em;
+}
+
+.sideText {
+  margin: 0;
+  color: var(--text-on-dark);
+  font-size: var(--fs-body);
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+/* 照录句:底本原文层,与本站说明文字(编辑层)在同一栏内仍分开排 */
+.sideQuote {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--paper);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  quotes: none;
+}
+
+.sideNote {
+  display: block;
+  color: var(--text-muted);
+  font-size: var(--fs-secondary);
+  line-height: 1.8;
+}
+
+.caseFoot {
+  margin: 14px 0 0;
+}
+
+.footRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin: 0;
+  color: var(--text-on-dark);
+  font-size: var(--fs-secondary);
+  line-height: 1.85;
+}
+
+.footRow + .footRow {
+  margin-top: 8px;
+}
+
+.footLabel {
+  flex: 0 0 auto;
+  color: var(--text-muted);
+  font-family: var(--font-serif);
+  letter-spacing: 0.14em;
+}
+
+.footValue {
+  flex: 1 1 260px;
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* 疑点登记 */
+.doubts {
+  margin: 24px 0 0;
+  border-top: 1px solid var(--border-weak);
+}
+
+.doubt {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-weak);
+}
+
+.doubtHead {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  margin: 0;
+}
+
+.doubtId {
+  display: inline-block;
+  padding: 1px 8px;
+  border: 1px solid rgba(167, 71, 56, 0.45);
+  background: var(--surface-paper);
+  color: var(--cinnabar);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.doubtTopic {
+  flex: 1 1 260px;
+  min-width: 0;
+  margin: 0;
+  color: var(--paper);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+}
+
+.doubtBody {
+  margin: 8px 0 0;
+  color: var(--text-on-dark);
+  font-size: var(--fs-secondary);
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.doubtBody strong {
+  margin-right: 8px;
+  color: var(--text-muted);
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+/* 站内异文标注(运行时自 LOCATIONS 派生) */
+.cites {
+  margin: 24px 0 0;
+  border-top: 1px solid var(--border-weak);
+}
+
+.cite {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-weak);
+}
+
+.citeHead {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  margin: 0;
+}
+
+.citeName {
+  margin: 0;
+  color: var(--paper);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.citeSection {
+  color: var(--text-muted);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.06em;
+}
+
+.citeText {
+  margin: 8px 0 0;
+  color: var(--text-on-dark);
+  font-size: var(--fs-secondary);
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.citeLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin-top: 8px;
+}
+
+.citeLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--old-gold);
+  font-size: var(--fs-secondary);
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+.citeLink:hover {
+  color: var(--paper-bright);
+}
+
+.endLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 32px;
+  margin-top: 52px;
+}
+
+.endLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--old-gold);
+  font-size: var(--fs-secondary);
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+.endLink:hover {
+  color: var(--paper-bright);
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 64px var(--space-page-x-tablet) 0;
+  }
+
+  .section {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 48px var(--space-page-x-mobile) 0;
+  }
+
+  .section {
+    margin-top: 32px;
+  }
+
+  .panel {
+    padding: 22px 20px;
+  }
+
+  .entries {
+    padding: 2px 18px;
+  }
+
+  .entry {
+    padding: 16px 0;
+  }
+
+  .entryChar {
+    font-size: 26px;
+  }
+
+  .case {
+    padding: 20px 0;
+  }
+
+  .side {
+    padding: 12px 14px;
+  }
+
+  .endLinks {
+    margin-top: 32px;
+  }
+}

@@ -1,0 +1,147 @@
+[
+  {
+    "name": "/readings 页标题",
+    "ok": true,
+    "detail": "难字音表"
+  },
+  {
+    "name": "/readings 有音注条目 18",
+    "ok": true,
+    "detail": "18"
+  },
+  {
+    "name": "/readings 有释无音条目 4",
+    "ok": true,
+    "detail": "4"
+  },
+  {
+    "name": "/readings 留白条目 7",
+    "ok": true,
+    "detail": "7"
+  },
+  {
+    "name": "/readings 依据行零空行",
+    "ok": true,
+    "detail": "空行 0"
+  },
+  {
+    "name": "/readings 每条依据行非空且可溯",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "/readings 未上屏音注 3 条",
+    "ok": true,
+    "detail": "3"
+  },
+  {
+    "name": "渲染出的郭注音注 100% 逐字命中存档(21 条唯一)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "/readings 1440 零横溢",
+    "ok": true,
+    "detail": "{\"scrollW\":1430,\"clientW\":1430,\"over\":[]}"
+  },
+  {
+    "name": "主导航七词未动(且页头只有站名 + 七个导航项)",
+    "ok": true,
+    "detail": "[\"山山海万象录SHAN HAI ARCHIVE\",\"卷首\",\"异兽\",\"山川\",\"古卷\",\"谱系\",\"探索\",\"收藏\"]"
+  },
+  {
+    "name": "/variants 页标题",
+    "ok": true,
+    "detail": "异文校勘"
+  },
+  {
+    "name": "/variants 差异项 7 条且四栏齐备",
+    "ok": true,
+    "detail": "cases=7 缺栏=[]"
+  },
+  {
+    "name": "/variants 疑点 12 条",
+    "ok": true,
+    "detail": "12"
+  },
+  {
+    "name": "/variants 郭注层疑点 4 条",
+    "ok": true,
+    "detail": "4"
+  },
+  {
+    "name": "/variants 站内异文派生 7 处",
+    "ok": true,
+    "detail": "7"
+  },
+  {
+    "name": "/variants 1440 档控件 ≥24px(WCAG 2.5.8 AA;40 个)",
+    "ok": true,
+    "detail": "min=29;句内文字链接豁免 1 个 [\"难字音表\"];不足 24px 者 [{\"h\":29,\"t\":\"古籍篇章\",\"c\":\"\"},{\"h\":29,\"t\":\"收藏\",\"c\":\"\"},{\"h\":29,\"t\":\"资料来源与制作说明\",\"c\":\"\"},{\"h\":29,\"t\":\"如何读本站(凡例)\",\"c\":\"\"},{\"h\":29,\"t\":\"难字音表\",\"c\":\"\"},{\"h\":29,\"t\":\"异文校勘\",\"c\":\"\"}]"
+  },
+  {
+    "name": "/variants 差异项照录句从渲染结果逐字回查存档(11 条)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "/variants 1440 零横溢",
+    "ok": true,
+    "detail": "{\"scrollW\":1430,\"clientW\":1430,\"over\":[]}"
+  },
+  {
+    "name": "/readings 390 零横溢",
+    "ok": true,
+    "detail": "{\"scrollW\":380,\"clientW\":380,\"over\":[]}"
+  },
+  {
+    "name": "/readings 390 触控档控件 ≥44px(20 个)",
+    "ok": true,
+    "detail": "min=44;句内豁免 2 个;不足 24px 者 []"
+  },
+  {
+    "name": "/variants 390 零横溢",
+    "ok": true,
+    "detail": "{\"scrollW\":380,\"clientW\":380,\"over\":[]}"
+  },
+  {
+    "name": "/variants 390 触控档控件 ≥44px(40 个)",
+    "ok": true,
+    "detail": "min=44;句内豁免 1 个;不足 24px 者 []"
+  },
+  {
+    "name": "readings 灯下 对比度(正文≥4.5,印章类印记按 G32 口径豁免)",
+    "ok": true,
+    "detail": "失败 0 · 印章豁免 1 · []"
+  },
+  {
+    "name": "readings 晴窗 对比度(正文≥4.5,印章类印记按 G32 口径豁免)",
+    "ok": true,
+    "detail": "失败 0 · 印章豁免 0 · []"
+  },
+  {
+    "name": "variants 灯下 对比度(正文≥4.5,印章类印记按 G32 口径豁免)",
+    "ok": true,
+    "detail": "失败 0 · 印章豁免 1 · []"
+  },
+  {
+    "name": "variants 晴窗 对比度(正文≥4.5,印章类印记按 G32 口径豁免)",
+    "ok": true,
+    "detail": "失败 0 · 印章豁免 0 · []"
+  },
+  {
+    "name": "About 页内链含音表/异文",
+    "ok": true,
+    "detail": "[\"/how-to-read\",\"/readings\",\"/variants\",\"/how-to-read\",\"/readings\",\"/variants\"]"
+  },
+  {
+    "name": "页脚入口含音表/异文(未加主导航)",
+    "ok": true,
+    "detail": "[\"/chapters\",\"/favorites\",\"/about\",\"/how-to-read\",\"/readings\",\"/variants\"]"
+  },
+  {
+    "name": "全程无未捕获异常",
+    "ok": true,
+    "detail": "0"
+  }
+]

@@ -5,33 +5,11 @@ import CitationBlock from '../components/CitationBlock'
 import { LOCATIONS } from '../data/locations'
 import { ENTITIES } from '../data/entities'
 import { CHAPTERS } from '../data/chapters'
+import { MOUNTAIN_READINGS } from '../data/siteReadings'
 import styles from './AtlasPage.module.css'
 
-/** 山名读音(供参考,以旧注通读为准;非核验内容)。 */
-const PINYIN: Record<string, string> = {
-  招摇之山: 'zhāo yáo zhī shān',
-  堂庭之山: 'táng tíng zhī shān',
-  猨翼之山: 'yuán yì zhī shān',
-  亶爰之山: 'dǎn yuán zhī shān',
-  基山: 'jī shān',
-  杻阳之山: 'chǔ yáng zhī shān',
-  青丘之山: 'qīng qiū zhī shān',
-  丹穴之山: 'dān xué zhī shān',
-  天山: 'tiān shān',
-  泰器之山: 'tài qì zhī shān',
-  槐江之山: 'huái jiāng zhī shān',
-  昆仑之丘: 'kūn lún zhī qiū',
-  发鸠之山: 'fā jiū zhī shān',
-  锺山: 'zhōng shān',
-  凶犁土丘: 'xiōng lí tǔ qiū',
-  流波山: 'liú bō shān',
-  柜山: 'jǔ shān',
-  长右之山: 'cháng yòu zhī shān',
-  尧光之山: 'yáo guāng zhī shān',
-  羽山: 'yǔ shān',
-  浮玉之山: 'fú yù zhī shān',
-  成山: 'chéng shān',
-}
+/** 山名读音(供参考,以旧注通读为准;非核验内容)。G35 起移至 data/siteReadings.ts 单一来源。 */
+const PINYIN = MOUNTAIN_READINGS
 
 const REGION_ORDER = ['南山经', '西山经', '北山经', '海外北经', '大荒东经']
 

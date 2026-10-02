@@ -3,9 +3,9 @@
   "phase": 2,
   "title": "古朴精修·二阶冲刺 G21—G38",
   "totalRounds": 18,
-  "validExecutions": 14,
+  "validExecutions": 15,
   "maxValidExecutions": 18,
-  "currentRound": "G35",
+  "currentRound": "G36",
   "rounds": {
     "G21": "done",
     "G22": "done",
@@ -21,7 +21,7 @@
     "G32": "done",
     "G33": "done",
     "G34": "done",
-    "G35": "todo",
+    "G35": "done",
     "G36": "todo",
     "G37": "todo",
     "G38": "todo"
@@ -60,6 +60,18 @@
       "gzip": "441 B"
     }
   },
-  "lastRunAt": "2026-10-02 09:30+08:00",
-  "status": "idle"
+  "lastRunAt": "2026-10-02 11:0X+08:00",
+  "status": "idle",
+  "g35Notes": {
+    "newRoutes": ["/readings", "/variants"],
+    "newData": ["src/data/readings.ts", "src/data/variants.ts", "src/data/siteReadings.ts"],
+    "evidenceScripts": ["dev/round35-verify.mjs", "dev/round35-browser.mjs"],
+    "assertions": "29/29 通过(无头 Chrome CDP;本会话无 IAB)",
+    "buildGzip": { "js": "174.95 kB", "css": "20.03 kB" },
+    "openItems": [
+      "ruby 注音层未收 10 字(棪/柢/踆/汸/淯/糈/鴟/亶/杻/猨)待定夺",
+      "疑 12:禺/亶/杻/雘 读音与郭注音注字面不同,照录不裁决,留人工复核",
+      "1440 指针档页脚链接 29px(≥24px AA 通过,<44px)留 G37/G38 定夺"
+    ]
+  }
 }

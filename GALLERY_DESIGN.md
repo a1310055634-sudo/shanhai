@@ -306,3 +306,34 @@ RelationsPage 顶部新增 `LineageMap`(src/components/relations/),替代原页�
 - 无头 Chrome headless=new `Page.captureScreenshot`(fromSurface 省略/true)**不绘制文本选区高亮**(合成表面层不含 selection);fromSurface:false 在 headless=new 输出空白帧,不可用。选区验证必须走真实有头渲染(IAB)。
 - **IAB 后台标签截图伪影**:晴窗亮页面整页均匀灰暗(深底透出感),灯下深页面不可见;reload 直出/注入动画压平/前台化 set(true) 均不能消除,无 DOM 覆盖层(no overlay)。同页页脚区(CDP 路径)渲染正常,证明页面本体无缺陷。样本存 g34-qing-1440-selection-iab-veil-artifact.png(选中段浅红染在灰纱下仍可辨,visual-judge 复审 pass)。
 - CDP 截图取 `r.result.data`(send 封装返回整信封);localStorage 残留主题按 G31 优先级压过 prefers-color-scheme——换主题测量须清存储+reload,emulation 偏好只对无存储状态生效。
+- 本会话(round35)起本机无 IAB,浏览器核对改走**无头 Chrome + CDP 直连**(dev/round35-browser.mjs,自建最小 CDP 客户端:Emulation.setDeviceMetricsOverride 定档、Page.navigate+loadEventFired 等待、Runtime.evaluate 断言、Page.captureScreenshot 纯视口截图)。两个必踩的坑写在这里:①CDP 的 WebSocket 会保持 Node 事件循环存活,脚本跑完必须显式 `process.exit()`,否则命令永不返回(表现为「无输出假死」);②PowerShell 里 `npm` 是 npm.ps1,被执行策略拦(UnauthorizedAccess),须用 `npm.cmd`;`npm.cmd` 把 vite 的告警写 stderr,PowerShell 会把它当 NativeCommandError 记 exit 1——**退出码 1 不等于构建失败**,以 `✓ built` 与产物行为准。
+
+## 九、读音与异文两层(G35 落地)
+
+### 9.1 分层原则(与六层分隔同源)
+
+- **读音层**(难字音表 /readings):只承载「读音」与「读音的依据」,不复制任何原文;原文由 chapterTexts/locations/distances 单一来源提供。
+- **异文层**(异文校勘 /variants):只承载「两源用字/文句互异」的四栏并录与疑点登记;站内引文自带的异文标注运行时不抄第二份,从 `LOCATIONS[].citations[].variantText` 派生。
+- 两页均为**新增呈现层**,不动 src/data 既有文件;入口放 About 页内与页脚,不加主导航(与凡例页同规)。
+
+### 9.2 读音依据三分(不可互相冒充)
+
+| 类 | 记号 | 判据 | 处置 |
+|---|---|---|---|
+| 郭注有音 | 郭注有音 | 底本 B 存档有直音或反切 | 音注逐字照录(繁体原样)+存档行号;**反切不折合今音**(折合是本站推断) |
+| 郭注有释无音 | 郭注有释无音 | 该处注文是训释或声音比拟(如「蚖也」「未詳」「其音如斫木」) | 读音留白;注文只作依据行显示,不当注音用 |
+| 底本无音注 | 底本无音注·留白 | 全存档该字无音注,或该篇不在存档范围 | 读音留白;依据行写明「出现 N 处均无注音」的计数证据 |
+
+- 本站标注读音只取自既有两层(ruby 注音层 `GLOSSARY`、山名通读层 `MOUNTAIN_READINGS`,G35 起后者由 AtlasPage 抽出为 `data/siteReadings.ts` 单一来源),音表不另抄第三份值;`siteReadingOf()` 运行时代为读取,任一层改动音表随之变化。
+- 郭注音注与本站标注**字面不同时两存照录、不裁决**(禺/亶/杻/雘 四例,登记为疑 12)。
+
+### 9.3 异文并录的照录契约(可程序化验收)
+
+- 差异项每栏拆为 `quote`(逐字照录片段)+ `note`(本站编辑说明):`quote` 以 `data-quote`/`data-quote-archive` 输出到 DOM,验收脚本从**渲染结果**回查对应存档,要求 100% 命中——不是核数据文件,是核页面真的印对了。无照录句可言(本站综述、合计、两源一致之判断)时留空 `quote`,不伪造引文。
+- 底本 B 的异文若只见于原始 wikitext 模板(如差 4 的 `{{另|堂|常}}`),照录**模板原文**并注明页面渲染形(「堂一作常」);B1 阅读页无此注记,不得写成 B1 所有。
+
+### 9.4 G32 既有豁免在参考页的适用
+
+- 小签族(`.tag`/`.caseNo`/`.doubtId`)统一取**宣纸小签配方**(不透明 `--surface-paper` 底 + `--paper-ink`/`--cinnabar` 字),故在深浅两种页面底上都成立;这是本轮修掉的一类真缺陷——最初用 `--paper-muted`(宣纸面弱化字)直接放在深底上,等于跨表面混用,实测 2.29:1。
+- 站名印章 `.brandSeal`(朱砂印记)沿用 G32 已定性豁免;验收脚本按类名排除并单独计数,不静默放过。
+- 触控目标按档位断言:**390 触控档全部控件 ≥44px**;**1440 指针档 ≥24px(WCAG 2.5.8 AA)**——页脚链接的 44px 规则是 R17 既有的 `max-width:768px` 实现,本轮不扩大到桌面档(避免牵动 13 路由页脚版式),该差异在此记录。句内文字链接按 WCAG 2.5.8 内联例外排除并单独计数。

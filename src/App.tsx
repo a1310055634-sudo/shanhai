@@ -12,6 +12,8 @@ import ExplorePage from './pages/ExplorePage'
 import RelationsPage from './pages/RelationsPage'
 import AboutPage from './pages/AboutPage'
 import HowToReadPage from './pages/HowToReadPage'
+import ReadingsPage from './pages/ReadingsPage'
+import VariantsPage from './pages/VariantsPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
@@ -31,6 +33,9 @@ export default function App() {
         <Route path="about" element={<AboutPage />} />
         {/* G27 凡例页:入口放 About 页内与页脚,不加主导航 */}
         <Route path="how-to-read" element={<HowToReadPage />} />
+        {/* G35 难字音表 / 异文校勘页:入口放 About 页内与页脚,不加主导航 */}
+        <Route path="readings" element={<ReadingsPage />} />
+        <Route path="variants" element={<VariantsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

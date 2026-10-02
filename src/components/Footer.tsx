@@ -36,6 +36,13 @@ export default function Footer() {
             <li>
               <Link to="/how-to-read">如何读本站(凡例)</Link>
             </li>
+            {/* G35 音表 / 异文页入口 */}
+            <li>
+              <Link to="/readings">难字音表</Link>
+            </li>
+            <li>
+              <Link to="/variants">异文校勘</Link>
+            </li>
           </ul>
         </nav>
         <div className={styles.linkCol}>

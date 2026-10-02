@@ -90,6 +90,14 @@ export default function AboutPage() {
         <Link className={styles.inlineLink} to="/how-to-read">
           如何读本站
         </Link>
+        ;站内生僻字读音逐字附依据者见
+        <Link className={styles.inlineLink} to="/readings">
+          难字音表
+        </Link>
+        ,两种来源用字互异处集中并录者见
+        <Link className={styles.inlineLink} to="/variants">
+          异文校勘
+        </Link>
         。
       </p>
 
