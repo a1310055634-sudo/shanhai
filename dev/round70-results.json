@@ -1,0 +1,22 @@
+{
+  "results": [],
+  "note": "28组对比度采样全零失败(336样本,详见RUN_LOG)",
+  "volume": {
+    "js": {
+      "rawKB": "582.50",
+      "gzipKB": "181.76"
+    },
+    "css": {
+      "rawKB": "126.87",
+      "gzipKB": "22.35"
+    },
+    "imagesBytes": 9613961,
+    "baseline": {
+      "js": "577.10/179.99",
+      "css": "123.24/21.73",
+      "paintings": 1065665
+    },
+    "note": "口径=vite报告(kB=1000);node-zlib口径系统性小3-4KB仅作交叉"
+  },
+  "shots": 42
+}
