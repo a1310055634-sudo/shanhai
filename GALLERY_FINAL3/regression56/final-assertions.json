@@ -1,5 +1,5 @@
 {
-  "head": "5a9d0c7",
+  "head": "3a0277b",
   "results": [
     {
       "name": "14 路由 1440 渲染有 h1",
@@ -59,7 +59,7 @@
     {
       "name": "阅读历史落盘(实体 slug)",
       "ok": true,
-      "detail": "[{\"slug\":\"jiuweihu\",\"ts\":1790984735596}]"
+      "detail": "[{\"slug\":\"jiuweihu\",\"ts\":1790987838228}]"
     },
     {
       "name": "收藏页恢复阅读历史",
@@ -82,9 +82,9 @@
       "detail": "[\"seg-ns1-zhaoyao-kai=124\",\"seg-ns1-tangting=124\",\"seg-ns1-yuanyi=124\",\"seg-ns1-chuyang-shan=124\"]"
     },
     {
-      "name": "页脚版本戳 = HEAD(5a9d0c7)",
+      "name": "页脚版本戳 = HEAD(3a0277b)",
       "ok": true,
-      "detail": "校讫记 · 2026-10-03 编成 · 本次第 5a9d0c7"
+      "detail": "校讫记 · 2026-10-03 编成 · 本次第 3a0277b"
     }
   ],
   "matrix": []
