@@ -1,0 +1,83 @@
+[
+  {
+    "w": 1440,
+    "h": 900,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "textCount": 33,
+      "overlaps": 0,
+      "seals": 17,
+      "rings": 6,
+      "svgLegend": true,
+      "htmlLegendHasSeal": true,
+      "htmlLegendHasRing": true,
+      "legendContrast": 7,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "h1": true,
+      "noTextOverlap": true,
+      "sealRingCounts": true,
+      "legends": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "w": 1440,
+    "h": 900,
+    "theme": "qing",
+    "values": {
+      "h1": true,
+      "textCount": 33,
+      "overlaps": 0,
+      "seals": 17,
+      "rings": 6,
+      "svgLegend": true,
+      "htmlLegendHasSeal": true,
+      "htmlLegendHasRing": true,
+      "legendContrast": 6.79,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "h1": true,
+      "noTextOverlap": true,
+      "sealRingCounts": true,
+      "legends": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "w": 390,
+    "h": 844,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "textCount": 33,
+      "overlaps": 0,
+      "seals": 17,
+      "rings": 6,
+      "svgLegend": true,
+      "htmlLegendHasSeal": true,
+      "htmlLegendHasRing": true,
+      "legendContrast": 7,
+      "scrollW": 390,
+      "clientW": 390
+    },
+    "checks": {
+      "h1": true,
+      "noTextOverlap": true,
+      "sealRingCounts": true,
+      "legends": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  }
+]

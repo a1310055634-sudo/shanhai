@@ -66,6 +66,9 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
           </filter>
         </defs>
         <rect width="1000" height="620" filter="url(#inkWash)" opacity="0.42" aria-hidden="true" />
+        {/* G64 古地图界栏双线边框(纹样 +1,记 DESIGN 台账):外粗内细,色走边框令牌 */}
+        <rect x="1" y="1" width="998" height="618" fill="none" stroke="var(--border-strong)" strokeWidth="1.5" aria-hidden="true" />
+        <rect x="7" y="7" width="986" height="606" fill="none" stroke="var(--border-normal)" strokeWidth="0.75" aria-hidden="true" />
         {/* 等高线底纹(G13 宣纸化:青绿→墨线) */}
         <g fill="none" stroke="var(--paper-ink)" strokeWidth="1">
           <path d="M-20 140 C160 96 340 150 520 112 C700 76 860 128 1020 96" opacity="0.12" />
@@ -173,19 +176,36 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
           const p = { x: loc.mapPosition.x * 10, y: loc.mapPosition.y * 6.2 }
           const entity = ENTITIES.find((e) => loc.relatedEntityIds.includes(e.id))
           const isSelected = mode === 'select' && selectedId === loc.id
+          const isVerified = loc.recordStatus === 'verified'
           const nodeBody = (
             <>
               {/* 透明命中区:r32 使 390(×0.76≈48px)与 768(×0.69≈44px)档触控达标 */}
               <circle cx={p.x} cy={p.y} r="32" fill="transparent" stroke="none" />
-              <circle
-                cx={p.x}
-                cy={p.y}
-                r={isSelected ? 8 : 6}
-                fill="var(--cinnabar)"
-                stroke={isSelected ? 'var(--old-gold)' : 'var(--surface-paper)'}
-                strokeWidth={isSelected ? 2 : 1}
-                className={styles.nodeDot}
-              />
+              {/* G64 印章化两态:朱砂方印=已核验 / 虚线墨圈=待考证(同 12px 足迹,标签零重叠不受扰;
+                  空心虚线在双主题底上均可见——paper-muted 为 G32 实测对比度令牌) */}
+              {isVerified ? (
+                <rect
+                  x={p.x - 6}
+                  y={p.y - 6}
+                  width="12"
+                  height="12"
+                  fill="var(--cinnabar)"
+                  stroke={isSelected ? 'var(--old-gold)' : 'var(--surface-paper)'}
+                  strokeWidth={isSelected ? 2 : 1}
+                  className={styles.nodeDot}
+                />
+              ) : (
+                <circle
+                  cx={p.x}
+                  cy={p.y}
+                  r={isSelected ? 6.5 : 5}
+                  fill="none"
+                  stroke={isSelected ? 'var(--old-gold)' : 'var(--paper-muted)'}
+                  strokeWidth={isSelected ? 2 : 1.5}
+                  strokeDasharray="3 2"
+                  className={styles.nodeDot}
+                />
+              )}
               <text
                 x={p.x}
                 y={p.y + 22}
@@ -233,6 +253,18 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
             </g>
           )
         })}
+        {/* G64 图例(svg 内,link/select 两模式均可见):印/圈两态说明,楷体小字走令牌 */}
+        <text
+          x="20"
+          y="608"
+          textAnchor="start"
+          fill="var(--paper-muted)"
+          fontSize="11.5"
+          letterSpacing="1.5"
+          fontFamily="var(--font-title)"
+        >
+          朱砂方印 = 已核验 · 虚线墨圈 = 待考证
+        </text>
       </svg>
       {mode === 'select' && selectedId && (
         (() => {
@@ -264,13 +296,16 @@ export default function ConceptMap({ mode = 'link' }: { mode?: 'link' | 'select'
       {mode === 'select' && (
         <div className={styles.legend}>
           <span className={styles.legendItem}>
-            <span className={styles.legendDot} /> 已核验地点
+            <span className={styles.legendDot} /> 朱砂方印 = 已核验地点
+          </span>
+          <span className={styles.legendItem}>
+            <span className={styles.legendRing} aria-hidden="true" /> 虚线墨圈 = 待考证地点
           </span>
           <span className={styles.legendItem}>
             <span className={styles.legendLine} aria-hidden="true" /> 已核验路线(附原文里距)
           </span>
           <span className={styles.legendItem}>
-            <span className={styles.legendDash} aria-hidden="true" /> 待补资料(未录入山段)
+            <span className={styles.legendDash} aria-hidden="true" /> 待补路线(未录入山段)
           </span>
           <span className={styles.legendItem}>点击节点查看详情</span>
         </div>

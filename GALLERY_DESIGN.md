@@ -121,6 +121,7 @@
 > 三阶新章(2026-10-03 G50 记):inkWash 晕染滤镜(ConceptMap 单处,feTurbulence fractalNoise baseFrequency 0.011/0.017 octaves 3 seed 7 定数+feColorMatrix 墨染 alpha 0.42 rect 置于等高线下;AtlasPage 与首页 AtlasPreview 复用同一 defs)。**三阶纹样预算 ≤4:已用 1(晕染滤镜族 1/3)**。
 
 > 四阶增补(2026-10-04 G63 记):inkWash 同规格滤镜**第二落点**——SceneLayers(行旅八站场景+凡例图示共用)下半幅噪点 rect(opacity 0.14),配合 g63depth 近浓线性渐变(alpha 0→0.10)构成水墨质感层;**纯加法落地,G23 既有参数零改动(git diff 零删除行+旧 token 全保留指纹断言)**;useId 防多实例 id 撞车。**四阶纹样预算 ≤4:已用 1(晕染滤镜族 2/3,含三阶 1 处)**。
+> 四阶增补二(2026-10-04 G64 记):古地图**界栏双线边框**落 ConceptMap(外粗内细 1.5/0.75,色走边框令牌;纹样新族 1 处)——**四阶已用 2/4**;同轮节点印章化两态(朱砂方印=已核验/虚线墨圈=待考证,同 12px 足迹零重叠不受扰,svg 内图例+select 图例双上屏)属信息设计不计纹样;顺带 legendDash 裸色 rgba(38,48,43,.55) 归零改 --paper-muted。
 
 古卷页(ChapterPage)正文段与正文段之间插版心鱼尾形小分隔——**已落地**:`Rule.tsx` 导出 `RuleFishTail`(12×7px,上缘平直下端收尖的折面抽象,path 自绘),色 `--paper-border`,仅古卷阅读面 1 处预算(gap 存疑段与段首不插)。**原创声明**:参照古雕版书口鱼尾公共形制自绘 path,无外部素材。存疑注同步升级「校注」小签(宣纸内衬 55% 透明+双细线),与正文层级拉开、不混排。
 

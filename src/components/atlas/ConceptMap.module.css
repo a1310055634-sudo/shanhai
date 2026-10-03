@@ -69,9 +69,19 @@
 .legendDot {
   width: 9px;
   height: 9px;
-  border-radius: 50%;
+  /* G64 印章化:图例样标同步方形(朱砂方印) */
+  border-radius: 0;
   background: var(--cinnabar);
   border: 1px solid var(--paper-ink);
+  display: inline-block;
+}
+
+/* G64 图例样标:虚线墨圈(待考证节点) */
+.legendRing {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px dashed var(--paper-muted);
   display: inline-block;
 }
 
@@ -85,7 +95,8 @@
 .legendDash {
   width: 26px;
   height: 0;
-  border-top: 1.4px dashed rgba(38, 48, 43, 0.55);
+  /* G64 顺带归零:硬编码深色在灯下页底不可见,改令牌 */
+  border-top: 1.4px dashed var(--paper-muted);
   display: inline-block;
 }
 
