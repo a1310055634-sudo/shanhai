@@ -1,9 +1,12 @@
+import { useId } from 'react'
 import styles from './SceneLayers.module.css'
 
 /**
  * R07+R09 场景底层:三层山水 SVG(远山/中景/前景山影)+ 雾带。
  * R09 profile 参数按山序切换山脊轮廓;G23 jagged 参数化(amp 高差/steps 峰密度),
  * 确定性散列保证同参数路径恒定。纯装饰 aria-hidden;不动任何内容文字。
+ * G63 四阶水墨化二期:纯加法质感层(近浓深度渐变+inkWash 晕染滤镜第二落点,记 DESIGN 台账
+ * 滤镜族 2/3)——G23 既有参数(warmth 曲线/profile/jagged/mist 数值与色彩)零改动,指纹断言证之。
  */
 export interface SceneLayersProps {
   warmth: number
@@ -66,6 +69,8 @@ export default function SceneLayers({
   const farColor = `rgb(${lerp(49, 88)}, ${lerp(84, 115)}, ${lerp(90, 103)})`
   const midColor = `rgb(${lerp(88, 49)}, ${lerp(115, 84)}, ${lerp(103, 90)})`
   const prof = profile === 'jagged' ? jaggedSet(jaggedAmp, jaggedSteps) : PROFILES[profile]
+  // G63 滤镜/渐变 id:useId 去冒号(一页多实例不撞 id;ConceptMap inkWash 同规格第二落点)
+  const uid = useId().replace(/:/g, '')
 
   return (
     <svg
@@ -75,6 +80,19 @@ export default function SceneLayers({
       aria-hidden="true"
       focusable="false"
     >
+      <defs>
+        <linearGradient id={`g63depth-${uid}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#0a100e" stopOpacity="0" />
+          <stop offset="1" stopColor="#0a100e" stopOpacity="0.1" />
+        </linearGradient>
+        <filter id={`inkWash-${uid}`} x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.011 0.017" numOctaves="3" seed="7" />
+          <feColorMatrix
+            type="matrix"
+            values="0 0 0 0 0.10  0 0 0 0 0.12  0 0 0 0 0.11  0 0 0 0.42 0"
+          />
+        </filter>
+      </defs>
       <path d={prof.far} fill={farColor} opacity={0.18 * farOpacity} />
       {mistDensity > 0.3 && (
         <ellipse cx="340" cy="260" rx="320" ry="20" fill={midColor} opacity={0.08 * mistDensity} />
@@ -84,6 +102,24 @@ export default function SceneLayers({
       )}
       <path d={prof.mid} fill={midColor} opacity={0.12 * midOpacity} />
       <path d={prof.near} fill="#0a100e" opacity={0.9 * nearOpacity} />
+      {/* G63 加法质感层(置于 gold 描线之下,不压旧金山缘高光):近浓深度渐变+晕染噪点 */}
+      <rect
+        x="0"
+        y="0"
+        width="1280"
+        height="360"
+        fill={`url(#g63depth-${uid})`}
+        aria-hidden="true"
+      />
+      <rect
+        x="0"
+        y="180"
+        width="1280"
+        height="180"
+        filter={`url(#inkWash-${uid})`}
+        opacity="0.14"
+        aria-hidden="true"
+      />
       <path d={prof.gold} stroke="#b18b56" strokeWidth="0.8" opacity={0.18 * nearOpacity} fill="none" />
     </svg>
   )
