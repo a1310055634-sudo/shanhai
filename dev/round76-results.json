@@ -1,0 +1,31 @@
+{
+  "entity": {
+    "values": {
+      "h1": true,
+      "name": "凤皇",
+      "guopuHan": true,
+      "guopuGuangya": true,
+      "zan1": true,
+      "zan2": true,
+      "danxueLink": true,
+      "claimsArchive": true,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "h1": true,
+      "guopuOnSite": true,
+      "zanClaims": true,
+      "danxue": true,
+      "noOverflow": true
+    }
+  },
+  "home": {
+    "verified": "12"
+  },
+  "pass": true,
+  "fingerprint": {
+    "delOriginal": 0,
+    "delGuopu": 0
+  }
+}
