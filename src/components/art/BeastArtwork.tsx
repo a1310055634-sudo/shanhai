@@ -88,6 +88,8 @@ export default function BeastArtwork({
         <img
           src={classic.src}
           alt={`${name}——${classic.source}`}
+          width={classic.width}
+          height={classic.height}
           className={styles.classicImg}
           draggable={false}
           loading="lazy"
