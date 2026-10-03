@@ -329,7 +329,17 @@
 - 款识拟:三才图会 · 明万历成书 · 矢量化件 · 藏所待考
 - 状态:verified(API 元数据+目检)
 
-### 刻本扫描原件体积表(G60 记,G62 更新)
+### S7. 郭璞注传抄本书影(WDL4447,G69)
+
+- 站内文件:src/assets/classic-art/wdl4447-folio.jpg(1600×760,78,317 B)
+- 画面:《山海经》郭璞注传抄本整页书影(世界数字图书馆 item 4447「Illustrated Classic of Mountains and Seas」)
+- 来源:Commons File:`File:Illustrated Classic of Mountains and Seas WDL4447.jpg`(原图 2156×1024)
+- 许可:Public domain(extmetadata 实测)
+- 用途:**仅 About 样张区**(G69「刻本原件×站内转描」对照面之书影位),不做词条主位
+- 目检:2026-10-04 通过(压缩后书影完整)
+- 状态:verified(API 元数据)
+
+### 刻本扫描原件体积表(G60 记,G62/G69 更新)
 
 | 幅 | 文件 | 尺寸 | 字节 |
 |---|---|---|---|
@@ -339,7 +349,8 @@
 | S4 | huahuai-jiangyingke.jpg | 1144×576 | 128,931 |
 | S5 | changyou-jiangyingke.jpg | 601×574 | 62,490 |
 | S6 | jingwei-sancaituhui.jpg | 1010×1400 | 159,877 |
-| 合计 | 6 幅 | — | 669,425(0.64 MB,占四阶 ≤2.0MB 池 32%) |
+| S7 | wdl4447-folio.jpg | 1600×760 | 78,317 |
+| 合计 | 7 幅 | — | 747,742(0.71 MB,占四阶 ≤2.0MB 池 37%) |
 
 - 落选记录:WDL4447(郭璞注传抄本宽幅书影 2156×1024 PD——内容为整页书影非单兽,**归 G69 About 古图样张候选**,不入词条主位);三才图会家族 112 张 G62 全量过筛,**除精卫外无其它山经兽(关项)**。
 - 站内用途:S1—S5 G61 接线(九尾狐/鹿蜀双版本/猾褢/长右);S6 G62 接线(精卫);待补 9 兽见 CLASSIC_ART_RECON.md。

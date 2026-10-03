@@ -2,6 +2,8 @@
   max-width: 1060px;
   margin: 0 auto;
   padding: 88px var(--space-page-x-desktop) 0;
+  /* G69 画卷语言补齐:探索页落纸阶二档 */
+  background: var(--page-alt-2);
 }
 
 .grid {

@@ -2,6 +2,8 @@
   max-width: var(--content-max-width);
   margin: 0 auto;
   padding: 88px var(--space-page-x-desktop) 0;
+  /* G69 画卷语言补齐:收藏页落纸阶三档(私藏匣语义,最深一档) */
+  background: var(--page-alt-3);
 }
 
 .block {

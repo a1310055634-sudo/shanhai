@@ -1,3 +1,15 @@
+## G69 · 收藏/探索/关于画卷化补漏
+
+- **有效执行编号**:四阶 11 / 24
+- **北京时间**:2026-10-04 04:1X—04:5X(定时触发)
+- **开始 HEAD**:c6961f4(G68),工作树干净;.round-lock 新建,轮末删除
+- **改动**(7 文件):①`AboutPage.tsx`——样张区扩「**刻本原件 × 站内转描 · 九尾狐对照**」三联(蒋本扫描原件 S1 装裱/站内转描版画画心+纸签/郭璞注传抄本书影 S7),BeastArtwork+classic-art 资产引入②`AboutPage.module.css`——.artCell(墨夜画心嵌纸卡)/.artCellTag(纸签)/.scanTitle ③`ExplorePage.module.css`——页底落**纸阶二档**④`FavoritesPage.module.css`——页底落**纸阶三档**(私藏匣语义)⑤`ART_PROVENANCE.md`——S7 WDL4447 书影入档(2156×1024→1600×760 78,317B,仅样张用途;体积表 7 幅 747,742B=池 37%)
+- **验收(dev/round69-verify.mjs+round69-results.json,7/7)**:About 对照区断言(标题/蒋本+郭璞注双款识/artCellTag=站内转描 · 据古今图书集成/svg 渲染);探索页 bg 双主题精确命中 alt-2(23,35,31/241,231,214);收藏页命中 alt-3(28,43,36/238,226,204);零溢出;截图 5 张目检(晴窗三联对照成立)
+- **纪律自查**:本轮一度用 bash heredoc 追加中文 CSS(违规!)——**Read 工具复核 UTF-8 完好未 GBK 化(侥幸)**,纪律重申:中文内容一律 Write/Edit
+- **提交**:主提交(资产+页面+CSS+台账+脚本/结果+账本)
+- **状态**:done(A1 三页断言✓;A2 src/data 零 diff✓;A3 build/零溢出✓)
+- **遗留与下轮入口**:G70 美术线中期走查(全站双主题截图 GALLERY_ART4/+对比度复跑+体积决算+DESIGN 十二章)
+
 ## G68 · 双主题与遗留清偿
 
 - **有效执行编号**:四阶 10 / 24

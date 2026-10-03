@@ -217,3 +217,38 @@
 .grid > .panel:nth-child(4n) {
   background: var(--page-alt-1);
 }
+
+/* G69 刻本原件×站内转描对照:转描画心(墨夜底嵌纸卡)与纸签 */
+.artCell {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--ink-night);
+}
+
+.artCell > svg {
+  position: absolute;
+  inset: 0;
+}
+
+.artCellTag {
+  position: absolute;
+  z-index: 1;
+  left: 14px;
+  bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: var(--paper-ink);
+  background: var(--surface-paper);
+  border: 1px solid var(--paper-border);
+  padding: 3px 8px;
+  border-radius: 0;
+}
+
+.scanTitle {
+  margin: 26px 0 6px;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  letter-spacing: 0.16em;
+  color: var(--paper-ink);
+}

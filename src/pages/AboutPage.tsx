@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
+import BeastArtwork from '../components/art/BeastArtwork'
 import PaintingMount from '../components/PaintingMount'
+import jiuweihuScan from '../assets/classic-art/jiuweihu-jiangyingke.jpg'
+import wdlFolio from '../assets/classic-art/wdl4447-folio.jpg'
 import { ENTITIES } from '../data/entities'
 import { CHAPTERS } from '../data/chapters'
 import Rule from '../components/common/Rule'
@@ -134,6 +137,44 @@ export default function AboutPage() {
               height={1348}
               caption="〔清〕金农 梅花图"
               credit="大都会艺术博物馆 Open Access"
+            />
+          </div>
+        </div>
+
+        {/* G69 刻本原件×站内转描对照样张:四阶并陈线的档案面。
+            左=明崇祯刊本扫描原件(S1);中=站内据《古今图书集成》木刻的矢量化转描;
+            右=郭璞注传抄本书影(S7,世界数字图书馆)。装饰画心 aria-hidden。 */}
+        <h3 className={styles.scanTitle}>刻本原件 × 站内转描 · 九尾狐对照</h3>
+        <p className={styles.muted}>
+          同一异兽在不同刻本传统中的形象并陈以待比读:左为明崇祯刊本扫描原件,中为站内据《古今图书集成》禽虫典木刻的矢量化转描,右为郭璞注传抄本书影。逐幅来源见站内 ART_PROVENANCE 台账。
+        </p>
+        <div className={styles.mountsGrid}>
+          <div className={styles.slotWide}>
+            <PaintingMount
+              src={jiuweihuScan}
+              alt="九尾狐——明崇祯刊本木刻插图"
+              width={541}
+              height={625}
+              caption="蒋应镐山海经(图)绘像 · 明崇祯刊本"
+              credit="藏所待考"
+              loading="lazy"
+            />
+          </div>
+          <div className={styles.slotTall}>
+            <div className={styles.artCell} aria-hidden="true">
+              <BeastArtwork slug="jiuweihu" name="九尾狐" variant="card" />
+              <span className={styles.artCellTag}>站内转描 · 据古今图书集成</span>
+            </div>
+          </div>
+          <div className={styles.slotWide}>
+            <PaintingMount
+              src={wdlFolio}
+              alt="郭璞注《山海经》传抄本书影"
+              width={1600}
+              height={760}
+              caption="郭璞注《山海经》传抄本书影"
+              credit="世界数字图书馆 · 公有领域"
+              loading="lazy"
             />
           </div>
         </div>

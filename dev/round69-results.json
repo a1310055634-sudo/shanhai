@@ -1,0 +1,169 @@
+[
+  {
+    "path": "/about",
+    "w": 1440,
+    "theme": "deng",
+    "values": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "scrollW": 1430,
+      "clientW": 1430,
+      "h1": true,
+      "scanTitle": "刻本原件 × 站内转描 · 九尾狐对照",
+      "mountGrids": 2,
+      "compareCaptions": [
+        "〔清〕郑燮 兰竹图",
+        "〔明〕徐渭 墨葡萄图",
+        "〔清〕石涛 山水图·扇页",
+        "〔清〕八大山人 莲塘戏禽图",
+        "〔清〕金农 梅花图",
+        "蒋应镐山海经(图)绘像 · 明崇祯刊本",
+        "郭璞注《山海经》传抄本书影"
+      ],
+      "artCellTag": "站内转描 · 据古今图书集成",
+      "artCellLoaded": true
+    },
+    "checks": {
+      "h1": true,
+      "noOverflow": true,
+      "scanTitle": true,
+      "compareCaptions": true,
+      "artCellTag": true,
+      "artCellRendered": true
+    },
+    "pass": true
+  },
+  {
+    "path": "/about",
+    "w": 390,
+    "theme": "deng",
+    "values": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "scrollW": 390,
+      "clientW": 390,
+      "h1": true,
+      "scanTitle": "刻本原件 × 站内转描 · 九尾狐对照",
+      "mountGrids": 2,
+      "compareCaptions": [
+        "〔清〕郑燮 兰竹图",
+        "〔明〕徐渭 墨葡萄图",
+        "〔清〕石涛 山水图·扇页",
+        "〔清〕八大山人 莲塘戏禽图",
+        "〔清〕金农 梅花图",
+        "蒋应镐山海经(图)绘像 · 明崇祯刊本",
+        "郭璞注《山海经》传抄本书影"
+      ],
+      "artCellTag": "站内转描 · 据古今图书集成",
+      "artCellLoaded": true
+    },
+    "checks": {
+      "h1": true,
+      "noOverflow": true,
+      "scanTitle": true,
+      "compareCaptions": true,
+      "artCellTag": true,
+      "artCellRendered": true
+    },
+    "pass": true
+  },
+  {
+    "path": "/explore",
+    "w": 1440,
+    "theme": "deng",
+    "values": {
+      "bg": "rgb(23, 35, 31)",
+      "scrollW": 1430,
+      "clientW": 1430,
+      "h1": true
+    },
+    "checks": {
+      "h1": true,
+      "noOverflow": true,
+      "paperBand": true
+    },
+    "pass": true
+  },
+  {
+    "path": "/explore",
+    "w": 1440,
+    "theme": "qing",
+    "values": {
+      "bg": "rgb(241, 231, 214)",
+      "scrollW": 1430,
+      "clientW": 1430,
+      "h1": true
+    },
+    "checks": {
+      "h1": true,
+      "noOverflow": true,
+      "paperBand": true
+    },
+    "pass": true
+  },
+  {
+    "path": "/favorites",
+    "w": 1440,
+    "theme": "deng",
+    "values": {
+      "bg": "rgb(28, 43, 36)",
+      "scrollW": 1430,
+      "clientW": 1430,
+      "h1": true
+    },
+    "checks": {
+      "h1": true,
+      "noOverflow": true,
+      "paperBand": true
+    },
+    "pass": true
+  },
+  {
+    "path": "/favorites",
+    "w": 1440,
+    "theme": "qing",
+    "values": {
+      "bg": "rgb(238, 226, 204)",
+      "scrollW": 1430,
+      "clientW": 1430,
+      "h1": true
+    },
+    "checks": {
+      "h1": true,
+      "noOverflow": true,
+      "paperBand": true
+    },
+    "pass": true
+  },
+  {
+    "path": "/about",
+    "w": 1440,
+    "theme": "qing",
+    "values": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "scrollW": 1430,
+      "clientW": 1430,
+      "h1": true,
+      "scanTitle": "刻本原件 × 站内转描 · 九尾狐对照",
+      "mountGrids": 2,
+      "compareCaptions": [
+        "〔清〕郑燮 兰竹图",
+        "〔明〕徐渭 墨葡萄图",
+        "〔清〕石涛 山水图·扇页",
+        "〔清〕八大山人 莲塘戏禽图",
+        "〔清〕金农 梅花图",
+        "蒋应镐山海经(图)绘像 · 明崇祯刊本",
+        "郭璞注《山海经》传抄本书影"
+      ],
+      "artCellTag": "站内转描 · 据古今图书集成",
+      "artCellLoaded": true
+    },
+    "checks": {
+      "h1": true,
+      "noOverflow": true,
+      "scanTitle": true,
+      "compareCaptions": true,
+      "artCellTag": true,
+      "artCellRendered": true
+    },
+    "pass": true
+  }
+]
