@@ -191,10 +191,21 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-yushan'],
     },
     {
-      id: 'seg-ns2-gap-qufu-juyu',
-      kind: 'gap',
+      // G71:瞿父之山段(2026-10-04 经底本B1×B2两源逐字一致录入,底本A回核挂账,
+      // recordStatus 同步 unverified;详见 EDITION_AUDIT.md 三之补8)。
+      id: 'seg-ns2-qufu-shan',
+      kind: 'text',
       section: '南次二经',
-      note: '瞿父之山、句餘之山待录入(第五/六山;已录山链路自羽山直连浮玉之山,跳过未录山系如实呈现;核不动不上线)',
+      text: '又东三百七十里，曰瞿父之山，无草木，多金玉。',
+      relatedLocationIds: ['loc-qufu'],
+    },
+    {
+      // G71:句余之山段(同上;「餘」简体转换作「余」,一对多入 AUDIT 转写表)。
+      id: 'seg-ns2-juyu-shan',
+      kind: 'text',
+      section: '南次二经',
+      text: '又东四百里，曰句余之山，无草木，多金玉。',
+      relatedLocationIds: ['loc-juyu'],
     },
     {
       // G30:浮玉之山山段(2026-10-02 经底本B1×B2两源逐字一致录入,底本A回核挂账,
@@ -229,10 +240,20 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-chengshan'],
     },
     {
+      // G71:会稽之山段(2026-10-04 经底本B1×B2两源逐字一致录入,底本A回核挂账;
+      // 详见 EDITION_AUDIT.md 三之补8)。异文「勺一作多」登记疑13(variants),
+      // 正文从两源共用作「勺」。
+      id: 'seg-ns2-kuaiji-shan',
+      kind: 'text',
+      section: '南次二经',
+      text: '又东五百里，曰会稽之山，四方，其上多金玉，其下多砆石。勺水出焉，而南流注于湨。',
+      relatedLocationIds: ['loc-kuaiji'],
+    },
+    {
       id: 'seg-ns2-gap-kuaiji-end',
       kind: 'gap',
       section: '南次二经',
-      note: '会稽之山以下九山待录入(二经录入三轮 G28—G30 止,其余山留工作稿如实待续,不凑数;核不动不上线)',
+      note: '夷山以下八山待录入(G71 录至会稽之山第九山,余八山留待 G72—G74 如实待续,不凑数;核不动不上线)',
     },
     {
       // G30:二经篇末总述(底本B1工作稿存档×B2第68行两源一致;祠礼句照录,
@@ -293,6 +314,8 @@ export const CHAPTER_TEXTS: Record<string, ChapterText> = {
 /** 生僻字注音(读音供参考,训释见条目页;非核验内容)。 */
 export const GLOSSARY: Record<string, { pinyin: string; hint?: string }> = {
   䧿: { pinyin: 'què', hint: '同「鹊」' },
+  湨: { pinyin: 'jú', hint: '水名,郭注「音鵙」' },
+  砆: { pinyin: 'fū', hint: '似玉之石,郭注「武大石」' },
   狌: { pinyin: 'xīng', hint: '狌狌' },
   禺: { pinyin: 'yú', hint: '旧注以为猿猴类,确切所指待考' },
   䨼: { pinyin: 'hù', hint: '青色矿物颜料,训释待考' },

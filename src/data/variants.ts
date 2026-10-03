@@ -8,7 +8,7 @@
  *      底本B = 中文维基文库郭璞注本(四庫全書底本),存档
  *      EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt 与
  *      wikisource-nanshan1-20260927.txt。
- *  二、疑点登记(疑1—疑12):候核疑点与其处理状态,与 GALLERY_SPRINT.md
+ *  二、疑点登记(疑1—疑13):候核疑点与其处理状态,与 GALLERY_SPRINT.md
  *      「二阶内容疑点清单」逐条对应(id 相同)。
  *  三、站内引文异文标注:不自建第三份,页面运行时从 LOCATIONS[].citations[].variantText
  *      派生(单一来源)。
@@ -259,6 +259,13 @@ export const DOUBTS: DoubtItem[] = [
     handling:
       '音表并列照录,不折合今音、不判孰是孰非;旧注音值与今音对应关系非本站所能裁定,四种字的读音分歧留人工复核。G35 本轮新增。',
     state: '不裁决',
+  },
+  {
+    id: '疑13',
+    topic: '会稽之山「勺水出焉」之「勺」/「多」异文',
+    evidence: '底本 B1 页面自带异文标注「勺一作「多」水出焉」;底本 B2 四库本郭璞注同记{{另|勺|多}}(存档第 50 行)。两源正文均作「勺」。与成山「虖勺一作「多」」(疑10)句型相同,为两处独立异文。',
+    handling: '正文从两源共用作「勺」,异文照录于 loc-kuaiji variantText 与本表;待底本 A 照录后按底本政策处理。G71 新增。',
+    state: '待底本A回核',
   },
 ]
 

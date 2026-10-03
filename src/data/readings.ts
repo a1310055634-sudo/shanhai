@@ -222,6 +222,15 @@ export const SOUND_ENTRIES: ReadingEntry[] = [
     note: '本站注音层标 zhuō,与郭注直音字「涿」同读。本字属增补平面,注音层正则须带 u 标志。',
   },
   {
+    char: '砆',
+    layer: 'ruby',
+    quote: '砆，武大石，似玉，今長沙臨湘出之。赤地白文，色蘢葱，不分明。',
+    line: 50,
+    basis: 'gloss',
+    where: '南次二经·会稽之山段「其下多砆石」',
+    note: '郭注为训释(武大石,似玉),无音注;本站注音层标 fū 系通行定音,非本注所出。',
+  },
+  {
     char: '虖',
     layer: 'ruby',
     quote: '虖，音呼。',
@@ -229,6 +238,25 @@ export const SOUND_ENTRIES: ReadingEntry[] = [
     basis: 'sound',
     where: '南次二经·成山「而南流注于虖勺」',
     note: '本站注音层标 hū,与郭注直音字「呼」同读。',
+  },
+  {
+    char: '瞿',
+    layer: 'ruby',
+    mountainName: '瞿父之山',
+    quote: '音劬',
+    line: 42,
+    basis: 'sound',
+    where: '南次二经·瞿父之山「曰瞿父之山」',
+    note: '本站注音层与山名通读层均作 qú,与郭注直音字「劬」同读。',
+  },
+  {
+    char: '湨',
+    layer: 'ruby',
+    quote: '音鵙',
+    line: 50,
+    basis: 'sound',
+    where: '南次二经·会稽之山段「而南流注于湨」',
+    note: '本站注音层标 jú,与郭注直音字「鵙」同读。',
   },
 ]
 
@@ -338,8 +366,7 @@ export const BLANK_ENTRIES: ReadingEntry[] = [
 export const NOT_ON_SITE = [
   { char: '鯥', quote: '音六', line: 20, reason: '柢山段「其名曰鯥」——柢山待核不设站,该段原文未上屏。' },
   { char: '菅', quote: '菅，茅屬也。音間', line: 30, reason: '南次一经篇末祠礼全句未上屏(站内仅上屏里距总述句)。' },
-  { char: '湨', quote: '音鵙', line: 50, reason: '会稽之山段——南次二经已录六山,会稽以下十一山未录。' },
-]
+  ]
 
 /** 三类合计(页面自述用;数值由数据派生,不手填)。 */
 export const READING_COUNTS = {

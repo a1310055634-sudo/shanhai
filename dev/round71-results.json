@@ -1,0 +1,350 @@
+{
+  "chapter": {
+    "values": {
+      "h1": true,
+      "qufu": "又东三百七十里，曰瞿父之山，无草木，多金玉。",
+      "juyu": "又东四百里，曰句余之山，无草木，多金玉。",
+      "kuaiji": "又东五百里，曰会稽之山，四方，其上多金玉，其下多砆石。勺水出焉，而南流注于湨。",
+      "tagQi5": true,
+      "tagsAll": [
+        "seg-ns1-zhaoyao-kai:\"其\" counter(seg, cjk-ideographic) \" · \":南次一经",
+        "seg-ns1-tangting:\"其\" counter(seg, cjk-ideographic) \" · \":南次一经",
+        "seg-ns1-yuanyi:\"其\" counter(seg, cjk-ideographic) \" · \":南次一经",
+        "seg-ns1-chuyang-shan:\"其\" counter(seg, cjk-ideographic) \" · \":南次一经",
+        "seg-ns1-lushu:\"其\" counter(seg, cjk-ideographic) \" · \":南次一经",
+        "seg-ns1-danyuan:\"其\" counter(seg, cjk-ideographic) \" · \":南次一经",
+        "seg-ns1-jishan:\"其\" counter(seg, cjk-ideographic) \" · \":南次一经",
+        "seg-ns1-qingqiu-shan:\"其\" counter(seg, cjk-ideographic) \" · \":南次一经",
+        "seg-ns1-jiuweihu:\"其\" counter(seg, cjk-ideographic) \" · \":南次一经",
+        "seg-ns1-jiwei:\"其\" counter(seg, cjk-ideographic) \" · \":南次一经",
+        "seg-ns1-tongji:\"其\" counter(seg, cjk-ideographic) \" · \":南次一经",
+        "seg-ns2-guishan:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-changyou-shan:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-changyou:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-yaoguang-shan:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-huahuai:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-yushan:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-qufu-shan:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-juyu-shan:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-fuyu-shan:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-zhi:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-fuyu-shui:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-chengshan:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-kuaiji-shan:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns2-tongji:\"其\" counter(seg, cjk-ideographic) \" · \":南次二经",
+        "seg-ns3-danxue-shan:\"其\" counter(seg, cjk-ideographic) \" · \":南次三经",
+        "seg-ns3-fenghuang:\"其\" counter(seg, cjk-ideographic) \" · \":南次三经"
+      ],
+      "gaps": "南次一经 · 柢山段待录入(名称「柢/祗」两源互异;里距两源一致东三百里;两源均无「曰」字——见 EDITION_AUDIT 差1/差2)|南次一经 · 篇末计数存疑:篇末原文作「凡十山,二千九百五十里」(底本A/B一致),但两本逐段实列均为九山(招摇、堂庭、猨翼、杻阳、柢[祗]、亶爰、基、青丘、箕尾);本站按逐段里距相加校核得二千七百里,与篇末相差二百五十里。第十山所指、脱简抑或计数口径之别,文献未明,本站不作推断——山名清单与篇末计数照录原文,读者知其存疑即可。(出处:底本A ctext zhs、底本B 中文维基文库郭璞注本,2026-09-27;详见 EDITION_AUDIT.md 差6/差7)|南次二经 · 夷山以下八山待录入(G71 录至会稽之山第九山,余八山留待 G72—G74 如实待续,不凑数;核不动不上线)|南次二经 · 篇末「凡十七山,七千二百里」:本站已录六山(自柜山至成山),瞿父、句餘与会稽以下九山未核不上线;逐段相加与篇末合计之对照见篇末里距对照存疑区,歧义照录不裁决|南次三经 · 天虞之山、祷过之山段待录入|南次三经 · 发爽之山以下诸段待录入",
+      "guopu": {
+        "note": "design-internal (no linked entity; archived in loc citations)"
+      },
+      "variant13": false,
+      "rubyJu": true,
+      "rubyFu": true,
+      "rubyQu": false,
+      "segCount": 27,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "qufuVerbatim": true,
+      "juyuVerbatim": true,
+      "kuaijiVerbatim": true,
+      "chapterMarks": true,
+      "gapUpdated": true,
+      "guopu": {
+        "note": "design-internal (no linked entity; archived in loc citations)"
+      },
+      "ruby": true,
+      "annotateAlive": true,
+      "noOverflow": true
+    }
+  },
+  "atlas": {
+    "values": {
+      "texts": 36,
+      "overlaps": 0,
+      "seals": 17,
+      "rings": 9,
+      "pairs": [],
+      "rects": [
+        {
+          "t": "南次一经 · 行旅已开通",
+          "x": 184,
+          "y": 815,
+          "w": 167,
+          "h": 20
+        },
+        {
+          "t": "进入山海行旅 →",
+          "x": 756,
+          "y": 814,
+          "w": 121,
+          "h": 21
+        },
+        {
+          "t": "北山经",
+          "x": 271,
+          "y": 413,
+          "w": 67,
+          "h": 25
+        },
+        {
+          "t": "海外北经",
+          "x": 576,
+          "y": 399,
+          "w": 89,
+          "h": 25
+        },
+        {
+          "t": "西山经",
+          "x": 746,
+          "y": 464,
+          "w": 67,
+          "h": 25
+        },
+        {
+          "t": "大荒东经",
+          "x": 1075,
+          "y": 598,
+          "w": 89,
+          "h": 25
+        },
+        {
+          "t": "南山经",
+          "x": 370,
+          "y": 1042,
+          "w": 67,
+          "h": 25
+        },
+        {
+          "t": "又西三百二十里",
+          "x": 834,
+          "y": 584,
+          "w": 90,
+          "h": 19
+        },
+        {
+          "t": "西南四百里",
+          "x": 787,
+          "y": 500,
+          "w": 65,
+          "h": 19
+        },
+        {
+          "t": "招摇之山",
+          "x": 238,
+          "y": 889,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "堂庭之山",
+          "x": 332,
+          "y": 904,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "猨翼之山",
+          "x": 414,
+          "y": 918,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "杻阳之山",
+          "x": 508,
+          "y": 940,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "亶爰之山",
+          "x": 591,
+          "y": 955,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "基山",
+          "x": 700,
+          "y": 969,
+          "w": 31,
+          "h": 22
+        },
+        {
+          "t": "青丘之山",
+          "x": 778,
+          "y": 991,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "箕尾之山",
+          "x": 884,
+          "y": 1013,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "丹穴之山",
+          "x": 919,
+          "y": 962,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "天山",
+          "x": 888,
+          "y": 518,
+          "w": 31,
+          "h": 22
+        },
+        {
+          "t": "发鸠之山",
+          "x": 379,
+          "y": 467,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "泰器之山",
+          "x": 878,
+          "y": 612,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "槐江之山",
+          "x": 819,
+          "y": 558,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "昆仑之丘",
+          "x": 726,
+          "y": 514,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "锺山",
+          "x": 582,
+          "y": 438,
+          "w": 31,
+          "h": 22
+        },
+        {
+          "t": "凶犁土丘",
+          "x": 1095,
+          "y": 423,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "流波山",
+          "x": 1185,
+          "y": 744,
+          "w": 46,
+          "h": 22
+        },
+        {
+          "t": "柜山",
+          "x": 277,
+          "y": 1006,
+          "w": 31,
+          "h": 22
+        },
+        {
+          "t": "长右之山",
+          "x": 379,
+          "y": 1016,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "尧光之山",
+          "x": 497,
+          "y": 1006,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "羽山",
+          "x": 629,
+          "y": 1016,
+          "w": 31,
+          "h": 22
+        },
+        {
+          "t": "瞿父之山",
+          "x": 635,
+          "y": 992,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "句余之山",
+          "x": 679,
+          "y": 1017,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "浮玉之山",
+          "x": 769,
+          "y": 1031,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "成山",
+          "x": 845,
+          "y": 1031,
+          "w": 31,
+          "h": 22
+        },
+        {
+          "t": "会稽之山",
+          "x": 888,
+          "y": 1042,
+          "w": 61,
+          "h": 22
+        },
+        {
+          "t": "朱砂方印 = 已核验 · 虚线墨圈 = 待考证",
+          "x": 151,
+          "y": 1074,
+          "w": 281,
+          "h": 16
+        }
+      ],
+      "hasNew": true,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "newNodes": true,
+      "seals20": true,
+      "rings9": true,
+      "noOverlap": true,
+      "noOverflow": true
+    }
+  },
+  "home": {
+    "verified": "12"
+  },
+  "dt": {
+    "qufuRow": true,
+    "juyuRow": true,
+    "kuaijiRow": true
+  },
+  "pass": true,
+  "atlas390": {
+    "overlaps": 0,
+    "pass": true
+  }
+}

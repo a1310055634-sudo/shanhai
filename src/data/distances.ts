@@ -87,8 +87,11 @@ const NS2_ROWS: DistanceRow[] = [
   { order: 2, name: '长右之山', locationId: 'loc-changyou', li: 450 },
   { order: 3, name: '尧光之山', locationId: 'loc-yaoguang', li: 340 },
   { order: 4, name: '羽山', locationId: 'loc-yushan', li: 350 },
-  { order: 7, name: '浮玉之山', locationId: 'loc-fuyu', li: 500, note: '第五/六山(瞿父、句餘)未录,序数自原文次序' },
+  { order: 5, name: '瞿父之山', locationId: 'loc-qufu', li: 370 },
+  { order: 6, name: '句余之山', locationId: 'loc-juyu', li: 400 },
+  { order: 7, name: '浮玉之山', locationId: 'loc-fuyu', li: 500 },
   { order: 8, name: '成山', locationId: 'loc-chengshan', li: 500 },
+  { order: 9, name: '会稽之山', locationId: 'loc-kuaiji', li: 500 },
 ]
 
 const ROWS_BY_CLASSIC: Record<DistanceClassic, DistanceRow[]> = {

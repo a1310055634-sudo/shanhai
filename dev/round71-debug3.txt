@@ -1,0 +1,19 @@
+JSON.stringify({
+  atlas: (() => {
+    const svg = document.querySelector('svg')
+    return [...svg.querySelectorAll('text')].map((t) => {
+      const r = t.getBoundingClientRect()
+      return { t: t.textContent, x: Math.round(r.x), y: Math.round(r.y), w: Math.round(r.width), h: Math.round(r.height) }
+    })
+  })(),
+  dtProbe: (() => {
+    const b = document.body.textContent
+    return {
+      hasTable: !!document.querySelector('table'),
+      hasDistance: b.includes('里距'),
+      hasQufu: b.includes('瞿父之山'),
+      hasJuyu: b.includes('句余之山'),
+      hasKuaiji: b.includes('会稽之山'),
+    }
+  })(),
+})

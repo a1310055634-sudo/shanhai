@@ -626,6 +626,7 @@ export const LOCATIONS: Location[] = [
     subClassic: '南次二经',
     sourceOrder: 4,
     previousLocationId: 'loc-yaoguang',
+    nextLocationId: 'loc-qufu', // G71:瞿父之山建站,羽山不再直连浮玉
     sourceDirection: '又东',
     sourceDistance: '三百五十里',
     relatedEntityIds: [],
@@ -660,7 +661,86 @@ export const LOCATIONS: Location[] = [
     recordStatus: 'unverified',
   },
   {
-    // G30:南次二经第七山(第五/六山瞿父、句餘未录,链路直连如实见 gap 注)。
+    // G71:南次二经第五山(2026-10-04 经底本B1 存档 L05×B2 第42行两源净化正文
+    // 逐字一致后录入,底本A回核挂账;郭注仅音注「音劬」一条)。文句极简
+    // (「无草木,多金玉」),不立词条。
+    id: 'loc-qufu',
+    canonicalName: '瞿父之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 5,
+    previousLocationId: 'loc-yushan',
+    nextLocationId: 'loc-juyu',
+    sourceDirection: '又东',
+    sourceDistance: '三百七十里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东三百七十里，曰瞿父之山，无草木，多金玉。',
+        chapter: '南山经',
+        section: '南次二经第五山',
+        guoPuNotes: [
+          {
+            attach: '瞿父之山',
+            text: '音劬',
+          },
+        ],
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测反爬不可达,恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        verificationNote:
+          '2026-10-04 建站核验(G71):底本B1(维基文库页面,存档 EDITION_EVIDENCE/wikisource-nanshan1-b1-20261002.txt 第L05行)与底本B2(四库本郭璞注,存档 wikisource-nanshan1-guopu-20261002.txt 第42行)净化正文逐字一致;上屏为简体逐字转换(对照表见 EDITION_AUDIT.md 三之补8),注文保持繁体未转简。底本A(ctext zhs)当日复测不可达(反爬拦截页),A×B 回核挂账。',
+        verifiedAt: '2026-10-04',
+      },
+    ],
+    mapPosition: { x: 45.8, y: 84.2, region: '南山经' }, // G71:羽山/句余之间下行避让(标签零重叠实测裁决)
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G71:南次二经第六山(核验路径同 loc-qufu:B1 L06×B2 第44行)。
+    // 「餘」简体转写作「余」(一对多,入 AUDIT 三之补8 转写表)。
+    id: 'loc-juyu',
+    canonicalName: '句余之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 6,
+    previousLocationId: 'loc-qufu',
+    nextLocationId: 'loc-fuyu',
+    sourceDirection: '又东',
+    sourceDistance: '四百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东四百里，曰句余之山，无草木，多金玉。',
+        chapter: '南山经',
+        section: '南次二经第六山',
+        guoPuNotes: [
+          {
+            attach: '句餘之山',
+            text: '今在會稽餘姚縣南，章句縣北，故此二縣因此爲名云。見《張氏地理志》',
+          },
+        ],
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测反爬不可达,恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        verificationNote:
+          '2026-10-04 建站核验(G71):底本B1(存档 L06行)与底本B2(存档 第44行)净化正文逐字一致;上屏为简体逐字转换(「餘」→「余」一对多,对照表见 EDITION_AUDIT.md 三之补8),注文保持繁体未转简。底本A(ctext zhs)当日复测不可达(反爬拦截页),A×B 回核挂账。',
+        verifiedAt: '2026-10-04',
+      },
+    ],
+    mapPosition: { x: 49.5, y: 87.6, region: '南山经' }, // G71:锯齿上行(零重叠实测裁决)
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G30:南次二经第七山(第五/六山瞿父、句余 G71 已补录,链路经二山相连)。
     // 兽「彘」另立词条(ent-zhi)。核验路径同 loc-guishan:底本A(ctext)2026-10-02
     // 复测仍反爬不可达,经底本B1(存档 L07)×B2(存档第46行)两源净化正文逐字一致后录入。
     id: 'loc-fuyu',
@@ -670,7 +750,7 @@ export const LOCATIONS: Location[] = [
     chapterId: 'ch-nanshan',
     subClassic: '南次二经',
     sourceOrder: 7,
-    previousLocationId: 'loc-yushan',
+    previousLocationId: 'loc-juyu', // G71:瞿父/句余插站,羽山直连改经二山
     nextLocationId: 'loc-chengshan',
     sourceDirection: '又东',
     sourceDistance: '五百里',
@@ -704,7 +784,7 @@ export const LOCATIONS: Location[] = [
         verifiedAt: '2026-10-02',
       },
     ],
-    mapPosition: { x: 49, y: 86, region: '南山经' }, // G30:避让一经对角线尾部(青丘 x≈442px),自 54 左移
+    mapPosition: { x: 57.2, y: 89.5, region: '南山经' }, // G71:二经尾列下移避让一经尾部青丘/箕尾(坐标经两轮实测标定)
     modernHypotheses: [],
     recordStatus: 'unverified',
   },
@@ -719,6 +799,7 @@ export const LOCATIONS: Location[] = [
     subClassic: '南次二经',
     sourceOrder: 8,
     previousLocationId: 'loc-fuyu',
+    nextLocationId: 'loc-kuaiji', // G71:会稽之山建站
     sourceDirection: '又东',
     sourceDistance: '五百里',
     relatedEntityIds: [],
@@ -757,7 +838,56 @@ export const LOCATIONS: Location[] = [
         verifiedAt: '2026-10-02',
       },
     ],
-    mapPosition: { x: 53.5, y: 84.5, region: '南山经' }, // G30:避让青丘/箕尾与浮玉,上移一行(锯齿节奏让位于零重叠)
+    mapPosition: { x: 62.4, y: 89.5, region: '南山经' }, // G71:二经尾列下移(同上)
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G71:南次二经第九山(2026-10-04 经底本B1 存档 L09×B2 第50行两源净化正文
+    // 逐字一致后录入,底本A回核挂账)。郭注三条(禹冢及井/砆石/音鵙);
+    // 底本自带异文「勺一作多」登记疑13(variants),正文从两源共用作「勺」。
+    id: 'loc-kuaiji',
+    canonicalName: '会稽之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 9,
+    previousLocationId: 'loc-chengshan',
+    sourceDirection: '又东',
+    sourceDistance: '五百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东五百里，曰会稽之山，四方，其上多金玉，其下多砆石。勺水出焉，而南流注于湨。',
+        chapter: '南山经',
+        section: '南次二经第九山',
+        guoPuNotes: [
+          {
+            attach: '會稽之山',
+            text: '今在會稽郡山陰縣南，上有禹冢及井',
+          },
+          {
+            attach: '其下多砆石',
+            text: '砆，武大石，似玉，今長沙臨湘出之。赤地白文，色蘢葱，不分明。',
+          },
+          {
+            attach: '注於湨',
+            text: '音鵙',
+          },
+        ],
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测反爬不可达,恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText:
+          '「勺水出焉」之「勺」:底本B1页面自带异文标注「勺一作多」,底本B2四库本郭璞注同记{{另|勺|多}};两源正文均作「勺」。本站从两源正文用字「勺」,异文登记疑13;与成山「虖勺一作多」(疑10)为两处独立异文。底本A待回核。',
+        verificationNote:
+          '2026-10-04 建站核验(G71):底本B1(存档 L09行,剥〈〉夹注与「勺一作「多」」页面注记)与底本B2(存档 第50行,剥{{*|}}与{{另|}}模板)净化正文逐字一致;上屏为简体逐字转换(會→会/於→于,对照表见 EDITION_AUDIT.md 三之补8),注文保持繁体未转简。音注「音鵙」上屏注层;「湨」「砆」入 GLOSSARY 注音。底本A(ctext zhs)当日复测不可达(反爬拦截页),A×B 回核挂账。',
+        verifiedAt: '2026-10-04',
+      },
+    ],
+    mapPosition: { x: 67.3, y: 91, region: '南山经' }, // G71:尾列再下一行(避开箕尾矩形;两轮实测标定)
     modernHypotheses: [],
     recordStatus: 'unverified',
   },
