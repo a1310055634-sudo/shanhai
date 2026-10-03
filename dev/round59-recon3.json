@@ -1,0 +1,129 @@
+{
+  "generatedAt": "2026-10-03T16:16:44.479Z",
+  "calls": 6,
+  "families": {
+    "Shahaijing-chongzhen": 15,
+    "Wang fu(1895)": 8,
+    "Illustrated Classic of Mountains and Seas": 1,
+    "Shanhaijing-chongzhen": 0
+  },
+  "inventory": 24,
+  "matched": 5,
+  "summary": {
+    "lushu": {
+      "total": 2,
+      "okPull": 2,
+      "editions": [
+        "汪绂山海经存(1895 石印本扫描)",
+        "蒋应镐绘本(崇祯刊本扫描)"
+      ]
+    },
+    "jiuweihu": {
+      "total": 1,
+      "okPull": 1,
+      "editions": [
+        "蒋应镐绘本(崇祯刊本扫描)"
+      ]
+    },
+    "huahuai": {
+      "total": 1,
+      "okPull": 1,
+      "editions": [
+        "蒋应镐绘本(崇祯刊本扫描)"
+      ]
+    },
+    "changyou": {
+      "total": 1,
+      "okPull": 1,
+      "editions": [
+        "蒋应镐绘本(崇祯刊本扫描)"
+      ]
+    }
+  },
+  "bySlug": {
+    "lushu": [
+      {
+        "title": "File:Wang fu(1895)-shanhaijingcun1-fol6a-lushu.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Wang_fu%281895%29-shanhaijingcun1-fol6a-lushu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "w": 607,
+        "h": 559,
+        "mime": "image/jpeg",
+        "license": "Public domain",
+        "desc": "The lushu (lù shǔ 鹿蜀), a fabulous beast which Nan Shan Jing (\"Classic of Southern Mountains\"), a white-headed horse, with tiger-li",
+        "edition": "汪绂山海经存(1895 石印本扫描)",
+        "verdict": "可拉"
+      },
+      {
+        "title": "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol3b-lushu.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Shahaijing-chongzhen%281628%E2%80%931644%29-nanshanjing1-fol3b-lushu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "w": 1039,
+        "h": 865,
+        "mime": "image/jpeg",
+        "license": "Public domain",
+        "desc": "The lushu (lù shǔ 鹿蜀), a fabulous beast which Nan Shan Jing (\"Classic of Southern Mountains\") describes as resembling a white-head",
+        "edition": "蒋应镐绘本(崇祯刊本扫描)",
+        "verdict": "可拉"
+      }
+    ],
+    "jiuweihu": [
+      {
+        "title": "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol5b-ninetailfox.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Shahaijing-chongzhen%281628%E2%80%931644%29-nanshanjing1-fol5b-ninetailfox.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "w": 541,
+        "h": 625,
+        "mime": "image/jpeg",
+        "license": "Public domain",
+        "desc": "A nine-tail[ed] fox (jiuweihu 九尾狐), described in the Nan Shan Jing (\"Classic of the Southern Mountains\") as being found in the Qin",
+        "edition": "蒋应镐绘本(崇祯刊本扫描)",
+        "verdict": "可拉"
+      }
+    ],
+    "huahuai": [
+      {
+        "title": "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol7b-huahuai.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Shahaijing-chongzhen%281628%E2%80%931644%29-nanshanjing1-fol7b-huahuai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "w": 1144,
+        "h": 576,
+        "mime": "image/jpeg",
+        "license": "Public domain",
+        "desc": "A huahuai (猾裹/猾褢), described as resembling a human with pig's bristles, a cave-dweller which also hibernates, in the Nan Shan Jing",
+        "edition": "蒋应镐绘本(崇祯刊本扫描)",
+        "verdict": "可拉"
+      }
+    ],
+    "changyou": [
+      {
+        "title": "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol8a-changyou.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Shahaijing-chongzhen%281628%E2%80%931644%29-nanshanjing1-fol8a-changyou.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "w": 601,
+        "h": 574,
+        "mime": "image/jpeg",
+        "license": "Public domain",
+        "desc": "A changyou (長右) , described in the Nan Shan Jing (\"Classic of the Southern Mountains\") a resembling a yu (禺) ape, with four ears. ",
+        "edition": "蒋应镐绘本(崇祯刊本扫描)",
+        "verdict": "可拉"
+      }
+    ]
+  },
+  "unmatchedSample": [
+    "File:Wang fu(1895)-shanhaijingcun1-fol5a-shengsheng.png",
+    "File:Wang fu(1895)-shanhaijingcun1-fol5amigu-confusionmulberry.png",
+    "File:Wang fu(1895)-shanhaijingcun1-fol6b-lu-fish.png",
+    "File:Wang fu(1895)-shanhaijingcun1-fol6b-xuangui-revolvingtortoise.png",
+    "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol1b-zhuyu-plant.jpg",
+    "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol1b-shengsheng.jpg",
+    "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol4a-lei.jpg",
+    "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol4a-lu-fish.jpg",
+    "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol6a-guanguan.jpg",
+    "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol6a-chiru.jpg",
+    "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol5b-boshi.jpg",
+    "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol6a-changfu.jpg",
+    "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol8a-lili-powercat.jpg",
+    "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol8a-zhu-bird.jpg",
+    "File:Shahaijing-chongzhen(1628–1644)-nanshanjing1-fol7b-shen-mountaingod.jpg",
+    "File:Illustrated Classic of Mountains and Seas WDL4447.jpg",
+    "File:Wang fu(1895)-shanhaijingcun3-fol27a-hun-horse.png",
+    "File:Wang fu(1895)-shanhaijingcun3-fol27a-renyu-manfish.png",
+    "File:Wang fu(1895)-shanhaijingcun3-fol27a-fen-bird.png"
+  ]
+}

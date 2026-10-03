@@ -1,52 +1,53 @@
 {
-  "planId": "shanhai-gallery-3",
-  "phase": 3,
-  "title": "画卷气象·三阶冲刺 G39—G58",
-  "totalRounds": 20,
-  "validExecutions": 20,
-  "maxValidExecutions": 20,
-  "currentRound": "G58",
+  "planId": "shanhai-gallery-4",
+  "phase": 4,
+  "title": "图鉴格物·四阶冲刺 G59—G82",
+  "totalRounds": 24,
+  "validExecutions": 1,
+  "maxValidExecutions": 24,
+  "currentRound": "G59",
   "rounds": {
-    "G39": "done",
-    "G40": "done",
-    "G41": "done",
-    "G42": "done",
-    "G43": "done",
-    "G44": "done",
-    "G45": "done",
-    "G46": "done",
-    "G47": "done",
-    "G48": "done",
-    "G49": "done",
-    "G50": "done",
-    "G51": "done",
-    "G52": "done",
-    "G53": "done",
-    "G54": "done",
-    "G55": "done",
-    "G56": "done",
-    "G57": "done",
-    "G58": "done"
+    "G59": "done",
+    "G60": "not_started",
+    "G61": "not_started",
+    "G62": "not_started",
+    "G63": "not_started",
+    "G64": "not_started",
+    "G65": "not_started",
+    "G66": "not_started",
+    "G67": "not_started",
+    "G68": "not_started",
+    "G69": "not_started",
+    "G70": "not_started",
+    "G71": "not_started",
+    "G72": "not_started",
+    "G73": "not_started",
+    "G74": "not_started",
+    "G75": "not_started",
+    "G76": "not_started",
+    "G77": "not_started",
+    "G78": "not_started",
+    "G79": "not_started",
+    "G80": "not_started",
+    "G81": "not_started",
+    "G82": "not_started"
   },
-  "retired": "一阶 G14—G20 已并入二阶(G21—G23/G25/G36/G37/G38),原编号退役;二阶 G21—G38 于 2026-10-02 收官(18/18,终验 54f138b,日志补 18914aa)",
+  "retired": "一阶 G14—G20 已并入二阶(G21—G23/G25/G36/G37/G38),原编号退役;二阶 G21—G38 于 2026-10-02 收官(18/18,终验 54f138b);三阶 G39—G58 于 2026-10-03 收官(20/20,主终验 3a0277b+收官截图 94a98e6,另有 POST-1 hero 通栏化 a026a11)",
   "baseline": {
-    "head": "18914aa",
-    "phase": 3,
-    "recordedAt": "2026-10-03",
+    "head": "b8c3a45",
+    "phase": 4,
+    "recordedAt": "2026-10-04",
     "js": {
-      "raw": "568.25 kB",
-      "gzip": "176.78 kB"
+      "raw": "577.10 kB",
+      "gzip": "179.99 kB"
     },
     "css": {
-      "raw": "117.10 kB",
-      "gzip": "20.37 kB"
+      "raw": "123.24 kB",
+      "gzip": "21.73 kB"
     },
-    "html": {
-      "raw": "1440 B",
-      "gzip": "865 B"
-    },
-    "imagesBytes": 7800554,
-    "imagesNote": "12 个既有版画 SVG 共 7.44 MB(不入位图预算);三阶新增位图独立预算:单图 ≤350KB/长边 ≤1600px/总量 ≤2.5MB"
+    "htmlNote": "未复测,沿用三阶终验口径 1440 B/gzip 865 B",
+    "imagesBytes": 1065665,
+    "imagesNote": "古画 5 幅 1,065,665 B(与三阶收官零漂移);12 既有版画 SVG 7,800,554 B 不入位图预算;四阶新增位图独立预算 ≤2.0MB(单图 ≤350KB/长边 ≤1600px)"
   },
   "phase1Baseline": {
     "head": "823ba01",
@@ -98,45 +99,36 @@
     "finalReport": "GALLERY_REPORT.md(G38 二阶卷)",
     "finalShots": "GALLERY_FINAL2/(17 张 + final-assertions.json)"
   },
-  "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-03 23:4X+08:00",
-  "status": "completed",
-  "postSprint": [
-    {
-      "id": "POST-1",
-      "date": "2026-10-03",
-      "scope": "hero 画卷通栏化(用户反馈:画卷太局部)",
-      "commit": "a026a11",
-      "note": "贴片→贴底通栏(66vh/592px 上限)+上缘线性羽化+opacity .42+面纱纱色钉墨夜(挂轴语义);零新增字节;四档截图断言过;账本见 RUN_LOG 顶部与 SPRINT 补记;冲刺 20/20 收官态与 shutdown 条款不变"
-    }
-  ],
-  "phase3Progress": {
-    "paintingsReady": 5,
-    "paintingsTotalBytes": 1065665,
-    "mounted": "About 5 + hero 兰竹 + 行旅石涛",
-    "svgPatternBudget": "1/4(inkWash 晕染滤镜,ConceptMap 单处)",
-    "note": "G39-G50 已落地;剩 G51-G58 八轮"
+  "phase3Final": {
+    "head": "3a0277b(收官截图提交 94a98e6)",
+    "recordedAt": "2026-10-03",
+    "finalReport": "GALLERY_REPORT.md(三阶卷)",
+    "finalShots": "GALLERY_FINAL3/(34 张 + final-assertions.json)",
+    "postSprint": "POST-1 hero 画卷通栏化 a026a11(用户反馈,2026-10-03 深夜)"
   },
-  "shutdown": "三阶冲刺 20/20 done 收官:此后一切触发只读退出——不构建、不提交、不改文件;请用户停用本定时任务(automation)。",
+  "dependenciesChangedSinceBaseline": false,
+  "lastRunAt": "2026-10-04 00:4X+08:00",
+  "status": "in_progress",
+  "shutdown": "四阶冲刺 24 轮:G82 完成后或有效执行达 24 次,此后一切触发只读退出(不构建、不提交、不改文件),并提醒用户停用本定时任务(automation-6124ef5a)。",
   "openItems": [
     "[呈报用户] 宋体大题在其他 Windows 环境落 SimSun 的屏显抽验",
     "[呈报用户] 墨痕显影动效手感与晴窗「昼间覆纸」视觉复核",
     "[呈报用户] --duration-char 为 JS 消费型令牌(CSS 无引用)——审计口径是否纳入 JS 引用",
     "[呈报用户] floatSlot 浮卡槽位暂无实渲染使用方(组件能力保留)",
     "[呈报用户·二阶] 底本 A(ctext)回核挂账:南次二经 6 山 recordStatus=unverified",
-    "[呈报用户·二阶] 南次二经余 11 山 DRAFT 扩录(须新立任务)",
-    "[呈报用户·二阶] ruby 注音层未收 10 字+疑 12 四例读音分歧人工复核",
-    "[呈报用户·二阶] 1440 指针档页脚链接 29px 是否升 44px",
-    "[呈报用户·二阶] 其余 12 词条流变层无 claim(设计内状态)",
+    "[呈报用户·二阶] 南次二经余 11 山 DRAFT 扩录(四阶 G71—G74 施工)",
+    "[呈报用户·二阶] ruby 注音层未收 10 字+疑 12 四例读音分歧人工复核(四阶 G78 施工)",
+    "[呈报用户·二阶] 1440 指针档页脚链接 29px 是否升 44px(待用户裁决,不擅动)",
+    "[呈报用户·二阶] 其余 12 词条流变层无 claim(四阶 G77 施工:verified 9 条补,3 条 unverified 挂账)",
     "[呈报用户·二阶] 人工复核:楷体渲染/真实前台键盘 focus-visible/选区渲染色"
   ],
   "phase2OpenItems": [
     "底本 A(ctext)回核挂账:南次二经 6 山按 B1×B2 先上线,recordStatus=unverified",
-    "南次二经余 11 山留 DRAFT 工作稿,扩录须用户新立任务(不在三阶)",
-    "ruby 注音层未收 10 字待定夺;疑 12 四例读音分歧留人工复核",
-    "1440 指针档页脚链接 29px(≥24 AA)是否升 44px 未决(G57 呈报)",
-    "其余 12 词条流变层无 claim(未核即无 claim,设计内状态)",
-    "人工复核:楷体渲染、真实前台键盘 focus-visible、选区渲染色(G57 呈报)"
+    "南次二经余 11 山留 DRAFT 工作稿,扩录须用户新立任务(已立:四阶 G71—G74)",
+    "ruby 注音层未收 10 字待定夺;疑 12 四例读音分歧留人工复核(已立:四阶 G78)",
+    "1440 指针档页脚链接 29px(≥24 AA)是否升 44px 未决(待用户裁决)",
+    "其余 12 词条流变层无 claim(未核即无 claim;已立:四阶 G77)",
+    "人工复核:楷体渲染、真实前台键盘 focus-visible、选区渲染色"
   ],
   "phase3Sources": {
     "taskBook": "GALLERY_PROMPT3.md(唯一指令源,含八条翻译规则与附录 A 实测规格)",
@@ -146,5 +138,12 @@
   "resolved": [
     "G57 处理:版画小图 20 处补显式宽高(classicArt 12 条按 viewBox+BeastArtwork img),复跑 noWH=0/CLS 全 0"
   ],
-  "finalReport": "GALLERY_REPORT.md(三阶卷 2026-10-03)"
+  "finalReport": "GALLERY_REPORT.md(三阶卷 2026-10-03)",
+  "phase4": {
+    "taskBook": "GALLERY_PROMPT4.md(v2,唯一指令源,含硬红线/24 轮表/附录 A 古图源/附录 B 双源流程/附录 C 断言口径)",
+    "artLine": "G59—G70 经典图谱:刻本原件×站内转描并陈(已探明可拉 6 幅,见 CLASSIC_ART_RECON.md)",
+    "contentLine": "G71—G82 格物细读:二经余 11 山双源扩录闭环/新词条/凤皇郭注/流变 claims(verified 9 条)/ruby 10 字/纵深/三页联动/G82 终验",
+    "recon": "CLASSIC_ART_RECON.md + dev/round59-recon*.mjs/json(维基共享 60+ 次 API 实查;蒋应镐崇祯本家族 15 文件/汪绂本 8 文件/三才图会 112 张)",
+    "clock": "automation-6124ef5a 每 25 分钟一轮,maxRuns=30(24 轮+6 次余量)"
+  }
 }
