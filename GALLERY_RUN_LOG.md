@@ -1,3 +1,15 @@
+## G67 · 排印细节
+
+- **有效执行编号**:四阶 9 / 24
+- **北京时间**:2026-10-04 03:1X—03:5X(定时触发)
+- **开始 HEAD**:4254adb(G66),工作树干净;.round-lock 新建,轮末删除
+- **改动**(3 文件,全 CSS/MD=**CSS-only 证明:git status 非 css/md 文件数=0,脚本内置断言**):①`ChapterPage.module.css`——篇首章符定案「**其一/其二**」式:.reader counter-reset+sectionTag::before content '其' counter(seg, cjk-ideographic) ' · '(朱砂楷体;counter 只在正文段自增,gap 段不计;弃「○」章符选型入 DESIGN)②`CitationBlock.module.css`——引文「曰」朱签(.text::before 楷体白文 22px 对朱砂底)+版框朱砂**三裸值归零**(border/outline/:target shadow→color-mix)③DESIGN 四阶增补三(选型定案+目录徽标项检视无落点如实记档+宋/楷层级复核结论)
+- **验收(dev/round67-verify.mjs+round67-results.json,4/4)**:古卷页章符三档断言(content 含「其」+cjk-ideographic 声明;截图目检渲染=朱砂「其一 · 南次一经/其二/其三」递增正确);词条页曰签 content='曰'+白文对朱砂底对比度 **4.97**;390/1440 零溢出;双主题截图 3 张
+- **断言坑(两处记档)**:①章符在 ::before,`textContent` 永不含(首轮拿 textContent 匹配=必假);②`getComputedStyle(::before).content` 返回**未解析** counter 声明串(正常),解析值断言只能截图目检;③CitationBlock 不在古卷页(在词条页),断言页面别想当然
+- **提交**:主提交(CSS×2+DESIGN+脚本/结果+账本)
+- **状态**:done(A1 CSS-only✓;A2 双主题走查✓;A3 截图✓;A4 build/零溢出/src/data 零 diff✓)
+- **遗留与下轮入口**:G68 双主题与遗留清偿(晴窗 390 渐隐带复现实测+favicon 404 清偿)
+
 ## G66 · 图鉴卡+首页统一
 
 - **有效执行编号**:四阶 8 / 24

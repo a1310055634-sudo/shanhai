@@ -1,0 +1,96 @@
+{
+  "nonCss": [],
+  "results": [
+    {
+      "w": 1440,
+      "theme": "deng",
+      "values": {
+        "tagCount": 24,
+        "firstTagText": "南次一经",
+        "firstTagBefore": "\"其\" counter(seg, cjk-ideographic) \" · \"",
+        "allBeforeHaveQi": true,
+        "citeBeforeContent": null,
+        "sealContrast": null,
+        "scrollW": 1430,
+        "clientW": 1430,
+        "h1": true
+      },
+      "checks": {
+        "h1": true,
+        "tagCount": true,
+        "qiMark": true,
+        "sequenceOnFirst": true,
+        "noOverflow": true
+      },
+      "pass": true
+    },
+    {
+      "w": 1440,
+      "theme": "qing",
+      "values": {
+        "tagCount": 24,
+        "firstTagText": "南次一经",
+        "firstTagBefore": "\"其\" counter(seg, cjk-ideographic) \" · \"",
+        "allBeforeHaveQi": true,
+        "citeBeforeContent": null,
+        "sealContrast": null,
+        "scrollW": 1430,
+        "clientW": 1430,
+        "h1": true
+      },
+      "checks": {
+        "h1": true,
+        "tagCount": true,
+        "qiMark": true,
+        "sequenceOnFirst": true,
+        "noOverflow": true
+      },
+      "pass": true
+    },
+    {
+      "w": 390,
+      "theme": "deng",
+      "values": {
+        "tagCount": 24,
+        "firstTagText": "南次一经",
+        "firstTagBefore": "\"其\" counter(seg, cjk-ideographic) \" · \"",
+        "allBeforeHaveQi": true,
+        "citeBeforeContent": null,
+        "sealContrast": null,
+        "scrollW": 390,
+        "clientW": 390,
+        "h1": true
+      },
+      "checks": {
+        "h1": true,
+        "tagCount": true,
+        "qiMark": true,
+        "sequenceOnFirst": true,
+        "noOverflow": true
+      },
+      "pass": true
+    },
+    {
+      "page": "catalog/jiuweihu",
+      "w": 1440,
+      "theme": "deng",
+      "values": {
+        "tagCount": 0,
+        "firstTagText": null,
+        "firstTagBefore": null,
+        "allBeforeHaveQi": true,
+        "citeBeforeContent": "\"曰\"",
+        "sealContrast": 4.97,
+        "scrollW": 1430,
+        "clientW": 1430,
+        "h1": true
+      },
+      "checks": {
+        "yueSeal": true,
+        "noOverflow": true,
+        "h1": true
+      },
+      "pass": true
+    }
+  ]
+}

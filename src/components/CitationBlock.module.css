@@ -4,10 +4,11 @@
   overflow: hidden;
   margin: 0;
   max-width: 780px; /* E12:舒适阅读面,长行不过展 */
-  /* G05 界栏版框:四周双线(外线=border,内线=outline 负 offset),去左粗边与圆角 */
-  border: 1px solid rgba(167, 71, 56, 0.32);
+  /* G05 界栏版框:四周双线(外线=border,内线=outline 负 offset),去左粗边与圆角
+     G67 顺带归零:朱砂双裸值改 color-mix(与 SourcePromise 同法) */
+  border: 1px solid color-mix(in srgb, var(--cinnabar) 32%, transparent);
   border-radius: 0;
-  outline: 1px solid rgba(167, 71, 56, 0.16);
+  outline: 1px solid color-mix(in srgb, var(--cinnabar) 16%, transparent);
   outline-offset: -5px;
   /* 浅宣纸底(V10):与深墨页底形成阅读节奏 */
   background: var(--surface-paper);
@@ -23,7 +24,7 @@
 .cite:target {
   border-color: var(--cinnabar);
   outline-color: var(--cinnabar);
-  box-shadow: 0 8px 24px rgba(167, 71, 56, 0.18);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--cinnabar) 18%, transparent);
 }
 
 .text {
@@ -34,6 +35,23 @@
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--text-on-light);
+}
+
+/* G67 「曰」朱签:引文起首冠字(纯 CSS ::before,零 tsx;on-canvas-bright 对朱砂底=G32 已验对 ≥4.7) */
+.text::before {
+  content: '曰';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  vertical-align: -4px;
+  font-family: var(--font-title);
+  font-size: 13px;
+  color: var(--on-canvas-bright);
+  background: var(--cinnabar);
+  border-radius: 0;
 }
 
 .meta {

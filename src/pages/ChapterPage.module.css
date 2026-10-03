@@ -126,6 +126,9 @@
   display: flex;
   flex-direction: column;
   gap: 26px;
+  /* G67 篇首章符定案:「其一/其二」式(cjk-ideographic 汉字序数,纯 CSS 零 tsx);
+     counter 只在正文段 .sectionTag 上自增,gap/注段不计 */
+  counter-reset: seg;
 }
 
 .segment {
@@ -148,6 +151,14 @@
   font-size: 12px;
   letter-spacing: 0.3em;
   color: var(--paper-muted);
+}
+
+/* G67 章符:朱砂「其一 ·」冠于经名前(cjk-ideographic;楷体签语言,零 tsx) */
+.sectionTag::before {
+  counter-increment: seg;
+  content: '其' counter(seg, cjk-ideographic) ' · ';
+  font-family: var(--font-title);
+  color: var(--cinnabar);
 }
 
 .text {
