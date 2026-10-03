@@ -253,3 +253,82 @@
 
 - 站内用途:均未接线(G41 PaintingMount 起);款识文字(题名/作者/朝代)如上,真实可核。
 - 遗留:G4(八大)压缩后未单独目检;五幅接入页面时的挂轴/平铺适配与最终画质判定归 G41+。
+
+━━━━━━━━━━
+
+## 刻本扫描原件章(四阶 G60 起,S 编号;与古画卷 G 编号区分)
+
+> 四阶「古图×站内转描」并陈线的拉图依据=CLASSIC_ART_RECON.md(G59 侦察定案)。
+> 本章收录**刻本纸张扫描原件**(非矢量化件);「站内转描」指既有 12 兽版画(古今图书集成矢量化转描,见卷首)。
+> 侦察/许可核验:维基共享 API extmetadata 逐幅实测(G59 recon3+G60 下载复验),五幅均为 `File:` 页标注 Public domain。
+> 站内目录:src/assets/classic-art/(命名 <兽>-<刻本>.jpg)。
+
+### S1. 九尾狐(蒋应镐本)
+
+- 站内文件:src/assets/classic-art/jiuweihu-jiangyingke.jpg
+- 画面:九尾扇形展开,狐行山石间(木刻,纸底)
+- 刻本:蒋应镐《山海经(图)绘像》·明崇祯刊本扫描
+- 来源:Commons File 页:https://commons.wikimedia.org/wiki/File:Shahaijing-chongzhen(1628%E2%80%931644)-nanshanjing1-fol5b-ninetailfox.jpg
+- 许可:Public domain( Commons extmetadata 实测)
+- 原件:541×625,69,768 B(长边/体积均达标,免压缩)
+- 目检:2026-10-04 通过(九尾扇形清晰)
+- 款识拟:蒋应镐山海经(图)绘像 · 明崇祯刊本 · 藏所待考
+
+### S2. 鹿蜀(蒋应镐本)
+
+- 站内文件:src/assets/classic-art/lushu-jiangyingke.jpg
+- 画面:虎纹马身,驰走山间
+- 刻本:蒋应镐本(同 S1)
+- 来源:https://commons.wikimedia.org/wiki/File:Shahaijing-chongzhen(1628%E2%80%931644)-nanshanjing1-fol3b-lushu.jpg
+- 许可:Public domain(extmetadata 实测)
+- 原件:1039×865,186,648 B(达标免压缩)
+- 目检:2026-10-04 通过
+- 款识拟:同 S1
+
+### S3. 鹿蜀(汪绂本)
+
+- 站内文件:src/assets/classic-art/lushu-wangfu.jpg
+- 画面:正面立像,题字「鹿蜀」
+- 刻本:汪绂《山海经存》·清光绪二十一年(1895)石印本扫描
+- 来源:https://commons.wikimedia.org/wiki/File:Wang_fu(1895)-shanhaijingcun1-fol6a-lushu.jpg
+- 许可:Public domain(extmetadata 实测)
+- 原件:607×559,61,711 B(达标免压缩)
+- 目检:2026-10-04 通过(题字清晰)
+- 款识拟:汪绂山海经存 · 清光绪石印本 · 藏所待考
+
+### S4. 猾褢(蒋应镐本)
+
+- 站内文件:src/assets/classic-art/huahuai-jiangyingke.jpg
+- 画面:彘鬛人形兽蜷于山洞(与「穴居冬蛰」契合)
+- 刻本:蒋应镐本(同 S1)
+- 来源:https://commons.wikimedia.org/wiki/File:Shahaijing-chongzhen(1628%E2%80%931644)-nanshanjing1-fol7b-huahuai.jpg
+- 许可:Public domain(extmetadata 实测)
+- 原件:1144×576,128,931 B(达标免压缩)
+- 目检:2026-10-04 通过——**单兽成图,无需裁切;左缘约 12% 有相邻画面溢入,G61 装裱 object-position 偏右**
+- 款识拟:同 S1
+
+### S5. 长右(蒋应镐本)
+
+- 站内文件:src/assets/classic-art/changyou-jiangyingke.jpg
+- 画面:猿状兽(禺)坐于岩上(与「其状如禺而四耳」契合)
+- 刻本:蒋应镐本(同 S1)
+- 来源:https://commons.wikimedia.org/wiki/File:Shahaijing-chongzhen(1628%E2%80%931644)-nanshanjing1-fol8a-changyou.jpg
+- 许可:Public domain(extmetadata 实测)
+- 原件:601×574,62,490 B(达标免压缩)
+- 目检:2026-10-04 通过
+- 款识拟:同 S1;**长右词条 recordStatus=unverified——图属刻本原件,与词条核验状态分轨,页面须同时示「待考证」徽章**
+
+### 刻本扫描原件体积表(G60 记)
+
+| 幅 | 文件 | 尺寸 | 字节 |
+|---|---|---|---|
+| S1 | jiuweihu-jiangyingke.jpg | 541×625 | 69,768 |
+| S2 | lushu-jiangyingke.jpg | 1039×865 | 186,648 |
+| S3 | lushu-wangfu.jpg | 607×559 | 61,711 |
+| S4 | huahuai-jiangyingke.jpg | 1144×576 | 128,931 |
+| S5 | changyou-jiangyingke.jpg | 601×574 | 62,490 |
+| 合计 | 5 幅 | — | 509,548(0.49 MB,占四阶 ≤2.0MB 池 24%) |
+
+- 落选记录:三才图会精卫 svg(矢量化件非扫描,延后 G62 鉴定款识口径再定);WDL4447(单张代表图,内容鉴定延后)。
+- 站内用途:均未接线(G61 词条页 artPanel 双图结构起);资产未 import,不入 dist 体积。
+- 下载实况:首拉 2/5 遇 Wikimedia 错误页(HTML 1966B,file 验出),串行重试即过(G40 限流先例复证)。

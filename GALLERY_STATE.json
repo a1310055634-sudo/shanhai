@@ -3,12 +3,12 @@
   "phase": 4,
   "title": "图鉴格物·四阶冲刺 G59—G82",
   "totalRounds": 24,
-  "validExecutions": 1,
+  "validExecutions": 2,
   "maxValidExecutions": 24,
-  "currentRound": "G59",
+  "currentRound": "G60",
   "rounds": {
     "G59": "done",
-    "G60": "not_started",
+    "G60": "done",
     "G61": "not_started",
     "G62": "not_started",
     "G63": "not_started",
@@ -110,6 +110,13 @@
   "lastRunAt": "2026-10-04 00:4X+08:00",
   "status": "in_progress",
   "shutdown": "四阶冲刺 24 轮:G82 完成后或有效执行达 24 次,此后一切触发只读退出(不构建、不提交、不改文件),并提醒用户停用本定时任务(automation-6124ef5a)。",
+  "classicArtPull": {
+    "round": "G60",
+    "files": 5,
+    "bytes": 509548,
+    "budgetPool": "≤2.0MB",
+    "note": "S1—S5 见 ART_PROVENANCE 刻本扫描原件章;资产未 import 不入 dist;精卫 svg 延后 G62"
+  },
   "openItems": [
     "[呈报用户] 宋体大题在其他 Windows 环境落 SimSun 的屏显抽验",
     "[呈报用户] 墨痕显影动效手感与晴窗「昼间覆纸」视觉复核",
