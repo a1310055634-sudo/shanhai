@@ -3,14 +3,14 @@
   "phase": 4,
   "title": "图鉴格物·四阶冲刺 G59—G82",
   "totalRounds": 24,
-  "validExecutions": 3,
+  "validExecutions": 4,
   "maxValidExecutions": 24,
-  "currentRound": "G61",
+  "currentRound": "G62",
   "rounds": {
     "G59": "done",
     "G60": "done",
     "G61": "done",
-    "G62": "not_started",
+    "G62": "done",
     "G63": "not_started",
     "G64": "not_started",
     "G65": "not_started",
@@ -111,11 +111,11 @@
   "status": "in_progress",
   "shutdown": "四阶冲刺 24 轮:G82 完成后或有效执行达 24 次,此后一切触发只读退出(不构建、不提交、不改文件),并提醒用户停用本定时任务(automation-6124ef5a)。",
   "classicArtPull": {
-    "round": "G60",
-    "files": 5,
-    "bytes": 509548,
-    "budgetPool": "≤2.0MB",
-    "note": "S1—S5 见 ART_PROVENANCE 刻本扫描原件章;G61 已接线四词条(九尾狐/鹿蜀双版本/猾褢/长右);精卫 svg 延后 G62"
+    "round": "G60+G62",
+    "files": 6,
+    "bytes": 669425,
+    "budgetPool": "≤2.0MB(32%)",
+    "note": "S1—S6 见 ART_PROVENANCE;G61 接线四词条+G62 接线精卫(三才图会矢量化件);待补 9 兽占位签如实;三才图会家族过筛关项/WDL4447 归 G69 样张"
   },
   "openItems": [
     "[呈报用户] 宋体大题在其他 Windows 环境落 SimSun 的屏显抽验",

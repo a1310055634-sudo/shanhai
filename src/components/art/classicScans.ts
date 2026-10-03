@@ -3,6 +3,7 @@ import lushuJiangScan from '../../assets/classic-art/lushu-jiangyingke.jpg'
 import lushuWangScan from '../../assets/classic-art/lushu-wangfu.jpg'
 import huahuaiScan from '../../assets/classic-art/huahuai-jiangyingke.jpg'
 import changyouScan from '../../assets/classic-art/changyou-jiangyingke.jpg'
+import jingweiScan from '../../assets/classic-art/jingwei-sancaituhui.jpg'
 
 /**
  * G61 古图原件映射(四阶「古图×站内转描」并陈线)。
@@ -64,6 +65,15 @@ export const CLASSIC_SCANS: ClassicScan[] = [
     width: 601,
     height: 574,
     edition: '蒋应镐山海经(图)绘像 · 明崇祯刊本',
+    credit: '藏所待考',
+  },
+  {
+    // G62:三才图会矢量化件(非纸张扫描),Chrome 栅格化 1010×1400——款识如实注「矢量化件」
+    slug: 'jingwei',
+    src: jingweiScan,
+    width: 1010,
+    height: 1400,
+    edition: '三才图会 · 明万历成书 · 矢量化件',
     credit: '藏所待考',
   },
 ]

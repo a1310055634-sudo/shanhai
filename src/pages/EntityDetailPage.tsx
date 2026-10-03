@@ -122,9 +122,16 @@ export default function EntityDetailPage() {
             <div className={styles.artPanel} aria-hidden="true">
               <BeastArtwork slug={entity.slug} name={entity.canonicalName} variant="detail" />
             </div>
-            {/* G61 副位签:站内转描来源注记(仅 12 条转描版画词条;3 条原创 SVG 演绎词条不带此签) */}
+            {/* G61/G62 副位签:站内转描来源注记(仅 12 条转描版画词条;3 条原创 SVG 演绎词条不带此签);
+                G62 两态=有刻本古图(基础签)/无(加「刻本古图待补」后缀);title=hover 微说明(原生 tooltip,零 JS) */}
             {classicArtFor(entity.slug) && (
-              <span className={styles.artPanelTag}>站内转描 · 据古今图书集成</span>
+              <span
+                className={styles.artPanelTag}
+                title="站内转描版画:据《古今图书集成》禽虫典/神异典木刻插图的维基共享矢量化件,非本站手绘;逐幅来源见站内 ART_PROVENANCE 台账"
+              >
+                站内转描 · 据古今图书集成
+                {classicScansFor(entity.slug).length === 0 ? ' · 刻本古图待补' : ''}
+              </span>
             )}
             {/* G22 出处改地脚:不再是浮在画面上的灰底条(修 G01 缺口#4 文字挤压) */}
             <figcaption className={styles.artNote}>
