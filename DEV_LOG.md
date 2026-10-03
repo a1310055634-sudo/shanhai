@@ -118,3 +118,15 @@ src/assets/classic/   # 12 幅版画 SVG(7.8MB;懒加载+gzip 传输,勿再压�
 ━━━━━━━━━━
 
 *接手第一课:改任何古籍内容前,先读 EDITION_AUDIT.md 和 CONTENT_SOURCES.md;改任何视觉前,先看 DECISIONS.md 有没有踩过的坑。*
+
+━━━━━━━━━━
+
+## 三阶「画卷气象」G39—G58(2026-10-03 一日收官)
+
+- **交付**:MiMo 参考站美术八条翻译规则全落地——公版古画五幅(ART_PROVENANCE 古画卷章)/PaintingMount 装裱组件/卷首展卷(异兽行于画上)/誊抄机 Transcriber/墨痕显影 InkReveal/纸阶系统六值/行旅画卷化/谱系淡墨/山川 inkWash 晕染(纹样 1/4)/宋体大题(--font-display,验收机命中 Songti SC)/卷尾小景;零内容层改动(三处红线轮 diff 全为纯新增)。
+- **状态**:GALLERY_STATE.json=20/20 done 收官;回归矩阵 G56=17/17+画卷新增 71/71;性能 js +3.10KB/css +1.30KB(12 轮累计),位图 1.02MB(41%)。
+- **关键新坑(详 GALLERY_RUN_LOG 三阶各轮)**:①IAB 晴窗亮页截图伪影→无头 Chrome+--virtual-time-budget=6000 兜底;②upload.wikimedia.org 串行限流 429;③tokens 晴窗块 --paper/--paper-bright 重定义为墨字双档,表面必须 --surface-paper;④新版面动效令牌须 CSS 引用(JS 消费型被审计判死令牌,另行登记不计失败);⑤reduce computed animationDuration 返回 "1e-05s" 科学计数;⑥提交后必须 rebuild 复跑版本戳(G55 漏、G56 补)。
+- **遗留 12 条**:STATE.openItems(2 顺延本轮收官+10 呈报用户,含二阶六条)。
+- **收官后约定**:一切触发只读退出;定时任务请用户停用。
+
+*接手第一课:改任何古籍内容前,先读 EDITION_AUDIT.md 和 CONTENT_SOURCES.md;改任何视觉前,先看 DECISIONS.md 有没有踩过的坑。*
