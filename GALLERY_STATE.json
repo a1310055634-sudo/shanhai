@@ -99,8 +99,17 @@
     "finalShots": "GALLERY_FINAL2/(17 张 + final-assertions.json)"
   },
   "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-03 18:0X+08:00",
+  "lastRunAt": "2026-10-03 23:4X+08:00",
   "status": "completed",
+  "postSprint": [
+    {
+      "id": "POST-1",
+      "date": "2026-10-03",
+      "scope": "hero 画卷通栏化(用户反馈:画卷太局部)",
+      "commit": "a026a11",
+      "note": "贴片→贴底通栏(66vh/592px 上限)+上缘线性羽化+opacity .42+面纱纱色钉墨夜(挂轴语义);零新增字节;四档截图断言过;账本见 RUN_LOG 顶部与 SPRINT 补记;冲刺 20/20 收官态与 shutdown 条款不变"
+    }
+  ],
   "phase3Progress": {
     "paintingsReady": 5,
     "paintingsTotalBytes": 1065665,
