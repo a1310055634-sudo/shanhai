@@ -1,3 +1,15 @@
+## G66 · 图鉴卡+首页统一
+
+- **有效执行编号**:四阶 8 / 24
+- **北京时间**:2026-10-04 02:5X—03:3X(定时触发)
+- **开始 HEAD**:828db48(G65),工作树干净;.round-lock 新建,轮末删除
+- **改动**(7 文件):①`EntityCard.module.css` **纸卡化**——卡面 --ink-deep→--surface-paper(画心仍墨夜嵌入=装裱语义);正文翻纸面墨字族(name/pinyin/meta/trait/type/status→--paper-ink/--paper-muted 双主题实测族);hover 由 name 色变改**朱砂描线下划线**(不加新动画);trait 边线裸色 rgba(88,115,103,.45) 顺带归零改 --border-normal;status 墨字+朱砂点(图形 3:1 档/文字 4.5 档分轨);fav 浮钮在画心暗区不变②首页模块卡**裸色归零 19 处**(dev/round66-sweep.mjs 带计数守卫):165/135/91 族→边框令牌、177,139,86 族(=G12 前旧金 #b85545 时代字面值!)→现行金令牌、167,71,56/143,150,141/38,48,43 族→color-mix(令牌 α%)——G47 color-mix 先例;#b85545 hover→color-mix(cinnabar 80%+on-canvas-bright)
+- **验收(dev/round66-verify.mjs+round66-results.json,6 档 6/6)**:新增 CSS 行零裸色(git diff 逐行扫,6 文件);卡面 rgb=244,236,223(灯下)/247,241,227(晴窗)对 --surface-paper 实测值;卡内 name/type/meta/status 对比度 **11.63/7/7/11.63(灯下)12.7/6.79/6.79/12.7(晴窗)**;三视口 390/768/1440 零溢出;截图 4 张目检(宣纸卡浮墨夜,版画嵌装和谐)
+- **断言口径坑(两处)**:①`[class*="name"]` 先命中 nameRow 容器(继承浅字)→灯下 1.24 假红,须 `[class*="nameRow"] [class*="name"]` 取真名;②首页无 EntityCard,card 断言套 home=恒假,首页走专断言(h1+journeyEntry+零溢出)
+- **提交**:主提交(组件+CSS+脚本/结果+账本)
+- **状态**:done(A1 零裸色✓;A2 三视口✓;A3 截图✓;A4 build/src/data 零 diff✓)
+- **遗留与下轮入口**:G67 排印细节(篇首章符/引文块界栏+「曰」朱签,零数据改动,选型入 DESIGN)
+
 ## G65 · 长卷装裱补全
 
 - **有效执行编号**:四阶 6→7 / 24

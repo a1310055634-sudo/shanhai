@@ -9,9 +9,9 @@
   grid-template-columns: 7fr 5fr;
   gap: 48px;
   /* G11 界栏同族:外线+内线,圆角归零 */
-  border: 1px solid rgba(165, 135, 91, 0.32);
+  border: 1px solid var(--border-normal);
   border-radius: 0;
-  outline: 1px solid rgba(165, 135, 91, 0.16);
+  outline: 1px solid var(--border-weak);
   outline-offset: -5px;
   background: var(--veil-mid);
   padding: 44px 48px;
@@ -77,9 +77,9 @@
   color: var(--paper-ink);
   /* G11 对齐 CitationBlock 界栏:双线,去左粗边与圆角 */
   background: var(--surface-paper);
-  border: 1px solid rgba(167, 71, 56, 0.32);
+  border: 1px solid color-mix(in srgb, var(--cinnabar) 32%, transparent);
   border-radius: 0;
-  outline: 1px solid rgba(167, 71, 56, 0.16);
+  outline: 1px solid color-mix(in srgb, var(--cinnabar) 16%, transparent);
   outline-offset: -4px;
   padding: 16px 20px 14px 18px;
 }
@@ -114,7 +114,7 @@
 }
 
 .primary:hover {
-  background: #b85545;
+  background: color-mix(in srgb, var(--cinnabar) 80%, var(--on-canvas-bright));
 }
 
 .swap {
@@ -146,7 +146,7 @@
   flex-direction: column;
   justify-content: flex-end;
   gap: 18px;
-  border-left: 1px solid rgba(143, 150, 141, 0.2);
+  border-left: 1px solid color-mix(in srgb, var(--on-canvas-muted) 20%, transparent);
   padding-left: 44px;
 }
 
@@ -155,7 +155,7 @@
   height: 72px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(177, 139, 86, 0.6);
+  border: 1px solid var(--border-strong);
   color: var(--old-gold);
   font-family: var(--font-serif);
   font-size: 40px;
@@ -181,7 +181,7 @@
 
   .feature {
     border-left: none;
-    border-top: 1px solid rgba(143, 150, 141, 0.2);
+    border-top: 1px solid color-mix(in srgb, var(--on-canvas-muted) 20%, transparent);
     padding-left: 0;
     padding-top: 24px;
     flex-direction: row;

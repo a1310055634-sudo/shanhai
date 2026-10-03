@@ -1,0 +1,135 @@
+{
+  "bareAdded": 0,
+  "results": [
+    {
+      "path": "/catalog",
+      "w": 1440,
+      "theme": "deng",
+      "values": {
+        "cardCount": 15,
+        "cardBg": "244,236,223",
+        "nameContrast": 11.63,
+        "typeContrast": 7,
+        "metaContrast": 7,
+        "statusContrast": 11.63,
+        "scrollW": 1430,
+        "clientW": 1430,
+        "h1": true
+      },
+      "checks": {
+        "cardPresent": true,
+        "bgOk": true,
+        "contrast": true,
+        "noOverflow": true,
+        "h1": true
+      },
+      "pass": true
+    },
+    {
+      "path": "/catalog",
+      "w": 1440,
+      "theme": "qing",
+      "values": {
+        "cardCount": 15,
+        "cardBg": "247,241,227",
+        "nameContrast": 12.7,
+        "typeContrast": 6.79,
+        "metaContrast": 6.79,
+        "statusContrast": 12.7,
+        "scrollW": 1430,
+        "clientW": 1430,
+        "h1": true
+      },
+      "checks": {
+        "cardPresent": true,
+        "bgOk": true,
+        "contrast": true,
+        "noOverflow": true,
+        "h1": true
+      },
+      "pass": true
+    },
+    {
+      "path": "/catalog",
+      "w": 390,
+      "theme": "deng",
+      "values": {
+        "cardCount": 15,
+        "cardBg": "244,236,223",
+        "nameContrast": 11.63,
+        "typeContrast": 7,
+        "metaContrast": 7,
+        "statusContrast": 11.63,
+        "scrollW": 390,
+        "clientW": 390,
+        "h1": true
+      },
+      "checks": {
+        "cardPresent": true,
+        "bgOk": true,
+        "contrast": true,
+        "noOverflow": true,
+        "h1": true
+      },
+      "pass": true
+    },
+    {
+      "path": "/",
+      "w": 1440,
+      "theme": "deng",
+      "values": {
+        "h1": true,
+        "journeyEntry": true,
+        "scrollW": 1430,
+        "clientW": 1430
+      },
+      "checks": {
+        "h1": true,
+        "journeyEntry": true,
+        "noOverflow": true
+      },
+      "pass": true
+    },
+    {
+      "path": "/",
+      "w": 768,
+      "theme": "deng",
+      "values": {
+        "h1": true,
+        "journeyEntry": true,
+        "scrollW": 758,
+        "clientW": 758
+      },
+      "checks": {
+        "h1": true,
+        "journeyEntry": true,
+        "noOverflow": true
+      },
+      "pass": true
+    },
+    {
+      "path": "/catalog",
+      "w": 768,
+      "theme": "deng",
+      "values": {
+        "cardCount": 15,
+        "cardBg": "244,236,223",
+        "nameContrast": 11.63,
+        "typeContrast": 7,
+        "metaContrast": 7,
+        "statusContrast": 11.63,
+        "scrollW": 758,
+        "clientW": 758,
+        "h1": true
+      },
+      "checks": {
+        "cardPresent": true,
+        "bgOk": true,
+        "contrast": true,
+        "noOverflow": true,
+        "h1": true
+      },
+      "pass": true
+    }
+  ]
+}

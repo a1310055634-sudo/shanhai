@@ -1,4 +1,5 @@
-/* G12 界栏同族(G11 语言):外线+内线,圆角归零,去投影 */
+/* G12 界栏同族(G11 语言):外线+内线,圆角归零,去投影
+   G66 纸卡化:卡面改宣纸表面(画心仍墨夜嵌入=装裱语义),正文翻纸面墨字族 */
 .card {
   position: relative;
   display: flex;
@@ -7,7 +8,7 @@
   border-radius: 0;
   outline: 1px solid var(--border-weak);
   outline-offset: -5px;
-  background: var(--ink-deep);
+  background: var(--surface-paper);
   overflow: hidden;
   transition:
     border-color var(--duration-hover) var(--ease-soft),
@@ -122,7 +123,7 @@
 }
 
 .type {
-  color: var(--verdigris-text);
+  color: var(--paper-muted);
   font-family: var(--font-serif);
   font-size: 12px;
   letter-spacing: 0.18em;
@@ -139,18 +140,22 @@
   font-family: var(--font-serif);
   font-size: 24px;
   letter-spacing: 0.14em;
-  color: var(--paper);
+  color: var(--paper-ink);
   transition: color var(--duration-hover) var(--ease-soft);
 }
 
 .card:hover .name {
-  color: var(--paper-bright);
+  /* G66 纸卡化:hover 线由色变改朱砂描线(墨字不动,不加新动画) */
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--cinnabar);
+  text-decoration-thickness: 1.5px;
 }
 
 .pinyin {
   font-size: 12px;
   letter-spacing: 0.18em;
-  color: var(--text-muted);
+  color: var(--paper-muted);
   white-space: nowrap;
 }
 
@@ -193,7 +198,7 @@
   gap: 8px;
   font-size: 13px;
   letter-spacing: 0.08em;
-  color: var(--old-gold);
+  color: var(--paper-muted);
 }
 
 .metaDivider {
@@ -202,9 +207,9 @@
 
 .trait {
   font-size: 13px;
-  color: var(--text-muted);
+  color: var(--paper-muted);
   line-height: 1.75;
-  border-left: 1px solid rgba(88, 115, 103, 0.45);
+  border-left: 1px solid var(--border-normal);
   padding-left: 10px;
   margin-top: auto;
 }
@@ -216,13 +221,14 @@
   letter-spacing: 0.2em;
 }
 
-/* E11:核验状态降为纯文字小标,不再以描边框与名称争夺视线 */
+/* E11:核验状态降为纯文字小标,不再以描边框与名称争夺视线
+   G66 纸卡化:墨字+朱砂点(点为图形标识 3:1 档,文字走纸面墨字保 4.5) */
 .status {
   display: inline-block;
   font-size: 11.5px;
   letter-spacing: 0.2em;
   padding: 0;
-  color: var(--old-gold);
+  color: var(--paper-ink);
 }
 
 .status::before {
@@ -231,17 +237,17 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--old-gold);
+  background: var(--cinnabar);
   margin-right: 6px;
   vertical-align: 2px;
 }
 
 .status.variant,
 .status.unverified {
-  color: var(--text-muted);
+  color: var(--paper-muted);
 }
 
 .status.variant::before,
 .status.unverified::before {
-  background: var(--text-muted);
+  background: var(--paper-muted);
 }

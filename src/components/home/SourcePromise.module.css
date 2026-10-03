@@ -20,7 +20,7 @@
   font-size: 15px;
   letter-spacing: 0.2em;
   color: var(--cinnabar);
-  border: 1px solid rgba(167, 71, 56, 0.55);
+  border: 1px solid color-mix(in srgb, var(--cinnabar) 55%, transparent);
   padding: 6px 9px;
   border-radius: 2px;
   display: inline-block;
@@ -53,7 +53,7 @@
 .headRule {
   margin-top: 20px;
   height: 1px;
-  background: linear-gradient(to right, rgba(167, 71, 56, 0.5), rgba(167, 71, 56, 0.06));
+  background: linear-gradient(to right, color-mix(in srgb, var(--cinnabar) 50%, transparent), color-mix(in srgb, var(--cinnabar) 6%, transparent));
 }
 
 .list {
@@ -63,7 +63,7 @@
 }
 
 .item {
-  border-top: 1px solid rgba(38, 48, 43, 0.18);
+  border-top: 1px solid color-mix(in srgb, var(--paper-ink) 18%, transparent);
   padding: 18px 0 20px;
 }
 
@@ -98,7 +98,7 @@
   margin-left: 8px;
   color: var(--cinnabar);
   text-decoration: none;
-  border-bottom: 1px solid rgba(167, 71, 56, 0.45);
+  border-bottom: 1px solid color-mix(in srgb, var(--cinnabar) 45%, transparent);
   padding-bottom: 1px;
 }
 
