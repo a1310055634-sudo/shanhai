@@ -408,34 +408,56 @@
   }
 }
 
-/* G42 卷首展卷:公版古画作最深景深层(兰竹图,定宽贴右下,四周 radial 羽化禁直角硬边;
-   定宽锚定参照任务书附录 A 的 1440 设计稿口径,羽化替代参考站的预抠 PNG)。
-   DOM 位于 .scene 之前=场景层绘制其上(异兽剪影行于古画上,古今对撞);文字 z2 不入画心。
-   贴右下为实测修正(G42 首版贴左下:幽灵按钮压画心亮区不可读);
-   eager:首屏画卷属 LCP 邻域,lazy 会推迟绘制(与内容图 lazy 纪律的差异如实记录)。 */
+/* 画卷通栏化(2026-10-03 用户反馈修正,POST-G58;原 G42 右下定宽贴片存在感不足):
+   改为参考站同款「贴底通栏底画」——画卷自 hero 底边全长升起,height min(66vh,592px)
+   对齐附录 A 的 592px 横卷带口径;只羽上缘(透明→半透 26%→58% 全显),底缘 84% 后
+   微收 35%,防与下节纸阶硬接;opacity .42 把纸色画压成墨夜里的大气层,
+   标题/按钮仍走 --on-canvas 恒亮体系。挂轴语义不变:hero 双主题恒墨夜。
+   eager(LCP 邻域)/显式宽高防 CLS/alt 空装饰 等纪律沿用 G42;InkReveal 面纱
+   mask 与本值镜像同步(两模块各持一份,改此处必改彼处)。 */
 .heroPaint {
   position: absolute;
-  right: max(1vw, 12px);
-  bottom: 92px;
-  width: min(44vw, 640px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: min(66vh, 592px);
   pointer-events: none;
+  /* 墨痕面纱纱色本作用域恒定(通栏化实测修正):hero 挂轴语义=双主题恒墨夜,
+     画卷与面纱均不入主题翻转——晴窗宣纸纱(233,222,202)在通栏画幅上会染出
+     灰白带、与上方墨夜断层,金字幽灵按钮随之不可读。G44 令牌机制不破:
+     canvas 每次重涂仍读 --ink-reveal-veil,只是本作用域把它钉在灯下值。 */
+  --ink-reveal-veil: 31, 44, 38;
 }
 
 .heroPaintImg {
   display: block;
   width: 100%;
-  height: auto;
-  -webkit-mask-image: radial-gradient(ellipse 62% 46% at 50% 50%, #000 52%, transparent 96%);
-  mask-image: radial-gradient(ellipse 62% 46% at 50% 50%, #000 52%, transparent 96%);
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  opacity: 0.42;
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 26%,
+    #000 58%,
+    #000 84%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.5) 26%,
+    #000 58%,
+    #000 84%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
 }
 
 @media (max-width: 640px) {
-  /* 390 档:画卷变全宽羽化底带,贴底留出 caption/scrollCue 线,视觉主体(中丛墨兰+题跋)居中 */
+  /* 390 档:与桌面同构的贴底通栏,高度收窄给文案让竖向空间 */
   .heroPaint {
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 58px;
-    width: max(130%, 480px);
+    height: min(48vh, 400px);
   }
 
   /* 窄屏幽灵按钮与画卷上沿注定同带(hero 竖向空间不足),按规则 5 衬纸底:

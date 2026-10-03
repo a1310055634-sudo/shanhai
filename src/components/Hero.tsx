@@ -20,10 +20,12 @@ export default function Hero() {
 
   return (
     <section className={styles.hero} ref={ref} aria-label="山海开卷">
-      {/* G42 卷首展卷:公版古画(〔清〕郑燮 兰竹图)作最深景深层,定宽贴左下、
-          radial mask 四周羽化(矩形扫描件禁直角硬边)。场景 SVG 层绘制其上
-          (异兽剪影行于古画上=古今对撞);文字层 z2。G43 誊抄 / G44 墨痕显影
-          在本层落位(data-hero-paint 锚)。装饰背景:alt 留空+aria-hidden。 */}
+      {/* 画卷通栏底画(2026-10-03 用户反馈修正,POST-G58;原 G42 定宽贴片存在感不足):
+          公版古画(〔清〕郑燮 兰竹图)贴 hero 底边通栏升起,上缘线性羽化溶入墨夜,
+          opacity .42 压成大气层(矩形扫描件的硬边由贴边+羽化双路消除)。
+          场景 SVG 层绘制其上(异兽剪影行于古画上=古今对撞);文字层 z2。
+          G43 誊抄 / G44 墨痕显影在本层落位(data-hero-paint 锚)。
+          装饰背景:alt 留空+aria-hidden。 */}
       <div className={styles.heroPaint} aria-hidden="true" data-hero-paint="">
         <img
           className={styles.heroPaintImg}
