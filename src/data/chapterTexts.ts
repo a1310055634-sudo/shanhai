@@ -250,10 +250,28 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-kuaiji'],
     },
     {
-      id: 'seg-ns2-gap-kuaiji-end',
+      // G72:夷山段(2026-10-04 经底本B1 存档 L10×B2 第52行两源净化正文逐字一致
+      // 录入,底本A回核挂账;无郭注)。湨水承会稽之山「注于湨」(湨=泽),照录不注。
+      id: 'seg-ns2-yishan',
+      kind: 'text',
+      section: '南次二经',
+      text: '又东五百里，曰夷山。无草木，多沙石，湨水出焉，而南流注于列涂。',
+      relatedLocationIds: ['loc-yishan'],
+    },
+    {
+      // G72:僕勾之山段(同上,B1 L11×B2 第54行)。异文「勾一作夕」登记疑14
+      // (variants),正文从两源共用作「勾」;「僕」简体作「仆」。
+      id: 'seg-ns2-pugou-shan',
+      kind: 'text',
+      section: '南次二经',
+      text: '又东五百里，曰仆勾之山，其上多金玉，其下多草木，无鸟兽，无水。',
+      relatedLocationIds: ['loc-pugou'],
+    },
+    {
+      id: 'seg-ns2-gap-xian-end',
       kind: 'gap',
       section: '南次二经',
-      note: '夷山以下八山待录入(G71 录至会稽之山第九山,余八山留待 G72—G74 如实待续,不凑数;核不动不上线)',
+      note: '咸陰之山里距两源互异(B1「四百里」/B2「五百里」),正文两源不一致未录,待底本A回核裁决(疑15);洵山以下五山待录入(G73—G74);不凑数;核不动不上线',
     },
     {
       // G30:二经篇末总述(底本B1工作稿存档×B2第68行两源一致;祠礼句照录,

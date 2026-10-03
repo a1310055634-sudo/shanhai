@@ -1,0 +1,52 @@
+{
+  "chapter": {
+    "values": {
+      "h1": true,
+      "yi": "又东五百里，曰夷山。无草木，多沙石，湨水出焉，而南流注于列涂。",
+      "pugou": "又东五百里，曰仆勾之山，其上多金玉，其下多草木，无鸟兽，无水。",
+      "marks": true,
+      "gapUpdated": true,
+      "segCount": 29,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "yiVerbatim": true,
+      "pugouVerbatim": true,
+      "marks": true,
+      "gapUpdated": true,
+      "annotateAlive": true,
+      "noOverflow": true
+    }
+  },
+  "atlas": {
+    "values": {
+      "overlaps": 0,
+      "pairs": [],
+      "seals": 17,
+      "rings": 11,
+      "hasNew": true,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "newNodes": true,
+      "sealsOk": true,
+      "ringsOk": true,
+      "noOverlap": true,
+      "noOverflow": true
+    }
+  },
+  "atlas390": {
+    "overlaps": 0,
+    "pass": true
+  },
+  "home": {
+    "verified": "12"
+  },
+  "dt": {
+    "yiRow": true,
+    "pugouRow": true
+  },
+  "pass": true
+}

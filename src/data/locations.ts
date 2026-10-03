@@ -854,6 +854,7 @@ export const LOCATIONS: Location[] = [
     subClassic: '南次二经',
     sourceOrder: 9,
     previousLocationId: 'loc-chengshan',
+    nextLocationId: 'loc-yishan', // G72:夷山建站
     sourceDirection: '又东',
     sourceDistance: '五百里',
     relatedEntityIds: [],
@@ -887,7 +888,74 @@ export const LOCATIONS: Location[] = [
         verifiedAt: '2026-10-04',
       },
     ],
-    mapPosition: { x: 67.3, y: 91, region: '南山经' }, // G71:尾列再下一行(避开箕尾矩形;两轮实测标定)
+    mapPosition: { x: 69.5, y: 91, region: '南山经' }, // G72:右移避让夷山(两轮实测标定同法)
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G72:南次二经第十山(2026-10-04 经底本B1 存档 L10×B2 第52行两源净化正文
+    // 逐字一致后录入,底本A回核挂账;无郭注)。湨水上承会稽「注于湨」。
+    id: 'loc-yishan',
+    canonicalName: '夷山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 10,
+    previousLocationId: 'loc-kuaiji',
+    nextLocationId: 'loc-pugou',
+    sourceDirection: '又东',
+    sourceDistance: '五百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东五百里，曰夷山。无草木，多沙石，湨水出焉，而南流注于列涂。',
+        chapter: '南山经',
+        section: '南次二经第十山',
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测软拦截页(200 但正文零命中),恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        verificationNote:
+          '2026-10-04 建站核验(G72):底本B1(存档 L10行)与底本B2(存档 第52行)净化正文逐字一致;上屏为简体逐字转换(塗→涂,对照表见 EDITION_AUDIT.md 三之补9);本山无郭璞注。底本A(ctext zhs)2026-10-04 复测 200 但正文零命中(软拦截),A×B 回核挂账。',
+        verifiedAt: '2026-10-04',
+      },
+    ],
+    mapPosition: { x: 75.5, y: 89.5, region: '南山经' }, // G72:尾列续排(实测二轮:75.5 避会稽右缘)
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G72:南次二经第十一山(核验路径同 loc-yishan:B1 L11×B2 第54行)。
+    // 异文「勾一作夕」两源同记,登记疑14;「僕」简体作「仆」。
+    id: 'loc-pugou',
+    canonicalName: '仆勾之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 11,
+    previousLocationId: 'loc-yishan',
+    sourceDirection: '又东',
+    sourceDistance: '五百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东五百里，曰仆勾之山，其上多金玉，其下多草木，无鸟兽，无水。',
+        chapter: '南山经',
+        section: '南次二经第十一山',
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测软拦截页(200 但正文零命中),恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText:
+          '「僕勾」之「勾」:底本B1页面自带异文标注「僕勾一作「夕」」;底本B2四库本郭璞注同记{{另|勾|夕}}(存档第 54 行)。两源正文均作「勾」。本站从两源正文用字「勾」,异文登记疑14。底本A待回核。',
+        verificationNote:
+          '2026-10-04 建站核验(G72):底本B1(存档 L11行)与底本B2(存档 第54行)净化正文逐字一致;上屏为简体逐字转换(僕→仆/鳥獸→鸟兽,对照表见 EDITION_AUDIT.md 三之补9)。底本A(ctext zhs)2026-10-04 复测软拦截页,A×B 回核挂账。',
+        verifiedAt: '2026-10-04',
+      },
+    ],
+    mapPosition: { x: 77, y: 92.6, region: '南山经' }, // G72:尾列末位(y 三档错行,实测裁决)
     modernHypotheses: [],
     recordStatus: 'unverified',
   },
