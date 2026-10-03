@@ -1,0 +1,56 @@
+{
+  "chapter": {
+    "values": {
+      "h1": true,
+      "quwu": "又东五百里，曰区吴之山，无草木，多沙石。鹿水出焉，而南流注于滂水。",
+      "luwu": "又东五百里，曰鹿吴之山，上无草木，多金石。泽更之水出焉，而南流注于滂水。水有兽焉，名曰蛊雕，其状如雕而有角，其音如婴儿之音，是食人。",
+      "qiwu": "东五百里，曰漆吴之山，无草木，多博石，无玉。处于东海，望丘山，其光载出载入，是惟日次。",
+      "marks": true,
+      "gapUpdated": true,
+      "segCount": 34,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "quwuVerbatim": true,
+      "luwuVerbatim": true,
+      "qiwuVerbatim": true,
+      "marks": true,
+      "gapUpdated": true,
+      "annotateAlive": true,
+      "noOverflow": true
+    }
+  },
+  "atlas": {
+    "values": {
+      "overlaps": 0,
+      "pairs": [],
+      "seals": 17,
+      "rings": 16,
+      "hasNew": true,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "newNodes": true,
+      "sealsOk": true,
+      "ringsOk": true,
+      "noOverlap": true,
+      "noOverflow": true
+    }
+  },
+  "atlas390": {
+    "overlaps": 0,
+    "pass": true
+  },
+  "home": {
+    "verified": "12"
+  },
+  "dt": {
+    "quwuRow": true,
+    "luwuRow": true,
+    "qiwuRow": true,
+    "closedLoop": true
+  },
+  "pass": true
+}

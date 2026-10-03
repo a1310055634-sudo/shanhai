@@ -8,7 +8,7 @@
  *      底本B = 中文维基文库郭璞注本(四庫全書底本),存档
  *      EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt 与
  *      wikisource-nanshan1-20260927.txt。
- *  二、疑点登记(疑1—疑16):候核疑点与其处理状态,与 GALLERY_SPRINT.md
+ *  二、疑点登记(疑1—疑17):候核疑点与其处理状态,与 GALLERY_SPRINT.md
  *      「二阶内容疑点清单」逐条对应(id 相同)。
  *  三、站内引文异文标注:不自建第三份,页面运行时从 LOCATIONS[].citations[].variantText
  *      派生(单一来源)。
@@ -286,6 +286,13 @@ export const DOUBTS: DoubtItem[] = [
     topic: '洵山「洵」/「旬」异文',
     evidence: '底本 B1 页面自带异文标注「洵一作「旬」山」;底本 B2 四库本郭璞注同记{{另|洵|旬}}(存档第 58 行)。两源正文均作「洵」。',
     handling: '正文从两源共用作「洵」,异文照录于 loc-xunshan variantText 与本表;待底本 A 照录后按底本政策处理。G73 新增。',
+    state: '待底本A回核',
+  },
+  {
+    id: '疑17',
+    topic: '鹿吳之山「蠱雕」之「蠱」/「纂」异文',
+    evidence: '底本 B1 页面自带异文标注「名曰蠱一作「纂」雕」;底本 B2 四库本郭璞注同记{{另|蠱|纂}}(存档第 64 行)。两源正文均作「蠱」。',
+    handling: '正文从两源共用作「蠱」(简体「蛊」),异文照录于 loc-luwu variantText 与本表;待底本 A 照录后按底本政策处理。蠱雕词条候选(G75)。G74 新增。',
     state: '待底本A回核',
   },
 ]

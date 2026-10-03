@@ -1029,6 +1029,7 @@ export const LOCATIONS: Location[] = [
     subClassic: '南次二经',
     sourceOrder: 13,
     previousLocationId: 'loc-xunshan',
+    nextLocationId: 'loc-quwu', // G74:區吳之山建站
     sourceDirection: '又东',
     sourceDistance: '四百里',
     relatedEntityIds: [],
@@ -1061,6 +1062,122 @@ export const LOCATIONS: Location[] = [
       },
     ],
     mapPosition: { x: 86, y: 91, region: '南山经' }, // G73:尾列续排(实测裁决)
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G74:南次二经第十四山(2026-10-04 经底本B1 存档 L15×B2 第62行两源净化正文
+    // 逐字一致后录入,底本A回核挂账;无郭注)。
+    id: 'loc-quwu',
+    canonicalName: '区吴之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 14,
+    previousLocationId: 'loc-hushao',
+    nextLocationId: 'loc-luwu',
+    sourceDirection: '又东',
+    sourceDistance: '五百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东五百里，曰区吴之山，无草木，多沙石。鹿水出焉，而南流注于滂水。',
+        chapter: '南山经',
+        section: '南次二经第十四山',
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测软拦截页(200 但正文零命中),恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        verificationNote:
+          '2026-10-04 建站核验(G74):底本B1(存档 L15行)与底本B2(存档 第62行)净化正文逐字一致;上屏为简体逐字转换(東→东/無→无/區→区,对照表见 EDITION_AUDIT.md 三之补11);本山无郭璞注。底本A(ctext zhs)2026-10-04 复测软拦截页,A×B 回核挂账。',
+        verifiedAt: '2026-10-04',
+      },
+    ],
+    mapPosition: { x: 89, y: 94.2, region: '南山经' }, // G74:下移一行避虖勺(实测一轮收敛)
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G74:南次二经第十五山(核验路径同 loc-quwu:B1 L16×B2 第64行)。
+    // 异文「蠱一作纂」两源同记=疑17;兽「蠱雕」句照录(词条候选 G75,
+    // 同源分册 SVG「南山經-蠱雕.svg」已在库——G62 侦察线索)。
+    id: 'loc-luwu',
+    canonicalName: '鹿吴之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 15,
+    previousLocationId: 'loc-quwu',
+    nextLocationId: 'loc-qiwu',
+    sourceDirection: '又东',
+    sourceDistance: '五百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东五百里，曰鹿吴之山，上无草木，多金石。泽更之水出焉，而南流注于滂水。水有兽焉，名曰蛊雕，其状如雕而有角，其音如婴儿之音，是食人。',
+        chapter: '南山经',
+        section: '南次二经第十五山',
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测软拦截页(200 但正文零命中),恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText:
+          '「蠱雕」之「蠱」:底本B1页面自带异文标注「蠱一作「纂」雕」;底本B2四库本郭璞注同记{{另|蠱|纂}}(存档第 64 行)。两源正文均作「蠱」。本站从两源正文用字「蠱」(简体「蛊」),异文登记疑17。底本A待回核。',
+        verificationNote:
+          '2026-10-04 建站核验(G74):底本B1(存档 L16行)与底本B2(存档 第64行)净化正文逐字一致;上屏为简体逐字转换(吳→吴/澤→泽/蠱→蛊/嬰兒→婴儿,对照表见 EDITION_AUDIT.md 三之补11)。兽「蠱雕」句照录,词条候选留 G75。底本A(ctext zhs)2026-10-04 复测软拦截页,A×B 回核挂账。',
+        verifiedAt: '2026-10-04',
+      },
+    ],
+    mapPosition: { x: 94, y: 89.5, region: '南山经' }, // G74:尾列(y 三档错行,实测裁决)
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G74:南次二经第十六山/末录(第十七山咸陰之山疑15 悬置)。
+    // (核验路径同 loc-quwu:B1 L17×B2 第66行;「東五百里」无「又」字两源同。
+    // 郭注 3 条存档。)
+    id: 'loc-qiwu',
+    canonicalName: '漆吴之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 16,
+    previousLocationId: 'loc-luwu',
+    sourceDirection: '东',
+    sourceDistance: '五百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '东五百里，曰漆吴之山，无草木，多博石，无玉。处于东海，望丘山，其光载出载入，是惟日次。',
+        chapter: '南山经',
+        section: '南次二经第十六山(末录;第十七山咸陰之山悬置见疑15)',
+        guoPuNotes: [
+          {
+            attach: '无玉',
+            text: '可以爲博碁石',
+          },
+          {
+            attach: '其光載出載入',
+            text: '神光之所潛耀',
+          },
+          {
+            attach: '是惟日次',
+            text: '是日景之所次舍',
+          },
+        ],
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测软拦截页(200 但正文零命中),恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        verificationNote:
+          '2026-10-04 建站核验(G74):底本B1(存档 L17行,剥〈〉夹注)与底本B2(存档 第66行,剥{{*|}}夹注)净化正文逐字一致;「東五百里」无「又」字两源同(与一经经首同款)。上屏为简体逐字转换(東→东/無→无,对照表见 EDITION_AUDIT.md 三之补11),注文保持繁体存档。底本A(ctext zhs)2026-10-04 复测软拦截页,A×B 回核挂账。',
+        verifiedAt: '2026-10-04',
+      },
+    ],
+    mapPosition: { x: 98, y: 92.6, region: '南山经' }, // G74:尾列末位贴东缘(实测裁决)
     modernHypotheses: [],
     recordStatus: 'unverified',
   },

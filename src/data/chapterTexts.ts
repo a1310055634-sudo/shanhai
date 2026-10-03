@@ -291,10 +291,31 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-hushao'],
     },
     {
-      id: 'seg-ns2-gap-quwu-end',
-      kind: 'gap',
+      // G74:區吳之山段(2026-10-04 经底本B1 存档 L15×B2 第62行两源净化正文逐字
+      // 一致录入,底本A回核挂账;无郭注)。
+      id: 'seg-ns2-quwu-shan',
+      kind: 'text',
       section: '南次二经',
-      note: '區吳之山以下四山待录入(G73 录至虖勺之山第十三山,余四山留待 G74 如实待续,不凑数;核不动不上线)',
+      text: '又东五百里，曰区吴之山，无草木，多沙石。鹿水出焉，而南流注于滂水。',
+      relatedLocationIds: ['loc-quwu'],
+    },
+    {
+      // G74:鹿吳之山段(同上,B1 L16×B2 第64行)。异文「蠱一作纂」两源同记,
+      // 登记疑17,正文从「蠱」;兽「蠱雕」句照录(词条候选留 G75,同源分册 SVG 已在库)。
+      id: 'seg-ns2-luwu-shan',
+      kind: 'text',
+      section: '南次二经',
+      text: '又东五百里，曰鹿吴之山，上无草木，多金石。泽更之水出焉，而南流注于滂水。水有兽焉，名曰蛊雕，其状如雕而有角，其音如婴儿之音，是食人。',
+      relatedLocationIds: ['loc-luwu'],
+    },
+    {
+      // G74:漆吳之山段(同上,B1 L17×B2 第66行;二经末录山,「東五百里」无「又」字
+      // 两源同;郭注 3 条存档)。**南次二经 16/17 山录毕**(咸陰之山疑15 悬置)。
+      id: 'seg-ns2-qiwu-shan',
+      kind: 'text',
+      section: '南次二经',
+      text: '东五百里，曰漆吴之山，无草木，多博石，无玉。处于东海，望丘山，其光载出载入，是惟日次。',
+      relatedLocationIds: ['loc-qiwu'],
     },
     {
       // G30:二经篇末总述(底本B1工作稿存档×B2第68行两源一致;祠礼句照录,
@@ -363,6 +384,7 @@ export const GLOSSARY: Record<string, { pinyin: string; hint?: string }> = {
   枏: { pinyin: 'nán', hint: '同「楠」,郭注「音南」' },
   芘: { pinyin: 'pí', hint: '芘蠃,郭注「紫色螺也」' },
   蠃: { pinyin: 'luǒ', hint: '芘蠃,郭注「紫色螺也」' },
+  蠱: { pinyin: 'gǔ', hint: '蠱雕,郭注异文「一作纂」(疑17)' },
   狌: { pinyin: 'xīng', hint: '狌狌' },
   禺: { pinyin: 'yú', hint: '旧注以为猿猴类,确切所指待考' },
   䨼: { pinyin: 'hù', hint: '青色矿物颜料,训释待考' },
