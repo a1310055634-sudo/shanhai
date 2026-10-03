@@ -133,6 +133,17 @@
     background: linear-gradient(270deg, var(--ink-night), transparent);
   }
 
+  /* G68 遗留清偿(RUN_LOG L542 观察项):晴窗下 --ink-night 被重定义为纸色,
+     渐隐起点与导航纱 --nav-veil(宣纸 0.92)差一档亮度=「略偏亮带」;
+     晴窗覆盖为纱面本色渐隐,灯下墨夜渐变不动 */
+  html[data-theme='qing'] .nav.fadeLeft::before {
+    background: linear-gradient(90deg, var(--nav-veil), transparent);
+  }
+
+  html[data-theme='qing'] .nav.fadeRight::after {
+    background: linear-gradient(270deg, var(--nav-veil), transparent);
+  }
+
   .navList {
     width: auto;
     min-width: 100%;

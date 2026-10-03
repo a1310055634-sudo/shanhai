@@ -1,3 +1,16 @@
+## G68 · 双主题与遗留清偿
+
+- **有效执行编号**:四阶 10 / 24
+- **北京时间**:2026-10-04 03:4X—04:2X(定时触发)
+- **开始 HEAD**:a4413f0(G67),工作树干净;.round-lock 新建,轮末删除
+- **渐隐带清偿(RUN_LOG L542 观察项,复现实测后修)**:复现取证=晴窗 390 fadeRight 激活、::after 渐变起点 rgb(233,222,202)(=晴窗 --ink-night 重定义纸色)vs 导航纱 --nav-veil rgba(221,208,180,.92)——**差一档亮度=「略偏亮带」根因**;修=`html[data-theme='qing']` 覆盖 fade 双伪元素渐变起点为 --nav-veil(灯下墨夜渐变不动);修后断言 晴窗=rgba(221,208,180,.92)/灯下=rgb(13,19,17) 不回归
+- **favicon 清偿(RUN_LOG L862)**:`public/favicon.svg`(站印「山」方章朱砂底白文,系统楷体栈零远程依赖)+index.html `<link rel="icon" type="image/svg+xml">`;**curl 实测 200 image/svg+xml+dist/index.html link 在+DOM link 断言**;console 错误采集(/ 与 /catalog)=零
+- **验收(dev/round68-verify.mjs+round68-results.json,六项全过)**:faviconHttp200✓(探针自身 cmd.exe 坑改 bash 验)/iconLinkInDom✓/qingFadeVeil✓/dengFadeUnchanged✓/consoleClean✓/overflowOk✓;截图 2 张(晴窗 390 渐隐融入纱面)
+- **呈报项边界**:页脚 29px 升 44px 待用户裁决不动;G57 其余呈报项不擅动
+- **提交**:主提交(Navigation+favicon+index.html+脚本/结果+账本)
+- **状态**:done(A1 favicon 200+link✓;A2 渐隐带前后取证+修✓;A3 console 零新增✓;A4 build/零溢出/src/data 零 diff✓)
+- **遗留与下轮入口**:G69 收藏/探索/关于画卷化补漏(About 样张区扩「刻本原件×站内转描」双列);WDL4447 书影候选在案
+
 ## G67 · 排印细节
 
 - **有效执行编号**:四阶 9 / 24

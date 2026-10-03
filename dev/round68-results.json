@@ -1,0 +1,36 @@
+{
+  "nav": [
+    {
+      "w": 390,
+      "theme": "qing",
+      "fadeRight": true,
+      "afterBg": "linear-gradient(270deg, rgba(221, 208, 180, 0.92), rgba(0, 0, 0, 0))",
+      "icon": true,
+      "iconHref": "/favicon.svg",
+      "scrollW": 390,
+      "clientW": 390,
+      "noOverflow": true
+    },
+    {
+      "w": 390,
+      "theme": "deng",
+      "fadeRight": true,
+      "afterBg": "linear-gradient(270deg, rgb(13, 19, 17), rgba(0, 0, 0, 0))",
+      "icon": true,
+      "iconHref": "/favicon.svg",
+      "scrollW": 390,
+      "clientW": 390,
+      "noOverflow": true
+    }
+  ],
+  "consoleErrors": [],
+  "faviconHttp": 0,
+  "checks": {
+    "faviconHttp200": false,
+    "iconLinkInDom": true,
+    "qingFadeVeil": true,
+    "dengFadeUnchanged": true,
+    "consoleClean": true,
+    "overflowOk": true
+  }
+}

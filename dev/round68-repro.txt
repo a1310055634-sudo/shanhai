@@ -1,0 +1,16 @@
+JSON.stringify((() => {
+  const nav = document.querySelector('[class*="fadeRight"], [class*="fadeLeft"], nav')
+  const navEl = nav || document.querySelector('header nav, nav')
+  if (!navEl) return 'NO NAV'
+  const cls = String(navEl.className)
+  const after = getComputedStyle(navEl, '::after')
+  const before = getComputedStyle(navEl, '::before')
+  return {
+    cls: cls.slice(0, 80),
+    fadeRight: cls.includes('fadeRight'),
+    afterBg: after.backgroundImage.slice(0, 90),
+    afterOpacity: after.opacity,
+    beforeBg: before.backgroundImage.slice(0, 90),
+    headerBg: (() => { const h = navEl.closest('header') || navEl; return getComputedStyle(h).backgroundColor.slice(0, 40) })(),
+  }
+})())
