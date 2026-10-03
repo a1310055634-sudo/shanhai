@@ -10,6 +10,8 @@ import { useReadingHistory } from '../hooks/useReadingHistory'
 import { findStationByEntity } from '../data/journey'
 import { LOCATIONS as ALL_LOCATIONS } from '../data/locations'
 import BeastArtwork from '../components/art/BeastArtwork'
+import { classicScansFor } from '../components/art/classicScans'
+import PaintingMount from '../components/PaintingMount'
 import { classicArtFor } from '../data/classicArt'
 import type { Entity, Trait } from '../data/types'
 import styles from './EntityDetailPage.module.css'
@@ -96,10 +98,34 @@ export default function EntityDetailPage() {
           </p>
         </div>
         <div className={styles.heroArt}>
+          {/* G61 古图×站内转描并陈:刻本原件装裱主位(PaintingMount,款识=刻本名·版次+藏所),
+              站内转描版画降副位(artPanel+来源签)。双图 aria 各述(古图 alt/转描面 aria-hidden+地脚出处)。
+              图 lazy+显式宽高防 CLS;InkReveal 不接入词条页(G49 设计内)。 */}
+          {classicScansFor(entity.slug).length > 0 && (
+            <div className={styles.classicMounts} role="group" aria-label="刻本古图原件">
+              {classicScansFor(entity.slug).map((scan) => (
+                <PaintingMount
+                  key={scan.src}
+                  src={scan.src}
+                  alt={`${entity.canonicalName}——${scan.edition}木刻插图`}
+                  width={scan.width}
+                  height={scan.height}
+                  caption={scan.edition}
+                  credit={scan.credit}
+                  loading="lazy"
+                  objectPosition={scan.objectPosition}
+                />
+              ))}
+            </div>
+          )}
           <figure className={styles.artMount}>
             <div className={styles.artPanel} aria-hidden="true">
               <BeastArtwork slug={entity.slug} name={entity.canonicalName} variant="detail" />
             </div>
+            {/* G61 副位签:站内转描来源注记(仅 12 条转描版画词条;3 条原创 SVG 演绎词条不带此签) */}
+            {classicArtFor(entity.slug) && (
+              <span className={styles.artPanelTag}>站内转描 · 据古今图书集成</span>
+            )}
             {/* G22 出处改地脚:不再是浮在画面上的灰底条(修 G01 缺口#4 文字挤压) */}
             <figcaption className={styles.artNote}>
               {(() => {

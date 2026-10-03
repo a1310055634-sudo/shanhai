@@ -17,6 +17,8 @@ interface PaintingMountProps {
   credit?: string
   loading?: 'lazy' | 'eager'
   children?: ReactNode
+  /** 画心 object-position(G61:fol7b 左缘溢入需偏右;缺省不动,既有用方零影响) */
+  objectPosition?: string
 }
 
 export default function PaintingMount({
@@ -28,6 +30,7 @@ export default function PaintingMount({
   credit,
   loading = 'lazy',
   children,
+  objectPosition,
 }: PaintingMountProps) {
   return (
     <figure className={styles.mount}>
@@ -40,6 +43,7 @@ export default function PaintingMount({
             width={width}
             height={height}
             loading={loading}
+            style={objectPosition ? { objectPosition } : undefined}
           />
           {children ? <div className={styles.floatSlot}>{children}</div> : null}
         </div>

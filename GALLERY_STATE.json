@@ -3,13 +3,13 @@
   "phase": 4,
   "title": "图鉴格物·四阶冲刺 G59—G82",
   "totalRounds": 24,
-  "validExecutions": 2,
+  "validExecutions": 3,
   "maxValidExecutions": 24,
-  "currentRound": "G60",
+  "currentRound": "G61",
   "rounds": {
     "G59": "done",
     "G60": "done",
-    "G61": "not_started",
+    "G61": "done",
     "G62": "not_started",
     "G63": "not_started",
     "G64": "not_started",
@@ -115,7 +115,7 @@
     "files": 5,
     "bytes": 509548,
     "budgetPool": "≤2.0MB",
-    "note": "S1—S5 见 ART_PROVENANCE 刻本扫描原件章;资产未 import 不入 dist;精卫 svg 延后 G62"
+    "note": "S1—S5 见 ART_PROVENANCE 刻本扫描原件章;G61 已接线四词条(九尾狐/鹿蜀双版本/猾褢/长右);精卫 svg 延后 G62"
   },
   "openItems": [
     "[呈报用户] 宋体大题在其他 Windows 环境落 SimSun 的屏显抽验",

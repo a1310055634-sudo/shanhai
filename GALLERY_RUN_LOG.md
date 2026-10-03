@@ -1,3 +1,16 @@
+## G61 · 词条页「古图×站内转描」并陈接入(一)
+
+- **有效执行编号**:四阶 3 / 24
+- **北京时间**:2026-10-04 00:4X—01:1X(定时触发)
+- **开始 HEAD**:6e6f910(G60),工作树干净;.round-lock 新建,轮末删除
+- **改动**(4 文件):①`src/components/art/classicScans.ts`(新)——G60 五幅扫描件映射(含款识/藏所/objectPosition);**落位组件目录而非 src/data:四阶硬红线「美术轮禁改 src/data/*」,数据归档调整留内容轮再议(决策记档)**;②`PaintingMount.tsx`——加可选 `objectPosition` 属性(缺省 undefined 既有用方零影响,用于 fol7b 偏右);③`EntityDetailPage.tsx`——heroArt 升双图结构:刻本原件 PaintingMount 主位(role=group aria-label「刻本古图原件」,alt 逐幅,款识=刻本名·版次+藏所待考,lazy+显式宽高),副位 artPanel 下加签「站内转描 · 据古今图书集成」(**仅 12 条转描版画词条;3 条原创 SVG 演绎词条不带此签,与「据原文描述艺术演绎」地脚区分**);④module.css——`.classicMounts`(grid 栈 16px)+`.artPanelTag`(楷体右对齐小签,零裸色值:--font-title/--fs-caption/--text-muted)
+- **验收(九页 CDP 实测,dev/round61-verify.mjs+round61-results.json)**:四有图词条(九尾狐 1 图/鹿蜀 2 图双版本/猾褢 1/长右 1)+对照 fenghuang(有签无图)+zhi(无签无图)——主位数量/款识逐字(蒋·汪)/签文两态/lazy+width/height 属性+加载/主位内零交互元素(键盘面不变)全绿;款识与签文**对比度实测 ≥4.5**(双主题抽样);390+1440 零溢出;双主题截图 5 张(dev/g61-*.png)目检过——蒋本九尾狐装裱+款识+副位转描层次符合设计
+- **新坑(口径再踩,第二次)**:1440 档「溢出」假红 7 页——`scrollWidth===innerWidth` 错,headless 滚动条 10px 时 scrollW=1430=clientWidth 而 innerWidth=1440;**零溢出正口径=scrollWidth≤clientWidth+1**(POST-1 坑的同族再犯,附录 C 已有仍犯,断言模板须直接抄附录 C)
+- **体积**:js/css 零变化(图片 lazy 不入包);dist 位图 1,065,665→1,575,213 B(+509,548,即 S1—S5 入包,预算池 24% 已在 G60 记账)
+- **提交**:主提交(组件+页面+CSS+验收脚本/结果+账本)
+- **状态**:done(验收 A1 双图逐词条断言✓;A2 键盘面不变✓;A3 对比度实测✓;A4 CLS 显式宽高✓;A5 截图 1440+390 双主题✓;A6 build/零溢出/src/data 零 diff✓)
+- **遗留与下轮入口**:G62 并陈(二)——精卫 svg 款识口径鉴定、「待补古图」占位签全词条两态断言、WDL4447 鉴定与三才图会过筛顺带
+
 ## G60 · 古图首批入库
 
 - **有效执行编号**:四阶 2 / 24

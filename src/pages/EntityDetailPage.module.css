@@ -82,6 +82,24 @@
   padding-top: 14px;
 }
 
+/* G61 古图×转描并陈:刻本原件装裱主位栈(PaintingMount 纵排,与副位 artPanel 间距 18px) */
+.classicMounts {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+/* G61 副位签:站内转描来源注记(楷体小签右对齐,色走令牌,呼应 G22 校注签语言) */
+.artPanelTag {
+  display: block;
+  margin-top: 10px;
+  text-align: right;
+  font-family: var(--font-title);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+
 /* G22 版画装裱:figure 语义(画心面板+地脚出处) */
 .artMount {
   margin: 0;

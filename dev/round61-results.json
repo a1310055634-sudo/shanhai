@@ -1,0 +1,306 @@
+[
+  {
+    "slug": "jiuweihu",
+    "w": 1440,
+    "h": 900,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "scanCount": 1,
+      "lazy": true,
+      "whAttrs": true,
+      "loaded": true,
+      "captions": [
+        "蒋应镐山海经(图)绘像 · 明崇祯刊本藏所待考"
+      ],
+      "tagText": "站内转描 · 据古今图书集成",
+      "tagInteractiveFree": true,
+      "captionContrast": 6.18,
+      "tagContrast": 6.18,
+      "scrollW": 1430,
+      "clientW": 1430,
+      "vw": 1440
+    },
+    "checks": {
+      "h1": true,
+      "scanCount": true,
+      "lazyWhLoaded": true,
+      "editions": true,
+      "tag": true,
+      "noInteractiveInMounts": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "slug": "jiuweihu",
+    "w": 1440,
+    "h": 900,
+    "theme": "qing",
+    "values": {
+      "h1": true,
+      "scanCount": 1,
+      "lazy": true,
+      "whAttrs": true,
+      "loaded": true,
+      "captions": [
+        "蒋应镐山海经(图)绘像 · 明崇祯刊本藏所待考"
+      ],
+      "tagText": "站内转描 · 据古今图书集成",
+      "tagInteractiveFree": true,
+      "captionContrast": 6.02,
+      "tagContrast": 6.02,
+      "scrollW": 1430,
+      "clientW": 1430,
+      "vw": 1440
+    },
+    "checks": {
+      "h1": true,
+      "scanCount": true,
+      "lazyWhLoaded": true,
+      "editions": true,
+      "tag": true,
+      "noInteractiveInMounts": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "slug": "lushu",
+    "w": 1440,
+    "h": 900,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "scanCount": 2,
+      "lazy": true,
+      "whAttrs": true,
+      "loaded": true,
+      "captions": [
+        "蒋应镐山海经(图)绘像 · 明崇祯刊本藏所待考",
+        "汪绂山海经存 · 清光绪二十一年石印本藏所待考"
+      ],
+      "tagText": "站内转描 · 据古今图书集成",
+      "tagInteractiveFree": true,
+      "captionContrast": 6.18,
+      "tagContrast": 6.18,
+      "scrollW": 1430,
+      "clientW": 1430,
+      "vw": 1440
+    },
+    "checks": {
+      "h1": true,
+      "scanCount": true,
+      "lazyWhLoaded": true,
+      "editions": true,
+      "tag": true,
+      "noInteractiveInMounts": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "slug": "lushu",
+    "w": 390,
+    "h": 844,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "scanCount": 2,
+      "lazy": true,
+      "whAttrs": true,
+      "loaded": true,
+      "captions": [
+        "蒋应镐山海经(图)绘像 · 明崇祯刊本藏所待考",
+        "汪绂山海经存 · 清光绪二十一年石印本藏所待考"
+      ],
+      "tagText": "站内转描 · 据古今图书集成",
+      "tagInteractiveFree": true,
+      "captionContrast": 6.18,
+      "tagContrast": 6.18,
+      "scrollW": 390,
+      "clientW": 390,
+      "vw": 390
+    },
+    "checks": {
+      "h1": true,
+      "scanCount": true,
+      "lazyWhLoaded": true,
+      "editions": true,
+      "tag": true,
+      "noInteractiveInMounts": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "slug": "huahuai",
+    "w": 1440,
+    "h": 900,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "scanCount": 1,
+      "lazy": true,
+      "whAttrs": true,
+      "loaded": true,
+      "captions": [
+        "蒋应镐山海经(图)绘像 · 明崇祯刊本藏所待考"
+      ],
+      "tagText": null,
+      "tagInteractiveFree": true,
+      "captionContrast": 6.18,
+      "tagContrast": null,
+      "scrollW": 1430,
+      "clientW": 1430,
+      "vw": 1440
+    },
+    "checks": {
+      "h1": true,
+      "scanCount": true,
+      "lazyWhLoaded": true,
+      "editions": true,
+      "tag": true,
+      "noInteractiveInMounts": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "slug": "changyou",
+    "w": 1440,
+    "h": 900,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "scanCount": 1,
+      "lazy": true,
+      "whAttrs": true,
+      "loaded": true,
+      "captions": [
+        "蒋应镐山海经(图)绘像 · 明崇祯刊本藏所待考"
+      ],
+      "tagText": null,
+      "tagInteractiveFree": true,
+      "captionContrast": 6.18,
+      "tagContrast": null,
+      "scrollW": 1430,
+      "clientW": 1430,
+      "vw": 1440
+    },
+    "checks": {
+      "h1": true,
+      "scanCount": true,
+      "lazyWhLoaded": true,
+      "editions": true,
+      "tag": true,
+      "noInteractiveInMounts": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "slug": "jiuweihu",
+    "w": 390,
+    "h": 844,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "scanCount": 1,
+      "lazy": true,
+      "whAttrs": true,
+      "loaded": true,
+      "captions": [
+        "蒋应镐山海经(图)绘像 · 明崇祯刊本藏所待考"
+      ],
+      "tagText": "站内转描 · 据古今图书集成",
+      "tagInteractiveFree": true,
+      "captionContrast": 6.18,
+      "tagContrast": 6.18,
+      "scrollW": 390,
+      "clientW": 390,
+      "vw": 390
+    },
+    "checks": {
+      "h1": true,
+      "scanCount": true,
+      "lazyWhLoaded": true,
+      "editions": true,
+      "tag": true,
+      "noInteractiveInMounts": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "slug": "fenghuang",
+    "w": 1440,
+    "h": 900,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "scanCount": 0,
+      "lazy": true,
+      "whAttrs": true,
+      "loaded": true,
+      "captions": [],
+      "tagText": "站内转描 · 据古今图书集成",
+      "tagInteractiveFree": true,
+      "captionContrast": null,
+      "tagContrast": 6.18,
+      "scrollW": 1430,
+      "clientW": 1430,
+      "vw": 1440
+    },
+    "checks": {
+      "h1": true,
+      "scanCount": true,
+      "lazyWhLoaded": true,
+      "editions": true,
+      "tag": true,
+      "noInteractiveInMounts": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "slug": "zhi",
+    "w": 1440,
+    "h": 900,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "scanCount": 0,
+      "lazy": true,
+      "whAttrs": true,
+      "loaded": true,
+      "captions": [],
+      "tagText": null,
+      "tagInteractiveFree": true,
+      "captionContrast": null,
+      "tagContrast": null,
+      "scrollW": 1430,
+      "clientW": 1430,
+      "vw": 1440
+    },
+    "checks": {
+      "h1": true,
+      "scanCount": true,
+      "lazyWhLoaded": true,
+      "editions": true,
+      "tag": true,
+      "noInteractiveInMounts": true,
+      "contrast": true,
+      "noOverflow": true
+    },
+    "pass": true
+  }
+]
