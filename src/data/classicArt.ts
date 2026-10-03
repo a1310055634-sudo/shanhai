@@ -16,6 +16,7 @@ import wenyaoyu from '../assets/classic/wenyaoyu.svg'
 import zhuyin from '../assets/classic/zhuyin.svg'
 import yinglong from '../assets/classic/yinglong.svg'
 import kui from '../assets/classic/kui.svg'
+import gudiaoJpg from '../assets/classic-art/gudiao-nanshanjing.jpg'
 
 export interface ClassicArt {
   src: string
@@ -33,6 +34,17 @@ export interface ClassicArt {
 }
 
 const CLASSIC_ART: Record<string, ClassicArt> = {
+  // G75:蛊雕(南次二经·鹿吴之山)——《南山經》分册矢量化件,与下列 12 兽同族;
+  // Chrome 栅格化 jpg(1143×1000,122KB),词条页主位并陈(classicScans 通道)。
+  gudiao: {
+    src: gudiaoJpg,
+    width: 1143,
+    height: 1000,
+    note: '《南山经》分册古图',
+    source: '《古今图书集成·禽虫典》同族分册版画「南山經-蠱雕」(公有领域)',
+    sourceUrl: 'https://commons.wikimedia.org/wiki/File:%E5%8D%97%E5%B1%B1%E7%B6%93-%E8%A0%B1%E9%9B%95.svg',
+    provenance: 'potrace 自动矢量化(维基共享资源《古今图书集成》分册插图;Chrome 栅格化 jpg)',
+  },
   xingxing: {
     src: xingxing,
     width: 1320,

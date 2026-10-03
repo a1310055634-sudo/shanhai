@@ -339,6 +339,17 @@
 - 目检:2026-10-04 通过(压缩后书影完整)
 - 状态:verified(API 元数据)
 
+### S8. 蛊雕(南山经分册·矢量化件,G75)
+
+- 站内文件:src/assets/classic-art/gudiao-nanshanjing.jpg(1143×1000,125,081 B)
+- 画面:《南山經》分册「蠱雕」木刻(雕形有角)
+- 来源:Commons File:`File:南山經-蠱雕.svg`(1600×1400 svg,257KB)——与站内 12 兽「古今图书集成·禽虫典矢量化」**同族**的南山经分册矢量化件;Chrome 栅格化→ffmpeg q4 jpg
+- 许可:Public domain(extmetadata 实测)
+- 用途:词条页主位(classicScans 通道)+classicArt 条目(artNote 来源链接);蛊雕词条(ent-gudiao,G75 unverified)
+- 目检:2026-10-04 通过
+- 款识拟:古今图书集成·禽虫典 · 清雍正成书 · 矢量化件 · 维基共享资源
+- 状态:verified(API 元数据)
+
 ### 刻本扫描原件体积表(G60 记,G62/G69 更新)
 
 | 幅 | 文件 | 尺寸 | 字节 |
@@ -350,7 +361,8 @@
 | S5 | changyou-jiangyingke.jpg | 601×574 | 62,490 |
 | S6 | jingwei-sancaituhui.jpg | 1010×1400 | 159,877 |
 | S7 | wdl4447-folio.jpg | 1600×760 | 78,317 |
-| 合计 | 7 幅 | — | 747,742(0.71 MB,占四阶 ≤2.0MB 池 37%) |
+| S8 | gudiao-nanshanjing.jpg | 1143×1000 | 125,081 |
+| 合计 | 8 幅 | — | 794,823(0.76 MB,占四阶 ≤2.0MB 池 40%) |
 
 - 落选记录:WDL4447(郭璞注传抄本宽幅书影 2156×1024 PD——内容为整页书影非单兽,**归 G69 About 古图样张候选**,不入词条主位);三才图会家族 112 张 G62 全量过筛,**除精卫外无其它山经兽(关项)**。
 - 站内用途:S1—S5 G61 接线(九尾狐/鹿蜀双版本/猾褢/长右);S6 G62 接线(精卫);待补 9 兽见 CLASSIC_ART_RECON.md。

@@ -12,6 +12,7 @@ import YinglongArt from './registry/yinglong'
 import KuiArt from './registry/kui'
 import WenyaoyuArt from './registry/wenyaoyu'
 import XingxingArt from './registry/xingxing'
+import XunArt from './registry/xun'
 import LushuArt from './registry/lushu'
 import PaperTexture from '../common/PaperTexture'
 import styles from './BeastArtwork.module.css'
@@ -52,6 +53,7 @@ const ART_REGISTRY: Record<string, ArtComponent> = {
   wenyaoyu: WenyaoyuArt,
   xingxing: XingxingArt,
   lushu: LushuArt,
+  xun: XunArt, // G75:䍺原创演绎(羊形无口)
 }
 
 /** 按slug 稳定取一组色调,使过渡底座彼此有别(确定性,非随机)。 */

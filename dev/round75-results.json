@@ -1,0 +1,59 @@
+{
+  "gudiao": {
+    "values": {
+      "h1": true,
+      "name": "蛊雕",
+      "badge": true,
+      "scanCount": 1,
+      "scanLoaded": true,
+      "scanAlt": "蛊雕——古今图书集成·禽虫典 · 清雍正成书 · 矢量化件木刻插图",
+      "citationVerbatim": "水有兽焉，名曰蛊雕，其状如雕而有角，其音如婴儿之音，是食人。",
+      "hasVarText": true,
+      "artPanelFallback": true,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "name": true,
+      "badge": true,
+      "scanMain": true,
+      "scanAlt": true,
+      "citation": true,
+      "varText": true,
+      "artPanel": true,
+      "noOverflow": true
+    }
+  },
+  "xun": {
+    "values": {
+      "h1": true,
+      "name": "䍺",
+      "badge": true,
+      "scanCount": 0,
+      "scanLoaded": null,
+      "scanAlt": null,
+      "citationVerbatim": "有兽焉，其状如羊而无口，不可杀也，其名曰䍺。洵水出焉，而南流注于阏之泽，其中多芘蠃。",
+      "hasVarText": true,
+      "artPanelFallback": true,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "name": true,
+      "badge": true,
+      "noScan": true,
+      "citation": true,
+      "artPanelFallback": true,
+      "noOverflow": true
+    }
+  },
+  "home": {
+    "verified": "12",
+    "total": null
+  },
+  "catalog": {
+    "hasGudiao": true,
+    "hasXun": true
+  },
+  "pass": true
+}

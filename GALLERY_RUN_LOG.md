@@ -1,3 +1,16 @@
+## G75 · 词条批(蛊雕/䍺)
+
+- **有效执行编号**:四阶 17 / 24
+- **北京时间**:2026-10-04 06:5X—07:3X(定时触发)
+- **开始 HEAD**:d62c0d4(G74),工作树干净;.round-lock 新建,轮末删除
+- **建条(2 词条,均 unverified,B1×B2 双源逐字)**:①`entities/gudiao.ts` **蛊雕**(鹿吳之山,「其状如雕而有角,其音如婴儿之音,是食人」;异文「蠱一作纂」=疑17 引用;disputedReadings 三条)——**配图=《南山經-蠱雕.svg》分册古图**(G62 侦察线索兑现:与站内 12 兽古今图书集成矢量化同族;Chrome 栅格化 1143×1000→jpg 125,081B;词条页主位 classicScans 通道)②`entities/xun.ts` **䍺**(洵山,「其状如羊而无口,不可杀也」;郭注「稟氣自然/音還或音患」;疑16 引用)——**画心=原创 SVG 演绎**(registry/xun.tsx,ArtCanvas 规范,羊形无口闭目为核芯约束;ART 台账登记;维基共享暂无䍺古图,「待补古图」如实)
+- **注册全链**:entities/index(ENTITIES+2)/BeastArtwork REGISTRY(xun)/classicScans(gudiao)/classicArt(gudiao 条,artNote Commons 链接)/ART_PROVENANCE(S8+原创演绎登记+体积表 8 幅 794,823B=池 40%)
+- **验收(dev/round75-verify.mjs+round75-results.json,8/8)**:蛊雕词条页(名/待考证徽章/主位 scan 加载+alt 双关键词/引文逐字「水有兽焉…是食人。」/异文「一作」在屏/artPanel 底座/零溢出);䍺词条页(名「䍺」/徽章/无 scan=待图如实/引文含「其状如羊而无口，不可杀也，其名曰䍺」/零溢出);首页计数 **12 守恒**(两词条 unverified);目录页两新链接
+- **坑(一次记档)**:批量 node -e 编辑跨轮重跑会产生重复 import(G71 教训变体)——大批量写后的 tsc 必跑在此兜住(两处 Duplicate identifier+abilities kind 字段误用,均已修)
+- **提交**:主提交(词条 2+组件+资产+台账+脚本/结果+账本)
+- **状态**:done(A1 词条页两态断言✓;A2 配图来源登记 S8+原创记✓;A3 计数守恒/零溢出/build✓)
+- **遗留与下轮入口**:G76 凤皇郭注层(盘点先行:B2 L76 郭注是否已上屏;fenghuang.ts/loc-danxue 均已存在)
+
 ## G74 · 二经扩录四+里距闭环(區吳之山/鹿吳之山/漆吳之山)
 
 - **有效执行编号**:四阶 16 / 24

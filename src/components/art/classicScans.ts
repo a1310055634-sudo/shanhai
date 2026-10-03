@@ -4,6 +4,7 @@ import lushuWangScan from '../../assets/classic-art/lushu-wangfu.jpg'
 import huahuaiScan from '../../assets/classic-art/huahuai-jiangyingke.jpg'
 import changyouScan from '../../assets/classic-art/changyou-jiangyingke.jpg'
 import jingweiScan from '../../assets/classic-art/jingwei-sancaituhui.jpg'
+import gudiaoScan from '../../assets/classic-art/gudiao-nanshanjing.jpg'
 
 /**
  * G61 古图原件映射(四阶「古图×站内转描」并陈线)。
@@ -66,6 +67,15 @@ export const CLASSIC_SCANS: ClassicScan[] = [
     height: 574,
     edition: '蒋应镐山海经(图)绘像 · 明崇祯刊本',
     credit: '藏所待考',
+  },
+  {
+    // G75:蛊雕分册古图(古今图书集成·禽虫典矢量化同族,南山经分册),Chrome 栅格化 1143×1000
+    slug: 'gudiao',
+    src: gudiaoScan,
+    width: 1143,
+    height: 1000,
+    edition: '古今图书集成·禽虫典 · 清雍正成书 · 矢量化件',
+    credit: '维基共享资源 · 公有领域',
   },
   {
     // G62:三才图会矢量化件(非纸张扫描),Chrome 栅格化 1010×1400——款识如实注「矢量化件」
