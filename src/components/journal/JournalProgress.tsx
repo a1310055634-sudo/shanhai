@@ -27,6 +27,10 @@ export default function JournalProgress({ currentId }: { currentId?: string }) {
       {/* G07 轨道端点角饰(接入点 5-6):纯装饰 */}
       <RuleOrnamentIcon kind="cloud" className={styles.railEndL} />
       <RuleOrnamentIcon kind="cloud" className={styles.railEndR} />
+      {/* G65 长卷装裱补全:引首题签(卷首,竖排楷体浮签)+跋尾印(卷尾,朱砂白文「山海」);
+          装饰层 aria-hidden(信息已由 nav aria-label 与站名承载),零交互零动画;
+          ≤640 档改静态度行(签在卷上/跋尾在卷下,不遮 3×3 网格) */}
+      <div className={styles.frontTag} aria-hidden="true">山海行旅</div>
       <ol className={styles.rail}>
         {positions.map((pos) => {
           if (pos.kind === 'station') {
@@ -68,6 +72,10 @@ export default function JournalProgress({ currentId }: { currentId?: string }) {
           )
         })}
       </ol>
+      <div className={styles.endColophon} aria-hidden="true">
+        <span className={styles.colophonText}>据《南山经》原文次第演绎</span>
+        <span className={styles.colophonSeal}>山海</span>
+      </div>
     </nav>
   )
 }

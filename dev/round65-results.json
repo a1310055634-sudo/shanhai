@@ -1,0 +1,107 @@
+[
+  {
+    "w": 1440,
+    "h": 900,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "tagText": "山海行旅",
+      "tagVertical": "vertical-rl",
+      "tagHidden": "true",
+      "coloHidden": "true",
+      "sealText": "山海",
+      "sealSize": "28x28",
+      "sealContrast": 4.97,
+      "coloContrast": 6.18,
+      "mountBar": "\"\"|rgba(49, 84, 90, 0.6)",
+      "railLinks": 8,
+      "tagCovers": false,
+      "coloCovers": false,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "h1": true,
+      "tag": true,
+      "colo": true,
+      "sealSizeOk": true,
+      "vertical": true,
+      "noCover": true,
+      "contrast": true,
+      "mountBar": true,
+      "railLinks": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "w": 1440,
+    "h": 900,
+    "theme": "qing",
+    "values": {
+      "h1": true,
+      "tagText": "山海行旅",
+      "tagVertical": "vertical-rl",
+      "tagHidden": "true",
+      "coloHidden": "true",
+      "sealText": "山海",
+      "sealSize": "28x28",
+      "sealContrast": 6.29,
+      "coloContrast": 4.99,
+      "mountBar": "\"\"|rgba(49, 84, 90, 0.6)",
+      "railLinks": 8,
+      "tagCovers": false,
+      "coloCovers": false,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "h1": true,
+      "tag": true,
+      "colo": true,
+      "sealSizeOk": true,
+      "vertical": true,
+      "noCover": true,
+      "contrast": true,
+      "mountBar": true,
+      "railLinks": true,
+      "noOverflow": true
+    },
+    "pass": true
+  },
+  {
+    "w": 390,
+    "h": 844,
+    "theme": "deng",
+    "values": {
+      "h1": true,
+      "tagText": "山海行旅",
+      "tagVertical": "horizontal-tb",
+      "tagHidden": "true",
+      "coloHidden": "true",
+      "sealText": "山海",
+      "sealSize": "28x28",
+      "sealContrast": 4.97,
+      "coloContrast": 6.18,
+      "mountBar": "\"\"|rgba(49, 84, 90, 0.6)",
+      "railLinks": 8,
+      "tagCovers": false,
+      "coloCovers": false,
+      "scrollW": 390,
+      "clientW": 390
+    },
+    "checks": {
+      "h1": true,
+      "tag": true,
+      "colo": true,
+      "sealSizeOk": true,
+      "vertical": true,
+      "noCover": true,
+      "contrast": true,
+      "mountBar": true,
+      "railLinks": true,
+      "noOverflow": true
+    },
+    "pass": true
+  }
+]

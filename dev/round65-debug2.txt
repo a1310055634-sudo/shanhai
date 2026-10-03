@@ -1,0 +1,8 @@
+JSON.stringify((() => {
+  const colo = document.querySelector('[class*="colophonText"]')
+  const cs = getComputedStyle(colo.parentElement)
+  const bi = cs.backgroundImage
+  const re = /rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)/g
+  const ms = [...bi.matchAll(re)]
+  return { biLen: bi.length, biHead: bi.slice(0, 40), msLen: ms.length, first: ms[0] ? ms[0][0] : null }
+})())

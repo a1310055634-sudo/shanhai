@@ -16,9 +16,84 @@
   gap: 0;
   list-style: none;
   margin: 0;
-  padding: 14px 10px;
+  /* G65:左右留出引首题签/跋尾印净空 */
+  padding: 14px 110px 14px 52px;
   overflow-x: auto;
   scrollbar-width: none;
+}
+
+/* G65 长卷装裱补全:裱边收头(岩青绫带+旧金界栏线,G22 同族不新增纹样;绝对定位零布局位移) */
+.railWrap::before,
+.railWrap::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: rgba(49, 84, 90, 0.6);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.railWrap::before {
+  top: 0;
+  box-shadow: inset 0 -1px 0 var(--border-strong);
+}
+
+.railWrap::after {
+  bottom: 0;
+  box-shadow: inset 0 1px 0 var(--border-strong);
+}
+
+/* G65 引首题签:卷首竖排楷体浮签(纸面承载) */
+.frontTag {
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  writing-mode: vertical-rl;
+  font-family: var(--font-title);
+  font-size: 15px;
+  letter-spacing: 6px;
+  padding: 12px 5px;
+  background: var(--surface-paper);
+  color: var(--text-on-light);
+  border: 1px solid var(--border-strong);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* G65 跋尾:卷尾小字+朱砂白文印(装饰,竖排印文) */
+.endColophon {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.colophonText {
+  font-family: var(--font-title);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--on-canvas-muted);
+}
+
+.colophonSeal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--cinnabar);
+  color: var(--on-canvas-bright);
+  font-family: var(--font-title);
+  font-size: 11px;
+  letter-spacing: 1px;
+  writing-mode: vertical-rl;
+  border-radius: 2px;
 }
 
 .rail::-webkit-scrollbar {
@@ -122,6 +197,23 @@
     gap: 6px;
     padding: 10px;
     overflow-x: visible;
+  }
+
+  /* G65:窄档签/跋改静态度行(签在卷上/跋尾在卷下),不遮 3×3 网格 */
+  .frontTag {
+    position: static;
+    writing-mode: horizontal-tb;
+    display: block;
+    margin: 12px 12px 0;
+    padding: 6px 10px;
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+
+  .endColophon {
+    position: static;
+    justify-content: flex-end;
+    margin: 0 12px 12px;
   }
 
   .railStop {

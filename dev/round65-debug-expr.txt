@@ -1,0 +1,16 @@
+JSON.stringify((() => {
+  const colo = document.querySelector('[class*="colophonText"]')
+  if (!colo) return 'NO COLO'
+  const chain = []
+  let e = colo
+  while (e && e !== document.documentElement) {
+    const cs = getComputedStyle(e)
+    chain.push({
+      tag: e.tagName + '.' + String(e.className).slice(0, 30),
+      bgc: cs.backgroundColor,
+      bi: cs.backgroundImage.slice(0, 80),
+    })
+    e = e.parentElement
+  }
+  return chain
+})())
