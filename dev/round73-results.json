@@ -1,0 +1,52 @@
+{
+  "chapter": {
+    "values": {
+      "h1": true,
+      "xun": "又东四百里，曰洵山，其阳多金，其阴多玉。有兽焉，其状如羊而无口，不可杀也，其名曰䍺。洵水出焉，而南流注于阏之泽，其中多芘蠃。",
+      "hushao": "又东四百里，曰虖勺之山，其上多梓枏，其下多荆杞。滂水出焉，而东流注于海。",
+      "marks": true,
+      "gapUpdated": true,
+      "segCount": 31,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "xunVerbatim": true,
+      "hushaoVerbatim": true,
+      "marks": true,
+      "gapUpdated": true,
+      "annotateAlive": true,
+      "noOverflow": true
+    }
+  },
+  "atlas": {
+    "values": {
+      "overlaps": 0,
+      "pairs": [],
+      "seals": 17,
+      "rings": 13,
+      "hasNew": true,
+      "scrollW": 1430,
+      "clientW": 1430
+    },
+    "checks": {
+      "newNodes": true,
+      "sealsOk": true,
+      "ringsOk": true,
+      "noOverlap": true,
+      "noOverflow": true
+    }
+  },
+  "atlas390": {
+    "overlaps": 0,
+    "pass": true
+  },
+  "home": {
+    "verified": "12"
+  },
+  "dt": {
+    "xunRow": true,
+    "hushaoRow": true
+  },
+  "pass": true
+}

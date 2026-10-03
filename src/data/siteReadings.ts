@@ -36,4 +36,6 @@ export const MOUNTAIN_READINGS: Record<string, string> = {
   会稽之山: 'kuài jī zhī shān',
   夷山: 'yí shān',
   仆勾之山: 'pú gōu zhī shān',
+  洵山: 'xún shān',
+  虖勺之山: 'hū sháo zhī shān',
 }

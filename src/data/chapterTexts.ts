@@ -268,10 +268,33 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-pugou'],
     },
     {
-      id: 'seg-ns2-gap-xian-end',
+      id: 'seg-ns2-gap-xianyin',
       kind: 'gap',
       section: '南次二经',
-      note: '咸陰之山里距两源互异(B1「四百里」/B2「五百里」),正文两源不一致未录,待底本A回核裁决(疑15);洵山以下五山待录入(G73—G74);不凑数;核不动不上线',
+      note: '咸陰之山里距两源互异(B1「四百里」/B2「五百里」),正文两源不一致未录,待底本A回核裁决(疑15);不凑数;核不动不上线',
+    },
+    {
+      // G73:洵山段(2026-10-04 经底本B1 存档 L13×B2 第58行两源净化正文逐字一致
+      // 录入,底本A回核挂账)。异文「洵一作旬」两源同记,登记疑16,正文从「洵」。
+      id: 'seg-ns2-xunshan',
+      kind: 'text',
+      section: '南次二经',
+      text: '又东四百里，曰洵山，其阳多金，其阴多玉。有兽焉，其状如羊而无口，不可杀也，其名曰䍺。洵水出焉，而南流注于阏之泽，其中多芘蠃。',
+      relatedLocationIds: ['loc-xunshan'],
+    },
+    {
+      // G73:虖勺之山段(同上,B1 L14×B2 第60行;郭注 3 条上屏注层)。
+      id: 'seg-ns2-hushao-shan',
+      kind: 'text',
+      section: '南次二经',
+      text: '又东四百里，曰虖勺之山，其上多梓枏，其下多荆杞。滂水出焉，而东流注于海。',
+      relatedLocationIds: ['loc-hushao'],
+    },
+    {
+      id: 'seg-ns2-gap-quwu-end',
+      kind: 'gap',
+      section: '南次二经',
+      note: '區吳之山以下四山待录入(G73 录至虖勺之山第十三山,余四山留待 G74 如实待续,不凑数;核不动不上线)',
     },
     {
       // G30:二经篇末总述(底本B1工作稿存档×B2第68行两源一致;祠礼句照录,
@@ -334,6 +357,12 @@ export const GLOSSARY: Record<string, { pinyin: string; hint?: string }> = {
   䧿: { pinyin: 'què', hint: '同「鹊」' },
   湨: { pinyin: 'jú', hint: '水名,郭注「音鵙」' },
   砆: { pinyin: 'fū', hint: '似玉之石,郭注「武大石」' },
+  䍺: { pinyin: 'huán', hint: '郭注「音還,或音患」;羊身无口之兽' },
+  洵: { pinyin: 'xún', hint: '郭注「音詢」' },
+  閼: { pinyin: 'è', hint: '郭注「音遏」;閼之泽' },
+  枏: { pinyin: 'nán', hint: '同「楠」,郭注「音南」' },
+  芘: { pinyin: 'pí', hint: '芘蠃,郭注「紫色螺也」' },
+  蠃: { pinyin: 'luǒ', hint: '芘蠃,郭注「紫色螺也」' },
   狌: { pinyin: 'xīng', hint: '狌狌' },
   禺: { pinyin: 'yú', hint: '旧注以为猿猴类,确切所指待考' },
   䨼: { pinyin: 'hù', hint: '青色矿物颜料,训释待考' },

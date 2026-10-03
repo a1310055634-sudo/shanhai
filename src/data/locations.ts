@@ -936,6 +936,7 @@ export const LOCATIONS: Location[] = [
     subClassic: '南次二经',
     sourceOrder: 11,
     previousLocationId: 'loc-yishan',
+    nextLocationId: 'loc-xunshan', // G73:洵山建站
     sourceDirection: '又东',
     sourceDistance: '五百里',
     relatedEntityIds: [],
@@ -956,6 +957,110 @@ export const LOCATIONS: Location[] = [
       },
     ],
     mapPosition: { x: 77, y: 92.6, region: '南山经' }, // G72:尾列末位(y 三档错行,实测裁决)
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G73:南次二经第十二山(2026-10-04 经底本B1 存档 L13×B2 第58行两源净化正文
+    // 逐字一致后录入,底本A回核挂账)。异文「洵一作旬」两源同记=疑16。
+    // 兽「䍺」句照录(词条候选留 G75,relatedEntityIds 暂缺如实);郭注 5 条上屏。
+    id: 'loc-xunshan',
+    canonicalName: '洵山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 12,
+    previousLocationId: 'loc-pugou',
+    nextLocationId: 'loc-hushao',
+    sourceDirection: '又东',
+    sourceDistance: '四百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东四百里，曰洵山，其阳多金，其阴多玉。有兽焉，其状如羊而无口，不可杀也，其名曰䍺。洵水出焉，而南流注于阏之泽，其中多芘蠃。',
+        chapter: '南山经',
+        section: '南次二经第十二山',
+        guoPuNotes: [
+          {
+            attach: '不可杀也',
+            text: '稟氣自然',
+          },
+          {
+            attach: '其名曰䍺',
+            text: '音還，或音患',
+          },
+          {
+            attach: '洵水出焉',
+            text: '音詢',
+          },
+          {
+            attach: '閼之澤',
+            text: '音遏',
+          },
+          {
+            attach: '芘蠃',
+            text: '紫色螺也',
+          },
+        ],
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测软拦截页(200 但正文零命中),恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText:
+          '「洵山」之「洵」:底本B1页面自带异文标注「洵一作「旬」山」;底本B2四库本郭璞注同记{{另|洵|旬}}(存档第 58 行)。两源正文均作「洵」。本站从两源正文用字「洵」,异文登记疑16。底本A待回核。',
+        verificationNote:
+          '2026-10-04 建站核验(G73):底本B1(存档 L13行)与底本B2(存档 第58行)净化正文逐字一致;上屏为简体逐字转换(東→东/無→无/狀→状/陰→阴/殺→杀/閼→阏/澤→泽,对照表见 EDITION_AUDIT.md 三之补10),注文保持繁体未转简。兽「䍺」句照录,词条候选留 G75。底本A(ctext zhs)2026-10-04 复测软拦截页,A×B 回核挂账。',
+        verifiedAt: '2026-10-04',
+      },
+    ],
+    mapPosition: { x: 81.5, y: 89.5, region: '南山经' }, // G73:尾列续排(线性标定预解+实测裁决)
+    modernHypotheses: [],
+    recordStatus: 'unverified',
+  },
+  {
+    // G73:南次二经第十三山(核验路径同 loc-xunshan:B1 L14×B2 第60行)。
+    // 郭注 3 条(梓枏/荊杞/滂水)上屏注层;「虖」GLOSSARY 已收(hū)。
+    id: 'loc-hushao',
+    canonicalName: '虖勺之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 13,
+    previousLocationId: 'loc-xunshan',
+    sourceDirection: '又东',
+    sourceDistance: '四百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东四百里，曰虖勺之山，其上多梓枏，其下多荆杞。滂水出焉，而东流注于海。',
+        chapter: '南山经',
+        section: '南次二经第十三山',
+        guoPuNotes: [
+          {
+            attach: '梓枏',
+            text: '梓，山楸也。枏，大木葉，似桑，今作楠，音南。《爾雅》以爲柟',
+          },
+          {
+            attach: '荊杞',
+            text: '杞，枸杞也，子赤',
+          },
+          {
+            attach: '滂水出焉',
+            text: '音滂沱之滂',
+          },
+        ],
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测软拦截页(200 但正文零命中),恢复后回核',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        verificationNote:
+          '2026-10-04 建站核验(G73):底本B1(存档 L14行)与底本B2(存档 第60行)净化正文逐字一致;上屏为简体逐字转换(東→东/荊→荆,对照表见 EDITION_AUDIT.md 三之补10),注文保持繁体未转简。「虖」字 GLOSSARY 已收(hū)。底本A(ctext zhs)2026-10-04 复测软拦截页,A×B 回核挂账。',
+        verifiedAt: '2026-10-04',
+      },
+    ],
+    mapPosition: { x: 86, y: 91, region: '南山经' }, // G73:尾列续排(实测裁决)
     modernHypotheses: [],
     recordStatus: 'unverified',
   },

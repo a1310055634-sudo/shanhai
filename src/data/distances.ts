@@ -94,6 +94,8 @@ const NS2_ROWS: DistanceRow[] = [
   { order: 9, name: '会稽之山', locationId: 'loc-kuaiji', li: 500 },
   { order: 10, name: '夷山', locationId: 'loc-yishan', li: 500 },
   { order: 11, name: '仆勾之山', locationId: 'loc-pugou', li: 500 },
+  { order: 12, name: '洵山', locationId: 'loc-xunshan', li: 400 },
+  { order: 13, name: '虖勺之山', locationId: 'loc-hushao', li: 400 },
 ]
 
 const ROWS_BY_CLASSIC: Record<DistanceClassic, DistanceRow[]> = {
