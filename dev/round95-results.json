@@ -1,0 +1,52 @@
+[
+  {
+    "name": "A1a 页脚「全站检索」打开浮层",
+    "pass": true,
+    "detail": "open=1"
+  },
+  {
+    "name": "A2a 「昆」山川组=数据源预计算",
+    "pass": true,
+    "detail": "UI=[山川 · 1;词条 · 2] 期望山川=1"
+  },
+  {
+    "name": "A2b 昆仑之丘命中",
+    "pass": true,
+    "detail": "[\"昆仑之丘ch-xishan\",\"陆吾(lù wú)西山经 · 昆仑之丘\",\"钦原(qīn yuán)西山经 · 昆仑之丘\"]"
+  },
+  {
+    "name": "A3 「方」命中毕方(词条组)",
+    "pass": true,
+    "detail": "{\"titles\":[\"词条 · 1\"],\"sample\":[\"毕方(bì fāng)西山经 · 章莪之山\"]}"
+  },
+  {
+    "name": "A4 Enter 跳转词条页",
+    "pass": true,
+    "detail": "/catalog/qinyuan|true"
+  },
+  {
+    "name": "A5 Esc 关/Ctrl+K 开",
+    "pass": true,
+    "detail": "closed=1 reopen=1"
+  },
+  {
+    "name": "A6 对比度 input/title ≥4.5",
+    "pass": true,
+    "detail": "{\"input\":\"12.70\",\"title\":null}"
+  },
+  {
+    "name": "A7[1440] 零溢出",
+    "pass": true,
+    "detail": "ov=0"
+  },
+  {
+    "name": "A7[390] 零溢出",
+    "pass": true,
+    "detail": "ov=0"
+  },
+  {
+    "name": "A8 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  }
+]

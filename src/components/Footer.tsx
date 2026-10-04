@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Rule from './common/Rule'
 import { useTheme } from '../hooks/useTheme'
 import styles from './Footer.module.css'
+import { openSearch } from './search/SearchOverlay'
 
 /** 页脚:站内入口 + 来源承诺摘要(完整「来源承诺」区块随首页章节实现)。 */
 export default function Footer() {
@@ -35,6 +36,12 @@ export default function Footer() {
             {/* G27 凡例页入口 */}
             <li>
               <Link to="/how-to-read">如何读本站(凡例)</Link>
+            </li>
+            {/* G95 全站检索入口(Ctrl+K 同款) */}
+            <li>
+              <button type="button" className={styles.searchEntry} onClick={() => openSearch()}>
+                全站检索<span className={styles.searchKbd}>Ctrl+K</span>
+              </button>
             </li>
             {/* G35 音表 / 异文页入口 */}
             <li>

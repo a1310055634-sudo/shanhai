@@ -164,3 +164,29 @@
     padding: 0 12px;
   }
 }
+
+/* G95 全站检索入口:复用链接观感,button 语义 */
+.searchEntry {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.searchEntry:hover {
+  text-decoration: underline;
+}
+
+.searchEntry:focus-visible {
+  outline: 2px solid var(--old-gold);
+  outline-offset: 2px;
+}
+
+.searchKbd {
+  margin-left: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}

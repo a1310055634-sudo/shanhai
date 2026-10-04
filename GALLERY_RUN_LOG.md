@@ -1,3 +1,14 @@
+## G95 · 线C:全站搜索 Ctrl+K
+
+- **有效执行编号**:五阶 13 / 20
+- **北京时间**:2026-10-05 04:58—05:2X(定时触发)
+- **开始 HEAD**:f017088(G94),工作树干净;.round-lock 新建,轮末删除
+- **组件**:src/components/search/SearchOverlay.tsx+module.css(全新);索引四组运行时派生(LOCATIONS 山川→章页/ENTITIES 词条→词条页/variants.DOUBTS 异文→/variants/readings.SOUND_ENTRIES 音表→/readings),useMemo 现算零手抄(红线 9);每组限 6,分组标题带计数。入口双通道:Ctrl+K+页脚「全站检索」(CustomEvent,主导航七词不动)。
+- **键盘全流程**:Ctrl+K 开/输入过滤/↑↓ 循环/Enter 跳转/Esc 关+焦点归还;role=dialog/combobox/listbox+aria-activedescendant;空态与零结果态如实文案。
+- **页面验收 10/10 PASS**(dev/round95-verify.mjs):**双向计数断言**(「昆」UI 山川组=1=数据源预计算;词条组 2=陆吾/钦原;「方」命中毕方)/Enter 跳转 /catalog/qinyuan 实测/Esc 关 Ctrl+K 开/对比度 12.70/390+1440 零溢出/首页 12。截图 round95-home-qing-1440.png。
+- **两个新坑(重要入册)**:①**React 受控输入 CDP 实测须原生 value setter**(getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call+dispatchEvent('input'))——直接赋值对 React 18 无效,分组计数全空假红;②**晴窗 --ink-deep=浅色系(#ddd0b4,G31 语义),亮纸面板正文用字须 --paper-ink(G66 先例)**——新组件误用致对比度 1.36 假红,修后 12.70。
+- **提交**:本轮单提交;**状态**:done——下一轮 G96(页脚触控 44px 用户已裁决+移动端 390 全路由走查)
+
 ## G94 · 线C 首轮:路由级代码分割
 
 - **有效执行编号**:五阶 12 / 20

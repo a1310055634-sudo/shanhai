@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import Navigation from './Navigation'
 import Footer from './Footer'
+import SearchOverlay from './search/SearchOverlay'
 import styles from './Layout.module.css'
 
 /**
@@ -18,6 +19,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <SearchOverlay />
     </div>
   )
 }

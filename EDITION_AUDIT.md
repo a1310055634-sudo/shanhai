@@ -412,3 +412,11 @@
 - **对照表**(vite 报告口径,改造前后同 HEAD 域):首包 index.js **731.69→504.62 raw(-227.07)/219.11→148.88 gzip(-70.23,-32%)**;总 JS 30 chunk 738.95 raw/233.32 gzip——**总包 +6.5% 归因成立**(任务书「否则归因」条款):chunk 碎片化 gzip 容器开销(30 文件头尾+deflate 字典重置)+import() 加载器,首包 -32% 收益为此代价,呈报。
 - **验收 5/5**(dev/round94-verify.mjs):A2 **preview 全路由 17/17 可达**(含五阶新页 xishan-jing/新词条 qinyuan/xiwanmu/bifang/xiangliu+404 态——懒 chunk 全部加载成功);A3 file:// 已知限制登记(运行时探针两轮挂起不稳,以静态分析记档:file:// 下动态 chunk 受 module CORS 限制,部署形态为 http,不引单文件插件绕过);A4 package.json 零 diff。
 - 实录坑:验收脚本 ESM 域无 require(zlib 需 import);python 批量替换吃引号致 SyntaxError(手 Edit 复原);file:// 运行时探针 Chrome 挂起两轮——降级静态分析登记,不硬凑运行时证据。
+
+## 三之补22、线C:全站搜索 Ctrl+K(2026-10-05,G95;SearchOverlay 组件,零新依赖)
+
+- **索引运行时派生**(红线 9):LOCATIONS(山川→章页)/ENTITIES(词条→词条页)/variants.DOUBTS(异文→/variants)/readings.SOUND_ENTRIES(音表→/readings)四组,useMemo 现算,零手抄;每组限 6 条,分组标题带计数(「山川 · N」)。
+- **入口**:Ctrl+K(window keydown)+页脚「全站检索 Ctrl+K」button(dispatch CustomEvent)——主导航七词不动(红线 7);浮层 role=dialog/combobox/listbox+aria-activedescendant,Esc 关+焦点归还,Ctrl+K 再开。
+- **双向计数断言**(G95 A2):「昆」UI 山川组=1=数据源预计算(LOCATIONS 含昆 1);词条组 2(陆吾/钦原 sub 含昆仑之丘);「方」命中毕方。键盘 ↓+Enter 跳转 /catalog/qinyuan 实测。
+- **对比度 12.70**(input vs 面板底);390/1440 零溢出;首页 12 守恒。验收 10/10(dev/round95-verify.mjs)。
+- **两个新坑(重要)**:①**React 受控输入在 CDP 里须用原生 value setter**(Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,v)+dispatchEvent('input'))——直接赋值+Event('input') 对 React 18 无效,分组计数全空假红;②**晴窗 --ink-deep 是浅色系(#ddd0b4,G31 双主题令牌语义)——亮纸面板正文用字须走 --paper-ink(G66 先例)**,新组件误用 --ink-deep 作亮面板文字色=对比度 1.36 假红,修后 12.70。
