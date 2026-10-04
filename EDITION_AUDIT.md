@@ -426,3 +426,11 @@
 - **改造**:Footer.module.css 链接(min-height:44px+inline-flex align,padding 0 4px)+G95 搜索入口同款——44px 为 iOS HIG 触控标准(用户 2026-10-05 裁决,清偿 G57 呈报项);行间视觉由既有 gap 10px 维持,双视口同值。
 - **验收 6/6**(dev/round96-verify.mjs):页脚 8 个可交互元素(6 链接+搜索入口+主题钮)**触控区全部 ≥44px**,1440 灯下/390 灯下/390 晴窗三组实测;390 **全路由 18/18 零横溢**(含五阶新页与全部新词条页);晴窗导航渐隐带复查——**渐变载体在(G68 修复未复发)**,检测坑=渐变在伪元素上,querySelectorAll 查不到,须 getComputedStyle(el,'::before/::after');首页 12。视觉回归前后对照:round96-before/after-{1440,390}.png 四张。
 - 呈报项闭环记录:STATE.openItems「页脚 29px 升 44px」已裁决已清偿(G96),四阶 REPORT 呈报第 6 条同步闭环。
+
+## 三之补24、线C 收官:键盘无障碍专项(2026-10-05,G97)
+
+- **Tab 流抽样**(6 路由×12 步,dev/round97-verify.mjs):丢焦 0/72、可见命中 72/72(atlas SVG 节点 vis 判定修正——SVGElement 无 offsetWidth,须 getBoundingClientRect);Tab 序含 skip-link「跳到主要内容」在首位(G22 遗产)。
+- **产品修复一处**:搜索浮层无焦点陷阱(Tab 5 次穿透背景页)——SearchOverlay onInputKey 加 Tab 循环(preventDefault+选项序推进+回焦输入框),修后浮层内焦点锁断言过。
+- **CSSOM 焦点环扫描**:全 stylesheet focus 规则裸色 **0 条**(G34 焦点环令牌体系无回归);ARIA 全 18 路由 role= 元素 **198 个零缺失标识**。
+- **对比度全站复跑**:**432 采样(18 路由×双主题×12 样本)两遍法(G70 正版采样器)零失败**——证实 G97 初版简版采样器 16 处「失败」全为假红(半透明层未叠加,长卷渐变容器下链接误判);两遍法正口径与 G82/G96 历史一致。
+- 验收 12/12;首页 12 守恒。**验收器工程实录**:初筛+精测两级架构(简版初筛扫全量、正口径精测复核 fail 项)是可行模式;但采样器对数从 G70 源码提取时经受了 bash 双层转义/python 吃引号/正则贪婪三连坑——**跨脚本提取代码段一律 indexOf 定界而非正则**,复杂生成代码一律 Write 补丁文件而非 bash 内联。

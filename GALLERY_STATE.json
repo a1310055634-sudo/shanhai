@@ -4,8 +4,8 @@
   "title": "山河广记·五阶冲刺 G83—G102",
   "totalRounds": 20,
   "maxValidExecutions": 20,
-  "validExecutions": 14,
-  "currentRound": "G96",
+  "validExecutions": 15,
+  "currentRound": "G97",
   "rounds": {
     "G83": "done",
     "G84": "done",
@@ -21,7 +21,7 @@
     "G94": "done",
     "G95": "done",
     "G96": "done",
-    "G97": "not_started",
+    "G97": "done",
     "G98": "not_started",
     "G99": "not_started",
     "G100": "not_started",
@@ -138,7 +138,7 @@
     "keyRuling": "词条 verified 五阶一律不动(存量 5+新 4 全 unverified),首页「条目已核验=12」恒定;山位 recordStatus 仅 G84/G85 可依回核证据升级"
   },
   "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-05 05:3X+08:00",
+  "lastRunAt": "2026-10-05 05:5X+08:00",
   "status": "active",
   "shutdown": "G102 完成后或有效执行达 20 次:此后一切触发只读退出——不构建、不提交、不改文件;并提醒用户停用本定时任务(automation-e5cc26fa)。",
   "classicArtPull": {

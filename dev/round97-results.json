@@ -1,0 +1,62 @@
+[
+  {
+    "name": "A1 Tab流 /(丢焦0/12,可见12/12,异元素12)",
+    "pass": true,
+    "detail": "[{\"tag\":\"A\",\"label\":\"跳到主要内容\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"山海万象录,返回卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"异兽\",\"outline\":1,\"vis\":true}]"
+  },
+  {
+    "name": "A1 Tab流 /catalog/xiwanmu(丢焦0/12,可见12/12,异元素12)",
+    "pass": true,
+    "detail": "[{\"tag\":\"A\",\"label\":\"跳到主要内容\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"山海万象录,返回卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"异兽\",\"outline\":1,\"vis\":true}]"
+  },
+  {
+    "name": "A1 Tab流 /chapters/xishan-jing(丢焦0/12,可见12/12,异元素12)",
+    "pass": true,
+    "detail": "[{\"tag\":\"A\",\"label\":\"跳到主要内容\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"山海万象录,返回卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"异兽\",\"outline\":1,\"vis\":true}]"
+  },
+  {
+    "name": "A1 Tab流 /atlas(丢焦0/12,可见12/12,异元素12)",
+    "pass": true,
+    "detail": "[{\"tag\":\"A\",\"label\":\"跳到主要内容\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"山海万象录,返回卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"异兽\",\"outline\":1,\"vis\":true}]"
+  },
+  {
+    "name": "A1 Tab流 /variants(丢焦0/12,可见12/12,异元素12)",
+    "pass": true,
+    "detail": "[{\"tag\":\"A\",\"label\":\"跳到主要内容\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"山海万象录,返回卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"异兽\",\"outline\":1,\"vis\":true}]"
+  },
+  {
+    "name": "A1 Tab流 /readings(丢焦0/12,可见12/12,异元素12)",
+    "pass": true,
+    "detail": "[{\"tag\":\"A\",\"label\":\"跳到主要内容\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"山海万象录,返回卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"卷首\",\"outline\":1,\"vis\":true},{\"tag\":\"A\",\"label\":\"异兽\",\"outline\":1,\"vis\":true}]"
+  },
+  {
+    "name": "A2 搜索浮层焦点初始+Tab 锁内",
+    "pass": true,
+    "detail": "focus=1 lock=1"
+  },
+  {
+    "name": "A2b Esc 后焦点有效",
+    "pass": true,
+    "detail": "1"
+  },
+  {
+    "name": "A3 焦点环规则 0 条,裸色 0 条",
+    "pass": true,
+    "detail": "[]"
+  },
+  {
+    "name": "A4 ARIA role 元素 198 个,无标识 0 个",
+    "pass": true,
+    "detail": "全部路由扫描"
+  },
+  {
+    "name": "A5 对比度全站复跑: 432 采样,失败 0",
+    "pass": true,
+    "detail": "零失败(G70 两遍法,两主题×18 路由)"
+  },
+  {
+    "name": "A6 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  }
+]

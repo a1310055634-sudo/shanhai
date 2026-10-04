@@ -137,6 +137,11 @@ export default function SearchOverlay() {
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       setActive((i) => (flat.length ? (i - 1 + flat.length) % flat.length : 0))
+    } else if (e.key === 'Tab') {
+      // G97 焦点陷阱:浮层内可聚焦元素仅输入框+结果项,Tab 循环不穿透背景页
+      e.preventDefault()
+      if (flat.length) setActive((i) => (i + 1) % flat.length)
+      inputRef.current?.focus()
     } else if (e.key === 'Enter') {
       e.preventDefault()
       const hit = flat[active]
