@@ -382,3 +382,11 @@
 - 古图:commons 复查 `Luwu Shanhaijing` 0 命中→「待补古图」占位如实(沿四阶不凑数纪律);无 illustration/classicScans 条。
 - 验收 9/9(dev/round90-verify.mjs):词条页徽章两态/引文/两 claims(图赞「其锐难当」+明清「蛀空」说)/昆仑关联/Atlas 方印 51 不变(词条不加节点)/目录卡 18/首页 12;截图 round90-qinyuan-qing-1440.png。
 - 实录坑:Entity 必填字段 **updatedAt**(types.ts L140)漏写——tsc 兜住即补;新词条模板以 gudiao.ts(G75)为准,开工先全字段对照。
+
+## 三之补18、词条·毕方+章莪之山建站(2026-10-05,G91;loc 51→52,ent 18→19,recordStatus=unverified)
+
+> 四源:B2 西山郭注档第 122 行×**呈现态重抓剥段**(B1 西山档仅存西次一经首段,本段 B1 侧重抓补核——「B1 档覆盖面」开始出现缺口,后续西次三经各段同款处理)×arteducation bookv_2×袁本。毕方句「名曰畢方」arteducation 作「畢**文**」——袁本珂案诸本皆「毕方」,定性排印误字(G85 框架)记 variantText,不立疑。
+- 章莪段引文整段照录,段含兽「狰」**不立条**(G71 柜山先例);袁本珂案「宋本作曰狰」异文记 loc variantText。
+- 毕方词条(ent-bifang,type=bird,挂 loc-zhangwo,unverified):claims×4(淮南子注「木生毕方」五行定位/白泽图「火之精曰必方」/郭璞图赞「离精是炳」/柳宗元《逐毕方文》+东方朔独足鹤+兴化府志火灾应),核源=广注卷02 任臣案(53199B 卷03 为北山经,西次三经在卷02——**广注分卷对照先查内容再定卷号**);薛综注「两足一翼」与经文「一足」小异两面并存;东方朔「朔」字原档 SKchar 编码生僻字形,转录取通行字并注明。
+- SubClassic 再扩 '西次三经'(G89 扩西次一经同款);XISHAN 段序:一经 5 段→三经章莪段→一经篇末→一经 gap→三经 gap(章莪段按经域就近插,显示序如实);loc-zhangwo sourceOrder=10(经文序:崇吾1…长留9…章莪10),西次三经带地图东延 (90,36)。
+- 验收 16/16(dev/round91-verify.mjs):章莪段逐字/毕方句/狰转写/三经 gap/词条页徽章引文 omens/claims×4/薛综异说/方印 52 零重叠双档/首页 12/目录卡 19;截图 round91-bifang-qing-1440.png。

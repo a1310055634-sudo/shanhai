@@ -4,8 +4,8 @@
   "title": "山河广记·五阶冲刺 G83—G102",
   "totalRounds": 20,
   "maxValidExecutions": 20,
-  "validExecutions": 8,
-  "currentRound": "G90",
+  "validExecutions": 9,
+  "currentRound": "G91",
   "rounds": {
     "G83": "done",
     "G84": "done",
@@ -15,7 +15,7 @@
     "G88": "done",
     "G89": "done",
     "G90": "done",
-    "G91": "not_started",
+    "G91": "done",
     "G92": "not_started",
     "G93": "not_started",
     "G94": "not_started",
@@ -48,8 +48,8 @@
     },
     "imagesNote": "古画 5 幅 1,065,665 B+刻本扫描 8 幅 794,823 B(与四阶收官零漂移);12 既有版画 SVG 7,800,554 B 不入位图预算;五阶新增位图独立预算 ≤2.0MB(单图 ≤350KB/长边 ≤1600px);本轮实测 JS/CSS 与四阶终验逐字节同值(纯账本轮零产品码改动)",
     "counters": {
-      "locations": 51,
-      "entities": 18,
+      "locations": 52,
+      "entities": 19,
       "entitiesVerified": 12,
       "claims": 31,
       "classicArtScans": 8,
@@ -126,7 +126,7 @@
     "keyRuling": "词条 verified 五阶一律不动(存量 5+新 4 全 unverified),首页「条目已核验=12」恒定;山位 recordStatus 仅 G84/G85 可依回核证据升级"
   },
   "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-05 03:2X+08:00",
+  "lastRunAt": "2026-10-05 03:4X+08:00",
   "status": "active",
   "shutdown": "G102 完成后或有效执行达 20 次:此后一切触发只读退出——不构建、不提交、不改文件;并提醒用户停用本定时任务(automation-e5cc26fa)。",
   "classicArtPull": {

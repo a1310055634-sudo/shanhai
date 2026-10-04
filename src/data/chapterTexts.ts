@@ -11,7 +11,7 @@
  */
 
 /** 子经归属(南山三子经+西次一经,G89 起扩西山)。 */
-export type SubClassic = '南次一经' | '南次二经' | '南次三经' | '西次一经'
+export type SubClassic = '南次一经' | '南次二经' | '南次三经' | '西次一经' | '西次三经'
 
 export interface ChapterSegment {
   /** 稳定 id(J02 建立),用作锚点与引用,不得依赖数组下标 */
@@ -87,6 +87,23 @@ const XISHAN: ChapterText = {
       relatedLocationIds: ['loc-fuyux'],
     },
     {
+      // G91:章莪之山段(西次三经;B2 西山郭注档第 122 行×arteducation×袁本×广注卷02
+      // 案语引经同——B1 西山档仅存西次一经首段,本段 B1 侧以呈现态重抓补核,见 AUDIT
+      // 三之补18)。段含兽「狰」不立条(G71 先例,引文整段照录);毕方词条 G91 立条。
+      // arteducation「畢文」为其站排印误字(袁本珂案诸本皆「毕方」),记 variantText。
+      id: 'seg-xs3-zhangwo',
+      kind: 'text',
+      section: '西次三经',
+      text: '又西二百八十里，曰章莪之山，无草木，多瑶碧。所为甚怪。有兽焉，其状如赤豹，五尾一角，其音如击石，其名如狰。有鸟焉，其状如鹤，一足，赤文青质而白喙，名曰毕方，其鸣自叫也，见则其邑有讹火。',
+      relatedLocationIds: ['loc-zhangwo'],
+    },
+    {
+      id: 'seg-xs3-gap-zhangwo-end',
+      kind: 'gap',
+      section: '西次三经',
+      note: '西次三经余山(阴山/符惕/三危/騩山/泑山/翼望等)待后续阶段扩录;站内既录昆仑之丘等四山见西次三经图鉴',
+    },
+    {
       id: 'seg-xs1-tongji',
       kind: 'text',
       section: '西次一经',
@@ -97,7 +114,7 @@ const XISHAN: ChapterText = {
       id: 'seg-xs1-gap-continuous',
       kind: 'gap',
       section: '西次一经',
-      note: '羭次之山以下十四山待后续阶段扩录呈报(西次一经共十九山;华山区祠礼段随篇末在 B1 西山档 L20 照录存档,待全经录毕上屏)',
+      note: '西次一经余十四山(羭次之山以下)待后续阶段扩录呈报(共十九山;华山区祠礼段随篇末在 B1 西山档 L20 照录存档,待全经录毕上屏)',
     },
   ],
 }
