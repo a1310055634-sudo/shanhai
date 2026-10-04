@@ -1618,6 +1618,188 @@ export const LOCATIONS: Location[] = [
     modernHypotheses: [],
     recordStatus: 'verified',
   },
+  {
+    // G89:西次一经第一山(经首段;B1 西山档 L01×B2 第 14 行;郭注 3 条;羬音針/腊音昔)。
+    id: 'loc-qianlai',
+    canonicalName: '钱来之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-xishan',
+    subClassic: '西次一经',
+    sourceOrder: 1,
+    nextLocationId: 'loc-songguo',
+    sourceDirection: '',
+    sourceDistance: '',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '西山经华山之首，曰钱来之山，其上多松，其下多洗石。有兽焉，其状如羊而马尾，名曰羬羊，其脂可以已腊。',
+        chapter: '西山经',
+        section: '西次一经第一山',
+        guoPuNotes: [
+          { attach: '洗石', text: '澡洗可以磢體，去垢圿。磢，初兩反' },
+          { attach: '羬羊', text: '今大月氐國有大羊如驢，而馬尾。《爾雅》云：羊六尺爲羬，謂此羊也。羬音針' },
+          { attach: '已腊', text: '治體皴。腊音昔' },
+        ],
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/西山經》页面文本(B1,2026-10-05 档)、维基文库四库本郭璞注 wikitext(B2,2026-10-05 档)、arteducation.com.tw 西山经页(bookv_2)与袁珂《山海经校注》本(殆知阁)四源对读(G89;B1×B2 逐字一致为录入门槛;arteducation「濩」字缺字显示为囗、【牛乍】/【蟲遺】为缺字拆字展示,均非异文)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E8%A5%BF%E5%B1%B1%E7%B6%93',
+        variantText: '无页面自带异文;四源正文一致(G89)。arteducation「腊」作规范繁体「臘」,与底本古形「腊」为同字异形白名单对。',
+        verificationNote: "2026-10-05 建站核验(G89):四源对读,B1×B2 正文逐字一致(B1 西山档 L01/B2 存档第 14 行)为录入门槛;arteducation/袁本正文同;上屏为简体逐字转换(錢→钱/馬→马/華→华/條→条/棗→枣/聾→聋/銅→铜/雞→鸡 等,对照表见 EDITION_AUDIT.md 三之补16),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 30, y: 40, region: '西山经' }, // G89:西次一经带(昆仑等西次三经点 53-66,18-32 之西南空带),实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G89:西次一经第二山(B1 西山档 L02×B2 第 16 行;郭注 2 条;𦢊 代理对原形照录)。
+    id: 'loc-songguo',
+    canonicalName: '松果之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-xishan',
+    subClassic: '西次一经',
+    sourceOrder: 2,
+    previousLocationId: 'loc-qianlai',
+    nextLocationId: 'loc-taihua',
+    sourceDirection: '西',
+    sourceDistance: '四十五里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '西四十五里，曰松果之山。濩水出焉，北流注于渭，其中多铜。有鸟焉，其名曰䳋渠，其状如山鸡，黑身赤足，可以已𦢊。',
+        chapter: '西山经',
+        section: '西次一经第二山',
+        guoPuNotes: [
+          { attach: '䳋渠', text: '䳋，音彤弓之彤' },
+          { attach: '已𦢊', text: '謂皮皴起也。音叵駮反' },
+        ],
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/西山經》页面文本(B1,2026-10-05 档)、维基文库四库本郭璞注 wikitext(B2,2026-10-05 档)、arteducation.com.tw 西山经页(bookv_2)与袁珂《山海经校注》本(殆知阁)四源对读(G89;B1×B2 逐字一致为录入门槛;arteducation「濩」字缺字显示为囗、【牛乍】/【蟲遺】为缺字拆字展示,均非异文)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E8%A5%BF%E5%B1%B1%E7%B6%93',
+        variantText: '无页面自带异文;四源正文一致。arteducation「濩」字缺字显示为「囗」(其站字体缺字,非异文);袁本作「濩水」同底本。',
+        verificationNote: "2026-10-05 建站核验(G89):四源对读,B1×B2 正文逐字一致(B1 西山档 L02/B2 存档第 16 行)为录入门槛;arteducation/袁本正文同;上屏为简体逐字转换(錢→钱/馬→马/華→华/條→条/棗→枣/聾→聋/銅→铜/雞→鸡 等,对照表见 EDITION_AUDIT.md 三之补16),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 36, y: 42, region: '西山经' }, // G89:西次一经带锯齿,实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G89:西次一经第三山(B1 西山档 L03×B2 第 18 行;郭注 4 条;肥𧔥 代理对)。
+    id: 'loc-taihua',
+    canonicalName: '太华之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-xishan',
+    subClassic: '西次一经',
+    sourceOrder: 3,
+    previousLocationId: 'loc-songguo',
+    nextLocationId: 'loc-xiaohua',
+    sourceDirection: '又西',
+    sourceDistance: '六十里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又西六十里，曰太华之山，削成而四方，其高五千仞，其广十里，鸟兽莫居。有蛇焉，名曰肥𧔥，六足四翼，见则天下大旱。',
+        chapter: '西山经',
+        section: '西次一经第三山',
+        guoPuNotes: [
+          { attach: '太華之山', text: '即西岳華陰山也。今在弘農，華陰縣西南' },
+          { attach: '削成而四方', text: '今山形上大下小，峭峻也' },
+          { attach: '其廣十里', text: '仞，八尺也。上有明星玉女，持玉漿得上，服之即成仙。道險僻不通，時含神霧云' },
+          { attach: '肥𧔥', text: '湯時此蛇見於陽山下。復有肥遺蛇，疑是同名' },
+        ],
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/西山經》页面文本(B1,2026-10-05 档)、维基文库四库本郭璞注 wikitext(B2,2026-10-05 档)、arteducation.com.tw 西山经页(bookv_2)与袁珂《山海经校注》本(殆知阁)四源对读(G89;B1×B2 逐字一致为录入门槛;arteducation「濩」字缺字显示为囗、【牛乍】/【蟲遺】为缺字拆字展示,均非异文)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E8%A5%BF%E5%B1%B1%E7%B6%93',
+        variantText: '「肥𧔥」:B1/B2 原文作「𧔥」,arteducation 缺字拆字显示为「【蟲遺】」(其站字体缺字,非异文);袁本简体域同。郭注「復有肥遺蛇,疑是同名」——本站注音层音从遗(yí)。',
+        verificationNote: "2026-10-05 建站核验(G89):四源对读,B1×B2 正文逐字一致(B1 西山档 L03/B2 存档第 18 行)为录入门槛;arteducation/袁本正文同;上屏为简体逐字转换(錢→钱/馬→马/華→华/條→条/棗→枣/聾→聋/銅→铜/雞→鸡 等,对照表见 EDITION_AUDIT.md 三之补16),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 42, y: 40, region: '西山经' }, // G89:西次一带锯齿,实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G89:西次一经第四山(B1 西山档 L04×B2 第 20 行;郭注 6 条;㸲/鷩/㻬琈 郭音)。
+    id: 'loc-xiaohua',
+    canonicalName: '小华之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-xishan',
+    subClassic: '西次一经',
+    sourceOrder: 4,
+    previousLocationId: 'loc-taihua',
+    nextLocationId: 'loc-fuyux',
+    sourceDirection: '又西',
+    sourceDistance: '八十里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又西八十里，曰小华之山，其木多荆杞，其兽多㸲牛，其阴多磬石，其阳多㻬琈之玉，鸟多赤鷩，可以御火，其草有萆荔，状如乌韭，而生于石上，亦缘木而生，食之已心痛。',
+        chapter: '西山经',
+        section: '西次一经第四山',
+        guoPuNotes: [
+          { attach: '小華之山', text: '即少華山' },
+          { attach: '㸲牛', text: '今華陽山中多山牛山羊，肉皆千斤，牛即此牛也，音昨' },
+          { attach: '磬石', text: '可以爲樂石' },
+          { attach: '㻬琈之玉', text: '㻬琈玉，名所未詳也。雩浮兩音' },
+          { attach: '赤鷩', text: '赤鷩，山雞之屬。胷腹、洞赤、冠金皆黃頭綠尾，中有赤毛，彩鮮明。音作蔽，或作鱉' },
+          { attach: '萆荔', text: '萆荔，香草也。蔽戾兩音' },
+        ],
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/西山經》页面文本(B1,2026-10-05 档)、维基文库四库本郭璞注 wikitext(B2,2026-10-05 档)、arteducation.com.tw 西山经页(bookv_2)与袁珂《山海经校注》本(殆知阁)四源对读(G89;B1×B2 逐字一致为录入门槛;arteducation「濩」字缺字显示为囗、【牛乍】/【蟲遺】为缺字拆字展示,均非异文)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E8%A5%BF%E5%B1%B1%E7%B6%93',
+        variantText: '「㸲牛」:B1/B2 作「㸲」,arteducation 缺字拆字显示「【牛乍】」(非异文);郭注「音昨」。无页面自带「一作」异文。',
+        verificationNote: "2026-10-05 建站核验(G89):四源对读,B1×B2 正文逐字一致(B1 西山档 L04/B2 存档第 20 行)为录入门槛;arteducation/袁本正文同;上屏为简体逐字转换(錢→钱/馬→马/華→华/條→条/棗→枣/聾→聋/銅→铜/雞→鸡 等,对照表见 EDITION_AUDIT.md 三之补16),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 48, y: 42, region: '西山经' }, // G89:西次一带锯齿,实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G89:西次一经第五山(B1 西山档 L05×B2 第 22 行;郭注 3 条;鴖音旻;
+    // loc-fuyu 为二经浮玉先占,符禺用 loc-fuyux)。
+    id: 'loc-fuyux',
+    canonicalName: '符禺之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-xishan',
+    subClassic: '西次一经',
+    sourceOrder: 5,
+    previousLocationId: 'loc-xiaohua',
+    sourceDirection: '又西',
+    sourceDistance: '八十里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又西八十里，曰符禺之山，其阳多铜，其阴多铁。其上有木焉，名曰文茎，其实如枣，可以已聋。其草多条，其状如葵，而赤华黄实，如婴儿舌，食之使人不惑。符禺之水出焉，而北流注于渭。其兽多葱聋，其状如羊而赤鬣。其鸟多鴖，其状如翠而赤喙，可以御火。',
+        chapter: '西山经',
+        section: '西次一经第五山',
+        guoPuNotes: [
+          { attach: '鴖', text: '音旻' },
+          { attach: '赤喙', text: '翠似燕而紺色也' },
+          { attach: '可以禦火', text: '畜之辟火災也' },
+        ],
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/西山經》页面文本(B1,2026-10-05 档)、维基文库四库本郭璞注 wikitext(B2,2026-10-05 档)、arteducation.com.tw 西山经页(bookv_2)与袁珂《山海经校注》本(殆知阁)四源对读(G89;B1×B2 逐字一致为录入门槛;arteducation「濩」字缺字显示为囗、【牛乍】/【蟲遺】为缺字拆字展示,均非异文)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E8%A5%BF%E5%B1%B1%E7%B6%93',
+        variantText: '无页面自带异文;四源正文一致(arteducation「禦」作「御」,异形白名单对)。「赤鬛」之「鬛」为俗字照录(G29 先例,与「鬣」同)。id 说明:loc-fuyu 为南次二经浮玉之山(G30)先占,本山(符禺)加 x 后缀。',
+        verificationNote: "2026-10-05 建站核验(G89):四源对读,B1×B2 正文逐字一致(B1 西山档 L05/B2 存档第 22 行)为录入门槛;arteducation/袁本正文同;上屏为简体逐字转换(錢→钱/馬→马/華→华/條→条/棗→枣/聾→聋/銅→铜/雞→鸡 等,对照表见 EDITION_AUDIT.md 三之补16),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 54, y: 44, region: '西山经' }, // G89:西次一带东端,实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
 ]
 
 export function getLocation(id: string): Location | undefined {

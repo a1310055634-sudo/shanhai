@@ -10,8 +10,8 @@
  * 计数改由 segmentCounts() 从数组派生,不再手填。
  */
 
-/** 子经归属(南次一经/南次二经/南次三经)。 */
-export type SubClassic = '南次一经' | '南次二经' | '南次三经'
+/** 子经归属(南山三子经+西次一经,G89 起扩西山)。 */
+export type SubClassic = '南次一经' | '南次二经' | '南次三经' | '西次一经'
 
 export interface ChapterSegment {
   /** 稳定 id(J02 建立),用作锚点与引用,不得依赖数组下标 */
@@ -40,6 +40,68 @@ export function segmentCounts(ct: ChapterText): { entered: number; gaps: number 
 }
 
 /** 南山经(含南次一经/二经/三经)——起步录入。 */
+// G89:西山经章文本(西次一经开篇 5/19 山;B1 西山档 wikisource-xishan1-b1-20261005
+// ×B2 wikisource-xishan1-guopu-20261005 四源对读;余山留工作稿待后续阶段呈报)。
+const XISHAN: ChapterText = {
+  segments: [
+    {
+      // G89:錢來之山(西次一经第一山,经首段;郭注 3 条存档;羬音針/腊音昔)。
+      id: 'seg-xs1-qianlai',
+      kind: 'text',
+      section: '西次一经',
+      text: '西山经华山之首，曰钱来之山，其上多松，其下多洗石。有兽焉，其状如羊而马尾，名曰羬羊，其脂可以已腊。',
+      relatedLocationIds: ['loc-qianlai'],
+    },
+    {
+      // G89:松果之山(第二山;郭注 2 条;䳋音彤;𦢊 代理对原形照录,郭注反切「音叵駮反」)。
+      id: 'seg-xs1-songguo',
+      kind: 'text',
+      section: '西次一经',
+      text: '西四十五里，曰松果之山。濩水出焉，北流注于渭，其中多铜。有鸟焉，其名曰䳋渠，其状如山鸡，黑身赤足，可以已𦢊。',
+      relatedLocationIds: ['loc-songguo'],
+    },
+    {
+      // G89:太華之山(第三山;郭注 4 条;肥𧔥 代理对原形照录,郭注「復有肥遺蛇疑是
+      // 同名」,音从遗 yí)。
+      id: 'seg-xs1-taihua',
+      kind: 'text',
+      section: '西次一经',
+      text: '又西六十里，曰太华之山，削成而四方，其高五千仞，其广十里，鸟兽莫居。有蛇焉，名曰肥𧔥，六足四翼，见则天下大旱。',
+      relatedLocationIds: ['loc-taihua'],
+    },
+    {
+      // G89:小華之山(第四山;郭注 6 条;㸲音昨/鷩音作蔽/㻬琈雩浮兩音)。
+      id: 'seg-xs1-xiaohua',
+      kind: 'text',
+      section: '西次一经',
+      text: '又西八十里，曰小华之山，其木多荆杞，其兽多㸲牛，其阴多磬石，其阳多㻬琈之玉，鸟多赤鷩，可以御火，其草有萆荔，状如乌韭，而生于石上，亦缘木而生，食之已心痛。',
+      relatedLocationIds: ['loc-xiaohua'],
+    },
+    {
+      // G89:符禺之山(第五山;郭注 3 条;鴖音旻;loc-fuyu 为二经浮玉先占,符禺用
+      // loc-fuyux)。
+      id: 'seg-xs1-fuyu',
+      kind: 'text',
+      section: '西次一经',
+      text: '又西八十里，曰符禺之山，其阳多铜，其阴多铁。其上有木焉，名曰文茎，其实如枣，可以已聋。其草多条，其状如葵，而赤华黄实，如婴儿舌，食之使人不惑。符禺之水出焉，而北流注于渭。其兽多葱聋，其状如羊而赤鬣。其鸟多鴖，其状如翠而赤喙，可以御火。',
+      relatedLocationIds: ['loc-fuyux'],
+    },
+    {
+      id: 'seg-xs1-tongji',
+      kind: 'text',
+      section: '西次一经',
+      text: '凡西经之首，自钱来之山至于騩山，凡十九山，二千九百五十七里。',
+      relatedLocationIds: [],
+    },
+    {
+      id: 'seg-xs1-gap-continuous',
+      kind: 'gap',
+      section: '西次一经',
+      note: '羭次之山以下十四山待后续阶段扩录呈报(西次一经共十九山;华山区祠礼段随篇末在 B1 西山档 L20 照录存档,待全经录毕上屏)',
+    },
+  ],
+}
+
 const NANSHAN: ChapterText = {
   segments: [
     {
@@ -488,6 +550,7 @@ const NANSHAN: ChapterText = {
 
 export const CHAPTER_TEXTS: Record<string, ChapterText> = {
   'nanshan-jing': NANSHAN,
+  'xishan-jing': XISHAN,
 }
 
 /** 生僻字注音(读音供参考,训释见条目页;非核验内容)。 */
@@ -508,6 +571,16 @@ export const GLOSSARY: Record<string, { pinyin: string; hint?: string }> = {
   鱄: { pinyin: 'tuán', hint: '郭注「音團扇之團」;鱼名,见则天下大旱' },
   顒: { pinyin: 'yú', hint: '郭注「音娬」,袁本引作「音娱」(yú),从音娱,娬 疑形讹照录' },
   䓘: { pinyin: 'gāo', hint: '郭注「音羔」;或作睪蘇,草名' },
+  羬: { pinyin: 'zhēn', hint: '郭注「羬音針」;羊身马尾之兽(羬羊)' },
+  腊: { pinyin: 'xī', hint: '郭注「腊音昔」;体皴,此指干裂之症' },
+  䳋: { pinyin: 'tóng', hint: '郭注「䳋,音彤弓之彤」;䳋渠,鸟名' },
+  𦢊: { pinyin: 'bó', hint: '郭注反切「音叵駮反」;皮皴起(代理对字,G30 u 旗护栏内)' },
+  𧔥: { pinyin: 'yí', hint: '郭注「復有肥遺蛇,疑是同名」,音从遗;肥𧔥,六足四翼之蛇(代理对字)' },
+  㸲: { pinyin: 'zuó', hint: '郭注「音昨」;山牛(㸲牛)' },
+  鷩: { pinyin: 'biē', hint: '郭注「音作蔽,或作鳖」;赤鷩,山鸡之属' },
+  㻬: { pinyin: 'yú', hint: '郭注「雩浮兩音」;㻬琈,玉名(㻬)' },
+  琈: { pinyin: 'fú', hint: '郭注「雩浮兩音」;㻬琈,玉名(琈)' },
+  鴖: { pinyin: 'mín', hint: '郭注「音旻」;鸟名,其状如翠赤喙' },
   枏: { pinyin: 'nán', hint: '同「楠」,郭注「音南」' },
   芘: { pinyin: 'pí', hint: '芘蠃,郭注「紫色螺也」' },
   蠃: { pinyin: 'luǒ', hint: '芘蠃,郭注「紫色螺也」' },
