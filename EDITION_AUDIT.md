@@ -420,3 +420,9 @@
 - **双向计数断言**(G95 A2):「昆」UI 山川组=1=数据源预计算(LOCATIONS 含昆 1);词条组 2(陆吾/钦原 sub 含昆仑之丘);「方」命中毕方。键盘 ↓+Enter 跳转 /catalog/qinyuan 实测。
 - **对比度 12.70**(input vs 面板底);390/1440 零溢出;首页 12 守恒。验收 10/10(dev/round95-verify.mjs)。
 - **两个新坑(重要)**:①**React 受控输入在 CDP 里须用原生 value setter**(Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,v)+dispatchEvent('input'))——直接赋值+Event('input') 对 React 18 无效,分组计数全空假红;②**晴窗 --ink-deep 是浅色系(#ddd0b4,G31 双主题令牌语义)——亮纸面板正文用字须走 --paper-ink(G66 先例)**,新组件误用 --ink-deep 作亮面板文字色=对比度 1.36 假红,修后 12.70。
+
+## 三之补23、线C:页脚触控 44px+移动端走查(2026-10-05,G96;用户裁决项清偿)
+
+- **改造**:Footer.module.css 链接(min-height:44px+inline-flex align,padding 0 4px)+G95 搜索入口同款——44px 为 iOS HIG 触控标准(用户 2026-10-05 裁决,清偿 G57 呈报项);行间视觉由既有 gap 10px 维持,双视口同值。
+- **验收 6/6**(dev/round96-verify.mjs):页脚 8 个可交互元素(6 链接+搜索入口+主题钮)**触控区全部 ≥44px**,1440 灯下/390 灯下/390 晴窗三组实测;390 **全路由 18/18 零横溢**(含五阶新页与全部新词条页);晴窗导航渐隐带复查——**渐变载体在(G68 修复未复发)**,检测坑=渐变在伪元素上,querySelectorAll 查不到,须 getComputedStyle(el,'::before/::after');首页 12。视觉回归前后对照:round96-before/after-{1440,390}.png 四张。
+- 呈报项闭环记录:STATE.openItems「页脚 29px 升 44px」已裁决已清偿(G96),四阶 REPORT 呈报第 6 条同步闭环。

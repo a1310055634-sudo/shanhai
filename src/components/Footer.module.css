@@ -61,7 +61,12 @@
   color: var(--text-on-dark);
   text-decoration: none;
   font-size: 15px;
-  padding: 4px 0;
+  /* G96:触控区 44px(iOS HIG;用户 2026-10-05 裁决,清偿 G57 呈报项)。
+     双视口同值;padding 收窄由 min-height 保触控,行间视觉由 gap 10px 维持。 */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 4px;
   transition: color var(--duration-hover) var(--ease-soft);
 }
 
@@ -169,11 +174,15 @@
 .searchEntry {
   background: none;
   border: none;
-  padding: 0;
+  padding: 0 4px;
   color: inherit;
   font: inherit;
   cursor: pointer;
   text-align: left;
+  /* G96:与页脚链接同款 44px 触控区 */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .searchEntry:hover {

@@ -1,3 +1,13 @@
+## G96 · 线C:页脚触控 44px+移动端走查
+
+- **有效执行编号**:五阶 14 / 20
+- **北京时间**:2026-10-05 05:15—05:4X(定时触发)
+- **开始 HEAD**:dd64957(G95),工作树干净;.round-lock 新建,轮末删除
+- **改造**(用户 2026-10-05 裁决,清偿 G57 呈报项):Footer.module.css 链接 min-height:44px+inline-flex(padding 0 4px,行间视觉由 gap 10px 维持);G95 搜索入口 button 同款。iOS HIG 触控标准,双视口同值。
+- **页面验收 6/6 PASS**(dev/round96-verify.mjs):页脚 8 元素(6 链接+搜索入口+主题钮)触控区 **1440 灯下/390 灯下/390 晴窗三组全部 =44px**;**390 全路由 18/18 零横溢**(scrollWidth≤clientWidth+1 口径,含五阶全部新页新词条);晴窗渐隐带复查 **未复发**(渐变载体在)。视觉回归前后对照 round96-before/after-{1440,390}.png 四张。
+- **新坑**:渐隐带渐变在伪元素上(G68 fadeLeft/fadeRight 双伪元素)——querySelectorAll 查不到,computed 须 getComputedStyle(el,'::before'/'::after');断言阈值写死数量(≥2)误判单元素双伪元素结构——判定条件应表达语义(渐变存在)而非计数。
+- **提交**:本轮单提交;**状态**:done——下一轮 G97(线C 收官:键盘无障碍专项——全站 Tab 流审计含搜索浮层与懒加载后全量,focus-visible/ARIA 抽查,对比度全站复跑)
+
 ## G95 · 线C:全站搜索 Ctrl+K
 
 - **有效执行编号**:五阶 13 / 20
