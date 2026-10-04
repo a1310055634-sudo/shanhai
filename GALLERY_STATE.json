@@ -4,13 +4,13 @@
   "title": "山河广记·五阶冲刺 G83—G102",
   "totalRounds": 20,
   "maxValidExecutions": 20,
-  "validExecutions": 3,
-  "currentRound": "G85",
+  "validExecutions": 4,
+  "currentRound": "G86",
   "rounds": {
     "G83": "done",
     "G84": "done",
     "G85": "done",
-    "G86": "not_started",
+    "G86": "done",
     "G87": "not_started",
     "G88": "not_started",
     "G89": "not_started",
@@ -48,7 +48,7 @@
     },
     "imagesNote": "古画 5 幅 1,065,665 B+刻本扫描 8 幅 794,823 B(与四阶收官零漂移);12 既有版画 SVG 7,800,554 B 不入位图预算;五阶新增位图独立预算 ≤2.0MB(单图 ≤350KB/长边 ≤1600px);本轮实测 JS/CSS 与四阶终验逐字节同值(纯账本轮零产品码改动)",
     "counters": {
-      "locations": 34,
+      "locations": 38,
       "entities": 17,
       "entitiesVerified": 12,
       "claims": 31,
@@ -126,7 +126,7 @@
     "keyRuling": "词条 verified 五阶一律不动(存量 5+新 4 全 unverified),首页「条目已核验=12」恒定;山位 recordStatus 仅 G84/G85 可依回核证据升级"
   },
   "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-05 01:4X+08:00",
+  "lastRunAt": "2026-10-05 02:1X+08:00",
   "status": "active",
   "shutdown": "G102 完成后或有效执行达 20 次:此后一切触发只读退出——不构建、不提交、不改文件;并提醒用户停用本定时任务(automation-e5cc26fa)。",
   "classicArtPull": {
@@ -144,7 +144,7 @@
     "[照录在页] 疑13—疑17 五则异文/里距案已在 variants 页,无待办",
     "[G96 清偿] 1440 页脚链接触控 29px→44px——用户已裁决(2026-10-05):升",
     "[挂账呈报] 三阶承续项:宋体大题跨环境抽验/墨痕显影手感/--duration-char 审计口径/floatSlot(五阶无轮位,继续呈报)",
-    "[挂账呈报] 词条 recordStatus 升级(存量 5+四阶新 2+五阶新 4)须用户裁决后另行立项,五阶禁动",
+    "[挂账呈报] 南次三经篇末「凡一十四山」vs 实段 13 段计山口径(两源同)+南山三段篇末合计与总记 40 山之差——G88 全线闭环时存疑区如实照录;三经 G87 传:非山首/陽夹/灌湘/雞山,G88 传:令丘/侖者/禺槀/南禺+篇末+全线闭环(12 新段=4+4+4,任务书 13 段预判已按丹穴在册修正)",
     "[挂账呈报] 南次三经 13 段 vs 篇末「凡一十四山」计山口径差(两源同口径,底本自带);南山经三段篇末合计 10+17+14=41 山 vs 总记 40 山之差——G88 全线闭环时存疑区如实照录"
   ],
   "phase2OpenItems": [

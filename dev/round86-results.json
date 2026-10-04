@@ -1,0 +1,67 @@
+[
+  {
+    "name": "A1a 白屏探针(正文>3000 字符)",
+    "pass": true,
+    "detail": "len ok=true"
+  },
+  {
+    "name": "A1b 天虞段逐字",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1c 禱過段逐字(含泿水句)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1d 發爽段逐字(汎原形)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1e 旄山尾段逐字",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1f 旧 gap 清/新 gap 在",
+    "pass": true,
+    "detail": "old=true new=true"
+  },
+  {
+    "name": "A2[1440] 方印=38",
+    "pass": true,
+    "detail": "dots=38"
+  },
+  {
+    "name": "A2[1440] 零重叠",
+    "pass": true,
+    "detail": "texts=48 ov=0"
+  },
+  {
+    "name": "A2[390] 方印=38",
+    "pass": true,
+    "detail": "dots=38"
+  },
+  {
+    "name": "A2[390] 零重叠",
+    "pass": true,
+    "detail": "texts=48 ov=0"
+  },
+  {
+    "name": "A3 疑18/19/20 上屏",
+    "pass": true,
+    "detail": "{\"d18\":true,\"d19\":true,\"d20\":true,\"n\":6}"
+  },
+  {
+    "name": "A4 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  },
+  {
+    "name": "A5 音表泿行(yín,郭注音銀)",
+    "pass": true,
+    "detail": "on=1"
+  }
+]

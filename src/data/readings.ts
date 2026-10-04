@@ -246,6 +246,15 @@ export const SOUND_ENTRIES: ReadingEntry[] = [
     note: '本站注音层标 hū,与郭注直音字「呼」同读。',
   },
   {
+    char: '泿',
+    layer: 'ruby',
+    quote: '音銀',
+    line: 74,
+    basis: 'sound',
+    where: '南次三经·祷过之山段「泿水出焉」',
+    note: '本站注音层标 yín,与郭注直音字「銀」同读。G86 增补。',
+  },
+  {
     char: '瞿',
     layer: 'ruby',
     mountainName: '瞿父之山',

@@ -345,10 +345,22 @@ const NANSHAN: ChapterText = {
       note: '篇末「凡十七山,七千二百里」:十七山已全录(G85 咸陰之山 2026-10-05 四源对读后录入闭环);本站逐段相加 7110 里与篇末 7200 里差 90 里,歧义照录不裁决,详见篇末里距对照存疑区',
     },
     {
-      id: 'seg-ns3-gap-tianyu-daoguo',
-      kind: 'gap',
+      // G86:天虞之山段(2026-10-05 四源对读录入:B1 三经档 L01×B2 第72行×arteducation×袁本;
+      // 经首段,无「又东」里距句;无郭注)。recordStatus 沿 G84/G85 四源口径=verified。
+      id: 'seg-ns3-tianyu-shan',
+      kind: 'text',
       section: '南次三经',
-      note: '天虞之山、祷过之山段待录入',
+      text: '南次三经之首，曰天虞之山，其下多水，不可以上。',
+      relatedLocationIds: ['loc-tianyu'],
+    },
+    {
+      // G86:禱過之山段(B1 三经档 L02×B2 第74行)。郭注 6 条存档 citations(山无词条,
+      // 注文不上屏词条页=G71 先例设计内);异文「白首一作手」两源同记=疑18。
+      id: 'seg-ns3-daoguo-shan',
+      kind: 'text',
+      section: '南次三经',
+      text: '东五百里，曰祷过之山，其上多金玉，其下多犀、兕，多象。有鸟焉，其状如鵁，而白首、三足、人面，其名曰瞿如，其鸣自号也。泿水出焉，而南流注于海。其中有虎蛟，其状鱼身而蛇尾，其音如鸳鸯，食者不肿，可以已痔。',
+      relatedLocationIds: ['loc-daoguo'],
     },
     {
       id: 'seg-ns3-danxue-shan',
@@ -366,10 +378,28 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-danxue'],
     },
     {
-      id: 'seg-ns3-gap-fashuang-end',
+      // G86:發爽之山段(B1 三经档 L04×B2 第78行)。异文「發爽一作喪」两源同记=疑19;
+      // 「汎」为底本原形照录(G30 𨴯 先例),arteducation 作「泛水/勃海」按异形白名单对读。
+      id: 'seg-ns3-fashuang-shan',
+      kind: 'text',
+      section: '南次三经',
+      text: '又东五百里，曰发爽之山，无草木，多水，多白猿。汎水出焉，而南流注于渤海。',
+      relatedLocationIds: ['loc-fashuang'],
+    },
+    {
+      // G86:旄山之尾段(B1 三经档 L05×B2 第80行)。郭注 2 条存档 citations;异文
+      // 「育遺一作隧」两源同记=疑20。段为「至於…之尾」句式(篇末计山口径注见疑记)。
+      id: 'seg-ns3-maoshan-wei',
+      kind: 'text',
+      section: '南次三经',
+      text: '又东四百里，至于旄山之尾，其南有谷，曰育遗，多怪鸟，凯风自是出。',
+      relatedLocationIds: ['loc-maoshan'],
+    },
+    {
+      id: 'seg-ns3-gap-feishan-end',
       kind: 'gap',
       section: '南次三经',
-      note: '发爽之山以下诸段待录入',
+      note: '非山之首、阳夹、灌湘、鸡山、令丘、仑者、禺稿、南禺诸段待录入(G87—G88)',
     },
   ],
 }
@@ -392,6 +422,7 @@ export const GLOSSARY: Record<string, { pinyin: string; hint?: string }> = {
   䍺: { pinyin: 'huán', hint: '郭注「音還,或音患」;羊身无口之兽' },
   洵: { pinyin: 'xún', hint: '郭注「音詢」' },
   閼: { pinyin: 'è', hint: '郭注「音遏」;閼之泽' },
+  泿: { pinyin: 'yín', hint: '郭注「音銀」;泿水,水名' },
   枏: { pinyin: 'nán', hint: '同「楠」,郭注「音南」' },
   芘: { pinyin: 'pí', hint: '芘蠃,郭注「紫色螺也」' },
   蠃: { pinyin: 'luǒ', hint: '芘蠃,郭注「紫色螺也」' },

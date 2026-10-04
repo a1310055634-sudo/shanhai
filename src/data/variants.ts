@@ -8,7 +8,7 @@
  *      底本B = 中文维基文库郭璞注本(四庫全書底本),存档
  *      EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt 与
  *      wikisource-nanshan1-20260927.txt。
- *  二、疑点登记(疑1—疑17):候核疑点与其处理状态,与 GALLERY_SPRINT.md
+ *  二、疑点登记(疑1—疑20):候核疑点与其处理状态,与 GALLERY_SPRINT.md
  *      「二阶内容疑点清单」逐条对应(id 相同)。
  *  三、站内引文异文标注:不自建第三份,页面运行时从 LOCATIONS[].citations[].variantText
  *      派生(单一来源)。
@@ -294,6 +294,27 @@ export const DOUBTS: DoubtItem[] = [
     evidence: '底本 B1 页面自带异文标注「名曰蠱一作「纂」雕」;底本 B2 四库本郭璞注同记{{另|蠱|纂}}(存档第 64 行)。两源正文均作「蠱」。',
     handling: '正文从两源共用作「蠱」(简体「蛊」),异文照录于 loc-luwu variantText 与本表;待底本 A 照录后按底本政策处理。蠱雕词条候选(G75)。G74 新增。',
     state: '待底本A回核',
+  },
+  {
+    id: '疑18',
+    topic: '禱過之山瞿如「白首」/「白手」异文',
+    evidence: '底本 B1 页面自带异文标注「而白首一作「手」、三足、人面」;底本 B2 四库本郭璞注同记{{另|首|手}}(存档第 74 行)。两源正文均作「首」。',
+    handling: '正文从两源共用作「首」,异文照录于 loc-daoguo variantText 与本表;四源对读(G86)arteducation/袁本正文亦作「首」。G86 新增。',
+    state: '已照录',
+  },
+  {
+    id: '疑19',
+    topic: '發爽之山「發爽」/「發喪」异文',
+    evidence: '底本 B1 页面自带异文标注「曰發爽一作「喪」之山」;底本 B2 四库本郭璞注同记{{另|爽|喪}}(存档第 78 行)。两源正文均作「爽」。',
+    handling: '正文从两源共用作「爽」(上屏转写「发爽」),异文照录于 loc-fashuang variantText 与本表;四源对读(G86)arteducation/袁本正文亦作「爽」。G86 新增。',
+    state: '已照录',
+  },
+  {
+    id: '疑20',
+    topic: '旄山之尾「育遺」/「育隧」异文',
+    evidence: '底本 B1 页面自带异文标注「曰育遺一作「隧」」;底本 B2 四库本郭璞注同记{{另|遺|隧}}(存档第 80 行)。两源正文均作「遺」。',
+    handling: '正文从两源共用作「遺」(上屏转写「育遗」),异文照录于 loc-maoshan variantText 与本表;四源对读(G86)arteducation/袁本正文亦作「遗」。G86 新增。',
+    state: '已照录',
   },
 ]
 
