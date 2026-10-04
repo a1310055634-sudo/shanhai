@@ -246,6 +246,15 @@ export const SOUND_ENTRIES: ReadingEntry[] = [
     note: '本站注音层标 hū,与郭注直音字「呼」同读。',
   },
   {
+    char: '鱄',
+    layer: 'ruby',
+    quote: '音團扇之團',
+    line: 88,
+    basis: 'sound',
+    where: '南次三经·鸡山段「其中有鱄鱼」',
+    note: '本站注音层标 tuán,与郭注直音字「團」同读。G87 增补。',
+  },
+  {
     char: '泿',
     layer: 'ruby',
     quote: '音銀',

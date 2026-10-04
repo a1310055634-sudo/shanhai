@@ -1,0 +1,67 @@
+[
+  {
+    "name": "A1a 白屏探针",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1b 非山首段逐字",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1c 陽夾段逐字",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1d 灌湘段逐字",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1e 雞山段逐字(黑水山焉+鱄鱼)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1f 旧 gap 清/新 gap 在",
+    "pass": true,
+    "detail": "old=true new=true"
+  },
+  {
+    "name": "A2[1440] 方印=42",
+    "pass": true,
+    "detail": "dots=42"
+  },
+  {
+    "name": "A2[1440] 零重叠",
+    "pass": true,
+    "detail": "texts=52 ov=0"
+  },
+  {
+    "name": "A2[390] 方印=42",
+    "pass": true,
+    "detail": "dots=42"
+  },
+  {
+    "name": "A2[390] 零重叠",
+    "pass": true,
+    "detail": "texts=52 ov=0"
+  },
+  {
+    "name": "A3 疑21/22 上屏",
+    "pass": true,
+    "detail": "{\"d21\":true,\"d22\":true}"
+  },
+  {
+    "name": "A4 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  },
+  {
+    "name": "A5 音表鱄行(tuán)",
+    "pass": true,
+    "detail": "on=1"
+  }
+]

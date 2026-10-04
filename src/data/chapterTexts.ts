@@ -396,10 +396,44 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-maoshan'],
     },
     {
-      id: 'seg-ns3-gap-feishan-end',
+      // G87:非山之首段(B1 三经档 L06×B2 第82行,逐字一致;无郭注无异文)。
+      id: 'seg-ns3-feishan-shou',
+      kind: 'text',
+      section: '南次三经',
+      text: '又东四百里，至于非山之首，其上多金玉，无水，其下多蝮虫。',
+      relatedLocationIds: ['loc-feishan'],
+    },
+    {
+      // G87:陽夾之山段(B1 三经档 L07×B2 第84行,逐字一致;无郭注)。
+      id: 'seg-ns3-yangjia-shan',
+      kind: 'text',
+      section: '南次三经',
+      text: '又东五百里，曰阳夹之山，无草木，多水。',
+      relatedLocationIds: ['loc-yangjia'],
+    },
+    {
+      // G87:灌湘之山段(B1 三经档 L08×B2 第86行)。异文「灌湘之山一作灌湖射之山」
+      // 两源同记=疑21。
+      id: 'seg-ns3-guanxiang-shan',
+      kind: 'text',
+      section: '南次三经',
+      text: '又东五百里，曰灌湘之山，上多木，无草；多怪鸟，无兽。',
+      relatedLocationIds: ['loc-guanxiang'],
+    },
+    {
+      // G87:雞山段(B1 三经档 L09×B2 第88行)。郭注 2 条存档 citations;「黑水山焉」
+      // 两源同、arteducation/袁本作「出焉」两案相持=疑22,从底本 B 系照录不校改。
+      id: 'seg-ns3-jishan-shan',
+      kind: 'text',
+      section: '南次三经',
+      text: '又东五百里，曰鸡山，其上多金，其下多丹雘。黑水山焉，而南流注于海。其中有鱄鱼，其状如鲋而彘毛，其音如豚，见则天下大旱。',
+      relatedLocationIds: ['loc-jishan3'],
+    },
+    {
+      id: 'seg-ns3-gap-lingqiu-end',
       kind: 'gap',
       section: '南次三经',
-      note: '非山之首、阳夹、灌湘、鸡山、令丘、仑者、禺稿、南禺诸段待录入(G87—G88)',
+      note: '令丘、仑者、禺稿、南禺诸段待录入(G88)+篇末总述与全线里距闭环',
     },
   ],
 }
@@ -423,6 +457,7 @@ export const GLOSSARY: Record<string, { pinyin: string; hint?: string }> = {
   洵: { pinyin: 'xún', hint: '郭注「音詢」' },
   閼: { pinyin: 'è', hint: '郭注「音遏」;閼之泽' },
   泿: { pinyin: 'yín', hint: '郭注「音銀」;泿水,水名' },
+  鱄: { pinyin: 'tuán', hint: '郭注「音團扇之團」;鱼名,见则天下大旱' },
   枏: { pinyin: 'nán', hint: '同「楠」,郭注「音南」' },
   芘: { pinyin: 'pí', hint: '芘蠃,郭注「紫色螺也」' },
   蠃: { pinyin: 'luǒ', hint: '芘蠃,郭注「紫色螺也」' },

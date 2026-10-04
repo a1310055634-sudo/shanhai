@@ -8,7 +8,7 @@
  *      底本B = 中文维基文库郭璞注本(四庫全書底本),存档
  *      EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt 与
  *      wikisource-nanshan1-20260927.txt。
- *  二、疑点登记(疑1—疑20):候核疑点与其处理状态,与 GALLERY_SPRINT.md
+ *  二、疑点登记(疑1—疑22):候核疑点与其处理状态,与 GALLERY_SPRINT.md
  *      「二阶内容疑点清单」逐条对应(id 相同)。
  *  三、站内引文异文标注:不自建第三份,页面运行时从 LOCATIONS[].citations[].variantText
  *      派生(单一来源)。
@@ -308,6 +308,20 @@ export const DOUBTS: DoubtItem[] = [
     evidence: '底本 B1 页面自带异文标注「曰發爽一作「喪」之山」;底本 B2 四库本郭璞注同记{{另|爽|喪}}(存档第 78 行)。两源正文均作「爽」。',
     handling: '正文从两源共用作「爽」(上屏转写「发爽」),异文照录于 loc-fashuang variantText 与本表;四源对读(G86)arteducation/袁本正文亦作「爽」。G86 新增。',
     state: '已照录',
+  },
+  {
+    id: '疑21',
+    topic: '灌湘之山「灌湘」/「灌湖射之山」异文',
+    evidence: '底本 B1 页面自带异文标注「灌湘之山一作「灌湖射之山」」;底本 B2 四库本郭璞注同记{{另|灌湘之山|灌湖射之山}}(存档第 86 行)。两源正文均作「灌湘之山」。',
+    handling: '正文从两源共用「灌湘之山」,异文照录于 loc-guanxiang variantText 与本表;arteducation/袁本正文亦同。G87 新增。',
+    state: '已照录',
+  },
+  {
+    id: '疑22',
+    topic: '雞山「黑水山焉」/「黑水出焉」两案相持',
+    evidence: '底本 B1 三经档 L09 与 B2 存档第 88 行正文均作「黑水山焉」;arteducation 排印本与袁珂校注本(郝懿行笺疏系统)均作「黑水出焉」——2:2 相持,「山」疑「出」形讹。',
+    handling: '本站从底本 B 系(B1×B2 逐字一致)照录「山焉」上屏,异文两案照录于 loc-jishan variantText 与本表,不校改。G87 新增。',
+    state: '不裁决',
   },
   {
     id: '疑20',

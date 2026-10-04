@@ -409,7 +409,136 @@ export const LOCATIONS: Location[] = [
         verifiedAt: '2026-10-05',
       },
     ],
+    nextLocationId: 'loc-feishan', // G87:非山首建站
     mapPosition: { x: 82.5, y: 81, region: '南山经' }, // G86:發爽之东锯齿低档,实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G87:南次三经第六山(非山之首,B1 三经档 L06×B2 第82行;「至於…之首」句式;
+    // 无郭注无异文)。
+    id: 'loc-feishan',
+    canonicalName: '非山之首',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次三经',
+    sourceOrder: 6,
+    previousLocationId: 'loc-maoshan',
+    nextLocationId: 'loc-yangjia',
+    sourceDirection: '又东',
+    sourceDistance: '四百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东四百里，至于非山之首，其上多金玉，无水，其下多蝮虫。',
+        chapter: '南山经',
+        section: '南次三经第六山(非山之首)',
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)、维基文库四库本郭璞注(B2)、arteducation.com.tw 繁体排印本与袁珂《山海经校注》本(殆知阁)四源对读(G87;B1×B2 逐字一致为录入门槛,第三四源差异见 variantText/疑点表)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText: '无页面自带异文;四源正文一致(G87)。',
+        verificationNote: "2026-10-05 建站核验(G87):四源对读,B1×B2 正文逐字一致(B1 三经档 L06/B2 存档第 82 行)为录入门槛;arteducation/袁本正文同(差异登记疑点);上屏为简体逐字转换(雞→鸡/鮒→鲋/陽→阳 等,对照表见 EDITION_AUDIT.md 三之补14),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 87, y: 77, region: '南山经' }, // G87:三经带续排(初摆 86.5,78 与旄山尾 1440 档 dy 不足实测检出,二轮收敛)
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G87:南次三经第七山(B1 三经档 L07×B2 第84行;无郭注)。
+    id: 'loc-yangjia',
+    canonicalName: '阳夹之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次三经',
+    sourceOrder: 7,
+    previousLocationId: 'loc-feishan',
+    nextLocationId: 'loc-guanxiang',
+    sourceDirection: '又东',
+    sourceDistance: '五百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东五百里，曰阳夹之山，无草木，多水。',
+        chapter: '南山经',
+        section: '南次三经第七山',
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)、维基文库四库本郭璞注(B2)、arteducation.com.tw 繁体排印本与袁珂《山海经校注》本(殆知阁)四源对读(G87;B1×B2 逐字一致为录入门槛,第三四源差异见 variantText/疑点表)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText: '无页面自带异文;四源正文一致(G87)。',
+        verificationNote: "2026-10-05 建站核验(G87):四源对读,B1×B2 正文逐字一致(B1 三经档 L07/B2 存档第 84 行)为录入门槛;arteducation/袁本正文同(差异登记疑点);上屏为简体逐字转换(雞→鸡/鮒→鲋/陽→阳 等,对照表见 EDITION_AUDIT.md 三之补14),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 90, y: 81.5, region: '南山经' }, // G87:三经带锯齿,实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G87:南次三经第八山(B1 三经档 L08×B2 第86行;疑21 异文)。
+    id: 'loc-guanxiang',
+    canonicalName: '灌湘之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次三经',
+    sourceOrder: 8,
+    previousLocationId: 'loc-yangjia',
+    nextLocationId: 'loc-jishan3',
+    sourceDirection: '又东',
+    sourceDistance: '五百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东五百里，曰灌湘之山，上多木，无草；多怪鸟，无兽。',
+        chapter: '南山经',
+        section: '南次三经第八山',
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)、维基文库四库本郭璞注(B2)、arteducation.com.tw 繁体排印本与袁珂《山海经校注》本(殆知阁)四源对读(G87;B1×B2 逐字一致为录入门槛,第三四源差异见 variantText/疑点表)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText: '「灌湘之山」:底本B1页面自带异文标注「灌湘之山一作「灌湖射之山」」;底本B2四库本同记{{另|灌湘之山|灌湖射之山}}(存档第 86 行)。两源正文均作「灌湘之山」。本站从两源正文,异文登记疑21;arteducation/袁本正文亦作「灌湘之山」。',
+        verificationNote: "2026-10-05 建站核验(G87):四源对读,B1×B2 正文逐字一致(B1 三经档 L08/B2 存档第 86 行)为录入门槛;arteducation/袁本正文同(差异登记疑点);上屏为简体逐字转换(雞→鸡/鮒→鲋/陽→阳 等,对照表见 EDITION_AUDIT.md 三之补14),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 93.5, y: 78, region: '南山经' }, // G87:三经带锯齿,实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G87:南次三经第九山(B1 三经档 L09×B2 第88行;郭注 2 条;疑22「黑水山焉」两案)。
+    id: 'loc-jishan3', // 一经基山 loc-jishan(G01)先占,三经鸡山加 3 后缀
+    canonicalName: '鸡山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次三经',
+    sourceOrder: 9,
+    previousLocationId: 'loc-guanxiang',
+    sourceDirection: '又东',
+    sourceDistance: '五百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东五百里，曰鸡山，其上多金，其下多丹雘。黑水山焉，而南流注于海。其中有鱄鱼，其状如鲋而彘毛，其音如豚，见则天下大旱。',
+        chapter: '南山经',
+        section: '南次三经第九山',
+        guoPuNotes: [
+          { attach: '丹雘', text: '雘，赤色者，或曰臒，美丹也。見《尚書》，音尺蠖之蠖' },
+          { attach: '鱄魚', text: '音團扇之團' },
+        ],
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)、维基文库四库本郭璞注(B2)、arteducation.com.tw 繁体排印本与袁珂《山海经校注》本(殆知阁)四源对读(G87;B1×B2 逐字一致为录入门槛,第三四源差异见 variantText/疑点表)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText: '「黑水山焉」:底本B1/B2 两源正文均作「山焉」(B1 三经档 L09/B2 存档第 88 行);arteducation 排印本与袁珂校注本(郝懿行笺疏系统)均作「黑水出焉」——两案相持,本站从底本 B 系照录「山焉」,登记疑22(「山」疑「出」形讹),不校改。G87 新增。',
+        verificationNote: "2026-10-05 建站核验(G87):四源对读,B1×B2 正文逐字一致(B1 三经档 L09/B2 存档第 88 行)为录入门槛;arteducation/袁本正文同(差异登记疑点);上屏为简体逐字转换(雞→鸡/鮒→鲋/陽→阳 等,对照表见 EDITION_AUDIT.md 三之补14),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 97, y: 81.5, region: '南山经' }, // G87:三经带东缘,实测裁决
     modernHypotheses: [],
     recordStatus: 'verified',
   },
