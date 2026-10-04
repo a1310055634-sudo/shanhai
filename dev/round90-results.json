@@ -1,0 +1,47 @@
+[
+  {
+    "name": "A1a 徽章「待考证」(unverified 两态)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1b 引文上屏(蜂/鸳鸯/钦原)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1c claim1 图赞上屏(其锐难当)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1d claim2 明清汇证上屏",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1e 昆仑之丘关联",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A2 Atlas 方印=51(词条不加节点)+零重叠",
+    "pass": true,
+    "detail": "dots=51 ov=0"
+  },
+  {
+    "name": "A3 目录词条卡=18",
+    "pass": true,
+    "detail": "count=18"
+  },
+  {
+    "name": "A4 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  },
+  {
+    "name": "A5 异文页回归(无新疑,长度正常)",
+    "pass": true,
+    "detail": "ok"
+  }
+]
