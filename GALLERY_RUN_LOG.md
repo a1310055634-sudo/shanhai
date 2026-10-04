@@ -1,3 +1,16 @@
+## G82 · 四阶终验(收官轮)
+
+- **有效执行编号**:四阶 24 / 24
+- **北京时间**:2026-10-04 14:0X—14:2X(定时触发)
+- **开始 HEAD**:0cabccf(G80 补充),工作树干净;.round-lock 新建,轮末删除
+- **终验四件**:①**rebuild 版本戳实证**——HEAD 0cabccf 页脚「本次第 0cabccf」逐字吻合(矩阵内断言)②**回归矩阵复跑 17/17 全绿**(dev/round82-regression.mjs[派生自 round56 改道 GALLERY_FINAL4/regression82/],含收藏抽屉/锚点 124px/版本戳等全项)③**全站双主题走查**——28 组(14 路由×双主题)×12 样本=**336 采样对比度零失败**+**42 张收官截图归档 GALLERY_FINAL4/**(dev/round82-walk.mjs[派生自 round70])④**REPORT 四阶卷+DEV_LOG 四阶章**(判定完成/两线对照表/红线六条复核/性能决算/遗留呈报)
+- **性能决算(vite 口径,vs G59 基线)**:JS 577.10→649.05 raw/179.99→199.81 gzip(**+19.82**,主因内容线数据扩容:9 山正文/2 词条/31 claims/疑点 17/音表+11 行/凡例新例);CSS 21.73→22.39(**+0.66**);位图池 8 幅 795KB=40%
+- **STATE 收官**:validExecutions **24/24**/rounds.G82=done/status=**completed**/shutdown 条款更新=「此后一切触发只读退出并提醒停用 automation-6124ef5a」/phase4Final 块(两线决算+红线复核)/openItems 重整为呈报清单 7 条
+- **遗留呈报(七条,详见 STATE.openItems)**:A 侧 ctext 回核 11 处 unverified/咸陰之山疑15 随录闭环/待图 9 兽/疑12 四例裁决表/疑13—17 五则/G57 待裁决项/三阶呈报承续
+- **提交**:主提交(REPORT/DEVLOG/STATE/看板/RUN_LOG+收官产物 42 张+regression82+脚本)
+- **状态**:done——**四阶「图鉴格物」24/24 收官**;此后一切触发只读退出
+- **给用户的收官报告入口**:GALLERY_REPORT.md 四阶卷/GALLERY_FINAL4//DEV_LOG 四阶章;**请停用定时任务 automation-6124ef5a**(Automations 页面删除即可;若忘删,后续触发将按 shutdown 条款只读空转并再次提醒)
+
 ## G81 · 三页联动+凡例更新(音表页/异文页/古卷页里距区 + 凡例页四阶新例)
 
 - **有效执行编号**:四阶 23 / 24

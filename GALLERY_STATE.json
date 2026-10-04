@@ -3,7 +3,7 @@
   "phase": 4,
   "title": "图鉴格物·四阶冲刺 G59—G82",
   "totalRounds": 24,
-  "validExecutions": 23,
+  "validExecutions": 24,
   "maxValidExecutions": 24,
   "currentRound": "G82",
   "rounds": {
@@ -30,7 +30,7 @@
     "G79": "done",
     "G80": "done",
     "G81": "done",
-    "G82": "not_started"
+    "G82": "done"
   },
   "retired": "一阶 G14—G20 已并入二阶(G21—G23/G25/G36/G37/G38),原编号退役;二阶 G21—G38 于 2026-10-02 收官(18/18,终验 54f138b);三阶 G39—G58 于 2026-10-03 收官(20/20,主终验 3a0277b+收官截图 94a98e6,另有 POST-1 hero 通栏化 a026a11)",
   "baseline": {
@@ -107,9 +107,9 @@
     "postSprint": "POST-1 hero 画卷通栏化 a026a11(用户反馈,2026-10-03 深夜)"
   },
   "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-04 11:26+08:00",
-  "status": "in_progress",
-  "shutdown": "四阶冲刺 24 轮:G82 完成后或有效执行达 24 次,此后一切触发只读退出(不构建、不提交、不改文件),并提醒用户停用本定时任务(automation-6124ef5a)。",
+  "lastRunAt": "2026-10-04 14:1X+08:00",
+  "status": "completed",
+  "shutdown": "四阶冲刺 24/24 收官(G82 终验):此后一切触发只读退出——不构建、不提交、不改文件;请用户停用本定时任务(automation-6124ef5a)。",
   "classicArtPull": {
     "round": "G60+G62",
     "files": 6,
@@ -118,16 +118,13 @@
     "note": "S1—S6 见 ART_PROVENANCE;G61 接线四词条+G62 接线精卫(三才图会矢量化件);待补 9 兽占位签如实;三才图会家族过筛关项/WDL4447 归 G69 样张"
   },
   "openItems": [
-    "[呈报用户] 宋体大题在其他 Windows 环境落 SimSun 的屏显抽验",
-    "[呈报用户] 墨痕显影动效手感与晴窗「昼间覆纸」视觉复核",
-    "[呈报用户] --duration-char 为 JS 消费型令牌(CSS 无引用)——审计口径是否纳入 JS 引用",
-    "[呈报用户] floatSlot 浮卡槽位暂无实渲染使用方(组件能力保留)",
-    "[呈报用户·二阶] 底本 A(ctext)回核挂账:南次二经 6 山 recordStatus=unverified",
-    "[呈报用户·二阶] 南次二经余 11 山 DRAFT 扩录(四阶 G71—G74 施工;G81 实况:已录 16/17,仅缺咸陰之山——B1「四百里」/B2「五百里」两源互异未达逐字一致门槛,按红线不录,见疑15)",
-    "[呈报用户·二阶] ruby 注音层未收 10 字+疑 12 四例读音分歧人工复核(四阶 G78 施工)",
-    "[呈报用户·二阶] 1440 指针档页脚链接 29px 是否升 44px(待用户裁决,不擅动)",
-    "[呈报用户·二阶] 其余 12 词条流变层无 claim(四阶 G77 施工:verified 9 条补,3 条 unverified 挂账)",
-    "[呈报用户·二阶] 人工复核:楷体渲染/真实前台键盘 focus-visible/选区渲染色"
+    "[呈报用户] 底本A(ctext)回核:11 处 unverified(A 侧软拦截页:200 但正文零命中)",
+    "[呈报用户] 咸陰之山疑15:里距 B1 四百里/B2 五百里两源互异,待 A 回核三源对读后随录闭环 17/17",
+    "[呈报用户] 待补古图 9 兽(维持「待图」占位,许可门槛不放宽)",
+    "[呈报用户] 疑12 四例读音裁决表(G78 RUN_LOG:禺/亶/杻/雘,建议维持本站通行标注+郭注两存)",
+    "[呈报用户] 疑13—疑17 五则新异文/里距案(variants 页照录)",
+    "[呈报用户] G57 呈报项待裁决者(页脚 29px 升 44px 等)不变",
+    "[呈报用户] 宋体大题跨环境抽验/墨痕显影手感/--duration-char 审计口径/floatSlot(三阶呈报项承续)"
   ],
   "phase2OpenItems": [
     "底本 A(ctext)回核挂账:南次二经 6 山按 B1×B2 先上线,recordStatus=unverified",
@@ -141,7 +138,7 @@
     "taskBook": "GALLERY_PROMPT3.md(唯一指令源,含八条翻译规则与附录 A 实测规格)",
     "referenceSite": "mimo.xiaomi.com/coder(2026-10-02/03 两轮实测,规格表附录 A)"
   },
-  "finalShotsPrep": "GALLERY_FINAL3/(28 张 mid-* 走查+regression56/ 矩阵截图+final-* 收官)",
+  "finalShotsPrep": "GALLERY_FINAL4/(42 张收官截图+regression82/ 矩阵 17/17)",
   "resolved": [
     "G57 处理:版画小图 20 处补显式宽高(classicArt 12 条按 viewBox+BeastArtwork img),复跑 noWH=0/CLS 全 0",
     "G80 处理:yinglong.ts 2 处 sourceUrl 裸中文(/wiki/卷14)补全为四库本卷14 完整 URL——G79 批量替换只覆盖 wiki/卷01 形态而漏此;全站复查裸中文 URL=0",
@@ -152,12 +149,29 @@
     "G81 凡例页:新增 PHASE4_EXAMPLES 四阶新例 4 条(并陈例/流变 claim 例/见X条互链例/章符里距缺口例)+ 纹样台账补四阶 2 条落点(现 2/4)+ 修第六层「十二条目主体插画」陈旧表述;凡例数字经程序化统计订正为 14 词条/31 claim(初稿凭印象写 11/9,凡引数必先统计)",
     "G81 验收纪律:needle 须取稳定子串(词条级异文上屏为简体且含嵌套引号,'蠱一作纂'匹配不到,应取'蛊一作');计数断言不得写死数值——须自数据源实算(本轮写死 6610 实为 6710,页面正确断言陈旧),已改 dev/round81-sumcheck.mjs 派生"
   ],
-  "finalReport": "GALLERY_REPORT.md(三阶卷 2026-10-03)",
+  "finalReport": "GALLERY_REPORT.md(四阶卷 2026-10-04)",
   "phase4": {
     "taskBook": "GALLERY_PROMPT4.md(v2,唯一指令源,含硬红线/24 轮表/附录 A 古图源/附录 B 双源流程/附录 C 断言口径)",
     "artLine": "G59—G70 经典图谱:刻本原件×站内转描并陈(已探明可拉 6 幅,见 CLASSIC_ART_RECON.md)",
     "contentLine": "G71—G82 格物细读:二经余 11 山双源扩录闭环/新词条/凤皇郭注/流变 claims(verified 9 条)/ruby 10 字/纵深/三页联动/G82 终验",
     "recon": "CLASSIC_ART_RECON.md + dev/round59-recon*.mjs/json(维基共享 60+ 次 API 实查;蒋应镐崇祯本家族 15 文件/汪绂本 8 文件/三才图会 112 张)",
     "clock": "automation-6124ef5a 每 25 分钟一轮,maxRuns=30(24 轮+6 次余量)"
+  },
+  "phase4Final": {
+    "head": "0cabccf(G82 rebuild 版本戳页内实证)",
+    "recordedAt": "2026-10-04",
+    "js": {
+      "raw": "649.05 kB",
+      "gzip": "199.81 kB"
+    },
+    "css": {
+      "raw": "126.98 kB",
+      "gzip": "22.39 kB"
+    },
+    "matrix": "17/17(round82-regression,版本戳实证)",
+    "walk": "28 组 336 采样对比度零失败;42 张双主题收官截图",
+    "artLine": "美术线 G59—G70:古图 8 幅(S1—S8 全 PD 池 40%)/并陈 6+待图 9/纹样 2/4/裸值归零 24 处",
+    "contentLine": "内容线 G71—G82:二经 16/17(咸陰疑15 悬置)/词条 17/claims 31 条 14 词条/ruby 收 6/疑点 17/互链 3 对",
+    "redLines": "六条红线全清(原文区零改动/裸色零/预算合规/计数 12 恒/无第二份数据/纹样合规)"
   }
 }
