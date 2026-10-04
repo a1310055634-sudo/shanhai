@@ -1,0 +1,27 @@
+[
+  {
+    "name": "A1 复查档案在档(13 兽,其中 12 兽无可用/受限)",
+    "pass": true,
+    "detail": "keys=13"
+  },
+  {
+    "name": "A2 纹样新增 0(检索组件无 SVG 纹样)",
+    "pass": true,
+    "detail": "feTurbulence=0"
+  },
+  {
+    "name": "A3 搜索浮层不回归",
+    "pass": true,
+    "detail": "open=1"
+  },
+  {
+    "name": "A4 陆吾词条待图占位在",
+    "pass": true,
+    "detail": "on=1"
+  },
+  {
+    "name": "A5 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  }
+]
