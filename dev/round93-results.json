@@ -1,0 +1,52 @@
+[
+  {
+    "name": "A1a 徽章两态",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1b 引文上屏(九首/禹杀相柳)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1c claim 图赞(终禽夏后)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1d claim 九首母题(骆宾王/九凤)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1e claim 四写法汇证",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1f claim 陈一中翻案",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1g 待图占位",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A2 Atlas 方印=53 不变(海外经无山)+零重叠",
+    "pass": true,
+    "detail": "dots=53 ov=0"
+  },
+  {
+    "name": "A3 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  },
+  {
+    "name": "A4 目录词条卡=21",
+    "pass": true,
+    "detail": "count=21"
+  }
+]
