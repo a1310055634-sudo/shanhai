@@ -88,7 +88,9 @@ export default function DistanceTable({ classic = 'ns1' }: { classic?: DistanceC
                 </li>
                 <li>
                   本站已录{cnNum(summary.countedMountains)}山逐段相加 {summary.sum} 里,篇末作{' '}
-                  {summary.totalInText} 里——余十一山未核不上线,相加校核待全录,缺口如实待续。
+                  {summary.totalInText} 里——尚缺{cnNum(summary.mountainsInText - summary.countedMountains)}山
+                  (咸陰之山,B1「四百里」与B2「五百里」两源互异、正文未达逐字一致门槛,按红线不录,见疑15),
+                  相加校核缺口 {cnNum(Math.abs(summary.delta))} 里如实待续,不凑行。
                 </li>
                 <li>
                   羽山郭注「計此道里不相應,似非也」系郭璞自注此山道里与实地方位不合,照录注层,非本站意见。

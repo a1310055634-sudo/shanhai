@@ -111,11 +111,18 @@ const TONGJI_SEG_BY_CLASSIC: Record<DistanceClassic, string> = {
   ns2: 'seg-ns2-tongji',
 }
 
-const CN_DIGITS = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十']
+/**
+ * 序数汉字(一经表仅一至十);越界回退阿拉伯,不臆造。
+ * G81:计数扩至十七(南次二经实列十七山,已录十六),仅补「十一—十七」,
+ * 仍不越界臆造;十八及以上照旧回退阿拉伯。
+ */
+const CN_ORDINALS = [
+  '一','二','三','四','五','六','七','八','九','十',
+  '十一','十二','十三','十四','十五','十六','十七',
+]
 
-/** 序数汉字(一经表仅一至十);越界回退阿拉伯,不臆造。 */
 export function cnNum(n: number): string {
-  return CN_DIGITS[n - 1] ?? String(n)
+  return CN_ORDINALS[n - 1] ?? String(n)
 }
 
 /**

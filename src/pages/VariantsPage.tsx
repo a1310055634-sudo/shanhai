@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
+import { ENTITIES } from '../data/entities'
 import { LOCATIONS } from '../data/locations'
 import { CHAPTER_TEXTS } from '../data/chapterTexts'
 import { DOUBTS, GUOPU_DOUBTS, VARIANT_CASES, VARIANT_COUNTS } from '../data/variants'
 import styles from './ReferencePage.module.css'
 
 /**
- * 异文校勘页(G35)。
+ * 异文校勘页(G35;G81 补词条级来源)。
  *  - 独立差异项(差1—差7):来源 A / 来源 B / 本站现行呈现 / 未决原因 四栏并录,照录不裁决;
- *  - 疑点登记(疑1—疑12 + 郭注层四条):与 GALLERY_SPRINT.md「二阶内容疑点清单」逐条同 id;
- *  - 站内引文异文标注:运行时自 LOCATIONS[].citations[].variantText 派生,不自建第三份。
+ *  - 疑点登记(疑1—疑17 + 郭注层四条):与 GALLERY_SPRINT.md「二阶内容疑点清单」逐条同 id;
+ *  - 站内引文异文标注:运行时自 LOCATIONS[].citations[].variantText 派生,
+ *    **并入 ENTITIES[].citations[].variantText**(G81:䍺「洵一作旬」疑16、蛊雕「蠱一作纂」疑17
+ *    系词条级异文,G75 建条时只挂在词条页,异文页此前漏收;两类同源呈现,不另存第二份)。
  */
 
 const NANSHAN_SEGMENTS = CHAPTER_TEXTS['nanshan-jing']?.segments ?? []
@@ -19,21 +22,50 @@ function segmentIdOf(locationId: string): string | null {
   return NANSHAN_SEGMENTS.find((seg) => seg.relatedLocationIds?.includes(locationId))?.id ?? null
 }
 
-/** 站内已上屏的引文异文标注(单一来源派生;不手抄)。 */
-const SITE_VARIANTS = LOCATIONS.flatMap((location) =>
+/** 词条名 → slug(用于词条级异文回链;找不到则如实返回 null,页面退回篇首,不伪造链接)。 */
+function entitySlugOf(name: string): string {
+  return ENTITIES.find((e) => e.canonicalName === name)?.slug ?? ''
+}
+
+/** 山条目侧:站内已上屏的引文异文标注(单一来源派生;不手抄)。 */
+const MOUNTAIN_VARIANTS = LOCATIONS.flatMap((location) =>
   location.citations
     .filter((cite) => Boolean(cite.variantText))
     .map((cite) => ({
       id: `${location.id}-${cite.section}`,
-      locationId: location.id,
+      kind: '山' as const,
       name: location.canonicalName,
-      subClassic: location.subClassic,
-      section: cite.section,
+      place: location.subClassic,
+      section: cite.section ?? '',
       text: cite.variantText as string,
       url: cite.publicUrl,
+      /** 深链用 locationId(segmentIdOf 按 id 查,不按名) */
       segmentId: segmentIdOf(location.id),
     })),
 )
+
+/**
+ * 词条侧(G81 新增):异兽词条引文层的异文标注。
+ * 词条无 subClassic/古卷段锚点(异文在词条页引文区块内),故不回看古卷,
+ * 链回词条页本身;深链不伪造锚点。
+ */
+const ENTITY_VARIANTS = ENTITIES.flatMap((entity) =>
+  entity.citations
+    .filter((cite) => Boolean(cite.variantText))
+    .map((cite) => ({
+      id: `${entity.id}-${cite.section ?? cite.chapter}`,
+      kind: '兽' as const,
+      name: entity.canonicalName,
+      place: cite.chapter,
+      section: cite.section ?? '',
+      text: cite.variantText as string,
+      url: cite.publicUrl,
+      segmentId: null,
+    })),
+)
+
+/** 站内已上屏的引文异文标注(山条目 + 词条,同一渲染口径)。 */
+const SITE_VARIANTS = [...MOUNTAIN_VARIANTS, ...ENTITY_VARIANTS]
 
 export default function VariantsPage() {
   return (
@@ -195,32 +227,46 @@ export default function VariantsPage() {
           index="站"
           title="站内引文异文标注"
           subtitle="ZHAN NEI YIN WEN BIAO ZHU"
-          note={`共 ${SITE_VARIANTS.length} 处。此节运行时从各条目引文数据派生,不另存第二份,条目更新则此节同步。`}
+          note={`共 ${SITE_VARIANTS.length} 处(山条目 ${MOUNTAIN_VARIANTS.length} · 词条 ${ENTITY_VARIANTS.length})。此节运行时从各条目引文数据派生,不另存第二份,条目更新则此节同步;G81 起并入词条级异文。`}
         />
         <div className={styles.cites}>
           {SITE_VARIANTS.map((item) => (
-            <article key={item.id} className={styles.cite} data-site-variant={item.locationId}>
+            <article
+              key={item.id}
+              className={styles.cite}
+              data-site-variant={item.kind === '山' ? item.name : `兽:${item.name}`}
+              data-variant-kind={item.kind}
+            >
               <p className={styles.citeHead}>
+                <span className={styles.tag}>{item.kind === '山' ? '山' : '兽'}</span>
                 <strong className={styles.citeName}>{item.name}</strong>
                 <span className={styles.citeSection}>
-                  {item.subClassic} · {item.section}
+                  {item.place} · {item.section}
                 </span>
               </p>
               <p className={styles.citeText}>{item.text}</p>
               <div className={styles.citeLinks}>
-                <Link className={styles.citeLink} to="/atlas">
-                  山川图 →
-                </Link>
-                <Link
-                  className={styles.citeLink}
-                  to={
-                    item.segmentId
-                      ? `/chapters/nanshan-jing#${item.segmentId}`
-                      : '/chapters/nanshan-jing'
-                  }
-                >
-                  {item.segmentId ? '回看古卷对应段 →' : '回看古卷 →'}
-                </Link>
+                {item.kind === '兽' ? (
+                  <Link className={styles.citeLink} to={`/catalog/${entitySlugOf(item.name)}`}>
+                    回看词条页引文 →
+                  </Link>
+                ) : (
+                  <>
+                    <Link className={styles.citeLink} to="/atlas">
+                      山川图 →
+                    </Link>
+                    <Link
+                      className={styles.citeLink}
+                      to={
+                        item.segmentId
+                          ? `/chapters/nanshan-jing#${item.segmentId}`
+                          : '/chapters/nanshan-jing'
+                      }
+                    >
+                      {item.segmentId ? '回看古卷对应段 →' : '回看古卷 →'}
+                    </Link>
+                  </>
+                )}
                 {item.url ? (
                   <a className={styles.citeLink} href={item.url} target="_blank" rel="noreferrer">
                     公开对照底本 ↗
