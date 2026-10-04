@@ -1,0 +1,67 @@
+[
+  {
+    "name": "A1a 咸陰新段逐字上屏",
+    "pass": true,
+    "detail": "{\"seg\":true,\"gapGone\":true,\"note17\":true,\"tongji\":true}"
+  },
+  {
+    "name": "A1b 旧 gap 悬置文案已清",
+    "pass": true,
+    "detail": "gapGone=true"
+  },
+  {
+    "name": "A1c 篇末注 17/17 闭环文案",
+    "pass": true,
+    "detail": "note=true tongji=true"
+  },
+  {
+    "name": "A2[1440] 方印=34",
+    "pass": true,
+    "detail": "dots=34"
+  },
+  {
+    "name": "A2[1440] SVG 文本零重叠",
+    "pass": true,
+    "detail": "texts=44 overlap=0"
+  },
+  {
+    "name": "A2[390] 方印=34",
+    "pass": true,
+    "detail": "dots=34"
+  },
+  {
+    "name": "A2[390] SVG 文本零重叠",
+    "pass": true,
+    "detail": "texts=44 overlap=0"
+  },
+  {
+    "name": "A3a 里距表咸陰行在",
+    "pass": true,
+    "detail": "{\"row\":true,\"closed\":true,\"sum\":true,\"gap90\":true}"
+  },
+  {
+    "name": "A3b 存疑区闭环态+7110",
+    "pass": true,
+    "detail": "closed=true sum=true"
+  },
+  {
+    "name": "A4 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  },
+  {
+    "name": "A5[1440] LineageMap 零重叠",
+    "pass": true,
+    "detail": "texts=64 overlap=0"
+  },
+  {
+    "name": "A5[390] LineageMap 零重叠",
+    "pass": true,
+    "detail": "texts=64 overlap=0"
+  },
+  {
+    "name": "A6 疑15 勘误定谳上屏",
+    "pass": true,
+    "detail": "{\"erratum\":true,\"four\":true,\"gone\":true}"
+  }
+]

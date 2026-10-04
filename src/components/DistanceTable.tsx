@@ -84,13 +84,11 @@ export default function DistanceTable({ classic = 'ns1' }: { classic?: DistanceC
               <ul className={styles.doubtList}>
                 <li>
                   篇末作「凡{cnNum(summary.mountainsInText)}山」;底本B1页面南次二经实列十七山
-                  (自柜山至漆吴之山),与篇末数合——底本A未核,实列计数不预判。
+                  (自柜山至漆吴之山),与篇末数合——四源对读已核(G84/G85),实列计数与篇末数相合。
                 </li>
                 <li>
-                  本站已录{cnNum(summary.countedMountains)}山逐段相加 {summary.sum} 里,篇末作{' '}
-                  {summary.totalInText} 里——尚缺{cnNum(summary.mountainsInText - summary.countedMountains)}山
-                  (咸陰之山,B1「四百里」与B2「五百里」两源互异、正文未达逐字一致门槛,按红线不录,见疑15),
-                  相加校核缺口 {cnNum(Math.abs(summary.delta))} 里如实待续,不凑行。
+                  十七山已全录(G85 咸陰之山经四源对读录入,勘误见疑15):逐段相加 {summary.sum} 里,篇末作{' '}
+                  {summary.totalInText} 里——相差 {cnNum(Math.abs(summary.delta))} 里,缺口所指文献未明,如实存疑不裁决。
                 </li>
                 <li>
                   羽山郭注「計此道里不相應,似非也」系郭璞自注此山道里与实地方位不合,照录注层,非本站意见。

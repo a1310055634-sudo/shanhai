@@ -268,10 +268,15 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-pugou'],
     },
     {
-      id: 'seg-ns2-gap-xianyin',
-      kind: 'gap',
+      // G85:咸陰之山段(2026-10-05 四源对读后录入——B1 存档 L12×B2 第56行×arteducation
+      // 排印本×袁珂校注本(殆知阁)四源全作「五百里」,维基文库页面修订史核查(2026-02-21
+      // 后零编辑)确证 G72「B1 四百里」为当时误记;详见疑15 勘误记录与 EDITION_AUDIT 三之补12)。
+      // 无郭注(B2 该行无注);南次二经至此 17/17 全录。
+      id: 'seg-ns2-xianyin-shan',
+      kind: 'text',
       section: '南次二经',
-      note: '咸陰之山里距两源互异(B1「四百里」/B2「五百里」),正文两源不一致未录,待底本A回核裁决(疑15);不凑数;核不动不上线',
+      text: '又东五百里，曰咸阴之山，无草木，无水。',
+      relatedLocationIds: ['loc-xianyin'],
     },
     {
       // G73:洵山段(2026-10-04 经底本B1 存档 L13×B2 第58行两源净化正文逐字一致
@@ -337,7 +342,7 @@ const NANSHAN: ChapterText = {
       id: 'seg-ns2-tongji-note',
       kind: 'gap',
       section: '南次二经',
-      note: '篇末「凡十七山,七千二百里」:本站已录六山(自柜山至成山),瞿父、句餘与会稽以下九山未核不上线;逐段相加与篇末合计之对照见篇末里距对照存疑区,歧义照录不裁决',
+      note: '篇末「凡十七山,七千二百里」:十七山已全录(G85 咸陰之山 2026-10-05 四源对读后录入闭环);本站逐段相加 7110 里与篇末 7200 里差 90 里,歧义照录不裁决,详见篇末里距对照存疑区',
     },
     {
       id: 'seg-ns3-gap-tianyu-daoguo',

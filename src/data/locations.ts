@@ -936,7 +936,7 @@ export const LOCATIONS: Location[] = [
     subClassic: '南次二经',
     sourceOrder: 11,
     previousLocationId: 'loc-yishan',
-    nextLocationId: 'loc-xunshan', // G73:洵山建站
+    nextLocationId: 'loc-xianyin', // G85:咸陰建站(闭环第十七山)
     sourceDirection: '又东',
     sourceDistance: '五百里',
     relatedEntityIds: [],
@@ -961,6 +961,43 @@ export const LOCATIONS: Location[] = [
     recordStatus: 'verified',
   },
   {
+    // G85:南次二经第十二山(2026-10-05 四源对读后录入:B1 存档 L12×B2 第56行×
+    // arteducation 排印本×袁珂校注本,四源全作「五百里」;维基文库页面修订史核查
+    // 2026-02-21 后零编辑,确证 G72「B1 四百里」为当时误记,勘误见疑15 与
+    // EDITION_AUDIT 三之补12)。无郭注(B2 该行无注)。
+    id: 'loc-xianyin',
+    canonicalName: '咸阴之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次二经',
+    sourceOrder: 12,
+    previousLocationId: 'loc-pugou',
+    nextLocationId: 'loc-xunshan',
+    sourceDirection: '又东',
+    sourceDistance: '五百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东五百里，曰咸阴之山，无草木，无水。',
+        chapter: '南山经',
+        section: '南次二经第十二山',
+        sourceEdition:
+          '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)、维基文库四库本郭璞注(B2)、arteducation.com.tw 繁体排印本与袁珂《山海经校注》本(殆知阁)四源对读逐字一致(G85);勘误史见 variantText 与疑15',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText:
+          '里距数字勘误记录(疑15,G85 定谳):G72(2026-10-03)曾记「B1 四百里/B2 五百里两源互异」并悬置;G85 四源对读——B1 存档(2026-10-02 抓取)L12、B2 第 56 行、arteducation 排印本、袁珂校注本全作「又东五百里」,且维基文库页面修订史(API 实查)显示 2026-02-21 后零编辑——G72「四百里」系当时误读误记(「四百」与「五百」等字长,字节对账不可见,当时未存档页面快照)。本站从四源一致作「五百里」,疑15 转勘误记录存档。',
+        verificationNote:
+          '2026-10-05 建站核验(G85):四源正文逐字一致(B1 存档 L12 行/B2 存档第 56 行/arteducation bookv_1 页/袁本殆知阁档;「鹹/咸」为异形白名单对);上屏为简体逐字转换(東→东/陰→阴/無→无,对照见 EDITION_AUDIT.md 三之补12)。段无郭注(B2 该行无注)。',
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 78, y: 95.8, region: '南山经' }, // G85:仆勾(77,92.6)下方第二档拉开垂直距(中插方案与仆勾/洵山标签双撞实测检出,二轮实测裁决)
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
     // G73:南次二经第十二山(2026-10-04 经底本B1 存档 L13×B2 第58行两源净化正文
     // 逐字一致后录入,底本A回核挂账)。异文「洵一作旬」两源同记=疑16。
     // 兽「䍺」句照录(词条候选留 G75,relatedEntityIds 暂缺如实);郭注 5 条上屏。
@@ -970,8 +1007,8 @@ export const LOCATIONS: Location[] = [
     type: 'mountain',
     chapterId: 'ch-nanshan',
     subClassic: '南次二经',
-    sourceOrder: 12,
-    previousLocationId: 'loc-pugou',
+    sourceOrder: 13,
+    previousLocationId: 'loc-xianyin',
     nextLocationId: 'loc-hushao',
     sourceDirection: '又东',
     sourceDistance: '四百里',
@@ -980,7 +1017,7 @@ export const LOCATIONS: Location[] = [
       {
         originalText: '又东四百里，曰洵山，其阳多金，其阴多玉。有兽焉，其状如羊而无口，不可杀也，其名曰䍺。洵水出焉，而南流注于阏之泽，其中多芘蠃。',
         chapter: '南山经',
-        section: '南次二经第十二山',
+        section: '南次二经第十三山',
         guoPuNotes: [
           {
             attach: '不可杀也',
@@ -1027,7 +1064,7 @@ export const LOCATIONS: Location[] = [
     type: 'mountain',
     chapterId: 'ch-nanshan',
     subClassic: '南次二经',
-    sourceOrder: 13,
+    sourceOrder: 14,
     previousLocationId: 'loc-xunshan',
     nextLocationId: 'loc-quwu', // G74:區吳之山建站
     sourceDirection: '又东',
@@ -1037,7 +1074,7 @@ export const LOCATIONS: Location[] = [
       {
         originalText: '又东四百里，曰虖勺之山，其上多梓枏，其下多荆杞。滂水出焉，而东流注于海。',
         chapter: '南山经',
-        section: '南次二经第十三山',
+        section: '南次二经第十四山',
         guoPuNotes: [
           {
             attach: '梓枏',
@@ -1074,7 +1111,7 @@ export const LOCATIONS: Location[] = [
     type: 'mountain',
     chapterId: 'ch-nanshan',
     subClassic: '南次二经',
-    sourceOrder: 14,
+    sourceOrder: 15,
     previousLocationId: 'loc-hushao',
     nextLocationId: 'loc-luwu',
     sourceDirection: '又东',
@@ -1084,7 +1121,7 @@ export const LOCATIONS: Location[] = [
       {
         originalText: '又东五百里，曰区吴之山，无草木，多沙石。鹿水出焉，而南流注于滂水。',
         chapter: '南山经',
-        section: '南次二经第十四山',
+        section: '南次二经第十五山',
         sourceEdition:
           '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测软拦截页(200 但正文零命中),恢复后回核',
         publicUrl:
@@ -1108,7 +1145,7 @@ export const LOCATIONS: Location[] = [
     type: 'mountain',
     chapterId: 'ch-nanshan',
     subClassic: '南次二经',
-    sourceOrder: 15,
+    sourceOrder: 16,
     previousLocationId: 'loc-quwu',
     nextLocationId: 'loc-qiwu',
     sourceDirection: '又东',
@@ -1118,7 +1155,7 @@ export const LOCATIONS: Location[] = [
       {
         originalText: '又东五百里，曰鹿吴之山，上无草木，多金石。泽更之水出焉，而南流注于滂水。水有兽焉，名曰蛊雕，其状如雕而有角，其音如婴儿之音，是食人。',
         chapter: '南山经',
-        section: '南次二经第十五山',
+        section: '南次二经第十六山',
         sourceEdition:
           '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)与维基文库四库本郭璞注(B2)两源逐字核对;底本A(ctext.org)2026-10-04 复测软拦截页(200 但正文零命中),恢复后回核',
         publicUrl:
@@ -1144,7 +1181,7 @@ export const LOCATIONS: Location[] = [
     type: 'mountain',
     chapterId: 'ch-nanshan',
     subClassic: '南次二经',
-    sourceOrder: 16,
+    sourceOrder: 17,
     previousLocationId: 'loc-luwu',
     sourceDirection: '东',
     sourceDistance: '五百里',
@@ -1153,7 +1190,7 @@ export const LOCATIONS: Location[] = [
       {
         originalText: '东五百里，曰漆吴之山，无草木，多博石，无玉。处于东海，望丘山，其光载出载入，是惟日次。',
         chapter: '南山经',
-        section: '南次二经第十六山(末录;第十七山咸陰之山悬置见疑15)',
+        section: '南次二经第十七山(末录;全经十七山录毕,G85 咸陰闭环)',
         guoPuNotes: [
           {
             attach: '无玉',
