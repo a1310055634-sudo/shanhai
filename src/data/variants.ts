@@ -8,7 +8,7 @@
  *      底本B = 中文维基文库郭璞注本(四庫全書底本),存档
  *      EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt 与
  *      wikisource-nanshan1-20260927.txt。
- *  二、疑点登记(疑1—疑22):候核疑点与其处理状态,与 GALLERY_SPRINT.md
+ *  二、疑点登记(疑1—疑25):候核疑点与其处理状态,与 GALLERY_SPRINT.md
  *      「二阶内容疑点清单」逐条对应(id 相同)。
  *  三、站内引文异文标注:不自建第三份,页面运行时从 LOCATIONS[].citations[].variantText
  *      派生(单一来源)。
@@ -315,6 +315,27 @@ export const DOUBTS: DoubtItem[] = [
     evidence: '底本 B1 页面自带异文标注「灌湘之山一作「灌湖射之山」」;底本 B2 四库本郭璞注同记{{另|灌湘之山|灌湖射之山}}(存档第 86 行)。两源正文均作「灌湘之山」。',
     handling: '正文从两源共用「灌湘之山」,异文照录于 loc-guanxiang variantText 与本表;arteducation/袁本正文亦同。G87 新增。',
     state: '已照录',
+  },
+  {
+    id: '疑23',
+    topic: '仑者之山「白䓘」/「白咎」异文(袁本独异)',
+    evidence: '底本 B1/B2 与 arteducation 排印本正文均作「白䓘」;袁珂校注本正文作「白咎」,其引郭注「或作睾苏;睾苏一名白咎,见广雅,音羔」——3:1 袁本独异。',
+    handling: '本站从 B 系作「䓘」(上屏「白䓘」),袁本异文照录于 loc-lunzhe variantText 与本表。G88 新增。',
+    state: '已照录',
+  },
+  {
+    id: '疑24',
+    topic: '「禺槀」/「禺稿」/「禺槁」三写法并存',
+    evidence: '底本 B1/B2 与 arteducation 均作「禺槀」;袁珂校注本正文作「禺稿」,其珂案引宋本/吴任臣本/毕沅校本作「禺槁」。',
+    handling: '本站从 B1×B2「槀」,三写法照录于 loc-yugao variantText 与本表,不校改。G88 新增。',
+    state: '不裁决',
+  },
+  {
+    id: '疑25',
+    topic: '南次三经「凡一十四山」计山口径与南山全线「凡四十山」总记计数',
+    evidence: '篇末「凡一十四山」为四源同口径,而经文实分段 13 段(旄山之尾/非山之首两个「至於」句式段与经首天虞无里距段的计山法与段数不一致);南山经三段篇末合计 10+17+14=41 山、16680 里,总记行「大小凡四十山,万六千三百八十里」——山数差 1、里数差 300,四源同口径(底本自带)。',
+    handling: '篇末与总记照录上屏,计数口径如实存疑不裁决;DistanceTable 南次三经存疑区列明。G88 新增。',
+    state: '不裁决',
   },
   {
     id: '疑22',

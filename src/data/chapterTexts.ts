@@ -430,10 +430,58 @@ const NANSHAN: ChapterText = {
       relatedLocationIds: ['loc-jishan3'],
     },
     {
-      id: 'seg-ns3-gap-lingqiu-end',
-      kind: 'gap',
+      // G88:令丘之山段(B1 三经档 L10×B2 第90行)。郭注 2 条存档;顒郭注「音娬」、
+      // 袁本引作「音娱」(yú),形讹照录从音娱。
+      id: 'seg-ns3-lingqiu-shan',
+      kind: 'text',
       section: '南次三经',
-      note: '令丘、仑者、禺稿、南禺诸段待录入(G88)+篇末总述与全线里距闭环',
+      text: '又东四百里，曰令丘之山，无草木，多火。其南有谷焉，曰中谷，条风自是出。有鸟焉，其状如枭，人面四目而有耳，其名曰顒，其鸣自号也，见则天下大旱。',
+      relatedLocationIds: ['loc-lingqiu'],
+    },
+    {
+      // G88:侖者之山段(B1 三经档 L11×B2 第92行)。郭注 2 条存档(侖者音/白䓘音羔);
+      // 「穀」底本原形照录(全局 ruby 会误注「中谷/育遗」之谷,不转写);袁本作「白咎」
+      // 独异=疑23;袁本「禺稿」与诸本「槁」=疑24。
+      id: 'seg-ns3-lunzhe-shan',
+      kind: 'text',
+      section: '南次三经',
+      text: '又东三百七十里，曰仑者之山，其上多金玉，其下多青雘。有木焉，其状如穀而赤理其汗如漆，其味如饴，食者不饥，可以释劳，其名曰白䓘，可以血玉。',
+      relatedLocationIds: ['loc-lunzhe'],
+    },
+    {
+      // G88:禺槀之山段(B1 三经档 L12×B2 第94行)。袁本正文作「禺稿」、其珂案引诸本
+      // 作「槁」——三写法并存=疑24,站内从 B1×B2×artedu「槀」。
+      id: 'seg-ns3-yugao-shan',
+      kind: 'text',
+      section: '南次三经',
+      text: '又东五百八十里，曰禺槀之山，多怪兽，多大蛇。',
+      relatedLocationIds: ['loc-yugao'],
+    },
+    {
+      // G88:南禺之山段(B1 三经档 L13×B2 第96行)。郭注 1 条(鵷鶵亦鳳屬)存档。
+      id: 'seg-ns3-nanyu-shan',
+      kind: 'text',
+      section: '南次三经',
+      text: '又东五百八十里，曰南禺之山，其上多金玉，其下多水。有穴焉，水出辄入，夏乃出，冬则闭。佐水出焉，而东南流注于海，有凤皇、鹓雏。',
+      relatedLocationIds: ['loc-nanyu'],
+    },
+    {
+      // G88:南次三经篇末总述(B1 三经档 L14×B2 第98行,逐字一致;剥〈祈,請禱也〉注)。
+      // 「凡一十四山」与实段 13 段计山口径差=疑25(四源同口径,如实照录)。
+      id: 'seg-ns3-tongji',
+      kind: 'text',
+      section: '南次三经',
+      text: '凡南次三经之首，自天虞之山以至南禺之山，凡一十四山，六千五百三十里。其神皆龙身而人面。其祠皆一白狗祈，糈用稌。',
+      relatedLocationIds: [],
+    },
+    {
+      // G88:南山经全线总记(B1 三经档 L15,四源同;总记 40 山 16380 里 vs 三段篇末
+      // 合计 41 山 16680 里,计数口径差=疑25 关联,如实照录不裁决)。
+      id: 'seg-ns3-zongji',
+      kind: 'text',
+      section: '南次三经',
+      text: '右南经之山志，大小凡四十山，万六千三百八十里。',
+      relatedLocationIds: [],
     },
   ],
 }
@@ -458,6 +506,8 @@ export const GLOSSARY: Record<string, { pinyin: string; hint?: string }> = {
   閼: { pinyin: 'è', hint: '郭注「音遏」;閼之泽' },
   泿: { pinyin: 'yín', hint: '郭注「音銀」;泿水,水名' },
   鱄: { pinyin: 'tuán', hint: '郭注「音團扇之團」;鱼名,见则天下大旱' },
+  顒: { pinyin: 'yú', hint: '郭注「音娬」,袁本引作「音娱」(yú),从音娱,娬 疑形讹照录' },
+  䓘: { pinyin: 'gāo', hint: '郭注「音羔」;或作睪蘇,草名' },
   枏: { pinyin: 'nán', hint: '同「楠」,郭注「音南」' },
   芘: { pinyin: 'pí', hint: '芘蠃,郭注「紫色螺也」' },
   蠃: { pinyin: 'luǒ', hint: '芘蠃,郭注「紫色螺也」' },

@@ -1,0 +1,77 @@
+[
+  {
+    "name": "A1a 白屏探针",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1b 令丘段逐字",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1c 侖者段逐字(白䓘)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1d 禺槀段逐字",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1e 南禺段逐字(鹓雏)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1f 篇末+总记照录",
+    "pass": true,
+    "detail": "tongji=true zongji=true"
+  },
+  {
+    "name": "A1g 旧 gap 清",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1h ns3 里距表+存疑区",
+    "pass": true,
+    "detail": "table=true doubt=true"
+  },
+  {
+    "name": "A2[1440] 方印=46",
+    "pass": true,
+    "detail": "dots=46"
+  },
+  {
+    "name": "A2[1440] 零重叠",
+    "pass": true,
+    "detail": "texts=56 ov=0"
+  },
+  {
+    "name": "A2[390] 方印=46",
+    "pass": true,
+    "detail": "dots=46"
+  },
+  {
+    "name": "A2[390] 零重叠",
+    "pass": true,
+    "detail": "texts=56 ov=0"
+  },
+  {
+    "name": "A3 疑23/24/25 上屏",
+    "pass": true,
+    "detail": "{\"d23\":true,\"d24\":true,\"d25\":true}"
+  },
+  {
+    "name": "A4 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  },
+  {
+    "name": "A5 音表顒/䓘行",
+    "pass": true,
+    "detail": "on=1"
+  }
+]

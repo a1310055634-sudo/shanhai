@@ -12,15 +12,20 @@ export default function DistanceTable({ classic = 'ns1' }: { classic?: DistanceC
   const rows = useMemo(() => buildDistanceRows(classic), [classic])
   const summary = useMemo(() => buildDistanceSummary(classic), [classic])
   const isNs2 = classic === 'ns2'
+  const LABEL: Record<DistanceClassic, string> = {
+    ns1: '南次一经',
+    ns2: '南次二经',
+    ns3: '南次三经',
+  }
 
   return (
     <section
       className={styles.block}
-      aria-label={isNs2 ? '南次二经里距对照' : '南次一经里距对照'}
+      aria-label={`${LABEL[classic]}里距对照`}
       data-distance-table={classic}
     >
       <header className={styles.head}>
-        <h2 className={styles.title}>{isNs2 ? '里距对照(南次二经)' : '里距对照'}</h2>
+        <h2 className={styles.title}>{`里距对照(${LABEL[classic]})`}</h2>
         <p className={styles.note}>
           引文为原文照录;「X 里」与行旅站序为本站解析标注,非古籍原文。歧义照录,本站不裁决。
         </p>
@@ -80,7 +85,22 @@ export default function DistanceTable({ classic = 'ns1' }: { classic?: DistanceC
         <div className={styles.sumRow}>
           <dt className={styles.sumTerm}>存疑照录</dt>
           <dd className={styles.doubt}>
-            {isNs2 ? (
+            {classic === 'ns3' ? (
+              <ul className={styles.doubtList}>
+                <li>
+                  篇末「凡{cnNum(summary.mountainsInText)}山」为四源同口径,经文实分段十三段
+                  (经首天虞与旄山之尾/非山之首「至於」句式的计山法与段数不一致)——疑25,如实存疑不裁决。
+                </li>
+                <li>
+                  十二段带里距逐段相加 {summary.sum} 里(经首天虞无里距句),篇末作{' '}
+                  {summary.totalInText} 里——相差 {cnNum(Math.abs(summary.delta))} 里,如实存疑。
+                </li>
+                <li>
+                  南山经全线:三段篇末合计 41 山 16680 里,总记「大小凡四十山,万六千三百八十里」——
+                  山数差一、里数差三百,计数口径照录不裁决(总记行见篇末总述之后)。
+                </li>
+              </ul>
+            ) : isNs2 ? (
               <ul className={styles.doubtList}>
                 <li>
                   篇末作「凡{cnNum(summary.mountainsInText)}山」;底本B1页面南次二经实列十七山

@@ -409,7 +409,7 @@ export const LOCATIONS: Location[] = [
         verifiedAt: '2026-10-05',
       },
     ],
-    nextLocationId: 'loc-feishan', // G87:非山首建站
+    nextLocationId: 'loc-lingqiu', // G88:令丘建站(非山首之前 G87 已转接)
     mapPosition: { x: 82.5, y: 81, region: '南山经' }, // G86:發爽之东锯齿低档,实测裁决
     modernHypotheses: [],
     recordStatus: 'verified',
@@ -539,6 +539,142 @@ export const LOCATIONS: Location[] = [
       },
     ],
     mapPosition: { x: 97, y: 81.5, region: '南山经' }, // G87:三经带东缘,实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G88:南次三经第十山(B1 三经档 L10×B2 第90行;郭注 2 条;顒郭音「音娬」袁本
+    // 引「音娱」形讹照录从音娱)。
+    id: 'loc-lingqiu',
+    canonicalName: '令丘之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次三经',
+    sourceOrder: 10,
+    previousLocationId: 'loc-jishan3',
+    nextLocationId: 'loc-lunzhe',
+    sourceDirection: '又东',
+    sourceDistance: '四百里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东四百里，曰令丘之山，无草木，多火。其南有谷焉，曰中谷，条风自是出。有鸟焉，其状如枭，人面四目而有耳，其名曰顒，其鸣自号也，见则天下大旱。',
+        chapter: '南山经',
+        section: '南次三经第十山',
+        guoPuNotes: [
+          { attach: '條風自是出', text: '東北風爲條風。《記》曰：條風至，出輕繋，督逋畱' },
+          { attach: '其名曰顒', text: '音娬' },
+        ],
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)、维基文库四库本郭璞注(B2)、arteducation.com.tw 繁体排印本与袁珂《山海经校注》本(殆知阁)四源对读(G88;B1×B2 逐字一致为录入门槛,第三四源差异见 variantText/疑点表)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText: '「音娬」:B1/B2 郭注均作「音娬」,袁珂校注本引郭注作「音娱」(yú)——「娬」疑「娱」形讹,注文照录「音娬」原形,本站注音层从「音娱」标 yú。梟/裊(arteducation)为异体白名单对。',
+        verificationNote: "2026-10-05 建站核验(G88):四源对读,B1×B2 正文逐字一致(B1 三经档 L10/B2 存档第 90 行)为录入门槛;arteducation/袁本正文同(差异登记疑点);上屏为简体逐字转换(雞→鸡/鮒→鲋/梟→枭/侖→仑/飴→饴/餓→饿 等,对照表见 EDITION_AUDIT.md 三之补15),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 60, y: 71.5, region: '南山经' }, // G88:三经带回折第二层(西起),实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G88:南次三经第十一山(B1 三经档 L11×B2 第92行;郭注 2 条;白䓘 袁本独异作
+    // 「白咎」=疑23;「穀」底本原形照录)。
+    id: 'loc-lunzhe',
+    canonicalName: '仑者之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次三经',
+    sourceOrder: 11,
+    previousLocationId: 'loc-lingqiu',
+    nextLocationId: 'loc-yugao',
+    sourceDirection: '又东',
+    sourceDistance: '三百七十里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东三百七十里，曰仑者之山，其上多金玉，其下多青雘。有木焉，其状如穀而赤理其汗如漆，其味如饴，食者不饥，可以释劳，其名曰白䓘，可以血玉。',
+        chapter: '南山经',
+        section: '南次三经第十一山',
+        guoPuNotes: [
+          { attach: '侖者之山', text: '音論說之論，一音倫' },
+          { attach: '其名曰白䓘', text: '或作睪蘇。睪蘇一名白䓘，見《廣雅》，音羔' },
+        ],
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)、维基文库四库本郭璞注(B2)、arteducation.com.tw 繁体排印本与袁珂《山海经校注》本(殆知阁)四源对读(G88;B1×B2 逐字一致为录入门槛,第三四源差异见 variantText/疑点表)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText: '「白䓘」:B1/B2 正文均作「䓘」,arteducation 同;袁珂校注本正文作「白咎」(其引郭注「或作睾苏;睾苏一名白咎」)——3:1 袁本独异,本站从 B 系作「䓘」,登记疑23。「禺槀」三写法见疑24。「穀」为底本原形照录(G30 先例;全局 ruby 层若转「谷」将误注「中谷/育遗」之谷,故不转写)。',
+        verificationNote: "2026-10-05 建站核验(G88):四源对读,B1×B2 正文逐字一致(B1 三经档 L11/B2 存档第 92 行)为录入门槛;arteducation/袁本正文同(差异登记疑点);上屏为简体逐字转换(雞→鸡/鮒→鲋/梟→枭/侖→仑/飴→饴/餓→饿 等,对照表见 EDITION_AUDIT.md 三之补15),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 66, y: 74, region: '南山经' }, // G88:回折第二层,实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G88:南次三经第十二山(B1 三经档 L12×B2 第94行;禺槀/禺稿/槁 三写法=疑24)。
+    id: 'loc-yugao',
+    canonicalName: '禺槀之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次三经',
+    sourceOrder: 12,
+    previousLocationId: 'loc-lunzhe',
+    nextLocationId: 'loc-nanyu',
+    sourceDirection: '又东',
+    sourceDistance: '五百八十里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东五百八十里，曰禺槀之山，多怪兽，多大蛇。',
+        chapter: '南山经',
+        section: '南次三经第十二山',
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)、维基文库四库本郭璞注(B2)、arteducation.com.tw 繁体排印本与袁珂《山海经校注》本(殆知阁)四源对读(G88;B1×B2 逐字一致为录入门槛,第三四源差异见 variantText/疑点表)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText: '「禺槀」:B1/B2/arteducation 均作「槀」;袁珂校注本正文作「禺稿」,其珂案引宋本/吴任臣本/毕沅校本作「槁」——槀/稿/槁 三写法并存,本站从 B1×B2「槀」,登记疑24。',
+        verificationNote: "2026-10-05 建站核验(G88):四源对读,B1×B2 正文逐字一致(B1 三经档 L12/B2 存档第 94 行)为录入门槛;arteducation/袁本正文同(差异登记疑点);上屏为简体逐字转换(雞→鸡/鮒→鲋/梟→枭/侖→仑/飴→饴/餓→饿 等,对照表见 EDITION_AUDIT.md 三之补15),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 72, y: 71.5, region: '南山经' }, // G88:回折第二层,实测裁决
+    modernHypotheses: [],
+    recordStatus: 'verified',
+  },
+  {
+    // G88:南次三经第十三山(末段,B1 三经档 L13×B2 第96行;郭注 1 条;鶵/雛 异体)。
+    id: 'loc-nanyu',
+    canonicalName: '南禺之山',
+    aliases: [],
+    type: 'mountain',
+    chapterId: 'ch-nanshan',
+    subClassic: '南次三经',
+    sourceOrder: 13,
+    previousLocationId: 'loc-yugao',
+    sourceDirection: '又东',
+    sourceDistance: '五百八十里',
+    relatedEntityIds: [],
+    citations: [
+      {
+        originalText: '又东五百八十里，曰南禺之山，其上多金玉，其下多水。有穴焉，水出辄入，夏乃出，冬则闭。佐水出焉，而东南流注于海，有凤皇、鹓雏。',
+        chapter: '南山经',
+        section: '南次三经第十三山(末段)',
+        guoPuNotes: [
+          { attach: '鳳皇、鵷鶵', text: '亦鳳屬' },
+        ],
+        sourceEdition: '通行本(郭璞注系统),据中文维基文库《山海經/南山經》页面文本(B1)、维基文库四库本郭璞注(B2)、arteducation.com.tw 繁体排印本与袁珂《山海经校注》本(殆知阁)四源对读(G88;B1×B2 逐字一致为录入门槛,第三四源差异见 variantText/疑点表)',
+        publicUrl:
+          'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93/%E5%8D%97%E5%B1%B1%E7%B6%93',
+        variantText: '「鵷鶵」:B1/B2 作「鶵」,arteducation 作「雛」——异体白名单对,上屏转写「鹓雏」。无页面自带「一作」异文。',
+        verificationNote: "2026-10-05 建站核验(G88):四源对读,B1×B2 正文逐字一致(B1 三经档 L13/B2 存档第 96 行)为录入门槛;arteducation/袁本正文同(差异登记疑点);上屏为简体逐字转换(雞→鸡/鮒→鲋/梟→枭/侖→仑/飴→饴/餓→饿 等,对照表见 EDITION_AUDIT.md 三之补15),注文保持繁体未转简。山无词条,郭注存档 citations 不上屏词条页(G71 先例设计内)。",
+        verifiedAt: '2026-10-05',
+      },
+    ],
+    mapPosition: { x: 78, y: 74, region: '南山经' }, // G88:回折第二层东端,实测裁决
     modernHypotheses: [],
     recordStatus: 'verified',
   },

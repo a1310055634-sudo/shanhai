@@ -15,7 +15,7 @@ import { NANCI_YI_ROUTE } from './journey'
 import { CHAPTER_TEXTS } from './chapterTexts'
 
 /** 经别:南次一经(ns1,G26)/南次二经(ns2,G30)。 */
-export type DistanceClassic = 'ns1' | 'ns2'
+export type DistanceClassic = 'ns1' | 'ns2' | 'ns3'
 
 export interface DistanceQuote {
   /** 照录句(原文层) */
@@ -102,14 +102,34 @@ const NS2_ROWS: DistanceRow[] = [
   { order: 17, name: '漆吴之山', locationId: 'loc-qiwu', li: 500 },
 ]
 
+// G88:南次三经里距表(12 行——经首天虞无里距句,照录句不存在不列行,G30 先例;
+// order=经内山序,与 loc sourceOrder 对齐)。逐段相加 5730 里 vs 篇末「六千五百三十里」
+// 差 800(含天虞无里距段与「凡一十四山」计山口径),存疑照录见 DistanceTable 南次三经区。
+const NS3_ROWS: DistanceRow[] = [
+  { order: 2, name: '祷过之山', locationId: 'loc-daoguo', li: 500 },
+  { order: 3, name: '丹穴之山', locationId: 'loc-danxue', li: 500 },
+  { order: 4, name: '发爽之山', locationId: 'loc-fashuang', li: 500 },
+  { order: 5, name: '旄山之尾', locationId: 'loc-maoshan', li: 400 },
+  { order: 6, name: '非山之首', locationId: 'loc-feishan', li: 400 },
+  { order: 7, name: '阳夹之山', locationId: 'loc-yangjia', li: 500 },
+  { order: 8, name: '灌湘之山', locationId: 'loc-guanxiang', li: 500 },
+  { order: 9, name: '鸡山', locationId: 'loc-jishan3', li: 500 },
+  { order: 10, name: '令丘之山', locationId: 'loc-lingqiu', li: 400 },
+  { order: 11, name: '仑者之山', locationId: 'loc-lunzhe', li: 370 },
+  { order: 12, name: '禺槀之山', locationId: 'loc-yugao', li: 580 },
+  { order: 13, name: '南禺之山', locationId: 'loc-nanyu', li: 580 },
+]
+
 const ROWS_BY_CLASSIC: Record<DistanceClassic, DistanceRow[]> = {
   ns1: NS1_ROWS,
   ns2: NS2_ROWS,
+  ns3: NS3_ROWS,
 }
 
 const TONGJI_SEG_BY_CLASSIC: Record<DistanceClassic, string> = {
   ns1: 'seg-ns1-tongji',
   ns2: 'seg-ns2-tongji',
+  ns3: 'seg-ns3-tongji',
 }
 
 /**

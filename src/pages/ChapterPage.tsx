@@ -264,6 +264,7 @@ export default function ChapterPage() {
         <>
           <DistanceTable />
           <DistanceTable classic="ns2" />
+          <DistanceTable classic="ns3" />
         </>
       )}
 
