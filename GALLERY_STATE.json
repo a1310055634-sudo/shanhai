@@ -4,8 +4,8 @@
   "title": "山河广记·五阶冲刺 G83—G102",
   "totalRounds": 20,
   "maxValidExecutions": 20,
-  "validExecutions": 19,
-  "currentRound": "G101",
+  "validExecutions": 20,
+  "currentRound": "G102",
   "rounds": {
     "G83": "done",
     "G84": "done",
@@ -26,7 +26,7 @@
     "G99": "done",
     "G100": "done",
     "G101": "done",
-    "G102": "not_started"
+    "G102": "done"
   },
   "retired": "一阶 G14—G20 已并入二阶(G21—G23/G25/G36/G37/G38),原编号退役;二阶 G21—G38 于 2026-10-02 收官(18/18,终验 54f138b);三阶 G39—G58 于 2026-10-03 收官(20/20,主终验 3a0277b+收官截图 94a98e6,另有 POST-1 hero 通栏化 a026a11);四阶 G59—G82 于 2026-10-04 收官(24/24,终验 e858b29,版本戳实证 0cabccf)",
   "baseline": {
@@ -138,9 +138,9 @@
     "keyRuling": "词条 verified 五阶一律不动(存量 5+新 4 全 unverified),首页「条目已核验=12」恒定;山位 recordStatus 仅 G84/G85 可依回核证据升级"
   },
   "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-05 07:1X+08:00",
-  "status": "active",
-  "shutdown": "G102 完成后或有效执行达 20 次:此后一切触发只读退出——不构建、不提交、不改文件;并提醒用户停用本定时任务(automation-e5cc26fa)。",
+  "lastRunAt": "2026-10-05 07:3X+08:00",
+  "status": "completed",
+  "shutdown": "五阶冲刺 20/20 收官(G102 终验):此后一切触发只读退出——不构建、不提交、不改文件;请用户停用本定时任务(automation-e5cc26fa)。",
   "classicArtPull": {
     "round": "G60+G62+G69+G75",
     "files": 8,
@@ -164,5 +164,13 @@
     "ruby 注音层未收 10 字已收 6+设计内分轨 4(G78);疑 12 四例读音已裁决(G99 固化)",
     "其余 12 词条流变层无 claim 已由四阶 G77 清偿(31 条/14 词条);五阶 G98 补新词条",
     "人工复核:楷体渲染、真实前台键盘 focus-visible、选区渲染色(三阶呈报项承续)"
-  ]
+  ],
+  "phase5Final": {
+    "head": "8c81e1b(G102 rebuild 版本戳页内实证)",
+    "recordedAt": "2026-10-05",
+    "matrix": "17/17(regression102,版本戳实证)",
+    "finalShots": "GALLERY_FINAL5/(44 张)",
+    "contrast": "432 采样两遍法零失败(G97)",
+    "data": "53 山全 verified/21 词条/互链 6 对/疑1—疑25/claims 47"
+  }
 }

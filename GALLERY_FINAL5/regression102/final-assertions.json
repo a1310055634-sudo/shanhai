@@ -1,0 +1,91 @@
+{
+  "head": "8c81e1b",
+  "results": [
+    {
+      "name": "14 路由 1440 渲染有 h1",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "14 路由 1440 零横溢",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "14 路由控制台清零",
+      "ok": true,
+      "detail": "累计 0 条"
+    },
+    {
+      "name": "14 路由 390 零横溢",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "14 路由 390 触控档控件 ≥44px",
+      "ok": true,
+      "detail": "/=44 /catalog=44 /catalog/jiuweihu=44 /atlas=44 /chapters=44 /chapters/nanshan-jing=44 /relations=44 /explore=44 /journeys/nanci-yi=44 /favorites=44 /about=44 /how-to-read=44 /readings=44 /variants=44"
+    },
+    {
+      "name": "八站深链 ?station= 全部被页面采纳(回链自证)",
+      "ok": true,
+      "detail": "loc-zhaoyao:ok loc-tangting:ok loc-yuanyi:ok loc-chuyang:ok loc-danyuan:ok loc-jishan:ok loc-qingqiu:ok loc-jiwei:ok"
+    },
+    {
+      "name": "无效 slug:词条页给出「此条尚未收录」",
+      "ok": true,
+      "detail": "true"
+    },
+    {
+      "name": "无效 slug:篇章页给出未录入说明",
+      "ok": true,
+      "detail": "true"
+    },
+    {
+      "name": "无效 slug:行旅页走 404/未找到分支不崩",
+      "ok": true,
+      "detail": "true"
+    },
+    {
+      "name": "无效 ?station= 参数不崩且不横溢",
+      "ok": true,
+      "detail": "true"
+    },
+    {
+      "name": "行旅进度恢复:写入进度后重载指向该站",
+      "ok": true,
+      "detail": "[\"/journeys/nanci-yi?station=loc-zhaoyao\",\"/journeys/nanci-yi?station=loc-tangting\",\"/journeys/nanci-yi?station=loc-yuanyi\"]"
+    },
+    {
+      "name": "阅读历史落盘(实体 slug)",
+      "ok": true,
+      "detail": "[{\"slug\":\"jiuweihu\",\"ts\":1791156321411}]"
+    },
+    {
+      "name": "收藏页恢复阅读历史",
+      "ok": true,
+      "detail": "跳到主要内容\n山\n山海万象录\nSHAN HAI ARCHIVE\n卷首\n异兽\n山川\n古卷\n谱系\n探索\n收藏\n藏\n收藏与最近阅读\n\nSHOU CANG YU YUE"
+    },
+    {
+      "name": "证据抽屉可开/可关且带 aria-modal",
+      "ok": true,
+      "detail": "{\"found\":true,\"openedAfter300ms\":true,\"hasClose\":true,\"stillOpenAfterClose\":false}"
+    },
+    {
+      "name": "古卷页存在锚点段(抽样前提)",
+      "ok": true,
+      "detail": "取到 4 个:seg-ns1-zhaoyao-kai seg-ns1-tangting seg-ns1-yuanyi seg-ns1-chuyang-shan"
+    },
+    {
+      "name": "锚点抽样 4 个:scroll-margin-top=124px 且落位一致",
+      "ok": true,
+      "detail": "[\"seg-ns1-zhaoyao-kai=124\",\"seg-ns1-tangting=124\",\"seg-ns1-yuanyi=124\",\"seg-ns1-chuyang-shan=124\"]"
+    },
+    {
+      "name": "页脚版本戳 = HEAD(8c81e1b)",
+      "ok": true,
+      "detail": "校讫记 · 2026-10-05 编成 · 本次第 8c81e1b"
+    }
+  ],
+  "matrix": []
+}

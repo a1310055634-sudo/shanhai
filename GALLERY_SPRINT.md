@@ -239,4 +239,4 @@ HEAD 起点:`823ba01`(R19 终验交付,工作树干净)。
 | G99 | D | 疑12 裁决固化+ruby 复查 | done | (本轮) | DOUBT12_VERDICTS 终表+音表「读音裁决·疑12(终)」节+凡例句+SOUND 四 note 标记;ruby 零改动(diff pinyin 字段=0+四例标音字样仍在);分轨复查禺/雘 ruby 在 亶/杻 通读层设计内;6/6 |
 | G100 | D | 凡例五阶新例+计数刷新+三页联动回归 | done | (本轮) | 凡例计数程序化刷新(14/31→21/47)+PHASE5_EXAMPLES 四例(四源口径/搜索/分卷加载/互链取证)+三页联动回归(裁决节/疑25/三里距表并置)+搜索入口回归;互链 +3 对已前置 G98;8/8 |
 | G101 | D | 纹样收口+待图复查 | done | (本轮) | 五阶纹样新增 0(SearchOverlay 令牌面,宁缺勿凑);13 兽 commons 复查 12 兽 0 可用+狌狌命中为植物页+毕方/西王母 429 限流记档——全部维持待图;轻验收 5/5 |
-| G102 | D | 五阶终验 | todo | | 矩阵+GALLERY_FINAL5/+REPORT 五阶卷+shutdown |
+| G102 | D | 五阶终验 | done | (本轮) | rebuild 版本戳 8c81e1b 页内实证;回归矩阵 17/17(regression102);收官截图 GALLERY_FINAL5/ 44 张;REPORT 五阶卷+DEV_LOG 五阶章;STATE 20/20 shutdown;对比度引用 G97 432 采样零失败 |
