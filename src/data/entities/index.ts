@@ -18,6 +18,7 @@ import { GUDIAO } from './gudiao'
 import { XUN } from './xun'
 import { QINYUAN } from './qinyuan'
 import { BIFANG } from './bifang'
+import { XIWANMU } from './xiwanmu'
 
 /** 全部条目。只有 recordStatus === 'verified' 的条目可进入推荐/探索/题库。 */
 export const ENTITIES: Entity[] = [
@@ -40,6 +41,7 @@ export const ENTITIES: Entity[] = [
   ZHI,
   QINYUAN,
   BIFANG,
+  XIWANMU,
 ]
 
 export function getEntity(slug: string): Entity | undefined {

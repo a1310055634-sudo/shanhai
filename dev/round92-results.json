@@ -1,0 +1,77 @@
+[
+  {
+    "name": "A1a 白屏探针",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1b 玉山段逐字",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1c 西王母句逐字",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A1d 狡句在(不立条)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A2a 徽章两态",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A2b 引文上屏",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A2c claim 穆天子传瑶池",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A2d claim 帝王世纪",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A2e claim 图赞天帝之女",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A2f claim 广记+按断",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A2g claim 戴胜名物",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A2h 流变分层表述(蟠桃/形象流变)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A3 Atlas 方印=53+零重叠",
+    "pass": true,
+    "detail": "dots=53 ov=0"
+  },
+  {
+    "name": "A4 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  },
+  {
+    "name": "A5 目录词条卡=20",
+    "pass": true,
+    "detail": "count=20"
+  }
+]
