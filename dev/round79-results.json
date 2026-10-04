@@ -1,0 +1,33 @@
+{
+  "out": [
+    {
+      "path": "/catalog/xingxing",
+      "values": {
+        "needles": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "verified": true,
+        "ov": true
+      },
+      "pass": true
+    },
+    {
+      "path": "/catalog/jiuweihu",
+      "values": {
+        "needles": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "verified": true,
+        "ov": true
+      },
+      "pass": true
+    }
+  ],
+  "home": "12"
+}

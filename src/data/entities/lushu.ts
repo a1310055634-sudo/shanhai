@@ -75,7 +75,7 @@ export const LUSHU: Entity = {
         {
           text: '郭璞《山海经图赞》咏鹿蜀「馬質虎文」,并重申「佩其皮尾,子孫如雲」的佩护宜子孙之说。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷01·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷01',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B701',
           quote: '圖贊曰鹿蜀之獸馬質虎文攘首吟鳴矯足騰羣佩其皮尾子孫如雲',
           archive: 'EDITION_EVIDENCE/guangzhu-juan01-20261004.txt',
           note: '「馬質虎文」概括经文「其狀如馬…其文如虎」;「子孫如雲」即「宜子孫」的赞语化。',

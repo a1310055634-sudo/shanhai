@@ -72,7 +72,7 @@ export const WENYAOYU: Entity = {
         {
           text: '郭璞《山海经图赞》咏文鳐鱼「見則邑穰」「經營二海」,承经文「見則天下大穰」与跨海夜飞的叙述。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷02·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷02',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B702',
           quote: '圖贊曰見則邑穰厥名曰鰩經營二海矯翼閑霄唯味之竒寄厥伊庖',
           archive: 'EDITION_EVIDENCE/guangzhu-juan02-20261004.txt',
           note: '「經營二海」即「常行西海,游于東海」;「寄厥伊庖」呼应「其味酸甘,食之已狂」的食用记载。',

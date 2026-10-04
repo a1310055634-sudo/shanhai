@@ -92,7 +92,7 @@ export const ZHUYIN: Entity = {
         {
           text: '《括地圖》亦载「鍾山之神,名曰燭龍,視為晝,眠為夜」,与《海外北经》烛阴叙述几乎全同。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷08·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷08',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B708',
           quote: '括地圖曰鍾山之神名曰燭龍視為晝眠為夜吹為冬吁為夏息為風',
           archive: 'EDITION_EVIDENCE/guangzhu-juan08-20261004.txt',
           note: '吴任臣案引;「燭陰/燭龍」两名并存,经文作「燭陰」。',
@@ -100,7 +100,7 @@ export const ZHUYIN: Entity = {
         {
           text: '《楚辞·天問》「燭龍何照」之問,王逸注谓「天之西北有幽冥無日之國,有龍銜燭而照之」,与烛阴神话同源。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷08·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷08',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B708',
           quote: '楚辭曰安不到燭龍何照王逸注云天之西北有幽冥無日之國有龍銜燭而照之',
           archive: 'EDITION_EVIDENCE/guangzhu-juan08-20261004.txt',
           note: '吴任臣案引;柳宗元《天對》「日安不到,燭龍何照」相关的答问系统亦经其引及。',

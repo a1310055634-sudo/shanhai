@@ -70,7 +70,7 @@ export const XINGXING: Entity = {
         {
           text: '郭璞《山海经图赞》咏狌狌「似猴,走立行伏」,状其形似猴而行止特异。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷01·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷01',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B701',
           quote: '圖贊曰狌狌似猴走立行伏櫰木挺力少辛明目',
           archive: 'EDITION_EVIDENCE/guangzhu-juan01-20261004.txt',
           note: '郭注「生生禺獸狀如猿」;图赞文字依四庫本廣注案语所引照录(「走立行伏」句读从存档)。',
@@ -78,10 +78,32 @@ export const XINGXING: Entity = {
         {
           text: '《淮南万毕术》有「狌狌知往」之说,谓狌狌能知过去,吴任臣引之与郭注并陈。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷01·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷01',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B701',
           quote: '任臣案淮南萬畢術曰婦終知來狌狌知往',
           archive: 'EDITION_EVIDENCE/guangzhu-juan01-20261004.txt',
           note: '「知往」与《海内南经》「狌狌知人名」同为后人增衍的智性叙述;本站照录并存。',
+        },
+      ],
+    },
+    {
+      era: '先秦两汉文献链(《禮記》及清·吳任臣《山海經廣注》彙證)',
+      text: '狌狌在早期文献中最著名的一笔是「能言」:《禮記·曲禮上》以「鸚鵡能言,不離飛鳥;猩猩能言,不離禽獸」立人禽之辨。吳任臣《廣注》又彙錄《王會解》「都郭生生,即狌狌也」(以《逸周書·王會解》的都郭/生生為異名)与《太微經》「狌染齒于酒」等说,与本经「食之善走」的记载并存。',
+      claims: [
+        {
+          text: '《禮記·曲禮上》以「猩猩能言」与鹦鹉对举,谓其虽能言、不離禽獸——狌狌的「能言」是早期文献链中最著名的一笔。',
+          sourceTitle: '《禮記·曲禮上》(漢·戴聖編)',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E7%A6%AE%E8%A8%98/%E6%9B%B2%E7%A6%AE%E4%B8%8A',
+          quote: '鸚鵡能言，不離飛鳥；猩猩能言，不離禽獸。今人而無禮，雖能言，不亦禽獸之心乎！',
+          archive: 'EDITION_EVIDENCE/liji-quli-shang-excerpt-20261004.txt',
+          note: '《禮記》以猩猩之「能言」为人禽之辨的话头;与本经「食之善走」构成狌狌文献的两条主线(言/走)。G79 新增。',
+        },
+        {
+          text: '吳任臣《廣注》彙錄《王會解》「都郭生生即狌狌」与《太微經》「狌染齒于酒」诸说,狌狌异名与传说并陈。',
+          sourceTitle: '《山海經廣注》(四庫全書本)卷01·吳任臣案引',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B701',
+          quote: '任臣案淮南萬畢術曰婦終知來狌狌知往王㑹解州靡以費費都郭生生即狌狌也太微經曰狌染齒于酒忘其努取',
+          archive: 'EDITION_EVIDENCE/guangzhu-juan01-20261004.txt',
+          note: '「王㑹解」即《逸周書·王會解》;汇证文字照录广注案语,本站不分拆诸引。G79 新增。',
         },
       ],
     },

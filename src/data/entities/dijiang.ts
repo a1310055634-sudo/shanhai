@@ -78,7 +78,7 @@ export const DIJIANG: Entity = {
         {
           text: '郭璞《山海经图赞》咏帝江「質則渾沌,神則旁通」,概括其形浑敦无面目而神识通达歌舞的记载。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷02·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷02',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B702',
           quote: '圗贊曰質則渾沌神則旁通自然靈照聽不以聦强之為名曰惟帝江',
           archive: 'EDITION_EVIDENCE/guangzhu-juan02-20261004.txt',
           note: '郭注「其帝江之謂乎。莊生所云中央之帝混沌為儵忽所鑿七竅而死者,葢假此以寓言也」;图赞承此。',
@@ -86,7 +86,7 @@ export const DIJIANG: Entity = {
         {
           text: '南朝王融《三月三日曲水诗序》已有「傳妙靡于帝江」之句,帝江识歌舞之说进入六朝骈文。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷02·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷02',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B702',
           quote: '王融曲水詩序傳妙靡于帝江盧柟滄溟賦云帝江䠞左而歛翼謂此也',
           archive: 'EDITION_EVIDENCE/guangzhu-juan02-20261004.txt',
           note: '任臣案引;王融序为六朝名篇,「妙靡」谓歌舞之美,与经文「是識歌舞」相承。',

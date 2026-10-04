@@ -69,7 +69,7 @@ export const YINGZHAO: Entity = {
         {
           text: '郭璞《山海经图赞》咏英招「巡游四海,撫翼雲儛」,承经文「狥于四海」的巡行叙述。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷02·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷02',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B702',
           quote: '圖贊曰槐江之山英招是主巡游四海撫翼雲儛實唯帝囿有謂𤣥圃',
           archive: 'EDITION_EVIDENCE/guangzhu-juan02-20261004.txt',
           note: '郭注「狥謂周行也」;图赞「巡游四海」即周行四海的赞语化。',

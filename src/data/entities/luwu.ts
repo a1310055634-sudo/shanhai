@@ -80,7 +80,7 @@ export const LUWU: Entity = {
         {
           text: '郭璞以陆吾即《庄子》所载肩吾,其《图赞》咏「肩吾得一以處崑崙」,司帝之门。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷02·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷02',
+          sourceUrl: 'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B702',
           quote: '圖贊曰肩吾得一以處崑崙開明是對司帝之門吐納靈氣熊熊魂魂',
           archive: 'EDITION_EVIDENCE/guangzhu-juan02-20261004.txt',
           note: '郭注「即肩吾也。莊周曰肩吾得之以處大山也」;图赞承此以「肩吾」称之。',
