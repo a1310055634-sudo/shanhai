@@ -3,9 +3,9 @@
   "phase": 4,
   "title": "图鉴格物·四阶冲刺 G59—G82",
   "totalRounds": 24,
-  "validExecutions": 22,
+  "validExecutions": 23,
   "maxValidExecutions": 24,
-  "currentRound": "G81",
+  "currentRound": "G82",
   "rounds": {
     "G59": "done",
     "G60": "done",
@@ -29,7 +29,7 @@
     "G78": "done",
     "G79": "done",
     "G80": "done",
-    "G81": "not_started",
+    "G81": "done",
     "G82": "not_started"
   },
   "retired": "一阶 G14—G20 已并入二阶(G21—G23/G25/G36/G37/G38),原编号退役;二阶 G21—G38 于 2026-10-02 收官(18/18,终验 54f138b);三阶 G39—G58 于 2026-10-03 收官(20/20,主终验 3a0277b+收官截图 94a98e6,另有 POST-1 hero 通栏化 a026a11)",
@@ -107,7 +107,7 @@
     "postSprint": "POST-1 hero 画卷通栏化 a026a11(用户反馈,2026-10-03 深夜)"
   },
   "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-04 11:1X+08:00",
+  "lastRunAt": "2026-10-04 11:26+08:00",
   "status": "in_progress",
   "shutdown": "四阶冲刺 24 轮:G82 完成后或有效执行达 24 次,此后一切触发只读退出(不构建、不提交、不改文件),并提醒用户停用本定时任务(automation-6124ef5a)。",
   "classicArtPull": {
@@ -123,7 +123,7 @@
     "[呈报用户] --duration-char 为 JS 消费型令牌(CSS 无引用)——审计口径是否纳入 JS 引用",
     "[呈报用户] floatSlot 浮卡槽位暂无实渲染使用方(组件能力保留)",
     "[呈报用户·二阶] 底本 A(ctext)回核挂账:南次二经 6 山 recordStatus=unverified",
-    "[呈报用户·二阶] 南次二经余 11 山 DRAFT 扩录(四阶 G71—G74 施工)",
+    "[呈报用户·二阶] 南次二经余 11 山 DRAFT 扩录(四阶 G71—G74 施工;G81 实况:已录 16/17,仅缺咸陰之山——B1「四百里」/B2「五百里」两源互异未达逐字一致门槛,按红线不录,见疑15)",
     "[呈报用户·二阶] ruby 注音层未收 10 字+疑 12 四例读音分歧人工复核(四阶 G78 施工)",
     "[呈报用户·二阶] 1440 指针档页脚链接 29px 是否升 44px(待用户裁决,不擅动)",
     "[呈报用户·二阶] 其余 12 词条流变层无 claim(四阶 G77 施工:verified 9 条补,3 条 unverified 挂账)",
@@ -145,7 +145,12 @@
   "resolved": [
     "G57 处理:版画小图 20 处补显式宽高(classicArt 12 条按 viewBox+BeastArtwork img),复跑 noWH=0/CLS 全 0",
     "G80 处理:yinglong.ts 2 处 sourceUrl 裸中文(/wiki/卷14)补全为四库本卷14 完整 URL——G79 批量替换只覆盖 wiki/卷01 形态而漏此;全站复查裸中文 URL=0",
-    "G80 新增能力:跨词条「见X条」互链(relatedEntityIds 驱动,3 对双向=狌狌↔长右/凤皇↔应龙/精卫↔文鳐鱼,取证=广注六卷存档注文共现扫描 dev/round80-links.py,无标签外推)"
+    "G80 新增能力:跨词条「见X条」互链(relatedEntityIds 驱动,3 对双向=狌狌↔长右/凤皇↔应龙/精卫↔文鳐鱼,取证=广注六卷存档注文共现扫描 dev/round80-links.py,无标签外推)",
+    "G81 处理:异文页补收词条级异文——疑16(洵一作旬)/疑17(蠱一作纂)自 G75 建条起只挂词条页,VariantsPage 仅从 LOCATIONS 派生致从未上屏;拆 MOUNTAIN_VARIANTS+ENTITY_VARIANTS 两源合并,山/兽两态分链(兽回 /catalog,山回古卷段锚点),现 13 处=山 11·词条 2",
+    "G81 处理:里距区陈旧硬编码「余十一山未核不上线」(G74 已录 16/17 即失实,违红线6)改按 summary 运行时派生,并点名缺的一山为咸陰之山(B1 四百里/B2 五百里两源互异,见疑15),缺口 490 里如实待续",
+    "G81 处理:cnNum() 原仅支持一至十、超界回退阿拉伯,致同句「本站已录16山…尚缺一山」中西数字混排;CN_DIGITS 扩为 CN_ORDINALS 十一—十七(只补到十七,不越界臆造),旧常量无引用已删",
+    "G81 凡例页:新增 PHASE4_EXAMPLES 四阶新例 4 条(并陈例/流变 claim 例/见X条互链例/章符里距缺口例)+ 纹样台账补四阶 2 条落点(现 2/4)+ 修第六层「十二条目主体插画」陈旧表述;凡例数字经程序化统计订正为 14 词条/31 claim(初稿凭印象写 11/9,凡引数必先统计)",
+    "G81 验收纪律:needle 须取稳定子串(词条级异文上屏为简体且含嵌套引号,'蠱一作纂'匹配不到,应取'蛊一作');计数断言不得写死数值——须自数据源实算(本轮写死 6610 实为 6710,页面正确断言陈旧),已改 dev/round81-sumcheck.mjs 派生"
   ],
   "finalReport": "GALLERY_REPORT.md(三阶卷 2026-10-03)",
   "phase4": {
