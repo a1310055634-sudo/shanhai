@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import {
   BLANK_ENTRIES,
+  DOUBT12_VERDICTS,
   GLOSS_ENTRIES,
   GUOPU_ARCHIVE,
   NOT_ON_SITE,
@@ -125,6 +126,26 @@ export default function ReadingsPage() {
           <p className={styles.muted}>
             音注底本:{GUOPU_ARCHIVE.label},存档 {GUOPU_ARCHIVE.file}({GUOPU_ARCHIVE.fetchedAt} 抓取)。
             全部音注的逐字命中与行号由 dev/round35-verify.mjs 程序化回查,不凭记忆录入。
+          </p>
+        </div>
+      </section>
+
+      <section id="sec-doubt12" className={styles.section}>
+        <SectionHeading index="裁" title="读音裁决 · 疑12(终)" subtitle="YI 12 ZHONG CAI" />
+        <div className={styles.panel}>
+          <p>
+            疑12 四例(禺/亶/杻/雘)均为郭注直音与今通行读的韵、声差异,性质多为古今音变或注音用字假借。
+            经 G78 复核呈报,用户已于 2026-10-05 终裁:<strong>维持本站通行标注,郭注异读两存照录,不改既有 ruby 标</strong>。
+          </p>
+          <ul>
+            {DOUBT12_VERDICTS.map((v) => (
+              <li key={v.char}>
+                <strong>{v.char}</strong> · 本站 {v.site} / 郭注 {v.guo} —— {v.verdict}。
+              </li>
+            ))}
+          </ul>
+          <p className={styles.muted}>
+            裁决记录:G78 呈报建议表(RUN_LOG)→ 用户终裁(G99 固化上屏);本表与 SOUND_ENTRIES 各条 note 的「两存照录」互为表里,既有读音标注零改动。
           </p>
         </div>
       </section>

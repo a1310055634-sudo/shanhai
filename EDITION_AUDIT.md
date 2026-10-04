@@ -406,6 +406,14 @@
 - 相柳词条(ent-xiangliu,type=deity,unverified):claims×4(图赞「终禽夏后」叙事体/九首母题 骆宾王雄虺九头+九凤/四写法汇证 相柳·相栁·相繇·相抑+共工谱系/陈一中义理翻案「各为其主,精英未泯」——禹杀相柳由除害叙事转悲剧收尾,两面并存)。
 - 验收 10/10(dev/round93-verify.mjs):词条页徽章引文/claims×4/待图占位/Atlas 方印 53 不变(海外经无山)/首页 12/目录卡 21;截图 round93-xiangliu-qing-1440.png。
 
+## 三之补26、线D:疑12 裁决固化(2026-10-05,G99;用户终裁上屏,ruby 零改动)
+
+- **数据**:readings.ts 新增 DOUBT12_VERDICTS 终表(禺 yú/亶 dǎn/杻 chǔ/雘 huò vs 郭注 遇/蟬/紐/瓠,verdict=维持通行+郭注两存,依据=用户 2026-10-05 终裁);SOUND_ENTRIES 四条 note 追加「G99 用户已终裁」标记(记录追加,标音值零改动——diff 删除行 pinyin 字段=0 实证)。
+- **上屏**:音表页新节「读音裁决 · 疑12(终)」(四例+终裁语+日期);凡例「核验流程」末条补读音三分+终裁句。
+- **分轨复查**:禺/雘 GLOSSARY ruby 在(yú/huò 未变)、亶/杻 走山名通读层不在 GLOSSARY——设计内分轨原样(G78 口径)。
+- 验收 6/6(dev/round99-verify.mjs):音表裁决节/凡例句/读音标注零改动(精确口径:diff 删除行 pinyin 字段=0+四例标音字样仍在)/分轨复查/note G99 标记×4 上屏/首页 12;截图 round99-readings-qing-1440.png。
+- 实录坑:验收脚本迭代三处低级错(require/import、helper 位置、rec 被段替换吞)——**验收脚本修改一律 Read+Edit 逐处,禁多锚 python 批量**(本轮 python 批量两次因锚不齐静默丢段,均为 results.json 全列核对兜出)。
+
 ## 三之补21、线C 首轮:路由级代码分割(2026-10-05,G94;App.tsx 全页 React.lazy)
 
 - **改造**:App.tsx 除首页(LCP 静态导入)外 14 页全部 React.lazy+Suspense;fallback=令牌化静态加载签「展卷中」(无动画,reduced-motion 天然安全,aria-busy/aria-live);vite.config 不动(buildStamp 保留,rollup 默认分包即得 30 chunk);**package.json 零 diff**(零新依赖红线)。

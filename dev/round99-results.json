@@ -1,0 +1,32 @@
+[
+  {
+    "name": "A1 音表裁决节上屏(四例+终裁语+日期)",
+    "pass": true,
+    "detail": "{\"title\":true,\"verdict\":true,\"four\":true,\"dates\":true}"
+  },
+  {
+    "name": "A2 凡例读音裁决句",
+    "pass": true,
+    "detail": "on=1"
+  },
+  {
+    "name": "A3 既有读音标注零改动",
+    "pass": true,
+    "detail": "diff 删除行含 pinyin 字段=0;四例标音字样仍在=[true,true,true,true]"
+  },
+  {
+    "name": "A4 分轨复查(禺/雘 ruby 在;亶/杻 通读层设计内不在 GLOSSARY)",
+    "pass": true,
+    "detail": "{\"yu\":true,\"dan\":false,\"niu\":false,\"huo\":true}"
+  },
+  {
+    "name": "A5 四条 note 终裁标记上屏",
+    "pass": true,
+    "detail": "{\"g99\":5,\"liangcun\":6}"
+  },
+  {
+    "name": "A6 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  }
+]

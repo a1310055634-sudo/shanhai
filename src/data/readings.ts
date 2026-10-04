@@ -62,6 +62,15 @@ export function inRubyLayer(entry: ReadingEntry): boolean {
 }
 
 /** 郭璞注音注层存档坐标(全表共用,供页面生成公开对照链接)。 */
+/** G99:疑12 四例读音裁决终表(用户 2026-10-05 裁决:维持本站通行标注,郭注异读两存,不改既有 ruby 标)。
+ *  数据为裁决性记录(非派生计数),与 SOUND_ENTRIES 四条 note 的「两存照录」互为表里。 */
+export const DOUBT12_VERDICTS: { char: string; site: string; guo: string; verdict: string }[] = [
+  { char: '禺', site: 'yú', guo: '音遇(yù)', verdict: '维持通行 yú,郭注直音照录两存(韵部差异属古今音变)' },
+  { char: '亶', site: 'dǎn', guo: '音蟬(chán)', verdict: '维持通行 dǎn,郭注照录两存(郭音疑涉通假或注误,声远)' },
+  { char: '杻', site: 'chǔ', guo: '音紐(niǔ)', verdict: '维持通行 chǔ(杻械之通行读),郭注照录两存' },
+  { char: '雘', site: 'huò', guo: '音瓠(hù)', verdict: '维持通行 huò,郭注照录两存(音近,古今音变)' },
+]
+
 export const GUOPU_ARCHIVE = {
   file: 'EDITION_EVIDENCE/wikisource-nanshan1-guopu-20261002.txt',
   label: '中文维基文库《山海經》郭璞注本(四庫全書底本)',
@@ -78,7 +87,7 @@ export const SOUND_ENTRIES: ReadingEntry[] = [
     line: 12,
     basis: 'sound',
     where: '南次一经·招摇之山段「其状如禺而白耳」;南次二经·长右之山段「其状如禺而四耳」',
-    note: '本站注音层标 yú,郭注音「遇」;两存照录,不裁决孰是(G35 疑12)。',
+    note: '本站注音层标 yú,郭注音「遇」;两存照录,不裁决孰是(G35 疑12)。G99 用户已终裁:维持通行+郭注两存。',
   },
   {
     char: '棪',
@@ -97,7 +106,7 @@ export const SOUND_ENTRIES: ReadingEntry[] = [
     line: 18,
     basis: 'sound',
     where: '南次一经·杻阳之山「又东三百七十里，曰杻阳之山」',
-    note: '本站山名通读层作 chǔ,郭注音「紐」;两存照录,不裁决(G35 疑12)。该字未收进 ruby 注音层。',
+    note: '本站山名通读层作 chǔ,郭注音「紐」;两存照录,不裁决(G35 疑12)。G99 用户已终裁:维持通行+郭注两存。该字未收进 ruby 注音层。',
   },
   {
     char: '柢',
@@ -115,7 +124,7 @@ export const SOUND_ENTRIES: ReadingEntry[] = [
     line: 22,
     basis: 'sound',
     where: '南次一经·亶爰之山「又东四百里，曰亶爰之山」',
-    note: '本站山名通读层作 dǎn,郭注音「蟬」;两存照录,不裁决(G35 疑12)。该字未收进 ruby 注音层。',
+    note: '本站山名通读层作 dǎn,郭注音「蟬」;两存照录,不裁决(G35 疑12)。G99 用户已终裁:维持通行+郭注两存。该字未收进 ruby 注音层。',
   },
   {
     char: '雘',
@@ -124,7 +133,7 @@ export const SOUND_ENTRIES: ReadingEntry[] = [
     line: 26,
     basis: 'sound',
     where: '南次一经·青丘之山段(底本 B 用字,本站正文从底本 A 作「䨼」);南次二经·成山段「其下多青雘」',
-    note: '本站注音层标 huò,郭注音「瓠」;两存照录(G35 疑12)。成山段底本无音注,此音注属青丘段。',
+    note: '本站注音层标 huò,郭注音「瓠」;两存照录(G35 疑12)。G99 用户已终裁:维持通行+郭注两存。成山段底本无音注,此音注属青丘段。',
   },
   {
     char: '䨼',
