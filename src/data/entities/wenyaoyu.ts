@@ -85,7 +85,8 @@ export const WENYAOYU: Entity = {
     '「食之已狂」之「狂」所指病症(癫狂、狂疾等),旧注有异说。',
     '「大穰」训大丰收,取通行训释;泰器之山的现代地理比附暂不录入。',
   ],
-  relatedEntityIds: [],
+  // G80 互链:左思《魏都赋》「精衛銜木償怨」与「文鰩飛波而觸綸」连句并举(广注卷03存档在案)
+  relatedEntityIds: ['ent-jingwei'],
   tags: ['西山经', '泰器之山', '鱼身鸟翼', '夜飞', '大穰之兆'],
   recordStatus: 'verified',
   illustration: {

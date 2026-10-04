@@ -64,7 +64,8 @@ export const JINGWEI: Entity = {
     '「堙」字取「填塞」的通行训释;填海的目的与结局,原文未言,后世多有引申。',
     '发鸠之山的现代地理比附,众说纷纭,本站暂不录入。',
   ],
-  relatedEntityIds: [],
+  // G80 互链:左思《魏都赋》「精衛銜木償怨」与「文鰩飛波而觸綸」连句并举(广注卷03存档在案)
+  relatedEntityIds: ['ent-wenyaoyu'],
   tags: ['北山经', '发鸠之山', '如乌', '炎帝之女', '衔木石填海'],
   recordStatus: 'verified',
   illustration: {

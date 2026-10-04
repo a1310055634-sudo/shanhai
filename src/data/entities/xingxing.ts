@@ -113,7 +113,8 @@ export const XINGXING: Entity = {
     '「伏行人走」或解作「能伏行,又能像人一样行走」,具体所指存在解读分歧。',
     '后世文献中亦见以「猩猩」称之;本站暂以底本用字「狌狌」为准,此异文关系待进一步考证。',
   ],
-  relatedEntityIds: [],
+  // G80 互链:《駢雅》云「狌狌長右舉父皆禺屬也」,两兽并举成类(广注卷01存档在案)
+  relatedEntityIds: ['ent-changyou'],
   tags: ['南山经', '招摇之山', '白耳', '如禺'],
   recordStatus: 'verified',
   illustration: {

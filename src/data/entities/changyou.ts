@@ -70,7 +70,8 @@ export const CHANGYOU: Entity = {
     '「禺」为何种动物,旧注推测为猿猴类,确指待考。',
     '底本A(ctext)2026-10-02 反爬不可达,本条用字以中文维基文库两源(B1×B2)逐字对照为据,A 恢复后回核;在此之前本条核验状态保持「待考证」。',
   ],
-  relatedEntityIds: [],
+  // G80 互链:《駢雅》云「狌狌長右舉父皆禺屬也」,两兽并举成类(广注卷01存档在案)
+  relatedEntityIds: ['ent-xingxing'],
   tags: ['南山经', '长右之山', '如禺', '四耳', '水患之兆'],
   recordStatus: 'unverified',
   illustration: {

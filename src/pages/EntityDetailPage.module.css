@@ -478,6 +478,15 @@ section [id^='sec-'],
   gap: 28px;
 }
 
+/* G80 跨词条「见X条」组说明(零裸色值,走既有令牌) */
+.crossRefNote {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
 .relatedGroup {
   display: flex;
   flex-direction: column;

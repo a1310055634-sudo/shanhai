@@ -69,6 +69,11 @@ export default function EntityDetailPage() {
   const similarTags = ENTITIES.filter(
     (e) => e.id !== entity.id && e.tags.some((t) => entity.tags.includes(t)),
   )
+  // G80 跨词条「见X条」互链:只取 relatedEntityIds 显式登记者(每对均有注文/文献实证,
+  // 见各词条 laterReception.claims 的引文),不按标签相似度自动外推。
+  const crossRefs = entity.relatedEntityIds
+    .map((id) => ENTITIES.find((e) => e.id === id))
+    .filter((e): e is NonNullable<typeof e> => Boolean(e))
   const rollRandom = () => {
     const pool = getVerifiedEntities()
     navigate(`/catalog/${pool[Math.floor(Math.random() * pool.length)].slug}`)
@@ -415,6 +420,30 @@ export default function EntityDetailPage() {
                   </Link>
                 ))}
               </div>
+            </div>
+          )}
+          {/* G80 跨词条互链:显式登记者才出现,组标题说明依据 */}
+          {crossRefs.length > 0 && (
+            <div className={styles.relatedGroup} data-crossrefs={entity.slug}>
+              <p className={styles.relatedLabel}>见X条</p>
+              <div className={styles.relatedLinks}>
+                {crossRefs.map((e) => (
+                  <Link
+                    key={e.id}
+                    className={styles.chipLink}
+                    to={`/catalog/${e.slug}`}
+                    data-crossref={e.slug}
+                  >
+                    <span className={styles.chipThumb} aria-hidden="true">
+                      <BeastArtwork slug={e.slug} name={e.canonicalName} variant="card" />
+                    </span>
+                    见{e.canonicalName}条
+                  </Link>
+                ))}
+              </div>
+              <p className={styles.crossRefNote}>
+                互链依据:注文或后世文献中两兽并提、并举成类之语,详见各条「后世流变」所附引文。
+              </p>
             </div>
           )}
         </div>

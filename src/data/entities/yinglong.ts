@@ -52,7 +52,8 @@ export const YINGLONG: Entity = {
     '《大荒北经》别见应龙记载,与《大荒东经》本条的关系待核对后一并呈现。',
     '凶犁土丘的现代地理比附,无从稽考,本站暂不录入。',
   ],
-  relatedEntityIds: [],
+  // G80 互链:吴粲《赤牍》云「應龍以屈伸為神,鳳皇以嘉鳴為貴」,两兽并举(广注卷14存档在案)
+  relatedEntityIds: ['ent-fenghuang'],
   tags: ['大荒东经', '凶犁土丘', '杀蚩尤与夸父', '司雨'],
   recordStatus: 'verified',
   illustration: {
@@ -72,7 +73,8 @@ export const YINGLONG: Entity = {
         {
           text: '《楚辞·天問》「應龍何畫?河海何歷?」之问,王逸系之于应龙以尾画地导流的传说,与经文应龙杀蚩尤的叙述同属一系。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷14·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷14',
+          sourceUrl:
+            'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B714',
           quote: '楚辭云應龍何畫河海何厯漢周憬碑應龍之畫謂此',
           archive: 'EDITION_EVIDENCE/guangzhu-juan14-20261004.txt',
           note: '吴任臣案引;「應龍何畫」的「畫」通「划」,指以尾划地成江河(王逸说)。',
@@ -80,7 +82,8 @@ export const YINGLONG: Entity = {
         {
           text: '《述異記》有「龍千年為應龍」之说,应龙被视为龙之寿者,吴任臣引之以释其名。',
           sourceTitle: '《山海經廣注》(四庫全書本)卷14·吳任臣案引',
-          sourceUrl: 'https://zh.wikisource.org/wiki/卷14',
+          sourceUrl:
+            'https://zh.wikisource.org/wiki/%E5%B1%B1%E6%B5%B7%E7%B6%93%E5%BB%A3%E6%B3%A8_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B714',
           quote: '又虬龍千年謂之應龍述異記亦云龍千年為應龍',
           archive: 'EDITION_EVIDENCE/guangzhu-juan14-20261004.txt',
           note: '吴任臣案引;梁任昉《述異记》题名,内容为龙龄分级传说。',
