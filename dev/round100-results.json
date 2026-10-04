@@ -1,0 +1,42 @@
+[
+  {
+    "name": "A1a 五阶新例节+四例",
+    "pass": true,
+    "detail": "{\"sec5\":true,\"ex1\":true,\"ex2\":true,\"ex3\":true,\"ex4\":true,\"cnt\":true,\"old\":true,\"reality\":true}"
+  },
+  {
+    "name": "A1b 计数刷新(21/47)+旧数清除",
+    "pass": true,
+    "detail": "cnt=true old=true"
+  },
+  {
+    "name": "A1c 站内实况栏(53 山 verified)",
+    "pass": true,
+    "detail": "true"
+  },
+  {
+    "name": "A2a 音表裁决节回归",
+    "pass": true,
+    "detail": "on"
+  },
+  {
+    "name": "A2b 异文疑25 回归",
+    "pass": true,
+    "detail": "1"
+  },
+  {
+    "name": "A2c 三经里距表回归(三表并置)",
+    "pass": true,
+    "detail": "{\"ns3\":true,\"ns2\":true,\"ns1\":true}"
+  },
+  {
+    "name": "A3 页脚搜索入口回归",
+    "pass": true,
+    "detail": "on=1"
+  },
+  {
+    "name": "A4 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  }
+]

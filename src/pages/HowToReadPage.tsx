@@ -62,6 +62,45 @@ const PROCESS_STEPS = [
 ]
 
 /**
+ * 五阶新增例(G100):四源对读口径/全站搜索/代码分割已知限制/互链取证式。
+ * 「站内实况」栏所列为已落库数据与已验证结论(2026-10-05 程序化统计与实测)。
+ */
+const PHASE5_EXAMPLES = [
+  {
+    name: '四源对读与核验口径(山位可升级,词条恒待考证)',
+    what:
+      '扩录与回核采用多源对读:维基文库呈现态(B1)×四库本郭注档(B2)×arteducation 繁体排印本×袁珂校注本,逐字一致方录;山位 recordStatus 可凭多源一致升级(五阶 16 山升级),词条 recordStatus 一律保持「待考证」(升级须用户裁决),两口径并行不悖。',
+    reality:
+      '全站 53 山 recordStatus=verified(含五阶 16 山换源升级+咸陰闭环)、21 词条全「待考证」待用户裁决;unverified 台账=EDITION_EVIDENCE/unverified-ledger(山位 0 悬置)。',
+    where: '难字音表「读音裁决」节、古卷各山核验备注、EDITION_EVIDENCE/unverified-ledger 台账。',
+  },
+  {
+    name: '全站检索(Ctrl+K)',
+    what:
+      '任意页按 Ctrl+K(或页脚「全站检索」)呼出检索浮层:山川/词条/异文/音表四组结果实时过滤,↑↓ 选择、Enter 跳转、Esc 关闭并归还焦点。索引由既有数据源运行时派生,不另存第二份数据。',
+    reality:
+      '四组索引(53 山/21 词条/25 疑点/全部音表字)运行时现算;分组计数与数据源双向断言过;对比度 12.70;键盘全流程含焦点陷阱与归还(G97 审计)。',
+    where: '全站任意页;入口见页脚「站内」栏。',
+  },
+  {
+    name: '按路由分卷加载(file:// 已知限制)',
+    what:
+      '除卷首外各页按路由分卷加载(懒加载),首卷体积显著下降;代价是直接双击 dist/index.html(file:// 协议)时分卷会受浏览器安全限制,懒加载页停留在加载签——站内以 http 预览形态部署,此为已知限制,不以单文件打包绕过。',
+    reality:
+      '首卷 JS 219.11→148.88 kB gzip(-32%),30 分卷总 +6.5%(归因呈报);preview 全路由 17/17 可达实测。',
+    where: '全站;部署说明见本页「核验流程」与 RUN_LOG。',
+  },
+  {
+    name: '跨词条互链(取证式)',
+    what:
+      '两个词条在注文或后世文献中被并提、并举成类时,在词条页「相关探索」增设「见X条」互链;互链必须有同段共现的文献实证(广注存档程序化扫描),不按标签相似度自动外推。五阶互链 3→6 对(钦原↔陆吾、西王母↔陆吾、相柳↔应龙)。',
+    reality:
+      '广注五卷同段共现程序化扫描:卷02 昆仑段陆吾+钦原+西王母三方同行、卷17 相柳+应龙同行;卷01/卷14 命中恰为四阶既有互链(扫描器有效性互证)。',
+    where: '词条页「相关探索」区,每组互链下注明依据。',
+  },
+]
+
+/**
  * 四阶新增例(G81):随站内能力增长,凡例同步补例,逐条对齐实况。
  * 每条「站内实况」为组件/数据实查结论,零臆造;与 GALLERY_DESIGN.md 十二章同步。
  */
@@ -79,7 +118,7 @@ const PHASE4_EXAMPLES = [
     what:
       '「后世流变」层的每一句事实性表述都绑定一条 claim:篇名、公开链接、逐字照录的后世引文、项目内存档路径四件齐备,引文保持繁体原样。取不到来源的说法不写成事实,只在正文里明确标注留白。',
     reality:
-      '现共 14 个词条、31 条 claim(九尾狐 4·凤皇 4·狌狌 4·蛊雕 4·䍺 3·帝江 2·应龙 2·烛阴 2,其余各 1);主源为清·吴任臣《山海经广注》四库本卷 01/02/03/08/14 五卷存档,另用《艺文类聚》卷九十九、《礼记·曲礼上》。',
+      '现共 21 个词条、47 条 claim(G100 程序化统计,2026-10-05;四阶终 31 条后,五阶新增钦原 2·毕方 4·西王母 5·相柳 4,另烛阴/九尾狐等存量词条纵深各有增补);主源为清·吴任臣《山海经广注》四库本卷 01/02/08/14/17 存档,另用《艺文类聚》卷九十九、《礼记·曲礼上》。',
     where: '词条页「后世流变」区,每条 claim 下附照录引文与出处。',
   },
   {
@@ -220,6 +259,36 @@ export default function HowToReadPage() {
         />
         <ol className={styles.layers} aria-label="四阶新增例">
           {PHASE4_EXAMPLES.map((item) => (
+            <li key={item.name} className={styles.layer}>
+              <p className={styles.layerHead}>
+                <span aria-hidden="true" className={styles.layerIndex}>
+                  ★
+                </span>
+                <strong className={styles.layerName}>{item.name}</strong>
+              </p>
+              <p className={styles.layerWhat}>{item.what}</p>
+              <p className={styles.layerWhere}>
+                <span className={styles.whereLabel}>站内实况</span>
+                {item.reality}
+              </p>
+              <p className={styles.layerWhere}>
+                <span className={styles.whereLabel}>出现处</span>
+                {item.where}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section id="sec-phase5" className={styles.section}>
+        <SectionHeading
+          index="例"
+          title="五阶新增例"
+          subtitle="WU JIE XIN ZENG LI"
+          note="以下四例为五阶新增能力与惯例(2026-10-05),逐条对齐站内实况;「站内实况」栏所列为已落库数据与已验证结论,不含计划项。"
+        />
+        <ol className={styles.layers} aria-label="五阶新增例">
+          {PHASE5_EXAMPLES.map((item) => (
             <li key={item.name} className={styles.layer}>
               <p className={styles.layerHead}>
                 <span aria-hidden="true" className={styles.layerIndex}>
