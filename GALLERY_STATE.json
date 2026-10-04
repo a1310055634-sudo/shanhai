@@ -3,9 +3,9 @@
   "phase": 4,
   "title": "图鉴格物·四阶冲刺 G59—G82",
   "totalRounds": 24,
-  "validExecutions": 21,
+  "validExecutions": 22,
   "maxValidExecutions": 24,
-  "currentRound": "G79",
+  "currentRound": "G81",
   "rounds": {
     "G59": "done",
     "G60": "done",
@@ -28,7 +28,7 @@
     "G77": "done",
     "G78": "done",
     "G79": "done",
-    "G80": "not_started",
+    "G80": "done",
     "G81": "not_started",
     "G82": "not_started"
   },
@@ -107,7 +107,7 @@
     "postSprint": "POST-1 hero 画卷通栏化 a026a11(用户反馈,2026-10-03 深夜)"
   },
   "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-04 00:4X+08:00",
+  "lastRunAt": "2026-10-04 11:1X+08:00",
   "status": "in_progress",
   "shutdown": "四阶冲刺 24 轮:G82 完成后或有效执行达 24 次,此后一切触发只读退出(不构建、不提交、不改文件),并提醒用户停用本定时任务(automation-6124ef5a)。",
   "classicArtPull": {
@@ -143,7 +143,9 @@
   },
   "finalShotsPrep": "GALLERY_FINAL3/(28 张 mid-* 走查+regression56/ 矩阵截图+final-* 收官)",
   "resolved": [
-    "G57 处理:版画小图 20 处补显式宽高(classicArt 12 条按 viewBox+BeastArtwork img),复跑 noWH=0/CLS 全 0"
+    "G57 处理:版画小图 20 处补显式宽高(classicArt 12 条按 viewBox+BeastArtwork img),复跑 noWH=0/CLS 全 0",
+    "G80 处理:yinglong.ts 2 处 sourceUrl 裸中文(/wiki/卷14)补全为四库本卷14 完整 URL——G79 批量替换只覆盖 wiki/卷01 形态而漏此;全站复查裸中文 URL=0",
+    "G80 新增能力:跨词条「见X条」互链(relatedEntityIds 驱动,3 对双向=狌狌↔长右/凤皇↔应龙/精卫↔文鳐鱼,取证=广注六卷存档注文共现扫描 dev/round80-links.py,无标签外推)"
   ],
   "finalReport": "GALLERY_REPORT.md(三阶卷 2026-10-03)",
   "phase4": {
