@@ -44,6 +44,29 @@
 3. 升级联动:DistanceTable/summary 派生计数双向断言;首页「条目已核验」=12 不受影响(词条计数,非山位);地图方印/虚线圈两态随 recordStatus 自动翻转须复断言零重叠。
 4. ctext.org 本体不在候选清单(软拦截既证),但每轮顺手复测一次(恢复即按 P02 优先回核)。
 
-## 四、回核结果回填栏(G84 填写)
+## 四、回核结果回填(G84 填写,2026-10-05)
 
-(待 G84 填写:逐山「新源/URL/一致与否/升降级」)
+**结论:16/16 山全部回核闭环,recordStatus 已全数升级 verified(locations.ts 复核 unverified=0/verified=33)。** 换源=arteducation.com.tw 繁体排印本(主比对源)+殆知阁袁珂校注本(仲裁源),抓取与仲裁记录见 `round84-verification-sources-20261005.md`;比对脚本 `dev/round84-compare.mjs`(结果 dev/round84-compare-results.json)。
+
+| # | id | 判定 | 证据摘要 |
+|---|---|---|---|
+| 1 | loc-guishan 柜山 | 升(仲裁) | artedu「南次二**山**之首」独异;B1×B2×袁本同「經」;artedu 篇末同款「南次二山」=系统性称谓习惯,非文本互异 |
+| 2 | loc-changyou 長右 | 升 | 三源逐字一致(41 字符) |
+| 3 | loc-yaoguang 堯光之山 | 升 | 异形对鬛/鬣(俗字,G29 既记)+斲/斫(郭注夹注「如人斫木聲」自证),余全同 |
+| 4 | loc-yushan 羽山 | 升 | 异形对蟲/虫,余全同(24) |
+| 5 | loc-qufu 瞿父之山 | 升 | 三源逐字一致(18) |
+| 6 | loc-juyu 句餘之山 | 升 | 异形对餘/余,余全同(16) |
+| 7 | loc-fuyu 浮玉之山 | 升(仲裁) | artedu「北流**至**于」独异;B1×B2×袁本同「注于」 |
+| 8 | loc-chengshan 成山 | 升 | 异形对於/于,余全同(40) |
+| 9 | loc-kuaiji 會稽之山 | 升 | 同上(32) |
+| 10 | loc-yishan 夷山 | 升 | 同上(25) |
+| 11 | loc-pugou 僕勾之山 | 升 | 异形对僕/仆,余全同(25) |
+| 12 | loc-xunshan 洵山 | 升 | 异形对於/于,余全同(51) |
+| 13 | loc-hushao 虖勺之山 | 升 | 三源逐字一致(30) |
+| 14 | loc-quwu 區吳之山 | 升 | 异形对於/于,余全同(27) |
+| 15 | loc-luwu 鹿吳之山 | 升 | 同上(55) |
+| 16 | loc-qiwu 漆吳之山 | 升 | 同上(34) |
+
+- 篇末总述(chapterTexts,非 recordStatus 对象):artedu「毛,用一壁瘞」排印误字(袁本仲裁「璧」),差异在案。
+- **词条 5 处未动**(红线 6):changyou/huahuai/zhi/gudiao/xun 保持 unverified,升级留呈报。
+- 升级联动断言(8/8 PASS,dev/round84-verify.mjs):首页「条目已核验」=12;Atlas 方印 33/节点 33/虚线圈 0;里距表「待核·不设站」仅柢山 1 处(一经既有缺口,红线内);changyou 词条「待考证」徽章仍在。截图 GALLERY_BASELINES/round84-atlas-qing-{1440,390}.png(晴窗;方印渲染路径 G64 已实测双主题,本轮仅数量 17→33)。

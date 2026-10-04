@@ -1,0 +1,42 @@
+[
+  {
+    "name": "A1 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  },
+  {
+    "name": "A2a Atlas 方印=33",
+    "pass": true,
+    "detail": "seals=33"
+  },
+  {
+    "name": "A2b Atlas 节点=33",
+    "pass": true,
+    "detail": "role=button 节点=33"
+  },
+  {
+    "name": "A2c Atlas 虚线圈=0(图例示例除外)",
+    "pass": true,
+    "detail": "dashCircle=0"
+  },
+  {
+    "name": "A3a 里距表「待核·不设站」=1(柢山既有一经缺口,非二经)",
+    "pass": true,
+    "detail": "count=1"
+  },
+  {
+    "name": "A3b 里距表「图鉴有载」≥16",
+    "pass": true,
+    "detail": "count=24"
+  },
+  {
+    "name": "A3c 篇末总述在屏",
+    "pass": true,
+    "detail": "has=true"
+  },
+  {
+    "name": "A4 changyou 词条待考证徽章在",
+    "pass": true,
+    "detail": "badge=true"
+  }
+]

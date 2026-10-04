@@ -545,7 +545,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 14, y: 86, region: '南山经' },
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G28:南次二经第二山,兽「长右」因山得名(郭注)。核验与挂账同 loc-guishan。
@@ -579,7 +579,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 24, y: 87.5, region: '南山经' },
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G29:南次二经第三山。兽「猾褢」另立词条(ent-huahuai)。核验路径同 loc-guishan:
@@ -613,7 +613,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 34, y: 86, region: '南山经' },
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G29:南次二经第四山。郭注含郭璞自注里距疑点「計此道里不相應,似非也」,
@@ -658,7 +658,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 44, y: 87.5, region: '南山经' },
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G71:南次二经第五山(2026-10-04 经底本B1 存档 L05×B2 第42行两源净化正文
@@ -698,7 +698,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 45.8, y: 84.2, region: '南山经' }, // G71:羽山/句余之间下行避让(标签零重叠实测裁决)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G71:南次二经第六山(核验路径同 loc-qufu:B1 L06×B2 第44行)。
@@ -737,7 +737,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 49.5, y: 87.6, region: '南山经' }, // G71:锯齿上行(零重叠实测裁决)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G30:南次二经第七山(第五/六山瞿父、句余 G71 已补录,链路经二山相连)。
@@ -786,7 +786,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 57.2, y: 89.5, region: '南山经' }, // G71:二经尾列下移避让一经尾部青丘/箕尾(坐标经两轮实测标定)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G30:南次二经第八山。水名「虖勺」两处底本自带异文(勺一作多/一作流注于西,
@@ -840,7 +840,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 62.4, y: 89.5, region: '南山经' }, // G71:二经尾列下移(同上)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G71:南次二经第九山(2026-10-04 经底本B1 存档 L09×B2 第50行两源净化正文
@@ -890,7 +890,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 69.5, y: 91, region: '南山经' }, // G72:右移避让夷山(两轮实测标定同法)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G72:南次二经第十山(2026-10-04 经底本B1 存档 L10×B2 第52行两源净化正文
@@ -923,7 +923,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 75.5, y: 89.5, region: '南山经' }, // G72:尾列续排(实测二轮:75.5 避会稽右缘)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G72:南次二经第十一山(核验路径同 loc-yishan:B1 L11×B2 第54行)。
@@ -958,7 +958,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 77, y: 92.6, region: '南山经' }, // G72:尾列末位(y 三档错行,实测裁决)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G73:南次二经第十二山(2026-10-04 经底本B1 存档 L13×B2 第58行两源净化正文
@@ -1016,7 +1016,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 81.5, y: 89.5, region: '南山经' }, // G73:尾列续排(线性标定预解+实测裁决)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G73:南次二经第十三山(核验路径同 loc-xunshan:B1 L14×B2 第60行)。
@@ -1063,7 +1063,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 86, y: 91, region: '南山经' }, // G73:尾列续排(实测裁决)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G74:南次二经第十四山(2026-10-04 经底本B1 存档 L15×B2 第62行两源净化正文
@@ -1096,7 +1096,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 89, y: 94.2, region: '南山经' }, // G74:下移一行避虖勺(实测一轮收敛)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G74:南次二经第十五山(核验路径同 loc-quwu:B1 L16×B2 第64行)。
@@ -1132,7 +1132,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 94, y: 89.5, region: '南山经' }, // G74:尾列(y 三档错行,实测裁决)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
   {
     // G74:南次二经第十六山/末录(第十七山咸陰之山疑15 悬置)。
@@ -1179,7 +1179,7 @@ export const LOCATIONS: Location[] = [
     ],
     mapPosition: { x: 98, y: 92.6, region: '南山经' }, // G74:尾列末位贴东缘(实测裁决)
     modernHypotheses: [],
-    recordStatus: 'unverified',
+    recordStatus: 'verified',
   },
 ]
 

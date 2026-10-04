@@ -1,3 +1,17 @@
+## G84 · ctext 换源回核 16 处
+
+- **有效执行编号**:五阶 2 / 20
+- **北京时间**:2026-10-05 01:18—01:3X(定时触发)
+- **开始 HEAD**:6e60805(G83),工作树干净;.round-lock 新建,轮末删除
+- **换源实录**:①殆知阁(daizhigev20/史藏/志存记录/山海经校注.txt)=raw.githubusercontent 直连失败(exit 56,本机 GitHub 间歇不可达先例),**jsdelivr CDN 镜像成功**(716193B)——袁珂校注本(简体+数字上标注),降级为仲裁源;②**arteducation.com.tw/guwen/bookv_1.html**(32885B)=主比对源(台湾繁体排印本,纯正文无夹注,单页含二经 16 山+篇末+三经大部,bookv_2=西山经留 G89);③ctext 本体未再直连(软拦截沿 2026-10-04 结论)。
+- **比对口径**(dev/round84-compare.mjs 可复跑):去标点+剥〈〉夹注+剥「X一作「Y」」标注;异形字对白名单归一(於/于·櫃/柜·餘/余·僕/仆·蟲/虫·𣬈/毗·鹹/咸·鬛/鬣·斲/斫——逐处登记不隐藏);判定=三源一致(许白名单)升/artedu 独异而袁本仲裁同 B1×B2 升(差异在案)/真互异维持。
+- **结果 16/16 全升 verified**:14 山三源直过;柜山「南次二山之首」/浮玉「北流至于」/篇末「用一壁瘞」三案 artedu 独异,**袁本仲裁三案全 3:1 同 B1×B2**(「經」「注于」「璧」),且「南次二山」系 artedu 系统性称谓(篇末同款)——定性排印习惯/误字,记录在案后一并升级;**零山维持悬置**。脚本坑:頁面侧栏噪音→须先截 mw-parser-output;style 块混入正文(xs1-10 时山段)→剥标签前先删 style/script;切段锚缺鹹陰(站内无条目)致仆勾段吞段→补虚拟切分锚;eIdx=-1 truthy 陷坑改 x>=0 三元。
+- **升级实施**:dev/round84-upgrade.mjs 行号+向上 id 双校验,16 处 recordStatus→verified,复核 unverified=0/verified=33;咸陰不在清单(疑15 归 G85);**词条 5 处未动**(红线 6)。
+- **页面验收 8/8 PASS**(dev/round84-verify.mjs,自拉 vite preview 4183+无头 Chrome 9337 全自清):A1 首页「条目已核验」=12;A2 Atlas 方印 33/节点 33/虚线圈 0;A3 里距表「图鉴有载」24 处+「待核·不设站」恰 1=柢山(一经既有缺口,非二经);A4 changyou 词条「待考证」徽章仍在。截图 GALLERY_BASELINES/round84-atlas-qing-{1440,390}.png。**新坑:vite preview 默认绑 localhost(::1),CDP/curl 用 127.0.0.1 连接被拒(exit 7)——BASE 须写 http://localhost。**
+- **消费点核查**:recordStatus 全部消费方(ConceptMap 两态/DistanceTable 徽章/JournalProgress/LineageMap)均数据派生零硬编码,自动翻转;说明性文案(凡例/SourcePromise)为规则性表述零失实。
+- **提交**:本轮单提交(locations.ts+台账回填+源存档+比对/升级/验收三脚本+results.json+截图+STATE/SPRINT/RUN_LOG)
+- **状态**:done——下一轮 G85(咸陰之山三源对读裁决:B1 四百里/B2 五百里+arteducation 现成第三源在库,袁本可作仲裁,多数派可录 17/17 闭环)
+
 ## G83 · 五阶接管+底本侦察(轻轮)
 
 - **有效执行编号**:五阶 1 / 20

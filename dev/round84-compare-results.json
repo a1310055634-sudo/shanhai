@@ -1,0 +1,199 @@
+[
+  {
+    "id": "loc-guishan",
+    "b1Chars": 96,
+    "srcChars": 96,
+    "normApplied": [
+      "於→于",
+      "櫃→柜",
+      "𣬈→毗"
+    ],
+    "equal": false,
+    "diffs": [
+      {
+        "at": 3,
+        "b1": "南次二經之首曰柜山西臨流黃北望",
+        "src": "南次二山之首曰柜山西臨流黃北望",
+        "b1FullLen": 96,
+        "srcFullLen": 96
+      }
+    ]
+  },
+  {
+    "id": "loc-changyou",
+    "b1Chars": 41,
+    "srcChars": 41,
+    "normApplied": [],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-yaoguang",
+    "b1Chars": 51,
+    "srcChars": 51,
+    "normApplied": [
+      "鬛→鬣",
+      "斲→斫"
+    ],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-yushan",
+    "b1Chars": 24,
+    "srcChars": 24,
+    "normApplied": [
+      "蟲→虫"
+    ],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-qufu",
+    "b1Chars": 18,
+    "srcChars": 18,
+    "normApplied": [],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-juyu",
+    "b1Chars": 16,
+    "srcChars": 16,
+    "normApplied": [
+      "餘→余"
+    ],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-fuyu",
+    "b1Chars": 57,
+    "srcChars": 57,
+    "normApplied": [
+      "於→于",
+      "𣬈→毗"
+    ],
+    "equal": false,
+    "diffs": [
+      {
+        "at": 48,
+        "b1": "苕水出于其陰北流注于具區其中多鮆魚",
+        "src": "苕水出于其陰北流至于具區其中多鮆魚",
+        "b1FullLen": 57,
+        "srcFullLen": 57
+      }
+    ]
+  },
+  {
+    "id": "loc-chengshan",
+    "b1Chars": 40,
+    "srcChars": 40,
+    "normApplied": [
+      "於→于"
+    ],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-kuaiji",
+    "b1Chars": 32,
+    "srcChars": 32,
+    "normApplied": [
+      "於→于"
+    ],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-yishan",
+    "b1Chars": 25,
+    "srcChars": 25,
+    "normApplied": [
+      "於→于"
+    ],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-pugou",
+    "b1Chars": 25,
+    "srcChars": 25,
+    "normApplied": [
+      "僕→仆"
+    ],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "_xianyin",
+    "skip": true
+  },
+  {
+    "id": "loc-xunshan",
+    "b1Chars": 51,
+    "srcChars": 51,
+    "normApplied": [
+      "於→于"
+    ],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-hushao",
+    "b1Chars": 30,
+    "srcChars": 30,
+    "normApplied": [],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-quwu",
+    "b1Chars": 27,
+    "srcChars": 27,
+    "normApplied": [
+      "於→于"
+    ],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-luwu",
+    "b1Chars": 55,
+    "srcChars": 55,
+    "normApplied": [
+      "於→于"
+    ],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "loc-qiwu",
+    "b1Chars": 34,
+    "srcChars": 34,
+    "normApplied": [
+      "於→于"
+    ],
+    "equal": true,
+    "diffs": []
+  },
+  {
+    "id": "tongji",
+    "b1Chars": 44,
+    "srcChars": 44,
+    "normApplied": [
+      "於→于",
+      "櫃→柜"
+    ],
+    "equal": false,
+    "diffs": [
+      {
+        "at": 4,
+        "b1": "凡南次二經之首自柜山至于漆吳之山",
+        "src": "凡南次二山之首自柜山至于漆吳之山",
+        "b1FullLen": 44,
+        "srcFullLen": 44
+      }
+    ]
+  }
+]
