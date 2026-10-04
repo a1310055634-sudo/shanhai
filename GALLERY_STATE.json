@@ -1,53 +1,62 @@
 {
-  "planId": "shanhai-gallery-4",
-  "phase": 4,
-  "title": "图鉴格物·四阶冲刺 G59—G82",
-  "totalRounds": 24,
-  "validExecutions": 24,
-  "maxValidExecutions": 24,
-  "currentRound": "G82",
+  "planId": "shanhai-gallery-5",
+  "phase": 5,
+  "title": "山河广记·五阶冲刺 G83—G102",
+  "totalRounds": 20,
+  "maxValidExecutions": 20,
+  "validExecutions": 1,
+  "currentRound": "G83",
   "rounds": {
-    "G59": "done",
-    "G60": "done",
-    "G61": "done",
-    "G62": "done",
-    "G63": "done",
-    "G64": "done",
-    "G65": "done",
-    "G66": "done",
-    "G67": "done",
-    "G68": "done",
-    "G69": "done",
-    "G70": "done",
-    "G71": "done",
-    "G72": "done",
-    "G73": "done",
-    "G74": "done",
-    "G75": "done",
-    "G76": "done",
-    "G77": "done",
-    "G78": "done",
-    "G79": "done",
-    "G80": "done",
-    "G81": "done",
-    "G82": "done"
+    "G83": "done",
+    "G84": "not_started",
+    "G85": "not_started",
+    "G86": "not_started",
+    "G87": "not_started",
+    "G88": "not_started",
+    "G89": "not_started",
+    "G90": "not_started",
+    "G91": "not_started",
+    "G92": "not_started",
+    "G93": "not_started",
+    "G94": "not_started",
+    "G95": "not_started",
+    "G96": "not_started",
+    "G97": "not_started",
+    "G98": "not_started",
+    "G99": "not_started",
+    "G100": "not_started",
+    "G101": "not_started",
+    "G102": "not_started"
   },
-  "retired": "一阶 G14—G20 已并入二阶(G21—G23/G25/G36/G37/G38),原编号退役;二阶 G21—G38 于 2026-10-02 收官(18/18,终验 54f138b);三阶 G39—G58 于 2026-10-03 收官(20/20,主终验 3a0277b+收官截图 94a98e6,另有 POST-1 hero 通栏化 a026a11)",
+  "retired": "一阶 G14—G20 已并入二阶(G21—G23/G25/G36/G37/G38),原编号退役;二阶 G21—G38 于 2026-10-02 收官(18/18,终验 54f138b);三阶 G39—G58 于 2026-10-03 收官(20/20,主终验 3a0277b+收官截图 94a98e6,另有 POST-1 hero 通栏化 a026a11);四阶 G59—G82 于 2026-10-04 收官(24/24,终验 e858b29,版本戳实证 0cabccf)",
   "baseline": {
-    "head": "b8c3a45",
-    "phase": 4,
-    "recordedAt": "2026-10-04",
+    "head": "e858b29(四阶终验提交,五阶接管起点)",
+    "phase": 5,
+    "recordedAt": "2026-10-05",
     "js": {
-      "raw": "577.10 kB",
-      "gzip": "179.99 kB"
+      "raw": "649.05 kB",
+      "gzip": "199.81 kB"
     },
     "css": {
-      "raw": "123.24 kB",
-      "gzip": "21.73 kB"
+      "raw": "126.98 kB",
+      "gzip": "22.39 kB"
     },
-    "htmlNote": "未复测,沿用三阶终验口径 1440 B/gzip 865 B",
-    "imagesBytes": 1065665,
-    "imagesNote": "古画 5 幅 1,065,665 B(与三阶收官零漂移);12 既有版画 SVG 7,800,554 B 不入位图预算;四阶新增位图独立预算 ≤2.0MB(单图 ≤350KB/长边 ≤1600px)"
+    "imagesBytes": {
+      "paintings": 1065665,
+      "classicArt": 794823,
+      "total": 1860488
+    },
+    "imagesNote": "古画 5 幅 1,065,665 B+刻本扫描 8 幅 794,823 B(与四阶收官零漂移);12 既有版画 SVG 7,800,554 B 不入位图预算;五阶新增位图独立预算 ≤2.0MB(单图 ≤350KB/长边 ≤1600px);本轮实测 JS/CSS 与四阶终验逐字节同值(纯账本轮零产品码改动)",
+    "counters": {
+      "locations": 33,
+      "entities": 17,
+      "entitiesVerified": 12,
+      "claims": 31,
+      "classicArtScans": 8,
+      "variantsDoubts": "疑1—疑17",
+      "patternLedger": "2/4"
+    },
+    "countersNote": "首页「条目已核验」=12 五阶恒定(红线 6);unverified 台账=EDITION_EVIDENCE/unverified-ledger-20261005.md(山位 16+词条 5)"
   },
   "phase1Baseline": {
     "head": "823ba01",
@@ -84,18 +93,6 @@
   "phase2Final": {
     "head": "54f138b",
     "recordedAt": "2026-10-02",
-    "js": {
-      "raw": "554.93 kB",
-      "gzip": "176.78 kB"
-    },
-    "css": {
-      "raw": "114.36 kB",
-      "gzip": "20.37 kB"
-    },
-    "html": {
-      "raw": "1440 B",
-      "gzip": "870 B"
-    },
     "finalReport": "GALLERY_REPORT.md(G38 二阶卷)",
     "finalShots": "GALLERY_FINAL2/(17 张 + final-assertions.json)"
   },
@@ -106,59 +103,8 @@
     "finalShots": "GALLERY_FINAL3/(34 张 + final-assertions.json)",
     "postSprint": "POST-1 hero 画卷通栏化 a026a11(用户反馈,2026-10-03 深夜)"
   },
-  "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-04 14:1X+08:00",
-  "status": "completed",
-  "shutdown": "四阶冲刺 24/24 收官(G82 终验):此后一切触发只读退出——不构建、不提交、不改文件;请用户停用本定时任务(automation-6124ef5a)。",
-  "classicArtPull": {
-    "round": "G60+G62",
-    "files": 6,
-    "bytes": 669425,
-    "budgetPool": "≤2.0MB(32%)",
-    "note": "S1—S6 见 ART_PROVENANCE;G61 接线四词条+G62 接线精卫(三才图会矢量化件);待补 9 兽占位签如实;三才图会家族过筛关项/WDL4447 归 G69 样张"
-  },
-  "openItems": [
-    "[呈报用户] 底本A(ctext)回核:11 处 unverified(A 侧软拦截页:200 但正文零命中)",
-    "[呈报用户] 咸陰之山疑15:里距 B1 四百里/B2 五百里两源互异,待 A 回核三源对读后随录闭环 17/17",
-    "[呈报用户] 待补古图 9 兽(维持「待图」占位,许可门槛不放宽)",
-    "[呈报用户] 疑12 四例读音裁决表(G78 RUN_LOG:禺/亶/杻/雘,建议维持本站通行标注+郭注两存)",
-    "[呈报用户] 疑13—疑17 五则新异文/里距案(variants 页照录)",
-    "[呈报用户] G57 呈报项待裁决者(页脚 29px 升 44px 等)不变",
-    "[呈报用户] 宋体大题跨环境抽验/墨痕显影手感/--duration-char 审计口径/floatSlot(三阶呈报项承续)"
-  ],
-  "phase2OpenItems": [
-    "底本 A(ctext)回核挂账:南次二经 6 山按 B1×B2 先上线,recordStatus=unverified",
-    "南次二经余 11 山留 DRAFT 工作稿,扩录须用户新立任务(已立:四阶 G71—G74)",
-    "ruby 注音层未收 10 字待定夺;疑 12 四例读音分歧留人工复核(已立:四阶 G78)",
-    "1440 指针档页脚链接 29px(≥24 AA)是否升 44px 未决(待用户裁决)",
-    "其余 12 词条流变层无 claim(未核即无 claim;已立:四阶 G77)",
-    "人工复核:楷体渲染、真实前台键盘 focus-visible、选区渲染色"
-  ],
-  "phase3Sources": {
-    "taskBook": "GALLERY_PROMPT3.md(唯一指令源,含八条翻译规则与附录 A 实测规格)",
-    "referenceSite": "mimo.xiaomi.com/coder(2026-10-02/03 两轮实测,规格表附录 A)"
-  },
-  "finalShotsPrep": "GALLERY_FINAL4/(42 张收官截图+regression82/ 矩阵 17/17)",
-  "resolved": [
-    "G57 处理:版画小图 20 处补显式宽高(classicArt 12 条按 viewBox+BeastArtwork img),复跑 noWH=0/CLS 全 0",
-    "G80 处理:yinglong.ts 2 处 sourceUrl 裸中文(/wiki/卷14)补全为四库本卷14 完整 URL——G79 批量替换只覆盖 wiki/卷01 形态而漏此;全站复查裸中文 URL=0",
-    "G80 新增能力:跨词条「见X条」互链(relatedEntityIds 驱动,3 对双向=狌狌↔长右/凤皇↔应龙/精卫↔文鳐鱼,取证=广注六卷存档注文共现扫描 dev/round80-links.py,无标签外推)",
-    "G81 处理:异文页补收词条级异文——疑16(洵一作旬)/疑17(蠱一作纂)自 G75 建条起只挂词条页,VariantsPage 仅从 LOCATIONS 派生致从未上屏;拆 MOUNTAIN_VARIANTS+ENTITY_VARIANTS 两源合并,山/兽两态分链(兽回 /catalog,山回古卷段锚点),现 13 处=山 11·词条 2",
-    "G81 处理:里距区陈旧硬编码「余十一山未核不上线」(G74 已录 16/17 即失实,违红线6)改按 summary 运行时派生,并点名缺的一山为咸陰之山(B1 四百里/B2 五百里两源互异,见疑15),缺口 490 里如实待续",
-    "G81 处理:cnNum() 原仅支持一至十、超界回退阿拉伯,致同句「本站已录16山…尚缺一山」中西数字混排;CN_DIGITS 扩为 CN_ORDINALS 十一—十七(只补到十七,不越界臆造),旧常量无引用已删",
-    "G81 凡例页:新增 PHASE4_EXAMPLES 四阶新例 4 条(并陈例/流变 claim 例/见X条互链例/章符里距缺口例)+ 纹样台账补四阶 2 条落点(现 2/4)+ 修第六层「十二条目主体插画」陈旧表述;凡例数字经程序化统计订正为 14 词条/31 claim(初稿凭印象写 11/9,凡引数必先统计)",
-    "G81 验收纪律:needle 须取稳定子串(词条级异文上屏为简体且含嵌套引号,'蠱一作纂'匹配不到,应取'蛊一作');计数断言不得写死数值——须自数据源实算(本轮写死 6610 实为 6710,页面正确断言陈旧),已改 dev/round81-sumcheck.mjs 派生"
-  ],
-  "finalReport": "GALLERY_REPORT.md(四阶卷 2026-10-04)",
-  "phase4": {
-    "taskBook": "GALLERY_PROMPT4.md(v2,唯一指令源,含硬红线/24 轮表/附录 A 古图源/附录 B 双源流程/附录 C 断言口径)",
-    "artLine": "G59—G70 经典图谱:刻本原件×站内转描并陈(已探明可拉 6 幅,见 CLASSIC_ART_RECON.md)",
-    "contentLine": "G71—G82 格物细读:二经余 11 山双源扩录闭环/新词条/凤皇郭注/流变 claims(verified 9 条)/ruby 10 字/纵深/三页联动/G82 终验",
-    "recon": "CLASSIC_ART_RECON.md + dev/round59-recon*.mjs/json(维基共享 60+ 次 API 实查;蒋应镐崇祯本家族 15 文件/汪绂本 8 文件/三才图会 112 张)",
-    "clock": "automation-6124ef5a 每 25 分钟一轮,maxRuns=30(24 轮+6 次余量)"
-  },
   "phase4Final": {
-    "head": "0cabccf(G82 rebuild 版本戳页内实证)",
+    "head": "0cabccf(G82 rebuild 版本戳页内实证;终验提交 e858b29)",
     "recordedAt": "2026-10-04",
     "js": {
       "raw": "649.05 kB",
@@ -170,8 +116,41 @@
     },
     "matrix": "17/17(round82-regression,版本戳实证)",
     "walk": "28 组 336 采样对比度零失败;42 张双主题收官截图",
-    "artLine": "美术线 G59—G70:古图 8 幅(S1—S8 全 PD 池 40%)/并陈 6+待图 9/纹样 2/4/裸值归零 24 处",
-    "contentLine": "内容线 G71—G82:二经 16/17(咸陰疑15 悬置)/词条 17/claims 31 条 14 词条/ruby 收 6/疑点 17/互链 3 对",
-    "redLines": "六条红线全清(原文区零改动/裸色零/预算合规/计数 12 恒/无第二份数据/纹样合规)"
-  }
+    "finalReport": "GALLERY_REPORT.md(四阶卷 2026-10-04)"
+  },
+  "phase5": {
+    "taskBook": "GALLERY_PROMPT5.md(v1,唯一指令源,含硬红线/20 轮表/附录 A 底本源/附录 B 双源流程/附录 C 断言口径)",
+    "userRulings": "2026-10-05 三裁决:①均衡五线(内容 7+词条 4+工程 4+纵深终验 5);②疑12 四例读音=维持通行标注+郭注两存(G99 固化);③1440 页脚触控升 44px(G96)",
+    "lines": "A 南山闭环+西山开篇 G83—G89 / B 词条扩容 G90—G93(陆吾/毕方/西王母/烛龙) / C 工程 G94—G97(代码分割/搜索/页脚44px/无障碍) / D 纵深终验 G98—G102",
+    "clock": "automation-e5cc26fa 每 20 分钟一轮,maxRuns=25(20 轮+5 次余量,烧尽自动停)",
+    "keyRuling": "词条 verified 五阶一律不动(存量 5+新 4 全 unverified),首页「条目已核验=12」恒定;山位 recordStatus 仅 G84/G85 可依回核证据升级"
+  },
+  "dependenciesChangedSinceBaseline": false,
+  "lastRunAt": "2026-10-05 01:0X+08:00",
+  "status": "active",
+  "shutdown": "G102 完成后或有效执行达 20 次:此后一切触发只读退出——不构建、不提交、不改文件;并提醒用户停用本定时任务(automation-e5cc26fa)。",
+  "classicArtPull": {
+    "round": "G60+G62+G69+G75",
+    "files": 8,
+    "bytes": 794823,
+    "budgetPool": "四阶池 ≤2.0MB(40%)",
+    "note": "S1—S8 见 ART_PROVENANCE;五阶新增位图独立池 ≤2.0MB(G101 复查待图 9 兽+新词条 4 兽)"
+  },
+  "openItems": [
+    "[G84 清偿] ctext 换源回核:山位 unverified 实况 16 处(任务书快照 11 为四阶登记口径误差,现读为准)——台账 EDITION_EVIDENCE/unverified-ledger-20261005.md",
+    "[G85 清偿] 咸陰之山疑15:B1 四百里/B2 五百里两源互异,G85 三源对读裁决(多数派可录 17/17 闭环,三源各异维持悬置升并陈)",
+    "[G101 复查] 待补古图 9 兽+新词条 4 兽(维持「待图」占位,许可门槛不放宽)",
+    "[G99 固化] 疑12 四例读音裁决表——用户已裁决(2026-10-05):维持通行标注+郭注两存,不改 ruby",
+    "[照录在页] 疑13—疑17 五则异文/里距案已在 variants 页,无待办",
+    "[G96 清偿] 1440 页脚链接触控 29px→44px——用户已裁决(2026-10-05):升",
+    "[挂账呈报] 三阶承续项:宋体大题跨环境抽验/墨痕显影手感/--duration-char 审计口径/floatSlot(五阶无轮位,继续呈报)",
+    "[挂账呈报] 词条 recordStatus 升级(存量 5+四阶新 2+五阶新 4)须用户裁决后另行立项,五阶禁动",
+    "[挂账呈报] 南次三经 13 段 vs 篇末「凡一十四山」计山口径差(两源同口径,底本自带);南山经三段篇末合计 10+17+14=41 山 vs 总记 40 山之差——G88 全线闭环时存疑区如实照录"
+  ],
+  "phase2OpenItems": [
+    "底本 A(ctext)回核挂账:南次二经 6 山按 B1×B2 先上线,recordStatus=unverified(五阶 G84 清偿)",
+    "ruby 注音层未收 10 字已收 6+设计内分轨 4(G78);疑 12 四例读音已裁决(G99 固化)",
+    "其余 12 词条流变层无 claim 已由四阶 G77 清偿(31 条/14 词条);五阶 G98 补新词条",
+    "人工复核:楷体渲染、真实前台键盘 focus-visible、选区渲染色(三阶呈报项承续)"
+  ]
 }

@@ -1,3 +1,17 @@
+## G83 · 五阶接管+底本侦察(轻轮)
+
+- **有效执行编号**:五阶 1 / 20
+- **北京时间**:2026-10-05 01:04—01:1X(定时触发)
+- **开始 HEAD**:e858b29(G82 终验收官),工作树干净(仅 GALLERY_PROMPT5.md 未跟踪);.round-lock 新建,轮末删除
+- **接管**:STATE 重写 planId=shanhai-gallery-5/phase 5/totalRounds 20/validExecutions 1/rounds 20 键(G83=done)/status=active/shutdown=「G102 后或达 20 次只读退出」;SPRINT 追加五阶 20 轮表;任务书 GALLERY_PROMPT5.md 本轮提交入库
+- **建档(验收 A2)**:①**三经 B1 档** EDITION_EVIDENCE/wikisource-nanshan3-b1-20261005.txt[L00]—[L15]=13 正文段(天虞—南禺)+篇末(凡十四山 6530 里)+**总记行「右南經之山志,大小凡四十山,萬六千三百八十里」**(G88 全线闭环总账锚);②**西山首段 B1 档** wikisource-xishan1-b1-20261005.txt[L00]—[L20]=19 山+篇末(凡十九山 2957 里);抓取法/对账说明入档头(南山页 121236 字节与 2026-10-02 抓取逐字节一致=页面未变;西山页 152870 字节);剥标签脚本 dev/round83-extract.mjs+archive.mjs 可复跑(style/script 先剥防 CSS 残片混入——首轮时山段实测踩到)
+- **B2 对账**:三经区间=L70(题头)—L98(篇末);丹穴=L76/南禺=L96 与四阶速查一致;**13 段 vs 篇末「凡一十四山」计山口径差为两源同口径(底本自带),列入 STATE.openItems 呈报,G86 以段为单位扩录**
+- **unverified 台账(验收 A3)**:EDITION_EVIDENCE/unverified-ledger-20261005.md——**山位实况 16 处**(任务书快照 11 为四阶登记口径误差,现读为准,漂移已记档)+词条 5 处(五阶红线禁动);含 G84 换源判定规则与回填栏
+- **基线(验收 A1 附)**:build 过(JS 649.05 raw/199.81 gzip、CSS 126.98/22.39=四阶终验零漂移,纯账本轮);基线块含 counters(33 山/17 词条/12v/31 claims/8 图/纹样 2/4);vite chunk>500kB 警告=G94 代码分割立项目标印证
+- **验收**:A1 STATE 五阶字段齐 20 键 ✓;A2 两档入库且行号对照在 ✓;A3 台账逐条行号 ✓;A4 build ✓;A5 产品码零改动(git diff 仅账本/存档/dev 脚本)✓
+- **提交**:本轮单提交(任务书+两 B1 档+台账+STATE+SPRINT+RUN_LOG+dev 脚本)
+- **状态**:done——下一轮 G84(ctext 换源回核 16 处,按台账判定规则执行;山位升级逐条行号,词条不动)
+
 ## G82 · 四阶终验(收官轮)
 
 - **有效执行编号**:四阶 24 / 24
