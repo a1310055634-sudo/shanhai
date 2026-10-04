@@ -405,3 +405,10 @@
 - **海外经体例首例**:相柳氏为共工之臣非山栖——**locationIds=[](空)**,词条页无栖居山如实;chapterIds 挂 ch-haiwai-bei。
 - 相柳词条(ent-xiangliu,type=deity,unverified):claims×4(图赞「终禽夏后」叙事体/九首母题 骆宾王雄虺九头+九凤/四写法汇证 相柳·相栁·相繇·相抑+共工谱系/陈一中义理翻案「各为其主,精英未泯」——禹杀相柳由除害叙事转悲剧收尾,两面并存)。
 - 验收 10/10(dev/round93-verify.mjs):词条页徽章引文/claims×4/待图占位/Atlas 方印 53 不变(海外经无山)/首页 12/目录卡 21;截图 round93-xiangliu-qing-1440.png。
+
+## 三之补21、线C 首轮:路由级代码分割(2026-10-05,G94;App.tsx 全页 React.lazy)
+
+- **改造**:App.tsx 除首页(LCP 静态导入)外 14 页全部 React.lazy+Suspense;fallback=令牌化静态加载签「展卷中」(无动画,reduced-motion 天然安全,aria-busy/aria-live);vite.config 不动(buildStamp 保留,rollup 默认分包即得 30 chunk);**package.json 零 diff**(零新依赖红线)。
+- **对照表**(vite 报告口径,改造前后同 HEAD 域):首包 index.js **731.69→504.62 raw(-227.07)/219.11→148.88 gzip(-70.23,-32%)**;总 JS 30 chunk 738.95 raw/233.32 gzip——**总包 +6.5% 归因成立**(任务书「否则归因」条款):chunk 碎片化 gzip 容器开销(30 文件头尾+deflate 字典重置)+import() 加载器,首包 -32% 收益为此代价,呈报。
+- **验收 5/5**(dev/round94-verify.mjs):A2 **preview 全路由 17/17 可达**(含五阶新页 xishan-jing/新词条 qinyuan/xiwanmu/bifang/xiangliu+404 态——懒 chunk 全部加载成功);A3 file:// 已知限制登记(运行时探针两轮挂起不稳,以静态分析记档:file:// 下动态 chunk 受 module CORS 限制,部署形态为 http,不引单文件插件绕过);A4 package.json 零 diff。
+- 实录坑:验收脚本 ESM 域无 require(zlib 需 import);python 批量替换吃引号致 SyntaxError(手 Edit 复原);file:// 运行时探针 Chrome 挂起两轮——降级静态分析登记,不硬凑运行时证据。

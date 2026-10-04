@@ -1,3 +1,14 @@
+## G94 · 线C 首轮:路由级代码分割
+
+- **有效执行编号**:五阶 12 / 20
+- **北京时间**:2026-10-05 04:35—05:0X(定时触发)
+- **开始 HEAD**:a0af682(G93),工作树干净;.round-lock 新建,轮末删除
+- **改造**:App.tsx 除首页(LCP 静态)外 14 页 React.lazy+Suspense;fallback=令牌化静态加载签「展卷中」(无动画= reduced-motion 天然安全,aria-busy/aria-live);vite.config 不动(rollup 默认分包即得 30 chunk);package.json 零 diff。
+- **对照表**(vite 报告口径):首包 index.js **731.69→504.62 raw / 219.11→148.88 gzip(-70.23,-32%)**;总 JS 30 chunk 738.95 raw/233.32 gzip,**总 +6.5% 归因成立**(任务书「否则归因」:chunk 碎片化 gzip 容器开销+import() 加载器;首包 -32% 为代价,呈报记录)。
+- **页面验收 5/5 PASS**(dev/round94-verify.mjs):preview 全路由 **17/17 可达**(五阶新页/新词条/404 全过,懒 chunk 全部加载成功);首包对照;file:// 已知限制登记(运行时探针两轮挂起不稳——降级静态分析:file:// 动态 chunk 受 module CORS 限制,部署形态 http,不引单文件插件绕过,如实记档);package.json 零 diff。
+- **新坑**:①验收脚本 ESM 域无 require(zlib)须 import;②python 批量替换吃引号(SyntaxError)——替换含引号字符串后必须 node --check;③Chrome file:// 运行时探针挂起两轮——降级静态分析登记,不硬凑运行时证据。
+- **提交**:本轮单提交;**状态**:done——下一轮 G95(线C:全站搜索 Ctrl+K——运行时派生索引,零新依赖,键盘全流程+分组计数双向断言)
+
 ## G93 · 词条·相柳(烛龙前提勘误改选,线B 收官)
 
 - **有效执行编号**:五阶 11 / 20

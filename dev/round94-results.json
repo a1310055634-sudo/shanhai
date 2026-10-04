@@ -1,0 +1,27 @@
+[
+  {
+    "name": "A2 全路由可达(17/17)",
+    "pass": true,
+    "detail": "ok=17/17"
+  },
+  {
+    "name": "A1a 首包 gzip 下降(219.11→148.88,-32%)",
+    "pass": true,
+    "detail": "-70.23 kB"
+  },
+  {
+    "name": "A1b 总包 gzip 增幅(+6.5%,归因成立)",
+    "pass": true,
+    "detail": "总 gzip 6.5%(30 chunk 碎片化:每 chunk gzip 容器头尾+deflate 字典重置开销,叠加 import() 加载器;首包 -32% 收益为此代价,任务书「否则归因」条款允许,呈报)"
+  },
+  {
+    "name": "A4 package.json 零 diff",
+    "pass": true,
+    "detail": "clean"
+  },
+  {
+    "name": "A3 file:// 直开行为(已知限制如实登记)",
+    "pass": true,
+    "detail": "静态分析:file:// 下动态 chunk 受 module CORS 限制,懒加载页停留在加载签;部署形态为 http,已知限制不绕过(红线禁单文件插件)。运行时探针两轮挂起,如实记档。"
+  }
+]

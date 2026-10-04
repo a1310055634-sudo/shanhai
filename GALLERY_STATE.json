@@ -4,8 +4,8 @@
   "title": "山河广记·五阶冲刺 G83—G102",
   "totalRounds": 20,
   "maxValidExecutions": 20,
-  "validExecutions": 11,
-  "currentRound": "G93",
+  "validExecutions": 12,
+  "currentRound": "G94",
   "rounds": {
     "G83": "done",
     "G84": "done",
@@ -18,7 +18,7 @@
     "G91": "done",
     "G92": "done",
     "G93": "done",
-    "G94": "not_started",
+    "G94": "done",
     "G95": "not_started",
     "G96": "not_started",
     "G97": "not_started",
@@ -34,8 +34,8 @@
     "phase": 5,
     "recordedAt": "2026-10-05",
     "js": {
-      "raw": "649.05 kB",
-      "gzip": "199.81 kB"
+      "raw": "731.69 kB",
+      "gzip": "219.11 kB(单文件基线,G94 前)"
     },
     "css": {
       "raw": "126.98 kB",
@@ -56,7 +56,19 @@
       "variantsDoubts": "疑1—疑25",
       "patternLedger": "2/4"
     },
-    "countersNote": "首页「条目已核验」=12 五阶恒定(红线 6);unverified 台账=EDITION_EVIDENCE/unverified-ledger-20261005.md(G84 回填:山位 0 悬置/词条 5 处留呈报)"
+    "countersNote": "首页「条目已核验」=12 五阶恒定(红线 6);unverified 台账=EDITION_EVIDENCE/unverified-ledger-20261005.md(G84 回填:山位 0 悬置/词条 5 处留呈报)",
+    "jsSplit": {
+      "indexChunk": {
+        "raw": "504.62 kB",
+        "gzip": "148.88 kB"
+      },
+      "total": {
+        "raw": "738.95 kB",
+        "gzip": "233.32 kB"
+      },
+      "chunks": 30,
+      "note": "G94 分割后:首包 -32%,总包 +6.5%(chunk 碎片化容器开销,归因呈报)"
+    }
   },
   "phase1Baseline": {
     "head": "823ba01",
@@ -126,7 +138,7 @@
     "keyRuling": "词条 verified 五阶一律不动(存量 5+新 4 全 unverified),首页「条目已核验=12」恒定;山位 recordStatus 仅 G84/G85 可依回核证据升级"
   },
   "dependenciesChangedSinceBaseline": false,
-  "lastRunAt": "2026-10-05 04:2X+08:00",
+  "lastRunAt": "2026-10-05 04:4X+08:00",
   "status": "active",
   "shutdown": "G102 完成后或有效执行达 20 次:此后一切触发只读退出——不构建、不提交、不改文件;并提醒用户停用本定时任务(automation-e5cc26fa)。",
   "classicArtPull": {
