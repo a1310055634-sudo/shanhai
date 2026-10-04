@@ -92,7 +92,7 @@ export const QINYUAN: Entity = {
       ],
     },
   ],
-  relatedEntityIds: [],
+  relatedEntityIds: ['ent-luwu'], // G98:广注卷02 昆仑段同段共现(陆吾司之+欽原)
   tags: ['西山经', '昆仑之丘', '状如蜂', '大如鸳鸯', '毒鸟'],
   updatedAt: '2026-10-05',
   recordStatus: 'unverified',

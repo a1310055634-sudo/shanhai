@@ -1,0 +1,47 @@
+[
+  {
+    "name": "互链 /catalog/qinyuan → 陆吾",
+    "pass": true,
+    "detail": "link=1"
+  },
+  {
+    "name": "互链 /catalog/luwu → 钦原",
+    "pass": true,
+    "detail": "link=1"
+  },
+  {
+    "name": "互链 /catalog/luwu → 西王母",
+    "pass": true,
+    "detail": "link=1"
+  },
+  {
+    "name": "互链 /catalog/xiwanmu → 陆吾",
+    "pass": true,
+    "detail": "link=1"
+  },
+  {
+    "name": "互链 /catalog/xiangliu → 应龙",
+    "pass": true,
+    "detail": "link=1"
+  },
+  {
+    "name": "互链 /catalog/yinglong → 相柳",
+    "pass": true,
+    "detail": "link=1"
+  },
+  {
+    "name": "互链 /catalog/yinglong → 凤皇",
+    "pass": true,
+    "detail": "link=1"
+  },
+  {
+    "name": "A5 首页条目已核验=12",
+    "pass": true,
+    "detail": "dd=12"
+  },
+  {
+    "name": "A6 目录词条卡=21",
+    "pass": true,
+    "detail": "count=21"
+  }
+]

@@ -122,7 +122,7 @@ export const XIANGLIU: Entity = {
       ],
     },
   ],
-  relatedEntityIds: [],
+  relatedEntityIds: ['ent-yinglong'], // G98:广注卷17 同行共现(禹杀相柳/应龙叙事)
   tags: ['海外北经', '共工之臣', '九首', '蛇身', '禹杀相柳'],
   updatedAt: '2026-10-05',
   recordStatus: 'unverified',

@@ -60,7 +60,7 @@ export const LUWU: Entity = {
     '「帝之下都」取「天帝在下界的都城」的旧注通识;具体所指诸说不一。',
     '昆仑之丘的现代地理比附众说纷纭,本站暂不录入。',
   ],
-  relatedEntityIds: [],
+  relatedEntityIds: ['ent-qinyuan', 'ent-xiwanmu'], // G98:昆仑段同段共现(双向)
   tags: ['西山经', '昆仑之丘', '虎身九尾', '人面虎爪', '司囿时'],
   recordStatus: 'verified',
   illustration: {

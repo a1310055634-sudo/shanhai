@@ -53,7 +53,7 @@ export const YINGLONG: Entity = {
     '凶犁土丘的现代地理比附,无从稽考,本站暂不录入。',
   ],
   // G80 互链:吴粲《赤牍》云「應龍以屈伸為神,鳳皇以嘉鳴為貴」,两兽并举(广注卷14存档在案)
-  relatedEntityIds: ['ent-fenghuang'],
+  relatedEntityIds: ['ent-fenghuang', 'ent-xiangliu'], // G98:卷17 同行共现(双向)
   tags: ['大荒东经', '凶犁土丘', '杀蚩尤与夸父', '司雨'],
   recordStatus: 'verified',
   illustration: {

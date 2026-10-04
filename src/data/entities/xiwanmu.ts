@@ -136,7 +136,7 @@ export const XIWANMU: Entity = {
       ],
     },
   ],
-  relatedEntityIds: [],
+  relatedEntityIds: ['ent-luwu'], // G98:广注卷02 昆仑段案语共现(穆天子传见西王母/陆吾司之)
   tags: ['西山经', '玉山', '豹尾虎齿', '蓬发戴胜', '司天之厉及五残', '神祇'],
   updatedAt: '2026-10-05',
   recordStatus: 'unverified',
