@@ -3,3 +3,9 @@ dist/
 .round-lock
 *.local
 .DS_Store
+
+# 版权敏感档案(仅本地留存,不入库——2026-10-05 转公开清理)
+dev/round84-daizhige-shanhaijing.txt
+dev/round84-artedu-1.html
+dev/round89-artedu-2.html
+dev/round93-haiwaibei.html
