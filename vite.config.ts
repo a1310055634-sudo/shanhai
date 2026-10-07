@@ -18,7 +18,12 @@ function buildStamp() {
 
 const stamp = buildStamp()
 
+/** 部署形态:DEPLOY_TARGET=ghpages 时按 GitHub Pages 项目页子路径 /shanhai/ 构
+ *  (Actions 部署用);缺省 '/' 保持本地 dev/preview 行为不变。 */
+const isGhPages = process.env.DEPLOY_TARGET === 'ghpages'
+
 export default defineConfig({
+  base: isGhPages ? '/shanhai/' : '/',
   plugins: [react()],
   define: {
     __BUILD_COMMIT__: JSON.stringify(stamp.commit),

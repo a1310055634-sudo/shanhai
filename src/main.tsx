@@ -7,7 +7,8 @@ import './styles/base.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* BASE_URL 随 vite base 翻转:本地 '/',GitHub Pages '/shanhai/' */}
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <App />
     </BrowserRouter>
   </StrictMode>,

@@ -1,0 +1,49 @@
+# GitHub Pages 部署:main 分支 push 即构建发布(Vite 6 + React 19,子路径 /shanhai/)。
+# SPA 回退:dist/index.html 复制为 404.html(GH Pages 对未知路径回落 404.html,
+#          React Router 以 basename=/shanhai/ 匹配真实路由)。
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_TARGET: ghpages
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 构建版本戳需要 git rev-parse(页脚校讫记)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: SPA fallback
+        run: cp dist/index.html dist/404.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
